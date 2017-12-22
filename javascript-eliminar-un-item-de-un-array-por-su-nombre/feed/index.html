@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Javascript: Eliminar un item de un array por su nombre</title>
+	<atom:link href="http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/#comment-725</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 03 Jun 2015 12:13:04 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2843#comment-725</guid>
+		<description><![CDATA[Anda, no sabía que con indexOf podías hacer búsquedas por key en un array!]]></description>
+		<content:encoded><![CDATA[<p>Anda, no sabía que con indexOf podías hacer búsquedas por key en un array!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: angel calderaro</title>
+		<link>http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/#comment-724</link>
+		<dc:creator><![CDATA[angel calderaro]]></dc:creator>
+		<pubDate>Mon, 01 Jun 2015 01:23:56 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2843#comment-724</guid>
+		<description><![CDATA[la propuesta de rolando usando indexOf es mucho mas eficiente saludos!]]></description>
+		<content:encoded><![CDATA[<p>la propuesta de rolando usando indexOf es mucho mas eficiente saludos!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rolando</title>
+		<link>http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/#comment-723</link>
+		<dc:creator><![CDATA[Rolando]]></dc:creator>
+		<pubDate>Thu, 20 Nov 2014 15:19:02 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2843#comment-723</guid>
+		<description><![CDATA[Puedes utilizar también:
+&lt;pre class=&quot;lang:sh decode:true &quot;&gt;
+var frutas = [&#039;manzana&#039;, &#039;banana&#039;, &#039;pera&#039;];
+var index = frutas.indexOf(&#039;banana&#039;);
+if (index &#062; -1) {
+    frutas.splice(index, 1);
+}
+console.log(frutas); // Entrega [&#039;manzana&#039;, &#039;pera&#039;]
+&lt;/pre&gt;
+
+
+Lo malo es que indexOf no es soportado en IE7-8, por lo que pudieras hacer entonces, el mismo código que tienes pero en vez de hacer esto:
+
+&lt;pre class=&quot;lang:default decode:true &quot;&gt;
+for (var i2 = i; i2 &#060; this.length - 1; i2++) {
+  this[i2] = this[i2 + 1];
+}
+this.length = this.length - 1;
+&lt;/pre&gt;
+
+Puedes simplemente hacer esto:
+&lt;pre class=&quot;lang:default decode:true &quot;&gt;
+this.splice(i, 1);
+&lt;/pre&gt;
+
+
+Salu2.]]></description>
+		<content:encoded><![CDATA[<p>Puedes utilizar también:</p>
+		<div id="crayon-58443767511ac665930512" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var frutas = ['manzana', 'banana', 'pera'];
+var index = frutas.indexOf('banana');
+if (index &gt; -1) {
+    frutas.splice(index, 1);
+}
+console.log(frutas); // Entrega ['manzana', 'pera']</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-58443767511ac665930512-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443767511ac665930512-2">2</div><div class="crayon-num" data-line="crayon-58443767511ac665930512-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443767511ac665930512-4">4</div><div class="crayon-num" data-line="crayon-58443767511ac665930512-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443767511ac665930512-6">6</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58443767511ac665930512-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">frutas</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'manzana'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'banana'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'pera'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443767511ac665930512-2"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">index</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">frutas</span><span class="crayon-e">.indexOf</span><span class="crayon-sy">(</span><span class="crayon-s">'banana'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-58443767511ac665930512-3"><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">index</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443767511ac665930512-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">frutas</span><span class="crayon-e">.splice</span><span class="crayon-sy">(</span><span class="crayon-v">index</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-58443767511ac665930512-5"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443767511ac665930512-6"><span class="crayon-v">console</span><span class="crayon-e">.log</span><span class="crayon-sy">(</span><span class="crayon-v">frutas</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">/</span><span class="crayon-h"> </span><span class="crayon-i">Entrega</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'manzana'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'pera'</span><span class="crayon-sy">]</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Lo malo es que indexOf no es soportado en IE7-8, por lo que pudieras hacer entonces, el mismo código que tienes pero en vez de hacer esto:</p>
+<p></p>
+		<div id="crayon-58443767511b5118732768" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+for (var i2 = i; i2 &lt; this.length - 1; i2++) {
+  this[i2] = this[i2 + 1];
+}
+this.length = this.length - 1;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-58443767511b5118732768-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443767511b5118732768-2">2</div><div class="crayon-num" data-line="crayon-58443767511b5118732768-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443767511b5118732768-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58443767511b5118732768-1"><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">i2</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-v">i2</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-v">i2</span><span class="crayon-o">++</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443767511b5118732768-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">[</span><span class="crayon-v">i2</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">this</span><span class="crayon-sy">[</span><span class="crayon-v">i2</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-58443767511b5118732768-3"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443767511b5118732768-4"><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Puedes simplemente hacer esto:</p>
+		<div id="crayon-58443767511bb257330565" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+this.splice(i, 1);</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-58443767511bb257330565-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58443767511bb257330565-1"><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">splice</span><span class="crayon-sy">(</span><span class="crayon-v">i</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Salu2.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

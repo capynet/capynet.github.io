@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Desplegar una aplicación Node.js como servicio Upstart (demonio)</title>
+	<atom:link href="http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Juan García</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-7156</link>
+		<dc:creator><![CDATA[Juan García]]></dc:creator>
+		<pubDate>Fri, 28 Oct 2016 18:13:32 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-7156</guid>
+		<description><![CDATA[Muchas gracias por tu aporte, yo ya tenia un script muy simple usando upstart pero era muy simple comparado con este y no funcionaba bien, al principio pensé que con tu script se estaba iniciando 2 veces, pero luego me di cuenta que el comando que inicia el servicio manda todo al archivo de log, lo que paso es que también mi aplicación escribe todo en el archivo de log y por eso salia 2 veces todo, pero aparentemente funciona bien, el script que tenia antes era algo como esto:
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+respawn
+respawn limit 10 5
+setuid administrador
+chdir /var/www/myapp
+env MYAPP_PORT=3002
+exec npm start
+
+Y tenia el inconveniente que pasados varios días, me metía a revisar y se estaba ejecutando en paralelo varias veces la aplicación, llegue a notar que corría hasta 7 veces simultáneamente la aplicación, ya les comento como me va con este nuevo script.
+
+
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>Muchas gracias por tu aporte, yo ya tenia un script muy simple usando upstart pero era muy simple comparado con este y no funcionaba bien, al principio pensé que con tu script se estaba iniciando 2 veces, pero luego me di cuenta que el comando que inicia el servicio manda todo al archivo de log, lo que paso es que también mi aplicación escribe todo en el archivo de log y por eso salia 2 veces todo, pero aparentemente funciona bien, el script que tenia antes era algo como esto:</p>
+<p>start on runlevel [2345]<br />
+stop on runlevel [!2345]<br />
+respawn<br />
+respawn limit 10 5<br />
+setuid administrador<br />
+chdir /var/www/myapp<br />
+env MYAPP_PORT=3002<br />
+exec npm start</p>
+<p>Y tenia el inconveniente que pasados varios días, me metía a revisar y se estaba ejecutando en paralelo varias veces la aplicación, llegue a notar que corría hasta 7 veces simultáneamente la aplicación, ya les comento como me va con este nuevo script.</p>
+<p>Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jaider</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-4932</link>
+		<dc:creator><![CDATA[Jaider]]></dc:creator>
+		<pubDate>Wed, 13 Jul 2016 14:56:48 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-4932</guid>
+		<description><![CDATA[Hola,
+
+Muy util el script, en ubuntu funciono de manera correcta, mas sin embargo en Centos si no lo he podido hacer funcionar, siempre sale el error de &quot;exec: start-stop-daemon: not found&quot;, no se si tienes una solución al respecto. Gracias.]]></description>
+		<content:encoded><![CDATA[<p>Hola,</p>
+<p>Muy util el script, en ubuntu funciono de manera correcta, mas sin embargo en Centos si no lo he podido hacer funcionar, siempre sale el error de &#8220;exec: start-stop-daemon: not found&#8221;, no se si tienes una solución al respecto. Gracias.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: hector</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-674</link>
+		<dc:creator><![CDATA[hector]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2015 18:30:59 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-674</guid>
+		<description><![CDATA[Excelente entrega, hace unos meses había probado este script pero corriéndolo desde el usuario root pero ahora intento de nuevo con un usuario distinto y haciendo las debidas modificaciones y NO me funciona pudes ayudarme?]]></description>
+		<content:encoded><![CDATA[<p>Excelente entrega, hace unos meses había probado este script pero corriéndolo desde el usuario root pero ahora intento de nuevo con un usuario distinto y haciendo las debidas modificaciones y NO me funciona pudes ayudarme?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jairo</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-673</link>
+		<dc:creator><![CDATA[Jairo]]></dc:creator>
+		<pubDate>Tue, 06 Oct 2015 13:39:36 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-673</guid>
+		<description><![CDATA[Se soluciono solo con reiniciar el servidor]]></description>
+		<content:encoded><![CDATA[<p>Se soluciono solo con reiniciar el servidor</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jairo</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-672</link>
+		<dc:creator><![CDATA[Jairo]]></dc:creator>
+		<pubDate>Mon, 05 Oct 2015 16:38:41 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-672</guid>
+		<description><![CDATA[Gracias por el script,
+
+estoy tratando de usarlo en Ubuntu 14.04 para levantar una aplicación generada con express-generator, sin embargo la aplicación no esta iniciando, cuando abro el archivo .pid veo que el proceso esta cambiando constantemente, alguien le pasa lo mismo? o tiene alguna idea de como solucionarlo? 
+
+env LOG_FILE=/var/log/node/QA-CMMS.log
+env APP_DIR=/var/node/QA-CMMS
+env APP=app.js
+env PID_NAME=qa-cmms-co.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG=&quot;qa-cmms ha sido iniciada.&quot;
+env NODE_BIN=/usr/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV=&quot;production&quot;
+
+esta es la  configuración del script que tengo para mi aplicación]]></description>
+		<content:encoded><![CDATA[<p>Gracias por el script,</p>
+<p>estoy tratando de usarlo en Ubuntu 14.04 para levantar una aplicación generada con express-generator, sin embargo la aplicación no esta iniciando, cuando abro el archivo .pid veo que el proceso esta cambiando constantemente, alguien le pasa lo mismo? o tiene alguna idea de como solucionarlo? </p>
+<p>env LOG_FILE=/var/log/node/QA-CMMS.log<br />
+env APP_DIR=/var/node/QA-CMMS<br />
+env APP=app.js<br />
+env PID_NAME=qa-cmms-co.pid<br />
+env USER=www-data<br />
+env GROUP=www-data<br />
+env POST_START_MESSAGE_TO_LOG=&#8221;qa-cmms ha sido iniciada.&#8221;<br />
+env NODE_BIN=/usr/bin/node<br />
+env PID_PATH=/var/opt/node/run<br />
+env SERVER_ENV=&#8221;production&#8221;</p>
+<p>esta es la  configuración del script que tengo para mi aplicación</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: david</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-671</link>
+		<dc:creator><![CDATA[david]]></dc:creator>
+		<pubDate>Tue, 08 Sep 2015 10:49:03 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-671</guid>
+		<description><![CDATA[Bueníiiiiiisiiiiimo!!! Gracias!!!!!!!!]]></description>
+		<content:encoded><![CDATA[<p>Bueníiiiiiisiiiiimo!!! Gracias!!!!!!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Desplegar una aplicación Node.js como servicio systemd (demonio) &#124; Capy</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-670</link>
+		<dc:creator><![CDATA[Desplegar una aplicación Node.js como servicio systemd (demonio) &#124; Capy]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2014 08:33:35 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-670</guid>
+		<description><![CDATA[[&#8230;] lo que quieres es crear un demonio para Ubuntu o cualquier otro SO que use Upstart,  tienes que leer este articulo, y si lo que quieres es crear el demonio para Debian u otros que usen systemd, sigue leyendo este [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] lo que quieres es crear un demonio para Ubuntu o cualquier otro SO que use Upstart,  tienes que leer este articulo, y si lo que quieres es crear el demonio para Debian u otros que usen systemd, sigue leyendo este [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jesus Perales</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-669</link>
+		<dc:creator><![CDATA[Jesus Perales]]></dc:creator>
+		<pubDate>Sat, 19 Apr 2014 06:57:54 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-669</guid>
+		<description><![CDATA[Creo que este script deberia de estar en github,igual lo buscare quiza ya lo tienes :D]]></description>
+		<content:encoded><![CDATA[<p>Creo que este script deberia de estar en github,igual lo buscare quiza ya lo tienes 😀</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Cesar</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-668</link>
+		<dc:creator><![CDATA[Cesar]]></dc:creator>
+		<pubDate>Wed, 16 Apr 2014 16:31:58 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-668</guid>
+		<description><![CDATA[No me funciona en un debian 6 me sale unrecognized service]]></description>
+		<content:encoded><![CDATA[<p>No me funciona en un debian 6 me sale unrecognized service</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comment-667</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 16 Apr 2014 14:06:26 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2124#comment-667</guid>
+		<description><![CDATA[Ni idea :(]]></description>
+		<content:encoded><![CDATA[<p>Ni idea 🙁</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

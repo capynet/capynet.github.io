@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Tip &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/category/tip/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Crear un core en Solr 6 (por linea de comandos)</title>
+		<link>http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/</link>
+		<pubDate>Mon, 15 Aug 2016 17:55:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3435</guid>
+		<description><![CDATA[Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto: [crayon-5844368c15928568381042/] NOTA: cambia nombre_del_core por el nombre que le quieras dar a tu core. Lo que va a responder: [crayon-5844368c15940141809280/] Y eso es todo básicamente. Ya tenés un core mas en Solr. No&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto:</p><pre class="crayon-plain-tag">su - solr -c "/opt/solr/bin/solr create_core -c nombre_del_core"</pre><p><strong><span style="text-decoration: underline;">NOTA</span></strong>: cambia <strong>nombre_del_core</strong> por el nombre que le quieras dar a tu core.</p>
+<p>Lo que va a responder:</p><pre class="crayon-plain-tag">Copying configuration to new core instance directory:
+/var/solr/data/nombre_del_core
+
+Creating new core 'nombre_del_core' using command:
+http://localhost:8983/solr/admin/cores?action=CREATE&amp;name=nombre_del_core&amp;instanceDir=nombre_del_core
+
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":972},
+  "core":"nombre_del_core"}</pre><p>Y eso es todo básicamente. Ya tenés un core mas en Solr. No hace falta reiniciar.</p>
+<p>Seguramente quieras tocar un poco la conf del core. Los cores se crean en /var/solr/data (<strong>/var/solr/data/nombre_del_core</strong> en nuestro ejemplo).</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Mysql: crear un usuario y asignarle una db por linea de comandos</title>
+		<link>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/</link>
+		<comments>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/#comments</comments>
+		<pubDate>Fri, 28 Aug 2015 13:01:25 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2944</guid>
+		<description><![CDATA[Te conectas a mysql con mysql -uroot -p y: [crayon-5844368c17a26270852673/] &#160;]]></description>
+				<content:encoded><![CDATA[<p>Te conectas a mysql con <strong>mysql -uroot -p</strong> y:</p><pre class="crayon-plain-tag">CREATE USER 'miusuario'@'localhost' IDENTIFIED BY 'miclave';
+GRANT ALL PRIVILEGES ON laDB.* TO 'miusuario'@'localhost';
+FLUSH PRIVILEGES;</pre><p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>GIT: Mostrar gráfico de ramas en consola</title>
+		<link>http://ecapy.com/git-mostrar-grafico-de-ramas-en-consola/</link>
+		<pubDate>Tue, 10 Mar 2015 21:20:50 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[git]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2865</guid>
+		<description><![CDATA[Para conseguir que la consola te muestre el gráfico e ramas (tree view en rigor) en la consola haz lo siguiente: [crayon-5844368c17e89083829835/] y al finar de lo que haya dentro del archivo pega esto: [crayon-5844368c17e92910992664/] Listo, ya podés hacer [crayon-5844368c17e97702194622/] NOTA: glog = &#8220;graphic log&#8221; Chau!]]></description>
+				<content:encoded><![CDATA[<p><img class="size-full wp-image-2867 alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/Screen-Shot-2015-03-10-at-18.13.39.png" alt="GIT console graphic log" width="609" height="505" srcset="http://ecapy.com/wp-content/uploads/2015/03/Screen-Shot-2015-03-10-at-18.13.39.png 609w, http://ecapy.com/wp-content/uploads/2015/03/Screen-Shot-2015-03-10-at-18.13.39-300x249.png 300w" sizes="(max-width: 609px) 100vw, 609px" /></p>
+<p>Para conseguir que la consola te muestre el gráfico e ramas (tree view en rigor) en la consola haz lo siguiente:</p><pre class="crayon-plain-tag">nano ~/.gitconfig</pre><p>y al finar de lo que haya dentro del archivo pega esto:</p><pre class="crayon-plain-tag">[alias]
+glog = log --all --graph --decorate --oneline</pre><p>Listo, ya podés hacer</p><pre class="crayon-plain-tag">git glog</pre><p>NOTA: glog = &#8220;graphic log&#8221;</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Crear un bash alias que reciba parámetros</title>
+		<link>http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/</link>
+		<pubDate>Tue, 03 Jun 2014 11:19:09 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Consola]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2691</guid>
+		<description><![CDATA[Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto: En el archivo .bash_aliases o .bashrc de tu home: [crayon-5844368c197a4051293832/] Listo. ya podemos usarlo en la consola: [crayon-5844368c197ad606346160/] Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto:</p>
+<p>En el archivo <strong>.bash_aliases</strong> o <strong>.bashrc</strong> de tu home:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    mysql -uusuario_demo -p labasededatosdedestino &lt; $1
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Listo. ya podemos usarlo en la consola:</p><pre class="crayon-plain-tag">importar_db mydb.sql</pre><p>Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de $1 para el primero $2 para el segundo, etc.</p>
+<p>&nbsp;</p>
+<p>UPDATE (27/10/2016):</p>
+<p><a href="http://stackoverflow.com/a/3465449/1413049">http://stackoverflow.com/a/3465449/1413049</a></p>
+<p>Aqui explica como pasar argumentos de forma dinámica. EJ:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    echo "listado de argumentos recibidos:"
+    echo "$@"
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Resumiendo <strong>&#8220;$@&#8221;</strong> nos deja meter una cantidad ilimitada de argumentos lo que a su vez nos da mas flexibilidad.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar Skype en Debian 7</title>
+		<link>http://ecapy.com/instalar-skype-en-debian-7/</link>
+		<pubDate>Sat, 01 Feb 2014 13:49:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Debian]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2618</guid>
+		<description><![CDATA[Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits. Solución: [crayon-5844368c19a81740881330/] Ya podés instalar el .deb sin problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits.</p>
+<p>Solución:</p><pre class="crayon-plain-tag">sudo dpkg --add-architecture i386 &amp;&amp; sudo apt-get update</pre><p>Ya podés instalar el .deb sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Renderizar una pagina de panels programáticamente</title>
+		<link>http://ecapy.com/drupal-7-renderizar-una-pagina-de-panels-programaticamente/</link>
+		<pubDate>Wed, 04 Sep 2013 13:21:05 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2452</guid>
+		<description><![CDATA[Si tenemos un panel que tiene su propia URL, digamos contactar/!extras y querés renderizar este panel por medio de código. Bueno si ese fuera el caso, hacerlo es bastante simple: [crayon-5844368c19cd0132161998/] En el snippet anterior solo aclarar que page_manager_page_execute([[1]], [[2,3,4,etc]]); [[1]] este es el nombre del panel sin el prefijo &#8220;page-&#8220;. Para saber cual es&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-renderizar-una-pagina-de-panels-programaticamente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Si tenemos un panel que tiene su propia URL, digamos <em>contactar/!extras</em> y querés renderizar este panel por medio de código. Bueno si ese fuera el caso, hacerlo es bastante simple:</p><pre class="crayon-plain-tag">&lt;?php 
+    module_load_include('inc', 'ctools', 'page_manager/plugins/tasks/page'); 
+    return page_manager_page_execute("contacto", "foo"); 
+?&gt;</pre><p>En el snippet anterior solo aclarar que <em>page_manager_page_execute(<strong>[[1]]</strong>, <strong>[[2,3,4,etc]]</strong>);</em></p>
+<p><strong>[[1]]</strong> este es el nombre del panel sin el prefijo &#8220;page-&#8220;. Para saber cual es el nombre del panel que quieres, podes ir a <strong>admin/structure/pages</strong></p>
+<p><strong>[[2,3,4,etc]]</strong> este argumento machea con !extras y cualquier otro argumento extra va a ir macheando con el siguiente argumento de la URL.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Linux: Configurar SciTE de forma permanente</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/</link>
+		<comments>http://ecapy.com/configurar-scite-de-forma-permanente/#comments</comments>
+		<pubDate>Fri, 28 Jun 2013 12:26:59 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2393</guid>
+		<description><![CDATA[SciTE es el editor de texto que mas se acerca a Notepad++, y como no soy purista reconozco que en Windows hay cosas que están mucho mas buenas que en Linux. Un buen ejemplo es Notepad++. Bueno la cuestión con este editor es que si lo abrís y configuras cositas como &#8220;Mostrar números de línea&#8221;&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/configurar-scite-de-forma-permanente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><img class="size-full wp-image-2404 alignnone" src="http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings.png" alt="scite-user-settings" width="443" height="449" srcset="http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings.png 443w, http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings-296x300.png 296w" sizes="(max-width: 443px) 100vw, 443px" /></p>
+<p><a href="http://www.scintilla.org/SciTE.html" target="_blank">SciTE</a> es el editor de texto que mas se acerca a <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a>, y como no soy purista reconozco que en Windows hay cosas que están mucho mas buenas que en Linux. Un buen ejemplo es Notepad++.</p>
+<p>Bueno la cuestión con este editor es que si lo abrís y configuras cositas como &#8220;<em>Mostrar números de línea</em>&#8221; o &#8220;<em>Codificar en UTF8</em>&#8220;, <strong>cuando cerrás la aplicación tus personalizaciones se pierden ¬¬</strong>.</p>
+<p>La solución es abrir el archivo de configuración que SciTE nos da para almacenar nuestras preferencias (ver imagen) y pegar lo siguiente:</p><pre class="crayon-plain-tag">###############################
+# Configuración personalizada #
+###############################
+
+# Posicion
+position.left=400
+position.top=100
+# Alto y ancho
+position.width=1000
+position.height=500
+
+# Mostrar numeros de linea
+line.margin.visible=1
+# "4+" indica que por defecto reserva 4 espacios pero se expande si le hace falta mas espacio.
+line.margin.width=4+
+
+# Codificación UTF8 por defecto
+code.page=65001
+
+# Mostramos el toolbar
+toolbar.visible=1
+
+# Mostramos el statusbar
+statusbar.visible=1
+
+# Establecemos la fuente monoespaciada a nuestro gusto
+font.monospace=font:!Bitstream Vera Sans Mono,size:10
+
+# La fuente monoespaciada
+font.base=$(font.monospace)
+font.small=$(font.monospace)
+font.comment=$(font.monospace)
+font.text=$(font.monospace)
+font.text.comment=$(font.monospace)
+font.embedded.base=$(font.monospace)
+font.embedded.comment=$(font.monospace)
+font.vbs=$(font.monospace)</pre><p>La configuración está comentada así que van a poder seleccionar lo que les interesa, y lo que no, lo borran.</p>
+<p>Listo, guardalo y disfruta de este gran editor.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/configurar-scite-de-forma-permanente/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>Linux: Convertir imágenes de png a jpg desde la consola</title>
+		<link>http://ecapy.com/linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/</link>
+		<comments>http://ecapy.com/linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/#comments</comments>
+		<pubDate>Mon, 13 May 2013 07:36:01 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Programas]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2192</guid>
+		<description><![CDATA[Una vez mas esto es una nota mental mas que un tutorial: Si no tenés instalado imagemagick: [crayon-5844368c1b66c315373237/] Luego para convertir usamos el comando convert: [crayon-5844368c1b676015089977/] Y para convertir todas las imagenes en un directorio: [crayon-5844368c1b67b368718536/] Chau!]]></description>
+				<content:encoded><![CDATA[<p>Una vez mas esto es una nota mental mas que un tutorial:</p>
+<p>Si no tenés instalado <strong>imagemagick</strong>:</p><pre class="crayon-plain-tag">sudo apt-get install imagemagick</pre><p>Luego para convertir usamos el comando <em>convert</em>:</p><pre class="crayon-plain-tag">convert imagen.png imagen.jpg</pre><p>Y para convertir todas las imagenes en un directorio:</p><pre class="crayon-plain-tag">convert *.png *.jpg</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Añadir tu usuario de linux al grupo www-data</title>
+		<link>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/</link>
+		<comments>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/#comments</comments>
+		<pubDate>Thu, 28 Feb 2013 23:30:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1992</guid>
+		<description><![CDATA[Cuando instalo un LAMP en algún Linux suelo añadir mi usuario (capy) al grupo www-data, cambio el directorio www al grupo www-data y le doy permisos de escritura a los usuarios del grupo para garantizarme que no vaya a tener problemas de permisos y cosas raras. Lo siguiente hay que hacerlo una sola vez: [crayon-5844368c1cd17630269864/]&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando instalo un LAMP en algún Linux suelo añadir mi usuario (<em>capy</em>) al grupo www-data, cambio el directorio <em>www</em> al grupo www-data y le doy permisos de escritura a los usuarios del grupo para garantizarme que no vaya a tener problemas de permisos y cosas raras.</p>
+<p>Lo siguiente hay que hacerlo una sola vez:</p><pre class="crayon-plain-tag">sudo chgrp -R www-data /var/www
+sudo chmod -R g+w /var/www
+sudo find /var/www -type d -exec chmod 2775 {} \;
+sudo find /var/www -type f -exec chmod ug+rw {} \;</pre><p>Lo anterior hace esto:</p>
+<ul>
+<li>Cambio todo lo que hay en /var/www para que le pertenezca al grupo www-data</li>
+<li>Acomodamos los permisos de /var/www para que los usuarios que pertenezcan al grupo www-data puedan escribir.</li>
+<li>A partir de ahora todos los archivos y directorios que se creen lo van a hacer con nuestro usuario y con el grupo www-data lo que nos asegura que todo el resto de los usuarios puedan seguir modificando.</li>
+</ul>
+<p>Ahora que tenemos listo el directorio /var/www, solo nos queda ir agregando a todos los usuarios que necesitemos al grupo www-data:</p><pre class="crayon-plain-tag">sudo usermod -a -G www-data capy
+sudo usermod -a -G www-data otrousuario</pre><p>Recuerda cerrar y abrir sesión con cada uno de estos usuarios para que se les habilite el nuevo grupo.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Xampp icuuc46.dll intl</title>
+		<link>http://ecapy.com/xampp-icuuc46-dll-intl/</link>
+		<comments>http://ecapy.com/xampp-icuuc46-dll-intl/#comments</comments>
+		<pubDate>Sun, 12 Aug 2012 12:59:16 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1611</guid>
+		<description><![CDATA[Si habilitan el modulo intl en Xampp puede que les de error al no encontrar la librería &#8220;icuuc46.dll&#8220;.  La solución en este caso nos la da Cyn Wong: Ir a [xampp_path]/php/ y copiar estos tres archivos: icudt46.dll icuin46.dll icuuc46.dll Pegalos en [xampp_path]/apache/bin y reinicia, y vas a ver como ya no hay problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Si habilitan el modulo <strong><a href="http://www.php.net/manual/es/intro.intl.php" target="_blank">intl</a> </strong>en Xampp puede que les de error al no encontrar la librería &#8220;<span style="color: #993300;"><strong>icuuc46.dll</strong></span>&#8220;.  La solución en este caso nos la da <strong><a href="http://cynwong.com/blog/?p=446" target="_blank">Cyn Wong</a></strong>:</p>
+<ol>
+<li>Ir a [xampp_path]<strong>/php/</strong> y copiar estos tres archivos:
+<ol>
+<li>icudt46.dll</li>
+<li>icuin46.dll</li>
+<li>icuuc46.dll</li>
+</ol>
+</li>
+<li>Pegalos en [xampp_path]<strong>/apache/bin</strong> y reinicia, y vas a ver como ya no hay problemas.</li>
+</ol>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/xampp-icuuc46-dll-intl/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

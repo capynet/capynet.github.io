@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Hacer proxy con Apache para aplicaciones node.js</title>
+	<atom:link href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Castro Garcia Jose Luis</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-6672</link>
+		<dc:creator><![CDATA[Castro Garcia Jose Luis]]></dc:creator>
+		<pubDate>Tue, 11 Oct 2016 00:01:04 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-6672</guid>
+		<description><![CDATA[Me sale este error:
+Job for apache2.service failed because the control process exited with error code. See &quot;systemctl status apache2.service&quot; and &quot;journalctl -xe&quot; for details.
+
+trabajo en Ubuntu]]></description>
+		<content:encoded><![CDATA[<p>Me sale este error:<br />
+Job for apache2.service failed because the control process exited with error code. See &#8220;systemctl status apache2.service&#8221; and &#8220;journalctl -xe&#8221; for details.</p>
+<p>trabajo en Ubuntu</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-627</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Fri, 19 Jun 2015 22:05:03 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-627</guid>
+		<description><![CDATA[¿Crapy? o_O
+
+Podes meter todos los alias que necesites:
+[apacheconf]
+ServerName ejemplo.com
+ServerAlias otraurl.com unamas.com etc.com
+[/apacheconf]
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>¿Crapy? o_O</p>
+<p>Podes meter todos los alias que necesites:<br />
+[apacheconf]<br />
+ServerName ejemplo.com<br />
+ServerAlias otraurl.com unamas.com etc.com<br />
+[/apacheconf]<br />
+Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: jorarome</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-626</link>
+		<dc:creator><![CDATA[jorarome]]></dc:creator>
+		<pubDate>Sun, 14 Jun 2015 05:58:41 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-626</guid>
+		<description><![CDATA[Hola Crapy, retomando la app desarrollada en nodejs que correo en el puerto 4000, que recomendacion da para sacarla a puerto 80 de varios virtualhost usando Apache?, por ejem: mipaguinaweb.com, tupaginaweb.org, lapaginaweb.com,etc. Agradezco de atenmano su comentario.]]></description>
+		<content:encoded><![CDATA[<p>Hola Crapy, retomando la app desarrollada en nodejs que correo en el puerto 4000, que recomendacion da para sacarla a puerto 80 de varios virtualhost usando Apache?, por ejem: mipaguinaweb.com, tupaginaweb.org, lapaginaweb.com,etc. Agradezco de atenmano su comentario.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Super</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-625</link>
+		<dc:creator><![CDATA[Super]]></dc:creator>
+		<pubDate>Sat, 23 May 2015 19:45:01 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-625</guid>
+		<description><![CDATA[Hola capy,
+
+gracias por el artículo, este me ha dado una idea respecto a un caso similar sobre el que estoy trabajando, pero al mismo tiempo me generó un problema que no he podido resolver, te explico.
+
+&lt;b&gt;Antecedentes:&lt;/b&gt;
+* http server: apache2
+* tengo un localhost en el puerto el 443 (con SSL).
+* tengo varios dominios virtuales adicionales con puertos distintos sobre apache (ej: 5001, 5002 ..).
+* los dominios virtuales adicionales son cargados mediante &quot;iframe&quot; sobre una página perteneciente al localhost.
+
+&lt;b&gt;Requerimiento:&lt;/b&gt;
+* necesito tener acceso JS desde desde el localhost a los iframes que contienen los dominios virtuales adicionales.
+
+&lt;b&gt;Propuesta:&lt;/b&gt;
+* Utilizar proxys.
+
+&lt;b&gt;Problema:&lt;/b&gt;
+* en los distintos dominios virtuales adicionales existen archivos de igual nombre en iguales rutas relativas, por lo que al realizar una configuración proxy mediante apache, las URL de estos archivos se sobreescriben. Ej: Dom Virtual 1: localhost:5001/index.html; Dom Virtual 2: localhost:5002/index.html.
+* la solución me debe permitir mantener los nombres originales de los archivos.
+
+Has tenido alguna vez un problema similar? tienes alguna sugerencia ?
+Espero q me puedas ayudar, de todas maneras muchas gracias.
+
+salu2!]]></description>
+		<content:encoded><![CDATA[<p>Hola capy,</p>
+<p>gracias por el artículo, este me ha dado una idea respecto a un caso similar sobre el que estoy trabajando, pero al mismo tiempo me generó un problema que no he podido resolver, te explico.</p>
+<p><b>Antecedentes:</b><br />
+* http server: apache2<br />
+* tengo un localhost en el puerto el 443 (con SSL).<br />
+* tengo varios dominios virtuales adicionales con puertos distintos sobre apache (ej: 5001, 5002 ..).<br />
+* los dominios virtuales adicionales son cargados mediante &#8220;iframe&#8221; sobre una página perteneciente al localhost.</p>
+<p><b>Requerimiento:</b><br />
+* necesito tener acceso JS desde desde el localhost a los iframes que contienen los dominios virtuales adicionales.</p>
+<p><b>Propuesta:</b><br />
+* Utilizar proxys.</p>
+<p><b>Problema:</b><br />
+* en los distintos dominios virtuales adicionales existen archivos de igual nombre en iguales rutas relativas, por lo que al realizar una configuración proxy mediante apache, las URL de estos archivos se sobreescriben. Ej: Dom Virtual 1: localhost:5001/index.html; Dom Virtual 2: localhost:5002/index.html.<br />
+* la solución me debe permitir mantener los nombres originales de los archivos.</p>
+<p>Has tenido alguna vez un problema similar? tienes alguna sugerencia ?<br />
+Espero q me puedas ayudar, de todas maneras muchas gracias.</p>
+<p>salu2!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-624</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 17 Feb 2015 11:04:18 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-624</guid>
+		<description><![CDATA[Bueno según entiendo, quieres que la gente entre en a.com y que internamente esa petición se mande a b.com para que b.com la responda y tu la devuelvas finalmente por a.com
+
+En ese caso es algo parecido a lo que se menciona en este post:
+mipaginaweb.com = a.com
+http://localhost:4000 = b.com
+
+A resumidas cuentas un dominio se esconde detrás del otro.
+
+Espero que lo consigas. Un saludo.]]></description>
+		<content:encoded><![CDATA[<p>Bueno según entiendo, quieres que la gente entre en a.com y que internamente esa petición se mande a b.com para que b.com la responda y tu la devuelvas finalmente por a.com</p>
+<p>En ese caso es algo parecido a lo que se menciona en este post:<br />
+mipaginaweb.com = a.com<br />
+<a href="http://localhost:4000" rel="nofollow">http://localhost:4000</a> = b.com</p>
+<p>A resumidas cuentas un dominio se esconde detrás del otro.</p>
+<p>Espero que lo consigas. Un saludo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dave Olvera</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-623</link>
+		<dc:creator><![CDATA[Dave Olvera]]></dc:creator>
+		<pubDate>Wed, 11 Feb 2015 17:03:57 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-623</guid>
+		<description><![CDATA[Hola que tal me preguntaba si esto del proxy es lo que necesito para redireccionar una petición a otro dominio. Por ejemplo digamos que yo tengo mi aplicación en el dominio a.com (node.js)  desde esta aplicación yo hago un request a mi propio dominio, entonces desde node.js ¿Puedo hacer una segunda petición a mi dominio b.com?
+
+Pregunto esto porque no quiero hacer la petición directamente desde el cliente ya que es necesario que la url b.com no se mantenga expuesta.
+
+Saludos!!!]]></description>
+		<content:encoded><![CDATA[<p>Hola que tal me preguntaba si esto del proxy es lo que necesito para redireccionar una petición a otro dominio. Por ejemplo digamos que yo tengo mi aplicación en el dominio a.com (node.js)  desde esta aplicación yo hago un request a mi propio dominio, entonces desde node.js ¿Puedo hacer una segunda petición a mi dominio b.com?</p>
+<p>Pregunto esto porque no quiero hacer la petición directamente desde el cliente ya que es necesario que la url b.com no se mantenga expuesta.</p>
+<p>Saludos!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-622</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Fri, 03 May 2013 00:18:17 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-622</guid>
+		<description><![CDATA[Hola David. Suponiendo que estas usando expressjs, fa forma de servir documentos con extensión .html es esta: http://www.hacksparrow.com/how-to-server-static-html-files-in-express-js.html
+
+Frames... a ver, supongamos que tenes tupagina.com/home y en esa home se renderiza una pagina que tiene dos iframe. pues lo único que tendrías que hacer es apuntar la url de cada uno de los frame a una url que hayas definido en express, y en cada una de esas nuevas rutas entregas el el .jade o .html que quieras...
+
+Perdón por dar una respuesta tan poco precisa, pero es que no se muy bien qué necesitas.
+
+Un saludo.]]></description>
+		<content:encoded><![CDATA[<p>Hola David. Suponiendo que estas usando expressjs, fa forma de servir documentos con extensión .html es esta: <a href="http://www.hacksparrow.com/how-to-server-static-html-files-in-express-js.html" rel="nofollow">http://www.hacksparrow.com/how-to-server-static-html-files-in-express-js.html</a></p>
+<p>Frames&#8230; a ver, supongamos que tenes tupagina.com/home y en esa home se renderiza una pagina que tiene dos iframe. pues lo único que tendrías que hacer es apuntar la url de cada uno de los frame a una url que hayas definido en express, y en cada una de esas nuevas rutas entregas el el .jade o .html que quieras&#8230;</p>
+<p>Perdón por dar una respuesta tan poco precisa, pero es que no se muy bien qué necesitas.</p>
+<p>Un saludo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: David Hernandez</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-621</link>
+		<dc:creator><![CDATA[David Hernandez]]></dc:creator>
+		<pubDate>Wed, 01 May 2013 20:18:54 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-621</guid>
+		<description><![CDATA[Disculpe, soy nuevo en este mundo de node.js queria saber si tengo una pagina hecha en frames por ejemplo, y contiene un index.html en una frame y otro index.jade en otro frame, como puedo hacer para correr dicha pagina principal donde corran ambas paginas? Ya que por un servidor apache no correria los websockets del index.jade, y no tengo idea como ejecutar un html desde node.js, Gracias por su atencion]]></description>
+		<content:encoded><![CDATA[<p>Disculpe, soy nuevo en este mundo de node.js queria saber si tengo una pagina hecha en frames por ejemplo, y contiene un index.html en una frame y otro index.jade en otro frame, como puedo hacer para correr dicha pagina principal donde corran ambas paginas? Ya que por un servidor apache no correria los websockets del index.jade, y no tengo idea como ejecutar un html desde node.js, Gracias por su atencion</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-620</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Sat, 09 Feb 2013 00:48:20 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-620</guid>
+		<description><![CDATA[aaaaaaaa ya te entendí. Bueno acá Apache es transparente, y lo único que esta haciendo reenviar la petición. no cumple ningún rol a demás de ese, ni debe hacerlo ya que el día de mañana puede que tu proxy sea nginx o varnish. Quiero decir con esto que ni si quiera deberías plantear hacer algo así desde apache, déjale eso a tu app.
+
+Si tu app esta hecha en express  ya tenes un sistema de ruteo mucho mas fácil que la reescritura de urls.
+
+por ejemplo:
+&lt;pre class=&quot;decode:1 lang:javascript &quot; &gt;
+function buscar(donde, quecosa, callback) {
+
+    //implementa la logica de tu busqueda aqui
+
+    callback(null, &quot;aqui va el contenido a devolver&quot;)
+}
+
+server.get(&#039;/users/:usuario&#039;, function (req, res) {
+
+    buscar(&quot;users&quot;, req.params.usuario, function (err, respuesta) {
+        if (err) throw err;
+        return  res.send(respuesta);
+    });
+
+});
+&lt;/pre&gt;
+
+Esto ya te permitiría usar url del tipo &quot;http://www.mipaginaweb2.com/users/fulanodetal&quot;, &quot;http://www.mipaginaweb2.com/users/fulanodecual&quot;
+
+Las reescrituras de url son pasado en nodejs, básicamente porque frameworks como expressjs ya traen de serie sistemas de routing.
+
+Para terminar por si no ha quedado claro: las reescrituras de url nacieron porque no era posible a nivel de aplicación definir urls del tipo &lt;strong&gt;/usuario/pedro&lt;/strong&gt; y mapearla a una funcion. (PHP por ejemplo) Para lograrlo habia que pedirle al servidor web que re interpretara esa url a parámetros que se pudieran pasar a un archivo que los leyera y que llamara a una función en consecuencia.
+Y la cosa con nodejs es distinta, ya que node al ser servidor web y aplicación web al mismo tiempo es capaz de mapear directamente urls a funciones (como el ejemplo que dejé arriba).
+
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>aaaaaaaa ya te entendí. Bueno acá Apache es transparente, y lo único que esta haciendo reenviar la petición. no cumple ningún rol a demás de ese, ni debe hacerlo ya que el día de mañana puede que tu proxy sea nginx o varnish. Quiero decir con esto que ni si quiera deberías plantear hacer algo así desde apache, déjale eso a tu app.</p>
+<p>Si tu app esta hecha en express  ya tenes un sistema de ruteo mucho mas fácil que la reescritura de urls.</p>
+<p>por ejemplo:</p>
+		<div id="crayon-5844379a3d676691820356" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+function buscar(donde, quecosa, callback) {
+
+    //implementa la logica de tu busqueda aqui
+
+    callback(null, "aqui va el contenido a devolver")
+}
+
+server.get('/users/:usuario', function (req, res) {
+
+    buscar("users", req.params.usuario, function (err, respuesta) {
+        if (err) throw err;
+        return  res.send(respuesta);
+    });
+
+});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844379a3d676691820356-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844379a3d676691820356-2">2</div><div class="crayon-num" data-line="crayon-5844379a3d676691820356-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844379a3d676691820356-4">4</div><div class="crayon-num" data-line="crayon-5844379a3d676691820356-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844379a3d676691820356-6">6</div><div class="crayon-num" data-line="crayon-5844379a3d676691820356-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844379a3d676691820356-8">8</div><div class="crayon-num" data-line="crayon-5844379a3d676691820356-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844379a3d676691820356-10">10</div><div class="crayon-num" data-line="crayon-5844379a3d676691820356-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844379a3d676691820356-12">12</div><div class="crayon-num" data-line="crayon-5844379a3d676691820356-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844379a3d676691820356-14">14</div><div class="crayon-num" data-line="crayon-5844379a3d676691820356-15">15</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844379a3d676691820356-1"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">buscar</span><span class="crayon-sy">(</span><span class="crayon-v">donde</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">quecosa</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">callback</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844379a3d676691820356-2">&nbsp;</div><div class="crayon-line" id="crayon-5844379a3d676691820356-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//implementa la logica de tu busqueda aqui</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844379a3d676691820356-4">&nbsp;</div><div class="crayon-line" id="crayon-5844379a3d676691820356-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">callback</span><span class="crayon-sy">(</span><span class="crayon-t">null</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"aqui va el contenido a devolver"</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844379a3d676691820356-6"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844379a3d676691820356-7">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844379a3d676691820356-8"><span class="crayon-v">server</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-s">'/users/:usuario'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">req</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844379a3d676691820356-9">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844379a3d676691820356-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">buscar</span><span class="crayon-sy">(</span><span class="crayon-s">"users"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">req</span><span class="crayon-sy">.</span><span class="crayon-v">params</span><span class="crayon-sy">.</span><span class="crayon-v">usuario</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">respuesta</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844379a3d676691820356-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-st">throw</span><span class="crayon-h"> </span><span class="crayon-v">err</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844379a3d676691820356-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-e">send</span><span class="crayon-sy">(</span><span class="crayon-v">respuesta</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844379a3d676691820356-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844379a3d676691820356-14">&nbsp;</div><div class="crayon-line" id="crayon-5844379a3d676691820356-15"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Esto ya te permitiría usar url del tipo &#8220;http://www.mipaginaweb2.com/users/fulanodetal&#8221;, &#8220;http://www.mipaginaweb2.com/users/fulanodecual&#8221;</p>
+<p>Las reescrituras de url son pasado en nodejs, básicamente porque frameworks como expressjs ya traen de serie sistemas de routing.</p>
+<p>Para terminar por si no ha quedado claro: las reescrituras de url nacieron porque no era posible a nivel de aplicación definir urls del tipo <strong>/usuario/pedro</strong> y mapearla a una funcion. (PHP por ejemplo) Para lograrlo habia que pedirle al servidor web que re interpretara esa url a parámetros que se pudieran pasar a un archivo que los leyera y que llamara a una función en consecuencia.<br />
+Y la cosa con nodejs es distinta, ya que node al ser servidor web y aplicación web al mismo tiempo es capaz de mapear directamente urls a funciones (como el ejemplo que dejé arriba).</p>
+<p>Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: jorge</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comment-619</link>
+		<dc:creator><![CDATA[jorge]]></dc:creator>
+		<pubDate>Fri, 08 Feb 2013 23:10:38 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=1672#comment-619</guid>
+		<description><![CDATA[Algo así:
+Sabemos que tenemos dos dominios, mipaginaweb1.com y mipaginaweb2.com
+Se supone que mipaginaweb2.com es nuestra app en node (la otra, un index html común y corriente)
+Un usuario trata de acceder a www.mipaginaweb2.com
+Apache lo redirecciona a http://localhost:4000/
+La pregunta es, si un usuario tratara de acceder (por ejemplo) a la página www.mipaginaweb2.com/users/fulanodetal
+¿existiría alguna forma de reescribir esa url antes de redirigir, para que esta quede del siguiente modo?: mipaginaweb2.com?location=users&#038;search=fulanodetal
+Algo así como lo que hacemos con htaccess
+Saludos, y gracias por su atención]]></description>
+		<content:encoded><![CDATA[<p>Algo así:<br />
+Sabemos que tenemos dos dominios, mipaginaweb1.com y mipaginaweb2.com<br />
+Se supone que mipaginaweb2.com es nuestra app en node (la otra, un index html común y corriente)<br />
+Un usuario trata de acceder a <a href="http://www.mipaginaweb2.com" rel="nofollow">http://www.mipaginaweb2.com</a><br />
+Apache lo redirecciona a <a href="http://localhost:4000/" rel="nofollow">http://localhost:4000/</a><br />
+La pregunta es, si un usuario tratara de acceder (por ejemplo) a la página <a href="http://www.mipaginaweb2.com/users/fulanodetal" rel="nofollow">http://www.mipaginaweb2.com/users/fulanodetal</a><br />
+¿existiría alguna forma de reescribir esa url antes de redirigir, para que esta quede del siguiente modo?: mipaginaweb2.com?location=users&amp;search=fulanodetal<br />
+Algo así como lo que hacemos con htaccess<br />
+Saludos, y gracias por su atención</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

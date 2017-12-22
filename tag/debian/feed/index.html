@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Debian &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/debian/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Montar permanentemente una partición ext4 en Ubuntu/Debian</title>
+		<link>http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/</link>
+		<pubDate>Wed, 03 Jun 2015 12:24:36 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2898</guid>
+		<description><![CDATA[Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos: Creamos el directorio donde cargar la partición [crayon-5844377d8b258347153986/] (capy es mi usuario en linux. usa el tuyo). Identificamos el uuid de la partición que nos interesa [crayon-5844377d8b265437822049/] En mi caso&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos:</p>
+<h3>Creamos el directorio donde cargar la partición</h3>
+<p></p><pre class="crayon-plain-tag">sudo mkdir /media/capy/Slave-linux
+sudo chown capy. /media/capy/Slave-linux</pre><p>(capy es mi usuario en linux. usa el tuyo).</p>
+<h3>Identificamos el uuid de la partición que nos interesa</h3>
+<p></p><pre class="crayon-plain-tag">sudo blkid
+/dev/sda1: UUID="6a710399-14eb-489f-a69a-3eeefb1c6410" TYPE="ext4" PARTUUID="00012bdd-01"
+/dev/sdb1: LABEL="Slave-linux" UUID="f7923e0a-93d7-466a-9371-59aa56da53bf" TYPE="ext4" PARTUUID="0004a843-01"</pre><p>En mi caso es &#8220;Slave-linux&#8221; cuyo UUID es <strong>f7923e0a-93d7-466a-9371-59aa56da53bf</strong>.</p>
+<h3>Añadimos la linea mágica en fstab para que la partición cargue cada vez que se inicie</h3>
+<p></p><pre class="crayon-plain-tag">sudo gedit /etc/fstab</pre><p>Y agregamos el final justo debajo de todo lo que haya, la siguiente linea (<strong>Con tu UUID y el label de tu partición</strong>):</p><pre class="crayon-plain-tag">UUID=f7923e0a-blabla-blabla-blabla-blablablabla /media/capy/Slave-linux ext4 defaults 0 1</pre><p>Y listo. Si quieres verlo funcionando reinicia o lanza este comando:</p><pre class="crayon-plain-tag">sudo mount -a</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Emparejar dispositivos a2dp (audio por bluetooth) en Debian 7</title>
+		<link>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/</link>
+		<comments>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/#comments</comments>
+		<pubDate>Wed, 12 Feb 2014 09:31:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Debian]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2623</guid>
+		<description><![CDATA[Espero que esto le ahorre todo el tiempo que yo he perdido 😀 Síntoma: Emparejas un dispositivo de audio vía bluetooth y parece que ha conectado, pero al cabo de un segundo se desconecta. Solución: [crayon-5844377d8bae2652465763/] Y ya podes emparejar sin problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Espero que esto le ahorre todo el tiempo que yo he perdido <img src="https://s.w.org/images/core/emoji/2/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Síntoma: Emparejas un dispositivo de audio vía bluetooth y parece que ha conectado, pero al cabo de un segundo se desconecta.</p>
+<p>Solución:</p><pre class="crayon-plain-tag">sudo apt-get install pulseaudio pulseaudio-module-bluetooth bluez-audio pavucontrol bluez-firmware bluez-tools &amp;&amp; sudo service bluetooth restart &amp;&amp; sudo killall pulseaudio</pre><p>Y ya podes emparejar sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Skype en Debian 7</title>
+		<link>http://ecapy.com/instalar-skype-en-debian-7/</link>
+		<pubDate>Sat, 01 Feb 2014 13:49:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Debian]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2618</guid>
+		<description><![CDATA[Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits. Solución: [crayon-5844377d8bf6e414599191/] Ya podés instalar el .deb sin problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits.</p>
+<p>Solución:</p><pre class="crayon-plain-tag">sudo dpkg --add-architecture i386 &amp;&amp; sudo apt-get update</pre><p>Ya podés instalar el .deb sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

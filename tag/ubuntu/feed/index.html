@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Ubuntu &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/ubuntu/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Montar permanentemente una partición ext4 en Ubuntu/Debian</title>
+		<link>http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/</link>
+		<pubDate>Wed, 03 Jun 2015 12:24:36 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2898</guid>
+		<description><![CDATA[Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos: Creamos el directorio donde cargar la partición [crayon-5844375fb4b53698063605/] (capy es mi usuario en linux. usa el tuyo). Identificamos el uuid de la partición que nos interesa [crayon-5844375fb4b60709625067/] En mi caso&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos:</p>
+<h3>Creamos el directorio donde cargar la partición</h3>
+<p></p><pre class="crayon-plain-tag">sudo mkdir /media/capy/Slave-linux
+sudo chown capy. /media/capy/Slave-linux</pre><p>(capy es mi usuario en linux. usa el tuyo).</p>
+<h3>Identificamos el uuid de la partición que nos interesa</h3>
+<p></p><pre class="crayon-plain-tag">sudo blkid
+/dev/sda1: UUID="6a710399-14eb-489f-a69a-3eeefb1c6410" TYPE="ext4" PARTUUID="00012bdd-01"
+/dev/sdb1: LABEL="Slave-linux" UUID="f7923e0a-93d7-466a-9371-59aa56da53bf" TYPE="ext4" PARTUUID="0004a843-01"</pre><p>En mi caso es &#8220;Slave-linux&#8221; cuyo UUID es <strong>f7923e0a-93d7-466a-9371-59aa56da53bf</strong>.</p>
+<h3>Añadimos la linea mágica en fstab para que la partición cargue cada vez que se inicie</h3>
+<p></p><pre class="crayon-plain-tag">sudo gedit /etc/fstab</pre><p>Y agregamos el final justo debajo de todo lo que haya, la siguiente linea (<strong>Con tu UUID y el label de tu partición</strong>):</p><pre class="crayon-plain-tag">UUID=f7923e0a-blabla-blabla-blabla-blablablabla /media/capy/Slave-linux ext4 defaults 0 1</pre><p>Y listo. Si quieres verlo funcionando reinicia o lanza este comando:</p><pre class="crayon-plain-tag">sudo mount -a</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Actualizar solo un paquete en Linux</title>
+		<link>http://ecapy.com/actualizar-solo-un-paquete-en-linux/</link>
+		<pubDate>Thu, 29 Aug 2013 16:38:23 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2433</guid>
+		<description><![CDATA[Si querés actualizar por linea de comandos solo un paquete. En lugar de sudo sudo apt-get upgrade, podes usar este comando: [crayon-5844375fb5b7f913319830/] Obviamente que tenes que saber como se llama el paquete ;). Chau!]]></description>
+				<content:encoded><![CDATA[<p>Si querés actualizar por linea de comandos solo un paquete. En lugar de sudo <em>sudo apt-get upgrade</em>, podes usar este comando:</p><pre class="crayon-plain-tag">sudo apt-get install --only-upgrade oracle-jdk7-installer</pre><p>Obviamente que tenes que saber como se llama el paquete ;).</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Linux: Configurar SciTE de forma permanente</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/</link>
+		<comments>http://ecapy.com/configurar-scite-de-forma-permanente/#comments</comments>
+		<pubDate>Fri, 28 Jun 2013 12:26:59 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2393</guid>
+		<description><![CDATA[SciTE es el editor de texto que mas se acerca a Notepad++, y como no soy purista reconozco que en Windows hay cosas que están mucho mas buenas que en Linux. Un buen ejemplo es Notepad++. Bueno la cuestión con este editor es que si lo abrís y configuras cositas como &#8220;Mostrar números de línea&#8221;&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/configurar-scite-de-forma-permanente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><img class="size-full wp-image-2404 alignnone" src="http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings.png" alt="scite-user-settings" width="443" height="449" srcset="http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings.png 443w, http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings-296x300.png 296w" sizes="(max-width: 443px) 100vw, 443px" /></p>
+<p><a href="http://www.scintilla.org/SciTE.html" target="_blank">SciTE</a> es el editor de texto que mas se acerca a <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a>, y como no soy purista reconozco que en Windows hay cosas que están mucho mas buenas que en Linux. Un buen ejemplo es Notepad++.</p>
+<p>Bueno la cuestión con este editor es que si lo abrís y configuras cositas como &#8220;<em>Mostrar números de línea</em>&#8221; o &#8220;<em>Codificar en UTF8</em>&#8220;, <strong>cuando cerrás la aplicación tus personalizaciones se pierden ¬¬</strong>.</p>
+<p>La solución es abrir el archivo de configuración que SciTE nos da para almacenar nuestras preferencias (ver imagen) y pegar lo siguiente:</p><pre class="crayon-plain-tag">###############################
+# Configuración personalizada #
+###############################
+
+# Posicion
+position.left=400
+position.top=100
+# Alto y ancho
+position.width=1000
+position.height=500
+
+# Mostrar numeros de linea
+line.margin.visible=1
+# "4+" indica que por defecto reserva 4 espacios pero se expande si le hace falta mas espacio.
+line.margin.width=4+
+
+# Codificación UTF8 por defecto
+code.page=65001
+
+# Mostramos el toolbar
+toolbar.visible=1
+
+# Mostramos el statusbar
+statusbar.visible=1
+
+# Establecemos la fuente monoespaciada a nuestro gusto
+font.monospace=font:!Bitstream Vera Sans Mono,size:10
+
+# La fuente monoespaciada
+font.base=$(font.monospace)
+font.small=$(font.monospace)
+font.comment=$(font.monospace)
+font.text=$(font.monospace)
+font.text.comment=$(font.monospace)
+font.embedded.base=$(font.monospace)
+font.embedded.comment=$(font.monospace)
+font.vbs=$(font.monospace)</pre><p>La configuración está comentada así que van a poder seleccionar lo que les interesa, y lo que no, lo borran.</p>
+<p>Listo, guardalo y disfruta de este gran editor.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/configurar-scite-de-forma-permanente/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>Añadir tu usuario de linux al grupo www-data</title>
+		<link>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/</link>
+		<comments>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/#comments</comments>
+		<pubDate>Thu, 28 Feb 2013 23:30:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1992</guid>
+		<description><![CDATA[Cuando instalo un LAMP en algún Linux suelo añadir mi usuario (capy) al grupo www-data, cambio el directorio www al grupo www-data y le doy permisos de escritura a los usuarios del grupo para garantizarme que no vaya a tener problemas de permisos y cosas raras. Lo siguiente hay que hacerlo una sola vez: [crayon-5844375fb7477857713961/]&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando instalo un LAMP en algún Linux suelo añadir mi usuario (<em>capy</em>) al grupo www-data, cambio el directorio <em>www</em> al grupo www-data y le doy permisos de escritura a los usuarios del grupo para garantizarme que no vaya a tener problemas de permisos y cosas raras.</p>
+<p>Lo siguiente hay que hacerlo una sola vez:</p><pre class="crayon-plain-tag">sudo chgrp -R www-data /var/www
+sudo chmod -R g+w /var/www
+sudo find /var/www -type d -exec chmod 2775 {} \;
+sudo find /var/www -type f -exec chmod ug+rw {} \;</pre><p>Lo anterior hace esto:</p>
+<ul>
+<li>Cambio todo lo que hay en /var/www para que le pertenezca al grupo www-data</li>
+<li>Acomodamos los permisos de /var/www para que los usuarios que pertenezcan al grupo www-data puedan escribir.</li>
+<li>A partir de ahora todos los archivos y directorios que se creen lo van a hacer con nuestro usuario y con el grupo www-data lo que nos asegura que todo el resto de los usuarios puedan seguir modificando.</li>
+</ul>
+<p>Ahora que tenemos listo el directorio /var/www, solo nos queda ir agregando a todos los usuarios que necesitemos al grupo www-data:</p><pre class="crayon-plain-tag">sudo usermod -a -G www-data capy
+sudo usermod -a -G www-data otrousuario</pre><p>Recuerda cerrar y abrir sesión con cada uno de estos usuarios para que se les habilite el nuevo grupo.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Habilitar .bashrc al iniciar sesión</title>
+		<link>http://ecapy.com/habilitar-bashrc-al-iniciar-sesion/</link>
+		<pubDate>Mon, 07 May 2012 19:39:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1420</guid>
+		<description><![CDATA[Problema: querés usar .bashrc para poner un alias por ejemplo, pero .bashrc no existe. Solución: te vas a la home de tu usuario y tipeas lo siguiente: [crayon-5844375fb79b7675013936/] Y dentro del archivo pongamos un alias por ejemplo: [crayon-5844375fb79c0413566424/] Guardamos los cambios y pasamos a lo siguiete que es: [crayon-5844375fb79c4585873984/] Pegamos esta condición para que .bashrc se cargue&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/habilitar-bashrc-al-iniciar-sesion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><span style="color: #993300;">Problema</span>: querés usar <strong>.bashrc</strong> para poner un alias por ejemplo, pero <strong>.bashrc</strong> no existe.</p>
+<p><span style="color: #008000;">Solución</span>: te vas a la home de tu usuario y tipeas lo siguiente:</p><pre class="crayon-plain-tag">cd&nbsp;~
+nano .bashrc</pre><p>Y dentro del archivo pongamos un alias por ejemplo:</p><pre class="crayon-plain-tag">alias ll='ls -l'</pre><p>Guardamos los cambios y pasamos a lo siguiete que es:</p><pre class="crayon-plain-tag">nano .bash_profile</pre><p>Pegamos esta condición<strong> para que .bashrc se cargue al iniciar sesión.</strong></p><pre class="crayon-plain-tag">if [ -f ~/.bashrc ]; then
+. ~/.bashrc
+fi</pre><p>All done, ya podes reiniciar la sesión que vas a ver que el alias &#8220;<strong>ll</strong>&#8221; funciona sin problemas. <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar java 7 en Ubuntu o Linux Mint</title>
+		<link>http://ecapy.com/instalar-java-7-en-ubuntu-o-linux-mint/</link>
+		<comments>http://ecapy.com/instalar-java-7-en-ubuntu-o-linux-mint/#comments</comments>
+		<pubDate>Sun, 11 Mar 2012 21:10:10 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1389</guid>
+		<description><![CDATA[[UPDATE] A partir de Mint 15 y Ubuntu 13.04 ya no es necesario, simplemente haz sudo apt-get install tomcat7 Si necesitas usar java 7 en Ubuntu o Linux Mint, estás en el lugar indicado. solo tenes que que lanzar en una consola estos 3 simples comandos: [crayon-5844375fb7e7a679850134/] Nota final: si tenias instalada otra versión de java u&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-java-7-en-ubuntu-o-linux-mint/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><strong>[UPDATE]</strong> A partir de Mint 15 y Ubuntu 13.04 ya no es necesario, simplemente haz <em>sudo apt-get install tomcat7</em></p>
+<p>Si necesitas usar<span style="color: #993300;"><strong> java 7</strong></span> en Ubuntu o Linux Mint, estás en el lugar indicado. solo tenes que que lanzar en una consola estos 3 simples comandos:</p><pre class="crayon-plain-tag">sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-jdk7-installer tomcat7-admin</pre><p>Nota final: si tenias instalada otra versión de java u Openjdk vas a tener que setear la versión que acabas de instalar mediante el comando:</p><pre class="crayon-plain-tag">sudo update-alternatives --config java</pre><p>Cortesía de los chicos de <a href="http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html" target="_blank">webupd8</a>. <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-java-7-en-ubuntu-o-linux-mint/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Solr 4.x y configurar multiples cores en Linux Ubuntu</title>
+		<link>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/</link>
+		<comments>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/#comments</comments>
+		<pubDate>Thu, 12 Jan 2012 13:42:08 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1355</guid>
+		<description><![CDATA[Aclaraciones: El proceso de instalación de Solr es valido para cualquier otra versión de Solr. Un core es un hilo nuevo dentro de la misma instancia de Solr. Esto permite que se corra una sola instancia de Solr pero con varios buscadores. Este tutorial asume que tienen instalado Java 7 y tomcat 7. Si tienen las versiones&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Aclaraciones:</p>
+<ul>
+<li>El proceso de instalación de Solr es valido para cualquier otra versión de Solr.</li>
+<li>Un core es un hilo nuevo dentro de la misma instancia de Solr. Esto permite que se corra una sola instancia de Solr pero con varios buscadores.</li>
+</ul>
+<p>Este tutorial asume que tienen instalado Java 7 y tomcat 7. Si tienen las versiones 6 le cambian el numero donde sea oportuno y funciona.</p>
+<p>Vamos a ello:</p>
+<p>Cuando tengas en tus manos el <a title="Descargalo desde la página oficial" href="http://apache.rediris.es/lucene/solr/" target="_blank">paquete se Solr</a>, descomprimelo y ponte con la consola dentro de esa carpeta.</p>
+<p>Cambia a sudo:</p><pre class="crayon-plain-tag">sudo su</pre><p><span style="color: #808080;"><span style="text-decoration: underline;">Curiosidad</span>: Aunque en el paquete que descargamos de Apache Solr <strong>haya al rededor de 2950 archivos</strong> <strong>solo nos van a hacer falta al rededor de 10</strong>:</span></p>
+<p>Lanzamos en consola lo siguiente:</p><pre class="crayon-plain-tag">cp dist/solr-*.war /var/lib/tomcat7/webapps/solr.war
+mkdir /var/lib/tomcat7/solr
+cp -R example/multicore/core0/ /var/lib/tomcat7/solr/core0
+mkdir /var/lib/tomcat7/solr/core0/data
+chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
+mkdir /var/lib/tomcat7/lib
+cp dist/solrj-lib/* /var/lib/tomcat7/lib</pre><p>Ahora edita <strong>/var/lib/tomcat7/solr/solr.xml</strong>, pega lo siguiente y guárdalo.</p><pre class="crayon-plain-tag">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ 
+&lt;solr persistent="true" sharedLib="lib"&gt;
+ &lt;cores adminPath="/admin/cores"&gt;
+ 
+  &lt;core name="core0" instanceDir="core0"&gt;
+    &lt;property name="dataDir" value="/var/lib/tomcat7/solr/core0/data"&gt;&lt;/property&gt;
+  &lt;/core&gt;
+ 
+ &lt;/cores&gt;
+&lt;/solr&gt;</pre><p>Edita <strong>/etc/tomcat7/Catalina/localhost/solr.xml</strong>, pega lo siguiente y guárdalo.</p><pre class="crayon-plain-tag">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ 
+&lt;context docBase="/var/lib/tomcat7/webapps/solr.war" debug="0" privileged="true" allowLinking="true" crossContext="true"&gt;
+    &lt;environment name="solr/home" type="java.lang.String" value="/var/lib/tomcat7/solr" override="true"&gt;&lt;/environment&gt;
+&lt;/context&gt;</pre><p>Listo, reiniciemos tomcat para ver en funcionamiento el core que hemos creado:</p><pre class="crayon-plain-tag">service tomcat7 restart</pre><p>Entramos en <a href="http://localhost:8080/solr/">http://localhost:8080/solr/</a> y lo vamos a ver.<br />
+<img class="size-full wp-image-2444 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core.png" alt="Solr recién instalado con un core" width="1036" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core.png 1036w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-300x216.png 300w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-768x553.png 768w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-1024x737.png 1024w" sizes="(max-width: 1036px) 100vw, 1036px" /></p>
+<p><img class="size-full wp-image-2445 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/primer-core.png" alt="Primer core de Solr" width="1053" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/primer-core.png 1053w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-300x213.png 300w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-768x544.png 768w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-1024x725.png 1024w" sizes="(max-width: 1053px) 100vw, 1053px" /></p>
+<h2>Añadir mas cores</h2>
+<p>Bueno ya tenemos un Solr con un core, pero tiene poco sentido montar un Solr de multicores que tenga un solo core, así que vamos a crear uno mas.</p>
+<p>Para este nuevo core (y todos los que quieras crear) hay que hacer dos cosas:<br />
+<strong>1:</strong> copiar la carpeta core0 junto a su owner para ahorrarnos de andar creando la misma estructura:</p><pre class="crayon-plain-tag">cp -Rp /var/lib/tomcat7/solr/core0 /var/lib/tomcat7/solr/producto</pre><p>NOTA: No olvides editar <strong>/var/lib/tomcat7/solr/producto/conf/schema.xml</strong> y <strong>/var/lib/tomcat7/solr/producto/conf/solrconfig.xml</strong> para ajustar sus parámetros.</p>
+<p><strong>2:</strong> actualizar <strong>/var/lib/tomcat7/solr/solr.xml</strong> agregandole un nuevo tag con lo siguiente:</p><pre class="crayon-plain-tag">&lt;core name="producto" instanceDir="producto"&gt;
+  &lt;property name="dataDir" value="/var/lib/tomcat7/solr/producto/data"&gt;&lt;/property&gt;
+&lt;/core&gt;</pre><p>Reinicia tomcat y ya tenes otro core.<br />
+<img class="size-full wp-image-2446 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/segundo-core.png" alt="Segundo core de Solr" width="1053" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/segundo-core.png 1053w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-300x213.png 300w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-768x544.png 768w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-1024x725.png 1024w" sizes="(max-width: 1053px) 100vw, 1053px" /></p>
+<p>Suerte y saludos.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Instalar java 6 en Ubuntu 11.10</title>
+		<link>http://ecapy.com/instalar-java-6-en-ubuntu-11-10/</link>
+		<comments>http://ecapy.com/instalar-java-6-en-ubuntu-11-10/#comments</comments>
+		<pubDate>Sat, 05 Nov 2011 23:47:53 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1259</guid>
+		<description><![CDATA[El paquete sun-java6-jdk ha dejado de estar disponible en la ultima versión de ubuntu debido a un cambio de licencias por parte de Oracle, lo cual no quiere decir que no se pueda usar mas, solo deja de estar disponible en los repositorios oficiales de ubuntu, por lo que para instalarlo a lo fácil vamos a agregar un nuevo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-java-6-en-ubuntu-11-10/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El paquete <strong>sun-java6-jdk</strong> ha dejado de estar disponible en la ultima versión de ubuntu debido a un cambio de licencias por parte de Oracle, lo cual no quiere decir que no se pueda usar mas, solo deja de estar disponible en los repositorios oficiales de ubuntu, por lo que para instalarlo a lo fácil vamos a agregar un nuevo repositorio e instalarlo desde allí:</p><pre class="crayon-plain-tag">sudo add-apt-repository ppa:ferramroberto/java
+sudo apt-get update
+sudo apt-get install sun-java6-jdk sun-java6-plugin</pre><p>Nota final: si tenías instalada otra versión de java u openjdk vas a tener que setear la versión que acabas de instalar mediante el comando:</p><pre class="crayon-plain-tag">sudo update-alternatives --config java</pre><p>Listo.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-java-6-en-ubuntu-11-10/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Compartir internet por wifi de Windows 7 a Linux con un cable</title>
+		<link>http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/</link>
+		<comments>http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/#comments</comments>
+		<pubDate>Wed, 02 Nov 2011 20:20:47 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[Virtualización]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1240</guid>
+		<description><![CDATA[Tenemos lo siguiente: Un ordenador con windows 7 que esta conectado a Internet por Wifi y la conexión por cable que está enganchada al portátil: Lo que queremos lograr es que el Wifi del ordenador le comparta la conexión a Internet a la conexión por cable del mismo ordenador para poder enganchar ese cable a un portátil con Linux (Ubuntu en este caso) y que este disfrute de Internet. NOTA: si te preguntas porque alguien iba&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tenemos lo siguiente: Un ordenador con windows 7 que esta conectado a Internet por Wifi y la conexión por cable que está enganchada al portátil:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0.png"><img class="aligncenter size-full wp-image-1241" title="compartiendo-internet-conexion-wireless-0" src="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0.png" alt="" width="564" height="243" srcset="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0.png 564w, http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0-300x129.png 300w" sizes="(max-width: 564px) 100vw, 564px" /></a></p>
+<p>Lo que queremos lograr es que el Wifi del ordenador le comparta la conexión a Internet a la conexión por cable del mismo ordenador para poder enganchar ese cable a un portátil con Linux (Ubuntu en este caso) y que este disfrute de Internet.</p>
+<p><strong style="color: #999999;">NOTA</strong><span style="color: #999999;">: si te preguntas porque alguien iba a querer hacer algo así lee esto, sino pasa al siguiente punto:</span></p>
+<p><span style="color: #999999;">Por lo general cada vez que he virtualizado sobre KVM usé un ordenador de sobremesa, y estos ordenadores siempre tuvieron conexión a la red por ethernet, pero el otro día me monte una maquina virtual con Ubuntu server 10.04 64 bits en mi portátil para poner un servidor LAMP en él con una configuración similar a la que tiene un servidor de producción.</span></p>
+<p><span style="color: #999999;">Bueno, el Ubuntu sobre KVM lo instale sin problemas, pero cuando termine de instalarlo y quise instalar un par de cositas sobre el, me saltaba diciendo que no había conexión&#8230;. Eso a priori me sonó rarisimo porque el portátil estaba conectado a Internet, pero la maquina virtual no y eso que estaba puenteado wlan0 a la maquina virtual.</span></p>
+<p><span style="color: #999999;">Después de buscar y buscar leí por ahí que KVM todavía no soporta los bridge sobre wlan, por lo que conecte el portatil por medio de cable al ordenador de sobremesa que a su ves obtiene Internet por medio de WiFi.</span></p>
+<p>Hagamos una conexión compartida de la Wifi a la de cable:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1.png"><img class="aligncenter size-full wp-image-1242" title="configurando-comparticion-de-conexion-1" src="http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1.png" alt="" width="618" height="378" srcset="http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1.png 618w, http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1-300x183.png 300w" sizes="(max-width: 618px) 100vw, 618px" /></a></p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2.png"><img class="aligncenter size-full wp-image-1244" title="compartiendo-internet-conexion-wireless-2" src="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2.png" alt="" width="377" height="474" srcset="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2.png 377w, http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2-239x300.png 239w" sizes="(max-width: 377px) 100vw, 377px" /></a></p>
+<p>Como resultado deberías ver esto:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3.png"><img class="aligncenter size-full wp-image-1245" title="compartiendo-internet-conexion-wireless-3" src="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3.png" alt="" width="564" height="243" srcset="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3.png 564w, http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3-300x129.png 300w" sizes="(max-width: 564px) 100vw, 564px" /></a></p>
+<p>Bueno, ya se está compartiendo Internet del Wifi al cable en el ordenador de sobremesa, ahora vamos a Linux y toquemos un par de cositas para poder aprovechar dicha conexión.</p>
+<p>En Linux, vamos a linkear la IP que nos proporciona la conexión por cable proveniente del ordenador de sobremesa a una IP estática en Ubuntu usando la IP entrante como gateway:</p>
+<p>Editamos el archivo interfaces:</p><pre class="crayon-plain-tag">sudo gedit /etc/network/interfaces</pre><p>Deberían ver algo así:</p><pre class="crayon-plain-tag"># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback</pre><p>Y vamos  a agregarle un par de lineas quedando el archivo asi:</p><pre class="crayon-plain-tag"># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# ac&aacute; est&aacute; la magia. Estamos linkeando la ip del ordenador de sobremesa (192.168.1.1) a una ip interna de Ubuntu
+auto eth0
+iface eth0 inet static
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address 192.10.0.1 #--&amp;gt; ip asignada en ubuntu (la que mas te guste)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; netmask 255.255.255.0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gateway 192.168.1.1 #--&amp;gt; ip entrante de la conexion por cable</pre><p>Guarda los cambios y reinicia la conexión:</p><pre class="crayon-plain-tag">sudo /etc/init.d/networking stop
+sudo /etc/init.d/networking start</pre><p>NOTA: aveces a se le va la cabeza y no levanta correctamente la conexión hasta que reinicies y no se porqué pasa eso, asi que si reiniciando la conexión sigue sin funcionarte reinicia el portátil así toma la configuración.</p>
+<p>Listo, chau <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Ubuntu: recuperar el usuario sudo / administrador</title>
+		<link>http://ecapy.com/ubuntu-recuperar-el-usuario-sudo-administrador/</link>
+		<comments>http://ecapy.com/ubuntu-recuperar-el-usuario-sudo-administrador/#comments</comments>
+		<pubDate>Wed, 09 Feb 2011 09:00:01 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=789</guid>
+		<description><![CDATA[Algo raro que me paso hace unos días fue que el usuario que crea Ubuntu cuando haces una instalación nueva dejo de ser miembro del grupo de administradores, y por consiguiente dejo de poder ejecutar sudo. Para solucionarlo al final resulto ser mucho mas simple de lo que pensaba: Info: mi usuario se llama &#8220;capy&#8221;&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/ubuntu-recuperar-el-usuario-sudo-administrador/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<div>
+<div id="_mcePaste">Algo raro que me paso hace unos días fue que el usuario que crea Ubuntu cuando haces una instalación nueva dejo de ser miembro del grupo de administradores, y por consiguiente dejo de poder ejecutar sudo.</div>
+<div>Para solucionarlo al final resulto ser mucho mas simple de lo que pensaba:</div>
+<div id="_mcePaste"><strong>Info:</strong> mi usuario se llama &#8220;<em><span style="color: #993300;">capy</span></em>&#8221; en este ejemplo.</div>
+<div id="_mcePaste">
+<ol>
+<li>Pone el disco (CD / DVD) de Ubuntu en la maquina.</li>
+<li>Reiniciala</li>
+<li>Cuando se presente el menú del CD de Ubuntu selecciona <strong>&#8220;Recuperar un sistema dañado&#8221;</strong>:<br />
+<a href="http://ecapy.com/wp-content/uploads/2011/02/snap_recuperar_root.png"><img class="aligncenter size-full wp-image-790" title="snap_recuperar_root" src="http://ecapy.com/wp-content/uploads/2011/02/snap_recuperar_root.png" alt="" width="590" height="505" srcset="http://ecapy.com/wp-content/uploads/2011/02/snap_recuperar_root.png 656w, http://ecapy.com/wp-content/uploads/2011/02/snap_recuperar_root-300x257.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></a></li>
+<li>Como lo anterior <strong>te va a entregar una consola de root</strong>, ya podemos tocar el archivo de grupos</li>
+<li>Ejecuta en consola: <strong><span style="font-family: 'Courier New', Courier, 'Lucida Console', Monaco, 'DejaVu Sans Mono', 'Nimbus Mono L', 'Bitstream Vera Sans Mono'; font-size: 12px; line-height: 18px; white-space: pre-wrap;">nano /etc/group</span></strong></li>
+<li>Busca la linea &#8220;<strong>admin:x:119:</strong>&#8221; (el 119 puede ser otro numero, lo que interesa es que el grupo sea &#8220;admin&#8221;) y agregale tu usuario como se ve acá: &#8220;<strong>admin:x:119:capy</strong>&#8220;</li>
+<li>Guarda los cambios y reinicia.</li>
+</ol>
+</div>
+<div id="_mcePaste">A partir de ahora deberías volver a poder hacer uso de sudo con tu usuario predeterminado.</div>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/ubuntu-recuperar-el-usuario-sudo-administrador/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

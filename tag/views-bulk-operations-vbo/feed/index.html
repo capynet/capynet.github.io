@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Views bulk operations (VBO) &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/views-bulk-operations-vbo/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Drupal 7: Crear nuevas acciones para Views bulk operations (VBO)</title>
+		<link>http://ecapy.com/drupal-7-crear-nuevas-acciones-para-views-bulk-operations-vbo/</link>
+		<pubDate>Thu, 23 May 2013 12:56:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Views bulk operations (VBO)]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2197</guid>
+		<description><![CDATA[VBO se puede alimentar de acciones desde tres lugares distintos: De las acciones del sistema, de las acciones que uno crea con rules (vean http://nodeone.se/da/node/775) y las acciones creadas por módulos de terceros. En este caso vamos a hacer lo tercero. El caso ideal para crear una action propia es cuando necesitas flexibilidad total. En&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-crear-nuevas-acciones-para-views-bulk-operations-vbo/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>VBO se puede alimentar de acciones desde tres lugares distintos: De las acciones del sistema, de las acciones que uno crea con rules (<a href="http://nodeone.se/da/node/775" target="_blank">vean http://nodeone.se/da/node/775</a>) y las acciones creadas por módulos de terceros.</p>
+<p>En este caso vamos a hacer lo tercero.</p>
+<p>El caso ideal para crear una action propia es cuando necesitas flexibilidad total. En el ejemplo que voy a compartir necesitaba que la acción tuviera valores por defecto:<br />
+<img class="size-full wp-image-2210 alignnone" src="http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form.png" alt="vbo custom admin settings form" width="1091" height="772" srcset="http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form.png 1091w, http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form-300x212.png 300w, http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form-768x543.png 768w, http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form-1024x725.png 1024w" sizes="(max-width: 1091px) 100vw, 1091px" /><br />
+Y un formulario para que el usuario pueda escribir algo distinto antes de realizar la acción:<br />
+<img class="size-full wp-image-2211 alignnone" src="http://ecapy.com/wp-content/uploads/2013/05/vbo_user_settings_form.png" alt="vbo custom user settings form" width="763" height="352" srcset="http://ecapy.com/wp-content/uploads/2013/05/vbo_user_settings_form.png 763w, http://ecapy.com/wp-content/uploads/2013/05/vbo_user_settings_form-300x138.png 300w" sizes="(max-width: 763px) 100vw, 763px" /></p>
+<h3>Hagamoslo!</h3>
+<p>El caso de uso es el siguiente: tengo un view con VBO que tiene que poder hacer una solicitudes de información para cada uno de los nodos (productos), pero dando la oportunidad de que el usuario pregunte algo conciso.</p>
+<p>Para esto, la implementación tiene 3 actores bien diferenciados:</p>
+<ol>
+<li>La acción</li>
+<li>El formulario de configuración que exponemos a la hora de configurar la acción en VBO</li>
+<li>El formulario que le mostramos al usuario para que pueda personalizar su solicitud</li>
+</ol>
+<h4>1: La acción:</h4>
+<p>Declarar una nueva action en Drupal es fácil, solo necesitas el <a href="http://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_action_info/7" target="_blank">hook_action_info()</a> y una función que haga de action:</p><pre class="crayon-plain-tag">/**
+ * Implements hook_action_info().
+ */
+function mimodulo_action_info() {
+  $info['mimodulo_send_solinfo_action'] = array(
+    'type' =&gt; 'node',
+    'label' =&gt; t('Enviar solicitudes de información'),
+    'configurable' =&gt; TRUE,
+  );
+  return $info;
+}
+ 
+function mimodulo_send_solinfo_action($node, $context = array()) {
+  _mimodulo_send_solinfo($node, $context['user_data']);
+}
+ 
+/**
+ * Envía una solicitud de informacion por email.
+ */
+function _ecentros_send_solinfo($node, $user_data) {
+//  $user_data['tu_diras'];
+}</pre><p>No voy a entrar en detalles porque pueden leer lo necesario en hook_action_info(). Solo comentar que hemos declarado una nueva acción que solo se puede usar en contenidos de tipo nodo, y que es configurable. Que sea <strong>configurable quiere decir que le vamos a proporcionar un formulario al usuario para que haga algo</strong>. En mi caso el formulario tiene un textarea para que nos diga sobre que quiere informarse.</p>
+<h4>2: El formulario para el administrador:</h4>
+<p></p><pre class="crayon-plain-tag">/**
+ * Implememts HOOK_ACTION_views_bulk_operations_form
+ */
+function mimodulo_send_solinfo_action_views_bulk_operations_form($settings, $entityType, $settings_dom_id) {
+ 
+  //establecemos los valores por defecto
+  $settings += array(
+    'tu_diras' =&gt; "",
+  );
+ 
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres puedes proveer un texto por defecto para el usuario'),
+    '#default_value' =&gt; $settings['tu_diras'],
+  );
+ 
+  return $form;
+}</pre><p>VBO nos proporciona el &#8220;<strong>HOOK_ACTION</strong>&#8220;_views_bulk_operations_form las comillas son porque no es estrictamente un hook tradicional, pero vamos, que usa el mismo patrón, solo que en lugar de usar el nombre del modulo como &#8220;HOOK&#8221;, usamos el nombre de la función de la acción. En este ejemplo el nombre de la acción es &#8220;<em>mimodulo_send_solinfo_action</em>&#8220;.</p>
+<p>El resultado de este hook lo podemos ver cuando añadimos nuestra acción a las que va a tener un view (la primer imagen de este post).</p>
+<h4>3: El formulario para el usuario:</h4>
+<p></p><pre class="crayon-plain-tag">/** * Implememts HOOK_ACTION_form */
+function mimodulo_send_solinfo_action_form($context) {
+  $context['settings'] += array(
+    'tu_diras' =&gt; "",
+  );
+
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres saber algo en particular por favor indicanoslo aquí'),
+    '#default_value' =&gt; $context['settings']['tu_diras'],
+  );
+
+  return $form;
+}
+
+/**
+ * Implememts HOOK_ACTION_validate
+ */
+function mimodulo_send_solinfo_action_validate($form, $form_state) {
+  //No hace falta validar
+}
+
+/**
+ * Implememts HOOK_ACTION_submit
+ */
+function mimodulo_send_solinfo_action_submit($form, $form_state) {
+  //Devolvemos un array formateado como a nosotros mas nos guste.
+  //Este array se va a enviar a la action dentro de $context['user_data']
+  return array(
+    'user_data' =&gt; array(
+      'tu_diras' =&gt; $form_state['values']['tu_diras']
+    ),
+  );
+}</pre><p>Como ya comenté antes, al declarar una acción, si esta lleva configuración (&#8216;configurable&#8217; =&gt; TRUE), tenemos que proporcionar un formulario. Para implementarlo es la mar de simple, <strong>solo tienes que tratarlo como un FAPI</strong> normal y tenes que tener el cuenta la forma en la que nombras el formulario <em>HOOK_ACTION_form</em>, su validacion <em>HOOK_ACTION_validate</em> y el submit <em>HOOK_ACTION_submit</em>.</p>
+<p>En la declaración del formulario podemos ver que tenemos un parámetro &#8220;<em>$context</em>&#8220;. Bueno este parámetro contiene entre otras cosas, la configuración que hemos proporcionado en el momento que añadimos la action al view. Y la estamos usando para establecerle al usuario un valor por defecto.</p>
+<p>Y ya está, tenemos una action que funciona.</p>
+<h3>Ah y acá está todo junto</h3>
+<p></p><pre class="crayon-plain-tag">/** * Implements hook_action_info(). */
+function mimodulo_action_info() {
+  $info['mimodulo_send_solinfo_action'] = array(
+    'type' =&gt; 'node',
+    'label' =&gt; t('Enviar solicitudes de información'),
+    'configurable' =&gt; TRUE,
+  );
+  return $info;
+}
+
+function mimodulo_send_solinfo_action($node, $context = array()) {
+  _mimodulo_send_solinfo($node, $context['user_data']);
+}
+
+/**
+ * Envía una solicitud de informacion por email.
+ */
+function _ecentros_send_solinfo($node, $user_data) {
+//  $user_data['tu_diras'];
+}
+
+/**
+ * Implememts HOOK_ACTION_form
+ */
+function mimodulo_send_solinfo_action_form($context) {
+
+  $context['settings'] += array(
+    'tu_diras' =&gt; "",
+  );
+
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres saber algo en particular por favor indicanoslo aquí'),
+    '#default_value' =&gt; $context['settings']['tu_diras'],
+  );
+
+  return $form;
+}
+
+/**
+ * Implememts HOOK_ACTION_validate
+ */
+function mimodulo_send_solinfo_action_validate($form, $form_state) {
+  //No hace falta validar
+}
+
+/**
+ * Implememts HOOK_ACTION_submit
+ */
+function mimodulo_send_solinfo_action_submit($form, $form_state) {
+  //Devolvemos un array formateado como a nosotros mas nos guste.
+  //Este array se va a enviar a la action dentro de $context['user_data']
+  return array(
+    'user_data' =&gt; array(
+      'tu_diras' =&gt; $form_state['values']['tu_diras']
+    ),
+  );
+}
+
+/**
+ * Implememts HOOK_ACTION_views_bulk_operations_form
+ */
+function mimodulo_send_solinfo_action_views_bulk_operations_form($settings, $entityType, $settings_dom_id) {
+
+  //establecemos los valores por defecto
+  $settings += array(
+    'tu_diras' =&gt; "",
+  );
+
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres puedes proveer un texto por defecto para el usuario'),
+    '#default_value' =&gt; $settings['tu_diras'],
+  );
+
+  return $form;
+}</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

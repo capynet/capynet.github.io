@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>PHPTemplate &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/phptemplate/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Como ver las variables disponibles en una plantilla .tpl.php (PHPTemplate)</title>
+		<link>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/</link>
+		<comments>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/#comments</comments>
+		<pubDate>Mon, 30 Aug 2010 23:11:43 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[PHPTemplate]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=575</guid>
+		<description><![CDATA[Otro de esos TIP que nos vienen sorprendente mente bien :). Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo()&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Otro de esos TIP que nos vienen sorprendente mente bien :).</p>
+<p>Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo() seguro que ahi está, pero hasta que no lo haces no podes saber siquiera que existe.</p>
+<p>Bueno basta de intro, vamos a un ejemplo rapido y claro:</p>
+<p>Si pones esta función en la plantilla que querés investigar, vas a poder ver un array (<strong>$variablesDisponibles</strong> para este ejemplo) de los nombres de todas las variables de las que dispone (y de sus contenidos también):</p><pre class="crayon-plain-tag">$variablesDisponibles = get_defined_vars();</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

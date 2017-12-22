@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Crear múltiples instancias de un mismo formulario en Drupal 6</title>
+	<atom:link href="http://ecapy.com/multiples-instancias-formulario-en-drupal-6/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Robert</title>
+		<link>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/#comment-208</link>
+		<dc:creator><![CDATA[Robert]]></dc:creator>
+		<pubDate>Sat, 25 Sep 2010 21:34:41 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=534#comment-208</guid>
+		<description><![CDATA[Hola Capy, muchas gracias por responderme tan rápido. 
+
+He estado estudiando la solución que me propones y quizás se me escapa algo. Creando un formulario FAPI normal, con sus correspondientes campos y luego salvandolo como un nodo; funciona genial.
+
+El problema está en que, si tengo un tipo de contenido diferente, con varios campos (CCK), ¿debería crear el formulario con los mismos campos y repetir el contenido? ¿Crees que se podría capturar los campos del tipo de contenido directamente, con todas sus caracteríticas e incorporarlo en el formulario FAPI?
+
+Estoy hecho un lío... otra opción quizás podría ser experimentar solo con el hook_forms, pero no acabo de comprender cuales son los parámetros de retorno para alterar los ids de forma aislada.
+
+Qué difícil es a veces Drupal pero a la vez te obliga a ir mejorando. Muchísimas gracias por tu ayuda; los otros artículos publicados en el blog son muy buenos.
+
+Un saludo,
+Robert]]></description>
+		<content:encoded><![CDATA[<p>Hola Capy, muchas gracias por responderme tan rápido. </p>
+<p>He estado estudiando la solución que me propones y quizás se me escapa algo. Creando un formulario FAPI normal, con sus correspondientes campos y luego salvandolo como un nodo; funciona genial.</p>
+<p>El problema está en que, si tengo un tipo de contenido diferente, con varios campos (CCK), ¿debería crear el formulario con los mismos campos y repetir el contenido? ¿Crees que se podría capturar los campos del tipo de contenido directamente, con todas sus caracteríticas e incorporarlo en el formulario FAPI?</p>
+<p>Estoy hecho un lío&#8230; otra opción quizás podría ser experimentar solo con el hook_forms, pero no acabo de comprender cuales son los parámetros de retorno para alterar los ids de forma aislada.</p>
+<p>Qué difícil es a veces Drupal pero a la vez te obliga a ir mejorando. Muchísimas gracias por tu ayuda; los otros artículos publicados en el blog son muy buenos.</p>
+<p>Un saludo,<br />
+Robert</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/#comment-207</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Fri, 24 Sep 2010 00:34:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=534#comment-207</guid>
+		<description><![CDATA[Robert como estas. Es complicado de hacer lo que me decis... ya tuve esa experiencia y me decante por hacer un formulario FAPI de toda la vida y en el submit de ese formulario recojo toda la información en un objeto del tipo $nodo = stdClass(). Después hago un node_save($nodo) y listo.
+
+Lo anterior combinado con este articulo deberia resolver tu problema.]]></description>
+		<content:encoded><![CDATA[<p>Robert como estas. Es complicado de hacer lo que me decis&#8230; ya tuve esa experiencia y me decante por hacer un formulario FAPI de toda la vida y en el submit de ese formulario recojo toda la información en un objeto del tipo $nodo = stdClass(). Después hago un node_save($nodo) y listo.</p>
+<p>Lo anterior combinado con este articulo deberia resolver tu problema.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Robert</title>
+		<link>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/#comment-206</link>
+		<dc:creator><![CDATA[Robert]]></dc:creator>
+		<pubDate>Tue, 21 Sep 2010 19:31:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=534#comment-206</guid>
+		<description><![CDATA[Hola Capy, enhorabuena por el artículo, sobre todo la implementación del hook_forms.
+
+He estado probando el módulo y me ha surgido una cuestión la cual no se si es posible realizar. Sería estupendo que me pudiera guiar en como enfocar el tema ya que, Drupal es muy bueno pero a veces se complica mucho para los que no tenemos tantos conocimientos.
+
+El módulo genera los 5 formularios creados mediante la FAPI de Drupal a la perfección. Sin embargo, ¿sería posible sustituirlos por los formularios de creación de nodos?, es decir, el típico &quot;node_add_form&quot;. He probado en reemplazar la función que crea los $forms pero no consigo dar con la tecla. 
+También he conseguido mostrarlos en pantalla pero todos ellos aparecen con el mismo ID lo cual no funcionan las validaciones, etc.
+
+Agradecería mucho su ayuda... Por lo demás, enhorabuena por el blog.
+
+Robert]]></description>
+		<content:encoded><![CDATA[<p>Hola Capy, enhorabuena por el artículo, sobre todo la implementación del hook_forms.</p>
+<p>He estado probando el módulo y me ha surgido una cuestión la cual no se si es posible realizar. Sería estupendo que me pudiera guiar en como enfocar el tema ya que, Drupal es muy bueno pero a veces se complica mucho para los que no tenemos tantos conocimientos.</p>
+<p>El módulo genera los 5 formularios creados mediante la FAPI de Drupal a la perfección. Sin embargo, ¿sería posible sustituirlos por los formularios de creación de nodos?, es decir, el típico &#8220;node_add_form&#8221;. He probado en reemplazar la función que crea los $forms pero no consigo dar con la tecla.<br />
+También he conseguido mostrarlos en pantalla pero todos ellos aparecen con el mismo ID lo cual no funcionan las validaciones, etc.</p>
+<p>Agradecería mucho su ayuda&#8230; Por lo demás, enhorabuena por el blog.</p>
+<p>Robert</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

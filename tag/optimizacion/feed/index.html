@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Optimización &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/optimizacion/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Habilitar el opcache que viene con php ( &gt;= 5.5 ) en xampp</title>
+		<link>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/</link>
+		<comments>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/#comments</comments>
+		<pubDate>Sun, 08 Dec 2013 02:59:18 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2583</guid>
+		<description><![CDATA[Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS. Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este) [crayon-58443790b775b157719913/] Y listo, tenemos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/habilitar-el-opcache-que-viene-con-php/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS.</p>
+<p>Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este)</p><pre class="crayon-plain-tag">[Opcache]
+; poné el path real donde esté alojado php_opcache.dll
+zend_extension = "C:xamppphpextphp_opcache.dll"
+opcache.memory_consumption = 500
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=60
+opcache.fast_shutdown=1
+opcache.enable_cli=1</pre><p>Y listo, tenemos un motivo menos de sufrimiento a la hora de programar en este SO.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Mejorando el rendimiento en Drupal 7: Memcached y Entity cache</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/</link>
+		<comments>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comments</comments>
+		<pubDate>Thu, 07 Mar 2013 10:51:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2036</guid>
+		<description><![CDATA[En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7. Memcached para los que no lo conozcan, es un data cache basado en RAM. Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7.</p>
+<p>Memcached para los que no lo conozcan, es un <a href="http://es.wikipedia.org/wiki/Memcached" target="_blank">data cache basado en RAM</a>.</p>
+<p>Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para cachear utiliza la base de datos como almacén para dicho cache, y esto es costoso. Cada vez que guarda algo en cache o lo pide, estamos haciendo una query a la DB, y aunque toda tu DB este cacheada (mysql tiene su propio cache) Drupal siempre va a tener un importante overhead solo por tener que pedir a la DB este cache.</p>
+<p>Técnicamente hablando el tema es así: Estés o no logueado, Drupal usa <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_get/7" target="_blank">cache_get()</a> y <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_set/7" target="_blank">cache_set()</a>. Luego, estas funciones delegan la tarea de cacheo a la clase que se encargue en ese momento de almacenar y devolver los datos cacheados. Una instalación estándar trae una clase llamada &#8220;<a href="http://api.drupal.org/api/drupal/includes!cache.inc/class/DrupalDatabaseCache/7" target="_blank">DrupalDatabaseCache</a>&#8221; que usa como backend storage la propia DB de Drupal. El módulo <a href="http://drupal.org/project/memcache" target="_blank">Memcache API</a> simplemente proporciona su propia clase (MemCacheDrupal) que hace lo mismo pero mandando el cache a Memcache.</p>
+<p>Memcache se presenta como una muy buena solución a este escollo ya que fue diseñado para ser usado como cache, ofreciendo un overhead mínimo y una velocidad de respuesta muy superior.</p>
+<p>Bueno, vamos al lío.</p>
+<h4>Maquina de pruebas:</h4>
+<ul>
+<li>Hardware:
+<ul>
+<li>core2duo e7400@3.5GHZ</li>
+<li>8gb de ram DDR3@1333MHZ</li>
+<li>Disco SSD OCZ Vertex 2 de 60gb</li>
+</ul>
+</li>
+<li>Software:
+<ul>
+<li>Ubuntu 12.10 de 64 bits</li>
+<li>PHP 5.4.6</li>
+<li>MySQL 5.5.29</li>
+<li>Apache 2.2.22</li>
+<li>APC 3.1.13</li>
+<li>memcached 1.4.14</li>
+<li><a href="http://pecl.php.net/package/memcached" target="_blank">Cliente PHP de Memcache: memcached 2.0.1</a></li>
+<li><a href="http://drupal.org/project/memcache" target="_blank">Modulo Memcache API and Integration 7.x-1.0</a></li>
+<li><a href="http://drupal.org/project/entitycache" target="_blank">Modulo Entity cache</a></li>
+</ul>
+</li>
+</ul>
+<p>Para hacer las pruebas he usado la instalación de Drupal &#8220;<a title="Un mal día para este Drupal" href="http://ecapy.com/un-mal-dia-para-este-drupal/" target="_blank">Un mal día para este Drupal</a>&#8220;.<br />
+<strong>Las pruebas las hice sobre usuarios anónimos, logueados y el propio admin</strong> que es el que mas suele sufrir en terminos de performance porque ejecuta código extra por los privilegios que conlleva.</p>
+<h3>Usuarios anónimos:</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 199.42 ms.</li>
+<li>Page execution time was 4791.87 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1226 queries in 71.77 ms.</li>
+<li>Page execution time was 3892.39 ms.</li>
+<li>PHP peak=57 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 398 queries in 39.88 ms.</li>
+<li>Page execution time was 3450.76 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 167.15 ms.</li>
+<li>Page execution time was 4037.62 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1186 queries in 66 ms.</li>
+<li>Page execution time was 3927.52 ms.</li>
+<li>PHP peak=57.75 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 377 queries in 30.31 ms.</li>
+<li>Page execution time was 3534.07 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios logueados</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2324 queries in 162.27 ms.</li>
+<li>Page execution time was 4033.2 ms.</li>
+<li>PHP peak=58.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 73.47 ms.</li>
+<li>Page execution time was 4028.68 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 396 queries in 26.19 ms.</li>
+<li>Page execution time was 3530.29 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2262 queries in 182.59 ms.</li>
+<li>Page execution time was 4286.79 ms.</li>
+<li>PHP peak=58 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 56.45 ms.</li>
+<li>Page execution time was 3716.37 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 379 queries in 27.97 ms.</li>
+<li>Page execution time was 4072.24 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios con rol &#8220;administrator&#8221;</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3106 queries in 231.33 ms.</li>
+<li>Page execution time was 5588.66 ms.</li>
+<li>PHP peak=66.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1812 queries in 89.79 ms.</li>
+<li>Page execution time was 4701.39 ms.</li>
+<li>PHP peak=64.5 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 68.43 ms.</li>
+<li>Page execution time was 4563.24 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3104 queries in 219.49 ms.</li>
+<li>Page execution time was 5510.96 ms.</li>
+<li>PHP peak=67 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1816 queries in 107.06 ms.</li>
+<li>Page execution time was 4931.99 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 71.71 ms.</li>
+<li>Page execution time was 4641.69 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h3>Resumiendo:</h3>
+<p><img class="size-full wp-image-2062 alignnone" src="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png" alt="Gráfica comparativa de Memcache y Entity cache en Drupal" width="874" height="591" srcset="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png 874w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-300x203.png 300w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-768x519.png 768w" sizes="(max-width: 874px) 100vw, 874px" /></p>
+<p>Como podemos ver, <strong>cuando usamos Memcache, las queries a la db bajan un nada despreciable 50%</strong>. Estas query que ya no están, son &#8220;cache&#8221; que pasan a ser gestionadas por Memcache, quien como ya comentamos, es mucho mas eficiente a la hora de servir contenidos cacheados (insisto que está diseñado para ello, ergo es muy difícil que mysql lo haga mejor).</p>
+<p>Pero para mas inri, <strong>al activar Entity cache, automágicamente las query a la DB bajan un 60% mas</strong> sobre lo que ya había conseguido Memcache. Esto es gracias a que este modulo implementa una capa de cache a todas las entidades del core de Drupal mas todas las entidades creadas por terceros que implementen la api en entity cache para dejarse cachear.</p>
+<h4>Conclusiones:</h4>
+<ul>
+<li>Entre Memcache y entity cache <strong>hemos logrado una reducción media del 85%</strong> de accesos a la DB (awesomeeeee!).</li>
+<li>El beneficio mas evidente en el uso de Memcache y entity cache juntos es el de una reducción drástica en las<br />
+consultas que se hacen a la DB, lo que viene especialmente bien ya que cuando una pagina en Drupal comienza a<br />
+recibir muchas visitas, la db es lo primero que sufre.</li>
+<li>Luego de estas pruebas podemos concluir que si usar Memcache es una buena idea, combinarlo con entity cache es<br />
+una excelente idea.</li>
+<li>Memcache y entity cache funcionan tanto en usuarios logueados como anónimos.</li>
+<li>Es evidente que mientras mas cosas cacheemos en Drupal, mejor va a funcionar esta solución. En especial me<br />
+refiero a <a href="http://drupal.org/project/views" target="_blank">views</a>, y <a href="http://drupal.org/project/panels" target="_blank">panels</a>. Usen el cache que estos módulos tienen, para que Memcache pueda gestionarlos. <strong>En una<br />
+prueba rapida que hice conseguí rebajar aun mas la cantidad de queries a solo 95 contra las 377 que ya<br />
+lográbamos usando Memcache y entity cache</strong>.</li>
+</ul>
+<p>Happy performance!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Porque usar Drupal.behaviors en lugar de $(document).ready();</title>
+		<link>http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/</link>
+		<comments>http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/#comments</comments>
+		<pubDate>Mon, 07 Mar 2011 21:15:27 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Optimización]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=824</guid>
+		<description><![CDATA[Durante mucho tiempo estuve usando $(document).ready(); para poner mi js en Drupal, y funcionaba la mar de bien. Esto me permitía ejecutar javascript inmediatamente después que el DOM estuviera cargado evitando así errores de referencias a objetos que todavía no existieran al querer manipularlos. Ahora bien, hay un problema que vamos a encontrar por medio de un ejemplo simple: Si tuviéramos un listado de nodos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Durante mucho tiempo estuve usando<strong> $(document).ready();</strong> para poner mi js en Drupal, y funcionaba la mar de bien. Esto me permitía ejecutar javascript inmediatamente después que el <strong>DOM </strong>estuviera cargado evitando así errores de referencias a objetos que todavía no existieran al querer manipularlos.</p>
+<p>Ahora bien, hay un problema que vamos a encontrar por medio de un ejemplo simple:</p>
+<p>Si tuviéramos un listado de nodos y a ese listado hiciéramos que al pinchar sobre sus enlaces hiciera un alert de su atributo <span style="color: #993300;">&#8220;title&#8221;</span> usando jQuery:</p><pre class="crayon-plain-tag">jQuery(document).ready(function($) {
+    $("#listado_de_nodos a").click(function(e) {
+        alert($(this).attr("title"));
+    });
+});</pre><p>¿Qué pasa si por medio de AJAX se agregaran nuevos nodos? te lo digo, que no reaccionarían al hacer click sobre ellos, y es por que el método <strong>.click()</strong> de jQuery se ejecuta una sola vez en busca de elementos que macheen con su criterio y una vez finalizado ya está, no hace mas. Es un comportamiento de lo mas entendible ya que imaginemos que estuviera escaneando constantemente por nuevos elementos ese selector mas los otros 50 que estemos usando para hacer mas cosas&#8230;. Google Chrome lo soportaría sin apenas darle carga al procesador y RAM, pero piensen en la basura de <a title="ie te odio" href="http://www.ecapy.com/tag/ie-te-odio/" target="_blank">IE&#8230;..</a></p>
+<p>Perdonen que me vaya por las ramas, como les decía, dado el problema que se planteo para el listado de nodos que di como ejemplo, <strong>se implemento una solucion</strong> (bueno cubre mas problemas pero este es de los mas comunes) la solución fue usar al objeto <strong>Drupal.behaviors</strong> a modo de controlador. <strong>Drupal.behaviors</strong> relanza todas las funciones que almacena por cada vez que se lance una petición AJAX, dándonos la oportunidad de re procesar cosas. Así pues en el ejemplo anterior lo podemos poner dentro de un <strong>behavior</strong> para poder aplicar nuestra funcionalidad incluso a los nuevos elementos provenientes de la petición:</p><pre class="crayon-plain-tag">Drupal.behaviors.alertarEnlaces = function(context) {
+    $("#listado_de_nodos a").click(function(e) {
+        alert($(this).attr("title"));
+    });
+}</pre><p>Como ven lo único que hay que reemplazar en nuestros actuales ficheros de javascript es<strong> jQuery(document).ready(function($) {})</strong> por <strong>Drupal.behaviors.alertarEnlaces = function(context) {}</strong> y no se preocupen por el hecho de que su código este ahora asignado dentro de una función(&#8220;Drupal.behaviors.alertarEnlace() &#8220;), porque esta se ejecuta solita, y veanlo incluso como una ventaja, pueden invocarla ustedes mismos cuando quieran ademas.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+	</channel>
+</rss>

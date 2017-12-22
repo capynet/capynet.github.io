@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Como hacer formularios multistep (wizard) con Ctools</title>
+	<atom:link href="http://ecapy.com/formularios-multistep-con-ctools/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/formularios-multistep-con-ctools/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/formularios-multistep-con-ctools/#comment-583</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 28 Aug 2013 00:23:38 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1514#comment-583</guid>
+		<description><![CDATA[Anda, tenes razón.  una solución podría ser setear una cookie con un valor único para cada usuario y usar este valor para armar el $object_id:
+
+&lt;pre class=&quot;decode:1 lang:php &quot; &gt;
+&lt;?
+if (!isset($_COOKIE[&quot;object_id&quot;])) {
+  $object_id = &quot;ctools_multistep_de_ejemplo_&quot; . md5(rand(0, 99999999999));
+  setcookie(&quot;object_id&quot;, $object_id, time() + 3600, &quot;/&quot;, &quot;example.com&quot;);
+}
+else {
+  $object_id = $_COOKIE[&quot;object_id&quot;];
+}
+&lt;/pre&gt;]]></description>
+		<content:encoded><![CDATA[<p>Anda, tenes razón.  una solución podría ser setear una cookie con un valor único para cada usuario y usar este valor para armar el $object_id:</p>
+<p></p>
+		<div id="crayon-5844387c313e2900465512" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt;?
+if (!isset($_COOKIE["object_id"])) {
+  $object_id = "ctools_multistep_de_ejemplo_" . md5(rand(0, 99999999999));
+  setcookie("object_id", $object_id, time() + 3600, "/", "example.com");
+}
+else {
+  $object_id = $_COOKIE["object_id"];
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844387c313e2900465512-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387c313e2900465512-2">2</div><div class="crayon-num" data-line="crayon-5844387c313e2900465512-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387c313e2900465512-4">4</div><div class="crayon-num" data-line="crayon-5844387c313e2900465512-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387c313e2900465512-6">6</div><div class="crayon-num" data-line="crayon-5844387c313e2900465512-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387c313e2900465512-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844387c313e2900465512-1"><span class="crayon-ta">&lt;?</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387c313e2900465512-2"><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-k ">isset</span><span class="crayon-sy">(</span><span class="crayon-v">$_COOKIE</span><span class="crayon-sy">[</span><span class="crayon-s">"object_id"</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387c313e2900465512-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$object_id</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"ctools_multistep_de_ejemplo_"</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-e">md5</span><span class="crayon-sy">(</span><span class="crayon-e">rand</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">99999999999</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387c313e2900465512-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">setcookie</span><span class="crayon-sy">(</span><span class="crayon-s">"object_id"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$object_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">time</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-cn">3600</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"/"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"example.com"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387c313e2900465512-5"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387c313e2900465512-6"><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387c313e2900465512-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$object_id</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$_COOKIE</span><span class="crayon-sy">[</span><span class="crayon-s">"object_id"</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387c313e2900465512-8"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Drupalist</title>
+		<link>http://ecapy.com/formularios-multistep-con-ctools/#comment-582</link>
+		<dc:creator><![CDATA[Drupalist]]></dc:creator>
+		<pubDate>Fri, 23 Aug 2013 20:50:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1514#comment-582</guid>
+		<description><![CDATA[¿Qué ocurre con la persistencia de datos en la caché cuando 2 usuarios anónimos simultáneos intentan cubrir el formulario?. Según el código superior, en ambos casos se asignaría el mismo object_id al objeto que guarda los datos del formulario en la caché para ambos usuarios, con lo cuál los datos almacenados serían incorrectos para ambos usuarios, ¿no?. ¿Qué mecanismo proporciona ctools para gestionar estos casos?.]]></description>
+		<content:encoded><![CDATA[<p>¿Qué ocurre con la persistencia de datos en la caché cuando 2 usuarios anónimos simultáneos intentan cubrir el formulario?. Según el código superior, en ambos casos se asignaría el mismo object_id al objeto que guarda los datos del formulario en la caché para ambos usuarios, con lo cuál los datos almacenados serían incorrectos para ambos usuarios, ¿no?. ¿Qué mecanismo proporciona ctools para gestionar estos casos?.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

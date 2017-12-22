@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Linux: Configurar SciTE de forma permanente</title>
+	<atom:link href="http://ecapy.com/configurar-scite-de-forma-permanente/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/configurar-scite-de-forma-permanente/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Pablo</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-695</link>
+		<dc:creator><![CDATA[Pablo]]></dc:creator>
+		<pubDate>Thu, 19 Nov 2015 13:28:11 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-695</guid>
+		<description><![CDATA[# Dejo esta colaboración por si sirviese de algo,
+# Configurar SciTE para que al hacer doble clic sobre los archivos, se abran en la ventana existente en vez de en una nueva
+--------------------
+# Buscar si existe el archivo y si contiene la opción a modificar
+grep -i &quot;check.if.already.open&quot; /usr/share/scite/SciTEGlobal.properties
+
+# Editar el fichero
+sudo vi /usr/share/scite/SciTEGlobal.properties
+
+# Buscar el patrón tecleando la barra &quot;/&quot; y pegando despúes el patrón de la opción para situarnos sobre ella. 
+/check.if.already.open
+
+# Descomentar la opción. Borrar la almohadilla pulsando &quot;x&quot; cuando el cursor esté sobre esta
+
+# Si está a 0 deberá ponerse a 1
+#check.if.already.open=1  --&#062; check.if.already.open=1
+
+# Para guardar. Pulsar Esc y después escribir 
+	
+:wq]]></description>
+		<content:encoded><![CDATA[<p># Dejo esta colaboración por si sirviese de algo,<br />
+# Configurar SciTE para que al hacer doble clic sobre los archivos, se abran en la ventana existente en vez de en una nueva<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+# Buscar si existe el archivo y si contiene la opción a modificar<br />
+grep -i &#8220;check.if.already.open&#8221; /usr/share/scite/SciTEGlobal.properties</p>
+<p># Editar el fichero<br />
+sudo vi /usr/share/scite/SciTEGlobal.properties</p>
+<p># Buscar el patrón tecleando la barra &#8220;/&#8221; y pegando despúes el patrón de la opción para situarnos sobre ella.<br />
+/check.if.already.open</p>
+<p># Descomentar la opción. Borrar la almohadilla pulsando &#8220;x&#8221; cuando el cursor esté sobre esta</p>
+<p># Si está a 0 deberá ponerse a 1<br />
+#check.if.already.open=1  &#8211;&gt; check.if.already.open=1</p>
+<p># Para guardar. Pulsar Esc y después escribir </p>
+<p>:wq</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-694</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 10 Feb 2015 10:32:01 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-694</guid>
+		<description><![CDATA[Huy perdona que no he revisado el blog en una semana. ya no uso scite, ahora uso sublime text que es muuuucho mejor.
+
+Salu2!]]></description>
+		<content:encoded><![CDATA[<p>Huy perdona que no he revisado el blog en una semana. ya no uso scite, ahora uso sublime text que es muuuucho mejor.</p>
+<p>Salu2!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: bartolo quero</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-693</link>
+		<dc:creator><![CDATA[bartolo quero]]></dc:creator>
+		<pubDate>Sun, 08 Feb 2015 17:12:07 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-693</guid>
+		<description><![CDATA[nada, yo las veo pero cuando pulso publicar, lo publica sin tabuladores.....]]></description>
+		<content:encoded><![CDATA[<p>nada, yo las veo pero cuando pulso publicar, lo publica sin tabuladores&#8230;..</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: bartolo quero</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-692</link>
+		<dc:creator><![CDATA[bartolo quero]]></dc:creator>
+		<pubDate>Sun, 08 Feb 2015 17:11:21 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-692</guid>
+		<description><![CDATA[Veo que el formulario no ha respetado las identaciones (espacios o tabuladores) que yo tenía..
+vuelvo a copiarlo a ver si las coge:
+
+Añadir a SciTEUser.properties (archivo de opciones de usuario):
+
+command.name.12.*=InsertaFechaHora
+command.12.*=InsertaFechaHora
+command.subsystem.12.*=3
+command.mode.12.*=savebefore:no
+command.shortcut.12.*=Enter
+
+Añadir a SciTEStartup.lua (script de inicio Lua):
+
+function InsertaFechaHora()
+	local Linea1, esLog, esLogMayus
+	Linea1 = editor:GetLine(0)
+	esLog = string.sub(Linea1,1,4)
+	esLogMayus = string.upper (esLog)
+	if esLogMayus == &quot;.LOG&quot; then
+		editor:AddText(&quot;nn--------------------n&quot;)
+		editor:AddText(os.date(&quot;%d.%b.%Y__%Hh:%Mm&quot;))
+		editor:AddText(&quot;n--------------------n&quot;)
+	end
+end]]></description>
+		<content:encoded><![CDATA[<p>Veo que el formulario no ha respetado las identaciones (espacios o tabuladores) que yo tenía..<br />
+vuelvo a copiarlo a ver si las coge:</p>
+<p>Añadir a SciTEUser.properties (archivo de opciones de usuario):</p>
+<p>command.name.12.*=InsertaFechaHora<br />
+command.12.*=InsertaFechaHora<br />
+command.subsystem.12.*=3<br />
+command.mode.12.*=savebefore:no<br />
+command.shortcut.12.*=Enter</p>
+<p>Añadir a SciTEStartup.lua (script de inicio Lua):</p>
+<p>function InsertaFechaHora()<br />
+	local Linea1, esLog, esLogMayus<br />
+	Linea1 = editor:GetLine(0)<br />
+	esLog = string.sub(Linea1,1,4)<br />
+	esLogMayus = string.upper (esLog)<br />
+	if esLogMayus == &#8220;.LOG&#8221; then<br />
+		editor:AddText(&#8220;nn&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;n&#8221;)<br />
+		editor:AddText(os.date(&#8220;%d.%b.%Y__%Hh:%Mm&#8221;))<br />
+		editor:AddText(&#8220;n&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;n&#8221;)<br />
+	end<br />
+end</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: bartolo quero</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-691</link>
+		<dc:creator><![CDATA[bartolo quero]]></dc:creator>
+		<pubDate>Sun, 08 Feb 2015 17:08:09 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-691</guid>
+		<description><![CDATA[Lo conseguí por mí mismo!:
+
+Emula el modo .LOG del notepad de windows en SciTE (probado en linux)
+
+Añadir a SciTEUser.properties (archivo de opciones de usuario):
+
+command.name.12.*=InsertaFechaHora
+command.12.*=InsertaFechaHora
+command.subsystem.12.*=3
+command.mode.12.*=savebefore:no
+command.shortcut.12.*=Enter
+
+Añadir a SciTEStartup.lua (script de inicio Lua):
+
+function InsertaFechaHora()
+   local Linea1, esLog, esLogMayus
+   Linea1 = editor:GetLine(0)
+   esLog = string.sub(Linea1,1,4)
+   esLogMayus = string.upper (esLog)
+   if esLogMayus == &quot;.LOG&quot; then
+          editor:AddText(&quot;nn--------------------n&quot;)
+	  editor:AddText(os.date(&quot;%d.%b.%Y__%Hh:%Mm&quot;))
+	  editor:AddText(&quot;n--------------------n&quot;)
+   end
+end]]></description>
+		<content:encoded><![CDATA[<p>Lo conseguí por mí mismo!:</p>
+<p>Emula el modo .LOG del notepad de windows en SciTE (probado en linux)</p>
+<p>Añadir a SciTEUser.properties (archivo de opciones de usuario):</p>
+<p>command.name.12.*=InsertaFechaHora<br />
+command.12.*=InsertaFechaHora<br />
+command.subsystem.12.*=3<br />
+command.mode.12.*=savebefore:no<br />
+command.shortcut.12.*=Enter</p>
+<p>Añadir a SciTEStartup.lua (script de inicio Lua):</p>
+<p>function InsertaFechaHora()<br />
+   local Linea1, esLog, esLogMayus<br />
+   Linea1 = editor:GetLine(0)<br />
+   esLog = string.sub(Linea1,1,4)<br />
+   esLogMayus = string.upper (esLog)<br />
+   if esLogMayus == &#8220;.LOG&#8221; then<br />
+          editor:AddText(&#8220;nn&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;n&#8221;)<br />
+	  editor:AddText(os.date(&#8220;%d.%b.%Y__%Hh:%Mm&#8221;))<br />
+	  editor:AddText(&#8220;n&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;n&#8221;)<br />
+   end<br />
+end</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: bartolo quero</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-690</link>
+		<dc:creator><![CDATA[bartolo quero]]></dc:creator>
+		<pubDate>Sun, 08 Feb 2015 13:44:07 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-690</guid>
+		<description><![CDATA[Hola, ¿cómo se puede hacer que scite trabaje en modo &quot;.LOG&quot; similar al notepad de windows?
+es decir, al abrir un fichero que comienza por .LOG inserta automáticamente la fecha y la hora con cada ENTER que se pulse...
+gracias...]]></description>
+		<content:encoded><![CDATA[<p>Hola, ¿cómo se puede hacer que scite trabaje en modo &#8220;.LOG&#8221; similar al notepad de windows?<br />
+es decir, al abrir un fichero que comienza por .LOG inserta automáticamente la fecha y la hora con cada ENTER que se pulse&#8230;<br />
+gracias&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Alejandro</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-689</link>
+		<dc:creator><![CDATA[Alejandro]]></dc:creator>
+		<pubDate>Wed, 05 Nov 2014 02:47:21 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-689</guid>
+		<description><![CDATA[¡Excelente! hace mucho que buscaba la forma de hacer que mis cambios en scite fuesen permanentes y recién pude hacerlo gracias a vos.
+Muchas gracias de nuevo y sigue así.
+¡Saludos!]]></description>
+		<content:encoded><![CDATA[<p>¡Excelente! hace mucho que buscaba la forma de hacer que mis cambios en scite fuesen permanentes y recién pude hacerlo gracias a vos.<br />
+Muchas gracias de nuevo y sigue así.<br />
+¡Saludos!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Links d&#8217;interés #edutictac (weekly) - Planeta EduTicTac</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/#comment-688</link>
+		<dc:creator><![CDATA[Links d&#8217;interés #edutictac (weekly) - Planeta EduTicTac]]></dc:creator>
+		<pubDate>Sun, 27 Oct 2013 00:48:33 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2393#comment-688</guid>
+		<description><![CDATA[[&#8230;] Linux: Configurar SciTE de forma permanente &#124; Capy [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Linux: Configurar SciTE de forma permanente | Capy [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

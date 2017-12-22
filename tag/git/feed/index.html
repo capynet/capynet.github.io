@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>git &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/git/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Hacer &#8220;git pull&#8221; en un servidor remoto desde tu local</title>
+		<link>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/</link>
+		<comments>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/#comments</comments>
+		<pubDate>Wed, 17 Aug 2016 14:34:32 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3442</guid>
+		<description><![CDATA[Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona: [crayon-584436745ff27640812892/] Pónganlo en .barchrc o .bash_aliases de tu ordenador (local) y a partir de ahi cuando lances en tu consola git_pull_on_dev_lapaginaweb te va a hacer un git pull en el servidor remoto. NOTA:&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona:</p><pre class="crayon-plain-tag">#Desplegar en el servidor de dev:
+alias git_pull_on_dev_lapaginaweb="ssh deploy@137.30.100.10 'cd /var/www/la_pagina_web &amp;&amp; git pull origin dev'"</pre><p>Pónganlo en <strong>.barchrc o .bash_aliases</strong> de tu ordenador (local) y a partir de ahi cuando lances en tu consola <strong>git_pull_on_dev_lapaginaweb</strong> te va a hacer un git pull en el servidor remoto.</p>
+<p><strong><span style="text-decoration: underline;">NOTA</span></strong>: <strong>para que funcione tenés que recargar .bashrc</strong> de nuevo. Lanza esto en la consola: <strong>source .bashrc</strong></p>
+<p><strong><span style="text-decoration: underline;">NOTA 2</span></strong>: <b>Es obvio que a tu servidor de desarrollo te conectas usando una ssh key. Si te conectas por shh usando clave no te va a servir esta solución.</b></p>
+<p><span style="text-decoration: underline;"><strong>NOTA 3</strong></span>: Antes que me dejen comentarios del estilo &#8220;para eso está jenkins&#8221;.  Ésta es una solución rápida para los que no quieren o pueden instalar un jenkins <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>GIT: Mostrar gráfico de ramas en consola</title>
+		<link>http://ecapy.com/git-mostrar-grafico-de-ramas-en-consola/</link>
+		<pubDate>Tue, 10 Mar 2015 21:20:50 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[git]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2865</guid>
+		<description><![CDATA[Para conseguir que la consola te muestre el gráfico e ramas (tree view en rigor) en la consola haz lo siguiente: [crayon-5844367460832440059464/] y al finar de lo que haya dentro del archivo pega esto: [crayon-584436746083b762513586/] Listo, ya podés hacer [crayon-584436746083f970497631/] NOTA: glog = &#8220;graphic log&#8221; Chau!]]></description>
+				<content:encoded><![CDATA[<p><img class="size-full wp-image-2867 alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/Screen-Shot-2015-03-10-at-18.13.39.png" alt="GIT console graphic log" width="609" height="505" srcset="http://ecapy.com/wp-content/uploads/2015/03/Screen-Shot-2015-03-10-at-18.13.39.png 609w, http://ecapy.com/wp-content/uploads/2015/03/Screen-Shot-2015-03-10-at-18.13.39-300x249.png 300w" sizes="(max-width: 609px) 100vw, 609px" /></p>
+<p>Para conseguir que la consola te muestre el gráfico e ramas (tree view en rigor) en la consola haz lo siguiente:</p><pre class="crayon-plain-tag">nano ~/.gitconfig</pre><p>y al finar de lo que haya dentro del archivo pega esto:</p><pre class="crayon-plain-tag">[alias]
+glog = log --all --graph --decorate --oneline</pre><p>Listo, ya podés hacer</p><pre class="crayon-plain-tag">git glog</pre><p>NOTA: glog = &#8220;graphic log&#8221;</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Montar un servidor de git</title>
+		<link>http://ecapy.com/montar-un-servidor-de-git/</link>
+		<comments>http://ecapy.com/montar-un-servidor-de-git/#comments</comments>
+		<pubDate>Sun, 29 May 2011 12:30:45 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Trabajo]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1045</guid>
+		<description><![CDATA[La configuración que vamos a usar para configurar el servidor de git es de las mas básicas y no repara en la configuración de usuarios -cualquier usuario con acceso SSH nos sirve-. Mas bien esta configuración es para montar un servidor que podamos usar en nuestra casa o en un grupo de usuarios de confianza. SERVIDOR: Primero lo primero, instalar git y la&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-un-servidor-de-git/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La configuración que vamos a usar para configurar el servidor de git es de las mas básicas y no repara en la configuración de usuarios -cualquier usuario con acceso SSH nos sirve-. Mas bien esta configuración es para montar un servidor que podamos usar en nuestra casa o en un grupo de usuarios de confianza.</p>
+<p><span style="text-decoration: underline; color: #993300;"><strong>SERVIDOR:</strong></span></p>
+<p>Primero lo primero, instalar git y la gui de git (es opcional la gui, pero si estas usando una distro con interfaz gráfica te va a venir bien tenerla).</p><pre class="crayon-plain-tag">&lt;span style=&quot;font-family: 'Segoe UI', Calibri, 'Myriad Pro', Myriad, 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: normal;&quot;&gt;&lt;a style=&quot;color: #0071bb; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;&quot; href=&quot;http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/&quot;&gt;s&lt;/a&gt;udo apt-get install git-core git-gui&lt;/span&gt;</pre><p>Bien, ahora que tenemos git instalado, necesitamos decidir donde vamos a almacenar todos los repositorios que creemos. En mi caso me hice una carpeta llamada git en mi home:</p><pre class="crayon-plain-tag">cd /home/capy
+mkdir git</pre><p>Listo, de momento terminamos con el servidor. Vamos al cliente:</p>
+<p><strong><span style="text-decoration: underline;"><span style="color: #993300;">CLIENTE:</span></span></strong></p>
+<p>Mi cliente es un Windows, pero los pasos de la configuración son igualmente validos sobre cualquier linux o mac.</p>
+<p>primero te vas a crear una carpeta donde vas a tener tu proyecto., o si ya la tenes partimos de ahí. En mi caso es una pagina web y voy a crear en mi windows la carpeta &#8220;<strong>ecapy.com</strong>&#8221;</p>
+<p>Cuando tengas la carpeta creada o localizada entramos, hacemos clic derecho y seleccionamos del menú contextual &#8220;Git Bash&#8221;. Con la consola ya abierta vamos a tirar el siguiente comando para indicarle a git que cree un repositorio con estos archivos (los de tu proyecto):</p><pre class="crayon-plain-tag">git init &amp;amp;&amp;amp; git add * &amp;amp;&amp;amp; git commit -m &quot;Primer commit&quot;</pre><p>Ya tenemos un repositorio de git en nuestro cliente y vamos a copiarlo al servidor en dos pasos.</p>
+<p><strong>Paso 1:</strong> le decimos a git que haga una copia limpia de nuestro repositorio:</p><pre class="crayon-plain-tag">git clone --bare ecapy.com ecapy.com.git</pre><p>lo anterior habrá creado una carpeta nueva llamada &#8220;<strong>ecapy.com.git</strong>&#8221; en nuestro repositorio local.</p>
+<p><strong>Paso 2:</strong> copiemos nuestro repositorio al servidor:</p><pre class="crayon-plain-tag">scp -r ecapy.com.git capy@192.168.1.38:/home/capy/git/</pre><p>Hemos terminado con esta parte. Ya podemos borrar la carpeta &#8220;<strong>ecapy.com.git</strong>&#8220;.</p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; color: #993300;"><strong>SERVIDOR:</strong></span></p>
+<p>Vamos al servidor que tenemos que configurar un par de cosas mas.</p>
+<p>Entramos en la carpeta que copiamos hace un instante y aplicamos un poco de configuración:</p><pre class="crayon-plain-tag">cd /home/capy/git/ecapy.com
+git config core.sharedrepository 1 &amp;amp;&amp;amp; git config receive.denyNonFastforwards true &amp;amp;&amp;amp; find objects -type d -exec chmod 02770 {} ;</pre><p>Volvamos al cliente:</p>
+<h4 style="text-align: left;"><span style="text-decoration: underline;"><strong>Ya tenes un repositorio remoto que funciona correctamente. ya podes clonarte de el.</strong></span></h4>
+<p>&nbsp;</p>
+<p><span style="color: #993300;"><strong>NOTA 1:</strong></span> la carpeta que usaste en el cliente para crear el repositorio en el servidor no tiene configurado cual es su origin, por lo que deberías lanzar por consola:</p><pre class="crayon-plain-tag">git remote add origin capy@192.168.1.38:/home/capy/git/ecapy.com.git</pre><p><strong>O simplemente borra esa carpeta y clonate una nueva que ya tiene configurado el origin:</strong></p><pre class="crayon-plain-tag">git clone capy@192.168.1.38:/home/capy/git/ecapy.com.git</pre><p>&nbsp;</p>
+<p><span style="color: #993300;"><strong>NOTA 2:</strong></span> Muchísimo cuidado con lo siguiente: después de seguir estas instrucciones vas a ver que estas trabajando en la rama principal de tu repositorio&#8230; crea urgente una rama y cámbiate a ella.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/montar-un-servidor-de-git/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Setear y recuperar fields de Apache Solr en Drupal (y PHP en general)</title>
+	<atom:link href="http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/#comment-147</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Sat, 13 Nov 2010 20:55:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=409#comment-147</guid>
+		<description><![CDATA[Segun la documentacion del modulo:
+
+hook_apachesolr_cck_fields_alter(&#038;$mappings)
+
+  Add or alter index mappings for CCK types.  The default mappings array handles just 
+  text fields with option widgets:
+
+    $mappings[&#039;text&#039;] = array(
+      &#039;optionwidgets_select&#039; =&#062; array(&#039;callback&#039; =&#062; &#039;&#039;, &#039;index_type&#039; =&#062; &#039;string&#039;),
+      &#039;optionwidgets_buttons&#039; =&#062; array(&#039;callback&#039; =&#062; &#039;&#039;, &#039;index_type&#039; =&#062; &#039;string&#039;)
+    );
+
+  In your _alter hook implementation you can add additional field types such as:
+
+    $mappings[&#039;number_integer&#039;][&#039;number&#039;] = array(&#039;callback&#039; =&#062; &#039;&#039;, &#039;index_type&#039; =&#062; &#039;integer&#039;);
+
+  You can allso add a mapping for a specific field.  This will take precedence over any
+  mapping for a general field type. A field-specific mapping would look like:
+
+    $mappings[&#039;per-field&#039;][&#039;field_model_name&#039;] = array(&#039;callback&#039; =&#062; &#039;&#039;, &#039;index_type&#039; =&#062; &#039;string&#039;);
+
+  or
+
+    $mappings[&#039;per-field&#039;][&#039;field_model_price&#039;] = array(&#039;callback&#039; =&#062; &#039;&#039;, &#039;index_type&#039; =&#062; &#039;float&#039;);]]></description>
+		<content:encoded><![CDATA[<p>Segun la documentacion del modulo:</p>
+<p>hook_apachesolr_cck_fields_alter(&amp;$mappings)</p>
+<p>  Add or alter index mappings for CCK types.  The default mappings array handles just<br />
+  text fields with option widgets:</p>
+<p>    $mappings[&#8216;text&#8217;] = array(<br />
+      &#8216;optionwidgets_select&#8217; =&gt; array(&#8216;callback&#8217; =&gt; &#8221;, &#8216;index_type&#8217; =&gt; &#8216;string&#8217;),<br />
+      &#8216;optionwidgets_buttons&#8217; =&gt; array(&#8216;callback&#8217; =&gt; &#8221;, &#8216;index_type&#8217; =&gt; &#8216;string&#8217;)<br />
+    );</p>
+<p>  In your _alter hook implementation you can add additional field types such as:</p>
+<p>    $mappings[&#8216;number_integer&#8217;][&#8216;number&#8217;] = array(&#8216;callback&#8217; =&gt; &#8221;, &#8216;index_type&#8217; =&gt; &#8216;integer&#8217;);</p>
+<p>  You can allso add a mapping for a specific field.  This will take precedence over any<br />
+  mapping for a general field type. A field-specific mapping would look like:</p>
+<p>    $mappings[&#8216;per-field&#8217;][&#8216;field_model_name&#8217;] = array(&#8216;callback&#8217; =&gt; &#8221;, &#8216;index_type&#8217; =&gt; &#8216;string&#8217;);</p>
+<p>  or</p>
+<p>    $mappings[&#8216;per-field&#8217;][&#8216;field_model_price&#8217;] = array(&#8216;callback&#8217; =&gt; &#8221;, &#8216;index_type&#8217; =&gt; &#8216;float&#8217;);</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: roosvelt</title>
+		<link>http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/#comment-146</link>
+		<dc:creator><![CDATA[roosvelt]]></dc:creator>
+		<pubDate>Thu, 11 Nov 2010 19:14:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=409#comment-146</guid>
+		<description><![CDATA[Saludos a todos...mi pregunta es como puedo hacer para indexar campos de cck en apache solr...creo un campo con solr y quiero indexarlo en Apache solr..cual seria la mejor manera? Mil Gracias]]></description>
+		<content:encoded><![CDATA[<p>Saludos a todos&#8230;mi pregunta es como puedo hacer para indexar campos de cck en apache solr&#8230;creo un campo con solr y quiero indexarlo en Apache solr..cual seria la mejor manera? Mil Gracias</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

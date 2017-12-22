@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>deploy &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/deploy/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Desplegar una aplicación Node.js como servicio Upstart (demonio)</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/</link>
+		<comments>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 17:42:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[deploy]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2124</guid>
+		<description><![CDATA[Cuando quise desplegar mi app, imagine que iba a ser fácil, que lanzaba el comando &#8220;node miapp.js&#8221; y punto, pero aprendí a palos que así no va la cosa. Para desplegar una aplicación web, necesitas que funcione como apache por lo menos: que puedas arrancarla, pararla, reiniciarla, ver su estado, acceder a su log, que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando quise desplegar mi app, imagine que iba a ser fácil, que lanzaba el comando &#8220;node miapp.js&#8221; y punto, pero aprendí a palos que así no va la cosa.</p>
+<p>Para desplegar una aplicación web, <strong>necesitas que funcione como apache</strong> por lo menos: que puedas <strong>arrancarla, pararla, reiniciarla, ver su estado, acceder a su log, que se reinicie si se produce un error</strong>, etc etc etc.</p>
+<p>Busque por Internet y leí un montón de artículos y foros que te dicen como montartelo: <strong>haciendo scripts en /etc/init.d</strong> y combinándolo con monit para reiniciarlo si se cae, <strong>Usando Upstart</strong>, <strong>lanzando la aplicación con &#8220;node miapp.js &amp;&#8221;</strong> (proceso en background pero es la peor solución que leí en años), y alguna que otra mas.</p>
+<p><strong>La mas razonable fue la de Upstart</strong>, aunque ninguna de las soluciones fue bastante clara o completa como para copiar, pegar y arrancar. Por eso hice este script que toma en cuenta todo lo que hace falta para montar tu app como un servicio:</p><pre class="crayon-plain-tag">description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+# A partir de aquí no debería hacer falta tocar nada #
+######################################################
+
+#Nuestro proceso espera hasta que el sistema este cargado
+start on runlevel [2345]
+#Y se detiene cuando el sistema se apague
+stop on runlevel [016]
+
+#Levanta el proceso automáticamente si se muere:
+respawn
+#limitamos el "respawn" a 99 veces con un timeout de 5s para que no intente levantar el proceso infinitamente.
+respawn limit 99 5
+
+pre-start script
+    #Necesitamos asegurarnos que el path del pid exista antes de arrancar el proceso.
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+	#Seteamos NODE_ENV para que nuestra app se ejecute en modo production, development, test, etc.
+	export NODE_ENV=$SERVER_ENV
+
+	#El siguiente comando es el que realmente arranca el proceso:
+	#Utiliza el usuario y grupo www-data (--chuid)
+	#Asigna un pid y lo crea si no existe (--make-pidfile y --pidfile)
+	#Cambia el directorio de ejecución a donde esté nuestra app de node (--chdir)
+	#Ejecuta la app (--exec)
+	#Envía cualquier output que genere nuestra app al log (&gt;&gt; $LOG_FILE 2&gt;&amp;1)
+
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</pre><p>Puede parecer un poco largo, pero si lo lees detenidamente vas a ver que es bastante concreto:</p>
+<ol>
+<li>Autor y descripción: son parte básica de un script Upstart</li>
+<li>Variables de configuración para que no tengas que meterte entre el código para ajustar el script para cada nueva app que crees.</li>
+<li>Cuerpo del script.</li>
+</ol>
+<p>Acá esta el mismo script sin comentarios:</p><pre class="crayon-plain-tag">description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+respawn limit 99 5
+
+pre-start script
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+    export NODE_ENV=$SERVER_ENV
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</pre><p></p>
+<h3>Uso:</h3>
+<p><strong>Por cada aplicación en nodejs que quieras montar tenes que crear un archivo en /etc/init/</strong>. El nombre del archivo tiene que terminar en .conf. por ejemplo <em>miapp-service.conf</em>. Una cosa importante es que el servicio que estas creando se llama como el archivo (sin el .conf), por lo que en nuestro ejemplo se va a llamar <em>miapp-service</em>.</p>
+<p>Dentro de <em>/etc/init/miapp-service.conf</em> pegas el script y personalizas todo lo que haya hasta la linea divisoria.</p>
+<p>Un par de aclaraciones:<br />
+<em>env APP=app.js</em> define el nombre del &#8220;index&#8221; de tu aplicación, y por lo general se usan o app.js o server.js. Pon el nombre de tu app sin el path hasta ella. Si tu aplicación lleva parámetros podes encerrar en comillas dobles algo asi como <em>&#8220;env APP=app.js &#8211;extrasettings ../settrings.json&#8221;</em><br />
+<em>env APP_DIR=/var/node/miapp</em> el path hasta tu aplicación<br />
+<em>env PID_NAME=miapp.pid</em> pon el nombre que quieras, pero que sea único. por ejemplo, si tu app es una pagina web pon el nombre de tu pagina &#8220;mipaginaweb_com.pid&#8221; o algo así.<br />
+<em>env USER=www-data</em> y <em>env GROUP=www-data</em> <strong>no sería muy responsable usar root para ejecutar tu aplicación </strong> salvo que esta si que necesite estar en root, pero <strong>en el caso de que sea una pagina web, usa el usuario y grupo www-data</strong> así podes unificar criterios. Es solo una sugerencia, yo para mi app uso www-data aunque podes usar el grupo y usuario que te parezca mejor.<br />
+<em>POST_START_MESSAGE_TO_LOG</em> es solo un mensaje que se envía al log de la app cuando esta arranca.<br />
+<em>NODE_BIN</em> indica donde esta ubicado node, por lo general está en <em>/usr/local/bin/node</em> aunque si no estuviera allí podes cambiar este parámetro.<br />
+<em>env SERVER_ENV=&#8221;production</em>&#8221; Posiblemente tu aplicación web utilice entornos de &#8220;<em>development</em>&#8220;, &#8220;<em>test</em>&#8221; y &#8220;<em>production</em>&#8220;. Bien, especificalo acá.</p>
+<p>El resto del script está comentado en código así que no añado nada.</p>
+<p>Cuando hayas acabado ya vas a disponer de tu servicio y tratarlo como cualquier otro:</p><pre class="crayon-plain-tag">start miapp-service
+stop miapp-service
+restart miapp-service
+status miapp-service</pre><p>Espero que les sirva.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/feed/</wfw:commentRss>
+		<slash:comments>15</slash:comments>
+		</item>
+	</channel>
+</rss>

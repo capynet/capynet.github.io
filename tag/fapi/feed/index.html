@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>FAPI &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/fapi/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Drupal 7: Quitar la descripción &#8220;E.g., 19/11/2013&#8221; del field date_popup</title>
+		<link>http://ecapy.com/drupal-7-quitar-la-descripcion-e-g-19112013-del-field-date_popup/</link>
+		<pubDate>Tue, 19 Nov 2013 20:53:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[FAPI]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2544</guid>
+		<description><![CDATA[El FAPI date_popup (del módulo Date) tiene un poco de mala leche y no se deja quitar la descripción por la vía tradicional. Dicho lo anterior, acá está el hook que nos salva el día: [crayon-58443777ef674626929924/] Chau!]]></description>
+				<content:encoded><![CDATA[<p>El FAPI <strong>date_popup</strong> (del módulo <a href="https://drupal.org/project/date" target="_blank">Date</a>) tiene un poco de mala leche y no se deja quitar la descripción por la vía tradicional. Dicho lo anterior, acá está el hook que nos salva el día:</p><pre class="crayon-plain-tag">&lt;?php
+/**
+ * Implements hook_date_popup_process_alter().
+ */
+function MODULO_O_THEME_date_popup_process_alter(&amp;$element, &amp;$form_state, $context) {
+  unset($element['date']['#description']);
+  unset($element['time']['#description']);
+}</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Campos dependientes en formularios con Ctools</title>
+		<link>http://ecapy.com/drupal-7-campos-dependientes-en-formularios-con-ctools/</link>
+		<comments>http://ecapy.com/drupal-7-campos-dependientes-en-formularios-con-ctools/#comments</comments>
+		<pubDate>Tue, 26 Feb 2013 09:10:06 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[FAPI]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1975</guid>
+		<description><![CDATA[Hola gente como están. Hoy voy a hablar de campos dependientes en formularios. Ctools entre las utilidades que nos da, nos proporciona la posibilidad de indicar cuales elementos de formulario dependen de otros. Puede parecer algo que añada complejidad, pero nada mas lejos de la realidad. De hecho, para implementarlo solo necesitas dos lineas de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-campos-dependientes-en-formularios-con-ctools/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola gente como están. Hoy voy a hablar de campos dependientes en formularios.</p>
+<p><a href="http://drupal.org/project/ctools" target="_blank">Ctools</a> entre las utilidades que nos da, nos proporciona la posibilidad de indicar cuales elementos de formulario dependen de otros.<br />
+Puede parecer algo que añada complejidad, pero nada mas lejos de la realidad. De hecho, para implementarlo solo necesitas dos lineas de código.</p>
+<h4>Elementos</h4>
+<p>Los elementos que son capaces de mostrar contenidos en base a lo seleccionado son:</p>
+<ul>
+<li>checkbox/checkboxes</li>
+<li>radios</li>
+<li>select</li>
+</ul>
+<h4>Luego está lo que se muestre</h4>
+<p>Cualquier elemento FAPI es susceptible de ser dependiente de alguno de los elementos mencionados antes. por ejemplo, un textfield, un textarea, otros select, e incluso fieldsets.</p>
+<p>Acá van tres ejemplos:</p>
+<h3>select</h3>
+<p>Es el mas simple de todos:</p><pre class="crayon-plain-tag">&lt; ?php function formulario_ejemplo_de_selects() { ctools_include('dependent'); $form['pais_select'] = array( '#title' =&gt; 'Selecciona un país',
+    '#type' =&gt; 'select',
+    '#required' =&gt; TRUE,
+    '#options' =&gt; array(
+      "es" =&gt; "España",
+      "other" =&gt; "Otro"
+    ),
+  );
+
+  $form['provincias_espanolas'] = array(
+    '#title' =&gt; 'Selecciona tu provincia',
+    '#type' =&gt; 'select',
+    '#options' =&gt; array(
+      0 =&gt; "Alava",
+      1 =&gt; "Albacete",
+      2 =&gt; "Etcétera"
+    ),
+    '#dependency' =&gt; array('edit-pais-select' =&gt; array('es')),
+  );
+
+  $form['provincia_extrangera'] = array(
+    '#title' =&gt; t('Provincia'),
+    '#description' =&gt; t('Indica la provincia de tu país'),
+    '#type' =&gt; 'textfield',
+    '#required' =&gt; TRUE,
+    '#dependency' =&gt; array('edit-pais-select' =&gt; array('other')),
+  );
+
+  return $form;
+}</pre><p>Se aprecia rápidamente que es un formulario normal de toda la vida pero que tiene dos extras:</p>
+<table class="desglose-params">
+<tbody>
+<tr>
+<td>ctools_include(&#8216;dependent&#8217;);</td>
+<td>Necesario en todo formulario que quiera hacer uso de elementos dependientes ya que es el plugin que nos lo permite.</td>
+</tr>
+<tr>
+<td>&#8216;#dependency&#8217; =&gt; array(&#8216;DOM id sin &#8220;#&#8221;&#8216; =&gt; array(&#8216;un_valor_del_select&#8217;)),</td>
+<td>Es la propiedad que le dice a este elemento de formulario de quien depende. para que funcione solo tenés que indicarle cual es el DOM id del select (en este caso es #edit-pais-select) y cual es el valor que espera para mostrarse.</td>
+</tr>
+</tbody>
+</table>
+<p>Explicado lo anterior se entiende bastante bien que se va a mostrar el select de provincias españolas solo si la opción seleccionada en $form[&#8216;pais_select&#8217;] es &#8220;es&#8221; por ejemplo.</p>
+<p>Y esa es la base del plugin. los radio y checkbox tienen unas particularidades así que dejo los ejemplos respectivos para aclararlo.</p>
+<h3>radios</h3>
+<p>Para usar radios es necesario cambiar un poco el selector que usamos en <em>#dependency</em>.</p><pre class="crayon-plain-tag">&lt; ?php '#dependency' =&gt; array('radio:pais_radios' =&gt; array('other')),</pre><p>Como pueden ver y a no estamos usando el DOM id, sino que en su lugar estamos usando &#8220;<strong>radio:</strong>&#8221; seguido del nombre del field &#8220;<strong>pais_radios</strong>&#8220;. Si se preguntan por que es así en los radios es porque necesita hacer referencia a la propiedad &#8220;<em>name</em>&#8221; del elemento ya renderizado (pueden inspeccionar los <em>name</em> de los radios en firebug para confirmarlo).</p>
+<p>Aquí el ejemplo:</p><pre class="crayon-plain-tag">&lt; ?php function formulario_ejemplo_de_radios() { ctools_include('dependent'); $form['pais_radios'] = array( '#title' =&gt; 'Selecciona un país',
+    '#type' =&gt; 'radios',
+    '#required' =&gt; TRUE,
+    '#options' =&gt; array(
+      "es" =&gt; "España",
+      "other" =&gt; "Otro"
+    ),
+    '#default_value' =&gt; "other"
+  );
+
+  $form['provincias_espanolas'] = array(
+    '#title' =&gt; 'Selecciona tu provincia',
+    '#type' =&gt; 'select',
+    '#options' =&gt; array(
+      0 =&gt; "Alava",
+      1 =&gt; "Albacete",
+      2 =&gt; "Etcétera"
+    ),
+    '#dependency' =&gt; array('radio:pais_radios' =&gt; array('es')),
+  );
+
+  $form['provincia_extrangera'] = array(
+    '#title' =&gt; t('Provincia'),
+    '#description' =&gt; t('Indica la provincia de tu país'),
+    '#type' =&gt; 'textfield',
+    '#required' =&gt; TRUE,
+    '#dependency' =&gt; array('radio:pais_radios' =&gt; array('other')),
+  );
+
+  return $form;
+}</pre><p></p>
+<h3>Checkbox/es</h3>
+<p>Nuevamente en los checkboxes <em>#dependency</em> cambia ligeramente. Seguimos usando el DOM id pero cada uno de los checkboxes tiene su propio id <strong>y el valor no es ni &#8220;es&#8221; ni &#8220;other&#8221;</strong> (son los ejemplos que estábamos usando en los formularios de muestra). En su lugar hay que usar <strong>1</strong> o <strong>0</strong> para indicar si queremos que los elementos se muestren cuando esté activo o inactivo.<br />
+Como soy malisimo explicando mejor les dejo el ejemplo:</p><pre class="crayon-plain-tag">&lt; ?php function formulario_ejemplo_de_checkboxes() { ctools_include('dependent'); $form['pais_select'] = array( '#title' =&gt; 'Selecciona un país',
+    '#type' =&gt; 'checkboxes',
+    '#required' =&gt; TRUE,
+    '#options' =&gt; array(
+      "es" =&gt; "España",
+      "other" =&gt; "Otro"
+    ),
+  );
+
+  $form['provincias_espanolas'] = array(
+    '#title' =&gt; 'Selecciona tu provincia',
+    '#type' =&gt; 'select',
+    '#options' =&gt; array(
+      0 =&gt; "Alava",
+      1 =&gt; "Albacete",
+      2 =&gt; "Etcétera"
+    ),
+    '#dependency' =&gt; array('edit-pais-select-es' =&gt; array(1)),
+  );
+
+  $form['provincia_extrangera'] = array(
+    '#title' =&gt; t('Provincia'),
+    '#description' =&gt; t('Indica la provincia de tu país'),
+    '#type' =&gt; 'textfield',
+    '#required' =&gt; TRUE,
+    '#dependency' =&gt; array('edit-pais-select-other' =&gt; array(1)),
+  );
+
+  return $form;
+}</pre><p>Para que puedan probarlo les adjunto un modulo con los ejemplos. Para probar cada uno de los ejemplos accedan a las siguientes URL:</p>
+<ul>
+<li>/formulario-dependiente-de-select</li>
+<li>/formulario-dependiente-de-radios</li>
+<li>/formulario-dependiente-de-checkboxes</li>
+</ul>
+<p><a class="descargar" href="http://ecapy.com/wp-content/uploads/2013/02/elementos_dependientes.zip">Descargar modulo de ejemplo</a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-7-campos-dependientes-en-formularios-con-ctools/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Como hacer formularios multistep (wizard) con Ctools</title>
+		<link>http://ecapy.com/formularios-multistep-con-ctools/</link>
+		<comments>http://ecapy.com/formularios-multistep-con-ctools/#comments</comments>
+		<pubDate>Wed, 16 May 2012 22:15:59 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[FAPI]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1514</guid>
+		<description><![CDATA[Chaos tools para muchos no es mas que una dependencia de Panels, Views, Features y muchos otros y fabulosos módulos mas. Pero (Gran pero), Ctools per se es un modulo increíblemente útil para nosotros mismos. Bueno vamos a lo que vamos. Acá les dejo la idea de lo que vamos a hacer: Tengo un formulario&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/formularios-multistep-con-ctools/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p style="text-align: left;"><a href="http://drupal.org/project/ctools" target="_blank">Chaos tools</a> para muchos no es mas que una dependencia de <a href="http://drupal.org/project/panels" target="_blank">Panels</a>, <a href="http://drupal.org/project/views" target="_blank">Views</a>, <a href="http://drupal.org/project/features" target="_blank">Features </a>y muchos otros y fabulosos módulos mas. Pero (Gran pero), Ctools <em>per se</em> es un modulo increíblemente útil para nosotros mismos.</p>
+<p style="text-align: left;">Bueno vamos a lo que vamos. Acá les dejo la idea de lo que vamos a hacer:</p>
+<p style="text-align: left;"><strong>Tengo un formulario que necesita recoger tres datos de un usuario, y me parece que es mucha información para pedirla toda junta así que vamos a hacerlo en tres pasos distintos.</strong></p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1515" title="Form wizard look" src="http://ecapy.com/wp-content/uploads/2012/05/form-wizard-splash.png" alt="" width="696" height="191" srcset="http://ecapy.com/wp-content/uploads/2012/05/form-wizard-splash.png 696w, http://ecapy.com/wp-content/uploads/2012/05/form-wizard-splash-300x82.png 300w" sizes="(max-width: 696px) 100vw, 696px" /></p>
+<p style="text-align: left;">Para hacer este wizard vamos a usar un formulario normal pero separado en 3 funciones, y dos de las herramientas (plugins) que tiene Ctools. La primera es obviamente &#8220;<strong>Wizard</strong>&#8221; y para la persistencia de los datos entre steps usaremos &#8220;<strong>object-cache</strong>&#8220;.</p>
+<p style="text-align: left;">Antes la estructura:</p>
+<ul>
+<li>Necesitamos hacer un item de menú con hook_menu() que nos lleve a una función que es la que va a manejar la batuta.</li>
+<li>3 mini funciones para manejar &#8220;<strong>object-cache</strong>&#8220;</li>
+<li>3 formularios/funciones para declarar el contenido de cada uno de los step.</li>
+</ul>
+<p style="text-align: left;">Hagamos lo:</p>
+<p style="text-align: left;"><span style="text-decoration: underline;">Primero</span>: el menú y el callback del menú:</p>
+<p></p><pre class="crayon-plain-tag">&lt; ?php function ctools_multistep_menu() { $items['ctools_multistep/example_multistep_form'] = array( 'title' =&gt; 'Ejemplo de un wizard con ctools',
+    'page callback' =&gt; 'wizard_callback',
+    'access callback' =&gt; TRUE,
+    'type' =&gt; MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+function wizard_callback($step = NULL) {
+ $form_info = array(
+    'id' =&gt; 'example_multistep_form',
+
+    'path' =&gt; "ctools_multistep/example_multistep_form/%step",
+    'return path' =&gt; "",
+
+    'show trail' =&gt; TRUE,
+    'show back' =&gt; TRUE,
+
+    'next callback' =&gt; 'callback_paso_siguiente',
+    'finish callback' =&gt; 'callback_paso_final',
+
+    'forms' =&gt; array(
+      'primer_formulario' =&gt; array(
+        'form id' =&gt; 'primer_formulario',
+        'title' =&gt; 'Primer paso',
+        'include' =&gt; drupal_get_path("module", "ctools_multistep") . '/formularios.inc',
+      ),
+      'segundo_formulario' =&gt; array(
+        'form id' =&gt; 'segundo_formulario',
+        'title' =&gt; 'Segundo paso',
+        'include' =&gt; drupal_get_path("module", "ctools_multistep") . '/formularios.inc',
+      ),
+      'tercer_formulario' =&gt; array(
+        'form id' =&gt; 'tercer_formulario',
+        'title' =&gt; 'Tercer paso',
+        'include' =&gt; drupal_get_path("module", "ctools_multistep") . '/formularios.inc',
+      ),
+    ),
+  );
+
+  global $user;
+  $object_id = "ctools_multistep_de_ejemplo_" . $user-&gt;uid;
+
+  if (empty($step)) {
+    clean_datos($object_id);
+    $step = 'primer_formulario';
+  }
+
+  $object = get_datos($object_id);
+
+  $form_state = array(
+    'object_id' =&gt; $object_id,
+    'object' =&gt; &amp;$object,
+  );
+
+  ctools_include('wizard');
+  $form = ctools_wizard_multistep_form($form_info, $step, $form_state);
+  return drupal_render($form);
+}</pre><p>Como pueden ver, el item de menú no es mas que una URL normal.</p>
+<p>Ahora bien. En la función principal podemos ver como definimos inicialmente un array normalito, y es en el en donde definimos las características del wizard:</p>
+<p><span style="color: #993300;">&#8216;id&#8217; =&gt; &#8216;example_multistep_form&#8217;</span><br />
+<strong>id</strong> <span style="color: #999999;">(string)</span> es el nombre que va a tener el wizard y es obligatorio poner uno</p>
+<p><span style="color: #993300;">&#8216;path&#8217; =&gt; &#8220;ctools_multistep/example_multistep_form/%step&#8221;,</span><br />
+<strong>path</strong><span style="color: #999999;"> (url)</span> es la URL que definimos en el hook_menu() mas &#8220;%step&#8221;. y es la URL que va a usar Ctools para ir poniendo el step actual en la arra de direcciones de nuestro navegador.</p>
+<p><span style="color: #993300;">&#8216;return path&#8217; =&gt; &#8220;&lt;front&gt;&#8221;</span><br />
+<strong>return path</strong> <span style="color: #999999;">(url)</span> es la URL a la que queremos enviar al usuario cuando este haya completado el formulario. en mi caso lo quiero mandar a la home</p>
+<p><span style="color: #993300;">&#8216;show trail&#8217; =&gt; TRUE</span><br />
+<strong>show trail</strong><span style="color: #999999;"> (bool)</span> indica a wizard que queremos que se muestre el breadcrumb de cada uno de los pasos.</p>
+<p><span style="color: #993300;">&#8216;show back&#8217; =&gt; TRUE</span><br />
+<strong>show back</strong><span style="color: #999999;"> (bool)</span> indica si queremos dejar que un usuario vuelva a pantallas anteriores. si está en TRUE muestra el botón con dicho fin.</p>
+<p><span style="color: #993300;">&#8216;next callback&#8217; =&gt; &#8216;callback_paso_siguiente&#8217;</span><br />
+<strong>next callback</strong><span style="color: #999999;"> (function name)</span> indica cual es la función que se debe ejecutar cada vez que pasemos de un formulario al siguiente. y es en esta funcion en la que vamos a ir guardando el estado actual del usuario.</p>
+<p><span style="color: #993300;">&#8216;finish callback&#8217; =&gt; &#8216;callback_paso_final&#8217;</span><br />
+<strong>finish callback</strong> <span style="color: #999999;">(function name)</span> indica cual es la función que se debe ejecutar una vez que el usuario haya completado el formulario. Aquí es donde vamos a guardar de forma permanente los datos del formulario y a limpiar los datos temporales.</p>
+<p><span style="color: #993300;">&#8216;forms&#8217; =&gt; array(</span><br />
+<span style="color: #993300;"> &#8216;primer_formulario&#8217; =&gt; array(</span><br />
+<span style="color: #993300;"> &#8216;form id&#8217; =&gt; &#8216;primer_formulario&#8217;,</span><br />
+<span style="color: #993300;"> &#8216;title&#8217; =&gt; &#8216;Primer paso&#8217;,</span><br />
+<span style="color: #993300;"> &#8216;include&#8217; =&gt; drupal_get_path(&#8220;module&#8221;, &#8220;ctools_multistep&#8221;) . &#8216;/formularios.inc&#8217;,</span><br />
+<span style="color: #993300;"> ),</span><br />
+<span style="color: #993300;"> &#8216;segundo_formulario&#8217; =&gt; array(<br />
+</span><span style="color: #993300;"> &#8216;form id&#8217; =&gt; &#8216;segundo_formulario&#8217;,<br />
+</span><span style="color: #993300;"> &#8216;title&#8217; =&gt; &#8216;Segundo paso&#8217;,<br />
+</span><span style="color: #993300;"> &#8216;include&#8217; =&gt; drupal_get_path(&#8220;module&#8221;, &#8220;ctools_multistep&#8221;) . &#8216;/formularios.inc&#8217;,<br />
+</span><span style="color: #993300;"> ),<br />
+</span><span style="color: #993300;">)</span></p>
+<p>Por ultimo en <strong>forms</strong><span style="color: #999999;"> (array)</span> indicaremos cuales son los formularios que se van a usar en cada paso, el titulo que van a mostrar en el breadcrumb y si tuviéramos esta función en otro archivo, la ruta en la que se aloja.</p>
+<p>Nos quedan dos cosas en el formulario. La primera es definir el nombre del objeto que va a almacenar de forma temporal los datos del usuario, ver si ver si vamos a reiniciar el formulario (en el caso de que el usuario acceda nuevamente al formulario) e inicializar los datos del usuario (ahora lo explico).</p><pre class="crayon-plain-tag">&lt; ?php global $user; $object_id = "ctools_multistep_de_ejemplo_" . $user-&gt;uid;
+
+if (empty($step)) {
+  clean_datos($object_id);
+  $step = 'primer_formulario';
+}
+
+  $object = get_datos($object_id);</pre><p>La segunda cosa que nos queda en esta función es claramente generar el wizard:</p><pre class="crayon-plain-tag">&lt; ?php $form_state = array( 'object_id' =&gt; $object_id, 'object' =&gt; &amp;$object );
+
+ctools_include('wizard');
+$form = ctools_wizard_multistep_form($form_info, $step, $form_state);
+return drupal_render($form);</pre><p>mmmbueeeeno, tenemos declarado el formulario, un par de funciones para el avance y finalización y hacemos uso de clean_datos() y get_datos(). pues eso es lo que sigue. definir estas funciones:</p>
+<p>set_datos(), get_datos() y clean_datos() no son mas que unos wrappers que guardan recuperan y eliminan la información que el usuario va rellenando:</p><pre class="crayon-plain-tag">&lt; ?php function set_datos($id, $object) { ctools_include('object-cache'); ctools_object_cache_set('ctools_multistep', $id, $object); } function get_datos($id) { ctools_include('object-cache'); $object = ctools_object_cache_get('ctools_multistep', $id); //creamos un objeto vacío para empezar if (!$object) { $object = new stdClass; $object-&gt;dia = NULL;
+    $object-&gt;nombre = "";
+    $object-&gt;apellido = "";
+  }
+
+  return $object;
+}
+
+function clean_datos($id) {
+  ctools_include('object-cache');
+  ctools_object_cache_clear('ctools_multistep', $id);
+}</pre><p>Con las pequeñas funciones de <strong>object-cache</strong> vamos metiendo la información que el usuario complete cada vez que se le de a &#8220;<strong>Continuar</strong>&#8221; dentro del objeto:</p><pre class="crayon-plain-tag">&lt; ?php
+function callback_paso_siguiente(&amp;$form_state) {
+  set_datos($form_state['object_id'], $form_state['object']);
+}</pre><p>Y cuando el usuario complete el formulario vamos a usar la función que definimos en &#8220;finish callback&#8221; para dejarle un mensaje en pantalla al usuario (lo mas lógico seria guardarlos de forma permanente pero esta es una demo XD) y limpiar los datos;</p>
+<p><img class="aligncenter size-full wp-image-1518" title="wizard-step-2" src="http://ecapy.com/wp-content/uploads/2012/05/wizard-step-2.png" alt="" width="434" height="143" srcset="http://ecapy.com/wp-content/uploads/2012/05/wizard-step-2.png 434w, http://ecapy.com/wp-content/uploads/2012/05/wizard-step-2-300x99.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
+<p><img class="aligncenter size-full wp-image-1519" title="wizard-step-3" src="http://ecapy.com/wp-content/uploads/2012/05/wizard-step-3.png" alt="" width="448" height="162" srcset="http://ecapy.com/wp-content/uploads/2012/05/wizard-step-3.png 448w, http://ecapy.com/wp-content/uploads/2012/05/wizard-step-3-300x108.png 300w" sizes="(max-width: 448px) 100vw, 448px" /></p>
+<p>y cuando el wizard nos mande a la home vamos a ver:</p>
+<p><img class="aligncenter size-full wp-image-1516" title="wizard-result" src="http://ecapy.com/wp-content/uploads/2012/05/wizard-result.png" alt="" width="446" height="77" srcset="http://ecapy.com/wp-content/uploads/2012/05/wizard-result.png 446w, http://ecapy.com/wp-content/uploads/2012/05/wizard-result-300x52.png 300w" sizes="(max-width: 446px) 100vw, 446px" /></p>
+<p>Les dejo un descargable con este wizard de ejemplo para que puedan verlo en detalle.</p>
+<p><a class="descargar" href="http://ecapy.com/wp-content/uploads/2012/05/ctools_multistep.rar">Descargar</a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/formularios-multistep-con-ctools/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Crear múltiples instancias de un mismo formulario en Drupal 6</title>
+		<link>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/</link>
+		<comments>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/#comments</comments>
+		<pubDate>Sun, 08 Aug 2010 15:44:12 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[FAPI]]></category>
+		<category><![CDATA[Formularios multiples]]></category>
+		<category><![CDATA[hook_forms()]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=534</guid>
+		<description><![CDATA[El problema mas común a la hora de querer hacer que un formulario se repita mas de una vez en una misma pagina, es que cada uno de los formularios que se vayan creando van a ser solamente una fiel copia del anterior. Dicho de otra forma, estamos usando un solo formulario pero copiandolo en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/multiples-instancias-formulario-en-drupal-6/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms.png"><img class="size-full wp-image-543 alignleft" title="FAPI hook_forms() en drupal" src="http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms.png" alt="" width="402" height="286" srcset="http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms.png 502w, http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms-300x214.png 300w" sizes="(max-width: 402px) 100vw, 402px" /></a></p>
+<p>El problema mas común a la hora de querer hacer que un formulario se repita mas de una vez en una misma pagina, es que cada uno de los formularios que se vayan creando van a ser solamente una fiel copia del anterior. Dicho de otra forma, estamos usando un solo formulario pero copiandolo en varios lados de la pagina.</p>
+<p>Tuve este problema hace ya mas de un año pero no me olvido lo <strong>JODIDA-MENTE DIFÍCIL</strong> que me fue encontrar una solución, hasta que me di con <a href="http://www.computerminds.co.uk/drupal-6-multiple-instances-same-form-one-page"><strong>esta pagina</strong></a>. Cuestión, que me salvó la vida (exagerado yo?). Por supuesto que les recomiendo que lean el articulo original, pero mas les recomiendo que lean mi interpretación de los hechos que esta mas buena :).</p>
+<p>Para este ejemplo primero vamos a crear una url donde poder poner nuestras múltiples instancias:</p><pre class="crayon-plain-tag">&lt; ?php /** * Implementation of hook_menu() * * Solo esta implementada una URL para poder hacer este ejemplo. */ function form_multi_instancias_menu() { $items['form-multiples-instancias'] = array( 'title' =&gt; t('Formulario multi instanciado'),
+        'page callback' =&gt; 'form_multiples_instancias',
+        'type' =&gt; MENU_NORMAL_ITEM,
+        'access callback' =&gt; TRUE,
+    );
+    return $items;
+}</pre><p>Y la respectiva función:</p><pre class="crayon-plain-tag">&lt; ?php
+/**
+ * En este callback de la url queremos crear varias instancias
+ * del mismo formulario.
+ */
+function form_multiples_instancias() {
+    $salida = 'Si le hechas una mirada al codigo fuente vas a poder ver que el "form_id" de cada formulario es distinto, asi como el "form_build_id".';
+ 
+    //en este ejemplo simplemente usamos un contador para crear los
+    //formularios, pero podriamos estar procesando nodos tranquilamente.
+    for ($i = 0; $i &lt; 5; $i++) {
+        /*
+          * Noten que estoy armando dinamicamente el
+          * drupal_get_form(). Lo siguiente equivaldria a hacer:
+          * $salida .= drupal_get_form ( "form_ejemplo_0" , 0);
+          * $salida .= drupal_get_form ( "form_ejemplo_1" , 1);
+          * $salida .= drupal_get_form ( "form_ejemplo_2" , 2);
+          * etc...
+          */
+        $salida .= drupal_get_form("form_ejemplo_" . $i, $i);
+    }
+ 
+    return $salida;
+}</pre><p>Si van leyendo los comentarios del código se va a ir entendiendo. Definamos el formulario que queremos instanciar:</p><pre class="crayon-plain-tag">&lt;?php //Este es un FAPI comun de toda la vida function form_ejemplo($form_state, $i) { $form['un_campo_de_texto'] = array( '#type' =&gt; 'textfield',
+        '#title' =&gt; t('Un campo de texto de ejemplo'),
+        '#default_value' =&gt; $i,
+    );
+    $form['submit'] = array(
+        '#type' =&gt; 'submit',
+        '#value' =&gt; "enviame",
+    );
+ 
+    $form['#validate'] = array("form_ejemplo_validate");
+    $form['#submit'] = array("form_ejemplo_submit");
+    return $form;
+}
+ 
+function form_ejemplo_validate($form_state, $form) {
+    drupal_set_message("He validado.");
+}
+ 
+function form_ejemplo_submit($form_state, $form) {
+    drupal_set_message(
+        t('Y el formulario enviado fue el Nº @form_number.',
+            array(
+                '@form_number' =&gt; $form_state ["un_campo_de_texto"] ["#value"])
+        )
+    );
+}</pre><p>Bueno bueno bueno&#8230; hasta acá, si ejecutas el script lo que pasaría es que te saldrían tantos warning como formularios se invoquen. Y eso es debido a que no tenemos ningún formulario definido que se llame <strong>form_ejemplo_0</strong>, ni <strong>form_ejemplo_1</strong>, etc.</p>
+<p>¿Soluciones?: Crear de la función <strong>form_ejemplo_0()</strong> <strong>para delante</strong> jajaja. No enserio, la solución es implementar el <strong>hook_forms()</strong>, que básicamente va a entender que se esta invocando un formulario inexistente <strong>y va a redireccionarlo a la definición ÚNICA </strong>que tenemos: <strong>form_ejemplo()</strong>.</p><pre class="crayon-plain-tag">&lt; ?php /** * Acá es donde se va a hacer la magia: * Resulta que por cada formulario que se invoca, el * hook_forms() es capaz de actuar como si de un hook_form_alter() * se tratara pero lo hace antes que se termine de armar * el array FAPI mas basico que crea Drupal. * O sea que intercede antes de que se le genere a cada * formulario sus #form_build_id, lo que nos permite * sobreescribir ciertos aspectos como ser la funcion * que alimentará el futuro formulario. */ function form_multi_instancias_forms($form_id, $args) { $forms = array(); //para no cambiarle el callback a todos los formularios //que se creen hacemos un pequeño if. caso contrario //tendriamos un problema GORDO. if (strpos($form_id, 'form_ejemplo_') === 0) { //hemos dado con una de las variantes del formulario que //estamos instanciando, solamente tenemos que apuntar //su callback al formulario que hemos definido. $forms[$form_id] = array('callback' =&gt; 'form_ejemplo');
+    }
+ 
+    return $forms;
+}</pre><p>Bueno. ya está. este código así, funciona. Les dejo un mini-modulo con lo anterior para que lo vean funcionar. Instalenlo y miren en la URL &#8220;<span style="color: #993300;">/form-multiples-instancias</span>&#8221;</p>
+<p><a href="http://www.ecapy.com/Archivos/form_multi_instancias.rar">DESCARGAR</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

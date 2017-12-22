@@ -1,0 +1,52 @@
+<!-- Agregamos el JS-->
+<script src="DD_roundies.js"></script>
+
+<!-- Agregamos el JS-->
+<script>
+
+  /* Ahora solo necesitamos decirle a ddroundies sobre que class o id debe redondear y de cuanto es el radio de redondeo que debe aplicar */
+
+  //un redondeo de todos los bordes a 10 pixeles para todos los elementos HTML que lleven definida esta clase
+  DD_roundies.addRule('.redondeado-10px', '30px');
+
+  /*
+    Tambien se puede especificar un redondeo para cada una de las esquinas
+    
+    5px para la esquina superior izquierda
+    10px para la esquina superior derecha
+    15px para la esquina inferior derecha
+    20px para la esquina inferior izquierda
+  */
+  DD_roundies.addRule('.redondeado-popurri', '5px 10px 15px 30px');
+
+</script>
+
+<style>
+/*es opcional definir los css, pero aca los defino para darles un color*/
+
+.redondeado-10px{
+	background-color:#336699;
+}
+
+.redondeado-popurri{
+	background-color:#ff0000;
+}
+</style>
+
+<div class="redondeado-10px">
+  <br />
+  <br />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+  <br />
+  <br />
+</div>
+
+<br />
+
+<div class="redondeado-popurri">
+  <br />
+  <br /> 
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+  <br />
+  <br />
+</div>

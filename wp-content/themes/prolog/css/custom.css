@@ -1,0 +1,49 @@
+.crayon-main {
+  overflow-x: auto !important;
+  padding: 15px !important; }
+
+.crayon-syntax {
+  border-radius: 6px;
+  border: none !important; }
+
+.entry-summary img {
+  border-radius: 4px;
+  border: 1px solid #ccc; }
+  .entry-summary img.alignnone {
+    width: 100%; }
+
+.entry-meta li a {
+  font-size: 13px; }
+
+.entry-thumbnail > img {
+  width: 100%; }
+
+/*me gusta que destaque XD*/
+em {
+  color: #8B2900; }
+
+/*INICIO Footer*/
+footer .site-info {
+  float: left; }
+
+footer .site-info a {
+  color: #8B2900;
+  display: inline;
+  font-size: 2em;
+  height: auto;
+  text-decoration: none;
+  width: auto; }
+
+footer .site-info li {
+  display: inline-block;
+  margin-right: 5px; }
+
+footer .site-info a span {
+  display: none; }
+
+footer .misc {
+  float: right; }
+
+/*FIN Footer*/
+
+/*# sourceMappingURL=custom.css.map */

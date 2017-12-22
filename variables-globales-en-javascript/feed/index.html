@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Variables globales en Javascript</title>
+	<atom:link href="http://ecapy.com/variables-globales-en-javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/variables-globales-en-javascript/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Néstor Velázquez Sánchez</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-5208</link>
+		<dc:creator><![CDATA[Néstor Velázquez Sánchez]]></dc:creator>
+		<pubDate>Wed, 03 Aug 2016 19:57:40 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-5208</guid>
+		<description><![CDATA[Hola, yo tengo una duda similar . . . 
+
+Tengo estas dos funciones, pero no logro sacar las variables de ellas . . .  
+
+[javascript]
+  var data = ref.once(&#039;value&#039;, function(snapshot) {
+    var result = snapshot.exportVal();
+    for(indice in result)
+    {
+      uUid.push(result[indice]);
+    }
+    // console.log(uUid);
+  });
+
+
+  // Aquí se obtiene toda la lista de usuarios
+  var dataAll = allUsers.once(&#039;value&#039;, function(snapshot) {
+    var resultAll = snapshot.exportVal();
+    for(indiceAll in resultAll)
+    {
+      uUidAll.push([indiceAll][0]);
+    }
+    // console.log( uUidAll );
+  });
+[/javascript]
+
+En este caso quiero usar las variables uUid y uUidAll para hacer una exclusión de la variable 1 en la variable 2 y obtener un arreglo 3 donde se hayan filtrado los elementos.]]></description>
+		<content:encoded><![CDATA[<p>Hola, yo tengo una duda similar . . . </p>
+<p>Tengo estas dos funciones, pero no logro sacar las variables de ellas . . .  </p>
+<p></p>
+		<div id="crayon-584438d02635e328937541" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+  var data = ref.once('value', function(snapshot) {
+    var result = snapshot.exportVal();
+    for(indice in result)
+    {
+      uUid.push(result[indice]);
+    }
+    // console.log(uUid);
+  });
+
+
+  // Aquí se obtiene toda la lista de usuarios
+  var dataAll = allUsers.once('value', function(snapshot) {
+    var resultAll = snapshot.exportVal();
+    for(indiceAll in resultAll)
+    {
+      uUidAll.push([indiceAll][0]);
+    }
+    // console.log( uUidAll );
+  });</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438d02635e328937541-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-2">2</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-4">4</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-6">6</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-8">8</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-10">10</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-12">12</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-14">14</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-16">16</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d02635e328937541-18">18</div><div class="crayon-num" data-line="crayon-584438d02635e328937541-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438d02635e328937541-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">data</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">ref</span><span class="crayon-sy">.</span><span class="crayon-e">once</span><span class="crayon-sy">(</span><span class="crayon-s">'value'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">snapshot</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">result</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">snapshot</span><span class="crayon-sy">.</span><span class="crayon-e">exportVal</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">for</span><span class="crayon-sy">(</span><span class="crayon-e">indice </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-v">result</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">uUid</span><span class="crayon-sy">.</span><span class="crayon-e">push</span><span class="crayon-sy">(</span><span class="crayon-v">result</span><span class="crayon-sy">[</span><span class="crayon-v">indice</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// console.log(uUid);</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-9">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-10">&nbsp;</div><div class="crayon-line" id="crayon-584438d02635e328937541-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// Aquí se obtiene toda la lista de usuarios</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">dataAll</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">allUsers</span><span class="crayon-sy">.</span><span class="crayon-e">once</span><span class="crayon-sy">(</span><span class="crayon-s">'value'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">snapshot</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">resultAll</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">snapshot</span><span class="crayon-sy">.</span><span class="crayon-e">exportVal</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">for</span><span class="crayon-sy">(</span><span class="crayon-e">indiceAll </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-v">resultAll</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">uUidAll</span><span class="crayon-sy">.</span><span class="crayon-e">push</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-v">indiceAll</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d02635e328937541-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// console.log( uUidAll );</span></div><div class="crayon-line" id="crayon-584438d02635e328937541-19"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>En este caso quiero usar las variables uUid y uUidAll para hacer una exclusión de la variable 1 en la variable 2 y obtener un arreglo 3 donde se hayan filtrado los elementos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: JuanCarlos</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-4918</link>
+		<dc:creator><![CDATA[JuanCarlos]]></dc:creator>
+		<pubDate>Tue, 12 Jul 2016 22:54:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-4918</guid>
+		<description><![CDATA[¿Por qué no funciona?
+No me asigna el resultado del POST a una variable global, ¿alguna solución por favor?
+
+Mi código es el siguiente: 
+
+var jsonDataEdo;
+var resultJsonEdo = &quot;&quot;;
+
+$(document).ready(function(){
+jsonDataEdo = dataEdo(20, 30);
+});
+
+function dataEdo(idA, idB)
+{    
+    $.post(urlDashboard + &quot;/_dataEdo?idBpm=&quot; + idBpm + &quot;&#038;idProdLine=&quot; + idProdLine, function (data) {
+        console.log(&quot;dataSinAjax:&quot;, data);
+        resultJsonEdo = data;        
+    });  
+    return resultJsonEdo;
+}]]></description>
+		<content:encoded><![CDATA[<p>¿Por qué no funciona?<br />
+No me asigna el resultado del POST a una variable global, ¿alguna solución por favor?</p>
+<p>Mi código es el siguiente: </p>
+<p>var jsonDataEdo;<br />
+var resultJsonEdo = &#8220;&#8221;;</p>
+<p>$(document).ready(function(){<br />
+jsonDataEdo = dataEdo(20, 30);<br />
+});</p>
+<p>function dataEdo(idA, idB)<br />
+{<br />
+    $.post(urlDashboard + &#8220;/_dataEdo?idBpm=&#8221; + idBpm + &#8220;&amp;idProdLine=&#8221; + idProdLine, function (data) {<br />
+        console.log(&#8220;dataSinAjax:&#8221;, data);<br />
+        resultJsonEdo = data;<br />
+    });<br />
+    return resultJsonEdo;<br />
+}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: capynet</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-1016</link>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+		<pubDate>Sun, 14 Feb 2016 13:34:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-1016</guid>
+		<description><![CDATA[Hola Marcelo. No entendí bien que necesitas. Creo entender que quieres mostrar una pregunta y un listado re radios para que el usuario marque la respuesta que crea correcta, y que al pinchar en &quot;Siguiente&quot;, se mande la respuesta de la pregunta actual y se cargue la siguiente pregunta con sus radios hasta llegar a la ultima pregunta.
+
+También entiendo que todo esto lo querés hacer con ajax no?
+
+Si es algo así lo que necesitas te dejo un ejemplo, sino explícamelo un poco mejor (sin código, con tus palabras mejor).]]></description>
+		<content:encoded><![CDATA[<p>Hola Marcelo. No entendí bien que necesitas. Creo entender que quieres mostrar una pregunta y un listado re radios para que el usuario marque la respuesta que crea correcta, y que al pinchar en &#8220;Siguiente&#8221;, se mande la respuesta de la pregunta actual y se cargue la siguiente pregunta con sus radios hasta llegar a la ultima pregunta.</p>
+<p>También entiendo que todo esto lo querés hacer con ajax no?</p>
+<p>Si es algo así lo que necesitas te dejo un ejemplo, sino explícamelo un poco mejor (sin código, con tus palabras mejor).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: marcelo</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-1005</link>
+		<dc:creator><![CDATA[marcelo]]></dc:creator>
+		<pubDate>Sat, 13 Feb 2016 04:00:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-1005</guid>
+		<description><![CDATA[Capy, estoy haciendo en modo aprendizaje una encuesta que consta de 80 preguntas con las mismas respuestas. Las preguntas las tengo en una bd de mysql. Tengo un archivo inicia_encuesta.php cuyo código en primer lugar indica por un if get que opera ante un  href=&quot;?siguiente=&#039;.$columna[&#039;id_preguntas&#039;].&#039;+1&quot;.  Ambas partes con la misma estructura html. Mi intención es que me muestre las preguntas y que luego de seleccionar el radio button con las opciones de respuestas me pase a la siguiente y se guarde un array. El proceso de mostrar y pasar a la siguiente pregunta funciona pero no se como enviarlo a un array para luego volcarlo en otra db.
+Hice esto pero que carga la variable pero al pasar a la pregunta siguiente me vuelve a cargar con la opción elegida borrando la anterior:
+
+&lt;pre&gt;
+var array_rtas;
+array_rtas = new Array(81);
+
+
+$(document).ready(function () {
+ $(&quot;#boton&quot;).click(function () {
+  var elements = document.getElementsByName(&quot;id_pregunta&quot;);
+  for (var i = 0, l = elements.length; i &lt; l; i++) {
+   if (elements[i].checked) {
+    rta2 = elements[i].value;
+   }
+  }
+  orden = document.getElementById(&quot;nroid&quot;).value;
+  cargar_matriz();
+ });
+});
+
+
+function cargar_matriz() {
+ sesion = document.getElementById(&quot;session&quot;).value;
+ array_rtas[0] = (sesion);
+ array_rtas.splice(orden, 0, rta2);
+ alert(array_rtas);
+}
+&lt;/pre&gt;
+          
+
+El código php: 
+
+                         &#039;&quot;.$id_preg_sig.&quot;&#039; LIMIT 1&quot;);
+                                    if(mysql_num_rows($query_pregunta)&#062;0){   /*si el numero de filas de la busqueda es mayor que 0 */
+                                        while($columna = mysql_fetch_assoc($query_pregunta)){   
+                                            echo &#039;
+                                                
+                                                    
+                                                        
+                                                            
+                                                                 &#039;.$columna[&#039;preguntas&#039;].&#039;
+                                                            
+
+                                                            
+                                                                 
+                                                                    Totalmente de acuerdo
+                                                                    Parcialmente de acuerdo
+                                                                    Totalmente en desacuerdo
+                                                                    Parcialmente en desacuerdo
+                                                                    No sabe / No responde
+                                                                 
+                                                            
+
+                                
+                                                            
+                                                                 
+                                                                     
+                                                                    
+                                                                
+                                                                
+                                                                    &lt;a href=&quot;?siguiente=&#039;.$columna[&#039;id_preguntas&#039;].&#039;&quot; rel=&quot;nofollow&quot;&gt;Siguiente&lt;/a&gt;
+                                                                                                                                        
+                                                                
+                                                            
+
+                                                        
+                                                        
+                                                   
+                                            &#039;;  
+                                        }
+                                    } else {           /* si el numero es &#060; 0 */
+                                         header(&#034;Location: encuesta_completa.php&#034;);
+                                    }
+                                }else{
+                                    echo &#039;Debes seleccionar una pregunta&#039;;
+                                }
+                            } else{             /* si la variable pregunta NO existe entonces: */
+                            $valor = (int) mysql_real_escape_string($_POST[&#039;pregunta&#039;]); 
+                            $query_pregunta = mysql_query(&#034;SELECT id_preguntas, preguntas FROM $db_table WHERE id_preguntas = &#039;&#034;.$valor.&#034;&#039; LIMIT 1&#034;);
+                            while($columna = mysql_fetch_assoc($query_pregunta)){
+
+ACA VA DE NUEVO LA ESTRUCTURA HTML CON   
+&lt;a href=&quot;?siguiente=&#039;.$columna[&#039;id_preguntas&#039;].&#039;+1&quot; rel=&quot;nofollow&quot;&gt;Siguiente&lt;/a&gt;       
+
+Soy novato me gustaria que me dieras si no es comprensible mi código una orientación de cómo lograr mi objetivo sin necesidad de que te explayes demasiado..
+
+Disculpá la molestia y agradezco tu opinión]]></description>
+		<content:encoded><![CDATA[<p>Capy, estoy haciendo en modo aprendizaje una encuesta que consta de 80 preguntas con las mismas respuestas. Las preguntas las tengo en una bd de mysql. Tengo un archivo inicia_encuesta.php cuyo código en primer lugar indica por un if get que opera ante un  href=&#8221;?siguiente=&#8217;.$columna[&#8216;id_preguntas&#8217;].&#8217;+1&#8243;.  Ambas partes con la misma estructura html. Mi intención es que me muestre las preguntas y que luego de seleccionar el radio button con las opciones de respuestas me pase a la siguiente y se guarde un array. El proceso de mostrar y pasar a la siguiente pregunta funciona pero no se como enviarlo a un array para luego volcarlo en otra db.<br />
+Hice esto pero que carga la variable pero al pasar a la pregunta siguiente me vuelve a cargar con la opción elegida borrando la anterior:</p>
+<p></p>
+		<div id="crayon-584438d026504484321219" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var array_rtas;
+array_rtas = new Array(81);
+
+
+$(document).ready(function () {
+ $("#boton").click(function () {
+  var elements = document.getElementsByName("id_pregunta");
+  for (var i = 0, l = elements.length; i &lt; l; i++) {
+   if (elements[i].checked) {
+    rta2 = elements[i].value;
+   }
+  }
+  orden = document.getElementById("nroid").value;
+  cargar_matriz();
+ });
+});
+
+
+function cargar_matriz() {
+ sesion = document.getElementById("session").value;
+ array_rtas[0] = (sesion);
+ array_rtas.splice(orden, 0, rta2);
+ alert(array_rtas);
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438d026504484321219-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-2">2</div><div class="crayon-num" data-line="crayon-584438d026504484321219-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-4">4</div><div class="crayon-num" data-line="crayon-584438d026504484321219-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-6">6</div><div class="crayon-num" data-line="crayon-584438d026504484321219-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-8">8</div><div class="crayon-num" data-line="crayon-584438d026504484321219-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-10">10</div><div class="crayon-num" data-line="crayon-584438d026504484321219-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-12">12</div><div class="crayon-num" data-line="crayon-584438d026504484321219-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-14">14</div><div class="crayon-num" data-line="crayon-584438d026504484321219-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-16">16</div><div class="crayon-num" data-line="crayon-584438d026504484321219-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-18">18</div><div class="crayon-num" data-line="crayon-584438d026504484321219-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-20">20</div><div class="crayon-num" data-line="crayon-584438d026504484321219-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-22">22</div><div class="crayon-num" data-line="crayon-584438d026504484321219-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438d026504484321219-24">24</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438d026504484321219-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">array_rtas</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-2"><span class="crayon-v">array_rtas</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-t">Array</span><span class="crayon-sy">(</span><span class="crayon-cn">81</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d026504484321219-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-4">&nbsp;</div><div class="crayon-line" id="crayon-584438d026504484321219-5"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-v">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-6"><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#boton"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438d026504484321219-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">elements</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementsByName</span><span class="crayon-sy">(</span><span class="crayon-s">"id_pregunta"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">l</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">elements</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-v">l</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-o">++</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438d026504484321219-9"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">elements</span><span class="crayon-sy">[</span><span class="crayon-v">i</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">checked</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">rta2</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">elements</span><span class="crayon-sy">[</span><span class="crayon-v">i</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">value</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d026504484321219-11"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438d026504484321219-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">orden</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementById</span><span class="crayon-sy">(</span><span class="crayon-s">"nroid"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">value</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">cargar_matriz</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d026504484321219-15"><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-16"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d026504484321219-17">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-18">&nbsp;</div><div class="crayon-line" id="crayon-584438d026504484321219-19"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">cargar_matriz</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-20"><span class="crayon-h"> </span><span class="crayon-v">sesion</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementById</span><span class="crayon-sy">(</span><span class="crayon-s">"session"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">value</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d026504484321219-21"><span class="crayon-h"> </span><span class="crayon-v">array_rtas</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">sesion</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-22"><span class="crayon-h"> </span><span class="crayon-v">array_rtas</span><span class="crayon-sy">.</span><span class="crayon-e">splice</span><span class="crayon-sy">(</span><span class="crayon-v">orden</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">rta2</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438d026504484321219-23"><span class="crayon-h"> </span><span class="crayon-e">alert</span><span class="crayon-sy">(</span><span class="crayon-v">array_rtas</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438d026504484321219-24"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>El código php: </p>
+<p>                         &#8216;&#8221;.$id_preg_sig.&#8221;&#8216; LIMIT 1&#8243;);<br />
+                                    if(mysql_num_rows($query_pregunta)&gt;0){   /*si el numero de filas de la busqueda es mayor que 0 */<br />
+                                        while($columna = mysql_fetch_assoc($query_pregunta)){<br />
+                                            echo &#8216;</p>
+<p>                                                                 &#8216;.$columna[&#8216;preguntas&#8217;].&#8217;</p>
+<p>                                                                    Totalmente de acuerdo<br />
+                                                                    Parcialmente de acuerdo<br />
+                                                                    Totalmente en desacuerdo<br />
+                                                                    Parcialmente en desacuerdo<br />
+                                                                    No sabe / No responde</p>
+<p>                                                                    <a href="?siguiente='.$columna['id_preguntas'].'" rel="nofollow">Siguiente</a></p>
+<p>                                            &#8216;;<br />
+                                        }<br />
+                                    } else {           /* si el numero es &lt; 0 */<br />
+                                         header(&quot;Location: encuesta_completa.php&quot;);<br />
+                                    }<br />
+                                }else{<br />
+                                    echo &#039;Debes seleccionar una pregunta&#039;;<br />
+                                }<br />
+                            } else{             /* si la variable pregunta NO existe entonces: */<br />
+                            $valor = (int) mysql_real_escape_string($_POST[&#039;pregunta&#039;]);<br />
+                            $query_pregunta = mysql_query(&quot;SELECT id_preguntas, preguntas FROM $db_table WHERE id_preguntas = &#039;&quot;.$valor.&quot;&#039; LIMIT 1&quot;);<br />
+                            while($columna = mysql_fetch_assoc($query_pregunta)){</p>
+<p>ACA VA DE NUEVO LA ESTRUCTURA HTML CON<br />
+<a href="?siguiente='.$columna['id_preguntas'].'+1" rel="nofollow">Siguiente</a>       </p>
+<p>Soy novato me gustaria que me dieras si no es comprensible mi código una orientación de cómo lograr mi objetivo sin necesidad de que te explayes demasiado..</p>
+<p>Disculpá la molestia y agradezco tu opinión</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: José Alvarado</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-87</link>
+		<dc:creator><![CDATA[José Alvarado]]></dc:creator>
+		<pubDate>Wed, 20 Jan 2016 20:37:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-87</guid>
+		<description><![CDATA[Hola. 
+Estoy haciendo un proyecto de la Uni y el $.POST no me devuelve ningún valor, si me pueden ayudar acá coloco el código ;)
+
+$(&quot;#submit&quot;).click(function(event){
+ 	event.preventDefault();
+        var idA=$(&quot;#numero&quot;).val();
+	if (idA != &quot;&quot;) {
+		$(&quot;#gif&quot;).show();
+		var posteo = $.post(&quot;lib/buscarAgencia.php&quot;,{ab:idA});
+ 	       posteo.done(function(data) {
+			$(&quot;#gif&quot;).hide();
+			alert(ab);
+			//$(&quot;#buscAg&quot;).click();
+			$(&quot;#numero&quot;).val(&quot;&quot;);
+	      });
+	}else{
+        	alert(&#039;No hay datos de búsqueda&#039;);
+	};
+});
+---------- El php --------
+query($consultA);
+		$row=$resultA-&#062;num_rows;
+
+		if($row0){
+			// Usuario Existe
+				$fila = $resultA-&#062;fetch_array();
+					
+		}else{
+			// Usuario &#039;NO&#039; Existe
+			$fila=&quot;No se encontró Agencia&quot;;	
+		};
+
+	}
+ return $fila;
+?&#062;
+
+Muchas gracias!!!]]></description>
+		<content:encoded><![CDATA[<p>Hola.<br />
+Estoy haciendo un proyecto de la Uni y el $.POST no me devuelve ningún valor, si me pueden ayudar acá coloco el código 😉</p>
+<p>$(&#8220;#submit&#8221;).click(function(event){<br />
+ 	event.preventDefault();<br />
+        var idA=$(&#8220;#numero&#8221;).val();<br />
+	if (idA != &#8220;&#8221;) {<br />
+		$(&#8220;#gif&#8221;).show();<br />
+		var posteo = $.post(&#8220;lib/buscarAgencia.php&#8221;,{ab:idA});<br />
+ 	       posteo.done(function(data) {<br />
+			$(&#8220;#gif&#8221;).hide();<br />
+			alert(ab);<br />
+			//$(&#8220;#buscAg&#8221;).click();<br />
+			$(&#8220;#numero&#8221;).val(&#8220;&#8221;);<br />
+	      });<br />
+	}else{<br />
+        	alert(&#8216;No hay datos de búsqueda&#8217;);<br />
+	};<br />
+});<br />
+&#8212;&#8212;&#8212;- El php &#8212;&#8212;&#8211;<br />
+query($consultA);<br />
+		$row=$resultA-&gt;num_rows;</p>
+<p>		if($row0){<br />
+			// Usuario Existe<br />
+				$fila = $resultA-&gt;fetch_array();</p>
+<p>		}else{<br />
+			// Usuario &#8216;NO&#8217; Existe<br />
+			$fila=&#8221;No se encontró Agencia&#8221;;<br />
+		};</p>
+<p>	}<br />
+ return $fila;<br />
+?&gt;</p>
+<p>Muchas gracias!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Roberto</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-86</link>
+		<dc:creator><![CDATA[Roberto]]></dc:creator>
+		<pubDate>Thu, 27 Feb 2014 16:00:38 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-86</guid>
+		<description><![CDATA[Tambien tengo un problema similar estoy usando jquery y quiero recuperar los valores que me envia el sevlet, y no tengo problema en ello, la cosa es que cuando quiera usar esos datos ya no funciona hasta el siguiente click en el boton que hace la accion.
+
+&lt;code&gt;
+	$(&quot;#btnAgregarCuentasHost&quot;).click(function(){
+ 		var opciones=&#039;&#039;
+		$.post(&quot;AccionesHost.html&quot;, { accion:&quot;retornarHosts&quot;, indice:&quot;0&quot;}, function(datos) {
+				opciones=datos;
+				return opciones;
+			});
+		var filas = idDisponibleCuentasHost();
+		var strNueva_Fila=&#039;&#039;;
+		var tags = &#039;&#039;+opciones+&#039;&#039;;
+		strNueva_Fila=&#039;&#039;+
+		&#039; &#039; +
+		&#039;&#039;+
+		&#039;&#039;+
+		&#039;&#039;+tags+&#039;&#039;+
+		&#039;&#039;+	
+		&#039;&#039;+
+		&#039;&#039;+
+		&#039;&#039;;
+		var objTabla=$(this).parents().get(3);	
+		$(objTabla).find(&#039;tbody&#039;).append(strNueva_Fila);
+		$(&quot;#jQueryTabs1&quot;).animate({height: &#039;+=35px&#039;,},500)
+		$(&quot;#jQueryTabs2&quot;).animate({height: &#039;+=35px&#039;,},500)		
+
+		})
+&lt;/code&gt;
+
+si pongo un alert despues de la llave que cierra el post funciona al primer click tambien, que podra ser?]]></description>
+		<content:encoded><![CDATA[<p>Tambien tengo un problema similar estoy usando jquery y quiero recuperar los valores que me envia el sevlet, y no tengo problema en ello, la cosa es que cuando quiera usar esos datos ya no funciona hasta el siguiente click en el boton que hace la accion.</p>
+<p><code><br />
+	$("#btnAgregarCuentasHost").click(function(){<br />
+ 		var opciones=''<br />
+		$.post("AccionesHost.html", { accion:"retornarHosts", indice:"0"}, function(datos) {<br />
+				opciones=datos;<br />
+				return opciones;<br />
+			});<br />
+		var filas = idDisponibleCuentasHost();<br />
+		var strNueva_Fila='';<br />
+		var tags = ''+opciones+'';<br />
+		strNueva_Fila=''+<br />
+		' ' +<br />
+		''+<br />
+		''+<br />
+		''+tags+''+<br />
+		''+<br />
+		''+<br />
+		''+<br />
+		'';<br />
+		var objTabla=$(this).parents().get(3);<br />
+		$(objTabla).find('tbody').append(strNueva_Fila);<br />
+		$("#jQueryTabs1").animate({height: '+=35px',},500)<br />
+		$("#jQueryTabs2").animate({height: '+=35px',},500)		</p>
+<p>		})<br />
+</code></p>
+<p>si pongo un alert despues de la llave que cierra el post funciona al primer click tambien, que podra ser?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Miguel</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-85</link>
+		<dc:creator><![CDATA[Miguel]]></dc:creator>
+		<pubDate>Tue, 22 Oct 2013 17:40:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-85</guid>
+		<description><![CDATA[aca te dejo la funcion sin comentarios para que sea un poco mas entendible, gracias.
+
+	var productos = null;
+	alert(productos);
+	productos = (function () {
+	    $.ajax({
+	        &#039;async&#039;: false,
+	        &#039;global&#039;: true,
+	        &#039;url&#039;: &#039;includes/topiclas_view.php&#039;,
+	        &#039;dataType&#039;: &quot;text&quot;,
+	        &#039;success&#039;: function (data) {
+	            productos = data;
+	        }
+	    });
+	   	//return productos;
+	   	alert(productos);
+	})();
+	alert(productos);]]></description>
+		<content:encoded><![CDATA[<p>aca te dejo la funcion sin comentarios para que sea un poco mas entendible, gracias.</p>
+<p>	var productos = null;<br />
+	alert(productos);<br />
+	productos = (function () {<br />
+	    $.ajax({<br />
+	        &#8216;async&#8217;: false,<br />
+	        &#8216;global&#8217;: true,<br />
+	        &#8216;url&#8217;: &#8216;includes/topiclas_view.php&#8217;,<br />
+	        &#8216;dataType&#8217;: &#8220;text&#8221;,<br />
+	        &#8216;success&#8217;: function (data) {<br />
+	            productos = data;<br />
+	        }<br />
+	    });<br />
+	   	//return productos;<br />
+	   	alert(productos);<br />
+	})();<br />
+	alert(productos);</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Miguel</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-84</link>
+		<dc:creator><![CDATA[Miguel]]></dc:creator>
+		<pubDate>Tue, 22 Oct 2013 17:37:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-84</guid>
+		<description><![CDATA[Buen dia Capy, te queria molestar con una consulta referente a la utilizacion de variables globaes, mi problema es el siguiente.
+
+Estoy utilizando una funcion que lee datos en formato json desde un archivo php externo, la funcion almacena el array tipo json en una variable llamada productos, esta variable es global, el problema es que fuera de ese funcion, no me aparece ningun dato dentro de la variable, es como si nunca hubiera almacenando en ellos el array tipo json.
+
+El codigo es el siguiente:
+
+var productos = null;                                 //aca defino la variable productos
+	productos = (function () {                 //luego le digo que productos va a contener el resultado de la funcion que voy a ejecutar;
+	    $.ajax({                                             //luego por medio de ajax mando a leer el archivo topiclas_view.php el cual me devuelve un array tipo jason
+	        &#039;async&#039;: false,
+	        &#039;global&#039;: true,
+	        &#039;url&#039;: &#039;includes/topiclas_view.php&#039;,
+	        &#039;dataType&#039;: &quot;text&quot;,
+	        &#039;success&#039;: function (data) {
+	            productos = data;                   //almacenamos los datos obtenidos en la variable productos
+	        }
+	    });
+	   	//return productos;                    //retornamos la variable productos que contiene el array tipo json (el return aparece comentado devido a unas pruebas)
+	   	alert(productos);                        //este alert imprime el array tipo jason que se le acaba de alamacenar a la variable productos
+	})();
+alert(productos);                                       //EL PROBLEMA ESTA ACA, CUANDO MANDAO A LLAMAR LA VARIABLE PRODUCTOS DESDE CUALQUIER OTRO LUGAR DE MI JS, SIMPLEMENTE NO ME DEVUELVE NADA, SOLO ME DESPLIEGA UN MENSAJE DE undefined
+
+
+Supuce que el problema era justamente porque la funcion ajax me devuelve informacion de manera asincrona, pero al cambiar el atributo false por true para que sea sincrona, igual sigo sin poder utilizar la variable en ninguna otra parte de mi .js
+
+Si fueras tan amable de ayudarme te lo agradeceria mucho! Saludos!]]></description>
+		<content:encoded><![CDATA[<p>Buen dia Capy, te queria molestar con una consulta referente a la utilizacion de variables globaes, mi problema es el siguiente.</p>
+<p>Estoy utilizando una funcion que lee datos en formato json desde un archivo php externo, la funcion almacena el array tipo json en una variable llamada productos, esta variable es global, el problema es que fuera de ese funcion, no me aparece ningun dato dentro de la variable, es como si nunca hubiera almacenando en ellos el array tipo json.</p>
+<p>El codigo es el siguiente:</p>
+<p>var productos = null;                                 //aca defino la variable productos<br />
+	productos = (function () {                 //luego le digo que productos va a contener el resultado de la funcion que voy a ejecutar;<br />
+	    $.ajax({                                             //luego por medio de ajax mando a leer el archivo topiclas_view.php el cual me devuelve un array tipo jason<br />
+	        &#8216;async&#8217;: false,<br />
+	        &#8216;global&#8217;: true,<br />
+	        &#8216;url&#8217;: &#8216;includes/topiclas_view.php&#8217;,<br />
+	        &#8216;dataType&#8217;: &#8220;text&#8221;,<br />
+	        &#8216;success&#8217;: function (data) {<br />
+	            productos = data;                   //almacenamos los datos obtenidos en la variable productos<br />
+	        }<br />
+	    });<br />
+	   	//return productos;                    //retornamos la variable productos que contiene el array tipo json (el return aparece comentado devido a unas pruebas)<br />
+	   	alert(productos);                        //este alert imprime el array tipo jason que se le acaba de alamacenar a la variable productos<br />
+	})();<br />
+alert(productos);                                       //EL PROBLEMA ESTA ACA, CUANDO MANDAO A LLAMAR LA VARIABLE PRODUCTOS DESDE CUALQUIER OTRO LUGAR DE MI JS, SIMPLEMENTE NO ME DEVUELVE NADA, SOLO ME DESPLIEGA UN MENSAJE DE undefined</p>
+<p>Supuce que el problema era justamente porque la funcion ajax me devuelve informacion de manera asincrona, pero al cambiar el atributo false por true para que sea sincrona, igual sigo sin poder utilizar la variable en ninguna otra parte de mi .js</p>
+<p>Si fueras tan amable de ayudarme te lo agradeceria mucho! Saludos!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-83</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 16 Oct 2013 23:31:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-83</guid>
+		<description><![CDATA[Lo siento, no conozco C#, soy mas de PHP del lado del servidor.]]></description>
+		<content:encoded><![CDATA[<p>Lo siento, no conozco C#, soy mas de PHP del lado del servidor.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Laura</title>
+		<link>http://ecapy.com/variables-globales-en-javascript/#comment-82</link>
+		<dc:creator><![CDATA[Laura]]></dc:creator>
+		<pubDate>Wed, 16 Oct 2013 20:35:30 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=283#comment-82</guid>
+		<description><![CDATA[Hola!
+Quisiera acceder a una variable Global en C# desde Javascript, y poder editar el valor, como podría hacerlo?
+E intentado creando una variable en Global.asax pero no lo consigo, y tengo dudas de como implementar el Session con un variable nueva.
+
+De antemano gracias por la ayuda.]]></description>
+		<content:encoded><![CDATA[<p>Hola!<br />
+Quisiera acceder a una variable Global en C# desde Javascript, y poder editar el valor, como podría hacerlo?<br />
+E intentado creando una variable en Global.asax pero no lo consigo, y tengo dudas de como implementar el Session con un variable nueva.</p>
+<p>De antemano gracias por la ayuda.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/acceder-a-manager-webapp-en-tomcat-7/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:37:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Acceder a &#8220;manager webapp&#8221; en Tomcat 7</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Acceder a &#8220;manager webapp&#8221; en Tomcat 7 RSS de los comentarios" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Instalar java 7 en Ubuntu o Linux Mint' href='../instalar-java-7-en-ubuntu-o-linux-mint/index.html' />
+<link rel='next' title='Habilitar .bashrc al iniciar sesión' href='../habilitar-bashrc-al-iniciar-sesion/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index1aa7.html?p=1393' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed8838.json?url=http%3A%2F%2Fecapy.com%2Facceder-a-manager-webapp-en-tomcat-7%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embede18a?url=http%3A%2F%2Fecapy.com%2Facceder-a-manager-webapp-en-tomcat-7%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-1393 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-1393" class="post-1393 post type-post status-publish format-standard hentry category-tip tag-tomcat">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Acceder a &#8220;manager webapp&#8221; en Tomcat 7</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2012-03-11T22:32:57+00:00">11 Mar,  2012</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/tip/index.html" rel="category tag">Tip</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/tomcat/index.html" rel="tag">Tomcat</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="index.html#comments">25 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Aparentemente a la gente de tomcat se les ha olvidado actualizar la documentacion que muestra en la página index que ofrece por defecto:</p>
+<p><a href="../wp-content/uploads/2012/03/index_Apache_Tomcat1.png"><img class="aligncenter size-full wp-image-1395" title="index_Apache_Tomcat" src="../wp-content/uploads/2012/03/index_Apache_Tomcat1.png" alt="" width="553" height="150" srcset="http://ecapy.com/wp-content/uploads/2012/03/index_Apache_Tomcat1.png 553w, http://ecapy.com/wp-content/uploads/2012/03/index_Apache_Tomcat1-300x81.png 300w" sizes="(max-width: 553px) 100vw, 553px" /></a></p>
+<p>Por lo que si las seguís, va a ser imposible que accedas al &#8220;manager webapp&#8221;.<strong> Aprovecho para felicitar a los maestros de Tomcat, que un error así no es nada a comparación del pedazo de soft que nos dan sin pedir ni una moneda 😀</strong></p>
+<p>Vamos a solucionar este problemita:</p>
+<p>Edita el archivo<strong> /etc/tomcat7/tomcat-users.xml</strong> y agrega estas lineas<strong> dentro del tag<span style="color: #993300;"> &lt;tomcat-users&gt;&lt;/tomcat-users&gt;</span></strong>:</p>
+		<div id="crayon-5844378559b01346737497" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844378559b01346737497-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844378559b01346737497-1">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>No olvides de poner el usuario y clave que quieras.<br />
+Listo, saludos.</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../instalar-java-7-en-ubuntu-o-linux-mint/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../habilitar-bashrc-al-iniciar-sesion/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                        <div id="comments" class="comments-area comments">
+            <h3 class="comments-title">
+            25 Comments        </h3>
+
+        <ul class="comment-list">
+
+            		<li class="comment even thread-even depth-1" id="li-comment-562">
+			<div id="comment-562" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/22c474fafed9aebff5bb44136adb9f51?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/22c474fafed9aebff5bb44136adb9f51?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://jaja.com/' rel='external nofollow' class='url'>Cristian</a></span>							<span class="comment-date">10/09/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias muy funcional</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-563">
+			<div id="comment-563" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/43dc85b18983035c887c8296d6c86d79?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/43dc85b18983035c887c8296d6c86d79?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Quikin</span>							<span class="comment-date">05/10/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Bien funciono!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-564">
+			<div id="comment-564" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/120832e69512219c40a0a520ff65f1c2?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/120832e69512219c40a0a520ff65f1c2?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">White_King</span>							<span class="comment-date">14/11/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>no encuentro esta ruta:</p>
+<p> /etc/tomcat7/tomcat-users.xml</p>
+<p>la que tengo es:<br />
+Apache Tomcat 7.0.27conf/tomcat-users.xml</p>
+<p>y lo intente en ese archivo y no funciona</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-565">
+			<div id="comment-565" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">16/11/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Prueba a hacer sudo updatedb &#038;&#038; sudo locate tomcat-users.xml si no lo encuentras tampoco así, tenemos un problema. por cierto estas usando algún sabor de debian?</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even depth-2" id="li-comment-568">
+			<div id="comment-568" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/ddf459b2cc3d3ce82d9527d33db0923d?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/ddf459b2cc3d3ce82d9527d33db0923d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">David Vega</span>							<span class="comment-date">24/07/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Si estas trabajando con el tomcat que te instala java-netbeans no va a funcionar, entra en la pag de tomcat:<br />
+<a href="http://tomcat.apache.org/download-70.cgi" rel="nofollow">http://tomcat.apache.org/download-70.cgi</a><br />
+y descarga el service installer 32-bit/64-bit Windows Service Installer (pgp, md5)<br />
+ahi inicia un servicio en windows y funciona&#8230; suerte</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-566">
+			<div id="comment-566" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/58e30797870f6f727632093c36f81e53?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/58e30797870f6f727632093c36f81e53?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Maiso</span>							<span class="comment-date">04/02/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Grande!! No le encontraba la vuelta..<br />
+Ahi q sacar los <!-- --> para q  te tome los usuarios..Y reiniciar el servicio del apache despues de cambiar el XML porque si no no funciona..un abrazo!</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="li-comment-567">
+			<div id="comment-567" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/926e57bdcca18a1cffcf9d80651893dc?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/926e57bdcca18a1cffcf9d80651893dc?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://mipagina.org/' rel='external nofollow' class='url'>webmaster</a></span>							<span class="comment-date">10/07/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Buena esa. Se debe cambiar los usuarios en el archivo xml y reiniciar el servidor tomcat. Funciona!!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-569">
+			<div id="comment-569" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/c610e583c9836a4801116d93cce5b7a9?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/c610e583c9836a4801116d93cce5b7a9?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Oswaldo estrada</span>							<span class="comment-date">19/08/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>yo tengo ubuntu, ya hice todo el procedimiento que dice, y no me funciona, me sigue preguntando el usuario y contraseña,<br />
+agradecería su ayuda, gracias!!!<br />
+saludos!!!</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-570">
+			<div id="comment-570" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">28/08/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>se que respondo tarde pero por si le sirve a alguien: reinicia tomcat: sudo service tomcat7 restart</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-571">
+			<div id="comment-571" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d02418941606dc3680c947bd0afcf93c?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d02418941606dc3680c947bd0afcf93c?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Cueto</span>							<span class="comment-date">08/08/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>gracias, me daba errores de permisos de escritura pero lo guarde en otra ubicacion con mismo nombre y formato y luego lo sustitui</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-572">
+			<div id="comment-572" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/e41a081a72bff9774a19295792ee8a18?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/e41a081a72bff9774a19295792ee8a18?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Luis Camacho</span>							<span class="comment-date">28/10/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Estimado, me funciono perfecto para ingresar al &#8220;Manager WebApp&#8221;, pero aun tengo problemas para ingresar al &#8220;Host-Manager WebApp&#8221;.<br />
+favor su ayuda.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-573">
+			<div id="comment-573" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/4bc5ee40bd65534a524879721521e47b?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/4bc5ee40bd65534a524879721521e47b?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Elisa</span>							<span class="comment-date">30/10/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Muchas gracias funciono perfecto.<br />
+Saludos</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-574">
+			<div id="comment-574" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/3eea1960fa0bc92da0a6cf6437218315?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/3eea1960fa0bc92da0a6cf6437218315?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">cristian</span>							<span class="comment-date">02/11/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>amigo, quito los comentarios?</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-575">
+			<div id="comment-575" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/3a6e2697500c6a4ec072b18a64e7d412?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/3a6e2697500c6a4ec072b18a64e7d412?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://teamapps2.webcindario.com/' rel='external nofollow' class='url'>Francisco</a></span>							<span class="comment-date">14/11/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias me ayudo mucho..!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-576">
+			<div id="comment-576" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/3f3aa8146858b92dc6912e86278ca163?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/3f3aa8146858b92dc6912e86278ca163?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://crystalindigo.com.ar/' rel='external nofollow' class='url'>Marcos Gonzalez</a></span>							<span class="comment-date">26/03/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias! muchas gracias y pensar que por un error siemple no funcionaba</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-577">
+			<div id="comment-577" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/b7243b940a9ed124252ce1807a692162?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/b7243b940a9ed124252ce1807a692162?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://-/' rel='external nofollow' class='url'>Juan Gonzalo</a></span>							<span class="comment-date">26/08/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola! Todo medio pero cuando el doy Guardar Sale Acceso Denegado, estoy en Admin con todos los permisos ayuda :'(</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-578">
+			<div id="comment-578" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">28/08/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Reiniciaste tomcat?</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-579">
+			<div id="comment-579" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a51bc74f3965921f7328de770d3910a8?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a51bc74f3965921f7328de770d3910a8?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Pablo</span>							<span class="comment-date">28/09/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hay que reiniciar el tomcat despues del cambio</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-580">
+			<div id="comment-580" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/f30e9a449e9de70ed09fff7ac2acf72d?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/f30e9a449e9de70ed09fff7ac2acf72d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Ana Hoyos Teràn</span>							<span class="comment-date">24/11/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Muchas gracias, me ha sido de gran ayuda.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-581">
+			<div id="comment-581" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/09b48c765768001d8897be459dd8997d?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/09b48c765768001d8897be459dd8997d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Jose Morales</span>							<span class="comment-date">13/12/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Funciono!!&#8230;. grandee!! eres el amo.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-3112">
+			<div id="comment-3112" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/5f66ca58bf29ba741f308bad2fe944e6?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/5f66ca58bf29ba741f308bad2fe944e6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Carlos Andrade</span>							<span class="comment-date">05/05/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Capy mi archivo dice lo siguiente y está activado el server status y host manager en la pagina inicial de tomcat, pero sigo sin poder acceder a manager app. La verdad no entendí tu solucion.. El tomcat que estoy utilizando es el 8.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-5195">
+			<div id="comment-5195" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/2450f8fbfdd3c3dbfb18ac429900beaf?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/2450f8fbfdd3c3dbfb18ac429900beaf?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Orlando</span>							<span class="comment-date">03/08/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Buenas, tengo tomcat 8.5 y se incia el servicio sin embargo no entra al manager , lo instale con el installer y deje todo igual. Pero la pagina no carga le cololo localhost:8080/manager</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-5639">
+			<div id="comment-5639" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/1e493453c55b2ebc1b94cc4b269a4ba2?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/1e493453c55b2ebc1b94cc4b269a4ba2?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">DC</span>							<span class="comment-date">19/08/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola,</p>
+<p> que lineas se agregan en el tag disculpa!  🙁</p>
+<p>saludos</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-6480">
+			<div id="comment-6480" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/65aac640cc568d2e2b86da64823ba4e3?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/65aac640cc568d2e2b86da64823ba4e3?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://alex.u.reina@gmail.com/' rel='external nofollow' class='url'>AUR</a></span>							<span class="comment-date">30/09/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Que tal pana, puedes usar la siguiente línea como referencia.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-7893">
+			<div id="comment-7893" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/701faee8459ed7440fe1cf1fb86eb991?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/701faee8459ed7440fe1cf1fb86eb991?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Dav</span>							<span class="comment-date">30/11/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Oye, no se ve la linea que hay que agregar.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+        </ul><!-- .comment-list -->
+
+        
+                <p class="no-comments">:).</p>
+        
+    
+    </div>                                            
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/acceder-a-manager-webapp-en-tomcat-7/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:37:14 GMT -->
+</html>

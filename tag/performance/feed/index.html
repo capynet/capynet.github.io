@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Performance &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/performance/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Habilitar el opcache que viene con php ( &gt;= 5.5 ) en xampp</title>
+		<link>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/</link>
+		<comments>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/#comments</comments>
+		<pubDate>Sun, 08 Dec 2013 02:59:18 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2583</guid>
+		<description><![CDATA[Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS. Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este) [crayon-58443780636be851476214/] Y listo, tenemos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/habilitar-el-opcache-que-viene-con-php/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS.</p>
+<p>Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este)</p><pre class="crayon-plain-tag">[Opcache]
+; poné el path real donde esté alojado php_opcache.dll
+zend_extension = "C:xamppphpextphp_opcache.dll"
+opcache.memory_consumption = 500
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=60
+opcache.fast_shutdown=1
+opcache.enable_cli=1</pre><p>Y listo, tenemos un motivo menos de sufrimiento a la hora de programar en este SO.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>PHP APC: configuración rápida</title>
+		<link>http://ecapy.com/drupal-apc-configuracion-rapida/</link>
+		<pubDate>Fri, 22 Nov 2013 09:06:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2567</guid>
+		<description><![CDATA[Aquí dejo una configuración rápida de APC. [crayon-58443780642c4830211240/] Si están usando Debian o derivados pueden poner la configuración en /etc/php5/conf.d/20-apc.ini (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar). Para mas opciones ver http://www.php.net/manual/es/apc.configuration.php No olvides reiniciar apache: sudo service apache2 restart Chau!]]></description>
+				<content:encoded><![CDATA[<p>Aquí dejo una configuración rápida de APC.</p><pre class="crayon-plain-tag">extension=apc.so
+apc.shm_segments=1
+apc.shm_size=256M</pre><p>Si están usando Debian o derivados pueden poner la configuración en <em>/etc/php5/conf.d/20-apc.ini</em> (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar).</p>
+<p>Para mas opciones ver <a href="http://www.php.net/manual/es/apc.configuration.php" target="_blank">http://www.php.net/manual/es/apc.configuration.php</a></p>
+<p>No olvides reiniciar apache: <strong>sudo service apache2 restart</strong></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Mejorando el rendimiento en Drupal 7: Memcached y Entity cache</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/</link>
+		<comments>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comments</comments>
+		<pubDate>Thu, 07 Mar 2013 10:51:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2036</guid>
+		<description><![CDATA[En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7. Memcached para los que no lo conozcan, es un data cache basado en RAM. Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7.</p>
+<p>Memcached para los que no lo conozcan, es un <a href="http://es.wikipedia.org/wiki/Memcached" target="_blank">data cache basado en RAM</a>.</p>
+<p>Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para cachear utiliza la base de datos como almacén para dicho cache, y esto es costoso. Cada vez que guarda algo en cache o lo pide, estamos haciendo una query a la DB, y aunque toda tu DB este cacheada (mysql tiene su propio cache) Drupal siempre va a tener un importante overhead solo por tener que pedir a la DB este cache.</p>
+<p>Técnicamente hablando el tema es así: Estés o no logueado, Drupal usa <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_get/7" target="_blank">cache_get()</a> y <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_set/7" target="_blank">cache_set()</a>. Luego, estas funciones delegan la tarea de cacheo a la clase que se encargue en ese momento de almacenar y devolver los datos cacheados. Una instalación estándar trae una clase llamada &#8220;<a href="http://api.drupal.org/api/drupal/includes!cache.inc/class/DrupalDatabaseCache/7" target="_blank">DrupalDatabaseCache</a>&#8221; que usa como backend storage la propia DB de Drupal. El módulo <a href="http://drupal.org/project/memcache" target="_blank">Memcache API</a> simplemente proporciona su propia clase (MemCacheDrupal) que hace lo mismo pero mandando el cache a Memcache.</p>
+<p>Memcache se presenta como una muy buena solución a este escollo ya que fue diseñado para ser usado como cache, ofreciendo un overhead mínimo y una velocidad de respuesta muy superior.</p>
+<p>Bueno, vamos al lío.</p>
+<h4>Maquina de pruebas:</h4>
+<ul>
+<li>Hardware:
+<ul>
+<li>core2duo e7400@3.5GHZ</li>
+<li>8gb de ram DDR3@1333MHZ</li>
+<li>Disco SSD OCZ Vertex 2 de 60gb</li>
+</ul>
+</li>
+<li>Software:
+<ul>
+<li>Ubuntu 12.10 de 64 bits</li>
+<li>PHP 5.4.6</li>
+<li>MySQL 5.5.29</li>
+<li>Apache 2.2.22</li>
+<li>APC 3.1.13</li>
+<li>memcached 1.4.14</li>
+<li><a href="http://pecl.php.net/package/memcached" target="_blank">Cliente PHP de Memcache: memcached 2.0.1</a></li>
+<li><a href="http://drupal.org/project/memcache" target="_blank">Modulo Memcache API and Integration 7.x-1.0</a></li>
+<li><a href="http://drupal.org/project/entitycache" target="_blank">Modulo Entity cache</a></li>
+</ul>
+</li>
+</ul>
+<p>Para hacer las pruebas he usado la instalación de Drupal &#8220;<a title="Un mal día para este Drupal" href="http://ecapy.com/un-mal-dia-para-este-drupal/" target="_blank">Un mal día para este Drupal</a>&#8220;.<br />
+<strong>Las pruebas las hice sobre usuarios anónimos, logueados y el propio admin</strong> que es el que mas suele sufrir en terminos de performance porque ejecuta código extra por los privilegios que conlleva.</p>
+<h3>Usuarios anónimos:</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 199.42 ms.</li>
+<li>Page execution time was 4791.87 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1226 queries in 71.77 ms.</li>
+<li>Page execution time was 3892.39 ms.</li>
+<li>PHP peak=57 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 398 queries in 39.88 ms.</li>
+<li>Page execution time was 3450.76 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 167.15 ms.</li>
+<li>Page execution time was 4037.62 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1186 queries in 66 ms.</li>
+<li>Page execution time was 3927.52 ms.</li>
+<li>PHP peak=57.75 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 377 queries in 30.31 ms.</li>
+<li>Page execution time was 3534.07 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios logueados</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2324 queries in 162.27 ms.</li>
+<li>Page execution time was 4033.2 ms.</li>
+<li>PHP peak=58.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 73.47 ms.</li>
+<li>Page execution time was 4028.68 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 396 queries in 26.19 ms.</li>
+<li>Page execution time was 3530.29 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2262 queries in 182.59 ms.</li>
+<li>Page execution time was 4286.79 ms.</li>
+<li>PHP peak=58 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 56.45 ms.</li>
+<li>Page execution time was 3716.37 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 379 queries in 27.97 ms.</li>
+<li>Page execution time was 4072.24 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios con rol &#8220;administrator&#8221;</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3106 queries in 231.33 ms.</li>
+<li>Page execution time was 5588.66 ms.</li>
+<li>PHP peak=66.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1812 queries in 89.79 ms.</li>
+<li>Page execution time was 4701.39 ms.</li>
+<li>PHP peak=64.5 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 68.43 ms.</li>
+<li>Page execution time was 4563.24 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3104 queries in 219.49 ms.</li>
+<li>Page execution time was 5510.96 ms.</li>
+<li>PHP peak=67 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1816 queries in 107.06 ms.</li>
+<li>Page execution time was 4931.99 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 71.71 ms.</li>
+<li>Page execution time was 4641.69 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h3>Resumiendo:</h3>
+<p><img class="size-full wp-image-2062 alignnone" src="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png" alt="Gráfica comparativa de Memcache y Entity cache en Drupal" width="874" height="591" srcset="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png 874w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-300x203.png 300w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-768x519.png 768w" sizes="(max-width: 874px) 100vw, 874px" /></p>
+<p>Como podemos ver, <strong>cuando usamos Memcache, las queries a la db bajan un nada despreciable 50%</strong>. Estas query que ya no están, son &#8220;cache&#8221; que pasan a ser gestionadas por Memcache, quien como ya comentamos, es mucho mas eficiente a la hora de servir contenidos cacheados (insisto que está diseñado para ello, ergo es muy difícil que mysql lo haga mejor).</p>
+<p>Pero para mas inri, <strong>al activar Entity cache, automágicamente las query a la DB bajan un 60% mas</strong> sobre lo que ya había conseguido Memcache. Esto es gracias a que este modulo implementa una capa de cache a todas las entidades del core de Drupal mas todas las entidades creadas por terceros que implementen la api en entity cache para dejarse cachear.</p>
+<h4>Conclusiones:</h4>
+<ul>
+<li>Entre Memcache y entity cache <strong>hemos logrado una reducción media del 85%</strong> de accesos a la DB (awesomeeeee!).</li>
+<li>El beneficio mas evidente en el uso de Memcache y entity cache juntos es el de una reducción drástica en las<br />
+consultas que se hacen a la DB, lo que viene especialmente bien ya que cuando una pagina en Drupal comienza a<br />
+recibir muchas visitas, la db es lo primero que sufre.</li>
+<li>Luego de estas pruebas podemos concluir que si usar Memcache es una buena idea, combinarlo con entity cache es<br />
+una excelente idea.</li>
+<li>Memcache y entity cache funcionan tanto en usuarios logueados como anónimos.</li>
+<li>Es evidente que mientras mas cosas cacheemos en Drupal, mejor va a funcionar esta solución. En especial me<br />
+refiero a <a href="http://drupal.org/project/views" target="_blank">views</a>, y <a href="http://drupal.org/project/panels" target="_blank">panels</a>. Usen el cache que estos módulos tienen, para que Memcache pueda gestionarlos. <strong>En una<br />
+prueba rapida que hice conseguí rebajar aun mas la cantidad de queries a solo 95 contra las 377 que ya<br />
+lográbamos usando Memcache y entity cache</strong>.</li>
+</ul>
+<p>Happy performance!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Un mal día para este Drupal</title>
+		<link>http://ecapy.com/un-mal-dia-para-este-drupal/</link>
+		<comments>http://ecapy.com/un-mal-dia-para-este-drupal/#comments</comments>
+		<pubDate>Wed, 06 Mar 2013 19:25:20 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Performance]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1997</guid>
+		<description><![CDATA[Hola, he preparado un Drupal 7 para hacer unas pruebas de rendimiento y me he ensañado todo lo que pude para que vaya lo mas lento posible. ¿Que le hice? Habilite casi todos los módulos del core y todos los módulos mas usados mas las librerías externas, lo que nos da 202 módulos activos*1. Aplique&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/un-mal-dia-para-este-drupal/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola, he preparado un Drupal 7 para hacer unas pruebas de rendimiento y me he ensañado todo lo que pude para que vaya lo mas lento posible.</p>
+<h3>¿Que le hice?</h3>
+<ul>
+<li>Habilite casi todos los módulos del core y todos los módulos mas usados mas las librerías externas, lo que nos da <strong>202 módulos activos</strong><sup><a href="#one">*1</a></sup>.</li>
+<li>Aplique la traducción de todos los módulos al español (las traducciones son killer)</li>
+<li>Hice un tipo de contenido con todos los field de los que dispongo (llamado &#8220;Full CT&#8221;).</li>
+<li>10000 nodos del tipo &#8220;Full CT&#8221;</li>
+<li>10000 términos</li>
+<li>10000 usuarios</li>
+<li>1000 links en main menu</li>
+<li>Una vista con 100 usuarios por pagina y paginados</li>
+<li>Una vista con 100 términos por pagina y paginados</li>
+<li>Una vista con 100 nodos del ct con todos los fields.</li>
+<li>Un panel con todas las vistas anteriores</li>
+</ul>
+<p>Luego agarré todo lo anterior y lo coloqué en la pagina principal.</p>
+<p>Para cuando terminé, Drupal estaba por los suelos. No servia, apenas respondía, los tiempos de carga eran penosos, vamos, lo que viene siendo mi entorno ideal para hacer las pruebas.</p>
+<p>Lo pongo a vuestra disposición para quien quiera hacer sus propias pruebas.</p>
+<p><a class="descargar" href="http://ecapy.com/Archivos/drupalbench.tar.gz">Descargar</a></p>
+<p>PD: Dentro de drupalbench.tar.gz está la DB, el usuario de Drupal es &#8220;admin&#8221; pass &#8220;admin&#8221;. La DB es drupalbench (toquen settings.php para configurar el usuario de mysql)</p>
+<h4>Referencias:</h4>
+<p id="one" class="referencia">Módulos habilitados:</p>
+<ul class="small">
+<li>Aggregator</li>
+<li>Block</li>
+<li>Blog</li>
+<li>Book</li>
+<li>Color</li>
+<li>Comment</li>
+<li>Contact</li>
+<li>Contextual links</li>
+<li>Dashboard</li>
+<li>Database logging</li>
+<li>Field</li>
+<li>Field SQL storage</li>
+<li>List</li>
+<li>Number</li>
+<li>Options</li>
+<li>Text</li>
+<li>Field UI</li>
+<li>File</li>
+<li>Filter</li>
+<li>Forum</li>
+<li>Help</li>
+<li>Image</li>
+<li>Locale</li>
+<li>Menu</li>
+<li>Node</li>
+<li>OpenID</li>
+<li>Path</li>
+<li>PHP filter</li>
+<li>Poll</li>
+<li>RDF</li>
+<li>Search</li>
+<li>Shortcut</li>
+<li>Testing</li>
+<li>Statistics</li>
+<li>Syslog</li>
+<li>System</li>
+<li>Taxonomy</li>
+<li>Toolbar</li>
+<li>Tracker</li>
+<li>Content translation</li>
+<li>Trigger</li>
+<li>Update manager</li>
+<li>User</li>
+<li>Standard</li>
+<li>Address Field</li>
+<li>Administration Development tools</li>
+<li>Administration menu</li>
+<li>Administration menu Toolbar style</li>
+<li>Advanced help</li>
+<li>Advanced help example</li>
+<li>Backup and Migrate</li>
+<li>Calendar</li>
+<li>CKEditor</li>
+<li>Coder</li>
+<li>Coder Review</li>
+<li>Colorbox</li>
+<li>Commerce</li>
+<li>Commerce UI</li>
+<li>Cart</li>
+<li>Checkout</li>
+<li>Customer</li>
+<li>Customer UI</li>
+<li>Line Item</li>
+<li>Line Item UI</li>
+<li>Order</li>
+<li>Order UI</li>
+<li>Payment</li>
+<li>Payment UI</li>
+<li>Payment Method Example</li>
+<li>Price</li>
+<li>Product</li>
+<li>Product UI</li>
+<li>Product Pricing</li>
+<li>Product Pricing UI</li>
+<li>Product Reference</li>
+<li>Tax</li>
+<li>Tax UI</li>
+<li>Commerce Features</li>
+<li>Commerce Order Fieldgroup Panes</li>
+<li>Context</li>
+<li>Context layouts</li>
+<li>Context UI</li>
+<li>Bulk Export</li>
+<li>Chaos tools</li>
+<li>Chaos Tools (CTools) AJAX Example</li>
+<li>Custom content panes</li>
+<li>Chaos Tools (CTools) Plugin Example</li>
+<li>Page manager</li>
+<li>Stylizer</li>
+<li>Views content panes</li>
+<li>Date</li>
+<li>Date All Day</li>
+<li>Date API</li>
+<li>Date Context</li>
+<li>Date Popup</li>
+<li>Date Repeat API</li>
+<li>Date Repeat Field</li>
+<li>Date Tools</li>
+<li>Date Views</li>
+<li>Devel</li>
+<li>Devel generate</li>
+<li>Email</li>
+<li>Enabled modules</li>
+<li>Entity API</li>
+<li>Entity tokens</li>
+<li>Entityforms</li>
+<li>Entityforms Notifications</li>
+<li>entityform_test</li>
+<li>Entity Reference</li>
+<li>Entity Reference Behavior Example</li>
+<li>Features</li>
+<li>Fieldgroup</li>
+<li>NIF Field</li>
+<li>Global Redirect</li>
+<li>Google Analytics</li>
+<li>Internationalization</li>
+<li>Block languages</li>
+<li>Contact translation</li>
+<li>Field translation</li>
+<li>Multilingual forum</li>
+<li>Menu translation</li>
+<li>Multilingual content</li>
+<li>Path translation</li>
+<li>Translation redirect</li>
+<li>Multilingual select</li>
+<li>String translation</li>
+<li>Synchronize translations</li>
+<li>Taxonomy translation</li>
+<li>Translation sets</li>
+<li>User mail translation</li>
+<li>Variable translation</li>
+<li>IMCE</li>
+<li>IMCE Wysiwyg API bridge</li>
+<li>Interval Field</li>
+<li>jQuery Update</li>
+<li>Localization update</li>
+<li>Libraries</li>
+<li>Lightbox2</li>
+<li>Link</li>
+<li>File entity</li>
+<li>Media</li>
+<li>Media Internet Sources</li>
+<li>Memcache</li>
+<li>Menu Block</li>
+<li>Menu Block Export</li>
+<li>Message</li>
+<li>Message example</li>
+<li>Message OG example</li>
+<li>Migrate</li>
+<li>Migrate UI</li>
+<li>Module filter</li>
+<li>Mollom</li>
+<li>Nice Menus</li>
+<li>Organic groups</li>
+<li>Organic groups context</li>
+<li>Organic groups register</li>
+<li>Organic groups UI</li>
+<li>Page Title</li>
+<li>Panels</li>
+<li>Panels In-Place Editor</li>
+<li>Mini panels</li>
+<li>Panel nodes</li>
+<li>Pathauto</li>
+<li>Profile2 translation</li>
+<li>Profile2 pages</li>
+<li>Profile2</li>
+<li>Node Reference</li>
+<li>References</li>
+<li>User Reference</li>
+<li>Rules</li>
+<li>Rules UI</li>
+<li>Rules translation</li>
+<li>Rules Scheduler</li>
+<li>Rules Forms Support</li>
+<li>Special menu items</li>
+<li>Token</li>
+<li>Transliteration</li>
+<li>Variable</li>
+<li>Variable admin</li>
+<li>Variable advanced</li>
+<li>Variable example</li>
+<li>Variable realm</li>
+<li>Variable store</li>
+<li>Variable views</li>
+<li>Variable Email</li>
+<li>Views</li>
+<li>Views UI</li>
+<li>Views Bulk Operations</li>
+<li>Views Slideshow: Cycle</li>
+<li>Views Slideshow</li>
+<li>Views System</li>
+<li>Webform</li>
+<li>Wysiwyg</li>
+<li>XML sitemap</li>
+<li>XML sitemap custom</li>
+<li>XML sitemap engines</li>
+<li>XML sitemap internationalization</li>
+<li>XML sitemap menu</li>
+<li>XML sitemap node</li>
+<li>XML sitemap taxonomy</li>
+<li>XML sitemap user</li>
+<li>Memcache Admin</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/un-mal-dia-para-este-drupal/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Instalar y configurar xhprof para que funcione en Drupal.</title>
+		<link>http://ecapy.com/instalar-y-configurar-xhprof-para-que-funcione-en-drupal/</link>
+		<comments>http://ecapy.com/instalar-y-configurar-xhprof-para-que-funcione-en-drupal/#comments</comments>
+		<pubDate>Mon, 20 Aug 2012 21:39:48 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Performance]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1590</guid>
+		<description><![CDATA[El modulo Devel nos proporciona una buena forma de integrar xhprof en nuestra instalación de drupal, y vamos a aprovecharla. Xhprof para quien no lo conozca aun, es un profiler. Principalmente nos permite saber de forma detallada cuanta ram, cpu y tiempo han consumido cada una de las funciones que se utilizan en un request. De esta&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-y-configurar-xhprof-para-que-funcione-en-drupal/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El modulo <a href="http://drupal.org/project/devel" target="_blank">Devel</a> nos proporciona una buena forma de integrar <a href="https://github.com/facebook/xhprof" target="_blank">xhprof</a> en nuestra instalación de drupal, y vamos a aprovecharla.</p>
+<p>Xhprof para quien no lo conozca aun, es un <a href="http://es.wikipedia.org/wiki/Profiling" target="_blank">profiler</a>. Principalmente nos permite saber de forma detallada cuanta ram, cpu y tiempo han consumido cada una de las funciones que se utilizan en un request.<br />
+De esta forma podemos centrarnos en las funciones mas conflictivas y resolver sus cuellos de botella.</p>
+<p>Si se van a la configuración de Devel podemos ver que la opción esta deshabilitada</p>
+<p><img class="size-full wp-image-1618 alignnone" title="devel_drupal_1" src="http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_1.png" alt="" width="662" height="453" srcset="http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_1.png 662w, http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_1-300x205.png 300w" sizes="(max-width: 662px) 100vw, 662px" /></p>
+<p>Y es solo porque no tenemos xhprof  instalado, asi que manos a la obra:</p>
+<p><strong>NOTA</strong>: Los pasos de instalación los hice en D7 sobre Ubuntu, pero son compatibles con cualquier *nix siempre que se adapten las rutas de las carpetas a las que utilicé el SO sobre el que quieras instalarlo.</p>
+<p>Primero instalemos xhprof desde su código fuente. con la consola en mano te vas a tu home (por decir algún lado) y lanzamos:</p><pre class="crayon-plain-tag">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+tar xvf xhprof-0.9.2.tgz
+cd ./xhprof-0.9.2/extension/
+phpize
+./configure --with-php-config=/usr/bin/php-config
+make
+make install</pre><p>Configuremos PHP para que use xhprof:</p><pre class="crayon-plain-tag">nano /etc/php5/conf.d/xhprof.ini</pre><p>Y pegar esto dentro:</p><pre class="crayon-plain-tag">extension=xhprof.so
+xhprof.output_dir="/var/tmp/xhprof"</pre><p>Listo, ya tenemos instalado xhprof.<br />
+Ahora creemos el directorio en el que se van a generar los dump (cada request genera un archivo de dump con toda la informacion registrada):</p><pre class="crayon-plain-tag">mkdir -p /var/tmp/xhprof
+chown www-data. /var/tmp/xhprof</pre><p>Bien, ahora <strong>dentro de la carpeta que contiene el codigo fuente</strong> <strong>que usamos hace un momento</strong> para hacer la instalacion, tenemos que copiar las carpetas &#8220;<strong>xhprof_html</strong>&#8221; y &#8220;<strong>xhprof_lib</strong>&#8221; en &#8220;<strong>/usr/share/php/</strong>&#8220;:</p><pre class="crayon-plain-tag">cp -Pr xhprof_html/* /usr/share/php/xhprof_html/
+cp -Pr xhprof_lib/* /usr/share/php/xhprof_lib/</pre><p>Xhprof genera graficos que son de mucha ayuda a la hora de identificar cuellos de botella y para crearlos utiliza las capacidades del programa <a href="http://www.graphviz.org/" target="_blank">graphviz</a>. si no lo tenés instalado poder hacerlo lanzando:</p><pre class="crayon-plain-tag">apt-get install graphviz</pre><p>Ok terminamos con la configuracion de xhprof. configuremos el resto del entorno para que pueda hacer uso de el.<br />
+Lo siguiente es crear un vhost para poder acceder a la informacion que genere xhprof:</p><pre class="crayon-plain-tag">nano /etc/apache2/sites-available/xhprof</pre><p>Y pegas esto:</p><pre class="crayon-plain-tag">DocumentRoot /usr/share/php/xhprof_html
+DirectoryIndex index.php
+
+AllowOverRide all
+Options FollowSymLinks</pre><p>Nuestro vhost corre en el puerto 9999 asi que tenemos que agregarlo a apache:</p>
+<p>[console]nano /etc/apache2/ports.conf[/console]</p>
+<p>debajo de &#8220;<strong>Listen 80</strong>&#8221; agrega:</p><pre class="crayon-plain-tag">Listen 9999</pre><p>Estamos por teninar. Habilita el vhost que hemos creado con el comando &#8220;<strong>a2ensite xhprof</strong>&#8220;, reinicia apache con &#8220;<strong>service apache2 restart</strong>&#8221; y en nuestra instalación de Drupal 7 vayamos a &#8220;<strong>admin/config/development/devel</strong>&#8221; para configurarlo:</p>
+<p>Ahora ves que ya podes marcar la opcion &#8220;<strong>Enable profiling of all page views and drush requests.</strong>&#8221;</p>
+<p><img class="size-full wp-image-1619 alignnone" title="devel_drupal_2" src="http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_2.png" alt="" width="643" height="154" srcset="http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_2.png 643w, http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_2-300x72.png 300w" sizes="(max-width: 643px) 100vw, 643px" /><br />
+Cuando la marques vas a tener que rellenar:<br />
+&#8220;<strong>xhprof directory</strong>:&#8221; ponele &#8220;<span style="color: #993300;">/usr/share/php</span>&#8221; (sin comillas)<br />
+&#8220;<strong>XHProf URL:</strong>&#8221; ponele &#8220;<span style="color: #993300;">http://localhost:9999</span>&#8221; (sin comillas)</p>
+<p><img class="size-full wp-image-1621 alignnone" title="devel_drupal_3" src="http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_3.png" alt="" width="615" height="364" srcset="http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_3.png 615w, http://ecapy.com/wp-content/uploads/2012/08/devel_drupal_3-300x178.png 300w" sizes="(max-width: 615px) 100vw, 615px" /></p>
+<p>Y listo. ya lo tenes integrado en drupal. <strong>si miras en la parte inferior izquierda de cualquier pagina de la instalación de tu drupal vas a ver que aparece un link llamado &#8220;<em>XHProf output</em>&#8220;</strong> que te va a llevar a la pagina informativa del perfilado que se hizo.</p>
+<p><img class="wp-image-1628 alignnone" title="xhprof_drupal_profiling_1" src="http://ecapy.com/wp-content/uploads/2012/08/xhprof_drupal_profiling_1.png" alt="" width="431" height="509" srcset="http://ecapy.com/wp-content/uploads/2012/08/xhprof_drupal_profiling_1.png 718w, http://ecapy.com/wp-content/uploads/2012/08/xhprof_drupal_profiling_1-254x300.png 254w" sizes="(max-width: 431px) 100vw, 431px" /></p>
+<p><img class="size-full wp-image-1629 alignnone" title="xhprof_drupal_profiling_2s" src="http://ecapy.com/wp-content/uploads/2012/08/xhprof_drupal_profiling_2s.jpg" alt="" width="500" height="898" srcset="http://ecapy.com/wp-content/uploads/2012/08/xhprof_drupal_profiling_2s.jpg 500w, http://ecapy.com/wp-content/uploads/2012/08/xhprof_drupal_profiling_2s-167x300.jpg 167w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<p><span style="text-decoration: underline;">Bonus!</span>:</p>
+<p>Nota: solo por cuestiones de mantenimiento te comento que los dump que genera xhprof en la carpeta &#8220;<strong>/var/tmp/xhprof</strong>&#8221; tienden a comerse el disco en cuestion de dias. la solucion que uso es lanzar un cron que limpia todos los dump que tengan mas de un dia.</p>
+<p>El cron es un archivo con permisos de ejecucion y el siguiente contenido</p><pre class="crayon-plain-tag">#!/bin/bash
+#Elimina todos los perfilados que tengan mas de 1 día
+find /var/tmp/xhprof -type f -mtime +1 -exec rm -f {} ;</pre><p>Guardalo en <strong>/etc/cron.daily/xhprof_cleaner.sh</strong> y listo.</p>
+<p>Una nota final. La configuracion que explique no tiene en cuenta la seguridad. esto quiere decir que no deberias utilizarla en produccion salvo que sepas lo que haces.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-y-configurar-xhprof-para-que-funcione-en-drupal/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Benchmark Drupal 7 + APC + Memcached + Varnish sobre usuarios anónimos</title>
+		<link>http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/</link>
+		<comments>http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/#comments</comments>
+		<pubDate>Thu, 05 Jan 2012 01:59:16 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1311</guid>
+		<description><![CDATA[Vamos a hacer algunos testeos para ver lo que podemos llegar a ganar en performance al implementar una serie de tecnologías sobre Drupal 7. Las pruebas las realizare sobre una instalación LAMP estándar de Ubuntu (Linux Mint en realidad): mysql 5.1.58 (Con su configuración por defecto) php 5.3.6 (Con su configuración por defecto) El software para mejorar la performance que usé y las versiones de cada uno&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Vamos a hacer algunos testeos para ver lo que podemos llegar a ganar en performance al implementar una serie de tecnologías sobre Drupal 7.</p>
+<p>Las pruebas las realizare sobre una instalación LAMP estándar de Ubuntu (Linux Mint en realidad):</p>
+<ul>
+<li>mysql 5.1.58 (Con su configuración por defecto)</li>
+<li>php 5.3.6 (Con su configuración por defecto)</li>
+</ul>
+<p>El software para mejorar la performance que usé y las versiones de cada uno son:</p>
+<ul>
+<li>APC-3.1.9</li>
+<li>memcached 1.4.7</li>
+<li>Varnish 3.0.4</li>
+</ul>
+<p>Esta prueba es solo para que nos demos una idea de lo que podría llegar a implicar el aplicar estas tecnologías en nuestro sitio de Drupal 7, por lo que he dejado fuera cualquier explicación técnica.</p>
+<p>Las pruebas las hice en un core2Duo @ 2.2ghz de 2 núcleos en un Linux Mint de 64bits y 8gb de ram.</p>
+<p>La idea es ir agregando tecnologías e ir viendo el teórico beneficio que esta aporta aplicadas a la practica.</p>
+<p>Lo primero es lo primero. vamos a hacer un bench de Drupal 7.10 en sobre nuestro LAMP sin haber tocado su configuración inicial.</p>
+<p>Utilice Apache benchmark (ab) para todos los testeos variando la concurrencia y cantidad de request para aprovechar al máximo los recursos de los que disponía en cada testeo que hice.</p>
+<h5>Primera ronda. Estableciendo un punto de referencia.</h5>
+<p><strong><span style="text-decoration: underline;">Test 1: Drupal 7 sin cache de ningún tipo.</span></strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second:<strong> 5.71</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>45.35</strong> [Kbytes/sec] received</span></h6>
+<p><span style="text-decoration: underline;"><strong>Test 2: </strong>Drupal 7<strong> marcandole las opciones &#8220;Aggregate and compress CSS files.&#8221; y &#8220;Aggregate JavaScript files.&#8221; en &#8220;admin/config/development/performance&#8221;</strong></span></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <strong>6.38</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>46.27</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">Podemos apreciar que no hay cambios. nada que comentar.</span></p>
+<p><strong style="text-decoration: underline;">Test 3: </strong><span style="text-decoration: underline;">La configuración del testeo anterior +</span><strong style="text-decoration: underline;"> &#8220;Cache blocks&#8221; en &#8220;admin/config/development/performance&#8221;</strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second:<strong> 5.18</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>37.54</strong> [Kbytes/sec] received</span></h6>
+<p>Pasados los tes primeros test ya no quedan dudas que el cuello de botella de los procesadores son los limitantes. Apenas si pudimos conseguir que varíe el resultado.</p>
+<p style="text-align: center;">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>Hasta acá fue lo aburrido, porque en realidad lo anterior no tiene ninguna magia, pero nos da una buena idea de desde que base estamos partiendo. Nuestro objetivo es subir grotescamente la media de request por segundo partiendo de los aproximadamente 6 que hemos conseguido hasta ahora.</p>
+<p><strong style="text-decoration: underline;">Test 4: </strong><span style="text-decoration: underline;">La configuración del test anterior +</span><strong style="text-decoration: underline;"> &#8220;Cache pages for anonymous users&#8221; (El cache normal de Drupal).</strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <strong>127.22</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>921.83</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">Bueno bueno bueno, esto ya es otra cosa. El cache de Drupal por si solo incrementa los request de una forma brutal, pero no nos quedamos ahí ni en broma, vamos a por mas RPS (request por segundo)</span></p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<h5>Segunda ronda. tecnologías y configuraciones foráneas:</h5>
+<p><strong style="text-decoration: underline;">Test 5:</strong><span style="text-decoration: underline;"> La configuración del test anterior +</span><strong style="text-decoration: underline;"> APC.</strong></p>
+<p>Este es uno de los cambios mas recomendados siempre que queramos obtener un incremento de performance (y mejor aprovechamiento de la ram disponible) sin tener que tocar ni una sola linea de código de nuestro Drupal.</p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <strong>440.43</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>3191.39</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;"><strong>Boom</strong>! performance X4!. Vamos por buen camino. Agreguemos mas de esas cosas que recomiendan los que saben&#8230;</span></p>
+<p><strong style="text-decoration: underline;">Test 6: </strong><span style="text-decoration: underline;">La configuración del test anterior +</span><strong style="text-decoration: underline;"> Memcached</strong></p>
+<p>Para esta prueba instalé el modulo memcache (http://drupal.org/project/memcache) en su versión 7.x-1.0-rc2 y lo configuré en su forma mas básica según las instrucciones de su configuración.</p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second:<strong> 397.38</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate:<strong> 2734.53</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">No hemos visto mejora alguna pero no porque Memcache no sirva, al contrario, en futuros bench les voy a mostrar como si que ayuda, pero bajo este entorno poco sirve ya que es una capa intermedia con la DB y estamos usando el cache de Drupal que apenas si la toca&#8230; en fin, en el próximo bench les muestro, paciencia.</span></p>
+<p>Hasta ahora hemos conseguido mejorar los iniciales 6 RPS del principio por fabulosos 400 RPS de media, pero aun nos queda un paso mas para mejorar los request para usuarios anónimos, y ese es Varnish</p>
+<p><strong style="text-decoration: underline;">Test 7: </strong><span style="text-decoration: underline;">La configuración del test anterior +</span><strong style="text-decoration: underline;"> Varnish</strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <span style="color: #ff0000;"><strong>6166.57</strong></span> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>45075.00</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">Acaso hay algo que añadir?</span></p>
+<h5>Conclusiones:</h5>
+<p>Hemos visto como Drupal 7 sin ningún tipo de cache activo es una muy mala idea a la hora de ponerlo en producción.<br />
+El cache que trae de serie no es opcional, sino que es mandatorio. No activar como mínimo esta capa de cache en Drupal derivaría automáticamente en un uso elevadisimo de los recursos disponibles, esto acompañado de tiempos de entrega mucho mas largos y por consiguiente la insatisfacción de nuestros clientes.<br />
+APC es una excelente adición a nuestro servidor en general ya que agiliza el procesamiento de cualquier pagina escrita en PHP y particularmente en Drupal es un beneficio directo tanto para usuarios anónimos como para usuarios logueados. Recomiendo su uso sin dudarlo aunque hay que hacerlo con cabeza, documentación y alguien que sepa lo que hace si no quieren volver inestable vuestro sistema.</p>
+<p>Memcache es una herramienta que no puede faltar en un buen servidor y es harto eficiente para usuarios no logueados en el terreno de Drupal, pero en una instalación en la que casi todos los visitantes sean anónimos, apenas van a sentir la mejora.</p>
+<p>Por ultimo y el mas importante, Varnish, que demostró el salto ABISMAL que puede llegar a proporcionar en velocidad cuando lo ponemos a trabajar con una instalación de Drupal. Sin duda pues, esta es la herramienta mas potente de las que hemos utilizado en este bench, pero a su vez, la mas complicada de configurar.</p>
+<p>Resumiendo la mejor combinación para usuarios anónimos:<br />
+<strong>Cache de Drupal</strong> = performance decente / Configuración&#8230; bueno no lleva configuracion XD. (ganancia de <span style="color: #ff0000;"><strong>21x</strong></span> con con respecto a los 6 de media iniciales)<br />
+<strong>Cache de Drupal + APC</strong> = Muy buena performance / Configuración media. (ganancia de <span style="color: #ff0000;"><strong>73x</strong></span> con con respecto a los 6 de media iniciales)<br />
+<strong>Cache de Drupal + APC + Varnish</strong> = Bruta performance / Configuración avanzada. (ganancia de <span style="color: #ff0000;"><strong>1027x</strong></span> con con respecto a los 6 de media iniciales)</p>
+<p>Disclaimer:<br />
+No son ni de lejos las mejores versiones ni servidores los que he usado, pero procuré enfocarme en estos debido a que son los mas extendidos/populares en nuestro creciente mundo llamado Drupal.</p>
+<p>Saludos.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Mysql Tip: Probar consultas evitando el cache</title>
+		<link>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/</link>
+		<comments>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/#comments</comments>
+		<pubDate>Thu, 10 Nov 2011 23:14:53 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Performance]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1286</guid>
+		<description><![CDATA[SQL_NO_CACHE es especialmente útil para cuando estas analizando una query lenta que se está cacheando y te impide ver el tiempo que consume en realidad. [crayon-5844378065b62235051460/]]]></description>
+				<content:encoded><![CDATA[<p><strong>SQL_NO_CACHE</strong> es especialmente útil para cuando estas analizando una query lenta que se está cacheando y te impide ver el tiempo que consume en realidad.</p><pre class="crayon-plain-tag">SELECT SQL_NO_CACHE id, name FROM customer;</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Opciones de esquinas redondeadas para internet explorer 6, 7 y 8</title>
+		<link>http://ecapy.com/opciones-de-esquinas-redondeadas-para-internet-explorer-6-7-y-8/</link>
+		<comments>http://ecapy.com/opciones-de-esquinas-redondeadas-para-internet-explorer-6-7-y-8/#comments</comments>
+		<pubDate>Fri, 19 Mar 2010 03:01:47 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Maquetación]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=336</guid>
+		<description><![CDATA[Hace casi un año me vi en la tarea de investigar una vez mas cual era la mejor forma de obtener bordes redondeados para estos navegadores pero esta vez teniendo en cuenta la velocidad de desarrollo. Las opciones que tenia a mano eran: La mas tradicional, anidar divs hasta el cuatro niveles para poder colocar&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/opciones-de-esquinas-redondeadas-para-internet-explorer-6-7-y-8/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hace casi un año me vi en la tarea de investigar una vez mas cual era la mejor forma de obtener bordes redondeados para estos navegadores pero esta vez<strong> teniendo en cuenta la velocidad de desarrollo</strong>.</p>
+<p>Las opciones que tenia a mano eran:</p>
+<h3><strong>La mas tradicional, anidar divs hasta el cuatro niveles para poder colocar imágenes en cada una de las esquinas:</strong></h3>
+<p></p><pre class="crayon-plain-tag"><div class="redondeo">
+    <div>
+        <div>
+            <div>
+                <h2>Lorem ipsum dolor</h2>
+                <div class="contenido">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </div>
+            </div>
+        </div>
+    </div>
+</div></pre><p></p>
+<p></p><pre class="crayon-plain-tag">* {
+    font-family: Verdana;
+}
+ 
+.redondeo {
+    background: url("images/esq_sup_2-1.png") no-repeat scroll 100% 100% transparent;
+    width: 300px;
+}
+ 
+.redondeo div {
+    background: url("images/esq_sup_1-1.png") no-repeat scroll 0 100% transparent;
+}
+ 
+.redondeo div div {
+    background: url("images/esq_sup_2.png") no-repeat scroll 100% 0 transparent;
+}
+ 
+.redondeo div div div {
+    background: url("images/esq_sup_1.png") no-repeat scroll 0 0 transparent;
+}
+ 
+.contenido {
+    background: none repeat scroll 0 0 transparent !important;
+    padding: 0 15px 15px;
+    text-align: center;
+}
+ 
+h2 {
+    color: #fff;
+    text-align: center;
+}</pre><p></p>
+<p><a title="Ver ejemplo en una página nueva" href="http://ecapy.com/Archivos/esquinas_redondeadas/esquinas_redondeadas_por_div.html" target="_blank">Ver ejemplo</a> | <a title="Descargar el ejemplo" href="http://ecapy.com/Archivos/esquinas_redondeadas/esquinas_redondeadas_con_imagenes_y_divs.tar.gz" target="_blank">Descargar</a></p>
+<p>Este método tiene sus pro y sus contras.<br />
+Lo que tiene de bueno es que esta técnica <strong>es compatible con todos los internet explorer partiendo de la versión 5 y que la velocidad de renderizado es instantánea.</strong></p>
+<p><strong>Lo malo es que es poco mantenible.</strong> Lo digo por lo siguiente: pensemos por un momento que tenemos que cambiar el color de la cabecera de la caja de ejemplo. El primer problema es que al ser una imagen que tiene los bordes creados con algún editor de imágenes como Photoshop, Gimp o <a href="http://www.ecapy.com/alternativa-gratuita-y-liviana-a-photoshop/" target="_self">Paint.NET</a>, para cambiar el color deberíamos recurrir a estas herramientas. Si quisiéramos ponerle un borde de color lo mismo., y ni hablar si queremos remaquetar el site entero.<br />
+Y lo anterior es por decir alguno de los casos mas normales, pero hay mas, y quien haya usado esta técnica sabe de lo que hablo.</p>
+<h3>La segunda opción DD_roundies:</h3>
+<p>Es la que estuve usando intensamente hasta hace poco. Se trata de una librería JavaScript llamada <a href="http://www.dillerdesign.com/experiment/DD_roundies/" target="_blank">DD_roundies</a>.<br />
+Esta librería redondea cualquier elemento HTML de tipo bloque usando <strong>VML</strong> para conseguirlo.<br />
+Es realmente notable el resultado que se consigue con esta librería. De hecho por un buen tiempo la consideré la solución mas acertada ya que es realmente fácil de usar:</p>
+<p></p><pre class="crayon-plain-tag">&amp;lt;!-- Agregamos el JS--&amp;gt; &amp;lt;script src=&quot;DD_roundies.js&quot;&amp;gt;&amp;lt;/script&amp;gt;</pre><p></p>
+<p></p><pre class="crayon-plain-tag">//Agregamos el JS
+/* 
+Ahora solo necesitamos decirle a ddroundies sobre que 
+class o id debe redondear y de cuanto es el radio de 
+redondeo que debe aplicar */
+ 
+/**
+ * Un redondeo de todos los bordes a 10 pixeles para todos 
+ * los elementos HTML que lleven definida esta clase
+ * */
+DD_roundies.addRule('.redondeado-10px', '30px');
+ 
+/*
+ Tambien se puede especificar un redondeo para cada 
+ una de las esquinas
+ 
+ 5px para la esquina superior izquierda
+ 10px para la esquina superior derecha
+ 15px para la esquina inferior derecha
+ 20px para la esquina inferior izquierda
+ */
+DD_roundies.addRule('.redondeado-popurri', '5px 10px 15px 30px');</pre><p></p>
+<p></p><pre class="crayon-plain-tag">/*
+Es opcional definir los css, pero
+aca los defino para darles un color
+*/
+ 
+.redondeado-10px {
+    background-color: #336699;
+}
+ 
+.redondeado-popurri {
+    background-color: #ff0000;
+}</pre><p></p>
+<p></p><pre class="crayon-plain-tag"><div class="redondeado-10px">
+    <br />
+    <br />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+    <br />
+    <br />
+</div>
+ 
+<br />
+ 
+<div class="redondeado-popurri">
+    <br />
+    <br />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+    <br />
+    <br />
+</div></pre><p></p>
+<p><a title="Ver ejemplo en una página nueva" href="http://ecapy.com/Archivos/esquinas_redondeadas/ejemplo_ddroudies.htm" target="_blank">Ver ejemplo</a> | <a title="Descargar el ejemplo" href="http://ecapy.com/Archivos/esquinas_redondeadas/ejemplo_dd_roundies.tar.gz" target="_blank">Descargar</a></p>
+<p>Como ven el uso es simple, <span style="color: #ff0000;"><strong>PEEEERO</strong></span> la gran pega que tiene esta técnica es el <strong>hambre voraz de procesador para renderizar las esquinas</strong>, brutal, y en un principio para hacer cosas chicas como una o dos cajas redondeadas va de maravilla, pero haganlo con 20 o 30&#8230; Mejor NO LO HAGAN, ya les puedo adelantar que la pagina va a quedar congelada varios segundos hasta que termine de dibujar todas las esquinas.</p>
+<h3>La tercera, curved-corner:</h3>
+<p>Basada también en VML, es “<a href="http://code.google.com/p/curved-corner/" target="_blank">curved-corner</a>&#8221; y <a href="http://eliseos.net" target="_blank">Alexis de Eliseos.net</a> <a href="http://eliseos.net/css/esquinas-redondeadas-todos-navegadores/" target="_blank">ha dedicado un post hace unas semanas</a>.</p>
+<p>Esta implementacion fue de las primeras alternativas que conoci hace un tiempo ya, y <strong>la usé y deje de usar con la misma rapidez porque tiene dos flaquezas inaceptables y que al dia de hoy no se han solucionado</strong>:<br />
+<strong>La mas importante es que despues de redondear una X cantidad de div o lo que sea, va a fallar y dejar de redondear el resto.</strong><br />
+La segunda es que esta solucion a diferencia de la segunda propuesta,<strong> solo permite aplicar un redondeo completo al div, dejando fuera la porsibilidad de hacer un redondeo solo a una esquina.</strong></p>
+<h3>Las otras soluciones:</h3>
+<p>¿Hay mas? si claro, un millón de soluciones. Las que mas han prosperado son sobre todo las basadas en frameworks js. Un ejemplo es<br />
+http://www.malsup.com/jquery/corner/</p>
+<p>Pero ni vale la pena ponerse a hablar este tipo de soluciones porque no alcanzan a crear unos bordes tan perfectos como los que logran las anteriores soluciones ya citadas.</p>
+<h2>Conclusion:</h2>
+<p>De estas tres tecnicas <strong>la mas reocmendable de todas es la de DD_roundies,</strong> que mas alla de tener inconvenientes como las otras dos, es la que mas compensa la relacion velocidad de desarrollo – calidad. Lo unico en lo que <strong>hay que tener un muy especial cuidado es en no llenar la pagina de bordes redondeados por medio de este metodo</strong> porque insisto, <strong>van a tener un increible problema de performance</strong>.<br />
+<span style="color: #ff6600;">D<strong>e hecho, para cerrar este post puedo proponer una solucion hibrida entre la solucion de redondeo por medio de imagenes y la de DD_roundies, usando la primera para cualquier lista de elementos HTML que se repitan contantemente y sean iguales claro, dejando la opcion de DD_roundies para situaciones mas complicadas de solucionar con lo que a diseño respecta.</strong></span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/opciones-de-esquinas-redondeadas-para-internet-explorer-6-7-y-8/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Problemas de performance con flash en Internet Explorer</title>
+		<link>http://ecapy.com/problemas-de-performance-con-flash-en-internet-explorer/</link>
+		<pubDate>Sun, 17 Jan 2010 23:48:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Performance]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=254</guid>
+		<description><![CDATA[Como viene siendo habitual en los desarrollos en los que participo, cuando todo anda como un reloj suizo en los navegadores de verdad, en Internet Explorer simplemente falla todo. Y falla de formas muy raras. Por ejemplo. El otro dia detectamos un problema de performance con Internet Explorer y flash. Todo andaba bien, solo que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/problemas-de-performance-con-flash-en-internet-explorer/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Como viene siendo habitual en los desarrollos en los que participo, cuando todo anda como un reloj suizo en los navegadores de verdad, en Internet Explorer simplemente falla todo. Y falla de formas muy raras.</p>
+<p>Por ejemplo. El otro dia detectamos un problema de performance con Internet Explorer y flash. Todo andaba bien, solo que se tardaba una decada en renderizar el contenido.</p>
+<p>Sabiamos que tenia que ver con unos objetos de flash que estabamos cargando, ya que dos desactivabamos y andaba a las mil maravillas.</p>
+<p>Le dimos mil vueltas al problema hasta  que una compañera (gracias Ana) encontró que el problema podia ser el siguiente:</p><pre class="crayon-plain-tag">Performance Note&nbsp;&nbsp; Internet Explorer relies on the MIME type of the resource specified in the SRC attribute to ultimately determine which application to use to display the embedded document. If the TYPE attribute has not been specified, a large portion (if not all) of the resource will be downloaded from the server twice; once to determine the MIME type, and again to retrieve the complete item for playback, display, or both. Specify the TYPE attribute to block this duplicate server request.</pre><p>Extraído de: <a href="http://msdn.microsoft.com/es-es/library/ms535245%28en-us,VS.85%29.aspx" target="_blank">http://msdn.microsoft.com/es-es/library/ms535245%28en-us,VS.85%29.aspx</a></p>
+<p>Para los legos en ingles dice básicamente que si no le dices que el “<strong>type</strong>” <strong>es &#8220;application/x-shockwave-flash&#8221;</strong> dentro del objeto <strong>&lt;embed&gt;</strong>, <span style="color: #800000;"><strong>Internet Explorer va a bajar todos los flash para analizar de que type se trata y a posteriori los va a bajar otra vez para mostrarlos.</strong></span></p>
+<p>Es ridículo que haga eso. Podría usar el objeto que ya ha descargado.</p>
+<p>Entonces ya saben. Si flash les decrecienta el rendimiento de carga en vuestras paginas Web en Internet Explorer casi casi seguro que les este faltando el Type:</p><pre class="crayon-plain-tag">&amp;lt;object
+classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot;
+codebase=&quot;http://download.macromedia.com
+/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0&quot;
+width=&quot;400&quot; height=&quot;300&quot; id=&quot;movie&quot; align=&quot;&quot;&amp;gt;
+&amp;lt;param name=&quot;movie&quot; value=&quot;movie.swf&quot;&amp;gt;
+
+&amp;lt;embed src=&quot;movie.swf&quot; quality=&quot;high&quot; width=&quot;400&quot;
+height=&quot;300&quot; name=&quot;movie&quot; align=&quot;&quot;
+&lt;strong&gt;type=&quot;application/x-shockwave-flash&quot;&lt;/strong&gt;
+plug inspage=&quot;http://www.macromedia.com/go/getflashplayer&quot;&amp;gt;
+
+&amp;lt;/object&amp;gt;</pre><p></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

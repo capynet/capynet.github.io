@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Xampp &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/xampp/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Habilitar el opcache que viene con php ( &gt;= 5.5 ) en xampp</title>
+		<link>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/</link>
+		<comments>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/#comments</comments>
+		<pubDate>Sun, 08 Dec 2013 02:59:18 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2583</guid>
+		<description><![CDATA[Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS. Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este) [crayon-584436fc05be7491397172/] Y listo, tenemos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/habilitar-el-opcache-que-viene-con-php/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS.</p>
+<p>Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este)</p><pre class="crayon-plain-tag">[Opcache]
+; poné el path real donde esté alojado php_opcache.dll
+zend_extension = "C:xamppphpextphp_opcache.dll"
+opcache.memory_consumption = 500
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=60
+opcache.fast_shutdown=1
+opcache.enable_cli=1</pre><p>Y listo, tenemos un motivo menos de sufrimiento a la hora de programar en este SO.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Xampp icuuc46.dll intl</title>
+		<link>http://ecapy.com/xampp-icuuc46-dll-intl/</link>
+		<comments>http://ecapy.com/xampp-icuuc46-dll-intl/#comments</comments>
+		<pubDate>Sun, 12 Aug 2012 12:59:16 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1611</guid>
+		<description><![CDATA[Si habilitan el modulo intl en Xampp puede que les de error al no encontrar la librería &#8220;icuuc46.dll&#8220;.  La solución en este caso nos la da Cyn Wong: Ir a [xampp_path]/php/ y copiar estos tres archivos: icudt46.dll icuin46.dll icuuc46.dll Pegalos en [xampp_path]/apache/bin y reinicia, y vas a ver como ya no hay problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Si habilitan el modulo <strong><a href="http://www.php.net/manual/es/intro.intl.php" target="_blank">intl</a> </strong>en Xampp puede que les de error al no encontrar la librería &#8220;<span style="color: #993300;"><strong>icuuc46.dll</strong></span>&#8220;.  La solución en este caso nos la da <strong><a href="http://cynwong.com/blog/?p=446" target="_blank">Cyn Wong</a></strong>:</p>
+<ol>
+<li>Ir a [xampp_path]<strong>/php/</strong> y copiar estos tres archivos:
+<ol>
+<li>icudt46.dll</li>
+<li>icuin46.dll</li>
+<li>icuuc46.dll</li>
+</ol>
+</li>
+<li>Pegalos en [xampp_path]<strong>/apache/bin</strong> y reinicia, y vas a ver como ya no hay problemas.</li>
+</ol>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/xampp-icuuc46-dll-intl/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>mysql: error #2002 en phpmyadmin en Xampp (Windows)</title>
+		<link>http://ecapy.com/mysql-error-2002-en-phpmyadmin-en-xampp-windows/</link>
+		<comments>http://ecapy.com/mysql-error-2002-en-phpmyadmin-en-xampp-windows/#comments</comments>
+		<pubDate>Wed, 12 Oct 2011 20:00:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1148</guid>
+		<description><![CDATA[Nota rapidisima: borra lo que haya en la carpeta tmp de la instalacion de tu Xampp.]]></description>
+				<content:encoded><![CDATA[<p>Nota rapidisima: borra lo que haya en la carpeta <strong>tmp</strong> de la instalacion de tu Xampp.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-error-2002-en-phpmyadmin-en-xampp-windows/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Configurar Xdebug en Xampp 1.7.3 con PHP 5.3.1</title>
+		<link>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/</link>
+		<comments>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/#comments</comments>
+		<pubDate>Tue, 01 Jun 2010 08:43:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Xampp]]></category>
+		<category><![CDATA[Xdebug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=467</guid>
+		<description><![CDATA[Si querés configurar Xdebug en linux puede interesarte el post &#8220;Instalar Xdebug en Ubuntu (cualquier versión)&#8220; Vayan a la carpeta en la que esta instalado Xampp y entren en la carpeta de PHP. Abran php.ini y busquen: [crayon-584436fc068bb063902691/] Quítenle el punto y coma del principio para descomentarlo (Habilitarlo). Ahora solo queda configurar los parámetros de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><strong><span style="color: #993300;">Si querés configurar Xdebug en linux puede interesarte el post &#8220;</span></strong><a href="http://www.ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/"><strong><span style="color: #0000ff;">Instalar Xdebug en Ubuntu (cualquier versión)</span></strong></a><strong><span style="color: #993300;">&#8220;</span></strong></p>
+<p>Vayan a la carpeta en la que esta instalado Xampp y entren en la carpeta de PHP.<br />
+Abran <strong>php.ini </strong>y busquen:</p><pre class="crayon-plain-tag">&lt;strong&gt;;&lt;/strong&gt;zend_extension = &quot;xamppphpextphp_xdebug.dll&quot;</pre><p>Quítenle el punto y coma del principio para descomentarlo (Habilitarlo).</p>
+<p>Ahora solo queda configurar los parámetros de Xdebug:<br />
+Busquen ahora &#8220;<strong><span style="color: #993300;">[XDebug]</span></strong>&#8220;. Lo que ven por debajo de esta etiqueta es su configuración, como se que es una putada tener que andar leyendo y habilitando uno a uno les dejo una configuración funcional para que la usen. (Borren todo lo que hay por debajo de la etiqueta <strong><span style="color: #993300;">[xdebug]</span></strong> antes de pegar esta nueva configuración).</p><pre class="crayon-plain-tag">&lt;strong&gt;[XDebug]&lt;/strong&gt;
+xdebug.auto_trace = 0
+xdebug.collect_includes = 1
+xdebug.collect_params = 1
+xdebug.collect_return = 1
+xdebug.collect_vars = &quot;On&quot;
+xdebug.default_enable = &quot;On&quot;
+xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
+xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
+xdebug.dump_globals = 1
+xdebug.dump_once = 1
+xdebug.dump_undefined = 0
+xdebug.extended_info = 1
+xdebug.file_link_format = &quot;&quot;
+xdebug.manual_url = &quot;http://www.php.net&quot;
+xdebug.max_nesting_level = 100
+xdebug.overload_var_dump = 1
+xdebug.profiler_append = 0
+xdebug.profiler_enable = 0
+xdebug.profiler_enable_trigger = 0
+xdebug.profiler_output_dir = &quot;xampptmp&quot;
+xdebug.profiler_output_name = &quot;xdebug_profile.%p&quot;
+xdebug.remote_autostart = 1
+xdebug.remote_enable = 1
+xdebug.remote_handler = &quot;dbgp&quot;
+xdebug.remote_host = &quot;localhost&quot;
+xdebug.remote_mode = &quot;req&quot;
+xdebug.remote_port = 9000
+xdebug.show_exception_trace = 0
+xdebug.show_local_vars = 0
+xdebug.trace_output_dir = &quot;xampptmp&quot;
+xdebug.var_display_max_children = 256
+xdebug.var_display_max_data = 512
+xdebug.var_display_max_depth = 10</pre><p>Listo, de acá en mas solo tienen que configurar su eclipse, netbeans, o lo que sea que usen.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

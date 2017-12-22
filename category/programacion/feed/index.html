@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Programación &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/category/programacion/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Que PhpStorm funcione en Linux y Mac (que pare en los breakpoint)</title>
+		<link>http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/</link>
+		<comments>http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/#comments</comments>
+		<pubDate>Tue, 02 Feb 2016 00:54:05 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2887</guid>
+		<description><![CDATA[Tip para cuando PhpStorm no reconoce xdebug. Si tienes instalado xdebug pero phpstorm no está parando en los breakpoint, seguramente te estén faltando un par de lineas en tu php.ini (o los archivos que se incluyen en el como xdebug.ini): [crayon-584436a7975bf664898540/] La primer linea que marca la ruta en la que se encuentra xdebug no es la importante,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tip para cuando PhpStorm no reconoce xdebug.</p>
+<p>Si tienes instalado xdebug pero phpstorm no está parando en los breakpoint, seguramente te estén faltando un par de lineas en tu php.ini (o los archivos que se incluyen en el como <strong>xdebug.ini</strong>):</p><pre class="crayon-plain-tag">zend_extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/xdebug.so
+xdebug.remote_autostart = 1
+xdebug.remote_enable = 1</pre><p>La primer linea que marca la ruta en la que se encuentra xdebug no es la importante, las que si lo son, son las ultimas dos que son las que hacen que nos funcionen los brekpoint.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Debuguear REST con Postman + xdebug + PhpStorm</title>
+		<link>http://ecapy.com/debuguear-rest-con-postman-xdebug-phpstorm/</link>
+		<pubDate>Tue, 08 Sep 2015 08:20:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[debug]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2956</guid>
+		<description><![CDATA[Postman es un excelente cliente para probar todos los servicios que tu API (o la de otro) tienen. Si estas usando PhpStorm con xdebug y necesitas usarlo con postman, la cosa no puede ser mas simple: Asegurate que xdebug está bien configurado. Por lo general podés encontrara bajo [crayon-584436a798a7e908449908/] Aunque dependiendo de la distribucion de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/debuguear-rest-con-postman-xdebug-phpstorm/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop" target="_blank">Postman</a> es un excelente cliente para probar todos los servicios que tu API (o la de otro) tienen.</p>
+<p>Si estas usando PhpStorm con xdebug y necesitas usarlo con postman, la cosa no puede ser mas simple:</p>
+<h3>Asegurate que xdebug está bien configurado.</h3>
+<p>Por lo general podés encontrara bajo</p><pre class="crayon-plain-tag">/etc/php5/apache2/conf.d/20-xdebug.ini</pre><p>Aunque dependiendo de la distribucion de linux que uses, puede que tengas que goglear un poco para saber donde está el archivo de configuración de xdebug en tu sistema.</p>
+<p>Cuando lo encuentres solo asegúrate que estas opciones están y configuradas de la siguiente manera:</p><pre class="crayon-plain-tag">xdebug.idekey = PHPSTORM
+xdebug.remote_autostart=1</pre><p>Si no están definidas podes agregarlas sin miedo.</p>
+<h3>Prueba</h3>
+<p>Reinicia apache y probemos. En phpstorm Dale a este botón:</p>
+<p><img class="size-full wp-image-2957" src="http://ecapy.com/wp-content/uploads/2015/09/debug-listener-phpstorm.png" alt="debug-listener-phpstorm" width="26" height="22" /></p>
+<p>Y en postman pon &#8220;<strong>?XDEBUG_SESSION_START=PHPSTORM</strong>&#8221;</p>
+<p><img class="alignnone wp-image-2962 size-full" src="http://ecapy.com/wp-content/uploads/2015/09/postman-url.png" alt="postman-url" width="692" height="159" srcset="http://ecapy.com/wp-content/uploads/2015/09/postman-url.png 692w, http://ecapy.com/wp-content/uploads/2015/09/postman-url-300x69.png 300w" sizes="(max-width: 692px) 100vw, 692px" /></p>
+<p>Y listo, pones un breakpoint en phpstorm y vas a ver como para.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Mysql: crear un usuario y asignarle una db por linea de comandos</title>
+		<link>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/</link>
+		<comments>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/#comments</comments>
+		<pubDate>Fri, 28 Aug 2015 13:01:25 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2944</guid>
+		<description><![CDATA[Te conectas a mysql con mysql -uroot -p y: [crayon-584436a798fca714950414/] &#160;]]></description>
+				<content:encoded><![CDATA[<p>Te conectas a mysql con <strong>mysql -uroot -p</strong> y:</p><pre class="crayon-plain-tag">CREATE USER 'miusuario'@'localhost' IDENTIFIED BY 'miclave';
+GRANT ALL PRIVILEGES ON laDB.* TO 'miusuario'@'localhost';
+FLUSH PRIVILEGES;</pre><p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>DrupalCon Barcelona 2015</title>
+		<link>http://ecapy.com/drupalcon-barcelona-2015/</link>
+		<comments>http://ecapy.com/drupalcon-barcelona-2015/#comments</comments>
+		<pubDate>Fri, 17 Jul 2015 13:45:15 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2916</guid>
+		<description><![CDATA[Y aquí estamos, después de muchos años la DrupalCon vuelve a España. Allá en el 2007 http://barcelona2007.drupalcon.org/ se celebró una pero yo recién estaba metiéndome en el mundo de Drupal y ni de casualidad sabia yo que había una comunidad tan grande y pujante. tarde un par de años de hecho en darme cuenta. Como&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupalcon-barcelona-2015/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><img class="size-full wp-image-2919 alignnone" src="http://ecapy.com/wp-content/uploads/2015/07/Barcelona-2015-DrupalCon.png" alt="Barcelona-2015-DrupalCon" width="745" height="182" srcset="http://ecapy.com/wp-content/uploads/2015/07/Barcelona-2015-DrupalCon.png 745w, http://ecapy.com/wp-content/uploads/2015/07/Barcelona-2015-DrupalCon-300x73.png 300w" sizes="(max-width: 745px) 100vw, 745px" /></p>
+<p>Y aquí estamos, después de muchos años la <strong><a href="https://events.drupal.org/barcelona2015" target="_blank">DrupalCon vuelve a España</a></strong>. Allá en el 2007 <a href="http://barcelona2007.drupalcon.org/" target="_blank">http://barcelona2007.drupalcon.org/</a> se celebró una pero yo recién estaba metiéndome en el mundo de Drupal y ni de casualidad sabia yo que había una comunidad tan grande y pujante. tarde un par de años de hecho en darme cuenta.</p>
+<p>Como sea, DrupalCon vuelve a España y va a ser un evento brutal. Drupal desde aquel 2007 hasta estos días ha crecido una barbaridad, y los negocios que se hacen al rededor de él también.</p>
+<p>Este año <strong><em>se celebra en Barcelona desde el 21 al 25 de septiembre</em></strong>, y voy a poder ir por fin!. Como se pueden imaginar no soy el único que en España va a ir, de hecho van prácticamente todos los exponentes de drupal en España (yheaaa). Pero eso no es todo, también voy a poder conocer y charlar si dios quiere con auténticos eruditos de drupal de todas partes del mundo.</p>
+<p>Quiero aprovechar para invitarlos a que vayan. <strong>Para vos que sos programador</strong> te digo que vayas porque enriquece mucho ver como se mueven nuestros pares, como piensan, que hacen. <strong>Y para vos que sos una empresa</strong>, te recomiendo que vayas porque hay mucho negocio, y si estas buscando talentos que te puedo decir, ahí hay muchísimo crack dando vuelta y muchos de ellos siempre están dispuestos a escuchar una buena oferta.</p>
+<p>No me extiendo mas, resumiendo, vayan, yo personalmente lo veo como una experiencia que voy a disfrutar <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupalcon-barcelona-2015/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Así fue la DrupalCamp Jerez 2015!</title>
+		<link>http://ecapy.com/asi-fue-la-drupalcamp-jerez-2015/</link>
+		<pubDate>Fri, 05 Jun 2015 02:14:32 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2903</guid>
+		<description><![CDATA[]]></description>
+				<content:encoded><![CDATA[]]></content:encoded>
+			</item>
+		<item>
+		<title>Boilerplate (esqueleto) de plugin jQuery de la casa y en español ;)</title>
+		<link>http://ecapy.com/boilerplate-esqueleto-de-plugin-jquery-de-la-casa-y-en-espanol/</link>
+		<pubDate>Tue, 23 Sep 2014 10:34:15 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2833</guid>
+		<description><![CDATA[Hola!. Me complace anunciar que pongo a disposición de todo el que quiera hacer plugins de jQuery, el boilerplate que he estado usando en los últimos años. Es otro boilerplate como los demas, con la diferencia que al estar usandolo todo el tiempo lo fui puliendo poco a poco. Pero mucho mas importante: está en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/boilerplate-esqueleto-de-plugin-jquery-de-la-casa-y-en-espanol/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola!. Me complace anunciar que pongo a disposición de todo el que quiera hacer plugins de jQuery, el boilerplate que he estado usando en los últimos años.</p>
+<p>Es otro boilerplate como los demas, con la diferencia que al estar usandolo todo el tiempo lo fui puliendo poco a poco. Pero mucho mas importante: está en español XD</p>
+<p>Pase pasen y vean <em><strong><a href="https://github.com/capynet/jQueryPluginBoilerplate" target="_blank">https://github.com/capynet/jQueryPluginBoilerplate</a></strong></em></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Detectar el navegador y toda su información desde PHP o Javascript</title>
+		<link>http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/</link>
+		<pubDate>Mon, 22 Sep 2014 10:15:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Back-end]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2805</guid>
+		<description><![CDATA[Hola, les hago una intro bien corta y pasamos al código. Browscap es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos. PHP tiene soporte nativo para hacer uso de esta DB, pero debido a un par de limitaciones&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola, les hago una intro bien corta y pasamos al código.</p>
+<p><a href="http://browscap.org/">Browscap</a> es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos.</p>
+<p>PHP <a href="http://php.net/manual/es/function.get-browser.php" target="_blank">tiene soporte nativo</a> para hacer uso de esta DB, pero debido a un par de limitaciones que PHP aun no ha solventado en su API, <a href="https://github.com/browscap/browscap-php" target="_blank">en GitHub un usuario creó una soluciona basada también en la DB de Browscap</a> pero mucho mas robusta y fácil de usar.</p>
+<p>Bien, llegados a este punto sabemos que lo que necesitamos usar es Browscap junto a la librería que se creó para explotarla.</p>
+<p>Para mas información, toda la documentación completa de php-browscap la pueden encontrar <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a>. Yo me centro en una implementación mucho mas simple porque realmente creo que de los 40 datos que entrega sobre el navegados, con apenas 7 tenemos el 99% de los casos cubiertos.</p>
+<p><a href="http://ecapy.com/Archivos/browser/index.php" target="_blank"><strong>Acá tienen un ejemplo</strong></a> funcionando para que vean lo rápido y certero que es a la hora de conseguir la info del browser (pruébenlo con mas de uno)</p>
+<p>Ok, pongamos algo de código que sino todo esto es muy aburrido:<br />
+Vamos a aprovechar esta librería bajo dos situaciones. en PHP y en JS</p>
+<h3>En PHP</h3>
+<p>Descarguen la librería php-browscap via Composer o a mano. Pueden saber mas sobre como descargarla <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a><br />
+Ahora que la tenemos creamos un archivo index.php para usarla.</p><pre class="crayon-plain-tag">require 'vendor/autoload.php';
+use phpbrowscapBrowscap;
+
+$bc = new Browscap('cache');
+/** @var stdClass $current_browser */
+$current_browser = $bc-&gt;getBrowser();</pre><p>Fácil, no?. Ok ya tenemos un stdClass en $current_browser con toda la información disponible del browser que llame a index.php</p>
+<h4>Aplicaciones?</h4>
+<p>Puedes por ejemplo tomar decisiones del tipo</p><pre class="crayon-plain-tag">$curr_br = $current_browser-&gt;Browser;
+$CoolBrowsers = $curr_br == 'Chrome' || $curr_br == 'Firefox';
+
+if ($CoolBrowsers) {
+  add_asset('css', 'just-for-cool-browsers.css');
+  $output = renderAdvancedLayout();
+}
+else {
+  add_asset('css', 'just-for-bad-bad-browsers.css');
+  $output = renderBasicLayout();
+}</pre><p>También puedes detectar si están accediendo desde un móvil o una tablet, incluso saber si es Android, IOS, la version del SO, etc. Con toda esta información a resumidas cuentas puedes entregar un contenido muy preciso.</p>
+<h4>Beneficios</h4>
+<p>Estas entregando contenidos a medida, ergo necesitas entregar menos HTML, CSS, Js y las imágenes mas adecuadas al navegador. Esto finalmente se traduce en menos procesamiento del lado del servidor, lo que se entrega pesa menos KB y el navegador tarda menos en leer y renderizar todos los recursos (en especial JS).</p>
+<h3>En JS</h3>
+<p>Por ultimo me gustaría compartir un tip para poder aprovechar la detección de browsers en JS:<br />
+A ver, con js podemos detectar el browser usando un poco de expresiones regulares, pero llegar al detalle y la precisión a la que llega browscap es virtualmente imposible. Dicho esto, comentar que se puede entregar toda la información del browser detectado desde php simplemente haciendo esto:</p><pre class="crayon-plain-tag">&lt;script type="application/javascript"&gt;
+    var browser = &lt;?= json_encode($current_browser = $bc-&gt;getBrowser()); ?&gt;;
+    alert(browser.Browser);
+    alert(browser.Version);
+&lt;/script&gt;</pre><p>&nbsp;</p>
+<p>Hasta la próxima!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Desplegar una aplicación Node.js como servicio systemd (demonio)</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-systemd-demonio/</link>
+		<pubDate>Mon, 15 Sep 2014 08:30:04 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2774</guid>
+		<description><![CDATA[En el mundo linux hay dos gestores de demonios que se suelen usar en casi todas las distribuciones. Upstart o systemd. Si lo que quieres es crear un demonio para Ubuntu o cualquier otro SO que use Upstart, tienes que leer este articulo, y si lo que quieres es crear el demonio para Debian u&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-systemd-demonio/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>En el mundo linux hay dos gestores de demonios que se suelen usar en casi todas las distribuciones. <strong>Upstart</strong> o <strong>systemd</strong>.</p>
+<p>Si lo que quieres es crear un demonio para Ubuntu o cualquier otro SO que use Upstart, <a title="Desplegar una aplicación Node.js como servicio Upstart (demonio)" href="http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/"> tienes que leer este articulo</a>, y si lo que quieres es crear el demonio para Debian u otros que usen systemd, sigue leyendo este post.</p>
+<p>Vamos al lio. Para nuestro demonio vamos a necesitar 3 cosas: <strong><a href="https://github.com/nodejitsu/forever" target="_blank">forever</a></strong>, <strong>un script para crear el servicio</strong> y un <strong>script para avisar a monit para que mire nuestro servicio</strong> y lo reinicie si se cae.</p>
+<h3>El script del servicio</h3>
+<p>Como me gusta ponértelo fácil, voy a obviar la explicación y simplemente les digo que copies el siguiente código y lo pegues dentro de un archivo que se llame como el servicio que quieres crear dentro de <strong>/etc/init.d/my-service</strong> (por ejemplo).</p>
+<p>Dentro de este archivo solo tienes que tocar dos o tres cosas al principio del archivo en la zona de configuración. Es fácil, <strong>básicamente es poner el nombre del servicio (en mi ejemplo es &#8220;my-service&#8221;), el directorio donde está alojado, y el nombre del archivo principal de la aplicación.</strong><br />
+Hay algunas cositas mas que se pueden configurar, pero en general con esto basta.</p><pre class="crayon-plain-tag">#!/bin/bash
+# This service requires you have forever app installed in your system.
+
+
+### CONFIG ZONE
+# This is the service name. It cant have any special char or space.
+serviceName="my-service"
+
+# Where is located your app
+appFilePath="/var/node/my-service-node-app"
+
+# Whats the name of your main app file.
+appIndex="app.js"
+
+enviroment=production
+### END CONFIG ZONE
+
+
+###### DO NOT EDIT BELOW THIS LINE ######
+# Source function library.
+. /lib/lsb/init-functions
+
+pidFile="/var/run/$serviceName.pid"
+logFile="/var/run/$serviceName.log"
+
+command="node"
+nodeApp="$appFilePath/$appIndex"
+foreverApp="forever"
+
+start() {
+	echo "Starting $serviceName"
+	PATH=/usr/local/bin:$PATH
+	export NODE_ENV=$enviroment
+	$foreverApp start --pidFile $pidFile -l $logFile -a -d -c "$command" $nodeApp
+	RETVAL=$?
+}
+
+restart() {
+	echo -n "Restarting $serviceName"
+	$foreverApp restart $nodeApp
+	RETVAL=$?
+}
+
+stop() {
+	echo -n "Shutting down $serviceName"
+	$foreverApp stop $nodeApp
+	RETVAL=$?
+}
+
+status() {
+   echo -n "Status $serviceName"
+   $foreverApp list
+   RETVAL=$?
+}
+
+case "$1" in
+   start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+   status)
+        status
+       ;;
+   restart)
+   	restart
+        ;;
+	*)
+       echo "Usage:  {start|stop|status|restart}"
+       exit 1
+        ;;
+esac
+exit $RETVAL</pre><p>Tambien dejo el gist para que cualquier mejora que quieras añadir lo hagas por esta via.<br />
+<a href="https://gist.github.com/capynet/2de13de81ef8a71f2b2f" target="_blank">https://gist.github.com/capynet/2de13de81ef8a71f2b2f</a></p>
+<p>Ya tenemos servicio! ¿Y como lo usamos?. Pues como cualquier servicio:</p><pre class="crayon-plain-tag">sudo service my-service start
+sudo service my-service stop
+sudo service my-service restart
+sudo service my-service status</pre><p>Esto debería alcanzar, pero no. Este demonio no sabe volver a arrancarse si la aplicación de nodejs se para. Esa parte la vamos a solucionar usando monit.</p>
+<h3>Configurar monit</h3>
+<p>El rol de monit es el de &#8220;mirar&#8221; todo el tiempo al demonio que creamos anteriormente, y arrancarlo si este se muere.</p>
+<p>En Debian y la mayoría de distros, a los archivos de configuración que tenemos que crear (uno por demonio) los pondremos en &#8220;<strong>/etc/monit/monitrc.d/</strong>&#8220;.<br />
+Yo por lo general creo un archivo con el formato <em>monit-[MI-SERVICIO].conf</em>.</p>
+<p>Dentro de este archivo <strong>SIEMRPE</strong> vamos a usar el siguiente formato, así que simplemente cópialo, pon el nombre del demonio y el puerto, guarda los cambios, reinicia monit y listo.</p><pre class="crayon-plain-tag">check process my-service with pidfile "/var/run/my-service.pid"
+start program = "/etc/init.d/my-service start"
+stop program = "/etc/init.d/my-service stop"
+if failed
+port [THE NODEJS PORT HERE] protocol HTTP
+request / with timeout 10 seconds
+then restart</pre><p>De nuevo, aquí está el gist para que contribuyas si quieres.<br />
+<a href="https://gist.github.com/capynet/c7aa09a996fe909a0960" target="_blank">https://gist.github.com/capynet/c7aa09a996fe909a0960</a></p>
+<p>NOTA: En algunas instalaciones de monit, hay que tocar su archivo de configuración general para que incluya los archvos de monitorización que añadamos. El archivo es <strong>/etc/monit/monitrc</strong> y tienes que editarlo como sudo y añadir al final &#8220;<strong>include/etc/monit/monitrc.d/*</strong>&#8221; si no lo tuviera ya puesto.</p>
+<p>Bueno si a estas alturas todavía no tienes instalado forever, instalalo con <strong>sudo npm install forever -g</strong></p>
+<p>Hemos acabado, ya puedes arrancar monit o reiniciarlo si ya estaba corriendo. Monit va a usar el script que creamos para el para ver si el servicio está corriendo, si no es así, el solito se encarga de levantarlo y mantenerlo en funcionamiento inclusive después de reiniciar el servidor.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Habilitar el opcache que viene con php ( &gt;= 5.5 ) en xampp</title>
+		<link>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/</link>
+		<comments>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/#comments</comments>
+		<pubDate>Sun, 08 Dec 2013 02:59:18 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2583</guid>
+		<description><![CDATA[Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS. Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este) [crayon-584436a79a863208373357/] Y listo, tenemos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/habilitar-el-opcache-que-viene-con-php/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS.</p>
+<p>Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este)</p><pre class="crayon-plain-tag">[Opcache]
+; poné el path real donde esté alojado php_opcache.dll
+zend_extension = "C:xamppphpextphp_opcache.dll"
+opcache.memory_consumption = 500
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=60
+opcache.fast_shutdown=1
+opcache.enable_cli=1</pre><p>Y listo, tenemos un motivo menos de sufrimiento a la hora de programar en este SO.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Importar y sincronizar desde un XML local o remoto con Migrate</title>
+		<link>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/</link>
+		<comments>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/#comments</comments>
+		<pubDate>Sat, 15 Jun 2013 09:00:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2292</guid>
+		<description><![CDATA[Continuando con Migrate, hoy toca importar XML&#8217;s de forma local y remota. Para la forma remota he colocado un XML de ejemplo con un solo item que pueden usar para probar que todo funcione. Ok sin más dilación esta es la clase para importar de forma remota: [crayon-584436a79c1d7327068423/] La primer diferencia y que es única para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a title="Drupal: Migrate" href="http://ecapy.com/drupal-migrate/" target="_blank">Continuando</a> con Migrate, hoy toca importar XML&#8217;s de forma local y remota. Para la forma remota he <a href="http://ecapy.com/wp-content/uploads/2013/06/wordpress.xml_._renombrar.txt" rel="">colocado un XML de ejemplo</a> con un solo item que pueden usar para probar que todo funcione.</p>
+<p>Ok sin más dilación esta es la clase para importar de forma remota:</p><pre class="crayon-plain-tag">class WPMigrationFromXML extends XMLMigration {
+  
+  public function __construct($arguments) {
+	parent::__construct($arguments);
+	$items_url = 'http://ecapy.com/wp-content/uploads/2013/06/wordpress.xml_._renombrar.txt';
+	$item_xpath = '/rss/item';
+	$item_ID_xpath = 'wp:post_id';
+	$this-&gt;source = new MigrateSourceXML($items_url, $item_xpath, $item_ID_xpath);
+
+	$this-&gt;destination = new MigrateDestinationNode('page');
+
+	$this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+	  array(
+		'wp:post_id' =&gt; array(
+		  'type' =&gt; 'int',
+		  'unsigned' =&gt; TRUE,
+		  'not null' =&gt; TRUE,
+		)
+	  ),
+	  MigrateDestinationNode::getKeySchema()
+	);
+
+	$this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+	$this-&gt;addFieldMapping('created', 'wp:post_date')-&gt;xpath('wp:post_date');
+	$this-&gt;addFieldMapping('title', 'title')-&gt;xpath('title');
+	$this-&gt;addFieldMapping('body', 'content:encoded')-&gt;xpath('content:encoded');
+  }
+}</pre><p>La primer diferencia y que es única para la importación de XML es<strong> que no extiende de la clase <em>Migration</em> <a href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate" target="_blank">como vimos en la importación desde DB&#8217;s</a>, sino que lo hace de <em>XMLMigration()</em></strong> ya que los XML son un poco especiales a la hora de tratarlos.</p>
+<p>Otra cosa que cambia obviamente es el source, que esta vez es <em>MigrateSourceXML()</em> y que requiere 3 cosas como mínimo: <strong>la ubicación del archivo</strong> ya sea local o remota la ruta, <strong>el path que representa un item</strong> y por ultimo <strong>el identificador único del item</strong>. Si revisan el xml que adjunté van a poder verle mas sentido.</p>
+<p>Y la última cosa que es única de los XML, es el mapeo de los fields. Pueden ver que <em>MigrateSourceXML()</em> añade un método <strong>-&gt;xpath()</strong> para que le digamos de donde sacar la información.</p>
+<p>Y para la importación local solo hay que cambiar <em>$items_url</em> por algo como:</p><pre class="crayon-plain-tag">$items_url = DRUPAL_ROOT . '/' . drupal_get_path('module', 'mimodulo') . '/sources/wordpress.xml';</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

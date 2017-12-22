@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Reemplazar la ñ, acentos y espacios en PHP</title>
+	<atom:link href="http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-26</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Mon, 24 Jun 2013 16:05:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-26</guid>
+		<description><![CDATA[Puede que te interese. hay una nueva version de la funcion que publique en http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/]]></description>
+		<content:encoded><![CDATA[<p>Puede que te interese. hay una nueva version de la funcion que publique en <a href="http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/" rel="nofollow">http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Juan Manuel</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-25</link>
+		<dc:creator><![CDATA[Juan Manuel]]></dc:creator>
+		<pubDate>Mon, 24 Jun 2013 16:01:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-25</guid>
+		<description><![CDATA[function quitarAcentos($text)
+	{
+		$text = htmlentities($text, ENT_QUOTES, &#039;UTF-8&#039;);
+		$text = strtolower($text);
+		$patron = array (
+			// Espacios, puntos y comas por guion
+			&#039;/[., ]+/&#039; =&#062; &#039;-&#039;,
+ 
+			// Vocales
+			&#039;/&#224;/&#039; =&#062; &#039;a&#039;,
+			&#039;/&#232;/&#039; =&#062; &#039;e&#039;,
+			&#039;/&#236;/&#039; =&#062; &#039;i&#039;,
+			&#039;/&#242;/&#039; =&#062; &#039;o&#039;,
+			&#039;/&#249;/&#039; =&#062; &#039;u&#039;,
+ 
+			&#039;/&#225;/&#039; =&#062; &#039;a&#039;,
+			&#039;/&#233;/&#039; =&#062; &#039;e&#039;,
+			&#039;/&#237;/&#039; =&#062; &#039;i&#039;,
+			&#039;/&#243;/&#039; =&#062; &#039;o&#039;,
+			&#039;/&#250;/&#039; =&#062; &#039;u&#039;,
+ 
+			&#039;/&#226;/&#039; =&#062; &#039;a&#039;,
+			&#039;/&#234;/&#039; =&#062; &#039;e&#039;,
+			&#039;/&#238;/&#039; =&#062; &#039;i&#039;,
+			&#039;/&#244;/&#039; =&#062; &#039;o&#039;,
+			&#039;/&#251;/&#039; =&#062; &#039;u&#039;,
+ 
+			&#039;/&#227;/&#039; =&#062; &#039;a&#039;,
+			&#039;/&#038;etilde;/&#039; =&#062; &#039;e&#039;,
+			&#039;/&#038;itilde;/&#039; =&#062; &#039;i&#039;,
+			&#039;/&#245;/&#039; =&#062; &#039;o&#039;,
+			&#039;/&#038;utilde;/&#039; =&#062; &#039;u&#039;,
+ 
+			&#039;/&#228;/&#039; =&#062; &#039;a&#039;,
+			&#039;/&#235;/&#039; =&#062; &#039;e&#039;,
+			&#039;/&#239;/&#039; =&#062; &#039;i&#039;,
+			&#039;/&#246;/&#039; =&#062; &#039;o&#039;,
+			&#039;/&#252;/&#039; =&#062; &#039;u&#039;,
+ 
+			&#039;/&#228;/&#039; =&#062; &#039;a&#039;,
+			&#039;/&#235;/&#039; =&#062; &#039;e&#039;,
+			&#039;/&#239;/&#039; =&#062; &#039;i&#039;,
+			&#039;/&#246;/&#039; =&#062; &#039;o&#039;,
+			&#039;/&#252;/&#039; =&#062; &#039;u&#039;,
+ 
+			// Otras letras y caracteres especiales
+			&#039;/&#229;/&#039; =&#062; &#039;a&#039;,
+			&#039;/&#241;/&#039; =&#062; &#039;n&#039;,
+ 
+			// Agregar aqui mas caracteres si es necesario
+ 
+		);
+ 
+		$text = preg_replace(array_keys($patron),array_values($patron),$text);
+		return $text;
+	}]]></description>
+		<content:encoded><![CDATA[<p>function quitarAcentos($text)<br />
+	{<br />
+		$text = htmlentities($text, ENT_QUOTES, &#8216;UTF-8&#8217;);<br />
+		$text = strtolower($text);<br />
+		$patron = array (<br />
+			// Espacios, puntos y comas por guion<br />
+			&#8216;/[., ]+/&#8217; =&gt; &#8216;-&#8216;,</p>
+<p>			// Vocales<br />
+			&#8216;/&agrave;/&#8217; =&gt; &#8216;a&#8217;,<br />
+			&#8216;/&egrave;/&#8217; =&gt; &#8216;e&#8217;,<br />
+			&#8216;/&igrave;/&#8217; =&gt; &#8216;i&#8217;,<br />
+			&#8216;/&ograve;/&#8217; =&gt; &#8216;o&#8217;,<br />
+			&#8216;/&ugrave;/&#8217; =&gt; &#8216;u&#8217;,</p>
+<p>			&#8216;/&aacute;/&#8217; =&gt; &#8216;a&#8217;,<br />
+			&#8216;/&eacute;/&#8217; =&gt; &#8216;e&#8217;,<br />
+			&#8216;/&iacute;/&#8217; =&gt; &#8216;i&#8217;,<br />
+			&#8216;/&oacute;/&#8217; =&gt; &#8216;o&#8217;,<br />
+			&#8216;/&uacute;/&#8217; =&gt; &#8216;u&#8217;,</p>
+<p>			&#8216;/&acirc;/&#8217; =&gt; &#8216;a&#8217;,<br />
+			&#8216;/&ecirc;/&#8217; =&gt; &#8216;e&#8217;,<br />
+			&#8216;/&icirc;/&#8217; =&gt; &#8216;i&#8217;,<br />
+			&#8216;/&ocirc;/&#8217; =&gt; &#8216;o&#8217;,<br />
+			&#8216;/&ucirc;/&#8217; =&gt; &#8216;u&#8217;,</p>
+<p>			&#8216;/&atilde;/&#8217; =&gt; &#8216;a&#8217;,<br />
+			&#8216;/&amp;etilde;/&#8217; =&gt; &#8216;e&#8217;,<br />
+			&#8216;/&amp;itilde;/&#8217; =&gt; &#8216;i&#8217;,<br />
+			&#8216;/&otilde;/&#8217; =&gt; &#8216;o&#8217;,<br />
+			&#8216;/&amp;utilde;/&#8217; =&gt; &#8216;u&#8217;,</p>
+<p>			&#8216;/&auml;/&#8217; =&gt; &#8216;a&#8217;,<br />
+			&#8216;/&euml;/&#8217; =&gt; &#8216;e&#8217;,<br />
+			&#8216;/&iuml;/&#8217; =&gt; &#8216;i&#8217;,<br />
+			&#8216;/&ouml;/&#8217; =&gt; &#8216;o&#8217;,<br />
+			&#8216;/&uuml;/&#8217; =&gt; &#8216;u&#8217;,</p>
+<p>			&#8216;/&auml;/&#8217; =&gt; &#8216;a&#8217;,<br />
+			&#8216;/&euml;/&#8217; =&gt; &#8216;e&#8217;,<br />
+			&#8216;/&iuml;/&#8217; =&gt; &#8216;i&#8217;,<br />
+			&#8216;/&ouml;/&#8217; =&gt; &#8216;o&#8217;,<br />
+			&#8216;/&uuml;/&#8217; =&gt; &#8216;u&#8217;,</p>
+<p>			// Otras letras y caracteres especiales<br />
+			&#8216;/&aring;/&#8217; =&gt; &#8216;a&#8217;,<br />
+			&#8216;/&ntilde;/&#8217; =&gt; &#8216;n&#8217;,</p>
+<p>			// Agregar aqui mas caracteres si es necesario</p>
+<p>		);</p>
+<p>		$text = preg_replace(array_keys($patron),array_values($patron),$text);<br />
+		return $text;<br />
+	}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-24</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 20 Feb 2013 15:52:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-24</guid>
+		<description><![CDATA[Gracias :). Igualmente te recomiendo la version actualizada de esta funcion: http://www.ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/
+
+Saludos!]]></description>
+		<content:encoded><![CDATA[<p>Gracias :). Igualmente te recomiendo la version actualizada de esta funcion: <a href="http://www.ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/" rel="nofollow">http://www.ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/</a></p>
+<p>Saludos!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: santi</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-23</link>
+		<dc:creator><![CDATA[santi]]></dc:creator>
+		<pubDate>Wed, 20 Feb 2013 15:50:12 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-23</guid>
+		<description><![CDATA[Espectacular señores!!  Funciona a la perfección muchas gracias.]]></description>
+		<content:encoded><![CDATA[<p>Espectacular señores!!  Funciona a la perfección muchas gracias.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-22</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Fri, 20 Jul 2012 06:29:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-22</guid>
+		<description><![CDATA[noque yo sepa]]></description>
+		<content:encoded><![CDATA[<p>noque yo sepa</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: ron</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-21</link>
+		<dc:creator><![CDATA[ron]]></dc:creator>
+		<pubDate>Fri, 20 Jul 2012 00:37:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-21</guid>
+		<description><![CDATA[No hay una función de PHP que realice el trabajo directamente?]]></description>
+		<content:encoded><![CDATA[<p>No hay una función de PHP que realice el trabajo directamente?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-20</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2011 21:45:12 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-20</guid>
+		<description><![CDATA[Hola, no se si se dieron cuenta pero puse al principio del post la version actualizada de la funcion:
+
+http://www.ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/
+
+saludos]]></description>
+		<content:encoded><![CDATA[<p>Hola, no se si se dieron cuenta pero puse al principio del post la version actualizada de la funcion:</p>
+<p><a href="http://www.ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/" rel="nofollow">http://www.ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/</a></p>
+<p>saludos</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Juan</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-19</link>
+		<dc:creator><![CDATA[Juan]]></dc:creator>
+		<pubDate>Tue, 16 Aug 2011 18:55:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-19</guid>
+		<description><![CDATA[Hola, yo la he migrado a preg_replace que es la recomendación en lugar de ereg_replace que esta depreciada, aquí les va:
+
+function quitar_acento($s)
+{
+	$s = preg_replace(&quot;/[áàâãª]/&quot;,&quot;a&quot;,$s);
+	$s = preg_replace(&quot;/[ÁÀÂÃ]/&quot;,&quot;A&quot;,$s);
+	$s = preg_replace(&quot;/[ÍÌÎ]/&quot;,&quot;I&quot;,$s);
+	$s = preg_replace(&quot;/[íìî]/&quot;,&quot;i&quot;,$s);
+	$s = preg_replace(&quot;/[éèê]/&quot;,&quot;e&quot;,$s);
+	$s = preg_replace(&quot;/[ÉÈÊ]/&quot;,&quot;E&quot;,$s);
+	$s = preg_replace(&quot;/[óòôõº]/&quot;,&quot;o&quot;,$s);
+	$s = preg_replace(&quot;/[ÓÒÔÕ]/&quot;,&quot;O&quot;,$s);
+	$s = preg_replace(&quot;/[úùû]/&quot;,&quot;u&quot;,$s);
+	$s = preg_replace(&quot;/[ÚÙÛ]/&quot;,&quot;U&quot;,$s);
+	$s = str_replace(&quot;ç&quot;,&quot;c&quot;,$s);
+	$s = str_replace(&quot;Ç&quot;,&quot;C&quot;,$s);
+	$s = str_replace(&quot;ñ&quot;,&quot;n&quot;,$s);
+	$s = str_replace(&quot;Ñ&quot;,&quot;N&quot;,$s);
+
+	return $s;
+}
+
+Saludos]]></description>
+		<content:encoded><![CDATA[<p>Hola, yo la he migrado a preg_replace que es la recomendación en lugar de ereg_replace que esta depreciada, aquí les va:</p>
+<p>function quitar_acento($s)<br />
+{<br />
+	$s = preg_replace(&#8220;/[áàâãª]/&#8221;,&#8221;a&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[ÁÀÂÃ]/&#8221;,&#8221;A&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[ÍÌÎ]/&#8221;,&#8221;I&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[íìî]/&#8221;,&#8221;i&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[éèê]/&#8221;,&#8221;e&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[ÉÈÊ]/&#8221;,&#8221;E&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[óòôõº]/&#8221;,&#8221;o&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[ÓÒÔÕ]/&#8221;,&#8221;O&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[úùû]/&#8221;,&#8221;u&#8221;,$s);<br />
+	$s = preg_replace(&#8220;/[ÚÙÛ]/&#8221;,&#8221;U&#8221;,$s);<br />
+	$s = str_replace(&#8220;ç&#8221;,&#8221;c&#8221;,$s);<br />
+	$s = str_replace(&#8220;Ç&#8221;,&#8221;C&#8221;,$s);<br />
+	$s = str_replace(&#8220;ñ&#8221;,&#8221;n&#8221;,$s);<br />
+	$s = str_replace(&#8220;Ñ&#8221;,&#8221;N&#8221;,$s);</p>
+<p>	return $s;<br />
+}</p>
+<p>Saludos</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jask</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-18</link>
+		<dc:creator><![CDATA[Jask]]></dc:creator>
+		<pubDate>Mon, 08 Aug 2011 09:42:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-18</guid>
+		<description><![CDATA[Comentar que ereg_replace está obsoleta a partir de PHP 5.3.0 Es recomendable utilizar str_replace
+
+saludos]]></description>
+		<content:encoded><![CDATA[<p>Comentar que ereg_replace está obsoleta a partir de PHP 5.3.0 Es recomendable utilizar str_replace</p>
+<p>saludos</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: wolvet</title>
+		<link>http://ecapy.com/reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/#comment-17</link>
+		<dc:creator><![CDATA[wolvet]]></dc:creator>
+		<pubDate>Thu, 30 Jun 2011 13:52:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.capy.es/?p=71#comment-17</guid>
+		<description><![CDATA[gracias !]]></description>
+		<content:encoded><![CDATA[<p>gracias !</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

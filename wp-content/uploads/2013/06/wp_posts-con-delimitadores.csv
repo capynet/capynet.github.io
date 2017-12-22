@@ -1,0 +1,19 @@
+'250';'1';'2010-01-12 13:59:46';'2010-01-12 12:59:46';'No se si en otros framework esté pasando, pero lo que es jquery me ha vuelto loco.
+
+Una petición que tenia que mandarme data nueva constantemente se quedaba con los datos que recuperaba al principio pero funcionaba en todos los otros navegadores. <strong>TODOS</strong>.
+
+La solución ES UNA BOLUDEZ:
+<pre>$.ajaxSetup({ cache: false });</pre>
+Pongan esta linea al principio del js o antes de la petición ajax. <strong>Afecta a cualquier tipo de llamada: $.post(), $.get(), $.ajax().</strong>';'Internet Explorer cachea las peticiones Ajax en jQuery';;'publish';'open';'open';;'internet-explorer-cachea-las-peticiones-ajax-en-jquery';;;'2010-01-12 14:00:56';'2010-01-12 13:00:56';;'0';'http://www.ecapy.local/?p=250';'0';'post';;'13'
+'258';'1';'2010-01-20 18:51:36';'2010-01-20 17:51:36';'Obviamente estamos queriendo usar mas memoria de la que tenemos asignada para procesar la consulta que deseamos o cuando importamos dumps.
+
+La solución es mas bien simple:
+
+Para agregar mas memoria vamos a php.ini con el comando<strong>:</strong>
+<pre><strong>sudo gedit /etc/php5/apache2/php.ini</strong>
+</pre>
+Buscamos "<strong>memory_limit</strong>" para cambiarle el limite de <strong>16m</strong> que es lo que viene por defecto a <strong>32M </strong>o <strong>64M o lo que necesitemos.</strong>
+
+Guardamos y reiniciamos Apache con el comando:
+<pre><strong>sudo /etc/init.d/apache2 restart</strong>
+</pre>';'phpMyAdmin me dice que "Allowed memory size of xxxxx"... en Ubuntu (LAMP)';;'publish';'open';'open';;'phpmyadmin-me-dice-que-allowed-memory-size-of-xxxxx-en-ubuntu-lamp';;;'2010-01-20 18:51:36';'2010-01-20 17:51:36';;'0';'http://www.ecapy.local/?p=258';'0';'post';;'0'

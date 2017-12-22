@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>proxy &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/proxy/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Hacer proxy con Apache para aplicaciones Tomcat 7</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/</link>
+		<comments>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/#comments</comments>
+		<pubDate>Wed, 18 Sep 2013 08:00:45 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[proxy]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2527</guid>
+		<description><![CDATA[La idea es simple, las aplicaciones Tomcat corren por lo general en el puerto 8080, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto 80. Vamos a ello. Crea un nuevo virtualhost: [crayon-584437851c3fc028042774/] En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com. Los últimos dos pasos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La idea es simple, <strong>las aplicaciones Tomcat corren por lo general en el puerto <em>8080</em>, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto <em>80</em></strong>. Vamos a ello.</p>
+<p>Crea un nuevo virtualhost:</p><pre class="crayon-plain-tag">ServerName youtrack.ecapy.com
+
+ProxyPreserveHost On
+ProxyRequests Off
+
+Order deny,allow
+Allow from all
+
+ProxyPass /youtrack ajp://localhost:8080/youtrack
+ProxyPassReverse /youtrack ajp://localhost:8080/youtrack
+
+RewriteEngine On
+RewriteRule ^/$ "http://youtrack.ecapy.com/youtrack" [L]
+
+ErrorLog /var/log/apache2/yt-error.log
+CustomLog /var/log/apache2/yt-access.log common</pre><p>En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com.</p>
+<p>Los últimos dos pasos son habilitar el modulo <a href="http://es.wikipedia.org/wiki/Apache_JServ_Protocol" target="_blank">ajp</a> que es el modulo que usa apache para hablar con tomcat:</p><pre class="crayon-plain-tag">sudo a2enmod proxy_ajp</pre><p>Y reiniciamos apache:</p><pre class="crayon-plain-tag">sudo service apache2 restart</pre><p>Resultado:<br />
+<a href="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png"><img class="size-full wp-image-2531 alignnone" src="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png" alt="Tomcat app running through Apache" width="614" height="463" srcset="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png 614w, http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache-300x226.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

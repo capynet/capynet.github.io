@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/category/programacion/page/3/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:38:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Programación</title>
+			<link rel="shortcut icon" href="../../../../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../../../../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Programación RSS de la categoría" href="../../feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../../../../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../../../../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../../../../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../../../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../../../../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../../../../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="archive paged category category-programacion category-9 paged-3 category-paged-3">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../../../../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../../drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../../css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../../php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../../js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../../drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../../css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../../php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../../js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+<section id="main" class="container">
+    <div class="subtitle">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6">
+                Programación            </div>    
+            <div class="col-xs-6 col-sm-6">
+                
+	<div class="themeum-breadcrumbs">
+
+		<ul class="breadcrumb">
+			<li>
+				<a href="#" class="breadcrumb_home">Home</a> 
+			</li>
+			<li class="active">
+
+								Programación				  
+		</li>
+	</ul>
+	</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="content" class="site-content col-md-9" role="main">
+
+            
+                                    <article id="post-1283" class="post-1283 post type-post status-publish format-standard has-post-thumbnail hentry category-programacion tag-drupal tag-drupal-6">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../drupal-el-view-de-un-cck-no-esta-disponible-cuando-hago-node_load-solucion/index.html" rel="bookmark">Drupal: El &#8220;view&#8221; de un cck no está disponible cuando hago node_load() [Solución]</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-11-12T23:00:41+00:00">12 Nov,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/drupal/index.html" rel="tag">Drupal</a>, <a href="../../../../tag/drupal-6/index.html" rel="tag">Drupal 6</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../../../drupal-el-view-de-un-cck-no-esta-disponible-cuando-hago-node_load-solucion/index.html#comments">One comment</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Cuando cargamos un nodo con node_load(), si quisiéramos hacer uso de la propiedad &#8220;view&#8221; de un campo CCK veríamos que la misma no existe: </p>
+		<div id="crayon-584437f52d98f279892674" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$node = node_load(999);
+var_dump($node-&gt;field_precio[0]);
+ 
+array(2) {
+  ["amount"]=&gt; string(6) "100.00"
+  ["currency"]=&gt; string(3) "EUR"
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f52d98f279892674-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52d98f279892674-2">2</div><div class="crayon-num" data-line="crayon-584437f52d98f279892674-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52d98f279892674-4">4</div><div class="crayon-num" data-line="crayon-584437f52d98f279892674-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52d98f279892674-6">6</div><div class="crayon-num" data-line="crayon-584437f52d98f279892674-7">7</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f52d98f279892674-1"><span class="crayon-v">$node</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">node_load</span><span class="crayon-sy">(</span><span class="crayon-cn">999</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52d98f279892674-2"><span class="crayon-e">var_dump</span><span class="crayon-sy">(</span><span class="crayon-v">$node</span><span class="crayon-o">-&gt;</span><span class="crayon-i">field_precio</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52d98f279892674-3"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52d98f279892674-4"><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584437f52d98f279892674-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">[</span><span class="crayon-s">"amount"</span><span class="crayon-sy">]</span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">string</span><span class="crayon-sy">(</span><span class="crayon-cn">6</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-s">"100.00"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52d98f279892674-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">[</span><span class="crayon-s">"currency"</span><span class="crayon-sy">]</span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">string</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-s">"EUR"</span></div><div class="crayon-line" id="crayon-584437f52d98f279892674-7"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Esto pasa porque CCK solo prepara esta propiedad cuando un nodo se esta por imprimir mediante node_view(). Si lo que necesitas es usar node_load() en lugar de node_view() la solución es inyectarle la propiedad &#8220;view&#8221; mediante&nbsp;</p>
+<p><a class="btn btn-style" href="../../../../drupal-el-view-de-un-cck-no-esta-disponible-cuando-hago-node_load-solucion/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1155" class="post-1155 post type-post status-publish format-standard has-post-thumbnail hentry category-programacion tag-drupal">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../drupal-que-permisos-poner-en-settings-php/index.html" rel="bookmark">Drupal: Que permisos poner en settings.php</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-07-24T14:38:02+00:00">24 Jul,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/drupal/index.html" rel="tag">Drupal</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../../../drupal-que-permisos-poner-en-settings-php/index.html#comments">2 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>444</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1038" class="post-1038 post type-post status-publish format-standard has-post-thumbnail hentry category-php category-programacion tag-php">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../../../wp-content/uploads/2014/09/php-header.jpg" class="img-responsive wp-post-image" alt="php-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/php-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/php-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/php-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../como-forzar-la-descarga-de-un-archivo-con-php/index.html" rel="bookmark">Como forzar la descarga de un archivo con PHP</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-07-16T20:48:47+00:00">16 Jul,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../../php/index.html" rel="category tag">PHP</a>, <a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/php/index.html" rel="tag">PHP</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../../../como-forzar-la-descarga-de-un-archivo-con-php/index.html#comments">24 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Cada tanto necesitamos cosas así 🙂 </p>
+		<div id="crayon-584437f52e350433579806" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt;!--?php 
+/**
+ * Downloader
+ *
+ * @param $archivo
+ *  path al archivo
+ * @param $downloadfilename
+ *  (null|string) el nombre que queres usar para el archivo que se va a descargar.
+ *  (si no lo especificas usa el nombre actual del archivo)
+ *
+ * @return file stream
+ */
+function download_file($archivo, $downloadfilename = null) {
+ 
+    if (file_exists($archivo)) {
+        $downloadfilename = $downloadfilename !== null ? $downloadfilename : basename($archivo);
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename=' . $downloadfilename);
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($archivo));
+ 
+        ob_clean();
+        flush();
+        readfile($archivo);
+        exit;
+    }
+ 
+}
+&lt;/pre&gt;
+&lt;p&gt;Uso:&lt;br ?--&gt;
+Si queres que el archivo se descargue con un nombre distinto al original.</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f52e350433579806-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-2">2</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-4">4</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-6">6</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-8">8</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-10">10</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-12">12</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-14">14</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-16">16</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-18">18</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-20">20</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-22">22</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-24">24</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-26">26</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-28">28</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-30">30</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-32">32</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e350433579806-34">34</div><div class="crayon-num" data-line="crayon-584437f52e350433579806-35">35</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f52e350433579806-1"><span class="crayon-o">&lt;</span><span class="crayon-o">!</span><span class="crayon-o">--</span><span class="crayon-sy">?</span><span class="crayon-i">php</span><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-2"><span class="crayon-c">/**</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-3"><span class="crayon-c"> * Downloader</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-4"><span class="crayon-c"> *</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-5"><span class="crayon-c"> * @param $archivo</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-6"><span class="crayon-c"> *&nbsp;&nbsp;path al archivo</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-7"><span class="crayon-c"> * @param $downloadfilename</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-8"><span class="crayon-c"> *&nbsp;&nbsp;(null|string) el nombre que queres usar para el archivo que se va a descargar.</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-9"><span class="crayon-c"> *&nbsp;&nbsp;(si no lo especificas usa el nombre actual del archivo)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-10"><span class="crayon-c"> *</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-11"><span class="crayon-c"> * @return file stream</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-12"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-13"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">download_file</span><span class="crayon-sy">(</span><span class="crayon-v">$archivo</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$downloadfilename</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">null</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-14"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-584437f52e350433579806-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-e">file_exists</span><span class="crayon-sy">(</span><span class="crayon-v">$archivo</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$downloadfilename</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$downloadfilename</span><span class="crayon-h"> </span><span class="crayon-o">!==</span><span class="crayon-h"> </span><span class="crayon-t">null</span><span class="crayon-h"> </span><span class="crayon-sy">?</span><span class="crayon-h"> </span><span class="crayon-v">$downloadfilename</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-e">basename</span><span class="crayon-sy">(</span><span class="crayon-v">$archivo</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Content-Description: File Transfer'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Content-Type: application/octet-stream'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Content-Disposition: attachment; filename='</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-v">$downloadfilename</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Content-Transfer-Encoding: binary'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Expires: 0'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Cache-Control: must-revalidate, post-check=0, pre-check=0'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Pragma: public'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">header</span><span class="crayon-sy">(</span><span class="crayon-s">'Content-Length: '</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-e">filesize</span><span class="crayon-sy">(</span><span class="crayon-v">$archivo</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-25"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">ob_clean</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-27"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">flush</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">readfile</span><span class="crayon-sy">(</span><span class="crayon-v">$archivo</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">exit</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-31"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-32"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-33"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-i">pre</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e350433579806-34"><span class="crayon-o">&lt;</span><span class="crayon-i">p</span><span class="crayon-o">&gt;</span><span class="crayon-i">Uso</span><span class="crayon-o">:</span><span class="crayon-o">&lt;</span><span class="crayon-i">br</span><span class="crayon-h"> </span><span class="crayon-sy">?</span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-584437f52e350433579806-35"><span class="crayon-e">Si </span><span class="crayon-e">queres </span><span class="crayon-e">que </span><span class="crayon-e">el </span><span class="crayon-e">archivo </span><span class="crayon-e">se </span><span class="crayon-e">descargue </span><span class="crayon-e">con </span><span class="crayon-e">un </span><span class="crayon-e">nombre </span><span class="crayon-e">distinto </span><span class="crayon-e">al </span><span class="crayon-i">original</span><span class="crayon-sy">.</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> </p>
+		<div id="crayon-584437f52e35a496744796" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt;?php
+download_file("archivos/archivoReal.zip", "archivoEnmascarado.zip");</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f52e35a496744796-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e35a496744796-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f52e35a496744796-1"><span class="crayon-ta">&lt;?php</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e35a496744796-2"><span class="crayon-e">download_file</span><span class="crayon-sy">(</span><span class="crayon-s">"archivos/archivoReal.zip"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"archivoEnmascarado.zip"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Si queres que el archivo se descargue con el nombre original. </p>
+		<div id="crayon-584437f52e35f693283903" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt;?php
+download_file("archivos/archivoReal.zip");</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f52e35f693283903-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52e35f693283903-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f52e35f693283903-1"><span class="crayon-ta">&lt;?php</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52e35f693283903-2"><span class="crayon-e">download_file</span><span class="crayon-sy">(</span><span class="crayon-s">"archivos/archivoReal.zip"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1093" class="post-1093 post type-post status-publish format-standard has-post-thumbnail hentry category-linux category-programacion category-tip tag-linux tag-servidores tag-virtualizacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../../../wp-content/uploads/2015/06/linux-header.jpg" class="img-responsive wp-post-image" alt="linux-header" srcset="http://ecapy.com/wp-content/uploads/2015/06/linux-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../kvmlibvirt-el-guest-anfitrion-no-detecta-la-interface-virbr0-solucion/index.html" rel="bookmark">KVM/libvirt: el guest (anfitrion) no detecta la interface virbr0 [Solución]</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-06-16T22:33:06+00:00">16 Jun,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../../linux/index.html" rel="category tag">Linux</a>, <a href="../../index.html" rel="category tag">Programación</a>, <a href="../../../tip/index.html" rel="category tag">Tip</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/linux/index.html" rel="tag">Linux</a>, <a href="../../../../tag/servidores/index.html" rel="tag">Servidores</a>, <a href="../../../../tag/virtualizacion/index.html" rel="tag">Virtualización</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Si copiaste una maquina virtual KVM y al arrancar no tenes conexión a Internet, hablas visto depues de hacer ifconfig que no hay interface eth0. Esto pasa porque Linux cachea el mac de la tarjeta de red que tenia en la anterior maquina virtual en el archivo &#8220;70-persistent-net.rules&#8220;. La solución es borrarlo y reiniciar la maquina virtual (tranquilo que si Linux no lo&nbsp;</p>
+<p><a class="btn btn-style" href="../../../../kvmlibvirt-el-guest-anfitrion-no-detecta-la-interface-virbr0-solucion/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1082" class="post-1082 post type-post status-publish format-standard hentry category-css-y-maquetacion category-js category-programacion tag-bug tag-css tag-ie-te-odio tag-javascript tag-maquetacion">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../solucion-al-box-model-en-ie7-usando-jquery/index.html" rel="bookmark">Solución al box-model en ie7 usando jQuery</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-06-15T10:16:41+00:00">15 Jun,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../../css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a>, <a href="../../../js/index.html" rel="category tag">Javascript</a>, <a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/bug/index.html" rel="tag">bug</a>, <a href="../../../../tag/css/index.html" rel="tag">CSS</a>, <a href="../../../../tag/ie-te-odio/index.html" rel="tag">IE te odio</a>, <a href="../../../../tag/javascript/index.html" rel="tag">JavaScript</a>, <a href="../../../../tag/maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Sé que hay soluciones hechas para este problema en particular, pero pesa 33k y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230; Sabido es que a ie se la sudan los estándares y cuando los incorporan por lo general lo hacen taaarde. La propiedad CSS &#8220;box-sizing&#8221; no es la excepción. Ya&nbsp;</p>
+<p><a class="btn btn-style" href="../../../../solucion-al-box-model-en-ie7-usando-jquery/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1067" class="post-1067 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion category-programacion tag-css">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../css-hack-para-poder-usar-display-inline-block-en-ie7/index.html" rel="bookmark">CSS hack: para poder usar &#8220;display: inline-block&#8221; en IE7</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-06-15T02:08:41+00:00">15 Jun,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../../css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a>, <a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/css/index.html" rel="tag">CSS</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../../../css-hack-para-poder-usar-display-inline-block-en-ie7/index.html#comments">3 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Al grano: </p>
+		<div id="crayon-584437f52f93a549999964" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+.elemento {
+            vertical-align: top;
+            zoom: 1;
+            *display: inline;
+        }</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f52f93a549999964-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52f93a549999964-2">2</div><div class="crayon-num" data-line="crayon-584437f52f93a549999964-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f52f93a549999964-4">4</div><div class="crayon-num" data-line="crayon-584437f52f93a549999964-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f52f93a549999964-1"><span class="crayon-k ">.elemento </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52f93a549999964-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">vertical-align</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">top</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52f93a549999964-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">zoom</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">1</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f52f93a549999964-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i ">*display</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">inline</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f52f93a549999964-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-955" class="post-955 post type-post status-publish format-standard has-post-thumbnail hentry category-php category-programacion tag-drupal-6">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../drupal-6-db_last_insert_id-no-funciona-correctamente-solucion/index.html" rel="bookmark">Drupal 6: db_last_insert_id() no funciona correctamente [Solución]</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-05-19T23:18:02+00:00">19 May,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../../php/index.html" rel="category tag">PHP</a>, <a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/drupal-6/index.html" rel="tag">Drupal 6</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Es curioso como un error de este tipo se les llega a escapar y entra en producción. ¿Por qué no funciona? porque a algun iluminado se le ocurrio que solo lanzando la query &#8216;SELECT LAST_INSERT_ID()&#8217; sin especificar la tabla sobre la que se quiere obtener el ultimo registro insertado Drupal iba automagicamente a obtenerlo&#8230;. ERROR. Ah y&nbsp;</p>
+<p><a class="btn btn-style" href="../../../../drupal-6-db_last_insert_id-no-funciona-correctamente-solucion/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-925" class="post-925 post type-post status-publish format-standard has-post-thumbnail hentry category-programacion tag-bug tag-drupal-6">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../drupal-error-http-request-status/index.html" rel="bookmark">Drupal: Error &#8220;HTTP request status&#8221;</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-03-27T17:59:51+00:00">27 Mar,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/bug/index.html" rel="tag">bug</a>, <a href="../../../../tag/drupal-6/index.html" rel="tag">Drupal 6</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Si ves que drupal te dice en el reporte de estado (admin/reports/status) algo como esto: </p>
+		<div id="crayon-584437f5300d8658729332" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+Your system or network configuration does not allow Drupal to access web pages, resulting in reduced functionality. This could be due to your webserver configuration or PHP settings, and should be resolved in order to download information about available updates, fetch aggregator feeds, sign in via OpenID, or use other network-dependent services.</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5300d8658729332-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5300d8658729332-1"><span class="crayon-e">Your </span><span class="crayon-e">system </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-e">network </span><span class="crayon-e">configuration </span><span class="crayon-e">does </span><span class="crayon-st">not</span><span class="crayon-h"> </span><span class="crayon-e">allow </span><span class="crayon-e">Drupal </span><span class="crayon-st">to</span><span class="crayon-h"> </span><span class="crayon-e">access </span><span class="crayon-e">web </span><span class="crayon-v">pages</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">resulting </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-e">reduced </span><span class="crayon-v">functionality</span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-r">This</span><span class="crayon-h"> </span><span class="crayon-e">could </span><span class="crayon-e">be </span><span class="crayon-e">due </span><span class="crayon-st">to</span><span class="crayon-h"> </span><span class="crayon-e">your </span><span class="crayon-e">webserver </span><span class="crayon-e">configuration </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-e">PHP </span><span class="crayon-v">settings</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">and</span><span class="crayon-h"> </span><span class="crayon-e">should </span><span class="crayon-e">be </span><span class="crayon-e">resolved </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-e">order </span><span class="crayon-st">to</span><span class="crayon-h"> </span><span class="crayon-e">download </span><span class="crayon-e">information </span><span class="crayon-e">about </span><span class="crayon-e">available </span><span class="crayon-v">updates</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">fetch </span><span class="crayon-e">aggregator </span><span class="crayon-v">feeds</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">sign </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-e">via </span><span class="crayon-v">OpenID</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-st">use</span><span class="crayon-h"> </span><span class="crayon-e">other </span><span class="crayon-v">network</span><span class="crayon-o">-</span><span class="crayon-e">dependent </span><span class="crayon-v">services</span><span class="crayon-sy">.</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Podes decirle a Drupal que ignore este error poniendo la siguiente linea al final del archivo settings.php: $conf[&#8216;drupal_http_request_fails&#8217;] = FALSE; Al que le interese profundizar mas en el asunto aca esta el hilo: http://drupal.org/node/245990 PD: lo estoy ignorando al error porque&nbsp;</p>
+<p><a class="btn btn-style" href="../../../../drupal-error-http-request-status/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-834" class="post-834 post type-post status-publish format-standard hentry category-programacion category-tip tag-servidores">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../comprimir-y-enviar-archivos-al-vuelo-con-scp-ssh/index.html" rel="bookmark">Comprimir y enviar archivos al vuelo con SCP / SSH</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-03-12T19:13:50+00:00">12 Mar,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../index.html" rel="category tag">Programación</a>, <a href="../../../tip/index.html" rel="category tag">Tip</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/servidores/index.html" rel="tag">Servidores</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Sintaxis: </p>
+		<div id="crayon-584437f53038c428068089" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+scp -C [archivo_local.ext] [ip destino]:[ruta remota]/[archivo_destino.ext]</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f53038c428068089-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f53038c428068089-1"><span class="crayon-v">scp</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">C</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-v">archivo_local</span><span class="crayon-sy">.</span><span class="crayon-v">ext</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-e">ip </span><span class="crayon-v">destino</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-sy">[</span><span class="crayon-e">ruta </span><span class="crayon-v">remota</span><span class="crayon-sy">]</span><span class="crayon-o">/</span><span class="crayon-sy">[</span><span class="crayon-v">archivo_destino</span><span class="crayon-sy">.</span><span class="crayon-v">ext</span><span class="crayon-sy">]</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Ejemplo: </p>
+		<div id="crayon-584437f530395337623365" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+scp -C archivo_local.ext 192.168.1.20:/home/archivo_destino.ext</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f530395337623365-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f530395337623365-1"><span class="crayon-v">scp</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">C</span><span class="crayon-h"> </span><span class="crayon-v">archivo_local</span><span class="crayon-sy">.</span><span class="crayon-i">ext</span><span class="crayon-h"> </span><span class="crayon-cn">192.168.1.20</span><span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-v">home</span><span class="crayon-o">/</span><span class="crayon-v">archivo_destino</span><span class="crayon-sy">.</span><span class="crayon-v">ext</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Si te estas conectando con clave publica, tenes que indicar tu clave privada agregando -o IdentityFile=[[PATH HASTA LA CLAVE PRIVADA]]: </p>
+		<div id="crayon-584437f53039b013777708" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+scp -o IdentityFile=.ssh/id_rsa -C /paquete.tar.gz usuarioremoto@example.com:/var/www/example.com/paquete.tar.gz</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f53039b013777708-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f53039b013777708-1"><span class="crayon-v">scp</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">o</span><span class="crayon-h"> </span><span class="crayon-v">IdentityFile</span><span class="crayon-o">=</span><span class="crayon-sy">.</span><span class="crayon-v">ssh</span><span class="crayon-o">/</span><span class="crayon-v">id_rsa</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">C</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">paquete</span><span class="crayon-sy">.</span><span class="crayon-v">tar</span><span class="crayon-sy">.</span><span class="crayon-e">gz </span><span class="crayon-v">usuarioremoto</span><span class="crayon-sy">@</span><span class="crayon-v">example</span><span class="crayon-sy">.</span><span class="crayon-v">com</span><span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">www</span><span class="crayon-o">/</span><span class="crayon-v">example</span><span class="crayon-sy">.</span><span class="crayon-v">com</span><span class="crayon-o">/</span><span class="crayon-v">paquete</span><span class="crayon-sy">.</span><span class="crayon-v">tar</span><span class="crayon-sy">.</span><span class="crayon-v">gz</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-856" class="post-856 post type-post status-publish format-standard hentry category-mix-de-cosas category-programacion tag-mix-de-cosas tag-pensalo tag-programacion">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../../../que-frase-y-que-cierta/index.html" rel="bookmark">Que frase! y que cierta!</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-03-06T15:04:20+00:00">6 Mar,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../../mix-de-cosas/index.html" rel="category tag">Mix de cosas</a>, <a href="../../index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../../../tag/mix-de-cosas/index.html" rel="tag">Mix de cosas</a>, <a href="../../../../tag/pensalo/index.html" rel="tag">Pensálo</a>, <a href="../../../../tag/programacion/index.html" rel="tag">Programación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>&#8220;La mayoría de los programadores no programa porque espera el sueldo o la adulación del público, si no porque es divertido programar&#8221; &#8211; Linus Torvalds</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                
+                <div class="btn btn-style pull-left"><a href="../4/index.html" >&laquo; Older Posts</a></div>
+                <div class="btn btn-style pull-right"><a href="../2/index.html" >Newer Posts &raquo;</a></div>
+
+            
+        </div> <!-- #content -->
+
+        <div id="sidebar" class="col-md-3" role="complementary">
+            <div class="sidebar-inner">
+                <aside class="widget-area">
+                                    </aside>
+            </div>
+        </div> <!-- #sidebar -->
+
+    </div> <!-- .row -->
+</section> <!-- .contaainer -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../../../../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../../../../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../../../../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/category/programacion/page/3/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:38:44 GMT -->
+</html>

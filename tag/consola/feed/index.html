@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Consola &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/consola/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Crear un bash alias que reciba parámetros</title>
+		<link>http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/</link>
+		<pubDate>Tue, 03 Jun 2014 11:19:09 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Consola]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2691</guid>
+		<description><![CDATA[Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto: En el archivo .bash_aliases o .bashrc de tu home: [crayon-5844377e5075e208062726/] Listo. ya podemos usarlo en la consola: [crayon-5844377e5076c014327462/] Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto:</p>
+<p>En el archivo <strong>.bash_aliases</strong> o <strong>.bashrc</strong> de tu home:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    mysql -uusuario_demo -p labasededatosdedestino &lt; $1
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Listo. ya podemos usarlo en la consola:</p><pre class="crayon-plain-tag">importar_db mydb.sql</pre><p>Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de $1 para el primero $2 para el segundo, etc.</p>
+<p>&nbsp;</p>
+<p>UPDATE (27/10/2016):</p>
+<p><a href="http://stackoverflow.com/a/3465449/1413049">http://stackoverflow.com/a/3465449/1413049</a></p>
+<p>Aqui explica como pasar argumentos de forma dinámica. EJ:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    echo "listado de argumentos recibidos:"
+    echo "$@"
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Resumiendo <strong>&#8220;$@&#8221;</strong> nos deja meter una cantidad ilimitada de argumentos lo que a su vez nos da mas flexibilidad.</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>bug &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/bug/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>IE aplica degradé sobre imagenes transparentes [solución]</title>
+		<link>http://ecapy.com/ie-aplica-degrade-sobre-imagenes-transparentes-solucion/</link>
+		<pubDate>Mon, 29 Aug 2011 21:20:27 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1176</guid>
+		<description><![CDATA[Tengo que decirlo: es alucinante los bug que tiene IE (da igual la versión, nunca terminan de solucionarlos). El ultimo con el que me di es que si usas una imagen transparente para hacer un fondo transparente, se va a ver genial en todos los navegadores menos en Internet Explorer (7 y 8, el 9 no se) Así es&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/ie-aplica-degrade-sobre-imagenes-transparentes-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tengo que decirlo: es alucinante los bug que tiene IE (da igual la versión, nunca terminan de solucionarlos).</p>
+<p>El ultimo con el que me di es que si usas una imagen transparente para hacer un fondo transparente, se va a ver genial en todos los navegadores menos en Internet Explorer (7 y 8, el 9 no se)</p>
+<p>Así es como debería verse:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png"><img class="aligncenter size-full wp-image-1177" title="como-queda-al-usar-una-imagen-de-10x10" src="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png" alt="" width="440" height="248" srcset="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png 440w, http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10-300x169.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></a></p>
+<p>Y asi es como se ve en IE:</p>
+<p><img class="aligncenter size-full wp-image-1178" title="imagen-ie-degradando-imagen-transparente" src="http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente.png" alt="" width="440" height="248" srcset="http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente.png 440w, http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente-300x169.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></p>
+<p>Curioso&#8230; bueno googleando un poco <a href="http://www.jerrilynnreeves.com/?p=416" target="_blank">di con la respuesta</a> y es básicamente un comportamiento no deseado. Al señor no se le ocurre mejor idea que degradar un fondo transparente que se repita (<strong>background-repeat: repeat;</strong>) siempre que la imagen sea de <strong>1px</strong>X<strong>1px</strong>&#8230;. raro. Eso me va a enseñar a querer optimizar imagenes <img src="https://s.w.org/images/core/emoji/2/72x72/1f61b.png" alt="😛" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>por si no quedó claro, hay que hacer la misma imagen pero con por tamaño &#8220;prudente&#8221;: <strong>10px</strong>X<strong>10px</strong> para que IE no crea que tiene que degradar la imagen ¬¬</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>RARISIMO: Android y su perdida de sensibilidad en la pantalla</title>
+		<link>http://ecapy.com/rarisimo-android-y-su-perdida-de-sensibilidad-en-la-pantalla/</link>
+		<pubDate>Sun, 24 Jul 2011 11:31:37 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[bug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1152</guid>
+		<description><![CDATA[Puede que haya mil motivos mas por los cuales una pantalla capacitiva pierda sensibilidad, pero la que me tocó esta vez es de las cosas mas raras que me encontré. Actualice mi móvil a la ultima de Android, cuando termino de cargarse la ROM mi móvil reinicia&#8230; bueno aparece la pantalla de bienvenida tipo wizard para configurar cositas como idioma, teclado,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/rarisimo-android-y-su-perdida-de-sensibilidad-en-la-pantalla/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Puede que haya mil motivos mas por los cuales una pantalla capacitiva pierda sensibilidad, pero la que me tocó esta vez es de las cosas mas raras que me encontré.</p>
+<p>Actualice mi móvil a la ultima de Android, cuando termino de cargarse la ROM mi móvil reinicia&#8230; bueno aparece la pantalla de bienvenida tipo wizard para configurar cositas como idioma, teclado, etc. El tema es que en ese punto tocaba la pantalla y de a momentos me hacia caso y de a momentos no. Era como intermitente la capacidad de respuesta de la pantalla.</p>
+<p>Para ser sincero pensé que había jodido el móvil por no usar la ROM oficial de Movistar + Samsung <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Busque por Internet un poco hasta que me di con una respuesta en un foro que reza lo siguiente:</p>
+<blockquote><p>&#8220;Fijate si t pasa cuando lo tenes cargando&#8230;a muchos nos pasa cuandoblo cargamos&#8230; no se abren aplicaciones pero es como q el touch se pone inestable al hacer &#8220;click&#8221;&#8230; probalo con un apk por ej touch test&#8230; (la bajas del market)&#8221;</p></blockquote>
+<p>No me jodan!, ¿que si esta enchufado puede que la pantalla se ponga errática?&#8230; Así fue, desconecte el móvil del ordenador (recuerden que lo tenia enchufado porque estaba cargándole una nueva ROM) y anduvo sin problemas.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Solución al box-model en ie7 usando jQuery</title>
+		<link>http://ecapy.com/solucion-al-box-model-en-ie7-usando-jquery/</link>
+		<pubDate>Wed, 15 Jun 2011 08:16:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1082</guid>
+		<description><![CDATA[Sé que hay soluciones hechas para este problema en particular, pero pesa 33k y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230; Sabido es que a ie se la sudan los estándares y cuando los incorporan por lo general lo hacen taaarde. La propiedad CSS &#8220;box-sizing&#8221; no es la excepción. Ya&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/solucion-al-box-model-en-ie7-usando-jquery/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://code.google.com/p/ie7-js/" target="_blank">Sé que hay soluciones hechas para este problema en particular</a>, <strong>pero pesa 33k</strong> y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230;</p>
+<p>Sabido es que a <strong>ie se la sudan los estándares</strong> y cuando los incorporan por lo general lo hacen taaarde.<br />
+<span style="color: #993300;"><strong>La propiedad CSS &#8220;box-sizing&#8221; no es la excepción.</strong></span></p>
+<p>Ya sabemos que el siguiente CSS va a arreglar los desfases que se dan cuando un input que esta con un width:100%; dentro de un div que tiene un ancho fijado.</p><pre class="crayon-plain-tag">.elemento {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}</pre><p>Y como comente <a title="Como evitar que los input excedan el tamaño del div que los contiene" href="http://www.ecapy.com/como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/">en el post anterior</a>, esta propiedad no está soportada en ie7.</p>
+<p>Soluciones hay de todo tipo, pero lo cierto es que teniendo jQuery en todos mis desarrollos, se me hiso más que obvia la decisión de usar un script que arregle este bug en lugar de usar cosas más raras (<a href="http://stackoverflow.com/questions/1617667/what-is-difference-between-htc-and-js-file" target="_blank">archivos .htc por ejemplo</a>).</p>
+<p>Para implementar la solución solo necesitas poner este script:</p><pre class="crayon-plain-tag">$(document).ready(function () {
+    if ($.browser.msie &amp;&amp; ($.browser.version.substr(0, 1) == 7 || $("meta[content='IE=EmulateIE7']").length &gt; 0)) {
+        $(".ie7Fix-Box-model").each(function (i, v) {
+            var el = $(v);
+
+            //calculamos
+            var pL = el.css("paddingLeft").replace("px", "") != "" ? el.css("paddingLeft").replace("px", "") : 0;
+            var pR = el.css("paddingRight").replace("px", "") != "" ? el.css("paddingRight").replace("px", "") : 0;
+            var bLW = el.css("borderLeftWidth").replace("px", "") != "" ? el.css("borderLeftWidth").replace("px", "") : 0;
+            var bRW = el.css("borderRightWidth").replace("px", "") != "" ? el.css("borderRightWidth").replace("px", "") : 0;
+            var newSize = el.width() - (parseInt(pL, 10) + parseInt(pR, 10) + parseInt(bLW, 10) + parseInt(bRW, 10));
+
+            //le aplicamos el nuevo tamaño
+            el.width(newSize);
+        });
+    }
+});</pre><p>Y ponerle la class &#8220;<span style="color: #008000;"><strong>ie7Fix-Box-model</strong></span>&#8221; a todos los input que necesites arreglar.</p>
+<p><a href="http://www.ecapy.com/wp-content/uploads/2011/06/ie7Fix-Box-model.htm">Ver ejemplo</a> (vean el codigo fuente)</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal: Error &#8220;HTTP request status&#8221;</title>
+		<link>http://ecapy.com/drupal-error-http-request-status/</link>
+		<pubDate>Sun, 27 Mar 2011 15:59:51 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=925</guid>
+		<description><![CDATA[Si ves que drupal te dice en el reporte de estado (admin/reports/status) algo como esto: [crayon-584436d1b35cb659578216/] Podes decirle a Drupal que ignore este error poniendo la siguiente linea al final del archivo settings.php: $conf[&#8216;drupal_http_request_fails&#8217;] = FALSE; Al que le interese profundizar mas en el asunto aca esta el hilo: http://drupal.org/node/245990 PD: lo estoy ignorando al error porque&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-error-http-request-status/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Si ves que drupal te dice en el reporte de estado (<strong>admin/reports/status</strong>) algo como esto:</p><pre class="crayon-plain-tag">Your system or network configuration does not allow Drupal to access web pages, resulting in reduced functionality. This could be due to your webserver configuration or PHP settings, and should be resolved in order to download information about available updates, fetch aggregator feeds, sign in via OpenID, or use other network-dependent services.</pre><p>Podes decirle a Drupal que ignore este error poniendo la siguiente linea al final del archivo <strong>settings.php:</strong></p>
+<p><span style="color: #993300;"><strong>$conf[&#8216;drupal_http_request_fails&#8217;] = FALSE;</strong></span></p>
+<p>Al que le interese profundizar mas en el asunto aca esta el hilo:</p>
+<p><strong><a href="http://drupal.org/node/245990">http://drupal.org/node/245990</a></strong></p>
+<p><strong><br />
+</strong></p>
+<p>PD: lo estoy ignorando al error porque en mi servidor si hay comunicación y aunque Drupal me dice que no la hay, el mismo es capaz de avisarme cuando hay actualizaciones&#8230; curioso.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>jQuery: .css(&#8220;background-position&#8221;) falla en Internet Explorer</title>
+		<link>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/</link>
+		<comments>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/#comments</comments>
+		<pubDate>Wed, 09 Mar 2011 23:18:16 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=873</guid>
+		<description><![CDATA[Me iba a poner a explicar porque falla y todo lo que tuve que hacer hasta darme cuenta del problema y la forma de solucionarlo, pero prefiero por esta vez simplemente dejarles la función que hice para arreglar el problema: El siguiente método se acopla a jQuery por lo que lo pueden cargar justo después&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me iba a poner a explicar porque falla y todo lo que tuve que hacer hasta darme cuenta del problema y la forma de solucionarlo, pero prefiero por esta vez simplemente dejarles la función que hice para arreglar el problema:</p>
+<p>El siguiente método se acopla a jQuery por lo que lo pueden cargar justo después de jQuery y usarlo normalmente.</p><pre class="crayon-plain-tag">/**
+ * Devuelve un array con la posicion X e Y respectivamente.
+ */
+$.fn.bgPosition = function() {
+    var bgp = "background-position";
+    return $.browser.msie ? [parseInt($(this).css(bgp + "-x").split(" ")[0]), parseInt($(this).css(bgp + "-y").split(" ")[0])] : [parseInt($(this).css(bgp).split(" ")[0]), parseInt($(this).css(bgp).split(" ")[1])];
+}</pre><p>Y como mencione, el uso es bastante sencillo.</p><pre class="crayon-plain-tag">//Para usarlo:
+alert("las posiciónes X e Y del fondo son: " + $("#cajaConFondo").bgPosition()); //muestra [posX, posY]
+alert("La posición X del fondo es: " + $("#cajaConFondo").bgPosition()[0]); //muestra posX
+alert("La posición Y del fondo es: " + $("#cajaConFondo").bgPosition()[1]); //muestra posY</pre><p>Para cerrar el post el problema en resumen es que<strong> internet explorer no reconoce la propiedad &#8220;background-position&#8221;</strong> del metodo .css(). En su lugar hay que usar &#8220;<strong>background-position-x</strong>&#8221; y &#8220;<strong>background-position-y</strong>&#8221;</p>
+<p><span style="text-decoration: underline;">Y una cosita mas</span>: <span style="color: #993300;"><strong>el método solo funciona con pixeles</strong></span> porque es lo que me hacía falta, <span style="text-decoration: underline;">porcentajes y demases</span> yerbas quedan excluidas salvo que alguien quiera aportar esa parte <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><a title="Ejemplo de uso de $().bgPosition()" href="http://www.ecapy.com/Archivos/ejemplo_background_position_en_ie.zip">Descargar ejemplo</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: El tag http-equiv=&#8221;Content-type&#8221; de  sale duplicado</title>
+		<link>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/</link>
+		<comments>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/#comments</comments>
+		<pubDate>Mon, 15 Nov 2010 20:32:09 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=662</guid>
+		<description><![CDATA[Un curioso bug en Drupal y de facil solucion. Solamente tenes que poner el siguiente snippet en el template.php de tu theme o bien en algún modulo de tu propia factoría 🙂 [crayon-584436d1b5334113030446/]]]></description>
+				<content:encoded><![CDATA[<p>Un curioso bug en Drupal y de facil solucion. Solamente tenes que poner el siguiente snippet en el template.php de tu theme o bien en algún modulo de tu propia factoría <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">function TU_THEME_preprocess_page(&amp;$vars) {
+    $matches = array();
+    preg_match_all('/(]*&gt;)/', $vars['head'], $matches);
+    if (count($matches) &gt;= 2) {
+        $vars['head'] = preg_replace('/]*&gt;/', '', $vars['head'], 1); // strip 1 only
+    }
+}</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>jQuery.height() calcula distintos tamaños entre navegadores [solución]</title>
+		<link>http://ecapy.com/jquery-height-calcula-distintos-tamanos-entre-navegadores-solucion/</link>
+		<pubDate>Sun, 14 Nov 2010 02:24:10 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=641</guid>
+		<description><![CDATA[Este es un tip rápido pero útil. Escenario: Tenes un div con el id &#8220;elDiv&#8221; con el siguiente CSS: [crayon-584436d1b5d2d005988017/] Y en Firefox/Chrome/Safari/Opera al hacer $(&#8220;#elDiv&#8221;).height(); te entrega 400px por decir algo (el tamaño depende de lo que tenga dentro). Pero curiosamente en Internet explorer te da un tamaño raro&#8230; de menos, unos 358px en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/jquery-height-calcula-distintos-tamanos-entre-navegadores-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Este es un tip rápido pero útil.</p>
+<p>Escenario:<br />
+Tenes un div con el id &#8220;<strong>elDiv</strong>&#8221; con el siguiente CSS:</p><pre class="crayon-plain-tag">#elDiv {
+	border: 1px solid #336699;
+	float: right;
+	padding: 20px;
+	width: 500px;
+}</pre><p>Y en Firefox/Chrome/Safari/Opera al hacer <strong>$(&#8220;#elDiv&#8221;).height();</strong> te <strong>entrega 400px </strong>por decir algo (el tamaño depende de lo que tenga dentro).<br />
+Pero curiosamente en <strong>Internet explorer </strong>te da un tamaño raro&#8230; de menos, unos <strong>358px </strong>en nuestro ejemplo.</p>
+<p><span style="text-decoration: underline;"><strong>¿Qué pasa?</strong></span><br />
+Pasa que no le especificaste un modo de renderizado al HTML por medio del DOCTYPE, y por culpa de ello Internet explorer va a renderizar el contenido en modo &#8220;<strong>Quirks Mode</strong>&#8221; <a href="http://es.wikipedia.org/wiki/Quirks_Mode" target="_blank">http://es.wikipedia.org/wiki/Quirks_Mode</a>.</p>
+<p>Si no queres leer el articulo de Wikipedia te comento que lo único que tenes que hacer es poner lo siguiente por encima del tag &lt;html&gt;:</p><pre class="crayon-plain-tag">&lt; !DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/DTD/strict.dtd"&gt;</pre><p><strong>PD:</strong> el valor de <strong>358px </strong>en mi ejemplo viene de que en modo quirks, <strong>IE toma el tamaño del tamaño real menos el padding y el borde</strong>: 400 &#8211; 40 &#8211; 2 = 358.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>El botón de Facebook connect Internet Explorer no aparece (Solución)</title>
+		<link>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/</link>
+		<comments>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/#comments</comments>
+		<pubDate>Tue, 22 Jun 2010 14:05:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[IE te odio]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=508</guid>
+		<description><![CDATA[Justamente ese fue el problema que tuve hoy. Integré Facebook Connect en una pagina que tengo hecha en Drupal y no había forma de hacer que el botoncito de login se vea en Internet Explorer 7 u 8&#8230; Después de un kilo y medio de I+D descubro que resulta ser que es porque IE no&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Justamente ese fue el problema que tuve hoy. Integré Facebook Connect en una pagina que tengo hecha en Drupal y no había forma de hacer que el botoncito de login se vea en Internet Explorer 7 u 8&#8230;</p>
+<p>Después de un kilo y medio de I+D descubro que resulta ser que es porque <strong>IE no sabe que hacer con los tag &lt;fb&gt;</strong>, y dicho problema se soluciona de la forma mas tonta del mundo:<br />
+Metiendo el siguiente trozo de código en la etiqueta &lt;html&gt;:</p><pre class="crayon-plain-tag">xmlns:fb=&quot;http://www.facebook.com/2008/fbml&quot;</pre><p>Y como nota quiero aclarar que no hace falta reemplazar el atributo existente ya que pueden coexistir ambos:</p><pre class="crayon-plain-tag">&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &lt;strong&gt;xmlns:fb=&quot;http://www.facebook.com/2008/fbml&quot;&lt;/strong&gt; xml:lang=&quot;es_ES&quot; lang=&quot;es_ES&quot;&amp;gt;</pre><p><strong>Y listo. el fukin botoncito ya aparece en IE 7 y 8 (en el 6 ni me gasté en probarlo).</strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Múltiples drupal_execute() en Drupal 6 es imposible&#8230; O NO :)</title>
+		<link>http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/</link>
+		<comments>http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/#comments</comments>
+		<pubDate>Wed, 02 Jun 2010 20:31:52 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=474</guid>
+		<description><![CDATA[El otro día Nicolas, un amigo y compañero de trabajo se quebró la cabeza con este tema. La cosa debía ser mas bien simple, en un bucle tenia que procesar una serie de datos, rellenar un formulario programaticamente y darle un drupal_execute() para que se creen una cantidad de nodos&#8230; Eso fue de todo menos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El otro día Nicolas, un amigo y compañero de trabajo <strong>se quebró la cabeza</strong> con este tema. La cosa debía ser mas bien simple, en un bucle tenia que procesar una serie de datos, rellenar un formulario programaticamente y darle un <a href="http://api.drupal.org/api/function/drupal_execute/6" target="_blank">drupal_execute()</a> para que se creen una cantidad de nodos&#8230;</p>
+<p><strong>Eso fue de todo menos simple</strong>. Resulta que el que programó la función <a href="http://api.drupal.org/api/function/drupal_validate_form/6" target="_blank">drupal_validate_form()</a> <strong>se olvidó que podía caber la posibilidad de que alguien quisiera llamarlo en bucle, y no se le ocurrió mejor idea que cachear la primera validación y cortar cualquier otra dentro de un mismo request.</strong></p>
+<p>La solución por la que se decantó Nicolas fue la de crear una implementación propia de ciertas funciones. Antes que digan algo, recomiendo que se den una vuelta <a href="http://drupal.org/node/260934" target="_blank">por los foros de Drupal</a> y se convensan de la imposibilidad de aplicar una solución mejor.<br />
+De hecho esta solución es bastante buena, porque no tenes mas que poner el código en tu modulo, e invocar la versión modificada de drupal_execute().</p>
+<p>La modificación se tuvo hacer mucho antes de llegar a drupal_validate_form() para poder tomar control sobre la misma, por lo que en esta modificación hubo que reemplazar funciones de:<br />
+<strong>drupal_execute() -&gt; drupal_execute_no_cache()<br />
+drupal_process_form() -&gt; drupal_process_form_no_cache()<br />
+drupal_validate_form() -&gt; drupal_validate_form_no_cache();</strong></p>
+<p>los archivos modificados son estos:</p><pre class="crayon-plain-tag">/**
+ * @see drupal_execute
+ * Unica diferencia, utiliza métodos propios (_no_cache) para evitar el cacheo de validaciones
+ */
+
+function drupal_execute_no_cache($form_id, &amp;$form_state) {
+    $args = func_get_args();
+
+    // Make sure $form_state is passed around by reference.
+    $args[1] = &amp;$form_state;
+
+    $form = call_user_func_array('drupal_retrieve_form', $args);
+    $form['#post'] = $form_state['values'];
+    drupal_prepare_form($form_id, $form, $form_state);
+    drupal_process_form_no_cache($form_id, $form, $form_state);
+
+}
+
+/**
+ * @see drupal_process_form
+ *
+ * @param $form_id
+ * @param $form
+ * @param $form_state
+ */
+function drupal_process_form_no_cache($form_id, &amp;$form, &amp;$form_state) {
+    $form_state['values'] = array();
+
+    $form = form_builder($form_id, $form, $form_state);
+    // Only process the form if it is programmed or the form_id coming
+    // from the POST data is set and matches the current form_id.
+    if ((!empty($form['#programmed'])) || (!empty($form['#post']) &amp;&amp; (isset($form['#post']['form_id']) &amp;&amp; ($form['#post']['form_id'] == $form_id)))) {
+        $form_state['process_input'] = TRUE;
+        drupal_validate_form_no_cache($form_id, $form, $form_state);
+
+        // form_clean_id() maintains a cache of element IDs it has seen,
+        // so it can prevent duplicates. We want to be sure we reset that
+        // cache when a form is processed, so scenerios that result in
+        // the form being built behind the scenes and again for the
+        // browser don't increment all the element IDs needlessly.
+        form_clean_id(NULL, TRUE);
+
+        if ((!empty($form_state['submitted'])) &amp;&amp; !form_get_errors() &amp;&amp; empty($form_state['rebuild'])) {
+            $form_state['redirect'] = NULL;
+            form_execute_handlers('submit', $form, $form_state);
+
+            // We'll clear out the cached copies of the form and its stored data
+            // here, as we've finished with them. The in-memory copies are still
+            // here, though.
+            if (variable_get('cache', CACHE_DISABLED) == CACHE_DISABLED &amp;&amp; !empty($form_state['values']['form_build_id'])) {
+                cache_clear_all('form_' . $form_state['values']['form_build_id'], 'cache_form');
+                cache_clear_all('storage_' . $form_state['values']['form_build_id'], 'cache_form');
+            }
+
+            // If batches were set in the submit handlers, we process them now,
+            // possibly ending execution. We make sure we do not react to the batch
+            // that is already being processed (if a batch operation performs a
+            // drupal_execute).
+            if ($batch =&amp; batch_get() &amp;&amp; !isset($batch['current_set'])) {
+                // The batch uses its own copies of $form and $form_state for
+                // late execution of submit handers and post-batch redirection.
+                $batch['form'] = $form;
+                $batch['form_state'] = $form_state;
+                $batch['progressive'] = !$form['#programmed'];
+                batch_process();
+                // Execution continues only for programmatic forms.
+                // For 'regular' forms, we get redirected to the batch processing
+                // page. Form redirection will be handled in _batch_finished(),
+                // after the batch is processed.
+            }
+
+            // If no submit handlers have populated the $form_state['storage']
+            // bundle, and the $form_state['rebuild'] flag has not been set,
+            // we're finished and should redirect to a new destination page
+            // if one has been set (and a fresh, unpopulated copy of the form
+            // if one hasn't). If the form was called by drupal_execute(),
+            // however, we'll skip this and let the calling function examine
+            // the resulting $form_state bundle itself.
+            if (!$form['#programmed'] &amp;&amp; empty($form_state['rebuild']) &amp;&amp; empty($form_state['storage'])) {
+                drupal_redirect_form($form, $form_state['redirect']);
+            }
+        }
+    }
+}
+
+/**
+ * @see drupal_validate_form
+ *
+ * @param $form_id
+ * @param $form
+ * @param $form_state
+ */
+function drupal_validate_form_no_cache($form_id, $form, &amp;$form_state) {
+
+    // If the session token was set by drupal_prepare_form(), ensure that it
+    // matches the current user's session.
+    if (isset($form['#token'])) {
+        if (!drupal_valid_token($form_state['values']['form_token'], $form['#token'])) {
+            // Setting this error will cause the form to fail validation.
+            form_set_error('form_token', t('Validation error, please try again. If this error persists, please contact the site administrator.'));
+        }
+    }
+
+    _form_validate($form, $form_state, $form_id);
+}</pre><p>Como dije. Copienlo a su módulo y usen drupal_execute_no_cache() en lugar de drupal_execute().</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

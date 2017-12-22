@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+
+<!-- Mirrored from ecapy.com/Archivos/slideToggleMinHeight/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 16:28:43 GMT -->
+<head>
+    <title>$.slideToggleMinHeight()</title>
+    <script type="text/javascript" src="jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="jquery.slideToggleMinHeight.min.js"></script>
+
+    <style type="text/css">
+        .divToSlide {
+            border: 1px solid #336699;
+            float: right;
+            padding: 20px;
+            width: 500px;
+        }
+
+        .divToSlide p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .exampleLinks{
+            float: left;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".doSlide").click(function(e) {
+                e.preventDefault();
+                $(".divToSlide").slideToggleMinHeight(100);
+            })
+
+            $(".doSlide1").click(function(e) {
+                e.preventDefault();
+                $(".divToSlide").slideToggleMinHeight(100, 2000);
+            })
+
+            $(".doSlide2").click(function(e) {
+                e.preventDefault();
+                $(".divToSlide").slideToggleMinHeight(100, 2000, "easeOutBounce");
+            })
+
+            $(".doSlide3").click(function(e) {
+                e.preventDefault();
+                $(".divToSlide").slideToggleMinHeight(100, 2000, "easeOutBounce", dummyCallback);
+            })
+
+            dummyCallback = function(obj, actionPerformed) {
+                alert('Action "' + actionPerformed + '" finished over ".' + obj.attr("class") + '" selector');
+            }
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+<h1>$.slideToggleMinHeight()</h1>
+
+<p>
+
+<h4>jQuery.slideToggleMinHeight( [minHeight], [speed], [easeEffect], [callback])</h4>
+<h4><a href="pack_slideToggleMinHeight.rar">Download</a></h4>
+
+<b>minHeight:</b> A number determining the min height. Default value 50px if any specified.<br/>
+
+<b>speed:</b> A number determining how long the animation will run. Default is 500 ms.<br/>
+
+<b>easeEffect:</b> A string indicating which easing function to use for the transition. Available transitions in
+http://gsgd.co.uk/sandbox/jquery/easing/<br/>
+
+<b>callback:</b> A function to call once the animation is complete. the method sends the jQuery object and action
+performed.
+<br />
+</p>
+<div class="exampleLinks" >
+<h2>Example</h2>
+<ul>
+    <li><a href="#" class="doSlide">Make me slide with default options!</a>
+        <pre>$(".divToSlide").slideToggleMinHeight(100);</pre>
+    </li>
+    <li><a href="#" class="doSlide1">Make me slide with 2 sec!</a>
+    <pre>$(".divToSlide").slideToggleMinHeight(
+            100,
+            2000
+        );
+    </pre>
+    </li>
+    <li><a href="#" class="doSlide2">Make me slide with 2 sec and "easeOutBounce"!</a>
+    <pre>$(".divToSlide").slideToggleMinHeight(
+            100,
+            2000,
+            "easeOutBounce"
+        );
+    </pre>
+    </li>
+    <li><a href="#" class="doSlide3">Make me slide with 2 sec, "easeOutBounce" and my callback!</a>
+    <pre>
+$(".divToSlide").slideToggleMinHeight(
+        100,
+        2000,
+        "easeOutBounce",
+        dummyCallback
+);
+
+dummyCallback = function(obj, actionPerformed) {
+    alert('Action "'
+    + actionPerformed +
+    '" finished over ".' +
+    obj.attr("class") +
+    '" selector');
+}
+    </pre>
+    </li>
+</ul>
+</div>
+<div class="divToSlide">
+    <p> Integer imperdiet dapibus erat, in venenatis dolor congue bibendum. Suspendisse et lorem ante, vitae posuere
+        dui. Suspendisse potenti. Curabitur nibh mauris, tempor bibendum mattis id, hendrerit eget eros. Fusce
+        cursus elementum fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+        mus. Nullam tristique eros a augue suscipit aliquam. Praesent sed placerat eros. In hac habitasse platea
+        dictumst. Suspendisse sed condimentum quam. Duis non orci nisi, at tristique arcu. Maecenas sit amet lectus
+        quis metus egestas tincidunt. Quisque ac neque nunc, ac scelerisque ante.</p>
+
+    <p> Nunc et purus in lorem bibendum dapibus. Nunc diam justo, dictum nec iaculis vitae, volutpat a risus. Cras
+        nulla mauris, auctor vitae blandit rhoncus, vulputate vitae nunc. Integer scelerisque, purus et iaculis
+        eleifend, risus nulla vehicula elit, sed ornare sem neque ut mi. Maecenas ultricies, purus sit amet
+        adipiscing rhoncus, mauris ipsum imperdiet justo, a mattis ligula quam vitae purus. Curabitur ante odio,
+        fermentum ac tempus vitae, viverra non lacus. Duis interdum congue elit eu faucibus. Aliquam pulvinar nulla
+        eget eros dignissim a tristique nisi congue. Duis facilisis feugiat mattis. Donec a nulla a justo convallis
+        malesuada in quis turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl quam,
+        eleifend quis convallis a, cursus malesuada nulla. Mauris convallis ante ultrices neque gravida convallis.
+        Vivamus vehicula dolor a sem venenatis convallis. Cras in est dui, eget sollicitudin dui. Vestibulum
+        convallis est eget dolor bibendum vel tincidunt velit iaculis. </p>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-238596-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+
+<!-- Mirrored from ecapy.com/Archivos/slideToggleMinHeight/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 16:28:45 GMT -->
+</html>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Drupal 6 &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/drupal-6/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Drupal: El &#8220;view&#8221; de un cck no está disponible cuando hago node_load() [Solución]</title>
+		<link>http://ecapy.com/drupal-el-view-de-un-cck-no-esta-disponible-cuando-hago-node_load-solucion/</link>
+		<comments>http://ecapy.com/drupal-el-view-de-un-cck-no-esta-disponible-cuando-hago-node_load-solucion/#comments</comments>
+		<pubDate>Sat, 12 Nov 2011 22:00:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1283</guid>
+		<description><![CDATA[Cuando cargamos un nodo con node_load(), si quisiéramos hacer uso de la propiedad &#8220;view&#8221; de un campo CCK veríamos que la misma no existe: [crayon-58443703646cf992324774/] Esto pasa porque CCK solo prepara esta propiedad cuando un nodo se esta por imprimir mediante node_view(). Si lo que necesitas es usar node_load() en lugar de node_view() la solución es inyectarle la propiedad &#8220;view&#8221; mediante&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-el-view-de-un-cck-no-esta-disponible-cuando-hago-node_load-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando cargamos un nodo con node_load(), si quisiéramos hacer uso de la propiedad &#8220;view&#8221; de un campo CCK veríamos que la misma no existe:</p><pre class="crayon-plain-tag">$node = node_load(999);
+var_dump($node-&gt;field_precio[0]);
+ 
+array(2) {
+  ["amount"]=&gt; string(6) "100.00"
+  ["currency"]=&gt; string(3) "EUR"
+}</pre><p>Esto pasa porque CCK solo prepara esta propiedad cuando un nodo se esta por imprimir mediante node_view(). Si lo que necesitas es usar node_load() en lugar de node_view() la solución es inyectarle la propiedad &#8220;view&#8221; mediante la función que el mismo modulo de CCK utiliza:</p><pre class="crayon-plain-tag">$node = node_load(999);
+$node-&gt;field_precio[0]['view'] = content_format("field_precio", $node-&gt;field_precio[0]);
+ 
+var_dump($node-&gt;field_precio[0]);
+ 
+array(3) {
+  ["amount"]=&gt; string(6) "100.00"
+  ["currency"]=&gt; string(3) "EUR"
+  ["view"]=&gt; string(11) "100.00 EUR"
+}</pre><p>bye!.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-el-view-de-un-cck-no-esta-disponible-cuando-hago-node_load-solucion/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: db_last_insert_id() no funciona correctamente [Solución]</title>
+		<link>http://ecapy.com/drupal-6-db_last_insert_id-no-funciona-correctamente-solucion/</link>
+		<pubDate>Thu, 19 May 2011 21:18:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=955</guid>
+		<description><![CDATA[Es curioso como un error de este tipo se les llega a escapar y entra en producción. ¿Por qué no funciona? porque a algun iluminado se le ocurrio que solo lanzando la query &#8216;SELECT LAST_INSERT_ID()&#8217; sin especificar la tabla sobre la que se quiere obtener el ultimo registro insertado Drupal iba automagicamente a obtenerlo&#8230;. ERROR. Ah y&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-6-db_last_insert_id-no-funciona-correctamente-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Es curioso como un error de este tipo se les llega a escapar y entra en producción.</p>
+<p>¿Por qué no funciona? porque a algun iluminado se le ocurrio que solo lanzando la query <strong>&#8216;SELECT LAST_INSERT_ID()&#8217; sin especificar la tabla sobre la que se quiere obtener el ultimo registro insertado</strong> Drupal iba automagicamente a obtenerlo&#8230;. <span style="color: #993300;"><strong>ERROR</strong></span>. Ah y por cierto incluso la query &#8216;SELECT LAST_INSERT_ID()&#8217; bien armada también suele fallar.</p><pre class="crayon-plain-tag">/**
+ * Returns the last insert id.
+ *
+ * @param $table
+ *   The name of the table you inserted into.
+ * @param $field
+ *   The name of the autoincrement field.
+ */
+function db_last_insert_id($table, $field){
+    return db_result(db_query('SELECT LAST_INSERT_ID()'));
+}</pre><p>La función que soluciona este problema es esta:</p><pre class="crayon-plain-tag">/**
+ * Version modificada del analogo de drupal que soluciona un problema comentado en foros.
+ *
+ * @param string $table tabla sobre la que se quiere obtener el ultimo id insertado
+ * @param string $field cual es la columna que tiene el id
+ * @return int
+ */
+function custom_db_last_insert_id($table, $field) {
+    $result = db_query("SELECT $field FROM {$table} ORDER BY $field DESC LIMIT 1");
+    $row = db_fetch_object($result);
+    return $row-&gt;$field;
+}</pre><p>Solo resta agregar que uso esta solución hace mas de un año y funciona bien.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal: Error &#8220;HTTP request status&#8221;</title>
+		<link>http://ecapy.com/drupal-error-http-request-status/</link>
+		<pubDate>Sun, 27 Mar 2011 15:59:51 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=925</guid>
+		<description><![CDATA[Si ves que drupal te dice en el reporte de estado (admin/reports/status) algo como esto: [crayon-584437036638e983155533/] Podes decirle a Drupal que ignore este error poniendo la siguiente linea al final del archivo settings.php: $conf[&#8216;drupal_http_request_fails&#8217;] = FALSE; Al que le interese profundizar mas en el asunto aca esta el hilo: http://drupal.org/node/245990 PD: lo estoy ignorando al error porque&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-error-http-request-status/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Si ves que drupal te dice en el reporte de estado (<strong>admin/reports/status</strong>) algo como esto:</p><pre class="crayon-plain-tag">Your system or network configuration does not allow Drupal to access web pages, resulting in reduced functionality. This could be due to your webserver configuration or PHP settings, and should be resolved in order to download information about available updates, fetch aggregator feeds, sign in via OpenID, or use other network-dependent services.</pre><p>Podes decirle a Drupal que ignore este error poniendo la siguiente linea al final del archivo <strong>settings.php:</strong></p>
+<p><span style="color: #993300;"><strong>$conf[&#8216;drupal_http_request_fails&#8217;] = FALSE;</strong></span></p>
+<p>Al que le interese profundizar mas en el asunto aca esta el hilo:</p>
+<p><strong><a href="http://drupal.org/node/245990">http://drupal.org/node/245990</a></strong></p>
+<p><strong><br />
+</strong></p>
+<p>PD: lo estoy ignorando al error porque en mi servidor si hay comunicación y aunque Drupal me dice que no la hay, el mismo es capaz de avisarme cuando hay actualizaciones&#8230; curioso.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal: Porque usar Drupal.behaviors en lugar de $(document).ready();</title>
+		<link>http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/</link>
+		<comments>http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/#comments</comments>
+		<pubDate>Mon, 07 Mar 2011 21:15:27 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Optimización]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=824</guid>
+		<description><![CDATA[Durante mucho tiempo estuve usando $(document).ready(); para poner mi js en Drupal, y funcionaba la mar de bien. Esto me permitía ejecutar javascript inmediatamente después que el DOM estuviera cargado evitando así errores de referencias a objetos que todavía no existieran al querer manipularlos. Ahora bien, hay un problema que vamos a encontrar por medio de un ejemplo simple: Si tuviéramos un listado de nodos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Durante mucho tiempo estuve usando<strong> $(document).ready();</strong> para poner mi js en Drupal, y funcionaba la mar de bien. Esto me permitía ejecutar javascript inmediatamente después que el <strong>DOM </strong>estuviera cargado evitando así errores de referencias a objetos que todavía no existieran al querer manipularlos.</p>
+<p>Ahora bien, hay un problema que vamos a encontrar por medio de un ejemplo simple:</p>
+<p>Si tuviéramos un listado de nodos y a ese listado hiciéramos que al pinchar sobre sus enlaces hiciera un alert de su atributo <span style="color: #993300;">&#8220;title&#8221;</span> usando jQuery:</p><pre class="crayon-plain-tag">jQuery(document).ready(function($) {
+    $("#listado_de_nodos a").click(function(e) {
+        alert($(this).attr("title"));
+    });
+});</pre><p>¿Qué pasa si por medio de AJAX se agregaran nuevos nodos? te lo digo, que no reaccionarían al hacer click sobre ellos, y es por que el método <strong>.click()</strong> de jQuery se ejecuta una sola vez en busca de elementos que macheen con su criterio y una vez finalizado ya está, no hace mas. Es un comportamiento de lo mas entendible ya que imaginemos que estuviera escaneando constantemente por nuevos elementos ese selector mas los otros 50 que estemos usando para hacer mas cosas&#8230;. Google Chrome lo soportaría sin apenas darle carga al procesador y RAM, pero piensen en la basura de <a title="ie te odio" href="http://www.ecapy.com/tag/ie-te-odio/" target="_blank">IE&#8230;..</a></p>
+<p>Perdonen que me vaya por las ramas, como les decía, dado el problema que se planteo para el listado de nodos que di como ejemplo, <strong>se implemento una solucion</strong> (bueno cubre mas problemas pero este es de los mas comunes) la solución fue usar al objeto <strong>Drupal.behaviors</strong> a modo de controlador. <strong>Drupal.behaviors</strong> relanza todas las funciones que almacena por cada vez que se lance una petición AJAX, dándonos la oportunidad de re procesar cosas. Así pues en el ejemplo anterior lo podemos poner dentro de un <strong>behavior</strong> para poder aplicar nuestra funcionalidad incluso a los nuevos elementos provenientes de la petición:</p><pre class="crayon-plain-tag">Drupal.behaviors.alertarEnlaces = function(context) {
+    $("#listado_de_nodos a").click(function(e) {
+        alert($(this).attr("title"));
+    });
+}</pre><p>Como ven lo único que hay que reemplazar en nuestros actuales ficheros de javascript es<strong> jQuery(document).ready(function($) {})</strong> por <strong>Drupal.behaviors.alertarEnlaces = function(context) {}</strong> y no se preocupen por el hecho de que su código este ahora asignado dentro de una función(&#8220;Drupal.behaviors.alertarEnlace() &#8220;), porque esta se ejecuta solita, y veanlo incluso como una ventaja, pueden invocarla ustedes mismos cuando quieran ademas.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-porque-usar-drupal-behaviors-en-lugar-de-document-ready/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Cambio o actualización masiva de alias con Pathauto</title>
+		<link>http://ecapy.com/drupal-cambio-o-actualizacion-masiva-de-alias-con-pathauto/</link>
+		<comments>http://ecapy.com/drupal-cambio-o-actualizacion-masiva-de-alias-con-pathauto/#comments</comments>
+		<pubDate>Mon, 07 Feb 2011 09:00:08 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=769</guid>
+		<description><![CDATA[(Antes de que leas los primeros párrafos, que sepas que hay dos soluciones así que lee todo) 🙂 Un problemita con el que me di hoy es que tenía que cambiar la estructura de las URL de un Content-type, conservando las creadas anteriormente&#8230;. ¿y saben que? no hay una opción en la configuración de Pathauto&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-cambio-o-actualizacion-masiva-de-alias-con-pathauto/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<div id="_mcePaste">(Antes de que leas los primeros párrafos, que sepas que hay dos soluciones así que lee todo) <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></div>
+<div id="_mcePaste">Un problemita con el que me di hoy es que tenía que cambiar la estructura de las URL de un Content-type, conservando las creadas anteriormente&#8230;. ¿y saben que? no hay una opción en la configuración de Pathauto que haga justamente eso:</div>
+<div style="text-align: center;"><a href="http://ecapy.com/wp-content/uploads/2011/01/pathauto_sin_opcion_que_quiero.png"><img class="size-full wp-image-775 aligncenter" style="margin-top: 10px; margin-bottom: 10px; border: 1px solid black;" title="pathauto_sin_opcion_que_quiero" src="http://ecapy.com/wp-content/uploads/2011/01/pathauto_sin_opcion_que_quiero.png" alt="" width="508" height="618" srcset="http://ecapy.com/wp-content/uploads/2011/01/pathauto_sin_opcion_que_quiero.png 508w, http://ecapy.com/wp-content/uploads/2011/01/pathauto_sin_opcion_que_quiero-247x300.png 247w" sizes="(max-width: 508px) 100vw, 508px" /></a></div>
+<div id="_mcePaste">No dije que no existe, solo que no esta ahí. por raro que parezca, los creadores de Pathauto en lugar de poner entre las opciones generales esta opción, como todas las demás, la han puesto un poco escondida. Y la encontré, <strong>estaba escondida en la gestión de contenido (<span style="color: #993300;">admin/content/node</span>) </strong>entre las opciones de acciones masivas:</div>
+<div id="_mcePaste"><a href="http://ecapy.com/wp-content/uploads/2011/01/content_update_url_alias.png"><img class="aligncenter size-full wp-image-770" style="border: 1px solid black;" title="content_update_url_alias" src="http://ecapy.com/wp-content/uploads/2011/01/content_update_url_alias.png" alt="Content update url alias" width="553" height="287" srcset="http://ecapy.com/wp-content/uploads/2011/01/content_update_url_alias.png 691w, http://ecapy.com/wp-content/uploads/2011/01/content_update_url_alias-300x156.png 300w" sizes="(max-width: 553px) 100vw, 553px" /></a></div>
+<div id="_mcePaste">Ahora que sabemos donde esta solo tenemos que aplicar un filtro para para que solo se vean los nodos de un determinado Content-Type, marcar todos los de esa pagina, seleccionar la acción &#8220;<strong>Update url alias</strong>&#8220;, y así en todas las paginas subsiguientes (si es que las hay).</div>
+<div id="_mcePaste"><strong>Hasta acá la solución mas &#8220;ligera&#8221;</strong> porque no hace falta ningún modulo especial para esta tarea siempre y cuando no tengas miles de nodos.</div>
+<div id="_mcePaste">En el caso de que <strong>SI</strong> tengas un huevo montón de nodos, vas a necesitar de la ayuda de &#8220;<strong><a title="Pagina del proyecto &quot;Views&quot;" href="http://drupal.org/project/views" target="_blank">Views</a></strong>&#8221; y del modulo &#8220;<strong><a title="Pagina del proyecto &quot;Views Bulk Operations&quot;" href="http://drupal.org/project/views_bulk_operations" target="_blank">Views Bulk Operations</a></strong>&#8220;.</div>
+<div id="_mcePaste">Views trae habilitada por defecto una vista llamada &#8220;<strong>admin_content</strong>&#8221; <strong>(admin/content/node2)</strong> que viene a ser la versión mejorada del gestor de contenidos que viene por defecto en Drupal (el que usamos en la primera solución).</div>
+<div id="_mcePaste">Lo anterior sumado a que &#8220;Views Bulk Operations&#8221; nos da la capacidad de aplicar acciones masivas a todo lo que views pueda listar&#8230;</div>
+<div id="_mcePaste"><strong>A la solución:</strong> Seguí estos pasos para configurar &#8220;Views Bulk Operations&#8221; / Pathauto y Views para que operen armoniosamente:</div>
+<div><a href="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_1.png"><img class="aligncenter size-full wp-image-771" style="border: 1px solid black;" title="habilitar_vbo_en_content2_1" src="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_1.png" alt="" width="554" height="75" srcset="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_1.png 865w, http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_1-300x41.png 300w, http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_1-768x104.png 768w" sizes="(max-width: 554px) 100vw, 554px" /></a></div>
+<div><a href="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_2.png"><img class="aligncenter size-full wp-image-772" style="border: 1px solid black;" title="habilitar_vbo_en_content2_2" src="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_2.png" alt="" width="599" height="410" srcset="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_2.png 599w, http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_2-300x205.png 300w" sizes="(max-width: 599px) 100vw, 599px" /></a></div>
+<div><a href="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_3.png"><img class="aligncenter size-full wp-image-773" style="border: 1px solid black;" title="habilitar_vbo_en_content2_3" src="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_3.png" alt="" width="583" height="1591" srcset="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_3.png 675w, http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_3-110x300.png 110w, http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_3-375x1024.png 375w" sizes="(max-width: 583px) 100vw, 583px" /></a></div>
+<div><a href="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_4.png"><img class="aligncenter size-full wp-image-774" style="border: 1px solid black;" title="habilitar_vbo_en_content2_4" src="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_4.png" alt="" width="581" height="381" srcset="http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_4.png 830w, http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_4-300x197.png 300w, http://ecapy.com/wp-content/uploads/2011/01/habilitar_vbo_en_content2_4-768x503.png 768w" sizes="(max-width: 581px) 100vw, 581px" /></a></div>
+<div id="_mcePaste">Eso claramente nos va a ahorrar una ingente cantidad de tiempo a la hora de actualizar si tenemos miles de nodos.</div>
+<div id="_mcePaste">Chau.</div>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-cambio-o-actualizacion-masiva-de-alias-con-pathauto/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Cerrar, bloquear o restringir el puerto 8080 en Apache Solr / Tomcat 6</title>
+		<link>http://ecapy.com/cerrar-bloquear-o-restringir-el-puerto-8080-en-apache-solr-tomcat-6/</link>
+		<pubDate>Tue, 23 Nov 2010 08:00:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=654</guid>
+		<description><![CDATA[Si instalaste un Apache Solr y lo estas usando por medio de Drupal 6, otro CMS o una propia implementación, seguramente no te interese que dicho servicio se pueda acceder por medio del puerto 8080 (o el puerto asignado en tu servidor para Tomcat). Bueno, un ejemplo es mucho mas claro que casos hipotéticos, así&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/cerrar-bloquear-o-restringir-el-puerto-8080-en-apache-solr-tomcat-6/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Si instalaste un Apache Solr y lo estas usando por medio de Drupal 6, otro CMS o una propia implementación, seguramente no te interese que dicho servicio se pueda acceder por medio del puerto 8080 (o el puerto asignado en tu servidor para Tomcat).</p>
+<p>Bueno, un ejemplo es mucho mas claro que casos hipotéticos, así que les planteo mi necesidad:<br />
+Tengo un Ubuntu con un Drupal configurado con el modulo &#8220;<a href="http://drupal.org/project/apachesolr" target="_blank">apachesolr</a>&#8221; que se conecta a localhost en el puerto 8080. Hasta ahí todo normal, <strong>el problema es que si a alguien se le ocurre tipear la URL de mi pagina montada en Drupal pero por el puerto 8080&#8230; va a poder ver Tomcat</strong>, y lo que es mas peligroso, Apache Solr y su administrador (Solr carece de mecanismos de seguridad porque los delega a Tomcat).</p>
+<p>Bueno en el ejemplo que comente antes tenemos una solución ideal: Capar el puerto 8080 para que <strong>solo se pueda acceder por &#8220;localhost&#8221;</strong>.</p>
+<p>Para lograr nuestro cometido solamente tenemos que editar un XML: &#8220;<strong>server.xml</strong>&#8220;:</p><pre class="crayon-plain-tag">sudo gedit /etc/tomcat6/server.xml</pre><p>Busca la linea:</p><pre class="crayon-plain-tag"></pre><p>Comentarla:</p><pre class="crayon-plain-tag"><!--
+<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+--></pre><p>Y poner por dejado de la linea anterior lo siguiente:</p><pre class="crayon-plain-tag"></pre><p>Guarda los cambios y reinicia Tomcat:</p><pre class="crayon-plain-tag">sudo service tomcat6 restart</pre><p>Gualá. Comprobemos que haya funcionado:</p>
+<p>Primero mira cual es la ip que tiene tu servidor haciéndole ping:<br />
+<strong>Usa &#8220;ifconfig&#8221; para ver la ip</strong>, que seguramente tenga la pinta &#8220;192.168.1.xxx&#8221; o &#8220;10.0.2.xx&#8221;</p>
+<p>bien, ahora suponiendo que seguis en Ubuntu (es mi ejemplo y uso Ubuntu <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> ) abri un navegador y proba a acceder a:</p><pre class="crayon-plain-tag">http://localhost:8080</pre><p>y a:</p><pre class="crayon-plain-tag">http://192.168.1.&lt;strong&gt;xxx&lt;/strong&gt;:8080 (las &lt;strong&gt;xxx &lt;/strong&gt;reemplazalas por el resto de tu IP).</pre><p><strong>Como pudiste ver, podes acceder a localhost pero no por medio de la IP</strong>, incluso si probas a acceder a esa IP desde otra maquina/ordenador/PC/ipad/ipod/android/o-lo-que-sea XD</p>
+<p>Hemos acabado.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Resetear/recuperar la contraseña del usuario &#8220;admin&#8221; con phpMyAdmin</title>
+		<link>http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/</link>
+		<comments>http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/#comments</comments>
+		<pubDate>Mon, 22 Nov 2010 08:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=729</guid>
+		<description><![CDATA[NOTA: esta solución es útil para cualquier sistema que almacene las claves de usuarios en MYSQL por medio de MD5 o SHA1. Hecha la aclaración, comento el caso concreto de Drupal que nos va a servir de idea para el resto: Si no te acordás la clave de &#8220;admin&#8221; en Drupal y tenes acceso a&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><strong><span style="text-decoration: underline;"><span style="color: #993300;">NOTA: esta solución es útil para cualquier sistema que almacene las claves de usuarios en MYSQL por medio de MD5 o SHA1.</span></span></strong></p>
+<p>Hecha la aclaración, comento el caso concreto de Drupal que nos va a servir de idea para el resto:</p>
+<p><strong>Si no te acordás la clave de &#8220;admin&#8221;</strong> <strong>en Drupal y tenes acceso a phpMyAdmin,</strong> lo único que tenes que hacer es abrir la base de datos, localizar al usuario &#8220;<strong>admin</strong>&#8221; dentro de la tabla &#8220;<strong>users</strong>&#8221; <strong>y editarlo. </strong>Una vez que lo tengas abierto tenes que <strong>poner la clave nueva en el campo &#8220;pass&#8221;. </strong>Por ultimo solo queda decirle a phpMyAdmin <strong>que esa clave la guarde en MD5 </strong>(ver imagen).</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin.png"><img class="aligncenter size-full wp-image-730" title="Recuperar clave con phpMyAdmin" src="http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin.png" alt="" width="611" height="488" srcset="http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin.png 611w, http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin-300x240.png 300w" sizes="(max-width: 611px) 100vw, 611px" /></a></p>
+<p>Listo. Guarda los cambios y accede a tu usuario &#8220;admin&#8221; como de costumbre.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/feed/</wfw:commentRss>
+		<slash:comments>17</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: El tag http-equiv=&#8221;Content-type&#8221; de  sale duplicado</title>
+		<link>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/</link>
+		<comments>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/#comments</comments>
+		<pubDate>Mon, 15 Nov 2010 20:32:09 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=662</guid>
+		<description><![CDATA[Un curioso bug en Drupal y de facil solucion. Solamente tenes que poner el siguiente snippet en el template.php de tu theme o bien en algún modulo de tu propia factoría 🙂 [crayon-58443703691d8823437241/]]]></description>
+				<content:encoded><![CDATA[<p>Un curioso bug en Drupal y de facil solucion. Solamente tenes que poner el siguiente snippet en el template.php de tu theme o bien en algún modulo de tu propia factoría <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">function TU_THEME_preprocess_page(&amp;$vars) {
+    $matches = array();
+    preg_match_all('/(]*&gt;)/', $vars['head'], $matches);
+    if (count($matches) &gt;= 2) {
+        $vars['head'] = preg_replace('/]*&gt;/', '', $vars['head'], 1); // strip 1 only
+    }
+}</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Algunos CSS no cargan en Internet Explorer</title>
+		<link>http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/</link>
+		<comments>http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/#comments</comments>
+		<pubDate>Wed, 13 Oct 2010 07:37:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=629</guid>
+		<description><![CDATA[Me rompí un poco la cabeza con este asunto: Hago unas modificaciones que se ven mas que bien en todos los navegadores menos en IE como siempre, y por ello tengo un ie.css puntual para hacer todas las cosas raras que se suelen hacer con CSS para que IE trague. El problema me lo di&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me rompí un poco la cabeza con este asunto: Hago unas modificaciones que se ven mas que bien en todos los navegadores menos en IE como siempre, y por ello tengo un ie.css puntual para hacer todas las cosas raras que se suelen hacer con CSS para que IE trague.</p>
+<p>El problema me lo di con que Internet Explorer 7 (no recuerdo si el 8 también) no reflejaba los cambios de mi CSS destinado a el&#8230;. :S</p>
+<p>Pero ya se cual es el problema y como no, la solución <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>El problema es que<strong> Internet Explorer por algún misterioso motivo solo carga hasta 31 CSS </strong>(los &lt;style&gt; inline también cuentan o_O), y mi CSS especial ya estaba por el puesto 32&#8230;</p>
+<p>La primera solución que se me ocurrió es activar la compresión de CSS para que se haga uno o dos CSS, pero lo que tiene de malo eso es que si estas maquetando te vas a querer pegar un tiro a la 10º vez que tengas que borrar el cache para ver si el texto que estas maquetando se termina de ver bien en la bass.. Internet Explorer.<br />
+Así que fui a darme una vuelta por los módulos de Drupal&#8230; Bingo. Hay un modulo que nos salva las papas. Se llama &#8220;<a href="http://drupal.org/project/ie_css_optimizer" target="_blank"><strong>IE CSS Optimizer&#8221;</strong></a>, y lo que hace básicamente es añadir dos opciones más a la compresión de los CSS:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer.png"><img class="aligncenter size-full wp-image-630" title="IE CSS optimizer" src="http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer.png" alt="" width="337" height="290" srcset="http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer.png 337w, http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer-300x258.png 300w" sizes="(max-width: 337px) 100vw, 337px" /></a></p>
+<p>Y lo que hace es algo de lo más simple. Comprime todo el CSS en un archivo pero sin cachearlo.</p>
+<p>Con este modulito ya no vas a tener que preocuparte del rarísimo límite de 31 archivos.</p>
+<p><span style="color: #993300;">Una ultima anotación a todo esto es que andar va a andar bien, pero no vayas a olvidar de poner de nuevo la configuración de la compresión del CSS a &#8220;Full optimization&#8221; para producción.</span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: devel generate y &#8220;Access denied&#8221;</title>
+		<link>http://ecapy.com/drupal-6-devel-generate-y-access-denied/</link>
+		<pubDate>Sat, 11 Sep 2010 17:02:50 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=599</guid>
+		<description><![CDATA[Estas son las cosas que mas me gustan de drupal: Resolver sus &#8220;misterios&#8221;. Resulta que estoy haciendo cientos de miles de nodos (no es broma o_O) con el modulo Devel generate para hacer unas pruebas, y cuando los creo de a 10.000 no hay problema, se tarda un huevo en hacerlos pero el batch que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-6-devel-generate-y-access-denied/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Estas son las cosas que mas me gustan de drupal: <strong>Resolver sus &#8220;misterios&#8221;</strong>.</p>
+<p>Resulta que <strong>estoy haciendo cientos de miles de nodos</strong> (no es broma o_O) con el modulo <strong>Devel generate</strong> para hacer unas pruebas, y cuando los creo de a 10.000 no hay problema, se tarda un huevo en hacerlos pero el batch que lanza este modulo no falla.</p>
+<p>Pero la historia cambia cuando quiero dejar haciendo la friolera de 500.000 (quinientos mil) XD.</p>
+<p>Bueno Marcelo deja de dar vueltas y decime que carajo pasa que no me anda bien devel generate!: ok, te cuento que resulta que Devel generate tanto como cualquier otro modulo que haga uso de batch, almacena dicho batch en la tabla correspondiente en una sola fila, osea que si son 10 ciclos de batch almacena los diez en una sola fila asi como si son 500.000. El problema se hace evidente en este punto: Me estoy excediendo en el limite que mysql tiene previsto para el envió de packets de datos.</p>
+<p><strong>Mysql por defecto viene configurado para recibir por fila 1MB.</strong> y esta es la parte donde les muestro esa imagen que vale mas que mil palabras <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61.png"><img class="aligncenter size-full wp-image-606" title="Tabla batch drupal 6" src="http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61.png" alt="" width="559" height="27" srcset="http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61.png 559w, http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61-300x14.png 300w" sizes="(max-width: 559px) 100vw, 559px" /></a></p>
+<p>35.2 MB de batch&#8230;</p>
+<p><strong>La solució</strong>n: aumentar el limite que tiene mysql claro <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><span style="color: #993300;"><strong>NOTA: ni en broma hagan esto en un servidor de producción salvo que sean un DBA o por lo menos tengan una clara idea de las consecuencias que implica hacer algo asi.</strong></span></p>
+<p>Para aumentar el limite simplemente tenes que seguir estos pasos: <a href="http://www.ecapy.com/drupal-6-xampp-windows-xp-y-mysql-server-has-gone-away/"><strong>Drupal 6 XAMPP Windows XP y “MySQL Server has gone away”</strong></a></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

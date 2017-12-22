@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/no-funciona-jquery-change-en-internet-explorer/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:39:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   No funciona jQuery change() en Internet Explorer</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; No funciona jQuery change() en Internet Explorer RSS de los comentarios" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Copié una instalación de Drupal a Linux y solo puedo navegar en la página principal. El resto me devuelve &#8220;Not Found&#8221;' href='../copie-una-instalacion-de-drupal-a-linux-y-solo-puedo-navegar-en-la-pagina-principal-el-resto-me-devuelve-not-found/index.html' />
+<link rel='next' title='Instalar Groovy en Linux' href='../instalar-groovy-en-linux/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../indexe2aa.html?p=294' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedfff7.json?url=http%3A%2F%2Fecapy.com%2Fno-funciona-jquery-change-en-internet-explorer%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed2fe0?url=http%3A%2F%2Fecapy.com%2Fno-funciona-jquery-change-en-internet-explorer%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-294 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2960 active"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-294" class="post-294 post type-post status-publish format-standard has-post-thumbnail hentry category-js tag-javascript">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../wp-content/uploads/2014/09/js-header.jpg" class="img-responsive wp-post-image" alt="js-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/js-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/js-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/js-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">No funciona jQuery change() en Internet Explorer</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2010-02-19T10:09:42+00:00">19 Feb,  2010</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/js/index.html" rel="category tag">Javascript</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/javascript/index.html" rel="tag">JavaScript</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="index.html#comments">10 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>La situación: Probaste en Firefox el método change de jQuery sobre un checkbox, pero cuando lo probas en IE falla, no hace caso.</p>
+<p>Esto se debe al pésimo soporte que ofrece Internet Explorer con javascript, pero esta nota no es para hablar mal de IE, para eso ya habrá un post entero y de varias paginas 🙂</p>
+<p>La solución mas acertada es mantener el método <strong>change para todo navegador que no sea IE</strong>, y usar <strong>click para IE</strong>. Lo hacemos así porque si aplicamos click sobre un checkbox en un navegador serio, este no lanza nada porque para el no es un click, es un change.</p>
+		<div id="crayon-584438747ff65111698686" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$(document).ready(function() {
+ 
+    var che = $(".mi_checkbox");
+ 
+    if ($.browser.msie) {
+        che.click(function() {
+            alert("funciono ok");
+        });
+    } else {
+        che.change(function() {
+            alert("funciono ok");
+        });
+    }
+});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438747ff65111698686-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438747ff65111698686-2">2</div><div class="crayon-num" data-line="crayon-584438747ff65111698686-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438747ff65111698686-4">4</div><div class="crayon-num" data-line="crayon-584438747ff65111698686-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438747ff65111698686-6">6</div><div class="crayon-num" data-line="crayon-584438747ff65111698686-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438747ff65111698686-8">8</div><div class="crayon-num" data-line="crayon-584438747ff65111698686-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438747ff65111698686-10">10</div><div class="crayon-num" data-line="crayon-584438747ff65111698686-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438747ff65111698686-12">12</div><div class="crayon-num" data-line="crayon-584438747ff65111698686-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438747ff65111698686-14">14</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438747ff65111698686-1"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438747ff65111698686-2"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-584438747ff65111698686-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">che</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">".mi_checkbox"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438747ff65111698686-4"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-584438747ff65111698686-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-v">msie</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438747ff65111698686-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">che</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438747ff65111698686-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-s">"funciono ok"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438747ff65111698686-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438747ff65111698686-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438747ff65111698686-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">che</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438747ff65111698686-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-s">"funciono ok"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438747ff65111698686-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438747ff65111698686-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438747ff65111698686-14"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../copie-una-instalacion-de-drupal-a-linux-y-solo-puedo-navegar-en-la-pagina-principal-el-resto-me-devuelve-not-found/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../instalar-groovy-en-linux/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                        <div id="comments" class="comments-area comments">
+            <h3 class="comments-title">
+            10 Comments        </h3>
+
+        <ul class="comment-list">
+
+            		<li class="comment even thread-even depth-1" id="li-comment-88">
+			<div id="comment-88" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/7cdc611e66f7e0b68cfa8cfae885fe9f?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/7cdc611e66f7e0b68cfa8cfae885fe9f?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://website/' rel='external nofollow' class='url'>junior</a></span>							<span class="comment-date">30/07/2010</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola&#8230; Mira realiza el evento click en IE, pero no me deja marcado el checkbox que selecciono. No me da ningun tipo de error de javascript. Lo coloque así </p>
+<p>archivo.js</p>
+		<div id="crayon-5844387480f36526639177" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+if ($.browser.msie) {
+	$('#listaterritoriosfiltro [type="checkbox"]').click(checkTerritorioOnChange);
+} else {
+	$('#listaterritoriosfiltro [type="checkbox"]').change(checkTerritorioOnChange);
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844387480f36526639177-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480f36526639177-2">2</div><div class="crayon-num" data-line="crayon-5844387480f36526639177-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480f36526639177-4">4</div><div class="crayon-num" data-line="crayon-5844387480f36526639177-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844387480f36526639177-1"><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-v">msie</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480f36526639177-2"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">'#listaterritoriosfiltro [type="checkbox"]'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-v">checkTerritorioOnChange</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480f36526639177-3"><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480f36526639177-4"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">'#listaterritoriosfiltro [type="checkbox"]'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-v">checkTerritorioOnChange</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480f36526639177-5"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>archivo php</p>
+<p>Por favor si me pueden echar una mano!!!</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-89">
+			<div id="comment-89" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">02/08/2010</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Mira. asi como esta el codigo me falla.<br />
+Conseguí que funcione reemplazando [type=&#8221;checkbox&#8221;] por :checkbox</p>
+		<div id="crayon-5844387480e74302393095" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+if ($.browser.msie) {
+$('#listaterritoriosfiltro :checkbox').click(checkTerritorioOnChange);
+} else {
+$('#listaterritoriosfiltro :checkbox').change(checkTerritorioOnChange);
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844387480e74302393095-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480e74302393095-2">2</div><div class="crayon-num" data-line="crayon-5844387480e74302393095-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480e74302393095-4">4</div><div class="crayon-num" data-line="crayon-5844387480e74302393095-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844387480e74302393095-1"><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-v">msie</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480e74302393095-2"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">'#listaterritoriosfiltro :checkbox'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-v">checkTerritorioOnChange</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480e74302393095-3"><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480e74302393095-4"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">'#listaterritoriosfiltro :checkbox'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-v">checkTerritorioOnChange</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480e74302393095-5"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-90">
+			<div id="comment-90" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">mauricio</span>							<span class="comment-date">30/05/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>¡hola! la solución es muy buena pero tengo una duda;<br />
+yo tengo varias funciones en una clase que recibe los parametros por jquery, como puedo hacer para cambiar el change por el click pero sin tener que ingresar nuevamente esas fuciones en cada una de las validaciones como muestras en el ejemplo.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt thread-even depth-1" id="li-comment-91">
+			<div id="comment-91" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">31/05/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Me das un ejemplo? es que no entiendo muy bien lo que necesitas.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-92">
+			<div id="comment-92" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">mauricio</span>							<span class="comment-date">01/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>¡Hola! capy a continuacion muestro la clase lista.js que contiene varias funciones jquery  con change() colocare dos de las cuales sirven para combobox anidados.</p>
+		<div id="crayon-5844387480cf6651621466" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$(document).ready(function(){
+ ///////////seleccin accion y carga grip
+                        $("#cmbaccion").change(function () {
+                           $("#cmbaccion option:selected").each(function () {
+                               //cambio combo disiciplina
+					grip=$(this).val();
+					$.post("index", {grip: grip}, function(data){
+					$("#gripasis").html(data);
+                                        
+					});
+                                        horaI=$(this).val();
+					$.post("index", {horaI: horaI}, function(data){
+					$("#cmbhoraI").html(data);
+                                        
+					});
+        		}); 
+                            
+                        })
+                       //selecciono la hora inicial y carga su hora final
+                        $("#cmbhoraI").change(function () {
+                           $("#cmbhoraI option:selected").each(function () {
+                               //cambio combo disiciplina
+					horaF=[$(this).val(),$("#cmbdisp").val()];
+					$.post("index", {horaF: horaF}, function(data){
+					$("#cmbhoraF").html(data);
+                                        
+					});
+                                        
+        		}); 
+                            
+                        })
+
+///cierre de la funcion 
+});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844387480cf6651621466-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-2">2</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-4">4</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-6">6</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-8">8</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-10">10</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-12">12</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-14">14</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-16">16</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-18">18</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-20">20</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-22">22</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-24">24</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-26">26</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-28">28</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-30">30</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-32">32</div><div class="crayon-num" data-line="crayon-5844387480cf6651621466-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480cf6651621466-34">34</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844387480cf6651621466-1"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-2"><span class="crayon-h"> </span><span class="crayon-c">///////////seleccin accion y carga grip</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbaccion"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbaccion option:selected"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">each</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//cambio combo disiciplina</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-6"><span class="crayon-h">					</span><span class="crayon-v">grip</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-7"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">grip</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">grip</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-8"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#gripasis"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-10"><span class="crayon-h">					</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">horaI</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-12"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">horaI</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">horaI</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-13"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-15"><span class="crayon-h">					</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//selecciono la hora inicial y carga su hora final</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI option:selected"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">each</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//cambio combo disiciplina</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-23"><span class="crayon-h">					</span><span class="crayon-v">horaF</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbdisp"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-24"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">horaF</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">horaF</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-25"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraF"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-27"><span class="crayon-h">					</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5844387480cf6651621466-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-32">&nbsp;</div><div class="crayon-line" id="crayon-5844387480cf6651621466-33"><span class="crayon-c">///cierre de la funcion </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480cf6651621466-34"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>como se puede ver las funciones tienen change() y necesito que cuando identifique el explorador cambie el change por click no se si esta muy claro.</p>
+<p>Muchas gracias capy por contestar mi comentario.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt thread-even depth-1" id="li-comment-93">
+			<div id="comment-93" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">04/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Mauricio te dejo la solucion a lo que entiendo que necesitas:</p>
+<p></p>
+		<div id="crayon-5844387480bff701085009" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+        $.fn.changeWrapper = function () {
+            var $this = $(this);
+
+            if ($.browser.msie) {
+
+                $this.click(function () {
+                    console.log("usando metodo .click()");
+                    console.log($(this).val());
+                });
+
+            } else {
+
+                $this.change(function () {
+                    console.log("usando metodo .change()");
+                    console.log($(this).val());
+                });
+
+            }
+        };
+
+        //esto es un select
+        $("#este").changeWrapper();</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844387480bff701085009-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-2">2</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-4">4</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-6">6</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-8">8</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-10">10</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-12">12</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-14">14</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-16">16</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-18">18</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-20">20</div><div class="crayon-num" data-line="crayon-5844387480bff701085009-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480bff701085009-22">22</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844387480bff701085009-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">fn</span><span class="crayon-sy">.</span><span class="crayon-v">changeWrapper</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480bff701085009-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-v">msie</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480bff701085009-5">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480bff701085009-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"usando metodo .click()"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480bff701085009-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-10">&nbsp;</div><div class="crayon-line" id="crayon-5844387480bff701085009-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-12">&nbsp;</div><div class="crayon-line" id="crayon-5844387480bff701085009-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"usando metodo .change()"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480bff701085009-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480bff701085009-17">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844387480bff701085009-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-20">&nbsp;</div><div class="crayon-line" id="crayon-5844387480bff701085009-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//esto es un select</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480bff701085009-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#este"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">changeWrapper</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Resumiendo rápidamente lo que hice fue un nuevo método (.changeWrapper()) que lo usamos para poder encapsular la decisión de cual método usar.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-94">
+			<div id="comment-94" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">mauricio</span>							<span class="comment-date">07/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>capy muchas gracias, implementaré esto haber que sucede. &#8220;entonces con esto no tendría que meter ninguna de las funciones en cada una de las validaciones de los navegadores&#8221;.</p>
+<p>Que el Señor te bendiga y guarde.</p>
+<p>¡GRACIAS!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt thread-even depth-1" id="li-comment-95">
+			<div id="comment-95" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">07/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Jajajaja. de nada amigo.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-96">
+			<div id="comment-96" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a9c19026f14ad4db23b10d64920a2a45?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">mauricio</span>							<span class="comment-date">12/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Capy&#8230;</p>
+<p>Probe el codigo de ejemplo de la siguiente manera:</p>
+<p>En mi clase lista.js agregue el codigo que das como respuesta :</p>
+		<div id="crayon-5844387480a62177357156" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$.fn.changeWrapper = function () {
+    var $this = $(this);
+ 
+    if ($.browser.msie) {
+ 
+        $this.click(function () {
+            console.log("usando metodo .click()");
+            console.log($(this).val());
+        });
+ 
+    } else {
+ 
+        $this.change(function () {
+            console.log("usando metodo .change()");
+            console.log($(this).val());
+        });
+ 
+    }
+};
+luego el cdigo mio
+$(document).ready(function(){
+ ///////////seleccin accion y carga grip
+                        $("#cmbaccion").change(function () {
+                           $("#cmbaccion option:selected").each(function () {
+                               //cambio combo disiciplina
+                    grip=$(this).val();
+                    $.post("index", {grip: grip}, function(data){
+                    $("#gripasis").html(data);
+ 
+                    });
+                                        horaI=$(this).val();
+                    $.post("index", {horaI: horaI}, function(data){
+                    $("#cmbhoraI").html(data);
+ 
+                    });
+                });
+ 
+                        })
+                       //selecciono la hora inicial y carga su hora final
+                        $("#cmbhoraI").change(function () {
+                           $("#cmbhoraI option:selected").each(function () {
+                               //cambio combo disiciplina
+                    horaF=[$(this).val(),$("#cmbdisp").val()];
+                    $.post("index", {horaF: horaF}, function(data){
+                    $("#cmbhoraF").html(data);
+ 
+                    });
+ 
+                });
+ 
+                        })
+ 
+///cierre de la funcion
+});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844387480a62177357156-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-2">2</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-4">4</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-6">6</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-8">8</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-10">10</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-12">12</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-14">14</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-16">16</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-18">18</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-20">20</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-22">22</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-24">24</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-26">26</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-28">28</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-30">30</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-32">32</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-34">34</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-36">36</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-38">38</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-40">40</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-42">42</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-44">44</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-46">46</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-48">48</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-50">50</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-52">52</div><div class="crayon-num" data-line="crayon-5844387480a62177357156-53">53</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480a62177357156-54">54</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844387480a62177357156-1"><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">fn</span><span class="crayon-sy">.</span><span class="crayon-v">changeWrapper</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-3"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-v">msie</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-5"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"usando metodo .click()"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-10"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480a62177357156-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-12"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480a62177357156-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"usando metodo .change()"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-17"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-19"><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-20"><span class="crayon-e">luego </span><span class="crayon-e">el </span><span class="crayon-e">cdigo </span><span class="crayon-i">mio</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-21"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-22"><span class="crayon-h"> </span><span class="crayon-c">///////////seleccin accion y carga grip</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbaccion"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbaccion option:selected"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">each</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//cambio combo disiciplina</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">grip</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-27"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">grip</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">grip</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#gripasis"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-29"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">horaI</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">horaI</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">horaI</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-33"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-34"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480a62177357156-35"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-36"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-37"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-38"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-39"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//selecciono la hora inicial y carga su hora final</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-40"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-41"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI option:selected"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">each</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-42"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//cambio combo disiciplina</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-43"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">horaF</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbdisp"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-44"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">horaF</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">horaF</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480a62177357156-45"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraF"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-46"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480a62177357156-47"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-48"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480a62177357156-49"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-50"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480a62177357156-51"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-52"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844387480a62177357156-53"><span class="crayon-c">///cierre de la funcion</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480a62177357156-54"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Lo que sucede es que cuando abro el proyecto en cualquier navegador se bloquea y no funciona; me toca cerrar el navegador que estoy utilizando para que vuelva arrancar.</p>
+<p>No se si me puedes dar una mano implementando el ejemplo con el codigo que yo te muestro. </p>
+<p>De todas formas gracias por tu ayuda.</p>
+<p>Que el señor te bendiga y guarde.  </p>
+<p>Cordialmente, </p>
+<p>Mauricio F.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt thread-even depth-1" id="li-comment-97">
+			<div id="comment-97" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">12/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola Mauricio. La implementación seria esta:</p>
+<p></p>
+		<div id="crayon-5844387480926389553068" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$(document).ready(function () {
+
+
+    $.fn.changeWrapper = function (callback) {
+        
+        callback || (callback = function () {
+        });
+        
+        var $this = $(this);
+
+        if ($.browser.msie) {
+
+            $this.click(callback());
+
+        } else {
+
+            $this.change(callback());
+
+        }
+    };
+
+
+    $("#cmbaccion").changeWrapper(function () {
+
+        var $this = $(this);
+
+        $this.find("option:selected").each(function () {
+
+            //cambio combo disiciplina
+            var grip = $(this).val();
+
+            $.post("index", {grip:grip}, function (data) {
+                $("#gripasis").html(data);
+
+            });
+
+            var horaI = $(this).val();
+
+            $.post("index", {horaI:horaI}, function (data) {
+                $("#cmbhoraI").html(data);
+
+            });
+
+        });
+
+    });
+
+    $("#cmbhoraI").changeWrapper(function () {
+
+        var $this = $(this);
+        
+        $this.find("option:selected").each(function () {
+
+            //cambio combo disiciplina
+            var horaF = [$(this).val(), $("#cmbdisp").val()];
+
+            $.post("index", {horaF:horaF}, function (data) {
+                $("#cmbhoraF").html(data);
+
+            });
+
+        });
+
+    });
+
+});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844387480926389553068-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-2">2</div><div class="crayon-num" data-line="crayon-5844387480926389553068-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-4">4</div><div class="crayon-num" data-line="crayon-5844387480926389553068-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-6">6</div><div class="crayon-num" data-line="crayon-5844387480926389553068-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-8">8</div><div class="crayon-num" data-line="crayon-5844387480926389553068-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-10">10</div><div class="crayon-num" data-line="crayon-5844387480926389553068-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-12">12</div><div class="crayon-num" data-line="crayon-5844387480926389553068-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-14">14</div><div class="crayon-num" data-line="crayon-5844387480926389553068-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-16">16</div><div class="crayon-num" data-line="crayon-5844387480926389553068-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-18">18</div><div class="crayon-num" data-line="crayon-5844387480926389553068-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-20">20</div><div class="crayon-num" data-line="crayon-5844387480926389553068-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-22">22</div><div class="crayon-num" data-line="crayon-5844387480926389553068-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-24">24</div><div class="crayon-num" data-line="crayon-5844387480926389553068-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-26">26</div><div class="crayon-num" data-line="crayon-5844387480926389553068-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-28">28</div><div class="crayon-num" data-line="crayon-5844387480926389553068-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-30">30</div><div class="crayon-num" data-line="crayon-5844387480926389553068-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-32">32</div><div class="crayon-num" data-line="crayon-5844387480926389553068-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-34">34</div><div class="crayon-num" data-line="crayon-5844387480926389553068-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-36">36</div><div class="crayon-num" data-line="crayon-5844387480926389553068-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-38">38</div><div class="crayon-num" data-line="crayon-5844387480926389553068-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-40">40</div><div class="crayon-num" data-line="crayon-5844387480926389553068-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-42">42</div><div class="crayon-num" data-line="crayon-5844387480926389553068-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-44">44</div><div class="crayon-num" data-line="crayon-5844387480926389553068-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-46">46</div><div class="crayon-num" data-line="crayon-5844387480926389553068-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-48">48</div><div class="crayon-num" data-line="crayon-5844387480926389553068-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-50">50</div><div class="crayon-num" data-line="crayon-5844387480926389553068-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-52">52</div><div class="crayon-num" data-line="crayon-5844387480926389553068-53">53</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-54">54</div><div class="crayon-num" data-line="crayon-5844387480926389553068-55">55</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-56">56</div><div class="crayon-num" data-line="crayon-5844387480926389553068-57">57</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-58">58</div><div class="crayon-num" data-line="crayon-5844387480926389553068-59">59</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-60">60</div><div class="crayon-num" data-line="crayon-5844387480926389553068-61">61</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-62">62</div><div class="crayon-num" data-line="crayon-5844387480926389553068-63">63</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-64">64</div><div class="crayon-num" data-line="crayon-5844387480926389553068-65">65</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844387480926389553068-66">66</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844387480926389553068-1"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-2">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">fn</span><span class="crayon-sy">.</span><span class="crayon-v">changeWrapper</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">callback</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480926389553068-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">callback</span><span class="crayon-h"> </span><span class="crayon-o">||</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">callback</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480926389553068-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-10">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-v">msie</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-12">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-e">callback</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-14">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-16">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-e">callback</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-18">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-21">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-22">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbaccion"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">changeWrapper</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-24">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-26">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-27"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">find</span><span class="crayon-sy">(</span><span class="crayon-s">"option:selected"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">each</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-28">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//cambio combo disiciplina</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">grip</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-31">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">grip</span><span class="crayon-o">:</span><span class="crayon-v">grip</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480926389553068-33"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#gripasis"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-34">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-35"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-36">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-37"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">horaI</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-38">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-39"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">horaI</span><span class="crayon-o">:</span><span class="crayon-v">horaI</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-40"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-41">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-42"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-43">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-44"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-45">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-46"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-47">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-48"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraI"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">changeWrapper</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480926389553068-49">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-50"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-51"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-52"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">find</span><span class="crayon-sy">(</span><span class="crayon-s">"option:selected"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">each</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844387480926389553068-53">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-54"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//cambio combo disiciplina</span></div><div class="crayon-line" id="crayon-5844387480926389553068-55"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">horaF</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbdisp"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-56">&nbsp;</div><div class="crayon-line" id="crayon-5844387480926389553068-57"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"index"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">horaF</span><span class="crayon-o">:</span><span class="crayon-v">horaF</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-58"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#cmbhoraF"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-59">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-60"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-61">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-62"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-63">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-64"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844387480926389553068-65">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844387480926389553068-66"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>No probé el código pero no tiene mucho misterio. </p>
+<p>Con respecto a los problemas que tenés con el navegador no te voy a poder ayudar.</p>
+<p>Ha y una cosa mas. no recuerdo si era  $this.click(callback()); o  $this.click(callback); la forma de ejecutar el callback así que si no funciona le quietas los paréntesis y listo.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+        </ul><!-- .comment-list -->
+
+        
+                <p class="no-comments">:).</p>
+        
+    
+    </div>                                            
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/no-funciona-jquery-change-en-internet-explorer/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:39:59 GMT -->
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Entityform &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/entityform/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Crear un Entityform programáticamente</title>
+		<link>http://ecapy.com/crear-un-entityform-programaticamente/</link>
+		<pubDate>Fri, 24 May 2013 18:05:23 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Entityform]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2219</guid>
+		<description><![CDATA[[crayon-584438abc7c60426740633/]]]></description>
+				<content:encoded><![CDATA[<p></p><pre class="crayon-plain-tag">&lt; ? //Vamos a crear la entidad con el usuario que esté logueado. global $user; //solicitud_de_informacion es el Entityform type (admin/structure/entityform_types) $entityform = entity_create('entityform', array( 'type' =&gt; "solicitud_de_informacion",
+  'created' =&gt; time(),
+  'changed' =&gt; time(),
+  'language' =&gt; LANGUAGE_NONE,
+  'uid' =&gt; $user-&gt;uid
+));
+
+//Nos simplificamos la vida usando Entity API
+$wrapper = entity_metadata_wrapper('entityform', $entityform);
+
+//Rellenamos los fields
+$wrapper-&gt;field_nombre = "Marcelo";
+$wrapper-&gt;field_apellidos = "Tosco";
+$wrapper-&gt;field_email = "marcelo@tosco.com";
+$wrapper-&gt;field_usted_dira = "digo yo";
+
+//Done!
+$wrapper-&gt;save();</pre><p></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Migraciones &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/migraciones/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Combo: Importar y sincronizar productos con Migrate + Drupal commerce + product display desde CSV/XML/JSON</title>
+		<link>http://ecapy.com/migrate-drupal-commerce-product-display/</link>
+		<pubDate>Mon, 01 Jul 2013 08:15:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2366</guid>
+		<description><![CDATA[Hola!. Todos los post que escribí hasta ahora sobre Migrate se debieron a que quería hacer esto. Hoy les presento una clase basada en Migrate para importar productos a Drupal Commerce y crear al mismo tiempo un product display. NOTA: los múltiples productos para un solo product display lo dejamos para otro día 🙁 Un&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/migrate-drupal-commerce-product-display/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola!. <a title="Drupal: Importar y sincronizar desde una DB con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/" target="_blank">Todos</a> <a title="Drupal: Importar y sincronizar desde un XML local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/" target="_blank">los</a> <a title="Drupal: Importar y sincronizar desde un CSV con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/" target="_blank">post</a> <a title="Drupal: Importar y sincronizar desde un JSON local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-json-local-o-remoto-con-migrate/" target="_blank">que</a> <a title="Drupal: Migrate" href="http://ecapy.com/drupal-migrate/" target="_blank">escribí</a> hasta ahora sobre Migrate se debieron a que quería hacer esto.</p>
+<p>Hoy les presento una clase basada en <a href="https://drupal.org/project/migrate" target="_blank">Migrate</a> para importar productos a <a href="https://drupal.org/project/commerce" target="_blank">Drupal Commerce</a> y crear al mismo tiempo un product display.<br />
+NOTA: los múltiples productos para un solo product display lo dejamos para otro día <img src="https://s.w.org/images/core/emoji/2/72x72/1f641.png" alt="🙁" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h3>Un poco de intro</h3>
+<ul>
+<li>Necesitamos el modulo <a href="http://drupal.org/project/commerce_migrate" target="_blank">Commerce Migrate</a> para poder crear productos con Migrate.</li>
+<li>El machine name del tipo de producto que vamos a importar se llama &#8220;<em>gorras</em>&#8220;</li>
+<li>El machine name del product display que vamos a importar se llama &#8220;<em>display_gorra</em>&#8220;</li>
+<li>Indistintamente del formato a importar (xml, json, csv) existen dos clases linkeadas: la que crea el producto y la que crea el porduct display y asigna el producto creado.</li>
+<li>La fuente de información para cada una de las clases es la misma siempre, solo que cada clase toma lo que necesita.</li>
+<li>El linkeo entre clases se hace referenciando el machine name que usaste para registrar la clase (machine-name != class name). Si no lo tenés claro <a title="Drupal: Migrate" href="http://ecapy.com/drupal-migrate/" target="_blank">lee este post</a></li>
+</ul>
+<p>Bueno vamos a hacer una cosa, en lugar de repetir las dos clases necesarias para la importación por cada tipo de source, voy a dejar aqui solo la que importa CSV, porque el resto de las clases funcionan practicamente igual, y seria repetir en vano.</p>
+<h3>LAS CLASES</h3>
+<p></p><pre class="crayon-plain-tag">/**
+ * Class ProductFromCSV
+ * Crea el producto
+ * machine-name: product-from-csv
+ */
+class ProductFromCSV extends Migration {
+ 
+  public function __construct($arguments) {
+ 
+    parent::__construct($arguments);
+ 
+    $csv_path = "/path/hasta/el/csv/exported.csv";
+ 
+    $columns = array(
+      0 =&gt; array('identificador', 'Identificador'),
+      1 =&gt; array('titulo', 'Post date'),
+      2 =&gt; array('precio', 'Precio'),
+      3 =&gt; array('moneda', 'Moneda'),
+      4 =&gt; array('categoria', 'Categoría'),
+    );
+ 
+    $this-&gt;source = new MigrateSourceCSV($csv_path, $columns, array('embedded_newlines' =&gt; TRUE, "track_changes" =&gt; TRUE));
+ 
+    $this-&gt;destination = new MigrateDestinationEntityAPI('commerce_product', 'gorras');
+ 
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'identificador' =&gt; array(
+          'type' =&gt; 'varchar',
+          'length' =&gt; 20,
+          'not null' =&gt; TRUE,
+        ),
+      ),
+      $this-&gt;destination-&gt;getKeySchema()
+    );
+ 
+    global $user;
+ 
+    $this-&gt;addFieldMapping('title', 'titulo');
+    $this-&gt;addFieldMapping('commerce_price', 'precio')-&gt;defaultValue(0);
+    $this-&gt;addFieldMapping('commerce_price:currency_code', 'moneda')-&gt;defaultValue(commerce_default_currency());
+    $this-&gt;addFieldMapping('sku', 'identificador');
+    $this-&gt;addFieldMapping('status')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue($user-&gt;uid);
+    $this-&gt;addFieldMapping('field_categoria', 'categoria')-&gt;defaultValue("General");
+ 
+  }
+}
+ 
+/**
+ * Class ProductDisplayFromCSV
+ * Crea product displays (de momento solo pueden crear relaciones 1-1)
+ * machine-name: product-display-from-csv
+ */
+class ProductDisplayFromCSV extends Migration {
+ 
+  public function __construct($arguments) {
+ 
+    parent::__construct($arguments);
+ 
+    $csv_path = "/path/hasta/el/csv/exported.csv";
+    //Suponiendo que la clase la has registrado bajo este nombre :D
+    $product_machine_name = 'product-from-csv';
+ 
+    $columns = array(
+      0 =&gt; array('identificador', 'Identificador'),
+      1 =&gt; array('titulo', 'Post date'),
+    );
+ 
+    $this-&gt;source = new MigrateSourceCSV($csv_path, $columns, array('embedded_newlines' =&gt; TRUE, "track_changes" =&gt; TRUE));
+ 
+    $this-&gt;dependencies = array($product_machine_name);
+ 
+    $this-&gt;destination = new MigrateDestinationNode('display_gorra');
+ 
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'identificador' =&gt; array(
+          'type' =&gt; 'varchar',
+          'length' =&gt; 20,
+          'not null' =&gt; TRUE,
+        ),
+      ),
+      $this-&gt;destination-&gt;getKeySchema()
+    );
+ 
+    global $user;
+ 
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue($user-&gt;uid);
+    $this-&gt;addFieldMapping('title', 'titulo');
+    $this-&gt;addFieldMapping('field_product', "identificador")-&gt;sourceMigration($product_machine_name);
+  }
+}</pre><p>Lo importante aquí es notar que la segunda clase &#8220;dice&#8221; que depende de la primera al indicar <em>$this-&gt;dependencies = array($product_machine_name);</em>. De esta forma, Migrate sabe que la segunda clase no se puede poner a importar hasta que el primer migrador haya sido procesado.<br />
+Y para establecer la relación con el producto creado asociamos el field &#8220;<em>field_product</em>&#8221; al identificador que a su vez lo obtiene de la relación que Migrate estableció en una tabla en la DB (relación identificador del CSV &lt; -&gt; commerce product ID) por medio de <em>-&gt;sourceMigration()</em></p>
+<h4>Uso:</h4>
+<p>La verdad que fui un iluso cuando pensé que por estar linkeadas, las clases se iban a ejecutar en cadena :S La realidad es que siguen siendo migrators independientes con la salvedad de que hay que ejecutarlos en orden:</p><pre class="crayon-plain-tag">drush mi product-from-csv</pre><p>Y recién ahora podemos invocar al migrator que crea los product display:</p><pre class="crayon-plain-tag">drush mi product-display-from-csv</pre><p>That&#8217;s all.<br />
+Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal: Importar y sincronizar desde un JSON local o remoto con Migrate</title>
+		<link>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-json-local-o-remoto-con-migrate/</link>
+		<pubDate>Sun, 23 Jun 2013 21:29:51 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2334</guid>
+		<description><![CDATA[Con archivos JSON tenemos dos posibles casos: Un JSON simple Y proporcionando dos archivos: uno que provea los ID y otro archivo que contenga la información de un item específico. Esta última opcion es especialmente util para atacar API&#8217;s que por ejemplo en /posts entrega un listado de ID&#8217;s y en /posts/:id proporciona un item&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-json-local-o-remoto-con-migrate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Con archivos JSON tenemos dos posibles casos:</p>
+<ol>
+<li>Un JSON simple</li>
+<li>Y proporcionando dos archivos: uno que provea los ID y otro archivo que contenga la información de un item específico. <strong>Esta última opcion es especialmente util para atacar API&#8217;s</strong> que por ejemplo en <em>/posts</em> entrega un listado de ID&#8217;s y en <em>/posts/:id</em> proporciona un item especifico.</li>
+</ol>
+<h4>Primera forma: un JSON simple</h4>
+<p>Digamos que nuestro archivo json tiene esta pinta:</p><pre class="crayon-plain-tag">[
+    {
+      "post_id": "1000",
+      "title": "Post de blog 1",
+      "content": "Este es el contenido del post 1",
+      "createdDate": "2013-06-15T23:39:27.433Z"
+    },
+    {
+      "post_id": "1001",
+      "title": "Post de blog 2",
+      "content": "Este es el contenido del post 2",
+      "createdDate": "2013-06-16T23:39:27.433Z"
+    },
+    {
+      "post_id": "1002",
+      "title": "Post de blog 3",
+      "content": "Este es el contenido del post 3",
+      "createdDate": "2013-06-17T23:39:27.433Z"
+    },
+    {
+      "post_id": "1003",
+      "title": "Post de blog 4",
+      "content": "Este es el contenido del post 4",
+      "createdDate": "2013-06-18T23:39:27.433Z"
+    }
+  ]</pre><p>&nbsp;</p>
+<p>Como se ve no es mas que un array de objetos. De hecho hacer un migrator que lo procese no difiere mucho de lo que hicimos con los <a title="Drupal: Importar y sincronizar desde un XML local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/">XML</a>, <a title="Drupal: Importar y sincronizar desde un CSV con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/">CSV</a> y <a title="Drupal: Importar y sincronizar desde una DB con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/">DB&#8217;s</a>:</p><pre class="crayon-plain-tag">&lt;?php
+
+class MigrationFromJSON extends Migration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $module_path = DRUPAL_ROOT . '/' . drupal_get_path('module', 'mimodulo');
+    $json_file = $module_path . '/json/posts.json';
+    $this-&gt;source = new MigrateSourceJSON($json_file, 'post_id', array(), array("track_changes" =&gt; TRUE));
+
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'post_id' =&gt; array(
+          'type' =&gt; 'int',
+          'unsigned' =&gt; TRUE,
+          'not null' =&gt; TRUE,
+        ),
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('title', 'title');
+    $this-&gt;addFieldMapping('body', 'content');
+    $this-&gt;addFieldMapping('created', 'createdDate');
+  }
+}</pre><p>Lo único que cambia en este migrator es obviamente el $this-&gt;source (MigrateSourceJSON). El resto se mantiene como en las anteriores implementaciones.</p>
+<h4>Segunda forma: API style</h4>
+<p>Para este ejemplo he colgado las siguientes URL:</p>
+<p>Obtener el listado de post a importar:<br />
+<a href="http://ecapy.com/Archivos/API-style/ids.json" target="_blank">http://ecapy.com/Archivos/API-style/ids.json</a></p>
+<p>Posts individuales:</p>
+<ul>
+<li><a href="http://ecapy.com/Archivos/API-style/posts/2fed35eaa9839ad7.json" target="_blank">http://ecapy.com/Archivos/API-style/posts/2fed35eaa9839ad7.json</a></li>
+<li><a href="http://ecapy.com/Archivos/API-style/posts/5862cff98c7d68e2.json" target="_blank">http://ecapy.com/Archivos/API-style/posts/5862cff98c7d68e2.json</a></li>
+<li><a href="http://ecapy.com/Archivos/API-style/posts/33a01947248498de.json" target="_blank">http://ecapy.com/Archivos/API-style/posts/33a01947248498de.json</a></li>
+</ul>
+<p>Mientras este blog exista ahí las voy a dejar para que hagamos pruebas de este tipo de llamadas cuando haga falta.</p>
+<p>Bien, entonces tenemos este caso en el que en una URL recibimos todos los ID de los post que queremos importar, y luego tenemos que ir llamando uno a uno los archivos JSON con el contenido de estos.</p><pre class="crayon-plain-tag">&lt;?php
+
+class MigrationFromJSON_API_Style extends Migration {
+  
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $list_url = 'http://ecapy.com/Archivos/API-style/ids.json';
+    $item_url = 'http://ecapy.com/Archivos/API-style/posts/:id.json';
+    $this-&gt;source = new MigrateSourceList(
+      new MigrateListJSON($list_url),
+      new MigrateItemJSON($item_url, array()),
+      array(),
+      array("track_changes" =&gt; TRUE)
+    );
+
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'id' =&gt; array(
+          'type' =&gt; 'varchar',
+          'length' =&gt; 20,
+          'not null' =&gt; TRUE,
+        ),
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('title', 'title');
+    $this-&gt;addFieldMapping('body', 'content');
+  }
+}</pre><p>La gran diferencia con respecto a todos los migrators que hemos creado hasta ahora está en <em>$this&gt;source</em>:</p><pre class="crayon-plain-tag">$this-&gt;source = new MigrateSourceList(
+  new MigrateListJSON($list_url),
+  new MigrateItemJSON($item_url, array()),
+  array(),
+  array("track_changes" =&gt; TRUE)
+);</pre><p>Estamos usando <a href="https://drupal.org/node/1152152" target="_blank">MigrateSourceList()</a> que está justamente indicada para este tipo de casos. Como parametros estan bastante claros asi que no los explico.<br />
+Lo unico que si que quiero que presten atención es en <em>$item_url</em>. En este string hay un token (<em>:id</em>) y es porque el migrador a medida que vaya iterando los id que haya encontrado, va a generar la url desde la que se supone que tiene que obtener el contenido, y va a aplicar el ID sobre esa URL base que le hemos dado usando el token :id como placeholder.</p>
+<p>La importación de JSON tiene mucho juego. Pueden ver como hacer cosas mas locas en <a href="https://drupal.org/node/1152160">https://drupal.org/node/1152160</a>.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal: Importar y sincronizar desde un CSV con Migrate</title>
+		<link>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/</link>
+		<comments>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/#comments</comments>
+		<pubDate>Tue, 18 Jun 2013 09:00:01 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2311</guid>
+		<description><![CDATA[Hoy nos toca importar información desde archivos CSV. Como la implementacion de las clases no varian mucho con respecto a la de BD y XML, voy a obviar la explicacion de algunas partes y me voy a centrar en el &#8220;source&#8221; de la clase. Los archivos CSV de ejemplo están al final del post. Para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hoy nos toca importar información desde archivos CSV. Como la implementacion de las clases no varian mucho con respecto a la de <a title="Drupal: Importar y sincronizar desde una DB con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/" target="_blank">BD</a> y <a title="Drupal: Importar y sincronizar desde un XML local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/" target="_blank">XML</a>, voy a obviar la explicacion de algunas partes y me voy a centrar en el &#8220;source&#8221; de la clase.</p>
+<p>Los archivos CSV de ejemplo están al final del post.</p>
+<p>Para mostrar las posibles configuraciones que lleva un CSV, he creado 3 ejemplos, y en cada uno atendemos algún posible caso a la hora de importar CSV&#8217;s:</p>
+<h4>El ejemplo más básico: un CSV sin headers y de múltiples líneas por fila</h4>
+<p></p><pre class="crayon-plain-tag">&lt; ? class WPMigrationFromCSV extends Migration { public function __construct($arguments) { parent::__construct($arguments); $module_path = DRUPAL_ROOT . '/' . drupal_get_path('module', 'mimodulo'); $csv_path = $module_path . 'wp_posts-normal.csv'; $columns = array( 0 =&gt; array('id', 'Post ID'),
+      2 =&gt; array('post_date', 'Post date'),
+      4 =&gt; array('post_content', 'Post content'),
+      5 =&gt; array('post_title', 'Post title'),
+    );
+
+    $this-&gt;source = new MigrateSourceCSV($csv_path, $columns, array('embedded_newlines' =&gt; TRUE));
+
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'id' =&gt; array(
+          'type' =&gt; 'int',
+          'unsigned' =&gt; TRUE,
+          'not null' =&gt; TRUE,
+        ),
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('created', 'post_date');
+    $this-&gt;addFieldMapping('title', 'post_title');
+    $this-&gt;addFieldMapping('body', 'post_content');
+  }
+}</pre><p>Resumiendo el ejemplo anterior:</p>
+<ul>
+<li>La importación de CSV extienden siempre de <em>Migration()</em>.</li>
+<li>$this-&gt;source hace uso de la clase <em>MigrateSourceCSV()</em> que se nutre de:
+<ul>
+<li><em>$csv_path</em> que es el path hasta el archivo.</li>
+<li><em>$columns</em> que es un array que indica en qué posición de la fila se encuentra el item, el nombre maquina que queremos usar para ese item, y un label (Util para UI&#8217;s). Noten que el key de cada elemento del array no es secuencial. Esto es porque en el CSV no se encuentran uno detrás del otro los elementos que queremos importar. vean el CSV de ejemplo si no le ven sentido <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></li>
+<li>El tercer parámetro de la clase es el array de opciones. en nuestro ejemplo usamos &#8220;<em>embedded_newlines</em>&#8221; ya que el CSV de ejemplo tiene items que estan repartidos en varias líneas. Si van a importar un CSV cuyas filas no tienen varias líneas, pueden obviar este parámetro.</li>
+</ul>
+</li>
+<li>El resto de la clase mantiene los mismos principios explicados en el <a title="Drupal: Migrate" href="http://ecapy.com/drupal-migrate/" target="_blank">articulo de introduccion</a></li>
+</ul>
+<h4>CSV con headers</h4>
+<p>Cuando el CSV a importar trae headers podemos usarlo directamente en lugar de mapear los campos.</p><pre class="crayon-plain-tag">&lt; ? class WPMigrationFromCSVconHeaders extends Migration { public function __construct($arguments) { parent::__construct($arguments); $module_path = DRUPAL_ROOT . '/' . drupal_get_path('module', 'mimodulo'); $csv_path = $module_path . 'wp_posts-con-cabeceras.csv'; $this-&gt;source = new MigrateSourceCSV($csv_path, array(), array('embedded_newlines' =&gt; TRUE, 'header_rows' =&gt; 1));
+
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'ID' =&gt; array(
+          'type' =&gt; 'int',
+          'unsigned' =&gt; TRUE,
+          'not null' =&gt; TRUE,
+        ),
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('created', 'post_date');
+    $this-&gt;addFieldMapping('title', 'post_title');
+    $this-&gt;addFieldMapping('body', 'post_content');
+  }
+}</pre><p>Fijense que en lugar de hacer un array mapeando los campos con su respectiva posición en el CSV, hemos pasado un array vacío, y en las opciones de MigrateSourceCSV() le hemos pasado &#8220;<em>header_rows</em>&#8221; para indicarle que la cabecera del CSV es hasta la línea 1 (lo que haría que lea solo la primer línea como header).<br />
+En este ejemplo, resulta que casi todas las columnas del CSV se llaman igual que el mapeo del ejemplo anterior, salvo el &#8220;id&#8221; que en el CSV viene representado como &#8220;ID&#8221;.</p>
+<h4>CSV con delimitadores cambiados</h4>
+<p>Hay veces que el CSV tiene delimitadores distintos a los normales. Por ejemplo, para separar los item de una fila en lugar de usar <em>, (coma)</em>, puede haber un <em>; (punto y coma)</em> o para encerrar el contenido de un ítem en lugar de <em>&#8221; (comillas dobles)</em> se usa <em>&#8216; (comillas simples)</em>.<br />
+para ese tipo de casos podemos especificar a MigrateSourceCSV() estos separadores:</p><pre class="crayon-plain-tag">&lt; ? class WPMigrationFromCSVdistintosDelimiters extends Migration { public function __construct($arguments) { parent::__construct($arguments); $module_path = DRUPAL_ROOT . '/' . drupal_get_path('module', 'mimodulo'); $csv_path = $module_path . 'wp_posts-con-delimitadores.csv'; $columns = array( 0 =&gt; array('id', 'Post ID'),
+      2 =&gt; array('post_date', 'Post date'),
+      4 =&gt; array('post_content', 'Post content'),
+      5 =&gt; array('post_title', 'Post title'),
+    );
+
+    $this-&gt;source = new MigrateSourceCSV($csv_path, $columns, array(
+      'embedded_newlines' =&gt; TRUE,
+      'length' =&gt; NULL,
+      'delimiter' =&gt; ';',
+      'enclosure' =&gt; "'",
+      'escape' =&gt; '|',
+    ));
+
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'id' =&gt; array(
+          'type' =&gt; 'int',
+          'unsigned' =&gt; TRUE,
+          'not null' =&gt; TRUE,
+        ),
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('created', 'post_date');
+    $this-&gt;addFieldMapping('title', 'post_title');
+    $this-&gt;addFieldMapping('body', 'post_content');
+  }
+}</pre><p>&#8216;length&#8217;, &#8216;delimiter&#8217;, &#8216;enclosure&#8217;, y &#8216;escape&#8217; van directamente a parar a <a href="http://php.net/manual/es/function.fgetcsv.php" target="_blank">fgetcsv</a>.</p>
+<p>Archivos de ejemplo:<br />
+<a class="descargar" href="http://ecapy.com/wp-content/uploads/2013/06/wp_posts-con-cabeceras.csv">wp_posts-con-cabeceras.csv</a></p>
+<p><a class="descargar" href="http://ecapy.com/wp-content/uploads/2013/06/wp_posts-con-delimitadores.csv">wp_posts-con-delimitadores.csv</a></p>
+<p><a class="descargar" href="http://ecapy.com/wp-content/uploads/2013/06/wp_posts-normal.csv">wp_posts-normal.csv</a></p>
+<p><a class="descargar" href="http://ecapy.com/wp-content/uploads/2013/06/wp_posts-sin-saltos-de-linea.csv">wp_posts-sin-saltos-de-linea.csv</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Importar y sincronizar desde un XML local o remoto con Migrate</title>
+		<link>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/</link>
+		<comments>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/#comments</comments>
+		<pubDate>Sat, 15 Jun 2013 09:00:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2292</guid>
+		<description><![CDATA[Continuando con Migrate, hoy toca importar XML&#8217;s de forma local y remota. Para la forma remota he colocado un XML de ejemplo con un solo item que pueden usar para probar que todo funcione. Ok sin más dilación esta es la clase para importar de forma remota: [crayon-584437f2d3000152409606/] La primer diferencia y que es única para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a title="Drupal: Migrate" href="http://ecapy.com/drupal-migrate/" target="_blank">Continuando</a> con Migrate, hoy toca importar XML&#8217;s de forma local y remota. Para la forma remota he <a href="http://ecapy.com/wp-content/uploads/2013/06/wordpress.xml_._renombrar.txt" rel="">colocado un XML de ejemplo</a> con un solo item que pueden usar para probar que todo funcione.</p>
+<p>Ok sin más dilación esta es la clase para importar de forma remota:</p><pre class="crayon-plain-tag">class WPMigrationFromXML extends XMLMigration {
+  
+  public function __construct($arguments) {
+	parent::__construct($arguments);
+	$items_url = 'http://ecapy.com/wp-content/uploads/2013/06/wordpress.xml_._renombrar.txt';
+	$item_xpath = '/rss/item';
+	$item_ID_xpath = 'wp:post_id';
+	$this-&gt;source = new MigrateSourceXML($items_url, $item_xpath, $item_ID_xpath);
+
+	$this-&gt;destination = new MigrateDestinationNode('page');
+
+	$this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+	  array(
+		'wp:post_id' =&gt; array(
+		  'type' =&gt; 'int',
+		  'unsigned' =&gt; TRUE,
+		  'not null' =&gt; TRUE,
+		)
+	  ),
+	  MigrateDestinationNode::getKeySchema()
+	);
+
+	$this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+	$this-&gt;addFieldMapping('created', 'wp:post_date')-&gt;xpath('wp:post_date');
+	$this-&gt;addFieldMapping('title', 'title')-&gt;xpath('title');
+	$this-&gt;addFieldMapping('body', 'content:encoded')-&gt;xpath('content:encoded');
+  }
+}</pre><p>La primer diferencia y que es única para la importación de XML es<strong> que no extiende de la clase <em>Migration</em> <a href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate" target="_blank">como vimos en la importación desde DB&#8217;s</a>, sino que lo hace de <em>XMLMigration()</em></strong> ya que los XML son un poco especiales a la hora de tratarlos.</p>
+<p>Otra cosa que cambia obviamente es el source, que esta vez es <em>MigrateSourceXML()</em> y que requiere 3 cosas como mínimo: <strong>la ubicación del archivo</strong> ya sea local o remota la ruta, <strong>el path que representa un item</strong> y por ultimo <strong>el identificador único del item</strong>. Si revisan el xml que adjunté van a poder verle mas sentido.</p>
+<p>Y la última cosa que es única de los XML, es el mapeo de los fields. Pueden ver que <em>MigrateSourceXML()</em> añade un método <strong>-&gt;xpath()</strong> para que le digamos de donde sacar la información.</p>
+<p>Y para la importación local solo hay que cambiar <em>$items_url</em> por algo como:</p><pre class="crayon-plain-tag">$items_url = DRUPAL_ROOT . '/' . drupal_get_path('module', 'mimodulo') . '/sources/wordpress.xml';</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Importar y sincronizar desde una DB con Migrate</title>
+		<link>http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/</link>
+		<comments>http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/#comments</comments>
+		<pubDate>Fri, 14 Jun 2013 08:00:39 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2278</guid>
+		<description><![CDATA[En el post anterior vimos por encima como implementar un migrator, que no es mas que una clase que extiende de Migration. La clase Migration nos quita prácticamente todo el trabajo de encima (en lo que se refiere a procesar la importación y creación de contenidos). Lo único que se necesita para crear un migrator&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a title="Drupal: Migrate" href="http://ecapy.com/drupal-migrate/" target="_blank">En el post anterior</a> vimos por encima como implementar un migrator, que no es mas que una clase que extiende de Migration. La clase Migration nos quita prácticamente todo el trabajo de encima (en lo que se refiere a procesar la importación y creación de contenidos). Lo único que se necesita para crear un migrator es implementar el método <em>__construct()</em> y decirle donde esta la info que entra, que hace con esa info y la relación de cada fila de un item entrante con respecto a la fila de una entidad.</p>
+<p>Dicho lo anterior, el ejemplo de uso para migrar desde DB externas sería:</p><pre class="crayon-plain-tag">&lt; ? class WPMigrationFromDB extends Migration { public function __construct($arguments) { // 1 parent::__construct($arguments); // 2 Database::addConnectionInfo('temporal', 'MI_DB', array( 'driver' =&gt; 'mysql',
+      'database' =&gt; 'MI_DB',
+      'username' =&gt; 'USUARIO',
+      'password' =&gt; 'CLAVE',
+      'host' =&gt; 'localhost',
+    ));
+
+    // 3
+    $query = Database::getConnection('MI_DB', 'temporal')
+      -&gt;select('wp_posts', 'posts')
+      -&gt;fields('posts', array(
+        'id',
+        'post_title',
+        'post_content',
+      ))
+      -&gt;condition("post_type", "post", "=")
+      -&gt;condition("post_status", "publish", "=");
+
+    // 4
+    $this-&gt;source = new MigrateSourceSQL($query);
+
+    // 5
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    // 6
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'id' =&gt; array(
+          'type' =&gt; 'int',
+          'unsigned' =&gt; TRUE,
+          'not null' =&gt; TRUE,
+        )
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    // 7
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('title', 'post_title');
+    $this-&gt;addFieldMapping('body', 'post_content');
+  }
+}</pre><p>Enumeré cada uno de los puntos mas importantes:</p>
+<ol>
+<li>Dejamos que Migration ejecute su constructor</li>
+<li><a title="Drupal: conectar a una base de datos externa al vuelo" href="http://ecapy.com/drupal-conectar-a-una-base-de-datos-externa-al-vuelo/" target="_blank">Conectamos con una DB externa</a></li>
+<li>Preparamos la query que va a devolvernos solo las columnas que necesitamos.</li>
+<li>Pasamos la query a $this-&gt;source para que sepa desde donde extraer la información.</li>
+<li>Especificamos el destino.</li>
+<li>Establecemos el mapeo entre los campos extraídos de la DB y los field de la entidad que se va a crear.</li>
+</ol>
+<p>Y eso es todo lo que necesita una implementación de Migration para procesar la información desde una DB. como siempre, esto es solo un ejemplo rapido para que sepan por donde arrancar, pero si realmente quieren conocer mas sobre implementar un migrator usando de fuente una DB lean <a href="https://drupal.org/node/1152150" target="_blank">https://drupal.org/node/1152150</a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Migrate</title>
+		<link>http://ecapy.com/drupal-migrate/</link>
+		<comments>http://ecapy.com/drupal-migrate/#comments</comments>
+		<pubDate>Wed, 12 Jun 2013 18:06:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2265</guid>
+		<description><![CDATA[Migrate es genial, a resumidas cuentas te permite importar información desde varias fuentes. Así de simple. En este post voy tocar dos cosas muy por encima. Qué puede importar y como implementar Migrate (este modulo no importa nada por si mismo) Primero lo primero: ¿Desde donde te deja importar información? SQL (Cualquier DB que Drupal&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-migrate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="https://drupal.org/project/migrate" target="_blank">Migrate</a> es genial, a resumidas cuentas te permite importar información desde varias fuentes. Así de simple.<br />
+En este post voy tocar dos cosas muy por encima. Qué puede importar y como implementar Migrate (este modulo no importa nada por si mismo)</p>
+<p>Primero lo primero:</p>
+<h3>¿Desde donde te deja importar información?</h3>
+<ul>
+<li><a title="Drupal: Importar y sincronizar desde una DB con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/">SQL</a> (Cualquier DB que Drupal sea capaz de leer)</li>
+<li><a title="Drupal: Importar y sincronizar desde un XML local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/">XML</a></li>
+<li>List</li>
+<li><a title="Drupal: Importar y sincronizar desde un CSV con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/">CSV</a></li>
+<li><a title="Drupal: Importar y sincronizar desde un JSON local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-json-local-o-remoto-con-migrate/">JSON</a></li>
+<li>MSSQL (Microsoft SQL Server)</li>
+<li>Oracle</li>
+<li>Multi items</li>
+</ul>
+<p>Y esas son las fuentes que provee Migrate, pero <a href="https://drupal.org/node/1152164" target="_blank">cualquier módulo puede añadir nuevas fuentes</a> sin mayor problema. pueden ver en detalle cada una de las clases que implementa los sources en <a href="https://drupal.org/node/1006986" target="_blank">https://drupal.org/node/1006986</a></p>
+<h3>¿Que puede crear con la información que importa?</h3>
+<ul>
+<li>Nodos</li>
+<li>Comentarios</li>
+<li>Archivos</li>
+<li>Menus</li>
+<li>Items de menu</li>
+<li>Roles</li>
+<li>Tablas en la DB</li>
+<li>Terminos</li>
+<li>Usuarios</li>
+</ul>
+<p>Y una vez mas esas son las fuentes que provee Migrate, pero cualquier módulo puede añadir nuevos destinos. por ejemplo algun modulo puede proveer la implementación para crear profiles de Profile2. La información en detalle de cada una de las clases que implementan estos &#8220;destinos&#8221; la pueden ver en <a href="https://drupal.org/node/1006988" target="_blank">https://drupal.org/node/1006988</a></p>
+<p>Ok ahora vamos a implementar Migrate en un módulo. Para hacerlo no puede ser más fácil. <strong>Solo necesitas 2 cosas</strong>: un hook y extender de una clase<br />
+Nuestro módulo de ejemplo se llama &#8220;<em>migrate_posts</em>&#8221; que va a copiar todos los posts que hay en mi blog (WordPress) usando como fuente la DB (El source es SQL en este caso)</p>
+<p>La onda en la siguiente:<br />
+Primero tenemos que crear un archivo <em>migrate_posts.module</em> y dentro de él definir el <em>hook_migrate_api()</em> que es el que le da la información necesaria a Migrate sobre nuestra implementación:</p><pre class="crayon-plain-tag">/** * Implements hook_migrate_api(). */
+function migrate_posts_migrate_api() {
+  $api = array(
+    'api' =&gt; 2,
+    'groups' =&gt; array(
+      'wordpress' =&gt; array(
+        'title' =&gt; t('Importación de posts desde WordPress'),
+      ),
+    ),
+    'migrations' =&gt; array(
+      'WPFromDB' =&gt; array(
+        'class_name' =&gt; 'WPMigrationFromDB',
+        'group_name' =&gt; 'wordpress',
+      ),
+    ),
+  );
+  return $api;
+}</pre><p>El HOOK necesita 3 cosas:<br />
+<strong>Que le digas que API vas a usar</strong> (Siempre es la 2 salvo que cuando leas este artículo hayan sacado la versión 3.x del módulo). <strong>Que le indiques un grupo</strong> y por ultimo <strong>que le indiques cual es tu migrator</strong></p>
+<p>Desglosemos esto:<br />
+Un grupo es simplemente un &#8220;tag&#8221; donde vas a agrupar todos los migrators que vos créas conveniente. Por ejemplo, si quisieras crear un importador de posts y otro importador a parte para los comentarios, entonces meterías los dos migrators dentro del grupo de &#8220;wordpress&#8221;.<br />
+En &#8220;migrations&#8221; definimos el nombre máquina de nuestro importador (WPFromDB), el nombre de la clase que va a realizar la acción (WPMigrationFromDB) y el grupo al que pertenece.</p>
+<p>Lo último que queda por aclarar es que &#8220;migrate_posts<em>.migrate.inc</em>&#8221; es la convención que usa Migrate, por lo que no hace falta hacer un require/include en tu .module</p>
+<p>Ya hemos terminado con el primer paso, vamos al segundo. La clase de importacion.<br />
+Creamos un archivo .inc que es el que va a contener la clase. por ejemplo &#8220;posts-migrator-from-db.inc&#8221; y en el .info de tu modulo lo agregas (files[] = posts-migrator-from-db.inc)<br />
+Y dentro de él ponemos la clase:</p><pre class="crayon-plain-tag">class WPMigrationFromDB extends Migration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+
+    // #############################################
+    // Definición del source (desde donde vamos a obtener la información)
+    Database::addConnectionInfo('temporal', 'MI_DB', array(
+      'driver' =&gt; 'mysql',
+      'database' =&gt; 'MI_DB',
+      'username' =&gt; 'USUARIO',
+      'password' =&gt; 'CONTRASEÑA',
+      'host' =&gt; 'localhost',
+    ));
+
+    $query = Database::getConnection('MI_DB', 'temporal')
+      -&gt;select('wp_posts', 'posts')
+      -&gt;fields('posts', array(
+        'id',
+        'post_date',
+        'post_modified',
+        'post_title',
+        'post_content',
+      ))
+      -&gt;condition("post_type", "post", "=")
+      -&gt;condition("post_status", "publish", "=");
+
+    $this-&gt;source = new MigrateSourceSQL($query);
+
+    // #############################################
+    // Definición del destino (lo que se va a crear con los datos conseguidos)
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    // #############################################
+    // Indicamos cual es el identificador UNICO de cada elemento que se consiga desde la fuente
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'id' =&gt; array(
+          'type' =&gt; 'int',
+          'unsigned' =&gt; TRUE,
+          'not null' =&gt; TRUE,
+        )
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    // #############################################
+    // Mapeo de los valores del origen y destino
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('created', 'post_date');
+    $this-&gt;addFieldMapping('changed', 'post_modified');
+    $this-&gt;addFieldMapping('title', 'post_title');
+    $this-&gt;addFieldMapping('body', 'post_content');
+  }
+}</pre><p>No voy a profundizar en la implementación de la clase porque este post es solo para demostrar lo fácil que es implementar Migrate. Ya vendrán post hablando de las clases.</p>
+<p>Y básicamente te eso es todo lo que necesitas para implementar Migrate.</p>
+<p>Bueno, ahora usamos drush<br />
+Limpiamos el cache para que Drupal lea el .info de nuestro módulo y sepa que &#8220;posts-migrator-from-db.inc&#8221; existe</p><pre class="crayon-plain-tag">drush cc all</pre><p>Registramos nuestro migrator:</p><pre class="crayon-plain-tag">drush migrate-register</pre><p>Revisamos que el migrator se haya registrado:</p><pre class="crayon-plain-tag">drush migrate-status</pre><p>Que debería devolver:</p><pre class="crayon-plain-tag">Group: wordpress Total Imported Unprocessed Status Last imported
+WPFromDB 169 0 169 Idle 2013-06-12 17:59:17</pre><p>Y si todo está ok, podemos importar nuestros posts:</p><pre class="crayon-plain-tag">drush migrate-import WPFromDB</pre><p>Y para deshacer la importación:</p><pre class="crayon-plain-tag">drush migrate-rollback WPFromDB</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-migrate/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

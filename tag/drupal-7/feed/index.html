@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Drupal 7 &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/drupal-7/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Drupal: Hacer una búsqueda con Search API programaticamente</title>
+		<link>http://ecapy.com/drupal-hacer-una-busqueda-con-search-api-programaticamente/</link>
+		<pubDate>Mon, 03 Oct 2016 11:05:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3458</guid>
+		<description><![CDATA[Esto lo hice en Drupal 7. No se en D8 como se hace pero calculo que será bastante similar. Ah y no importa si detrás hay una búsqueda por DB o por Solr. [crayon-5844364f60c76287977876/] Y ya solo queda iterar los resultados que están almacenados en $results[&#8216;results&#8217;].]]></description>
+				<content:encoded><![CDATA[<p>Esto lo hice en Drupal 7. No se en D8 como se hace pero calculo que será bastante similar. Ah y no importa si detrás hay una búsqueda por DB o por Solr.</p><pre class="crayon-plain-tag">$index = search_api_index_load("machine_name_de_mi_indice");
+$q = new SearchApiQuery($index);
+
+// Podemos añadir filtros como si de facetas se tratara
+$q-&gt;condition("field_type", "article", "=");
+
+// También podemos emular la búsqueda de una cadena
+$q-&gt;fields($index-&gt;getFulltextFields());
+$q-&gt;keys("foo");
+
+// Incluso limitar la cantidad de resultados
+$q-&gt;range(0, 5); // offset y limite.
+
+$results = $index-&gt;server()-&gt;search($q);</pre><p>Y ya solo queda iterar los resultados que están almacenados en <strong>$results[&#8216;results&#8217;]</strong>.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Ejecutar el hook_init() en un theme</title>
+		<link>http://ecapy.com/drupal-7-ejecutar-el-hook_init-en-un-theme/</link>
+		<pubDate>Thu, 18 Feb 2016 18:23:19 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3386</guid>
+		<description><![CDATA[Si pones el siguiente código en algún modulo custom que tengas por ahí, vas a dar la capacidad a tu theme de ejecutar un hook_init(). [crayon-5844364f62580364946842/] Ya solo te queda poner en tu template.php un hook_init(). Saludos!]]></description>
+				<content:encoded><![CDATA[<p>Si pones el siguiente código en algún modulo custom que tengas por ahí, vas a dar la capacidad a tu theme de ejecutar un hook_init().</p><pre class="crayon-plain-tag">function MIMODULO_init() {
+
+  // Como los themes no tienen hook_init()
+  // hacemos una implementación propria para que lo tengan.
+  foreach (list_themes() as $k_theme =&gt; $conf) {
+    $hook_init = $k_theme . '_init';
+    $theme_path = drupal_get_path('theme', $k_theme);
+    $template_file = $theme_path . '/template.php';
+
+    if (file_exists($template_file)) {
+      include_once $template_file;
+
+      if ($conf-&gt;status == '1' &amp;&amp; function_exists($hook_init)) {
+        $hook_init();
+      }
+
+    }
+
+
+  }
+
+}</pre><p>Ya solo te queda poner en tu <strong>template.php</strong> un <strong>hook_init()</strong>.</p>
+<p>Saludos!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Controlar completamente los template de Field collection</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/</link>
+		<comments>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comments</comments>
+		<pubDate>Tue, 22 Jul 2014 14:23:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2713</guid>
+		<description><![CDATA[El muy jodido tiene mas vueltas que una oreja cuando de theming se trata. NOTA: todos los templates que hay que crear ponlos en tu theme. Lo ideal es dentro del directorio tu_theme/templates/field_collection o algo similar. Primero creamos el tpl field-collection-view.tpl.php que es el wrapper que hay entre el html del field y el del&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El muy jodido tiene mas vueltas que una oreja cuando de theming se trata.</p>
+<p>NOTA: todos los templates que hay que crear ponlos en tu theme. Lo ideal es dentro del directorio tu_theme/templates/field_collection o algo similar.</p>
+<p>Primero creamos el tpl <em><strong>field-collection-view.tpl.php</strong></em> que es el wrapper que hay entre el html del field y el del <a href="https://www.drupal.org/project/field_collection" target="_blank">field collection</a>. Pon esto dentro:</p><pre class="crayon-plain-tag">&lt;?php print $element['#children']; ?&gt;</pre><p>Luego <em><strong>field-collection-item.tpl.php</strong></em> que es el tpl que controla el render de cada uno de los item individuales de la colección:</p><pre class="crayon-plain-tag">&lt;?php print render($content); ?&gt;</pre><p>Por ultimo necesitamos <em><strong>field&#8211;field-collection.tpl.php (ojo que mi wordpress junta los dos guiones)</strong></em>, un tpl para el field que contiene todo lo que <a href="https://www.drupal.org/project/field_collection" target="_blank">field collection</a> entregue:</p><pre class="crayon-plain-tag">&lt;?php foreach ($items as $delta =&gt; $item): ?&gt;
+    &lt;?php print render($item); ?&gt;
+&lt;?php endforeach; ?&gt;</pre><p>Y listo! ya tenes control a todos los niveles del markup que va a entregar un <a href="https://www.drupal.org/project/field_collection" target="_blank">field collection</a>.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7 : Crear un template block&#8211;bean&#8211;type-ENTITY-TYPE.tpl.php para bundles del módulo Bean</title>
+		<link>http://ecapy.com/drupal-7-crear-un-template-block-bean-type-entity-type-tpl-php-para-bundles-del-modulo-bean/</link>
+		<pubDate>Mon, 14 Jul 2014 19:05:20 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2708</guid>
+		<description><![CDATA[Caso de uso. Creaste un bean del tipo &#8220;banner&#8221; y quieres que el block.tpl.php tenga un marcado específico para este tipo de contenidos. O lo que es lo mismo que decir que quieres tener un block&#8211;bean&#8211;type-banner.tpl.php La solución es poner este preprocess: [crayon-5844364f63474080604374/] Y ya podés copiar block.tpl.php a tu theme, renombrarlo a block&#8211;bean&#8211;type-banner.tpl.php, personalizarlo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-crear-un-template-block-bean-type-entity-type-tpl-php-para-bundles-del-modulo-bean/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Caso de uso. Creaste un <a href="https://www.drupal.org/project/bean" target="_blank">bean</a> del tipo &#8220;banner&#8221; y quieres que el <strong>block.tpl.php</strong> tenga un marcado específico para este tipo de contenidos. O lo que es lo mismo que decir que quieres tener un <em><strong>block&#8211;bean&#8211;type-banner.tpl.php</strong></em></p>
+<p>La solución es poner este preprocess:</p><pre class="crayon-plain-tag">/**
+ * Implements hook_preprocess_block().
+ */
+function TU_THEME_O_MODULO_preprocess_block(&amp;$vars) {
+    // Añadimos theme suggestions por tipo de bean.
+    if ($vars['block']-&gt;module == "bean") {
+        /** @var $bean Bean */
+        $bean = bean_load_delta($vars['block']-&gt;delta);
+        $vars['theme_hook_suggestions'][] = 'block__bean__type_' . $bean-&gt;type;
+    }
+}</pre><p>Y ya podés copiar block.tpl.php a tu theme, renombrarlo a block&#8211;bean&#8211;type-banner.tpl.php, personalizarlo y borrar el cache.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Hacer bypass a page.tpl.php y html.tpl.php programáticamente</title>
+		<link>http://ecapy.com/drupal-7-hacer-bypass-a-page-tpl-php-programaticamente/</link>
+		<pubDate>Tue, 01 Jul 2014 17:38:24 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2704</guid>
+		<description><![CDATA[¿Y si necesitaras entregar una página sin los CSS ni JS ni el HTML (cabeceras, footer, sidebars) que viene por defecto? Solo hay que hacer dos cosas: 1. Añadir la propiedad &#8216;delivery callback&#8217; a tu menu callback [crayon-5844364f63f6d772670602/] 2. Añadir esta función. No hace falta modificarla. Si querés cambiarle el nombre no te olvides de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-hacer-bypass-a-page-tpl-php-programaticamente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>¿Y si necesitaras entregar una página sin los CSS ni JS ni el HTML (cabeceras, footer, sidebars) que viene por defecto?</p>
+<p>Solo hay que hacer dos cosas:</p>
+<h3>1. Añadir la propiedad &#8216;delivery callback&#8217; a tu menu callback</h3>
+<p></p><pre class="crayon-plain-tag">$items['factura/%node'] = array( 'title' =&gt; 'Entrega una factura',
+  'page callback' =&gt; 'generar_factura',
+  'delivery callback' =&gt; 'mi_delivery_page',
+  'access callback' =&gt; TRUE,
+);</pre><p></p>
+<h3>2. Añadir esta función.</h3>
+<p>No hace falta modificarla. Si querés cambiarle el nombre no te olvides de modificar también el nombre en el delivery callback del menú.</p><pre class="crayon-plain-tag">/**
+ * Delivery callback.
+ *
+ * Entrega el contenido así como viene sin pasar ni
+ * por page.tpl.php ni por html.tpl.php
+ *
+ */
+function mi_delivery_page($page_callback_result) {
+ 
+  if (isset($page_callback_result) &amp;&amp; is_null(drupal_get_http_header('Content-Type'))) {
+    drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+  }
+ 
+  global $language;
+  drupal_add_http_header('Content-Language', $language-&gt;language);
+  print $page_callback_result;
+  drupal_page_footer();
+}</pre><p>Borra cache y listo.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Lanzar un #state de un elemento de formulario por js (jQuery)</title>
+		<link>http://ecapy.com/drupal-7-lanzar-un-state-de-un-elemento-de-formulario-por-js-jquery/</link>
+		<pubDate>Fri, 07 Mar 2014 14:18:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2643</guid>
+		<description><![CDATA[[crayon-5844364f64ee7889983370/] Chau!]]></description>
+				<content:encoded><![CDATA[<p></p><pre class="crayon-plain-tag">jQuery('#edit-un-radiobutton-que-lanza-el-state').click().trigger('change');</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Quitar un CSS o JS programaticamente</title>
+		<link>http://ecapy.com/drupal-7-quitar-un-css-programaticamente/</link>
+		<comments>http://ecapy.com/drupal-7-quitar-un-css-programaticamente/#comments</comments>
+		<pubDate>Tue, 04 Mar 2014 05:29:20 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2636</guid>
+		<description><![CDATA[El siguiente hook lo pones en el template.php de tu theme: [crayon-5844364f6515c580293156/] Está claro que esos hook tienen juego. Puedes mirar cual URL vas a renderizar, o averiguar cualquier otra cosa que te ayude a decidir que CSS&#8217;s/JS&#8217;s vas a querer quitar. Chau!]]></description>
+				<content:encoded><![CDATA[<p>El siguiente hook lo pones en el template.php de tu theme:</p><pre class="crayon-plain-tag">&lt; ? function TU_THEME_css_alter(&amp;$css) { $css = array_diff_key($css, array( // Añade todos los CSS que quieras quitar antes que se entregue la página. drupal_get_path('module', 'NOMBRE_MODULO') . '/PATH/HASTA/EL/CSS/foo.css' =&gt; FALSE,
+    drupal_get_path('theme', 'NOMBRE_THEME') . '/PATH/HASTA/EL/CSS/foo.css' =&gt; FALSE,
+  ));
+}
+
+function TU_THEME_js_alter(&amp;$js) {
+  $js = array_diff_key($js, array(
+    // Añade todos los JS que quieras quitar antes que se entregue la página.
+    drupal_get_path('module', 'user') . '/user.js' =&gt; FALSE,
+  ));
+}</pre><p>Está claro que esos hook tienen juego. Puedes mirar cual URL vas a renderizar, o averiguar cualquier otra cosa que te ayude a decidir que CSS&#8217;s/JS&#8217;s vas a querer quitar.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-7-quitar-un-css-programaticamente/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7: Habilitar templates para nodos basados en su view mode</title>
+		<link>http://ecapy.com/drupal-7-habilitar-templates-para-nodos-basados-en-su-view-mode/</link>
+		<comments>http://ecapy.com/drupal-7-habilitar-templates-para-nodos-basados-en-su-view-mode/#comments</comments>
+		<pubDate>Fri, 21 Feb 2014 15:27:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2629</guid>
+		<description><![CDATA[Si tenemos un content type llamado &#8220;citas&#8221; y tenemos mas de un view mode, por ejemplo &#8220;resumida&#8221; y &#8220;detallada&#8220;. Para poder hacer templates tipo &#8220;node&#8211;cita&#8211;resumida.tpl.php&#8221; y &#8220;node&#8211;cita&#8211;detallada.tpl.php&#8221; simplemente tenemos que poner una linea en el HOOK_preprocess_node(). [crayon-5844364f65728381063427/] Chau!]]></description>
+				<content:encoded><![CDATA[<p>Si tenemos un content type llamado &#8220;<strong>citas</strong>&#8221; y tenemos mas de un view mode, por ejemplo &#8220;<em>resumida</em>&#8221; y &#8220;<em>detallada</em>&#8220;.<br />
+Para poder hacer templates tipo &#8220;<em>node&#8211;cita&#8211;resumida.tpl.php</em>&#8221; y &#8220;<em>node&#8211;cita&#8211;detallada.tpl.php</em>&#8221; simplemente tenemos que poner una linea en el <em>HOOK_preprocess_node()</em>.</p><pre class="crayon-plain-tag">&lt; ? /** * Implements HOOK_preprocess_node(). */ function HOOK_preprocess_node(&amp;$variables, $hook) { $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']-&gt;type . '__' . $variables['view_mode'];
+}</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-7-habilitar-templates-para-nodos-basados-en-su-view-mode/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7 + Views: Temear exposed filters como Dios manda</title>
+		<link>http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/</link>
+		<comments>http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/#comments</comments>
+		<pubDate>Thu, 21 Nov 2013 09:05:10 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2559</guid>
+		<description><![CDATA[Lo primero que tenes que saber es que podes tomar el control del template que imprime los filtros expuestos de un view (views-exposed-form.tpl.php) simplemente copiandolo a tu theme y poniéndole un nombre con este formato: [crayon-5844364f65b84082813897/] Ejemplos: Tengo un view llamado listado_usuarios y dos display: una página &#8220;administracion_usuarios&#8221; y un bloque &#8220;usuarios_por_fecha&#8221; (De mas especifico&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Lo primero que tenes que saber es que podes tomar el control del template que imprime los filtros expuestos de un view (views-exposed-form.tpl.php) simplemente copiandolo a tu theme y poniéndole un nombre con este formato:</p><pre class="crayon-plain-tag">views-exposed-form--VIEW_NAME.tpl.php
+views-exposed-form--VIEW_NAME--DISPLAY_ID.tpl.php</pre><p>Ejemplos:<br />
+Tengo un view llamado <strong>listado_usuarios</strong> y dos display: una página &#8220;<em>administracion_usuarios</em>&#8221; y un bloque &#8220;<em>usuarios_por_fecha</em>&#8221;</p>
+<p>(De mas especifico a mas genérico)</p>
+<p>Solo para el formulario expuesto del display administracion_usuarios.</p><pre class="crayon-plain-tag">views-exposed-form--listado_usuarios--administracion_usuarios.tpl.php</pre><p>Solo para el formulario expuesto del display usuarios_por_fecha.</p><pre class="crayon-plain-tag">views-exposed-form--listado_usuarios--usuarios_por_fecha.tpl.php</pre><p>Para todos los display que tengan formulario expuesto en este view.</p><pre class="crayon-plain-tag">views-exposed-form--listado_usuarios.tpl.php</pre><p>Cualquier view (CUALQUIERA) que tenga un display llamado administracion_usuarios.</p><pre class="crayon-plain-tag">views-exposed-form--administracion_usuarios.tpl.php</pre><p>Cualquier view con cualquier display.</p><pre class="crayon-plain-tag">views-exposed-form.tpl.php</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7: Quitar la descripción &#8220;E.g., 19/11/2013&#8221; del field date_popup</title>
+		<link>http://ecapy.com/drupal-7-quitar-la-descripcion-e-g-19112013-del-field-date_popup/</link>
+		<pubDate>Tue, 19 Nov 2013 20:53:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[FAPI]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2544</guid>
+		<description><![CDATA[El FAPI date_popup (del módulo Date) tiene un poco de mala leche y no se deja quitar la descripción por la vía tradicional. Dicho lo anterior, acá está el hook que nos salva el día: [crayon-5844364f66afa276893624/] Chau!]]></description>
+				<content:encoded><![CDATA[<p>El FAPI <strong>date_popup</strong> (del módulo <a href="https://drupal.org/project/date" target="_blank">Date</a>) tiene un poco de mala leche y no se deja quitar la descripción por la vía tradicional. Dicho lo anterior, acá está el hook que nos salva el día:</p><pre class="crayon-plain-tag">&lt;?php
+/**
+ * Implements hook_date_popup_process_alter().
+ */
+function MODULO_O_THEME_date_popup_process_alter(&amp;$element, &amp;$form_state, $context) {
+  unset($element['date']['#description']);
+  unset($element['time']['#description']);
+}</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

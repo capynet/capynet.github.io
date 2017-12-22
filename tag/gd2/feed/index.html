@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>GD2 &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/gd2/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Combinar varias imágenes PNG transparentes con PHP GD2</title>
+		<link>http://ecapy.com/combinar-imagenes-png-transparentes-con-php-gd2/</link>
+		<comments>http://ecapy.com/combinar-imagenes-png-transparentes-con-php-gd2/#comments</comments>
+		<pubDate>Sat, 21 Feb 2009 01:45:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[GD2]]></category>
+
+		<guid isPermaLink="false">http://capy.es/?p=3</guid>
+		<description><![CDATA[Me toca hacer un script que tome 3 imágenes y las combine mediante PHP  y la librería GD para ir creando imágenes personalizadas para cada producto en un proyecto de mi trabajo. La gracia de esto viene a ser que hay una imagen sólida y las 2 que se apilan son PNG transparentes. [crayon-5844443971360213278605/] Descargar&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/combinar-imagenes-png-transparentes-con-php-gd2/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me toca hacer un script que tome 3 imágenes y las combine mediante PHP  y la librería GD para ir creando imágenes personalizadas para cada producto en un proyecto de mi trabajo.<br />
+La gracia de esto viene a ser que hay una imagen sólida y las 2 que se apilan son PNG transparentes.</p>
+<p></p><pre class="crayon-plain-tag">< ?php
+/**
+Debemos usar imagecopyresampled() en lugar de imagecopy() ya
+que las imagenes transparentes van a rellenar su canal
+alpha con negro...
+ */
+
+//tomamos la imagen "base"
+$tapa_caratula = imagecreatefrompng("tapa_caratula.png");
+
+// Creamos las dos imágenes a utilizar
+$caratula_base = imagecreatefrompng("caratula_base.png");
+$icono = imagecreatefrompng("icono.png");
+
+// Copiamos una de las imágenes sobre la otra.
+// imagecopyresampled( "img_origen", "imagen_que_nueva", pos x imagen_que_nueva, pos y imagen_que_nueva, pos_x_img_origen, pos_y_img_origen, largo_para_imagen_nueva, ancho_para_imagen_nueva, largo_para_imagen_origen, largo_para_imagen_origen);
+imagecopyresampled(
+  $tapa_caratula,
+  $caratula_base,
+  0, 0, 0, 0,
+  imagesx($caratula_base),
+  imagesy($caratula_base),
+  imagesx($caratula_base),
+  imagesy($caratula_base)
+);
+
+imagecopyresampled(
+  $tapa_caratula,
+  $icono,
+  (imagesx($caratula_base) / 2) - (imagesx($icono) / 2) + 10,
+  80, 0, 0,
+  imagesx($icono),
+  imagesy($icono),
+  imagesx($icono),
+  imagesy($icono)
+);
+
+// Damos salida a la imagen final a un archivo
+imagepng($tapa_caratula, "salida.png");
+
+// Destruimos las imágenes
+imagedestroy($tapa_caratula);
+imagedestroy($caratula_base);
+imagedestroy($icono);</pre><p></p>
+<p><a class="enlace_descarga" href="http://www.capy.es/wp-content/archivos/php_gd2_png_trasnsparentes.rar">Descargar Ejemplo<a></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/combinar-imagenes-png-transparentes-con-php-gd2/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+	</channel>
+</rss>

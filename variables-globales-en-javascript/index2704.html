@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/variables-globales-en-javascript/?siguiente='.$columna['id_preguntas'].'+1 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 16:28:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Variables globales en Javascript</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Variables globales en Javascript RSS de los comentarios" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Snippet para limpiar palabras en PHP' href='../snippet-para-limpiar-palabras-en-php/index.html' />
+<link rel='next' title='Copié una instalación de Drupal a Linux y solo puedo navegar en la página principal. El resto me devuelve &#8220;Not Found&#8221;' href='../copie-una-instalacion-de-drupal-a-linux-y-solo-puedo-navegar-en-la-pagina-principal-el-resto-me-devuelve-not-found/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index30e3.html?p=283' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed8aeb.json?url=http%3A%2F%2Fecapy.com%2Fvariables-globales-en-javascript%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embedb4ce?url=http%3A%2F%2Fecapy.com%2Fvariables-globales-en-javascript%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-283 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2960 active"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-283" class="post-283 post type-post status-publish format-standard has-post-thumbnail hentry category-js category-programacion tag-javascript">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../wp-content/uploads/2014/09/js-header.jpg" class="img-responsive wp-post-image" alt="js-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/js-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/js-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/js-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Variables globales en Javascript</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2010-02-03T15:30:25+00:00">3 Feb,  2010</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/js/index.html" rel="category tag">Javascript</a>, <a href="../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/javascript/index.html" rel="tag">JavaScript</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="index.html#comments">21 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>¿A que más de uno tuvo el mismo problema que yo?<br />
+Hablo de usar una función que tiene callback como $.post() de jQuery y no saber como recuperar los valores que se sesean en la respuesta de la petición.</p>
+<p>Bueno es más bien de simple solución:</p>
+<p>MAL:</p>
+		<div id="crayon-584438db53dea035809732" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$.post("urlDestino", {mandoAlgo: "cosas"}, function (resultado) {
+ var variableLocal = resultado;
+ return variableLocal;   // esta variable no se va a ver jamas fuera de esta función
+}, "json");</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db53dea035809732-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db53dea035809732-2">2</div><div class="crayon-num" data-line="crayon-584438db53dea035809732-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db53dea035809732-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db53dea035809732-1"><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"urlDestino"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">mandoAlgo</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"cosas"</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">resultado</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db53dea035809732-2"><span class="crayon-h"> </span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">variableLocal</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">resultado</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db53dea035809732-3"><span class="crayon-h"> </span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-v">variableLocal</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-c">// esta variable no se va a ver jamas fuera de esta función</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db53dea035809732-4"><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"json"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>BIEN:</p>
+		<div id="crayon-584438db53e11114628385" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var variableGlobal;
+
+$.post("urlDestino", {mandoAlgo: "cosas"}, function (resultado) {
+ variableGlobal = resultado;
+}, "json");</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db53e11114628385-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db53e11114628385-2">2</div><div class="crayon-num" data-line="crayon-584438db53e11114628385-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db53e11114628385-4">4</div><div class="crayon-num" data-line="crayon-584438db53e11114628385-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db53e11114628385-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">variableGlobal</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db53e11114628385-2">&nbsp;</div><div class="crayon-line" id="crayon-584438db53e11114628385-3"><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"urlDestino"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">mandoAlgo</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"cosas"</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">resultado</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db53e11114628385-4"><span class="crayon-h"> </span><span class="crayon-v">variableGlobal</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">resultado</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db53e11114628385-5"><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"json"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Si todavía no te diste cuenta es tremendamente simple: definir las variables fuera de cualquier función. 🙂</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../snippet-para-limpiar-palabras-en-php/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../copie-una-instalacion-de-drupal-a-linux-y-solo-puedo-navegar-en-la-pagina-principal-el-resto-me-devuelve-not-found/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                        <div id="comments" class="comments-area comments">
+            <h3 class="comments-title">
+            21 Comments        </h3>
+
+        <ul class="comment-list">
+
+            		<li class="comment even thread-even depth-1" id="li-comment-71">
+			<div id="comment-71" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a60df38c3188290781de5c45f97a76d4?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a60df38c3188290781de5c45f97a76d4?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://website/' rel='external nofollow' class='url'>Enrique</a></span>							<span class="comment-date">30/11/2010</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Mi problema es el siguiente:<br />
+Tengo unos nombres en un vector donde el índice es el código de la persona.  Ahora tengo dos funciones. En la primera realizo unos cálculos y envió a la segunda función  tres variables, la primera un vector donde están los nombres, la segunda el índice, y la tercera es la variable global para que la actualice y me devuelva el nuevo nombre.<br />
+El proceso lo hace bien, es decir, envió las 3 variables busca en el arreglo y encuentra el nombre en la función de búsqueda, pero al retornarlo con return no devuelve el nombre encontrado.  La  variable de nombre la he definido global. La pregunta es. Cómo modificar el contenido de una variable global cuando se envía desde una función a otra para modificarla?. Gracias.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-72">
+			<div id="comment-72" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">02/12/2010</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Simplemente definí la variable fuera de las funciones.<br />
+Ejemplo:</p>
+<p></p>
+		<div id="crayon-584438db56e50452356712" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var variableGlobal = "Soy global";
+
+function diHola(){
+  variableGlobal = "Hola";
+}
+
+function diChau(){
+  variableGlobal = "Chau";
+}
+
+alert(variableGlobal);
+
+diHola();
+
+alert(variableGlobal);
+
+diChau();
+
+alert(variableGlobal);</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db56e50452356712-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-2">2</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-4">4</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-6">6</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-8">8</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-10">10</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-12">12</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-14">14</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-16">16</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56e50452356712-18">18</div><div class="crayon-num" data-line="crayon-584438db56e50452356712-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db56e50452356712-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-e ">variableGlobal</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"Soy global"</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-2">&nbsp;</div><div class="crayon-line" id="crayon-584438db56e50452356712-3"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">diHola</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">variableGlobal</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"Hola"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56e50452356712-5"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-6">&nbsp;</div><div class="crayon-line" id="crayon-584438db56e50452356712-7"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">diChau</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">variableGlobal</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"Chau"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56e50452356712-9"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-10">&nbsp;</div><div class="crayon-line" id="crayon-584438db56e50452356712-11"><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-v">variableGlobal</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-12">&nbsp;</div><div class="crayon-line" id="crayon-584438db56e50452356712-13"><span class="crayon-e">diHola</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-14">&nbsp;</div><div class="crayon-line" id="crayon-584438db56e50452356712-15"><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-v">variableGlobal</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-16">&nbsp;</div><div class="crayon-line" id="crayon-584438db56e50452356712-17"><span class="crayon-e">diChau</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56e50452356712-18">&nbsp;</div><div class="crayon-line" id="crayon-584438db56e50452356712-19"><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-v">variableGlobal</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-73">
+			<div id="comment-73" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a64b3c1e6ccd612f9d509b289da76629?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a64b3c1e6ccd612f9d509b289da76629?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Katherien</span>							<span class="comment-date">19/12/2011</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias me ha sido de gran utilidad tu aporte!!!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-74">
+			<div id="comment-74" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/46dff8be4663c03f0522303acc24b6fd?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/46dff8be4663c03f0522303acc24b6fd?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://giorgionet.es/' rel='external nofollow' class='url'>Jorge Herraiz Merino</a></span>							<span class="comment-date">23/04/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola, he probado tu código pero no funciona, me podrias ayudar para conseguir obtener el valor retornado en una variable definida previamente javascript?</p>
+<p>Saludos.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-75">
+			<div id="comment-75" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">23/04/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Si claro, dame un ejemplo y lo vemos.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-76">
+			<div id="comment-76" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/3a70408c917fcf88bbf61b1175836fea?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/3a70408c917fcf88bbf61b1175836fea?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Cesar</span>							<span class="comment-date">22/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Tu ejemplo no me funciona, tengo el siguiente codigo:</p>
+		<div id="crayon-584438db56b0c603277341" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var sw_permitir = 9999;
+function enviar(){
+	$.post("url", { "algo": "algo" }, function(data){
+		if (data == 1){
+			sw_permitir = 1;
+		}
+		else{
+			sw_permitir = 0;
+		}
+	});
+}
+
+function boton(){
+	enviar();
+	alert(sw_permitir);
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db56b0c603277341-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-2">2</div><div class="crayon-num" data-line="crayon-584438db56b0c603277341-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-4">4</div><div class="crayon-num" data-line="crayon-584438db56b0c603277341-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-6">6</div><div class="crayon-num" data-line="crayon-584438db56b0c603277341-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-8">8</div><div class="crayon-num" data-line="crayon-584438db56b0c603277341-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-10">10</div><div class="crayon-num" data-line="crayon-584438db56b0c603277341-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-12">12</div><div class="crayon-num" data-line="crayon-584438db56b0c603277341-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-14">14</div><div class="crayon-num" data-line="crayon-584438db56b0c603277341-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56b0c603277341-16">16</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db56b0c603277341-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">sw_permitir</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">9999</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-2"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">enviar</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56b0c603277341-3"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"url"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-s">"algo"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"algo"</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-4"><span class="crayon-h">		</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56b0c603277341-5"><span class="crayon-h">			</span><span class="crayon-v">sw_permitir</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-6"><span class="crayon-h">		</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438db56b0c603277341-7"><span class="crayon-h">		</span><span class="crayon-st">else</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-8"><span class="crayon-h">			</span><span class="crayon-v">sw_permitir</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56b0c603277341-9"><span class="crayon-h">		</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-10"><span class="crayon-h">	</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56b0c603277341-11"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-12">&nbsp;</div><div class="crayon-line" id="crayon-584438db56b0c603277341-13"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">boton</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-14"><span class="crayon-h">	</span><span class="crayon-e">enviar</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56b0c603277341-15"><span class="crayon-h">	</span><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-v">sw_permitir</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56b0c603277341-16"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Siempre sale en el alert el 9999. ¿Alguna solucion?</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-77">
+			<div id="comment-77" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">22/06/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>No te funciona porque $.post trabaja de forma asíncrona. La solución en ese caso seria pasarle un callback a la función enviar():</p>
+<p></p>
+		<div id="crayon-584438db56960421598640" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var sw_permitir = 9999;
+function enviar(callback){
+	$.post("url", { "algo": "algo" }, function(data){
+		if (data == 1){
+			sw_permitir = 1;
+		}
+		else{
+			sw_permitir = 0;
+		}
+
+                callback(sw_permitir)
+	});
+}
+
+function boton(){
+	enviar(function(sw_permitir){
+                  alert(sw_permitir);
+              });
+	
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db56960421598640-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-2">2</div><div class="crayon-num" data-line="crayon-584438db56960421598640-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-4">4</div><div class="crayon-num" data-line="crayon-584438db56960421598640-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-6">6</div><div class="crayon-num" data-line="crayon-584438db56960421598640-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-8">8</div><div class="crayon-num" data-line="crayon-584438db56960421598640-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-10">10</div><div class="crayon-num" data-line="crayon-584438db56960421598640-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-12">12</div><div class="crayon-num" data-line="crayon-584438db56960421598640-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-14">14</div><div class="crayon-num" data-line="crayon-584438db56960421598640-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-16">16</div><div class="crayon-num" data-line="crayon-584438db56960421598640-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-18">18</div><div class="crayon-num" data-line="crayon-584438db56960421598640-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56960421598640-20">20</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db56960421598640-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">sw_permitir</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">9999</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-2"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">enviar</span><span class="crayon-sy">(</span><span class="crayon-v">callback</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56960421598640-3"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-s">"url"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-s">"algo"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"algo"</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-4"><span class="crayon-h">		</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56960421598640-5"><span class="crayon-h">			</span><span class="crayon-v">sw_permitir</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-6"><span class="crayon-h">		</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438db56960421598640-7"><span class="crayon-h">		</span><span class="crayon-st">else</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-8"><span class="crayon-h">			</span><span class="crayon-v">sw_permitir</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56960421598640-9"><span class="crayon-h">		</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-10">&nbsp;</div><div class="crayon-line" id="crayon-584438db56960421598640-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">callback</span><span class="crayon-sy">(</span><span class="crayon-v">sw_permitir</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-12"><span class="crayon-h">	</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56960421598640-13"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-14">&nbsp;</div><div class="crayon-line" id="crayon-584438db56960421598640-15"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">boton</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-16"><span class="crayon-h">	</span><span class="crayon-e">enviar</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">sw_permitir</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56960421598640-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-v">sw_permitir</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56960421598640-19"><span class="crayon-h">	</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56960421598640-20"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Un saludo.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-78">
+			<div id="comment-78" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/df8b43be570c724aa4a97eb841e96e1f?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/df8b43be570c724aa4a97eb841e96e1f?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Ronald</span>							<span class="comment-date">09/07/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>porque no puedo recuperar el valor de las variables. </p>
+<p> $(&#8220;#for1&#8221;).submit(function(){<br />
+		var u = $(&#8220;#txtUsuario&#8221;).val();<br />
+        var p = $(&#8220;#txtPass&#8221;).val();</p>
+<p>			var s = {<br />
+				us:u,<br />
+				pa:p<br />
+			};<br />
+		  var n = 0;<br />
+		  $.post(&#8220;DEMOPROYECTO/validarUsuario.php&#8221;,s,function(data){<br />
+			  var n = 0;<br />
+				if(data == 0){<br />
+				  $(&#8220;#validar&#8221;).text(&#8220;USUARIO NO EXISTE&#8221;);<br />
+				  n = 0;<br />
+				}<br />
+				else if(data == 2){<br />
+					$(&#8220;#validar&#8221;).text(&#8220;LOS CAMPOS SON REQUERIDOS-&#8220;);<br />
+					n =2;<br />
+				}<br />
+				else<br />
+				  n =1;</p>
+<p>			});<br />
+			alert(n);<br />
+		 return false;</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="li-comment-79">
+			<div id="comment-79" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/df8b43be570c724aa4a97eb841e96e1f?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/df8b43be570c724aa4a97eb841e96e1f?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Ronald</span>							<span class="comment-date">09/07/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>aaa.. el problema es que la varible n no cambia de valor.. siempre permanese con el valor default.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-80">
+			<div id="comment-80" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/c90b45a5bde3f27dcffe26ef54760faf?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/c90b45a5bde3f27dcffe26ef54760faf?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Cristian</span>							<span class="comment-date">16/10/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Interesante, pero no me ha funcionado , mira este mi código, ¿Qué estoy haciendo mal?, getPosicionActual es un método de un objeto Controller y cuando lo llamo me devuelve undefined.</p>
+		<div id="crayon-584438db56550872257384" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+ getPosicionActual: function()
+ {
+		    var localPosition;
+		    
+			if(navigator.geolocation){
+				navigator.geolocation.getCurrentPosition( function(posicion){
+					  var localPosition = posicion;
+					  return localPosition;
+					},this.error);
+			}else{
+				console.error("El dispositivo no soporta geolocalizacion");
+			}
+ }</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db56550872257384-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56550872257384-2">2</div><div class="crayon-num" data-line="crayon-584438db56550872257384-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56550872257384-4">4</div><div class="crayon-num" data-line="crayon-584438db56550872257384-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56550872257384-6">6</div><div class="crayon-num" data-line="crayon-584438db56550872257384-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56550872257384-8">8</div><div class="crayon-num" data-line="crayon-584438db56550872257384-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56550872257384-10">10</div><div class="crayon-num" data-line="crayon-584438db56550872257384-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56550872257384-12">12</div><div class="crayon-num" data-line="crayon-584438db56550872257384-13">13</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db56550872257384-1"><span class="crayon-h"> </span><span class="crayon-v">getPosicionActual</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56550872257384-2"><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56550872257384-3"><span class="crayon-h">		&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">localPosition</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56550872257384-4"><span class="crayon-h">		&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-584438db56550872257384-5"><span class="crayon-h">			</span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">navigator</span><span class="crayon-sy">.</span><span class="crayon-v">geolocation</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56550872257384-6"><span class="crayon-h">				</span><span class="crayon-v">navigator</span><span class="crayon-sy">.</span><span class="crayon-v">geolocation</span><span class="crayon-sy">.</span><span class="crayon-e">getCurrentPosition</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">posicion</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56550872257384-7"><span class="crayon-h">					&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">localPosition</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">posicion</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56550872257384-8"><span class="crayon-h">					&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-v">localPosition</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db56550872257384-9"><span class="crayon-h">					</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">error</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56550872257384-10"><span class="crayon-h">			</span><span class="crayon-sy">}</span><span class="crayon-st">else</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db56550872257384-11"><span class="crayon-h">				</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-s">"El dispositivo no soporta geolocalizacion"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56550872257384-12"><span class="crayon-h">			</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438db56550872257384-13"><span class="crayon-h"> </span><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p></p>
+		<div id="crayon-584438db56561368660901" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var controlador = new Controller();
+       console.log( controlador.getPosicionActual()   );</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db56561368660901-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db56561368660901-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db56561368660901-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">controlador</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">Controller</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db56561368660901-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-v">controlador</span><span class="crayon-sy">.</span><span class="crayon-e">getPosicionActual</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-81">
+			<div id="comment-81" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">16/10/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>en donde pone &#8221; var localPosition = posicion;&#8221; quita &#8220;var&#8221; porque estas pisando la variable global. vamos, deberia quedar asi &#8220;localPosition = posicion;&#8221;</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-82">
+			<div id="comment-82" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/7e1d373f0afa09ec11e1cfd76931b24e?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/7e1d373f0afa09ec11e1cfd76931b24e?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Laura</span>							<span class="comment-date">16/10/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola!<br />
+Quisiera acceder a una variable Global en C# desde Javascript, y poder editar el valor, como podría hacerlo?<br />
+E intentado creando una variable en Global.asax pero no lo consigo, y tengo dudas de como implementar el Session con un variable nueva.</p>
+<p>De antemano gracias por la ayuda.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-83">
+			<div id="comment-83" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">17/10/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Lo siento, no conozco C#, soy mas de PHP del lado del servidor.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-84">
+			<div id="comment-84" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/dfe5fbf750fd9d4272faecec3703f720?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/dfe5fbf750fd9d4272faecec3703f720?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Miguel</span>							<span class="comment-date">22/10/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Buen dia Capy, te queria molestar con una consulta referente a la utilizacion de variables globaes, mi problema es el siguiente.</p>
+<p>Estoy utilizando una funcion que lee datos en formato json desde un archivo php externo, la funcion almacena el array tipo json en una variable llamada productos, esta variable es global, el problema es que fuera de ese funcion, no me aparece ningun dato dentro de la variable, es como si nunca hubiera almacenando en ellos el array tipo json.</p>
+<p>El codigo es el siguiente:</p>
+<p>var productos = null;                                 //aca defino la variable productos<br />
+	productos = (function () {                 //luego le digo que productos va a contener el resultado de la funcion que voy a ejecutar;<br />
+	    $.ajax({                                             //luego por medio de ajax mando a leer el archivo topiclas_view.php el cual me devuelve un array tipo jason<br />
+	        &#8216;async&#8217;: false,<br />
+	        &#8216;global&#8217;: true,<br />
+	        &#8216;url&#8217;: &#8216;includes/topiclas_view.php&#8217;,<br />
+	        &#8216;dataType&#8217;: &#8220;text&#8221;,<br />
+	        &#8216;success&#8217;: function (data) {<br />
+	            productos = data;                   //almacenamos los datos obtenidos en la variable productos<br />
+	        }<br />
+	    });<br />
+	   	//return productos;                    //retornamos la variable productos que contiene el array tipo json (el return aparece comentado devido a unas pruebas)<br />
+	   	alert(productos);                        //este alert imprime el array tipo jason que se le acaba de alamacenar a la variable productos<br />
+	})();<br />
+alert(productos);                                       //EL PROBLEMA ESTA ACA, CUANDO MANDAO A LLAMAR LA VARIABLE PRODUCTOS DESDE CUALQUIER OTRO LUGAR DE MI JS, SIMPLEMENTE NO ME DEVUELVE NADA, SOLO ME DESPLIEGA UN MENSAJE DE undefined</p>
+<p>Supuce que el problema era justamente porque la funcion ajax me devuelve informacion de manera asincrona, pero al cambiar el atributo false por true para que sea sincrona, igual sigo sin poder utilizar la variable en ninguna otra parte de mi .js</p>
+<p>Si fueras tan amable de ayudarme te lo agradeceria mucho! Saludos!</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="li-comment-85">
+			<div id="comment-85" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/dfe5fbf750fd9d4272faecec3703f720?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/dfe5fbf750fd9d4272faecec3703f720?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Miguel</span>							<span class="comment-date">22/10/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>aca te dejo la funcion sin comentarios para que sea un poco mas entendible, gracias.</p>
+<p>	var productos = null;<br />
+	alert(productos);<br />
+	productos = (function () {<br />
+	    $.ajax({<br />
+	        &#8216;async&#8217;: false,<br />
+	        &#8216;global&#8217;: true,<br />
+	        &#8216;url&#8217;: &#8216;includes/topiclas_view.php&#8217;,<br />
+	        &#8216;dataType&#8217;: &#8220;text&#8221;,<br />
+	        &#8216;success&#8217;: function (data) {<br />
+	            productos = data;<br />
+	        }<br />
+	    });<br />
+	   	//return productos;<br />
+	   	alert(productos);<br />
+	})();<br />
+	alert(productos);</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-86">
+			<div id="comment-86" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/4cac54d2525bba020ecafa70da31d59f?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/4cac54d2525bba020ecafa70da31d59f?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Roberto</span>							<span class="comment-date">27/02/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Tambien tengo un problema similar estoy usando jquery y quiero recuperar los valores que me envia el sevlet, y no tengo problema en ello, la cosa es que cuando quiera usar esos datos ya no funciona hasta el siguiente click en el boton que hace la accion.</p>
+<p><code><br />
+	$("#btnAgregarCuentasHost").click(function(){<br />
+ 		var opciones=''<br />
+		$.post("AccionesHost.html", { accion:"retornarHosts", indice:"0"}, function(datos) {<br />
+				opciones=datos;<br />
+				return opciones;<br />
+			});<br />
+		var filas = idDisponibleCuentasHost();<br />
+		var strNueva_Fila='';<br />
+		var tags = ''+opciones+'';<br />
+		strNueva_Fila=''+<br />
+		' ' +<br />
+		''+<br />
+		''+<br />
+		''+tags+''+<br />
+		''+<br />
+		''+<br />
+		''+<br />
+		'';<br />
+		var objTabla=$(this).parents().get(3);<br />
+		$(objTabla).find('tbody').append(strNueva_Fila);<br />
+		$("#jQueryTabs1").animate({height: '+=35px',},500)<br />
+		$("#jQueryTabs2").animate({height: '+=35px',},500)		</p>
+<p>		})<br />
+</code></p>
+<p>si pongo un alert despues de la llave que cierra el post funciona al primer click tambien, que podra ser?</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-87">
+			<div id="comment-87" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/6303d508acca4b321a46d4826e6b8843?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/6303d508acca4b321a46d4826e6b8843?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">José Alvarado</span>							<span class="comment-date">20/01/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola.<br />
+Estoy haciendo un proyecto de la Uni y el $.POST no me devuelve ningún valor, si me pueden ayudar acá coloco el código 😉</p>
+<p>$(&#8220;#submit&#8221;).click(function(event){<br />
+ 	event.preventDefault();<br />
+        var idA=$(&#8220;#numero&#8221;).val();<br />
+	if (idA != &#8220;&#8221;) {<br />
+		$(&#8220;#gif&#8221;).show();<br />
+		var posteo = $.post(&#8220;lib/buscarAgencia.php&#8221;,{ab:idA});<br />
+ 	       posteo.done(function(data) {<br />
+			$(&#8220;#gif&#8221;).hide();<br />
+			alert(ab);<br />
+			//$(&#8220;#buscAg&#8221;).click();<br />
+			$(&#8220;#numero&#8221;).val(&#8220;&#8221;);<br />
+	      });<br />
+	}else{<br />
+        	alert(&#8216;No hay datos de búsqueda&#8217;);<br />
+	};<br />
+});<br />
+&#8212;&#8212;&#8212;- El php &#8212;&#8212;&#8211;<br />
+query($consultA);<br />
+		$row=$resultA-&gt;num_rows;</p>
+<p>		if($row0){<br />
+			// Usuario Existe<br />
+				$fila = $resultA-&gt;fetch_array();</p>
+<p>		}else{<br />
+			// Usuario &#8216;NO&#8217; Existe<br />
+			$fila=&#8221;No se encontró Agencia&#8221;;<br />
+		};</p>
+<p>	}<br />
+ return $fila;<br />
+?&gt;</p>
+<p>Muchas gracias!!!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-1005">
+			<div id="comment-1005" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/27c5c9b14e62a5107ea384b8f47a857b?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/27c5c9b14e62a5107ea384b8f47a857b?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">marcelo</span>							<span class="comment-date">13/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Capy, estoy haciendo en modo aprendizaje una encuesta que consta de 80 preguntas con las mismas respuestas. Las preguntas las tengo en una bd de mysql. Tengo un archivo inicia_encuesta.php cuyo código en primer lugar indica por un if get que opera ante un  href=&#8221;?siguiente=&#8217;.$columna[&#8216;id_preguntas&#8217;].&#8217;+1&#8243;.  Ambas partes con la misma estructura html. Mi intención es que me muestre las preguntas y que luego de seleccionar el radio button con las opciones de respuestas me pase a la siguiente y se guarde un array. El proceso de mostrar y pasar a la siguiente pregunta funciona pero no se como enviarlo a un array para luego volcarlo en otra db.<br />
+Hice esto pero que carga la variable pero al pasar a la pregunta siguiente me vuelve a cargar con la opción elegida borrando la anterior:</p>
+<p></p>
+		<div id="crayon-584438db55e5f063145830" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var array_rtas;
+array_rtas = new Array(81);
+
+
+$(document).ready(function () {
+ $("#boton").click(function () {
+  var elements = document.getElementsByName("id_pregunta");
+  for (var i = 0, l = elements.length; i &lt; l; i++) {
+   if (elements[i].checked) {
+    rta2 = elements[i].value;
+   }
+  }
+  orden = document.getElementById("nroid").value;
+  cargar_matriz();
+ });
+});
+
+
+function cargar_matriz() {
+ sesion = document.getElementById("session").value;
+ array_rtas[0] = (sesion);
+ array_rtas.splice(orden, 0, rta2);
+ alert(array_rtas);
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db55e5f063145830-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-2">2</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-4">4</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-6">6</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-8">8</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-10">10</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-12">12</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-14">14</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-16">16</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-18">18</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-20">20</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-22">22</div><div class="crayon-num" data-line="crayon-584438db55e5f063145830-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55e5f063145830-24">24</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db55e5f063145830-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">array_rtas</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-2"><span class="crayon-v">array_rtas</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-t">Array</span><span class="crayon-sy">(</span><span class="crayon-cn">81</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-4">&nbsp;</div><div class="crayon-line" id="crayon-584438db55e5f063145830-5"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-v">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-6"><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#boton"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">elements</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementsByName</span><span class="crayon-sy">(</span><span class="crayon-s">"id_pregunta"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">l</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">elements</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-v">l</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-o">++</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-9"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">elements</span><span class="crayon-sy">[</span><span class="crayon-v">i</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">checked</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">rta2</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">elements</span><span class="crayon-sy">[</span><span class="crayon-v">i</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">value</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-11"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">orden</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementById</span><span class="crayon-sy">(</span><span class="crayon-s">"nroid"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">value</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">cargar_matriz</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-15"><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-16"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-17">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-18">&nbsp;</div><div class="crayon-line" id="crayon-584438db55e5f063145830-19"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">cargar_matriz</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-20"><span class="crayon-h"> </span><span class="crayon-v">sesion</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementById</span><span class="crayon-sy">(</span><span class="crayon-s">"session"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">value</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-21"><span class="crayon-h"> </span><span class="crayon-v">array_rtas</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">sesion</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-22"><span class="crayon-h"> </span><span class="crayon-v">array_rtas</span><span class="crayon-sy">.</span><span class="crayon-e">splice</span><span class="crayon-sy">(</span><span class="crayon-v">orden</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">rta2</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55e5f063145830-23"><span class="crayon-h"> </span><span class="crayon-e">alert</span><span class="crayon-sy">(</span><span class="crayon-v">array_rtas</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55e5f063145830-24"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>El código php: </p>
+<p>                         &#8216;&#8221;.$id_preg_sig.&#8221;&#8216; LIMIT 1&#8243;);<br />
+                                    if(mysql_num_rows($query_pregunta)&gt;0){   /*si el numero de filas de la busqueda es mayor que 0 */<br />
+                                        while($columna = mysql_fetch_assoc($query_pregunta)){<br />
+                                            echo &#8216;</p>
+<p>                                                                 &#8216;.$columna[&#8216;preguntas&#8217;].&#8217;</p>
+<p>                                                                    Totalmente de acuerdo<br />
+                                                                    Parcialmente de acuerdo<br />
+                                                                    Totalmente en desacuerdo<br />
+                                                                    Parcialmente en desacuerdo<br />
+                                                                    No sabe / No responde</p>
+<p>                                                                    <a href="index6d7c.html?siguiente='.$columna['id_preguntas'].'" rel="nofollow">Siguiente</a></p>
+<p>                                            &#8216;;<br />
+                                        }<br />
+                                    } else {           /* si el numero es &lt; 0 */<br />
+                                         header(&quot;Location: encuesta_completa.php&quot;);<br />
+                                    }<br />
+                                }else{<br />
+                                    echo &#039;Debes seleccionar una pregunta&#039;;<br />
+                                }<br />
+                            } else{             /* si la variable pregunta NO existe entonces: */<br />
+                            $valor = (int) mysql_real_escape_string($_POST[&#039;pregunta&#039;]);<br />
+                            $query_pregunta = mysql_query(&quot;SELECT id_preguntas, preguntas FROM $db_table WHERE id_preguntas = &#039;&quot;.$valor.&quot;&#039; LIMIT 1&quot;);<br />
+                            while($columna = mysql_fetch_assoc($query_pregunta)){</p>
+<p>ACA VA DE NUEVO LA ESTRUCTURA HTML CON<br />
+<a href="index2704.html?siguiente='.$columna['id_preguntas'].'+1" rel="nofollow">Siguiente</a>       </p>
+<p>Soy novato me gustaria que me dieras si no es comprensible mi código una orientación de cómo lograr mi objetivo sin necesidad de que te explayes demasiado..</p>
+<p>Disculpá la molestia y agradezco tu opinión</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-1016">
+			<div id="comment-1016" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">capynet</span>							<span class="comment-date">14/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola Marcelo. No entendí bien que necesitas. Creo entender que quieres mostrar una pregunta y un listado re radios para que el usuario marque la respuesta que crea correcta, y que al pinchar en &#8220;Siguiente&#8221;, se mande la respuesta de la pregunta actual y se cargue la siguiente pregunta con sus radios hasta llegar a la ultima pregunta.</p>
+<p>También entiendo que todo esto lo querés hacer con ajax no?</p>
+<p>Si es algo así lo que necesitas te dejo un ejemplo, sino explícamelo un poco mejor (sin código, con tus palabras mejor).</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4918">
+			<div id="comment-4918" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/8ebe3205a7b298ebcae2ae3a061b4697?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/8ebe3205a7b298ebcae2ae3a061b4697?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">JuanCarlos</span>							<span class="comment-date">13/07/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>¿Por qué no funciona?<br />
+No me asigna el resultado del POST a una variable global, ¿alguna solución por favor?</p>
+<p>Mi código es el siguiente: </p>
+<p>var jsonDataEdo;<br />
+var resultJsonEdo = &#8220;&#8221;;</p>
+<p>$(document).ready(function(){<br />
+jsonDataEdo = dataEdo(20, 30);<br />
+});</p>
+<p>function dataEdo(idA, idB)<br />
+{<br />
+    $.post(urlDashboard + &#8220;/_dataEdo?idBpm=&#8221; + idBpm + &#8220;&amp;idProdLine=&#8221; + idProdLine, function (data) {<br />
+        console.log(&#8220;dataSinAjax:&#8221;, data);<br />
+        resultJsonEdo = data;<br />
+    });<br />
+    return resultJsonEdo;<br />
+}</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-5208">
+			<div id="comment-5208" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/10320c536213146fcadab25ee6438d76?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/10320c536213146fcadab25ee6438d76?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://xhtweb.com.mx/' rel='external nofollow' class='url'>Néstor Velázquez Sánchez</a></span>							<span class="comment-date">03/08/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola, yo tengo una duda similar . . . </p>
+<p>Tengo estas dos funciones, pero no logro sacar las variables de ellas . . .  </p>
+<p></p>
+		<div id="crayon-584438db55a0e420189363" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+  var data = ref.once('value', function(snapshot) {
+    var result = snapshot.exportVal();
+    for(indice in result)
+    {
+      uUid.push(result[indice]);
+    }
+    // console.log(uUid);
+  });
+
+
+  // Aquí se obtiene toda la lista de usuarios
+  var dataAll = allUsers.once('value', function(snapshot) {
+    var resultAll = snapshot.exportVal();
+    for(indiceAll in resultAll)
+    {
+      uUidAll.push([indiceAll][0]);
+    }
+    // console.log( uUidAll );
+  });</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db55a0e420189363-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-2">2</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-4">4</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-6">6</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-8">8</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-10">10</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-12">12</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-14">14</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-16">16</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db55a0e420189363-18">18</div><div class="crayon-num" data-line="crayon-584438db55a0e420189363-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db55a0e420189363-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">data</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">ref</span><span class="crayon-sy">.</span><span class="crayon-e">once</span><span class="crayon-sy">(</span><span class="crayon-s">'value'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">snapshot</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">result</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">snapshot</span><span class="crayon-sy">.</span><span class="crayon-e">exportVal</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">for</span><span class="crayon-sy">(</span><span class="crayon-e">indice </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-v">result</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">uUid</span><span class="crayon-sy">.</span><span class="crayon-e">push</span><span class="crayon-sy">(</span><span class="crayon-v">result</span><span class="crayon-sy">[</span><span class="crayon-v">indice</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// console.log(uUid);</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-9">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-10">&nbsp;</div><div class="crayon-line" id="crayon-584438db55a0e420189363-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// Aquí se obtiene toda la lista de usuarios</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">dataAll</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">allUsers</span><span class="crayon-sy">.</span><span class="crayon-e">once</span><span class="crayon-sy">(</span><span class="crayon-s">'value'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">snapshot</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">resultAll</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">snapshot</span><span class="crayon-sy">.</span><span class="crayon-e">exportVal</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">for</span><span class="crayon-sy">(</span><span class="crayon-e">indiceAll </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-v">resultAll</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">uUidAll</span><span class="crayon-sy">.</span><span class="crayon-e">push</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-v">indiceAll</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db55a0e420189363-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// console.log( uUidAll );</span></div><div class="crayon-line" id="crayon-584438db55a0e420189363-19"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>En este caso quiero usar las variables uUid y uUidAll para hacer una exclusión de la variable 1 en la variable 2 y obtener un arreglo 3 donde se hayan filtrado los elementos.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+        </ul><!-- .comment-list -->
+
+        
+                <p class="no-comments">:).</p>
+        
+    
+    </div>                                            
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/variables-globales-en-javascript/?siguiente='.$columna['id_preguntas'].'+1 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 16:28:48 GMT -->
+</html>

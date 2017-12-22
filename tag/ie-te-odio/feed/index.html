@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>IE te odio &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/ie-te-odio/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>CSS: Centrar vertical y horizontalmente un elemento sin saber su tamaño</title>
+		<link>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/</link>
+		<comments>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/#comments</comments>
+		<pubDate>Tue, 12 Aug 2014 11:20:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2737</guid>
+		<description><![CDATA[Centrar un elemento cuando se sabe el tamaño que tiene es fácil. Pero y si el elemento que queremos centrar tiene un tamaño expresado en % o no tiene un tamaño especificado, ya no es tan fácil centrarlo. Ahora que prácticamente IE8 ya no se usa, lo podemos quitar de la ecuación y usar CSS&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Centrar un elemento cuando se sabe el tamaño que tiene es fácil. Pero y si el elemento que queremos centrar tiene un tamaño expresado en <strong>% o no tiene un tamaño especificado</strong>, ya no es tan fácil centrarlo.</p>
+<p>Ahora que prácticamente IE8 ya no se usa, lo podemos quitar de la ecuación y usar CSS un poco mas avanzado.<br />
+Dicho lo anterior, ahora que podemos usar la propiedad <em>transform: translate();</em>, ya podemos centrar vertical y horizontalmente cualquier elemento.</p><pre class="crayon-plain-tag">&lt;div class="centrado-porcentual"&gt;
+  No nos hace falta conocer el tamaño de esta caja para poder centrarla vertical y horizontalmente :)
+&lt;/div&gt;</pre><p></p><pre class="crayon-plain-tag">.centrado-porcentual {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}</pre><p>Resultado:<br />
+<a href="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png"><img class="size-full wp-image-2743 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png" alt="centrado-vert-hoz-transform" width="774" height="638" srcset="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png 774w, http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform-300x247.png 300w, http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform-768x633.png 768w" sizes="(max-width: 774px) 100vw, 774px" /></a></p>
+<p>NOTA: si el elemento que quieres centrar está dentro de otro, recuerda que el padre tiene que tener una posición relativa.</p>
+<p>Chau!</p>
+<p>Idea original: <a href="http://css-tricks.com/centering-percentage-widthheight-elements/" target="_blank">css-tricks.com</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Calcular el porcentaje de transparencia para &#8220;progid:DXImageTransform.Microsoft.gradient&#8221;</title>
+		<link>http://ecapy.com/calcular-el-porcentaje-de-transparencia-para-progiddximagetransform-microsoft-gradient/</link>
+		<pubDate>Fri, 27 Dec 2013 01:31:58 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2592</guid>
+		<description><![CDATA[En versiones de IE &#60;= 8 es normal tener que usar: [crayon-584436c45e6c3024000384/] para aplicar transparencia a un background. Pero como se puede ver, no está muy claro donde poner el porcentaje de transparencia que queremos. En el ejemplo del principio el truco que estamos usando es aplican un degradado que va desde blanco a blanco,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/calcular-el-porcentaje-de-transparencia-para-progiddximagetransform-microsoft-gradient/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>En versiones de IE &lt;= 8 es normal tener que usar:</p><pre class="crayon-plain-tag">filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#d8ffffff', endColorstr='#d8ffffff');</pre><p>para aplicar transparencia a un background. Pero como se puede ver, no está muy claro donde poner el porcentaje de transparencia que queremos.</p>
+<p>En el ejemplo del principio el truco que estamos usando es aplican un degradado que va desde blanco a blanco, pero por delante de cada color tenemos &#8220;<strong>d8</strong>&#8220;, que corresponde al valor alpha de RGBA (AARRGGBB). Pero está en hexadecimal y nosotros estamos acostumbrados a usar valores decimales (tipo <strong><em>opacity: 0.5</em></strong>).</p>
+<p>Para saber que valor tenemos que poner si queremos por ejemplo un 50% de opacidad simplemente tenemos que hacer esta cuenta:</p>
+<p><strong>255 * 0.5 = 127.5 </strong>(redondeando queda en 127).</p>
+<p><strong>A este resultado lo pasas por alguna aplicación que convierta valores decimales a hexadecimales como por ejemplo <em><a href="http://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html" target="_blank">ésta</a></em></strong> lo que te va a dar &#8220;<strong>7F</strong>&#8220;. Y ya está, Nuestro filtro anterior modificado quedaría como:</p>
+<p>Blanco al 50%:</p><pre class="crayon-plain-tag">filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#7Fffffff', endColorstr='#7Fffffff');</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>IE aplica degradé sobre imagenes transparentes [solución]</title>
+		<link>http://ecapy.com/ie-aplica-degrade-sobre-imagenes-transparentes-solucion/</link>
+		<pubDate>Mon, 29 Aug 2011 21:20:27 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1176</guid>
+		<description><![CDATA[Tengo que decirlo: es alucinante los bug que tiene IE (da igual la versión, nunca terminan de solucionarlos). El ultimo con el que me di es que si usas una imagen transparente para hacer un fondo transparente, se va a ver genial en todos los navegadores menos en Internet Explorer (7 y 8, el 9 no se) Así es&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/ie-aplica-degrade-sobre-imagenes-transparentes-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tengo que decirlo: es alucinante los bug que tiene IE (da igual la versión, nunca terminan de solucionarlos).</p>
+<p>El ultimo con el que me di es que si usas una imagen transparente para hacer un fondo transparente, se va a ver genial en todos los navegadores menos en Internet Explorer (7 y 8, el 9 no se)</p>
+<p>Así es como debería verse:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png"><img class="aligncenter size-full wp-image-1177" title="como-queda-al-usar-una-imagen-de-10x10" src="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png" alt="" width="440" height="248" srcset="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png 440w, http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10-300x169.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></a></p>
+<p>Y asi es como se ve en IE:</p>
+<p><img class="aligncenter size-full wp-image-1178" title="imagen-ie-degradando-imagen-transparente" src="http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente.png" alt="" width="440" height="248" srcset="http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente.png 440w, http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente-300x169.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></p>
+<p>Curioso&#8230; bueno googleando un poco <a href="http://www.jerrilynnreeves.com/?p=416" target="_blank">di con la respuesta</a> y es básicamente un comportamiento no deseado. Al señor no se le ocurre mejor idea que degradar un fondo transparente que se repita (<strong>background-repeat: repeat;</strong>) siempre que la imagen sea de <strong>1px</strong>X<strong>1px</strong>&#8230;. raro. Eso me va a enseñar a querer optimizar imagenes <img src="https://s.w.org/images/core/emoji/2/72x72/1f61b.png" alt="😛" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>por si no quedó claro, hay que hacer la misma imagen pero con por tamaño &#8220;prudente&#8221;: <strong>10px</strong>X<strong>10px</strong> para que IE no crea que tiene que degradar la imagen ¬¬</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Solución al box-model en ie7 usando jQuery</title>
+		<link>http://ecapy.com/solucion-al-box-model-en-ie7-usando-jquery/</link>
+		<pubDate>Wed, 15 Jun 2011 08:16:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1082</guid>
+		<description><![CDATA[Sé que hay soluciones hechas para este problema en particular, pero pesa 33k y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230; Sabido es que a ie se la sudan los estándares y cuando los incorporan por lo general lo hacen taaarde. La propiedad CSS &#8220;box-sizing&#8221; no es la excepción. Ya&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/solucion-al-box-model-en-ie7-usando-jquery/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://code.google.com/p/ie7-js/" target="_blank">Sé que hay soluciones hechas para este problema en particular</a>, <strong>pero pesa 33k</strong> y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230;</p>
+<p>Sabido es que a <strong>ie se la sudan los estándares</strong> y cuando los incorporan por lo general lo hacen taaarde.<br />
+<span style="color: #993300;"><strong>La propiedad CSS &#8220;box-sizing&#8221; no es la excepción.</strong></span></p>
+<p>Ya sabemos que el siguiente CSS va a arreglar los desfases que se dan cuando un input que esta con un width:100%; dentro de un div que tiene un ancho fijado.</p><pre class="crayon-plain-tag">.elemento {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}</pre><p>Y como comente <a title="Como evitar que los input excedan el tamaño del div que los contiene" href="http://www.ecapy.com/como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/">en el post anterior</a>, esta propiedad no está soportada en ie7.</p>
+<p>Soluciones hay de todo tipo, pero lo cierto es que teniendo jQuery en todos mis desarrollos, se me hiso más que obvia la decisión de usar un script que arregle este bug en lugar de usar cosas más raras (<a href="http://stackoverflow.com/questions/1617667/what-is-difference-between-htc-and-js-file" target="_blank">archivos .htc por ejemplo</a>).</p>
+<p>Para implementar la solución solo necesitas poner este script:</p><pre class="crayon-plain-tag">$(document).ready(function () {
+    if ($.browser.msie &amp;&amp; ($.browser.version.substr(0, 1) == 7 || $("meta[content='IE=EmulateIE7']").length &gt; 0)) {
+        $(".ie7Fix-Box-model").each(function (i, v) {
+            var el = $(v);
+
+            //calculamos
+            var pL = el.css("paddingLeft").replace("px", "") != "" ? el.css("paddingLeft").replace("px", "") : 0;
+            var pR = el.css("paddingRight").replace("px", "") != "" ? el.css("paddingRight").replace("px", "") : 0;
+            var bLW = el.css("borderLeftWidth").replace("px", "") != "" ? el.css("borderLeftWidth").replace("px", "") : 0;
+            var bRW = el.css("borderRightWidth").replace("px", "") != "" ? el.css("borderRightWidth").replace("px", "") : 0;
+            var newSize = el.width() - (parseInt(pL, 10) + parseInt(pR, 10) + parseInt(bLW, 10) + parseInt(bRW, 10));
+
+            //le aplicamos el nuevo tamaño
+            el.width(newSize);
+        });
+    }
+});</pre><p>Y ponerle la class &#8220;<span style="color: #008000;"><strong>ie7Fix-Box-model</strong></span>&#8221; a todos los input que necesites arreglar.</p>
+<p><a href="http://www.ecapy.com/wp-content/uploads/2011/06/ie7Fix-Box-model.htm">Ver ejemplo</a> (vean el codigo fuente)</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>jQuery: .css(&#8220;background-position&#8221;) falla en Internet Explorer</title>
+		<link>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/</link>
+		<comments>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/#comments</comments>
+		<pubDate>Wed, 09 Mar 2011 23:18:16 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=873</guid>
+		<description><![CDATA[Me iba a poner a explicar porque falla y todo lo que tuve que hacer hasta darme cuenta del problema y la forma de solucionarlo, pero prefiero por esta vez simplemente dejarles la función que hice para arreglar el problema: El siguiente método se acopla a jQuery por lo que lo pueden cargar justo después&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me iba a poner a explicar porque falla y todo lo que tuve que hacer hasta darme cuenta del problema y la forma de solucionarlo, pero prefiero por esta vez simplemente dejarles la función que hice para arreglar el problema:</p>
+<p>El siguiente método se acopla a jQuery por lo que lo pueden cargar justo después de jQuery y usarlo normalmente.</p><pre class="crayon-plain-tag">/**
+ * Devuelve un array con la posicion X e Y respectivamente.
+ */
+$.fn.bgPosition = function() {
+    var bgp = "background-position";
+    return $.browser.msie ? [parseInt($(this).css(bgp + "-x").split(" ")[0]), parseInt($(this).css(bgp + "-y").split(" ")[0])] : [parseInt($(this).css(bgp).split(" ")[0]), parseInt($(this).css(bgp).split(" ")[1])];
+}</pre><p>Y como mencione, el uso es bastante sencillo.</p><pre class="crayon-plain-tag">//Para usarlo:
+alert("las posiciónes X e Y del fondo son: " + $("#cajaConFondo").bgPosition()); //muestra [posX, posY]
+alert("La posición X del fondo es: " + $("#cajaConFondo").bgPosition()[0]); //muestra posX
+alert("La posición Y del fondo es: " + $("#cajaConFondo").bgPosition()[1]); //muestra posY</pre><p>Para cerrar el post el problema en resumen es que<strong> internet explorer no reconoce la propiedad &#8220;background-position&#8221;</strong> del metodo .css(). En su lugar hay que usar &#8220;<strong>background-position-x</strong>&#8221; y &#8220;<strong>background-position-y</strong>&#8221;</p>
+<p><span style="text-decoration: underline;">Y una cosita mas</span>: <span style="color: #993300;"><strong>el método solo funciona con pixeles</strong></span> porque es lo que me hacía falta, <span style="text-decoration: underline;">porcentajes y demases</span> yerbas quedan excluidas salvo que alguien quiera aportar esa parte <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><a title="Ejemplo de uso de $().bgPosition()" href="http://www.ecapy.com/Archivos/ejemplo_background_position_en_ie.zip">Descargar ejemplo</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>jQuery.height() calcula distintos tamaños entre navegadores [solución]</title>
+		<link>http://ecapy.com/jquery-height-calcula-distintos-tamanos-entre-navegadores-solucion/</link>
+		<pubDate>Sun, 14 Nov 2010 02:24:10 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=641</guid>
+		<description><![CDATA[Este es un tip rápido pero útil. Escenario: Tenes un div con el id &#8220;elDiv&#8221; con el siguiente CSS: [crayon-584436c45f217846198676/] Y en Firefox/Chrome/Safari/Opera al hacer $(&#8220;#elDiv&#8221;).height(); te entrega 400px por decir algo (el tamaño depende de lo que tenga dentro). Pero curiosamente en Internet explorer te da un tamaño raro&#8230; de menos, unos 358px en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/jquery-height-calcula-distintos-tamanos-entre-navegadores-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Este es un tip rápido pero útil.</p>
+<p>Escenario:<br />
+Tenes un div con el id &#8220;<strong>elDiv</strong>&#8221; con el siguiente CSS:</p><pre class="crayon-plain-tag">#elDiv {
+	border: 1px solid #336699;
+	float: right;
+	padding: 20px;
+	width: 500px;
+}</pre><p>Y en Firefox/Chrome/Safari/Opera al hacer <strong>$(&#8220;#elDiv&#8221;).height();</strong> te <strong>entrega 400px </strong>por decir algo (el tamaño depende de lo que tenga dentro).<br />
+Pero curiosamente en <strong>Internet explorer </strong>te da un tamaño raro&#8230; de menos, unos <strong>358px </strong>en nuestro ejemplo.</p>
+<p><span style="text-decoration: underline;"><strong>¿Qué pasa?</strong></span><br />
+Pasa que no le especificaste un modo de renderizado al HTML por medio del DOCTYPE, y por culpa de ello Internet explorer va a renderizar el contenido en modo &#8220;<strong>Quirks Mode</strong>&#8221; <a href="http://es.wikipedia.org/wiki/Quirks_Mode" target="_blank">http://es.wikipedia.org/wiki/Quirks_Mode</a>.</p>
+<p>Si no queres leer el articulo de Wikipedia te comento que lo único que tenes que hacer es poner lo siguiente por encima del tag &lt;html&gt;:</p><pre class="crayon-plain-tag">&lt; !DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/DTD/strict.dtd"&gt;</pre><p><strong>PD:</strong> el valor de <strong>358px </strong>en mi ejemplo viene de que en modo quirks, <strong>IE toma el tamaño del tamaño real menos el padding y el borde</strong>: 400 &#8211; 40 &#8211; 2 = 358.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Algunos CSS no cargan en Internet Explorer</title>
+		<link>http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/</link>
+		<comments>http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/#comments</comments>
+		<pubDate>Wed, 13 Oct 2010 07:37:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=629</guid>
+		<description><![CDATA[Me rompí un poco la cabeza con este asunto: Hago unas modificaciones que se ven mas que bien en todos los navegadores menos en IE como siempre, y por ello tengo un ie.css puntual para hacer todas las cosas raras que se suelen hacer con CSS para que IE trague. El problema me lo di&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me rompí un poco la cabeza con este asunto: Hago unas modificaciones que se ven mas que bien en todos los navegadores menos en IE como siempre, y por ello tengo un ie.css puntual para hacer todas las cosas raras que se suelen hacer con CSS para que IE trague.</p>
+<p>El problema me lo di con que Internet Explorer 7 (no recuerdo si el 8 también) no reflejaba los cambios de mi CSS destinado a el&#8230;. :S</p>
+<p>Pero ya se cual es el problema y como no, la solución <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>El problema es que<strong> Internet Explorer por algún misterioso motivo solo carga hasta 31 CSS </strong>(los &lt;style&gt; inline también cuentan o_O), y mi CSS especial ya estaba por el puesto 32&#8230;</p>
+<p>La primera solución que se me ocurrió es activar la compresión de CSS para que se haga uno o dos CSS, pero lo que tiene de malo eso es que si estas maquetando te vas a querer pegar un tiro a la 10º vez que tengas que borrar el cache para ver si el texto que estas maquetando se termina de ver bien en la bass.. Internet Explorer.<br />
+Así que fui a darme una vuelta por los módulos de Drupal&#8230; Bingo. Hay un modulo que nos salva las papas. Se llama &#8220;<a href="http://drupal.org/project/ie_css_optimizer" target="_blank"><strong>IE CSS Optimizer&#8221;</strong></a>, y lo que hace básicamente es añadir dos opciones más a la compresión de los CSS:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer.png"><img class="aligncenter size-full wp-image-630" title="IE CSS optimizer" src="http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer.png" alt="" width="337" height="290" srcset="http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer.png 337w, http://ecapy.com/wp-content/uploads/2010/10/ie_css_optimizer-300x258.png 300w" sizes="(max-width: 337px) 100vw, 337px" /></a></p>
+<p>Y lo que hace es algo de lo más simple. Comprime todo el CSS en un archivo pero sin cachearlo.</p>
+<p>Con este modulito ya no vas a tener que preocuparte del rarísimo límite de 31 archivos.</p>
+<p><span style="color: #993300;">Una ultima anotación a todo esto es que andar va a andar bien, pero no vayas a olvidar de poner de nuevo la configuración de la compresión del CSS a &#8220;Full optimization&#8221; para producción.</span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/algunos-css-no-cargan-en-internet-explorer/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>El botón de Facebook connect Internet Explorer no aparece (Solución)</title>
+		<link>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/</link>
+		<comments>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/#comments</comments>
+		<pubDate>Tue, 22 Jun 2010 14:05:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[IE te odio]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=508</guid>
+		<description><![CDATA[Justamente ese fue el problema que tuve hoy. Integré Facebook Connect en una pagina que tengo hecha en Drupal y no había forma de hacer que el botoncito de login se vea en Internet Explorer 7 u 8&#8230; Después de un kilo y medio de I+D descubro que resulta ser que es porque IE no&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Justamente ese fue el problema que tuve hoy. Integré Facebook Connect en una pagina que tengo hecha en Drupal y no había forma de hacer que el botoncito de login se vea en Internet Explorer 7 u 8&#8230;</p>
+<p>Después de un kilo y medio de I+D descubro que resulta ser que es porque <strong>IE no sabe que hacer con los tag &lt;fb&gt;</strong>, y dicho problema se soluciona de la forma mas tonta del mundo:<br />
+Metiendo el siguiente trozo de código en la etiqueta &lt;html&gt;:</p><pre class="crayon-plain-tag">xmlns:fb=&quot;http://www.facebook.com/2008/fbml&quot;</pre><p>Y como nota quiero aclarar que no hace falta reemplazar el atributo existente ya que pueden coexistir ambos:</p><pre class="crayon-plain-tag">&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &lt;strong&gt;xmlns:fb=&quot;http://www.facebook.com/2008/fbml&quot;&lt;/strong&gt; xml:lang=&quot;es_ES&quot; lang=&quot;es_ES&quot;&amp;gt;</pre><p><strong>Y listo. el fukin botoncito ya aparece en IE 7 y 8 (en el 6 ni me gasté en probarlo).</strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

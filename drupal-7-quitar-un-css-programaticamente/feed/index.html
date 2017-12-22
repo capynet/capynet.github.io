@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Drupal 7: Quitar un CSS o JS programaticamente</title>
+	<atom:link href="http://ecapy.com/drupal-7-quitar-un-css-programaticamente/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/drupal-7-quitar-un-css-programaticamente/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/drupal-7-quitar-un-css-programaticamente/#comment-708</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Mon, 19 May 2014 11:02:36 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2636#comment-708</guid>
+		<description><![CDATA[Jorge, Hay dos cuestiones acá. La primera: ¿mailbox_sky es el nombre del theme? eso es importante. si el theme tiene otro nombre lo cambias y pones el correcto.
+Segundo: Este hook sirve solo si el js que se va a cargar es estático (por ejemplo user.js) pero el archivo js que quieres quitar parece creado dinámicamente. En ese caso, no puedes quitarlo mediante este hook.
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>Jorge, Hay dos cuestiones acá. La primera: ¿mailbox_sky es el nombre del theme? eso es importante. si el theme tiene otro nombre lo cambias y pones el correcto.<br />
+Segundo: Este hook sirve solo si el js que se va a cargar es estático (por ejemplo user.js) pero el archivo js que quieres quitar parece creado dinámicamente. En ese caso, no puedes quitarlo mediante este hook.<br />
+Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge</title>
+		<link>http://ecapy.com/drupal-7-quitar-un-css-programaticamente/#comment-707</link>
+		<dc:creator><![CDATA[Jorge]]></dc:creator>
+		<pubDate>Tue, 13 May 2014 17:38:30 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2636#comment-707</guid>
+		<description><![CDATA[Hola, creo que estoy poniendo mal la función. en mi template.php he insertado la función de la siguiente manera:
+&lt;pre class=&quot;decode:1 lang:php &quot; &gt; 
+&lt; ?
+ function mailbox_sky_js_alter(&amp;$js) {
+  $js = array_diff_key($js, array(
+  &#039;js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js&#039;
+    // Añade todos los JS que quieras quitar antes que se entregue la página.
+    drupal_get_path(&#039;module&#039;, &#039;user&#039;) . &#039;/user.js&#039; =&gt;; FALSE,
+  ));
+}
+&lt;/pre&gt;
+siendo   &#039;js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js&#039; el nombre de uno de los archivos que Google speed insights me da como que debo retrasar. ¿Por qué no me funciona? ¿Me podrías ayudar?
+Gracias]]></description>
+		<content:encoded><![CDATA[<p>Hola, creo que estoy poniendo mal la función. en mi template.php he insertado la función de la siguiente manera:</p>
+		<div id="crayon-584436b7e7fba246415268" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt; ?
+ function mailbox_sky_js_alter(&amp;$js) {
+  $js = array_diff_key($js, array(
+  'js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js'
+    // Añade todos los JS que quieras quitar antes que se entregue la página.
+    drupal_get_path('module', 'user') . '/user.js' =&gt;; FALSE,
+  ));
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584436b7e7fba246415268-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436b7e7fba246415268-2">2</div><div class="crayon-num" data-line="crayon-584436b7e7fba246415268-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436b7e7fba246415268-4">4</div><div class="crayon-num" data-line="crayon-584436b7e7fba246415268-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436b7e7fba246415268-6">6</div><div class="crayon-num" data-line="crayon-584436b7e7fba246415268-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436b7e7fba246415268-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584436b7e7fba246415268-1"><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-sy">?</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436b7e7fba246415268-2"><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mailbox_sky_js_alter</span><span class="crayon-sy">(</span><span class="crayon-o">&amp;</span><span class="crayon-v">$js</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436b7e7fba246415268-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$js</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">array_diff_key</span><span class="crayon-sy">(</span><span class="crayon-v">$js</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436b7e7fba246415268-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">'js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js'</span></div><div class="crayon-line" id="crayon-584436b7e7fba246415268-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// Añade todos los JS que quieras quitar antes que se entregue la página.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436b7e7fba246415268-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_get_path</span><span class="crayon-sy">(</span><span class="crayon-s">'module'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'user'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-s">'/user.js'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-t">FALSE</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584436b7e7fba246415268-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436b7e7fba246415268-8"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>siendo   &#8216;js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js&#8217; el nombre de uno de los archivos que Google speed insights me da como que debo retrasar. ¿Por qué no me funciona? ¿Me podrías ayudar?<br />
+Gracias</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Moisés Heberle</title>
+		<link>http://ecapy.com/drupal-7-quitar-un-css-programaticamente/#comment-706</link>
+		<dc:creator><![CDATA[Moisés Heberle]]></dc:creator>
+		<pubDate>Sat, 03 May 2014 15:23:24 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2636#comment-706</guid>
+		<description><![CDATA[Boa dica, eu estava a procurar por este gancho para alterar o javascript. Obrigado.]]></description>
+		<content:encoded><![CDATA[<p>Boa dica, eu estava a procurar por este gancho para alterar o javascript. Obrigado.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

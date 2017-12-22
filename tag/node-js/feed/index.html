@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>node.js &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/node-js/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Tutorial: implementar un servicio RESTful public API de modelos Mongoose en Node.js</title>
+		<link>http://ecapy.com/implementar-un-servicio-restful-public-api-de-modelos-mongoose-en-node-js/</link>
+		<pubDate>Tue, 17 Sep 2013 09:00:33 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[API]]></category>
+		<category><![CDATA[express framework]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[node.js]]></category>
+		<category><![CDATA[RESTful]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2499</guid>
+		<description><![CDATA[Hola!, He terminado de hacer un ejemplo de como implementar una API pública tipo RESTful en una APP creada con express. La idea detrás de esta app de ejemplo es la de crear automagicamente todas las URL necesarias para poder gestionar un modelo de Mongoose (aka recurso). Su uso es realmente simple. Dentro de la&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/implementar-un-servicio-restful-public-api-de-modelos-mongoose-en-node-js/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola!, He terminado de hacer un ejemplo de como implementar una API pública tipo RESTful en una APP creada con <a href="http://expressjs.com/" target="_blank">express</a>.<br />
+<strong>La idea detrás de esta app de ejemplo es la de crear automagicamente todas las URL necesarias</strong> para poder gestionar un modelo de Mongoose (aka recurso).</p>
+<p>Su uso es realmente simple. Dentro de la carpeta &#8220;models&#8221; creas un nuevo modelo/entidad, tocas un par de detalles mas, y tienes una API publica completa de ese nuevo recurso <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Ya no doy mas vueltas, acá la tienen:</p>
+<p><a href="https://github.com/capy/Simple-API-style" target="_blank"><em><strong>https://github.com/capy/Simple-API-style</strong></em></a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Node.js/express: Gestionar las URL de tu proyecto mas eficientemente.</title>
+		<link>http://ecapy.com/node-js-express-gestionar-las-url-de-tu-proyecto-mas-eficientemente/</link>
+		<pubDate>Mon, 16 Sep 2013 09:15:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[express framework]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2505</guid>
+		<description><![CDATA[Normalmente cuando haces una aplicación usando express, por comodidad tiendes a poner todas las definiciones de las url&#8217;s en la raíz del proyecto: [crayon-5844376a99f3c979145364/] Pero esto a la corta se vuelve algo inmanejable. La solución es adoptar un patrón que nos permita extraer las URL a archivos en los que poder juntar las url que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/node-js-express-gestionar-las-url-de-tu-proyecto-mas-eficientemente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Normalmente cuando haces una aplicación usando <a href="http://expressjs.com/" target="_blank">express</a>, por comodidad tiendes a poner todas las definiciones de las url&#8217;s en la raíz del proyecto:</p><pre class="crayon-plain-tag">var express = require('express');
+var app = express();
+
+//...
+//Configuraciones varias
+//...
+
+app.get("/users", function (req, res) {
+    return res.render("list users");
+});
+
+app.get("/user/:uid", function (req, res) {
+    return res.render("show an user");
+});
+
+app.get("/articles", function (req, res) {
+    return res.render("list articles");
+});
+
+app.get("/article/:id", function (req, res) {
+    return res.render("show an article");
+});
+
+app.get("/article/new", function (req, res) {
+    return res.render("new article");
+});
+
+http.createServer(app).listen(app.get('port'), function () {
+    console.log("http://localhost:" + app.get('port'));
+});</pre><p>Pero esto a la corta se vuelve algo inmanejable. La solución es adoptar un patrón que nos permita extraer las URL a archivos en los que poder juntar las url que se refieran a algo en común (en este ejemplo usuarios por un lado y articles por otro.).</p>
+<h3>Manos a la obra</h3>
+<p>crea un directorio llamado routes, crea los archivos &#8220;<strong>users.js</strong>&#8221; y &#8220;<strong>articles.js</strong>&#8221; y llévate allí las urls.<br />
+En el lugar que estaban las URL (dentro de app.js o server.js, como sea que lo hayas llamado.) pon:</p><pre class="crayon-plain-tag">var routePath = __dirname + '/routes/';
+fs.readdirSync(routePath).forEach(function (file) {
+    require(routePath + file)(app);
+});</pre><p>Este snippet se va a encargar de cargar todos los archivos que haya en la carpeta routes. Si te fijas bien vas a ver que está haciendo un require pero le pasa &#8220;<em>(app)</em>&#8221; al final de este. Eso es porque dentro de nuestros archivos de rutas vamos a devolver funciones que van a ejecutarse ni bien sean cargadas.</p>
+<p>Lo ultimo que nos queda es definir la estructura que debe tener cada archivo que esté alojado en routes. Como ya no están en la raíz, vamos a encapsular estas definiciones de rutas dentro de una función, que es la que se va a encargar de hacernos llegar a app (que es la instancia de express que va a recibir nuestras rutas):</p>
+<p><em>users.js:</em></p><pre class="crayon-plain-tag">module.exports = function (app) {
+
+    app.get("/users", function (req, res) {
+        return res.render("list users");
+    });
+
+    app.get("/user/:uid", function (req, res) {
+        return res.render("show an user");
+    });
+
+};</pre><p><em>articles.js:</em></p><pre class="crayon-plain-tag">module.exports = function (app) {
+
+    app.get("/articles", function (req, res) {
+        return res.render("list articles");
+    });
+
+    app.get("/article/:id", function (req, res) {
+        return res.render("show an article");
+    });
+
+    app.get("/article/new", function (req, res) {
+        return res.render("new article");
+    });
+
+};</pre><p>Como podemos ver, en cada uno de los archivos que contienen las rutas, hemos metido las rutas dentro de <strong>module.exports = function (app){}</strong>. Esto sumado a que a cada archivo cargado se le estaba pasando la <strong>app</strong> por medio del <strong>require (require(routePath + file)(app);</strong>) todo cobra sentido.</p>
+<p>Ya hemos acabado, ya puedes crear tantos archivos .js como tu corazón y lógica dicten, que se van a cargar sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Debug de proyectos Node.js en PhpStorm (video)</title>
+		<link>http://ecapy.com/debug-de-proyectos-node-js-en-phpstorm/</link>
+		<pubDate>Wed, 04 Sep 2013 17:55:55 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2472</guid>
+		<description><![CDATA[]]></description>
+				<content:encoded><![CDATA[]]></content:encoded>
+			</item>
+		<item>
+		<title>Desplegar una aplicación Node.js como servicio Upstart (demonio)</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/</link>
+		<comments>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 17:42:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[deploy]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2124</guid>
+		<description><![CDATA[Cuando quise desplegar mi app, imagine que iba a ser fácil, que lanzaba el comando &#8220;node miapp.js&#8221; y punto, pero aprendí a palos que así no va la cosa. Para desplegar una aplicación web, necesitas que funcione como apache por lo menos: que puedas arrancarla, pararla, reiniciarla, ver su estado, acceder a su log, que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando quise desplegar mi app, imagine que iba a ser fácil, que lanzaba el comando &#8220;node miapp.js&#8221; y punto, pero aprendí a palos que así no va la cosa.</p>
+<p>Para desplegar una aplicación web, <strong>necesitas que funcione como apache</strong> por lo menos: que puedas <strong>arrancarla, pararla, reiniciarla, ver su estado, acceder a su log, que se reinicie si se produce un error</strong>, etc etc etc.</p>
+<p>Busque por Internet y leí un montón de artículos y foros que te dicen como montartelo: <strong>haciendo scripts en /etc/init.d</strong> y combinándolo con monit para reiniciarlo si se cae, <strong>Usando Upstart</strong>, <strong>lanzando la aplicación con &#8220;node miapp.js &amp;&#8221;</strong> (proceso en background pero es la peor solución que leí en años), y alguna que otra mas.</p>
+<p><strong>La mas razonable fue la de Upstart</strong>, aunque ninguna de las soluciones fue bastante clara o completa como para copiar, pegar y arrancar. Por eso hice este script que toma en cuenta todo lo que hace falta para montar tu app como un servicio:</p><pre class="crayon-plain-tag">description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+# A partir de aquí no debería hacer falta tocar nada #
+######################################################
+
+#Nuestro proceso espera hasta que el sistema este cargado
+start on runlevel [2345]
+#Y se detiene cuando el sistema se apague
+stop on runlevel [016]
+
+#Levanta el proceso automáticamente si se muere:
+respawn
+#limitamos el "respawn" a 99 veces con un timeout de 5s para que no intente levantar el proceso infinitamente.
+respawn limit 99 5
+
+pre-start script
+    #Necesitamos asegurarnos que el path del pid exista antes de arrancar el proceso.
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+	#Seteamos NODE_ENV para que nuestra app se ejecute en modo production, development, test, etc.
+	export NODE_ENV=$SERVER_ENV
+
+	#El siguiente comando es el que realmente arranca el proceso:
+	#Utiliza el usuario y grupo www-data (--chuid)
+	#Asigna un pid y lo crea si no existe (--make-pidfile y --pidfile)
+	#Cambia el directorio de ejecución a donde esté nuestra app de node (--chdir)
+	#Ejecuta la app (--exec)
+	#Envía cualquier output que genere nuestra app al log (&gt;&gt; $LOG_FILE 2&gt;&amp;1)
+
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</pre><p>Puede parecer un poco largo, pero si lo lees detenidamente vas a ver que es bastante concreto:</p>
+<ol>
+<li>Autor y descripción: son parte básica de un script Upstart</li>
+<li>Variables de configuración para que no tengas que meterte entre el código para ajustar el script para cada nueva app que crees.</li>
+<li>Cuerpo del script.</li>
+</ol>
+<p>Acá esta el mismo script sin comentarios:</p><pre class="crayon-plain-tag">description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+respawn limit 99 5
+
+pre-start script
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+    export NODE_ENV=$SERVER_ENV
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</pre><p></p>
+<h3>Uso:</h3>
+<p><strong>Por cada aplicación en nodejs que quieras montar tenes que crear un archivo en /etc/init/</strong>. El nombre del archivo tiene que terminar en .conf. por ejemplo <em>miapp-service.conf</em>. Una cosa importante es que el servicio que estas creando se llama como el archivo (sin el .conf), por lo que en nuestro ejemplo se va a llamar <em>miapp-service</em>.</p>
+<p>Dentro de <em>/etc/init/miapp-service.conf</em> pegas el script y personalizas todo lo que haya hasta la linea divisoria.</p>
+<p>Un par de aclaraciones:<br />
+<em>env APP=app.js</em> define el nombre del &#8220;index&#8221; de tu aplicación, y por lo general se usan o app.js o server.js. Pon el nombre de tu app sin el path hasta ella. Si tu aplicación lleva parámetros podes encerrar en comillas dobles algo asi como <em>&#8220;env APP=app.js &#8211;extrasettings ../settrings.json&#8221;</em><br />
+<em>env APP_DIR=/var/node/miapp</em> el path hasta tu aplicación<br />
+<em>env PID_NAME=miapp.pid</em> pon el nombre que quieras, pero que sea único. por ejemplo, si tu app es una pagina web pon el nombre de tu pagina &#8220;mipaginaweb_com.pid&#8221; o algo así.<br />
+<em>env USER=www-data</em> y <em>env GROUP=www-data</em> <strong>no sería muy responsable usar root para ejecutar tu aplicación </strong> salvo que esta si que necesite estar en root, pero <strong>en el caso de que sea una pagina web, usa el usuario y grupo www-data</strong> así podes unificar criterios. Es solo una sugerencia, yo para mi app uso www-data aunque podes usar el grupo y usuario que te parezca mejor.<br />
+<em>POST_START_MESSAGE_TO_LOG</em> es solo un mensaje que se envía al log de la app cuando esta arranca.<br />
+<em>NODE_BIN</em> indica donde esta ubicado node, por lo general está en <em>/usr/local/bin/node</em> aunque si no estuviera allí podes cambiar este parámetro.<br />
+<em>env SERVER_ENV=&#8221;production</em>&#8221; Posiblemente tu aplicación web utilice entornos de &#8220;<em>development</em>&#8220;, &#8220;<em>test</em>&#8221; y &#8220;<em>production</em>&#8220;. Bien, especificalo acá.</p>
+<p>El resto del script está comentado en código así que no añado nada.</p>
+<p>Cuando hayas acabado ya vas a disponer de tu servicio y tratarlo como cualquier otro:</p><pre class="crayon-plain-tag">start miapp-service
+stop miapp-service
+restart miapp-service
+status miapp-service</pre><p>Espero que les sirva.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/feed/</wfw:commentRss>
+		<slash:comments>15</slash:comments>
+		</item>
+		<item>
+		<title>Preprocesar variables de templates en express framework (nodejs)</title>
+		<link>http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/</link>
+		<comments>http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/#comments</comments>
+		<pubDate>Wed, 20 Mar 2013 11:00:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2097</guid>
+		<description><![CDATA[Bien, el caso de uso es el siguiente: tenemos varios templates en los que queremos mostrar mensajes al usuario si los hubiera. Lo normal seria hacer algo así a la hora de renderizar un template: Para la página principal: [crayon-5844376a9ec70401103920/] Para la página del usuario: [crayon-5844376a9ec7d580455551/] Bien, la idea se aprecia, constantemente tenemos que trabajarnos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Bien, el caso de uso es el siguiente: tenemos varios templates en los que queremos mostrar mensajes al usuario si los hubiera.<br />
+Lo normal seria hacer algo así a la hora de renderizar un template:</p>
+<p>Para la página principal:</p><pre class="crayon-plain-tag">app.get('index', function (req, res) {
+    var messages = req.flash();
+    var render_options = {
+        titulo: "Página principal"
+    };
+
+    if (messages.error || messages.info || messages.success) {
+        if (messages.error) messages.hasError = messages.error.length &gt; 0;
+        if (messages.info) messages.hasInfo = messages.info.length &gt; 0;
+        if (messages.success) messages.hasSuccess = messages.success.length &gt; 0;
+        render_options.messages = messages;
+    }
+
+    res.render('index', render_options);
+});</pre><p>Para la página del usuario:</p><pre class="crayon-plain-tag">app.get('user', function (req, res) {
+    var messages = req.flash();
+    var render_options = {
+        titulo: "Perfil de " + req.session.user.name
+    };
+
+    if (messages.error || messages.info || messages.success) {
+        if (messages.error) messages.hasError = messages.error.length &gt; 0;
+        if (messages.info) messages.hasInfo = messages.info.length &gt; 0;
+        if (messages.success) messages.hasSuccess = messages.success.length &gt; 0;
+        render_options.messages = messages;
+    }
+
+    res.render('index', render_options);
+});</pre><p>Bien, la idea se aprecia, <strong>constantemente tenemos que trabajarnos la variable &#8220;messages&#8221;</strong> y si hay mensajes la incluimos en las opciones de renderizado del template.</p>
+<p><strong>¿El inconveniente?</strong> el código se repite, lo que lo hace poco mantenible y ensucia. Solo por dar un ejemplo, podés ver que estamos preparando errores del tipo &#8220;<em>error</em>&#8220;, &#8220;<em>info</em>&#8221; y &#8220;<em>success</em>&#8220;, y si quisieras agregar un nuevo tipo de error llamado &#8220;<em>warning</em>&#8220;, te las verías p&#8230; negras. Bueno se entiende el inconveniente.</p>
+<h3>Solución: Encapsular en un preprocesador</h3>
+<p><a href="http://expressjs.com/" target="_blank">Express</a> nos da la posibilidad de preparar variables que van a parar al template haciendo uso de <em>app.use()</em> y <em>res.locals</em>.</p>
+<p>NOTA importante: <strong>da igual el sistema de templates que uses</strong>: <a href="http://jade-lang.com/" target="_blank">Jade</a>, <a href="http://twitter.github.com/hogan.js/" target="_blank">Hogan.js</a>, <a href="https://github.com/janl/mustache.js" target="_blank">Mustache</a>, <a href="http://handlebarsjs.com/" target="_blank">Handlebars</a>, etc. <a href="http://expressjs.com/" target="_blank">Express</a> es agnóstico en este sentido a la hora de preparar variables. Un puntazo.</p>
+<p>Bueno, como decía, podemos agregar un <em>app.use()</em> en <em>app.configure(function () {});</em> (suele estar en app.js, la base de tu aplicación).<br />
+Acá está el ejemplo. Hemos quitado la lógica de tratamiento de mensajes y la hemos colocado en este middleware (si, es uno de esos famosos):</p><pre class="crayon-plain-tag">app.use(function (req, res, next) {
+    var messages = req.flash();
+
+    if (messages.error || messages.info || messages.success) {
+        if (messages.error) messages.hasError = messages.error.length &gt; 0;
+        if (messages.info) messages.hasInfo = messages.info.length &gt; 0;
+        if (messages.success) messages.hasSuccess = messages.success.length &gt; 0;
+        res.locals.messages = messages;
+    }
+
+    next();
+});</pre><p>Lo mas notable del código anterior es que hemos asignado el resultado a <em>res.locals.messages</em>. res.locals, va a &#8220;mergearse&#8221; con las variables que uses en <em>res.render()</em> antes de llamar al template.<br />
+NOTA: <em>next();</em> es necesario para que el flow de ejecución siga adelante.</p>
+<p>Hecho lo anterior, les presento las versiones simplificadas de los ejemplos que di al principio:</p><pre class="crayon-plain-tag">app.get('index', function (req, res) {
+    var render_options = {
+        titulo: "Página principal"
+    };
+    res.render('index', render_options);
+});</pre><p></p><pre class="crayon-plain-tag">app.get('user', function (req, res) {
+    var render_options = {
+        titulo: "Perfil de " + req.session.user.name
+    };
+    res.render('index', render_options);
+});</pre><p>Mucho mejor ¿no?</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>req.flash() en express 3</title>
+		<link>http://ecapy.com/req-flash-en-express-3/</link>
+		<pubDate>Mon, 11 Mar 2013 05:25:28 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[expressjs]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2077</guid>
+		<description><![CDATA[A partir de la versión 3 de http://expressjs.com/ framework req.flash() fue quitado del core ya que estrictamente hablando, ésta funcionalidad no es &#8220;core&#8221;. No pasa nada, seguimos teniendo los mensajes flash pero en un modulo aparte: Para instalarlo: [code]npm install connect-flash[/code] O bien lo agregas a tu proyecto expressjs dentro de las dependencias y lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/req-flash-en-express-3/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>A partir de la versión 3 de <a href="http://expressjs.com/" target="_blank">http://expressjs.com/</a> framework req.flash() fue quitado del core ya que estrictamente hablando, ésta funcionalidad no es &#8220;core&#8221;.</p>
+<p>No pasa nada, seguimos teniendo los mensajes flash pero en un modulo aparte:</p>
+<p>Para instalarlo:</p>
+<p>[code]npm install connect-flash[/code]</p>
+<p>O bien lo agregas a tu proyecto expressjs dentro de las dependencias y lo actualizas con npm:</p><pre class="crayon-plain-tag">{
+    "name": "application-name",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "express": "3.1.0",
+        "connect-flash": "*"
+    }
+}</pre><p>[code]path/a/tu/app$: npm update[/code]</p>
+<p>A partir de allí, su uso sigue siendo el mismo que en versiones anteriores:</p>
+<p>Cargamos el modulo:</p><pre class="crayon-plain-tag">app.configure(function () {
+    app.use(express.session());
+    //flash(); SIEMPRE VA ENTRE express.session() Y app.router
+    app.use(flash());
+    app.use(app.router);
+});</pre><p>Y ya lo podemos usar. Por ejemplo para indicar a nuestro usuario que ha puesto mal sus datos de login:</p><pre class="crayon-plain-tag">app.post('/user/login', function(req, res){
+  req.flash('error', 'Tu usuario o contraseña están mal!')
+  res.redirect('/user/login');
+});
+
+app.get('/user/login', function(req, res){
+ res.render('index', { messages: req.flash('info') });
+});</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hacer proxy con Apache para aplicaciones node.js</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/</link>
+		<comments>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comments</comments>
+		<pubDate>Thu, 24 Jan 2013 14:56:48 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[node.js]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1672</guid>
+		<description><![CDATA[Tenemos una app desarrollada en nodejs que corre en el puerto 4000 de nuestro servidor y queremos exponerla por el puerto 80 para que la gente pueda usarla. El problema obvio es que por lo general tenemos corriendo un apache, nginx o cualquier otro servidor http. La solución es usar los módulos de proxy que incluyen cada uno de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tenemos una app desarrollada en nodejs que<strong> corre en el puerto 4000</strong> de nuestro servidor<strong> y queremos exponerla por el puerto 80</strong> para que la gente pueda usarla. El problema obvio es que por lo general tenemos corriendo un apache, nginx o cualquier otro servidor http.</p>
+<p>La solución es usar los módulos de proxy que incluyen cada uno de estos servidores web. Hoy puntualmente lo vamos a hacer con Apache.</p>
+<p>Habilitamos los modulos <strong>proxy</strong> y <strong>proxy_http</strong> para permitir el reenvío de peticiones HTTP y HTTPS:<br />
+[console]<br />
+sudo a2enmod proxy<br />
+sudo a2enmod proxy_http<br />
+[/console]</p>
+<p>Luego nos queda crear un vhost:<br />
+[console]sudo nano /etc/apache2/sites-available/mipaginaweb.com[/console]</p>
+<p>Y ponerle lo siguiente:</p>
+<p>[apacheconf]</p>
+<p>ServerName mipaginaweb.com<br />
+ServerAlias www.mipaginaweb.com</p>
+<p>ProxyRequests off</p>
+<p>Order deny,allow<br />
+Allow from all</p>
+<p>&lt;location &#8220;/&#8221;&gt;<br />
+ProxyPass http://localhost:4000/ retry=0<br />
+ProxyPassReverse http://localhost:4000/</p>
+<p>[/apacheconf]</p>
+<p>Habilitamos nuestro nuevo vhost:<br />
+[console]sudo a2ensite mipaginaweb.com[/console]</p>
+<p>Hemos terminado. reiniciamos apache y a correr!<br />
+[console]sudo service apache2 restart[/console]</p>
+<p><span style="color: #993300;" data-mce-mark="1"><strong>Bonus</strong></span>: si estas en un entorno de desarrollo y quieres acceder a <em>mipaginaweb.com</em>, edita tu archivo hosts (<strong>sudo nano /etc/hosts</strong>) y añade tu nuevo dominio:</p>
+<p>[console]<br />
+127.0.0.1 localhost<br />
+127.0.0.1 mipaginaweb.com www.mipaginaweb.com<br />
+[/console]</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Instalar node.js y npm de forma automatizada</title>
+		<link>http://ecapy.com/instalar-node-js-y-npm-de-forma-automatizada/</link>
+		<comments>http://ecapy.com/instalar-node-js-y-npm-de-forma-automatizada/#comments</comments>
+		<pubDate>Wed, 22 Jun 2011 00:22:43 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1103</guid>
+		<description><![CDATA[Es increíble lo fácil que nos lo llegan a poner unas pocas lineas de código&#8230; Copien estas lineas a un archivo de texto y guárdenlo con el nombre que quieran y con extensión .sh [crayon-5844376aa1464375361337/] Desde la linea de comandos le damos permisos de escritura y lo ejecutamos: [crayon-5844376aa146b512823857/] Listo.]]></description>
+				<content:encoded><![CDATA[<p>Es increíble lo fácil que nos lo llegan a poner unas pocas lineas de código&#8230;</p>
+<p>Copien estas lineas a un archivo de texto y guárdenlo con el nombre que quieran y con extensión <strong>.sh</strong></p><pre class="crayon-plain-tag">echo 'export PATH=$HOME/.local/bin:$PATH' &amp;gt;&amp;gt; ~/.bashrc
+. ~/.bashrc
+mkdir ~/node-latest-install
+cd ~/node-latest-install
+curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
+./configure --prefix=~/.local
+make install</pre><p>Desde la linea de comandos le damos permisos de escritura y lo ejecutamos:</p><pre class="crayon-plain-tag">chmod 777 instaladorNodeJs.sh
+./instalador.sh</pre><p>Listo.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-node-js-y-npm-de-forma-automatizada/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

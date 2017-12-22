@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Drupal 7: Obtener el valor del field de una entidad</title>
+	<atom:link href="http://ecapy.com/drupal-7-obtener-el-valor-del-field-de-una-entidad/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/drupal-7-obtener-el-valor-del-field-de-una-entidad/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/drupal-7-obtener-el-valor-del-field-de-una-entidad/#comment-598</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Mon, 28 Jan 2013 17:09:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1577#comment-598</guid>
+		<description><![CDATA[Hola Ariel. Respondo tarde pero espero que le sirva a alguien.
+Lo único que se me ocurre que pueda faltar en esa situación es que pases el apellido a la plantilla por medio de $vars 
+
+&lt;pre class=&quot;decode:1 lang:php &quot; &gt;
+mimodulo_preprocess_page(&amp;$vars){
+    $entidadUsuario = entity_metadata_wrapper(&#039;user&#039;, 1);
+    $muchos_apellidos = $entidadUsuario-&gt;field_apellidos-&gt;value();
+    $apellidos = trim(implode(&quot; &quot;, $muchos_apellidos));
+     
+    //Me refiero a esto.
+    $vars[&quot;apellidos&quot;] = $apellidos;
+}
+&lt;/pre&gt; ]]></description>
+		<content:encoded><![CDATA[<p>Hola Ariel. Respondo tarde pero espero que le sirva a alguien.<br />
+Lo único que se me ocurre que pueda faltar en esa situación es que pases el apellido a la plantilla por medio de $vars </p>
+<p></p>
+		<div id="crayon-584438a49a0c4269332194" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+mimodulo_preprocess_page(&amp;$vars){
+    $entidadUsuario = entity_metadata_wrapper('user', 1);
+    $muchos_apellidos = $entidadUsuario-&gt;field_apellidos-&gt;value();
+    $apellidos = trim(implode(" ", $muchos_apellidos));
+     
+    //Me refiero a esto.
+    $vars["apellidos"] = $apellidos;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438a49a0c4269332194-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438a49a0c4269332194-2">2</div><div class="crayon-num" data-line="crayon-584438a49a0c4269332194-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438a49a0c4269332194-4">4</div><div class="crayon-num" data-line="crayon-584438a49a0c4269332194-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438a49a0c4269332194-6">6</div><div class="crayon-num" data-line="crayon-584438a49a0c4269332194-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438a49a0c4269332194-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438a49a0c4269332194-1"><span class="crayon-e">mimodulo_preprocess_page</span><span class="crayon-sy">(</span><span class="crayon-o">&amp;</span><span class="crayon-v">$vars</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438a49a0c4269332194-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$entidadUsuario</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">entity_metadata_wrapper</span><span class="crayon-sy">(</span><span class="crayon-s">'user'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438a49a0c4269332194-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$muchos_apellidos</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$entidadUsuario</span><span class="crayon-o">-&gt;</span><span class="crayon-i">field_apellidos</span><span class="crayon-o">-&gt;</span><span class="crayon-e">value</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438a49a0c4269332194-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$apellidos</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">trim</span><span class="crayon-sy">(</span><span class="crayon-e">implode</span><span class="crayon-sy">(</span><span class="crayon-s">" "</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$muchos_apellidos</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438a49a0c4269332194-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line crayon-striped-line" id="crayon-584438a49a0c4269332194-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//Me refiero a esto.</span></div><div class="crayon-line" id="crayon-584438a49a0c4269332194-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$vars</span><span class="crayon-sy">[</span><span class="crayon-s">"apellidos"</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$apellidos</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438a49a0c4269332194-8"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> </p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ariel</title>
+		<link>http://ecapy.com/drupal-7-obtener-el-valor-del-field-de-una-entidad/#comment-597</link>
+		<dc:creator><![CDATA[Ariel]]></dc:creator>
+		<pubDate>Sun, 13 Jan 2013 03:02:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1577#comment-597</guid>
+		<description><![CDATA[Hola desde Cuba Capy!!! Feliz Nuevo Año!
+
+HAce rato ando buscando este codigo para sacar un field de user, pero he probado usando Entity API como recomiendas  y me funciona, pero quisiera mostrar $apellidos en page.tpl.php. No me funciona $variables[&quot;apellidos&quot;], ni directamente $apellidos. Debo hacer algo para que se vea esa variable en la plantilla.
+
+OJO tu codigo lo puse en theme_preprocess_page
+
+Gracias de antemano
+Ariel]]></description>
+		<content:encoded><![CDATA[<p>Hola desde Cuba Capy!!! Feliz Nuevo Año!</p>
+<p>HAce rato ando buscando este codigo para sacar un field de user, pero he probado usando Entity API como recomiendas  y me funciona, pero quisiera mostrar $apellidos en page.tpl.php. No me funciona $variables[&#8220;apellidos&#8221;], ni directamente $apellidos. Debo hacer algo para que se vea esa variable en la plantilla.</p>
+<p>OJO tu codigo lo puse en theme_preprocess_page</p>
+<p>Gracias de antemano<br />
+Ariel</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/drupal-7-obtener-el-valor-del-field-de-una-entidad/#comment-596</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 11 Sep 2012 19:06:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1577#comment-596</guid>
+		<description><![CDATA[Muy cierto Ricardo]]></description>
+		<content:encoded><![CDATA[<p>Muy cierto Ricardo</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ricardo Sanz</title>
+		<link>http://ecapy.com/drupal-7-obtener-el-valor-del-field-de-una-entidad/#comment-595</link>
+		<dc:creator><![CDATA[Ricardo Sanz]]></dc:creator>
+		<pubDate>Tue, 11 Sep 2012 18:11:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1577#comment-595</guid>
+		<description><![CDATA[Y en el último ejemplo incluso sobra el user_load, se puede obtener el wrapper simplemente pasándole el identificador de la entidad (en este caso el uid del usuario):
+
+&lt;pre class=&quot;decode:1 lang:php &quot; &gt;
+$entidadUsuario = entity_metadata_wrapper(&#039;user&#039;, 1);
+&lt;/pre&gt;
+
+¡Entidades al  poder!]]></description>
+		<content:encoded><![CDATA[<p>Y en el último ejemplo incluso sobra el user_load, se puede obtener el wrapper simplemente pasándole el identificador de la entidad (en este caso el uid del usuario):</p>
+<p></p>
+		<div id="crayon-584438a49a239312026254" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$entidadUsuario = entity_metadata_wrapper('user', 1);</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438a49a239312026254-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438a49a239312026254-1"><span class="crayon-v">$entidadUsuario</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">entity_metadata_wrapper</span><span class="crayon-sy">(</span><span class="crayon-s">'user'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>¡Entidades al  poder!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

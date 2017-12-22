@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>expressjs &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/expressjs/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>req.flash() en express 3</title>
+		<link>http://ecapy.com/req-flash-en-express-3/</link>
+		<pubDate>Mon, 11 Mar 2013 05:25:28 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[expressjs]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2077</guid>
+		<description><![CDATA[A partir de la versión 3 de http://expressjs.com/ framework req.flash() fue quitado del core ya que estrictamente hablando, ésta funcionalidad no es &#8220;core&#8221;. No pasa nada, seguimos teniendo los mensajes flash pero en un modulo aparte: Para instalarlo: [code]npm install connect-flash[/code] O bien lo agregas a tu proyecto expressjs dentro de las dependencias y lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/req-flash-en-express-3/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>A partir de la versión 3 de <a href="http://expressjs.com/" target="_blank">http://expressjs.com/</a> framework req.flash() fue quitado del core ya que estrictamente hablando, ésta funcionalidad no es &#8220;core&#8221;.</p>
+<p>No pasa nada, seguimos teniendo los mensajes flash pero en un modulo aparte:</p>
+<p>Para instalarlo:</p>
+<p>[code]npm install connect-flash[/code]</p>
+<p>O bien lo agregas a tu proyecto expressjs dentro de las dependencias y lo actualizas con npm:</p><pre class="crayon-plain-tag">{
+    "name": "application-name",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "express": "3.1.0",
+        "connect-flash": "*"
+    }
+}</pre><p>[code]path/a/tu/app$: npm update[/code]</p>
+<p>A partir de allí, su uso sigue siendo el mismo que en versiones anteriores:</p>
+<p>Cargamos el modulo:</p><pre class="crayon-plain-tag">app.configure(function () {
+    app.use(express.session());
+    //flash(); SIEMPRE VA ENTRE express.session() Y app.router
+    app.use(flash());
+    app.use(app.router);
+});</pre><p>Y ya lo podemos usar. Por ejemplo para indicar a nuestro usuario que ha puesto mal sus datos de login:</p><pre class="crayon-plain-tag">app.post('/user/login', function(req, res){
+  req.flash('error', 'Tu usuario o contraseña están mal!')
+  res.redirect('/user/login');
+});
+
+app.get('/user/login', function(req, res){
+ res.render('index', { messages: req.flash('info') });
+});</pre><p></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

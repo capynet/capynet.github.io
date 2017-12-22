@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Extender taxonomías en Drupal 6</title>
+	<atom:link href="http://ecapy.com/extender-taxonomias-en-drupal-6/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/extender-taxonomias-en-drupal-6/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Trixie</title>
+		<link>http://ecapy.com/extender-taxonomias-en-drupal-6/#comment-194</link>
+		<dc:creator><![CDATA[Trixie]]></dc:creator>
+		<pubDate>Tue, 22 Nov 2011 02:52:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=491#comment-194</guid>
+		<description><![CDATA[What I find so inteestring is you could never find this anywhere else.]]></description>
+		<content:encoded><![CDATA[<p>What I find so inteestring is you could never find this anywhere else.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rodolfo</title>
+		<link>http://ecapy.com/extender-taxonomias-en-drupal-6/#comment-193</link>
+		<dc:creator><![CDATA[Rodolfo]]></dc:creator>
+		<pubDate>Thu, 28 Oct 2010 23:03:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=491#comment-193</guid>
+		<description><![CDATA[Hola amigo, soy nuevo en drupal, al menos en cuestiones avanzadas, estoy intentando hacer algo parecido a un catalogo de productos, con posibilidad de filtrar los productos por varios criterios, ejemplo: tipo, pais, marca, etc, y quiero que el listado de productos se haga en primer lugar por un vocabulario de taxonomia, donde al seleccionar en un menu desplegable formado por ese vocabulario un termino, me muestre un listado de productos que pertenecen al mismo pero que me permita a ese listado hacer los refinamientos o filtrados que te comente arriba; por tipo, pais, marca, etc. Si trabajo con el módulo taxonomia menu, consigo que se muestre el listado de productos del termino seleccionado, pero no me da la posibilidad de hacer los filtrados que deseo. No se si me hago entender mucho, este sitio, hace algo similar a lo que quiero hacer: http://www.alibaba.com/ 
+Cuando seleccionas en el menú lateral izquiero:
+Agriculture/cigarettes se te muetra un listado de productos que perteneces al termino cigarettes y con posibilidad de refinar la busqueda por varios criterios, si comprendes lo que te explico y tienes alguna sugerencia de a donde debo inclinar mi atención para lograrlo te lo agradeceria mucho. Gracias de antemano]]></description>
+		<content:encoded><![CDATA[<p>Hola amigo, soy nuevo en drupal, al menos en cuestiones avanzadas, estoy intentando hacer algo parecido a un catalogo de productos, con posibilidad de filtrar los productos por varios criterios, ejemplo: tipo, pais, marca, etc, y quiero que el listado de productos se haga en primer lugar por un vocabulario de taxonomia, donde al seleccionar en un menu desplegable formado por ese vocabulario un termino, me muestre un listado de productos que pertenecen al mismo pero que me permita a ese listado hacer los refinamientos o filtrados que te comente arriba; por tipo, pais, marca, etc. Si trabajo con el módulo taxonomia menu, consigo que se muestre el listado de productos del termino seleccionado, pero no me da la posibilidad de hacer los filtrados que deseo. No se si me hago entender mucho, este sitio, hace algo similar a lo que quiero hacer: <a href="http://www.alibaba.com/" rel="nofollow">http://www.alibaba.com/</a><br />
+Cuando seleccionas en el menú lateral izquiero:<br />
+Agriculture/cigarettes se te muetra un listado de productos que perteneces al termino cigarettes y con posibilidad de refinar la busqueda por varios criterios, si comprendes lo que te explico y tienes alguna sugerencia de a donde debo inclinar mi atención para lograrlo te lo agradeceria mucho. Gracias de antemano</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: William</title>
+		<link>http://ecapy.com/extender-taxonomias-en-drupal-6/#comment-192</link>
+		<dc:creator><![CDATA[William]]></dc:creator>
+		<pubDate>Sat, 19 Jun 2010 19:30:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=491#comment-192</guid>
+		<description><![CDATA[Listo ya lo conseguí, hay que agregar este codigo en la función function THEME_uc_catalog_browse
+
+La palabra THEME cambiarla por el nombre del tema que esté usando.
+
+Toda la función debe ir copiada en el template.php del tema que se está usando.
+
+
+
+  //Este codigo despliega cada categoria con imagen nombre y detalle
+	  $cell_link = $image .&#039;&lt;strong&gt;&#039;. l($child-&#062;name, uc_catalog_path($child)) . &#039; - &#039; . l($child-&#062;description, uc_catalog_path($child)) .&#039;&lt;/strong&gt;&#039;;
+      if (variable_get(&#039;uc_catalog_show_subcategories&#039;, TRUE)) {
+        $cell_link .= &quot;&quot;. implode(&#039;, &#039;, $grandchildren) .&quot;n&quot;;
+      }
+      $child_list[] = $cell_link;]]></description>
+		<content:encoded><![CDATA[<p>Listo ya lo conseguí, hay que agregar este codigo en la función function THEME_uc_catalog_browse</p>
+<p>La palabra THEME cambiarla por el nombre del tema que esté usando.</p>
+<p>Toda la función debe ir copiada en el template.php del tema que se está usando.</p>
+<p>  //Este codigo despliega cada categoria con imagen nombre y detalle<br />
+	  $cell_link = $image .&#8217;<strong>&#8216;. l($child-&gt;name, uc_catalog_path($child)) . &#8216; &#8211; &#8216; . l($child-&gt;description, uc_catalog_path($child)) .&#8217;</strong>&#8216;;<br />
+      if (variable_get(&#8216;uc_catalog_show_subcategories&#8217;, TRUE)) {<br />
+        $cell_link .= &#8220;&#8221;. implode(&#8216;, &#8216;, $grandchildren) .&#8221;n&#8221;;<br />
+      }<br />
+      $child_list[] = $cell_link;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/extender-taxonomias-en-drupal-6/#comment-191</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 16 Jun 2010 20:37:30 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=491#comment-191</guid>
+		<description><![CDATA[La verdad es que nunca usé Ubercart. Miré la pagina que etas haciendo y veo que todo lo que sea /catalog/x es como un view o algo asi. en todo caso deberiamos ver que es lo que se dibuja bajo esa URL para saber por donde podemos tocar.
+
+Al margen de eso. ¿estas programando algo o estas mas bien configurandolo?. Pregunto porque si lo que estas haciendo es configurar en lugar de programar, esto no te va a servir.]]></description>
+		<content:encoded><![CDATA[<p>La verdad es que nunca usé Ubercart. Miré la pagina que etas haciendo y veo que todo lo que sea /catalog/x es como un view o algo asi. en todo caso deberiamos ver que es lo que se dibuja bajo esa URL para saber por donde podemos tocar.</p>
+<p>Al margen de eso. ¿estas programando algo o estas mas bien configurandolo?. Pregunto porque si lo que estas haciendo es configurar en lugar de programar, esto no te va a servir.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: William</title>
+		<link>http://ecapy.com/extender-taxonomias-en-drupal-6/#comment-190</link>
+		<dc:creator><![CDATA[William]]></dc:creator>
+		<pubDate>Mon, 14 Jun 2010 22:15:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=491#comment-190</guid>
+		<description><![CDATA[Ok tienes razon, no me di a entender, estoy usando Ubertcart para un catalogo de productos.
+
+En la pagina principal de las categorias necesito una descripcion ya que solo aparece La imagen, el nombre y las subcategorias.
+
+Aqui precisamente: http://enersyscr.com/catalog/1 
+
+Lo que no se es que tengo que modificar para que aparezca el campo con la descripcion ahi.
+
+En caso de que pueda ayudarme se lo agradecería bastante.
+
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>Ok tienes razon, no me di a entender, estoy usando Ubertcart para un catalogo de productos.</p>
+<p>En la pagina principal de las categorias necesito una descripcion ya que solo aparece La imagen, el nombre y las subcategorias.</p>
+<p>Aqui precisamente: <a href="http://enersyscr.com/catalog/1" rel="nofollow">http://enersyscr.com/catalog/1</a> </p>
+<p>Lo que no se es que tengo que modificar para que aparezca el campo con la descripcion ahi.</p>
+<p>En caso de que pueda ayudarme se lo agradecería bastante.</p>
+<p>Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/extender-taxonomias-en-drupal-6/#comment-189</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Mon, 14 Jun 2010 21:31:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=491#comment-189</guid>
+		<description><![CDATA[Hola, no se a que te referís cuando decís catalogo, pero puedo decirte como usar el campo extra que se crea en el código del tutorial.
+
+Siempre y cuando tengas disponible el tid (id del termino) disponible podes cargar un objeto de la información extendida de la siguiente forma:
+
+&lt;pre lang=&quot;php&quot;&gt;
+//en este ejemplo el $tid  viene a contener el id de la taxonomia que se esta por mostrar
+$extraData = db_fetch_object ( db_query ( &quot;SELECT * FROM {extender_taxonomy} WHERE tid = %d&quot;, $tid ) );
+
+//recuperar el dato es simple como lo siguiente.
+echo $extraData-&#062;descripcion_usuarios;
+&lt;/pre&gt;]]></description>
+		<content:encoded><![CDATA[<p>Hola, no se a que te referís cuando decís catalogo, pero puedo decirte como usar el campo extra que se crea en el código del tutorial.</p>
+<p>Siempre y cuando tengas disponible el tid (id del termino) disponible podes cargar un objeto de la información extendida de la siguiente forma:</p>
+<p></p>
+		<div id="crayon-5844388eede38879641358" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+//en este ejemplo el $tid  viene a contener el id de la taxonomia que se esta por mostrar
+$extraData = db_fetch_object ( db_query ( "SELECT * FROM {extender_taxonomy} WHERE tid = %d", $tid ) );
+
+//recuperar el dato es simple como lo siguiente.
+echo $extraData-&gt;descripcion_usuarios;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844388eede38879641358-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844388eede38879641358-2">2</div><div class="crayon-num" data-line="crayon-5844388eede38879641358-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844388eede38879641358-4">4</div><div class="crayon-num" data-line="crayon-5844388eede38879641358-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844388eede38879641358-1"><span class="crayon-c">//en este ejemplo el $tid&nbsp;&nbsp;viene a contener el id de la taxonomia que se esta por mostrar</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844388eede38879641358-2"><span class="crayon-v">$extraData</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">db_fetch_object</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-e">db_query</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-s">"SELECT * FROM {extender_taxonomy} WHERE tid = %d"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$tid</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844388eede38879641358-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844388eede38879641358-4"><span class="crayon-c">//recuperar el dato es simple como lo siguiente.</span></div><div class="crayon-line" id="crayon-5844388eede38879641358-5"><span class="crayon-k ">echo</span><span class="crayon-h"> </span><span class="crayon-v">$extraData</span><span class="crayon-o">-&gt;</span><span class="crayon-i">descripcion_usuarios</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: William</title>
+		<link>http://ecapy.com/extender-taxonomias-en-drupal-6/#comment-188</link>
+		<dc:creator><![CDATA[William]]></dc:creator>
+		<pubDate>Mon, 14 Jun 2010 21:02:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=491#comment-188</guid>
+		<description><![CDATA[Hola, muchas gracias por esta información, me ha sido muy util.
+Solo me falta un detalle y quería saber si me puede ayudar...
+Necesito que este campo aparezca en la pantalla de visualización del catalogo.
+
+Como hago para imprimirlo en pantalla.??
+Gracias]]></description>
+		<content:encoded><![CDATA[<p>Hola, muchas gracias por esta información, me ha sido muy util.<br />
+Solo me falta un detalle y quería saber si me puede ayudar&#8230;<br />
+Necesito que este campo aparezca en la pantalla de visualización del catalogo.</p>
+<p>Como hago para imprimirlo en pantalla.??<br />
+Gracias</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Maquetación &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/maquetacion/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Chrome redimensiona mas imágenes dentro de una tabla.</title>
+		<link>http://ecapy.com/chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/</link>
+		<pubDate>Wed, 25 Mar 2015 01:11:19 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2870</guid>
+		<description><![CDATA[Me ha pasado algo curioso y solo en chrome de momento. Tengo un texto en una celda y una imagen en la otra. El problema vino cuando usé un max-width:100% para las img en general. En ese momento toda imagen que estuviera dentro de un &#60;td&#62; pasó a redimensionarse: Ok, Chrome también tiene sus cositas.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me ha pasado algo curioso y solo en chrome de momento. Tengo un texto en una celda y una imagen en la otra. El problema vino cuando usé un max-width:100% para las img en general. En ese momento toda imagen que estuviera dentro de un &lt;td&gt; pasó a redimensionarse:</p>
+<p><img class="wp-image-2871 size-full alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/broken.png" alt="broken" width="1028" height="203" srcset="http://ecapy.com/wp-content/uploads/2015/03/broken.png 1028w, http://ecapy.com/wp-content/uploads/2015/03/broken-300x59.png 300w, http://ecapy.com/wp-content/uploads/2015/03/broken-768x152.png 768w, http://ecapy.com/wp-content/uploads/2015/03/broken-1024x202.png 1024w" sizes="(max-width: 1028px) 100vw, 1028px" /></p>
+<p>Ok, Chrome también tiene sus cositas. La solución ha sido la siguiente:</p><pre class="crayon-plain-tag">/* Quiero que todas las img usen como mucho el 100% */
+img {
+    max-width: 100%;
+}
+
+/* Pero si la imagen está dentro de un td anulamos el max-width para evitar ese comportamiento raro. */
+table tr td &gt; img {
+    max-width: none;
+}</pre><p>Resultado:<br />
+<img class="wp-image-2872 size-full alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/fixed.png" alt="fixed" width="1001" height="259" srcset="http://ecapy.com/wp-content/uploads/2015/03/fixed.png 1001w, http://ecapy.com/wp-content/uploads/2015/03/fixed-300x78.png 300w, http://ecapy.com/wp-content/uploads/2015/03/fixed-768x199.png 768w" sizes="(max-width: 1001px) 100vw, 1001px" /></p>
+<p>Y todos felices. Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Front-end: Maquetar un buscador (input + botón) para que sea 100% fluido / responsive</title>
+		<link>http://ecapy.com/front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/</link>
+		<pubDate>Fri, 12 Sep 2014 19:18:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2767</guid>
+		<description><![CDATA[La idea detrás de esto fue lograr que el buscador esté siempre al 100% del espacio que tenga disponible y no tener que preocuparme de dimensionar los input para que encajen y que el botón no caiga a dos lineas cuando se queda sin espacio. Pueden ver como funciona si re dimensionan la ventana del&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La idea detrás de esto fue lograr que el buscador esté siempre al 100% del espacio que tenga disponible y no tener que preocuparme de dimensionar los input para que encajen y que el botón no caiga a dos lineas cuando se queda sin espacio.</p>
+<p>Pueden ver como funciona si re dimensionan la ventana del navegador:</p>
+<p class="codepen" data-height="550" data-theme-id="0" data-slug-hash="vJBnL" data-default-tab="result" data-user="capynet">See the Pen <a href="http://codepen.io/capynet/pen/vJBnL/">vJBnL</a> by Marcelo Tosco (<a href="http://codepen.io/capynet">@capynet</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p><script src="//codepen.io/assets/embed/ei.js" async=""></script></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Front-end: Títulos multi linea con padding por cada una de las lineas</title>
+		<link>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/</link>
+		<comments>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/#comments</comments>
+		<pubDate>Wed, 13 Aug 2014 13:51:24 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2748</guid>
+		<description><![CDATA[Así es como vemos un titulo cuando tiene aplicado un padding sin mas Y asi es como queremos que se vea No voy a explicar toda la lógica que hay detrás de esto. Vayamos a la solución. Este es el html. en div.titulo tenemos el background y en .highlight el background del texto, el padding&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h3>Así es como vemos un titulo cuando tiene aplicado un padding sin mas</h3>
+<p><a href="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png"><img class="size-full wp-image-2751 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png" alt="texto-multilinea-error" width="711" height="177" srcset="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png 711w, http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error-300x75.png 300w" sizes="(max-width: 711px) 100vw, 711px" /></a></p>
+<h3>Y asi es como queremos que se vea</h3>
+<p><a href="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png"><img class="size-full wp-image-2749 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png" alt="titulo-con-padding-en-cada-linea" width="712" height="242" srcset="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png 712w, http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea-300x102.png 300w" sizes="(max-width: 712px) 100vw, 712px" /></a></p>
+<p>No voy a explicar toda la lógica que hay detrás de esto. Vayamos a la solución.</p>
+<p>Este es el html. en <strong>div.titulo</strong> tenemos el background y en <strong>.highlight</strong> el background del texto, el padding que queremos que tenga y el hack mediante la propiedad box-shadow que es la que nos termina agregando los pedacitos de padding que nos falta entre lineas.</p>
+<div class="titulo">
+<pre class="crayon-plain-tag">&lt;div class="titulo"&gt;
+    &lt;span class="highlight"&gt;Títulos multi linea con padding por cada linea&lt;/span&gt;
+&lt;/div&gt;</pre>
+</div>
+<div class="titulo"><span class="highlight">Títulos multi linea con padding por cada linea</span></div>
+<p></p><pre class="crayon-plain-tag">.titulo {
+    padding-top: 32px;
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    font-family: arial, helvetica, sans-serif;
+    background: url('fondo.jpg') no-repeat 50% 50%;
+}
+
+.highlight {
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    /*Esto es lo importante*/
+    display: inline; /* Aseguramos que el elemento sea inline */
+    background: black; /* Color de fondo del texto */
+    line-height: 1.6em; /* Espaciado entre lineas */
+    padding: 7px 0; /* padding deseado */
+    box-shadow: 14px 0 0 black, -14px 0 0 black;
+}</pre><p><strong>Del CSS que puse solo hagan caso a las lineas que tienen &#8220;<em>/*Esto es lo importante*/</em>&#8220;. El resto es decoración.</strong></p>
+<p><strong>No comenté el box-shadow porque prefiero hacerlo aquí:</strong> La magia se da en box-shadow. Solo tienes que tocar dos parámetros. El color cámbialo de <strong>black</strong> al que hayas puesto en la propiedad background, y los valores <strong>14px y -14px</strong> ajustalos para arriba o para abajo hasta que te guste el padding lateral que hay en cada una de las lineas.</p>
+<p>Listo!</p>
+<p>Artículo original: <a href="http://css-tricks.com/multi-line-padded-text/" target="_blank">css-tricks.com</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>CSS: Centrar vertical y horizontalmente un elemento sin saber su tamaño</title>
+		<link>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/</link>
+		<comments>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/#comments</comments>
+		<pubDate>Tue, 12 Aug 2014 11:20:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2737</guid>
+		<description><![CDATA[Centrar un elemento cuando se sabe el tamaño que tiene es fácil. Pero y si el elemento que queremos centrar tiene un tamaño expresado en % o no tiene un tamaño especificado, ya no es tan fácil centrarlo. Ahora que prácticamente IE8 ya no se usa, lo podemos quitar de la ecuación y usar CSS&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Centrar un elemento cuando se sabe el tamaño que tiene es fácil. Pero y si el elemento que queremos centrar tiene un tamaño expresado en <strong>% o no tiene un tamaño especificado</strong>, ya no es tan fácil centrarlo.</p>
+<p>Ahora que prácticamente IE8 ya no se usa, lo podemos quitar de la ecuación y usar CSS un poco mas avanzado.<br />
+Dicho lo anterior, ahora que podemos usar la propiedad <em>transform: translate();</em>, ya podemos centrar vertical y horizontalmente cualquier elemento.</p><pre class="crayon-plain-tag">&lt;div class="centrado-porcentual"&gt;
+  No nos hace falta conocer el tamaño de esta caja para poder centrarla vertical y horizontalmente :)
+&lt;/div&gt;</pre><p></p><pre class="crayon-plain-tag">.centrado-porcentual {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}</pre><p>Resultado:<br />
+<a href="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png"><img class="size-full wp-image-2743 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png" alt="centrado-vert-hoz-transform" width="774" height="638" srcset="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png 774w, http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform-300x247.png 300w, http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform-768x633.png 768w" sizes="(max-width: 774px) 100vw, 774px" /></a></p>
+<p>NOTA: si el elemento que quieres centrar está dentro de otro, recuerda que el padre tiene que tener una posición relativa.</p>
+<p>Chau!</p>
+<p>Idea original: <a href="http://css-tricks.com/centering-percentage-widthheight-elements/" target="_blank">css-tricks.com</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7: Controlar completamente los template de Field collection</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/</link>
+		<comments>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comments</comments>
+		<pubDate>Tue, 22 Jul 2014 14:23:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2713</guid>
+		<description><![CDATA[El muy jodido tiene mas vueltas que una oreja cuando de theming se trata. NOTA: todos los templates que hay que crear ponlos en tu theme. Lo ideal es dentro del directorio tu_theme/templates/field_collection o algo similar. Primero creamos el tpl field-collection-view.tpl.php que es el wrapper que hay entre el html del field y el del&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El muy jodido tiene mas vueltas que una oreja cuando de theming se trata.</p>
+<p>NOTA: todos los templates que hay que crear ponlos en tu theme. Lo ideal es dentro del directorio tu_theme/templates/field_collection o algo similar.</p>
+<p>Primero creamos el tpl <em><strong>field-collection-view.tpl.php</strong></em> que es el wrapper que hay entre el html del field y el del <a href="https://www.drupal.org/project/field_collection" target="_blank">field collection</a>. Pon esto dentro:</p><pre class="crayon-plain-tag">&lt;?php print $element['#children']; ?&gt;</pre><p>Luego <em><strong>field-collection-item.tpl.php</strong></em> que es el tpl que controla el render de cada uno de los item individuales de la colección:</p><pre class="crayon-plain-tag">&lt;?php print render($content); ?&gt;</pre><p>Por ultimo necesitamos <em><strong>field&#8211;field-collection.tpl.php (ojo que mi wordpress junta los dos guiones)</strong></em>, un tpl para el field que contiene todo lo que <a href="https://www.drupal.org/project/field_collection" target="_blank">field collection</a> entregue:</p><pre class="crayon-plain-tag">&lt;?php foreach ($items as $delta =&gt; $item): ?&gt;
+    &lt;?php print render($item); ?&gt;
+&lt;?php endforeach; ?&gt;</pre><p>Y listo! ya tenes control a todos los niveles del markup que va a entregar un <a href="https://www.drupal.org/project/field_collection" target="_blank">field collection</a>.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7 : Crear un template block&#8211;bean&#8211;type-ENTITY-TYPE.tpl.php para bundles del módulo Bean</title>
+		<link>http://ecapy.com/drupal-7-crear-un-template-block-bean-type-entity-type-tpl-php-para-bundles-del-modulo-bean/</link>
+		<pubDate>Mon, 14 Jul 2014 19:05:20 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2708</guid>
+		<description><![CDATA[Caso de uso. Creaste un bean del tipo &#8220;banner&#8221; y quieres que el block.tpl.php tenga un marcado específico para este tipo de contenidos. O lo que es lo mismo que decir que quieres tener un block&#8211;bean&#8211;type-banner.tpl.php La solución es poner este preprocess: [crayon-584436b1d5c01316948801/] Y ya podés copiar block.tpl.php a tu theme, renombrarlo a block&#8211;bean&#8211;type-banner.tpl.php, personalizarlo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-crear-un-template-block-bean-type-entity-type-tpl-php-para-bundles-del-modulo-bean/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Caso de uso. Creaste un <a href="https://www.drupal.org/project/bean" target="_blank">bean</a> del tipo &#8220;banner&#8221; y quieres que el <strong>block.tpl.php</strong> tenga un marcado específico para este tipo de contenidos. O lo que es lo mismo que decir que quieres tener un <em><strong>block&#8211;bean&#8211;type-banner.tpl.php</strong></em></p>
+<p>La solución es poner este preprocess:</p><pre class="crayon-plain-tag">/**
+ * Implements hook_preprocess_block().
+ */
+function TU_THEME_O_MODULO_preprocess_block(&amp;$vars) {
+    // Añadimos theme suggestions por tipo de bean.
+    if ($vars['block']-&gt;module == "bean") {
+        /** @var $bean Bean */
+        $bean = bean_load_delta($vars['block']-&gt;delta);
+        $vars['theme_hook_suggestions'][] = 'block__bean__type_' . $bean-&gt;type;
+    }
+}</pre><p>Y ya podés copiar block.tpl.php a tu theme, renombrarlo a block&#8211;bean&#8211;type-banner.tpl.php, personalizarlo y borrar el cache.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Calcular el porcentaje de transparencia para &#8220;progid:DXImageTransform.Microsoft.gradient&#8221;</title>
+		<link>http://ecapy.com/calcular-el-porcentaje-de-transparencia-para-progiddximagetransform-microsoft-gradient/</link>
+		<pubDate>Fri, 27 Dec 2013 01:31:58 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2592</guid>
+		<description><![CDATA[En versiones de IE &#60;= 8 es normal tener que usar: [crayon-584436b1d6166071993157/] para aplicar transparencia a un background. Pero como se puede ver, no está muy claro donde poner el porcentaje de transparencia que queremos. En el ejemplo del principio el truco que estamos usando es aplican un degradado que va desde blanco a blanco,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/calcular-el-porcentaje-de-transparencia-para-progiddximagetransform-microsoft-gradient/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>En versiones de IE &lt;= 8 es normal tener que usar:</p><pre class="crayon-plain-tag">filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#d8ffffff', endColorstr='#d8ffffff');</pre><p>para aplicar transparencia a un background. Pero como se puede ver, no está muy claro donde poner el porcentaje de transparencia que queremos.</p>
+<p>En el ejemplo del principio el truco que estamos usando es aplican un degradado que va desde blanco a blanco, pero por delante de cada color tenemos &#8220;<strong>d8</strong>&#8220;, que corresponde al valor alpha de RGBA (AARRGGBB). Pero está en hexadecimal y nosotros estamos acostumbrados a usar valores decimales (tipo <strong><em>opacity: 0.5</em></strong>).</p>
+<p>Para saber que valor tenemos que poner si queremos por ejemplo un 50% de opacidad simplemente tenemos que hacer esta cuenta:</p>
+<p><strong>255 * 0.5 = 127.5 </strong>(redondeando queda en 127).</p>
+<p><strong>A este resultado lo pasas por alguna aplicación que convierta valores decimales a hexadecimales como por ejemplo <em><a href="http://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html" target="_blank">ésta</a></em></strong> lo que te va a dar &#8220;<strong>7F</strong>&#8220;. Y ya está, Nuestro filtro anterior modificado quedaría como:</p>
+<p>Blanco al 50%:</p><pre class="crayon-plain-tag">filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#7Fffffff', endColorstr='#7Fffffff');</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7 + Views: Temear exposed filters como Dios manda</title>
+		<link>http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/</link>
+		<comments>http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/#comments</comments>
+		<pubDate>Thu, 21 Nov 2013 09:05:10 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2559</guid>
+		<description><![CDATA[Lo primero que tenes que saber es que podes tomar el control del template que imprime los filtros expuestos de un view (views-exposed-form.tpl.php) simplemente copiandolo a tu theme y poniéndole un nombre con este formato: [crayon-584436b1d6870344702398/] Ejemplos: Tengo un view llamado listado_usuarios y dos display: una página &#8220;administracion_usuarios&#8221; y un bloque &#8220;usuarios_por_fecha&#8221; (De mas especifico&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Lo primero que tenes que saber es que podes tomar el control del template que imprime los filtros expuestos de un view (views-exposed-form.tpl.php) simplemente copiandolo a tu theme y poniéndole un nombre con este formato:</p><pre class="crayon-plain-tag">views-exposed-form--VIEW_NAME.tpl.php
+views-exposed-form--VIEW_NAME--DISPLAY_ID.tpl.php</pre><p>Ejemplos:<br />
+Tengo un view llamado <strong>listado_usuarios</strong> y dos display: una página &#8220;<em>administracion_usuarios</em>&#8221; y un bloque &#8220;<em>usuarios_por_fecha</em>&#8221;</p>
+<p>(De mas especifico a mas genérico)</p>
+<p>Solo para el formulario expuesto del display administracion_usuarios.</p><pre class="crayon-plain-tag">views-exposed-form--listado_usuarios--administracion_usuarios.tpl.php</pre><p>Solo para el formulario expuesto del display usuarios_por_fecha.</p><pre class="crayon-plain-tag">views-exposed-form--listado_usuarios--usuarios_por_fecha.tpl.php</pre><p>Para todos los display que tengan formulario expuesto en este view.</p><pre class="crayon-plain-tag">views-exposed-form--listado_usuarios.tpl.php</pre><p>Cualquier view (CUALQUIERA) que tenga un display llamado administracion_usuarios.</p><pre class="crayon-plain-tag">views-exposed-form--administracion_usuarios.tpl.php</pre><p>Cualquier view con cualquier display.</p><pre class="crayon-plain-tag">views-exposed-form.tpl.php</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-7-views-temear-exposed-filters-como-dios-manda/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: throbber para input gordos</title>
+		<link>http://ecapy.com/drupal-throbber-para-input-gordos/</link>
+		<comments>http://ecapy.com/drupal-throbber-para-input-gordos/#comments</comments>
+		<pubDate>Tue, 19 Nov 2013 23:53:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2548</guid>
+		<description><![CDATA[La ruedita de autocomplete de drupal tiene un fallo, y es que cuando un input es un poquito &#8220;gordo&#8221; ya se ve parte de la ruiedita activa (porque es un sprite). Aca les dejo el css y las imagenes que reemplazan al throbber de Drupal por el mismo pero separados, así deja de ser un&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-throbber-para-input-gordos/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La ruedita de autocomplete de drupal tiene un fallo, y es que cuando un input es un poquito &#8220;gordo&#8221; ya se ve parte de la ruiedita activa (porque es un sprite).<br />
+Aca les dejo el css y las imagenes que reemplazan al throbber de Drupal por el mismo pero separados, así deja de ser un incordio.</p><pre class="crayon-plain-tag">html.js input.form-autocomplete {
+    background: url("throbber-inactive.png") no-repeat scroll 98% 50% transparent;
+}
+
+html.js input.form-autocomplete.throbbing {
+    background: url("throbber-active.gif") no-repeat scroll 98% 50% transparent;
+}</pre><p><a href="http://ecapy.com/wp-content/uploads/2013/11/throbber-inactive.png"><img class="size-full wp-image-2550" src="http://ecapy.com/wp-content/uploads/2013/11/throbber-inactive.png" alt="throbber-inactive" width="15" height="17" /></a> &lt;&#8212;- (click derecho y &#8220;guardar imagen como&#8221;)</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2013/11/throbber-active.gif"><img class="size-full wp-image-2549" src="http://ecapy.com/wp-content/uploads/2013/11/throbber-active.gif" alt="throbber-active" width="15" height="17" /></a> &lt;&#8212;-(click derecho y &#8220;guardar imagen como&#8221;)</p>
+<h3>Aca pongo una versión con las imágenes embebidas. no hace falta que descargues las imágenes porque ya vienen incrustadas en el CSS.</h3>
+<p></p><pre class="crayon-plain-tag">html.js input.form-autocomplete {
+  background: url('data:"image/png";base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARCAMAAAA11AaTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGRkY0M0MxQ0ZDOUFFMjExOUYwNTkyQzM4NDM3MTEyQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDNzEyMkVCMjlBRkUxMUUyQTQxNTk4RTJBMDQ5RjZDQiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDNzEyMkVCMTlBRkUxMUUyQTQxNTk4RTJBMDQ5RjZDQiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA1RjUzQzFDRkM5QUUyMTE5RjA1OTJDMzg0MzcxMTJCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZGRjQzQzFDRkM5QUUyMTE5RjA1OTJDMzg0MzcxMTJCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8+0pVAAAAFFQTFRFxsbGzs7O3t7e5+fnCHO9////a6/Yi7/h3u/3RpzODHu91uf3HITG7/f/oM7nNZDKyuLztdbv5+/3GHvG9/f/7+/vvb291tbW9/f3tbW1////V+AtUQAAABt0Uk5T//////////////////////////////////8AJzQLNQAAAFxJREFUeNp8j1kOgDAIRIHGI7CM9z+oharRuvBBeJBhgNZ70BureIuTg5HBMTgMxk6ALcUMyokaPFlhQ6pAL0iqXVK0nhyyc1WP+ayf96c/rv7HfR4f9//+uwkwABszFtyhYnczAAAAAElFTkSuQmCC') no-repeat scroll 98% 50% transparent !important;
+}
+
+html.js input.form-autocomplete.throbbing {
+  background: url('data:"image/gif";base64,R0lGODlhDwARAMQTAMri8xyExgx7ve/3/73e7/f3/9bn9xh7xrXW797v91qi0zWQyou/4aDO52uv2Ofv90aczghzvf///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGRkY0M0MxQ0ZDOUFFMjExOUYwNTkyQzM4NDM3MTEyQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3RkE0MTI2MTlBRkUxMUUyQUNCRDlCOEFDNDQ5MzZGQyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3RkE0MTI2MDlBRkUxMUUyQUNCRDlCOEFDNDQ5MzZGQyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAyRjUzQzFDRkM5QUUyMTE5RjA1OTJDMzg0MzcxMTJCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZGRjQzQzFDRkM5QUUyMTE5RjA1OTJDMzg0MzcxMTJCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEBQYAEwAsAAAAAA8AEQAABWjgJI5kaZ6mwThNgiZQJMvKUCZCJAQR3xek2CLBiDAAPMfIoHtIigwJQGabNCIOydOojSFEDu42KgkzRMWsBKFAdCPfCVPg1GqnkepEmLADDlgkODIQDjE/JQ+HMw56JQYNLC4olJUoIQAh+QQFBgATACwAAAIADQANAAAFR+AkTkDDTMOormIxPsEULcoiLukqFUF0vCoJIwIhiB6rhExpI5wcIoVK2mhMpJOHwzUiAGQskUAyinVZ5qttsg5HkSvkaRUCACH5BAUGABMALAAAAgANAA0AAAU/4CROz5iMY4mK6nSK0FqsoiQBwghM0SgRi55AIlKwjJEADSVg0Bwo1YI1ya0IvNZiJ+KmRtOYaGBazlZe8igEACH5BAUGABMALAAAAgANAA0AAAVI4CROBuOM6JSk4oAKE+xAYsCmtmjEqCQBk4hrcpoQGEiGDXFiiJyRaGSCRCEUWMVydwNOhqLVTQWbQIqTQGH0YDnAo91JLAoBACH5BAUGABMALAAAAgANAA0AAAVJ4CROQMNMw6iuYjE+wRQtyrikbP7kEyHuqofjIZEseieHqCZgSGqNxqQ22UUigSMBIFMRFpGJQDKKjQiClXl6nLR5U2BwclqFAAAh+QQFBgATACwAAAIADQANAAAFQOAkTs+YjGOJiup0itC0jMW6HiMwRbYuSCIFqjaJ2UQM4MohSvASStJEMGJEIIRda6ErBHio7WpgOhJROhF5FAIAIfkEBQYAEwAsAAACAA0ADQAABUXgJE7G5IzolKTigAoT7EBiwKa2WMJ35JoiAoOAQpwYIuToqExOGJIJDVEaMSJQQAuVuDIABy4vEMkFCqMHy/FDlU6rUQgAIfkEBQYAEwAsAAACAA0ADQAABUbgJE7AxEzDqK5iMT7BFC3KuKRs/uQTIe6qhwO36J0cohpyUms0mL2IACcilCKTRaQhGQm6osNMIvGtYllFMcsbKYBBEysEACH5BAUGABMALAAAAgANAA0AAAVB4CROz5iMY4mK6nSK0LSMxboeIzBFti5IIoXoVJvEUAUGzwYL8ByjGUkUgRiAE8KuFQBgdagWbDQwMYso8KQ8CgEAIfkEBQYAEwAsAAACAA0ADQAABUngJE4G44zolKTigAoT7EBiwKa2aMT3FA2MSUBBVCBQiFNkKQpOTs4FY8ogiGiIneAhkYwArdFi1UvAJpBTrTB6sByu1O5EFoUAACH5BAUGABMALAAAAgANAA0AAAVI4CROQMNMw6iuYjE+wRQtyrikY8yKjxxBhhGB15hAApGIA7eYEE6OwmniENWKE4VEkoiqCADZbiKQ5L4sXbY5YY+zvVVvqgoBACH5BAUGABMALAAAAgANAA0AAAVB4CROz5iMY4mK6nSiy1isUSweI8AuUSPqAolIISFMBCPISiJRrFAO1mQgspWQK2OktdD9VtyJUkQVvVazlXeKCgEAOw==') no-repeat scroll 98% 50% transparent !important;
+}</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-throbber-para-input-gordos/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7: Integrar Inline entity form perfectamente en el formulario en el que está anidado.</title>
+		<link>http://ecapy.com/drupal-7-integrar-inline-entity-form-perfectamente-en-el-formulario-en-el-que-esta-anidado/</link>
+		<pubDate>Thu, 12 Sep 2013 08:30:28 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2478</guid>
+		<description><![CDATA[Cuando Inline entity form renderiza la entidad dentro de otro formulario tiende a meterle fieldsets y títulos extra que no son estrictamente parte del formulario de la entidad referida. Como resultado, el formulario anidado queda como tal, como si estuviera anidado, y eso no queda bonito. Estaria mejor que el formulario visualmente se integrase mejor&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-7-integrar-inline-entity-form-perfectamente-en-el-formulario-en-el-que-esta-anidado/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando <a href="https://drupal.org/project/inline_entity_form" target="_blank">Inline entity form</a> renderiza la entidad dentro de otro formulario tiende a meterle fieldsets y títulos extra que no son estrictamente parte del formulario de la entidad referida. Como resultado, el formulario anidado queda como tal, como si estuviera anidado, y eso no queda bonito. Estaria mejor que el formulario visualmente se integrase mejor al formulario del nodo al que está referido.</p>
+<p>Para lograr esto agarra tu módulo o theme (template.php) y pon esto:</p><pre class="crayon-plain-tag">function TUMODULO_o_THEME_field_widget_inline_entity_form_single_form_alter(&amp;$entity_form, &amp;$form_state) {
+  $entity_form['#type'] = 'container';
+  $entity_form['form']['product_details']['#type'] = 'container';
+  unset($entity_form['#title'], $entity_form['#tree'], $entity_form['#description'], $entity_form['#prefix'], $entity_form['#suffix']);
+}</pre><p>Básicamente se deshace de los fieldset que aíslan al formulario de la entidad referida del formulario que lo contiene.</p>
+<p>El antes y el después:<br />
+<a href="http://ecapy.com/wp-content/uploads/2013/09/entity_inline_item_dirty_clean.png"><img class="size-full wp-image-2493 alignnone" src="http://ecapy.com/wp-content/uploads/2013/09/entity_inline_item_dirty_clean.png" alt="Entity inline clean" width="1755" height="716" srcset="http://ecapy.com/wp-content/uploads/2013/09/entity_inline_item_dirty_clean.png 1755w, http://ecapy.com/wp-content/uploads/2013/09/entity_inline_item_dirty_clean-300x122.png 300w, http://ecapy.com/wp-content/uploads/2013/09/entity_inline_item_dirty_clean-768x313.png 768w, http://ecapy.com/wp-content/uploads/2013/09/entity_inline_item_dirty_clean-1024x418.png 1024w, http://ecapy.com/wp-content/uploads/2013/09/entity_inline_item_dirty_clean-1200x490.png 1200w" sizes="(max-width: 1755px) 100vw, 1755px" /></a><br />
+Chau!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

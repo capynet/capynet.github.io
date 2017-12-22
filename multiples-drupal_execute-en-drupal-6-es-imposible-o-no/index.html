@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:34:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Múltiples drupal_execute() en Drupal 6 es imposible&#8230; O NO :)</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Múltiples drupal_execute() en Drupal 6 es imposible&#8230; O NO :) RSS de los comentarios" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Nota rápida: sobre drupal_set_html_head(), template.php y las taxonomías.' href='../nota-rapida-sobre-drupal_set_html_head-template-php-y-las-taxonomias/index.html' />
+<link rel='next' title='Snippet: Verificar si una fecha está dentro de un rango de fechas en PHP.' href='../verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../indexb7bc.html?p=474' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedccb0.json?url=http%3A%2F%2Fecapy.com%2Fmultiples-drupal_execute-en-drupal-6-es-imposible-o-no%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed7bbb?url=http%3A%2F%2Fecapy.com%2Fmultiples-drupal_execute-en-drupal-6-es-imposible-o-no%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-474 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2958 active"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-474" class="post-474 post type-post status-publish format-standard has-post-thumbnail hentry category-php tag-bug tag-drupal-6 tag-php tag-programacion tag-snippet">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Múltiples drupal_execute() en Drupal 6 es imposible&#8230; O NO :)</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2010-06-02T21:31:52+00:00">2 Jun,  2010</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/php/index.html" rel="category tag">PHP</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/bug/index.html" rel="tag">bug</a>, <a href="../tag/drupal-6/index.html" rel="tag">Drupal 6</a>, <a href="../tag/php/index.html" rel="tag">PHP</a>, <a href="../tag/programacion/index.html" rel="tag">Programación</a>, <a href="../tag/snippet/index.html" rel="tag">snippet</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="index.html#comments">2 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>El otro día Nicolas, un amigo y compañero de trabajo <strong>se quebró la cabeza</strong> con este tema. La cosa debía ser mas bien simple, en un bucle tenia que procesar una serie de datos, rellenar un formulario programaticamente y darle un <a href="http://api.drupal.org/api/function/drupal_execute/6" target="_blank">drupal_execute()</a> para que se creen una cantidad de nodos&#8230;</p>
+<p><strong>Eso fue de todo menos simple</strong>. Resulta que el que programó la función <a href="http://api.drupal.org/api/function/drupal_validate_form/6" target="_blank">drupal_validate_form()</a> <strong>se olvidó que podía caber la posibilidad de que alguien quisiera llamarlo en bucle, y no se le ocurrió mejor idea que cachear la primera validación y cortar cualquier otra dentro de un mismo request.</strong></p>
+<p>La solución por la que se decantó Nicolas fue la de crear una implementación propia de ciertas funciones. Antes que digan algo, recomiendo que se den una vuelta <a href="http://drupal.org/node/260934" target="_blank">por los foros de Drupal</a> y se convensan de la imposibilidad de aplicar una solución mejor.<br />
+De hecho esta solución es bastante buena, porque no tenes mas que poner el código en tu modulo, e invocar la versión modificada de drupal_execute().</p>
+<p>La modificación se tuvo hacer mucho antes de llegar a drupal_validate_form() para poder tomar control sobre la misma, por lo que en esta modificación hubo que reemplazar funciones de:<br />
+<strong>drupal_execute() -&gt; drupal_execute_no_cache()<br />
+drupal_process_form() -&gt; drupal_process_form_no_cache()<br />
+drupal_validate_form() -&gt; drupal_validate_form_no_cache();</strong></p>
+<p>los archivos modificados son estos:</p>
+		<div id="crayon-584436d435416190333867" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+/**
+ * @see drupal_execute
+ * Unica diferencia, utiliza métodos propios (_no_cache) para evitar el cacheo de validaciones
+ */
+
+function drupal_execute_no_cache($form_id, &amp;$form_state) {
+    $args = func_get_args();
+
+    // Make sure $form_state is passed around by reference.
+    $args[1] = &amp;$form_state;
+
+    $form = call_user_func_array('drupal_retrieve_form', $args);
+    $form['#post'] = $form_state['values'];
+    drupal_prepare_form($form_id, $form, $form_state);
+    drupal_process_form_no_cache($form_id, $form, $form_state);
+
+}
+
+/**
+ * @see drupal_process_form
+ *
+ * @param $form_id
+ * @param $form
+ * @param $form_state
+ */
+function drupal_process_form_no_cache($form_id, &amp;$form, &amp;$form_state) {
+    $form_state['values'] = array();
+
+    $form = form_builder($form_id, $form, $form_state);
+    // Only process the form if it is programmed or the form_id coming
+    // from the POST data is set and matches the current form_id.
+    if ((!empty($form['#programmed'])) || (!empty($form['#post']) &amp;&amp; (isset($form['#post']['form_id']) &amp;&amp; ($form['#post']['form_id'] == $form_id)))) {
+        $form_state['process_input'] = TRUE;
+        drupal_validate_form_no_cache($form_id, $form, $form_state);
+
+        // form_clean_id() maintains a cache of element IDs it has seen,
+        // so it can prevent duplicates. We want to be sure we reset that
+        // cache when a form is processed, so scenerios that result in
+        // the form being built behind the scenes and again for the
+        // browser don't increment all the element IDs needlessly.
+        form_clean_id(NULL, TRUE);
+
+        if ((!empty($form_state['submitted'])) &amp;&amp; !form_get_errors() &amp;&amp; empty($form_state['rebuild'])) {
+            $form_state['redirect'] = NULL;
+            form_execute_handlers('submit', $form, $form_state);
+
+            // We'll clear out the cached copies of the form and its stored data
+            // here, as we've finished with them. The in-memory copies are still
+            // here, though.
+            if (variable_get('cache', CACHE_DISABLED) == CACHE_DISABLED &amp;&amp; !empty($form_state['values']['form_build_id'])) {
+                cache_clear_all('form_' . $form_state['values']['form_build_id'], 'cache_form');
+                cache_clear_all('storage_' . $form_state['values']['form_build_id'], 'cache_form');
+            }
+
+            // If batches were set in the submit handlers, we process them now,
+            // possibly ending execution. We make sure we do not react to the batch
+            // that is already being processed (if a batch operation performs a
+            // drupal_execute).
+            if ($batch =&amp; batch_get() &amp;&amp; !isset($batch['current_set'])) {
+                // The batch uses its own copies of $form and $form_state for
+                // late execution of submit handers and post-batch redirection.
+                $batch['form'] = $form;
+                $batch['form_state'] = $form_state;
+                $batch['progressive'] = !$form['#programmed'];
+                batch_process();
+                // Execution continues only for programmatic forms.
+                // For 'regular' forms, we get redirected to the batch processing
+                // page. Form redirection will be handled in _batch_finished(),
+                // after the batch is processed.
+            }
+
+            // If no submit handlers have populated the $form_state['storage']
+            // bundle, and the $form_state['rebuild'] flag has not been set,
+            // we're finished and should redirect to a new destination page
+            // if one has been set (and a fresh, unpopulated copy of the form
+            // if one hasn't). If the form was called by drupal_execute(),
+            // however, we'll skip this and let the calling function examine
+            // the resulting $form_state bundle itself.
+            if (!$form['#programmed'] &amp;&amp; empty($form_state['rebuild']) &amp;&amp; empty($form_state['storage'])) {
+                drupal_redirect_form($form, $form_state['redirect']);
+            }
+        }
+    }
+}
+
+/**
+ * @see drupal_validate_form
+ *
+ * @param $form_id
+ * @param $form
+ * @param $form_state
+ */
+function drupal_validate_form_no_cache($form_id, $form, &amp;$form_state) {
+
+    // If the session token was set by drupal_prepare_form(), ensure that it
+    // matches the current user's session.
+    if (isset($form['#token'])) {
+        if (!drupal_valid_token($form_state['values']['form_token'], $form['#token'])) {
+            // Setting this error will cause the form to fail validation.
+            form_set_error('form_token', t('Validation error, please try again. If this error persists, please contact the site administrator.'));
+        }
+    }
+
+    _form_validate($form, $form_state, $form_id);
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584436d435416190333867-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-2">2</div><div class="crayon-num" data-line="crayon-584436d435416190333867-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-4">4</div><div class="crayon-num" data-line="crayon-584436d435416190333867-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-6">6</div><div class="crayon-num" data-line="crayon-584436d435416190333867-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-8">8</div><div class="crayon-num" data-line="crayon-584436d435416190333867-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-10">10</div><div class="crayon-num" data-line="crayon-584436d435416190333867-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-12">12</div><div class="crayon-num" data-line="crayon-584436d435416190333867-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-14">14</div><div class="crayon-num" data-line="crayon-584436d435416190333867-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-16">16</div><div class="crayon-num" data-line="crayon-584436d435416190333867-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-18">18</div><div class="crayon-num" data-line="crayon-584436d435416190333867-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-20">20</div><div class="crayon-num" data-line="crayon-584436d435416190333867-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-22">22</div><div class="crayon-num" data-line="crayon-584436d435416190333867-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-24">24</div><div class="crayon-num" data-line="crayon-584436d435416190333867-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-26">26</div><div class="crayon-num" data-line="crayon-584436d435416190333867-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-28">28</div><div class="crayon-num" data-line="crayon-584436d435416190333867-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-30">30</div><div class="crayon-num" data-line="crayon-584436d435416190333867-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-32">32</div><div class="crayon-num" data-line="crayon-584436d435416190333867-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-34">34</div><div class="crayon-num" data-line="crayon-584436d435416190333867-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-36">36</div><div class="crayon-num" data-line="crayon-584436d435416190333867-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-38">38</div><div class="crayon-num" data-line="crayon-584436d435416190333867-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-40">40</div><div class="crayon-num" data-line="crayon-584436d435416190333867-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-42">42</div><div class="crayon-num" data-line="crayon-584436d435416190333867-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-44">44</div><div class="crayon-num" data-line="crayon-584436d435416190333867-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-46">46</div><div class="crayon-num" data-line="crayon-584436d435416190333867-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-48">48</div><div class="crayon-num" data-line="crayon-584436d435416190333867-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-50">50</div><div class="crayon-num" data-line="crayon-584436d435416190333867-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-52">52</div><div class="crayon-num" data-line="crayon-584436d435416190333867-53">53</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-54">54</div><div class="crayon-num" data-line="crayon-584436d435416190333867-55">55</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-56">56</div><div class="crayon-num" data-line="crayon-584436d435416190333867-57">57</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-58">58</div><div class="crayon-num" data-line="crayon-584436d435416190333867-59">59</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-60">60</div><div class="crayon-num" data-line="crayon-584436d435416190333867-61">61</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-62">62</div><div class="crayon-num" data-line="crayon-584436d435416190333867-63">63</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-64">64</div><div class="crayon-num" data-line="crayon-584436d435416190333867-65">65</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-66">66</div><div class="crayon-num" data-line="crayon-584436d435416190333867-67">67</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-68">68</div><div class="crayon-num" data-line="crayon-584436d435416190333867-69">69</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-70">70</div><div class="crayon-num" data-line="crayon-584436d435416190333867-71">71</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-72">72</div><div class="crayon-num" data-line="crayon-584436d435416190333867-73">73</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-74">74</div><div class="crayon-num" data-line="crayon-584436d435416190333867-75">75</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-76">76</div><div class="crayon-num" data-line="crayon-584436d435416190333867-77">77</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-78">78</div><div class="crayon-num" data-line="crayon-584436d435416190333867-79">79</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-80">80</div><div class="crayon-num" data-line="crayon-584436d435416190333867-81">81</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-82">82</div><div class="crayon-num" data-line="crayon-584436d435416190333867-83">83</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-84">84</div><div class="crayon-num" data-line="crayon-584436d435416190333867-85">85</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-86">86</div><div class="crayon-num" data-line="crayon-584436d435416190333867-87">87</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-88">88</div><div class="crayon-num" data-line="crayon-584436d435416190333867-89">89</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-90">90</div><div class="crayon-num" data-line="crayon-584436d435416190333867-91">91</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-92">92</div><div class="crayon-num" data-line="crayon-584436d435416190333867-93">93</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-94">94</div><div class="crayon-num" data-line="crayon-584436d435416190333867-95">95</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-96">96</div><div class="crayon-num" data-line="crayon-584436d435416190333867-97">97</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-98">98</div><div class="crayon-num" data-line="crayon-584436d435416190333867-99">99</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-100">100</div><div class="crayon-num" data-line="crayon-584436d435416190333867-101">101</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-102">102</div><div class="crayon-num" data-line="crayon-584436d435416190333867-103">103</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436d435416190333867-104">104</div><div class="crayon-num" data-line="crayon-584436d435416190333867-105">105</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584436d435416190333867-1"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-2"><span class="crayon-c"> * @see drupal_execute</span></div><div class="crayon-line" id="crayon-584436d435416190333867-3"><span class="crayon-c"> * Unica diferencia, utiliza métodos propios (_no_cache) para evitar el cacheo de validaciones</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-4"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-584436d435416190333867-5">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-6"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">drupal_execute_no_cache</span><span class="crayon-sy">(</span><span class="crayon-v">$form_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436d435416190333867-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$args</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">func_get_args</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-8">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// Make sure $form_state is passed around by reference.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$args</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-v">$form_state</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-11">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$form</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">call_user_func_array</span><span class="crayon-sy">(</span><span class="crayon-s">'drupal_retrieve_form'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$args</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#post'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_prepare_form</span><span class="crayon-sy">(</span><span class="crayon-v">$form_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_process_form_no_cache</span><span class="crayon-sy">(</span><span class="crayon-v">$form_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-16">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-17"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-18">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-19"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-20"><span class="crayon-c"> * @see drupal_process_form</span></div><div class="crayon-line" id="crayon-584436d435416190333867-21"><span class="crayon-c"> *</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-22"><span class="crayon-c"> * @param $form_id</span></div><div class="crayon-line" id="crayon-584436d435416190333867-23"><span class="crayon-c"> * @param $form</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-24"><span class="crayon-c"> * @param $form_state</span></div><div class="crayon-line" id="crayon-584436d435416190333867-25"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-26"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">drupal_process_form_no_cache</span><span class="crayon-sy">(</span><span class="crayon-v">$form_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436d435416190333867-27"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-28">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$form</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">form_builder</span><span class="crayon-sy">(</span><span class="crayon-v">$form_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// Only process the form if it is programmed or the form_id coming</span></div><div class="crayon-line" id="crayon-584436d435416190333867-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// from the POST data is set and matches the current form_id.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#programmed'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">||</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#post'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">isset</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#post'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'form_id'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#post'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'form_id'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-v">$form_id</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436d435416190333867-33"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'process_input'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">TRUE</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-34"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_validate_form_no_cache</span><span class="crayon-sy">(</span><span class="crayon-v">$form_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-35">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-36"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// form_clean_id() maintains a cache of element IDs it has seen,</span></div><div class="crayon-line" id="crayon-584436d435416190333867-37"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// so it can prevent duplicates. We want to be sure we reset that</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-38"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// cache when a form is processed, so scenerios that result in</span></div><div class="crayon-line" id="crayon-584436d435416190333867-39"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// the form being built behind the scenes and again for the</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-40"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// browser don't increment all the element IDs needlessly.</span></div><div class="crayon-line" id="crayon-584436d435416190333867-41"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">form_clean_id</span><span class="crayon-sy">(</span><span class="crayon-t">NULL</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">TRUE</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-42">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-43"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'submitted'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-o">!</span><span class="crayon-e">form_get_errors</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'rebuild'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-44"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'redirect'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">NULL</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-45"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">form_execute_handlers</span><span class="crayon-sy">(</span><span class="crayon-s">'submit'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-46">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-47"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// We'll clear out the cached copies of the form and its stored data</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-48"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// here, as we've finished with them. The in-memory copies are still</span></div><div class="crayon-line" id="crayon-584436d435416190333867-49"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// here, though.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-50"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-e">variable_get</span><span class="crayon-sy">(</span><span class="crayon-s">'cache'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">CACHE_DISABLED</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-cn">CACHE_DISABLED</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-o">!</span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'form_build_id'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436d435416190333867-51"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">cache_clear_all</span><span class="crayon-sy">(</span><span class="crayon-s">'form_'</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'form_build_id'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'cache_form'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-52"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">cache_clear_all</span><span class="crayon-sy">(</span><span class="crayon-s">'storage_'</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'form_build_id'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'cache_form'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-53"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-54">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-55"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// If batches were set in the submit handlers, we process them now,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-56"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// possibly ending execution. We make sure we do not react to the batch</span></div><div class="crayon-line" id="crayon-584436d435416190333867-57"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// that is already being processed (if a batch operation performs a</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-58"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// drupal_execute).</span></div><div class="crayon-line" id="crayon-584436d435416190333867-59"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">$batch</span><span class="crayon-h"> </span><span class="crayon-o">=&amp;</span><span class="crayon-h"> </span><span class="crayon-e">batch_get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-o">!</span><span class="crayon-k ">isset</span><span class="crayon-sy">(</span><span class="crayon-v">$batch</span><span class="crayon-sy">[</span><span class="crayon-s">'current_set'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-60"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// The batch uses its own copies of $form and $form_state for</span></div><div class="crayon-line" id="crayon-584436d435416190333867-61"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// late execution of submit handers and post-batch redirection.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-62"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$batch</span><span class="crayon-sy">[</span><span class="crayon-s">'form'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-63"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$batch</span><span class="crayon-sy">[</span><span class="crayon-s">'form_state'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-64"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$batch</span><span class="crayon-sy">[</span><span class="crayon-s">'progressive'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-o">!</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#programmed'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-65"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">batch_process</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-66"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// Execution continues only for programmatic forms.</span></div><div class="crayon-line" id="crayon-584436d435416190333867-67"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// For 'regular' forms, we get redirected to the batch processing</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-68"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// page. Form redirection will be handled in _batch_finished(),</span></div><div class="crayon-line" id="crayon-584436d435416190333867-69"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// after the batch is processed.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-70"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436d435416190333867-71">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-72"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// If no submit handlers have populated the $form_state['storage']</span></div><div class="crayon-line" id="crayon-584436d435416190333867-73"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// bundle, and the $form_state['rebuild'] flag has not been set,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-74"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// we're finished and should redirect to a new destination page</span></div><div class="crayon-line" id="crayon-584436d435416190333867-75"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// if one has been set (and a fresh, unpopulated copy of the form</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-76"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// if one hasn't). If the form was called by drupal_execute(),</span></div><div class="crayon-line" id="crayon-584436d435416190333867-77"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// however, we'll skip this and let the calling function examine</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-78"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// the resulting $form_state bundle itself.</span></div><div class="crayon-line" id="crayon-584436d435416190333867-79"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#programmed'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'rebuild'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'storage'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-80"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_redirect_form</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'redirect'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-81"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-82"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436d435416190333867-83"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-84"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436d435416190333867-85">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-86"><span class="crayon-c">/**</span></div><div class="crayon-line" id="crayon-584436d435416190333867-87"><span class="crayon-c"> * @see drupal_validate_form</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-88"><span class="crayon-c"> *</span></div><div class="crayon-line" id="crayon-584436d435416190333867-89"><span class="crayon-c"> * @param $form_id</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-90"><span class="crayon-c"> * @param $form</span></div><div class="crayon-line" id="crayon-584436d435416190333867-91"><span class="crayon-c"> * @param $form_state</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-92"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-584436d435416190333867-93"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">drupal_validate_form_no_cache</span><span class="crayon-sy">(</span><span class="crayon-v">$form_id</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-94">&nbsp;</div><div class="crayon-line" id="crayon-584436d435416190333867-95"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// If the session token was set by drupal_prepare_form(), ensure that it</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-96"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// matches the current user's session.</span></div><div class="crayon-line" id="crayon-584436d435416190333867-97"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">isset</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#token'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-98"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-e">drupal_valid_token</span><span class="crayon-sy">(</span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'form_token'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'#token'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436d435416190333867-99"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// Setting this error will cause the form to fail validation.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-100"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">form_set_error</span><span class="crayon-sy">(</span><span class="crayon-s">'form_token'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Validation error, please try again. If this error persists, please contact the site administrator.'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-101"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-102"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436d435416190333867-103">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436d435416190333867-104"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">_form_validate</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_id</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436d435416190333867-105"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Como dije. Copienlo a su módulo y usen drupal_execute_no_cache() en lugar de drupal_execute().</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../nota-rapida-sobre-drupal_set_html_head-template-php-y-las-taxonomias/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                        <div id="comments" class="comments-area comments">
+            <h3 class="comments-title">
+            2 Comments        </h3>
+
+        <ul class="comment-list">
+
+            		<li class="comment even thread-even depth-1" id="li-comment-177">
+			<div id="comment-177" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/3e27f7267e87be46ee65e5010edcbdc2?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/3e27f7267e87be46ee65e5010edcbdc2?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://website/' rel='external nofollow' class='url'>Daniel</a></span>							<span class="comment-date">29/08/2010</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola que tal amigo, antes que nada, felicidades por la web, he obtenido muchos tips atravez de ella, bueno el motivo del mail es saber si me puedes ayudar con un formulario de drupal para subir un archivo al servidor, espero y me puedas ayudar<br />
+Gracias!!!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-178">
+			<div id="comment-178" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/b98957662e60ece8df5885a15e656906?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/b98957662e60ece8df5885a15e656906?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">trebor</span>							<span class="comment-date">22/10/2011</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Me presento:<br />
+soy mas o menos nuevo en drupal, se programar algunos programillas en php y en general me defiendo bien de lo que es la programación (sino lo busco en google XD).</p>
+<p>Mi problema:<br />
+He creado un nodo con código php que importa/actualiza otros nodos desde un xml externo. El código funciona bien (en veinte segundos me crea o actualiza unos 400 nodos), le falta alguna comprobación de seguridad, etc&#8230;. (cosas que iré reparando)</p>
+<p>El problema es que me gustaría que al ejecutar el código apareciera una barra de progreso (la típica de drupal, la azul con rayas, ya me va bien). Los motivos són que visualmente ayuda (tiene que estar de cara a los usuarios) y que por lo que tengo entendido no limita al script a un máximo de 60s.</p>
+<p>Lo único que he encontrado más o menos coherente es en la api de drupal pero por lo que parece solo es para la subida de archivos.</p>
+<p>Gracias por adelantado por tu ayuda</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+        </ul><!-- .comment-list -->
+
+        
+                <p class="no-comments">:).</p>
+        
+    
+    </div>                                            
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:34:41 GMT -->
+</html>

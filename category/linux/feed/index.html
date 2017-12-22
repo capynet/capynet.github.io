@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linux &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/category/linux/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Hacer &#8220;git pull&#8221; en un servidor remoto desde tu local</title>
+		<link>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/</link>
+		<comments>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/#comments</comments>
+		<pubDate>Wed, 17 Aug 2016 14:34:32 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3442</guid>
+		<description><![CDATA[Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona: [crayon-58443660f10f3013017574/] Pónganlo en .barchrc o .bash_aliases de tu ordenador (local) y a partir de ahi cuando lances en tu consola git_pull_on_dev_lapaginaweb te va a hacer un git pull en el servidor remoto. NOTA:&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona:</p><pre class="crayon-plain-tag">#Desplegar en el servidor de dev:
+alias git_pull_on_dev_lapaginaweb="ssh deploy@137.30.100.10 'cd /var/www/la_pagina_web &amp;&amp; git pull origin dev'"</pre><p>Pónganlo en <strong>.barchrc o .bash_aliases</strong> de tu ordenador (local) y a partir de ahi cuando lances en tu consola <strong>git_pull_on_dev_lapaginaweb</strong> te va a hacer un git pull en el servidor remoto.</p>
+<p><strong><span style="text-decoration: underline;">NOTA</span></strong>: <strong>para que funcione tenés que recargar .bashrc</strong> de nuevo. Lanza esto en la consola: <strong>source .bashrc</strong></p>
+<p><strong><span style="text-decoration: underline;">NOTA 2</span></strong>: <b>Es obvio que a tu servidor de desarrollo te conectas usando una ssh key. Si te conectas por shh usando clave no te va a servir esta solución.</b></p>
+<p><span style="text-decoration: underline;"><strong>NOTA 3</strong></span>: Antes que me dejen comentarios del estilo &#8220;para eso está jenkins&#8221;.  Ésta es una solución rápida para los que no quieren o pueden instalar un jenkins <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Proteger un sitio en desarrollo con htpasswd</title>
+		<link>http://ecapy.com/proteger-un-sitio-en-desarrollo-con-htpasswd/</link>
+		<pubDate>Tue, 16 Aug 2016 14:33:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[.htaccess]]></category>
+		<category><![CDATA[Apache]]></category>
+		<category><![CDATA[htpasswd]]></category>
+		<category><![CDATA[vhost]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3437</guid>
+		<description><![CDATA[Hay mucho tutorial de como hacerlo pero esta solución es la menos invasiva a mi parecer. Mi situación es la siguiente: Tengo varios site en el servidor de desarrollo quiero que todos tengan que pasar por un login para que no acceda todo Dios.  Tampoco quiero configurar el htpasswd en el .htaccess del site que estoy desarrollando&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/proteger-un-sitio-en-desarrollo-con-htpasswd/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hay mucho tutorial de como hacerlo pero esta solución es la menos invasiva a mi parecer.</p>
+<p>Mi situación es la siguiente: Tengo varios site en el servidor de desarrollo quiero que todos tengan que pasar por un login para que no acceda todo Dios.  <strong>Tampoco quiero configurar el htpasswd en el .htaccess</strong> del site que estoy desarrollando porque tengo que andar evitándolo en GIT. <strong>La solución es que el htpasswd esté configurado a nivel vhost y las claves almacenadas en un directorio </strong><b>común</b> para todas ellas.</p>
+<h2>1: Crea un directorio en el que almacenar todas las claves y créalas</h2>
+<p>Por ejemplo yo he creado un directorio en <strong>/home/deploy/htpasswd</strong> y se la he cedido a www-data con <strong>chown www-data. /home/deploy/htpasswd -R</strong></p>
+<p>Ahora que tengo un directorio donde meter las claves de los sites ya puedo crear un usuario y clave para cada site. por ejemplo:</p><pre class="crayon-plain-tag">htpasswd -c /home/deploy/htpasswd/.foo_site usuario_para_foo_site</pre><p><strong>.foo_site</strong> no es mas que el nombre del archivo que almacena la clave. se puede llamar como te de la gana.</p>
+<p><strong>usuario_para_foo_site</strong> es el nombre de usuario que voy a crear para este site. La clave te la pide cuando des enter.</p>
+<p>Los pasos anteriores los podes hacer para todos los sites que quieras tener bajo llave. Pero todavía no usando estas claves. Vamos a solucionarlo:</p>
+<h2>2: asignar claves a cada site</h2>
+<p>Ya tenemos las claves almacenadas en archivos individuales bajo <strong>/home/deploy/htpasswd. </strong>Solo nos queda ir a cada uno de los vhost y decirle que usen estos archivos:</p>
+<p>Este es un ejemplo:</p><pre class="crayon-plain-tag">&lt;VirtualHost *:80&gt;
+    DocumentRoot "/var/www/foo-site/"
+    ServerName foo-site.front.id
+    &lt;Directory "/var/www/foo-site/"&gt;
+        Options All
+        AllowOverride All
+        Allow from All
+
+        AuthUserFile /home/deploy/htpasswd/.foo_site
+        AuthName "Identificate"
+        AuthType Basic
+        Require valid-user
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</pre><p>Del vhost anterior lo importante es esto.</p><pre class="crayon-plain-tag">AuthUserFile /home/deploy/htpasswd/.foo_site
+AuthName "Identificate"
+AuthType Basic
+Require valid-user</pre><p>Y eso es todo. <strong>reinician apache</strong> y de ahora en mas se les va a pedir el usuario y clave que hayan creado en /home/deploy/htpasswd/.foo_site</p>
+<p>Resumiendo: Esta me parece una solución ideal para no andar tocando el código del sitio que estas desarrollando, por otro lado el tener todas las claves en un mismo lugar hace mas fácil mantenerlas.</p>
+<p>&nbsp;</p>
+<p>Ahora si, chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Crear un core en Solr 6 (por linea de comandos)</title>
+		<link>http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/</link>
+		<pubDate>Mon, 15 Aug 2016 17:55:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3435</guid>
+		<description><![CDATA[Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto: [crayon-58443660f1ceb903254341/] NOTA: cambia nombre_del_core por el nombre que le quieras dar a tu core. Lo que va a responder: [crayon-58443660f1cf4194377497/] Y eso es todo básicamente. Ya tenés un core mas en Solr. No&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto:</p><pre class="crayon-plain-tag">su - solr -c "/opt/solr/bin/solr create_core -c nombre_del_core"</pre><p><strong><span style="text-decoration: underline;">NOTA</span></strong>: cambia <strong>nombre_del_core</strong> por el nombre que le quieras dar a tu core.</p>
+<p>Lo que va a responder:</p><pre class="crayon-plain-tag">Copying configuration to new core instance directory:
+/var/solr/data/nombre_del_core
+
+Creating new core 'nombre_del_core' using command:
+http://localhost:8983/solr/admin/cores?action=CREATE&amp;name=nombre_del_core&amp;instanceDir=nombre_del_core
+
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":972},
+  "core":"nombre_del_core"}</pre><p>Y eso es todo básicamente. Ya tenés un core mas en Solr. No hace falta reiniciar.</p>
+<p>Seguramente quieras tocar un poco la conf del core. Los cores se crean en /var/solr/data (<strong>/var/solr/data/nombre_del_core</strong> en nuestro ejemplo).</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar Solr 6.X</title>
+		<link>http://ecapy.com/instalar-solr-6-x/</link>
+		<pubDate>Fri, 01 Jul 2016 16:42:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3417</guid>
+		<description><![CDATA[Descarguemos Solr Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a http://apache.rediris.es/lucene/solr/ y descargatelo. (Que sea el .tgz). Para este post vamos a suponer que has descargado la versión 6.1.0. Extraigamos el instalador El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-6-x/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h2>Descarguemos Solr</h2>
+<p>Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a <a href="http://apache.rediris.es/lucene/solr/">http://apache.rediris.es/lucene/solr/</a> y descargatelo. (Que sea el .tgz).<br />
+Para este post vamos a suponer que has descargado la versión 6.1.0.</p>
+<h2>Extraigamos el instalador</h2>
+<p>El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo va a necesitar!</p><pre class="crayon-plain-tag">tar xzf solr-6.1.0.tgz solr-6.1.0/bin/install_solr_service.sh --strip-components=2</pre><p>El comando anterior extrae solamente <strong>install_solr_service.sh</strong> y nos deja el <strong>.tgz</strong> sin descomprimir.</p>
+<h2>Instalemos Solr</h2>
+<p>Ahora que tenemos el instalador extraído podemos lanzarlo:</p><pre class="crayon-plain-tag">sudo bash ./install_solr_service.sh solr-6.1.0.tgz</pre><p>Y presto! se va a instalar Solr en <strong>/opt/solr</strong>, te va a crear el script de manejo en <strong>/etc/init.d/solr</strong>, te va a crear el directorio donde se almacenan los indices en <strong>/var/solr/data</strong> y algunas cosas mas. Podes acceder a el en <a href="http://localhost:8983"><strong>http://localhost:8983</strong></a> Todo automático!</p>
+<p>Y eso es todo. ya podes tratar a Solr como un servicio mas:</p><pre class="crayon-plain-tag">sudo service solr status
+sudo service solr start
+sudo service solr stop
+sudo service solr restart</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Montar permanentemente una partición ext4 en Ubuntu/Debian</title>
+		<link>http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/</link>
+		<pubDate>Wed, 03 Jun 2015 12:24:36 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2898</guid>
+		<description><![CDATA[Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos: Creamos el directorio donde cargar la partición [crayon-58443660f226b244623382/] (capy es mi usuario en linux. usa el tuyo). Identificamos el uuid de la partición que nos interesa [crayon-58443660f2274650360898/] En mi caso&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos:</p>
+<h3>Creamos el directorio donde cargar la partición</h3>
+<p></p><pre class="crayon-plain-tag">sudo mkdir /media/capy/Slave-linux
+sudo chown capy. /media/capy/Slave-linux</pre><p>(capy es mi usuario en linux. usa el tuyo).</p>
+<h3>Identificamos el uuid de la partición que nos interesa</h3>
+<p></p><pre class="crayon-plain-tag">sudo blkid
+/dev/sda1: UUID="6a710399-14eb-489f-a69a-3eeefb1c6410" TYPE="ext4" PARTUUID="00012bdd-01"
+/dev/sdb1: LABEL="Slave-linux" UUID="f7923e0a-93d7-466a-9371-59aa56da53bf" TYPE="ext4" PARTUUID="0004a843-01"</pre><p>En mi caso es &#8220;Slave-linux&#8221; cuyo UUID es <strong>f7923e0a-93d7-466a-9371-59aa56da53bf</strong>.</p>
+<h3>Añadimos la linea mágica en fstab para que la partición cargue cada vez que se inicie</h3>
+<p></p><pre class="crayon-plain-tag">sudo gedit /etc/fstab</pre><p>Y agregamos el final justo debajo de todo lo que haya, la siguiente linea (<strong>Con tu UUID y el label de tu partición</strong>):</p><pre class="crayon-plain-tag">UUID=f7923e0a-blabla-blabla-blabla-blablablabla /media/capy/Slave-linux ext4 defaults 0 1</pre><p>Y listo. Si quieres verlo funcionando reinicia o lanza este comando:</p><pre class="crayon-plain-tag">sudo mount -a</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Crear un bash alias que reciba parámetros</title>
+		<link>http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/</link>
+		<pubDate>Tue, 03 Jun 2014 11:19:09 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Consola]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2691</guid>
+		<description><![CDATA[Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto: En el archivo .bash_aliases o .bashrc de tu home: [crayon-58443660f25d0634477534/] Listo. ya podemos usarlo en la consola: [crayon-58443660f25d9130629867/] Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto:</p>
+<p>En el archivo <strong>.bash_aliases</strong> o <strong>.bashrc</strong> de tu home:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    mysql -uusuario_demo -p labasededatosdedestino &lt; $1
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Listo. ya podemos usarlo en la consola:</p><pre class="crayon-plain-tag">importar_db mydb.sql</pre><p>Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de $1 para el primero $2 para el segundo, etc.</p>
+<p>&nbsp;</p>
+<p>UPDATE (27/10/2016):</p>
+<p><a href="http://stackoverflow.com/a/3465449/1413049">http://stackoverflow.com/a/3465449/1413049</a></p>
+<p>Aqui explica como pasar argumentos de forma dinámica. EJ:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    echo "listado de argumentos recibidos:"
+    echo "$@"
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Resumiendo <strong>&#8220;$@&#8221;</strong> nos deja meter una cantidad ilimitada de argumentos lo que a su vez nos da mas flexibilidad.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Emparejar dispositivos a2dp (audio por bluetooth) en Debian 7</title>
+		<link>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/</link>
+		<comments>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/#comments</comments>
+		<pubDate>Wed, 12 Feb 2014 09:31:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Debian]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2623</guid>
+		<description><![CDATA[Espero que esto le ahorre todo el tiempo que yo he perdido 😀 Síntoma: Emparejas un dispositivo de audio vía bluetooth y parece que ha conectado, pero al cabo de un segundo se desconecta. Solución: [crayon-58443660f2897812232786/] Y ya podes emparejar sin problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Espero que esto le ahorre todo el tiempo que yo he perdido <img src="https://s.w.org/images/core/emoji/2/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Síntoma: Emparejas un dispositivo de audio vía bluetooth y parece que ha conectado, pero al cabo de un segundo se desconecta.</p>
+<p>Solución:</p><pre class="crayon-plain-tag">sudo apt-get install pulseaudio pulseaudio-module-bluetooth bluez-audio pavucontrol bluez-firmware bluez-tools &amp;&amp; sudo service bluetooth restart &amp;&amp; sudo killall pulseaudio</pre><p>Y ya podes emparejar sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Skype en Debian 7</title>
+		<link>http://ecapy.com/instalar-skype-en-debian-7/</link>
+		<pubDate>Sat, 01 Feb 2014 13:49:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Debian]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2618</guid>
+		<description><![CDATA[Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits. Solución: [crayon-58443660f2c80583810587/] Ya podés instalar el .deb sin problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits.</p>
+<p>Solución:</p><pre class="crayon-plain-tag">sudo dpkg --add-architecture i386 &amp;&amp; sudo apt-get update</pre><p>Ya podés instalar el .deb sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>PHP APC: configuración rápida</title>
+		<link>http://ecapy.com/drupal-apc-configuracion-rapida/</link>
+		<pubDate>Fri, 22 Nov 2013 09:06:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2567</guid>
+		<description><![CDATA[Aquí dejo una configuración rápida de APC. [crayon-58443660f2e89928376316/] Si están usando Debian o derivados pueden poner la configuración en /etc/php5/conf.d/20-apc.ini (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar). Para mas opciones ver http://www.php.net/manual/es/apc.configuration.php No olvides reiniciar apache: sudo service apache2 restart Chau!]]></description>
+				<content:encoded><![CDATA[<p>Aquí dejo una configuración rápida de APC.</p><pre class="crayon-plain-tag">extension=apc.so
+apc.shm_segments=1
+apc.shm_size=256M</pre><p>Si están usando Debian o derivados pueden poner la configuración en <em>/etc/php5/conf.d/20-apc.ini</em> (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar).</p>
+<p>Para mas opciones ver <a href="http://www.php.net/manual/es/apc.configuration.php" target="_blank">http://www.php.net/manual/es/apc.configuration.php</a></p>
+<p>No olvides reiniciar apache: <strong>sudo service apache2 restart</strong></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hacer proxy con Apache para aplicaciones Tomcat 7</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/</link>
+		<comments>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/#comments</comments>
+		<pubDate>Wed, 18 Sep 2013 08:00:45 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[proxy]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2527</guid>
+		<description><![CDATA[La idea es simple, las aplicaciones Tomcat corren por lo general en el puerto 8080, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto 80. Vamos a ello. Crea un nuevo virtualhost: [crayon-58443660f30dc290301871/] En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com. Los últimos dos pasos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La idea es simple, <strong>las aplicaciones Tomcat corren por lo general en el puerto <em>8080</em>, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto <em>80</em></strong>. Vamos a ello.</p>
+<p>Crea un nuevo virtualhost:</p><pre class="crayon-plain-tag">ServerName youtrack.ecapy.com
+
+ProxyPreserveHost On
+ProxyRequests Off
+
+Order deny,allow
+Allow from all
+
+ProxyPass /youtrack ajp://localhost:8080/youtrack
+ProxyPassReverse /youtrack ajp://localhost:8080/youtrack
+
+RewriteEngine On
+RewriteRule ^/$ "http://youtrack.ecapy.com/youtrack" [L]
+
+ErrorLog /var/log/apache2/yt-error.log
+CustomLog /var/log/apache2/yt-access.log common</pre><p>En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com.</p>
+<p>Los últimos dos pasos son habilitar el modulo <a href="http://es.wikipedia.org/wiki/Apache_JServ_Protocol" target="_blank">ajp</a> que es el modulo que usa apache para hablar con tomcat:</p><pre class="crayon-plain-tag">sudo a2enmod proxy_ajp</pre><p>Y reiniciamos apache:</p><pre class="crayon-plain-tag">sudo service apache2 restart</pre><p>Resultado:<br />
+<a href="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png"><img class="size-full wp-image-2531 alignnone" src="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png" alt="Tomcat app running through Apache" width="614" height="463" srcset="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png 614w, http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache-300x226.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

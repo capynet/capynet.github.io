@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Tomcat &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/tomcat/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Setear variables de configuración de tomcat en Ubuntu/Debian</title>
+		<link>http://ecapy.com/setear-variables-de-configuracion-de-tomcat-en-ubuntudebian/</link>
+		<pubDate>Thu, 04 Sep 2014 23:03:56 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2763</guid>
+		<description><![CDATA[Esto es casi una nota mental 🙂 [crayon-584437851cb44949848872/]]]></description>
+				<content:encoded><![CDATA[<p>Esto es casi una nota mental <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">sudo nano /etc/default/tomcat7</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hacer proxy con Apache para aplicaciones Tomcat 7</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/</link>
+		<comments>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/#comments</comments>
+		<pubDate>Wed, 18 Sep 2013 08:00:45 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[proxy]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2527</guid>
+		<description><![CDATA[La idea es simple, las aplicaciones Tomcat corren por lo general en el puerto 8080, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto 80. Vamos a ello. Crea un nuevo virtualhost: [crayon-584437851dd9e656152345/] En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com. Los últimos dos pasos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La idea es simple, <strong>las aplicaciones Tomcat corren por lo general en el puerto <em>8080</em>, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto <em>80</em></strong>. Vamos a ello.</p>
+<p>Crea un nuevo virtualhost:</p><pre class="crayon-plain-tag">ServerName youtrack.ecapy.com
+
+ProxyPreserveHost On
+ProxyRequests Off
+
+Order deny,allow
+Allow from all
+
+ProxyPass /youtrack ajp://localhost:8080/youtrack
+ProxyPassReverse /youtrack ajp://localhost:8080/youtrack
+
+RewriteEngine On
+RewriteRule ^/$ "http://youtrack.ecapy.com/youtrack" [L]
+
+ErrorLog /var/log/apache2/yt-error.log
+CustomLog /var/log/apache2/yt-access.log common</pre><p>En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com.</p>
+<p>Los últimos dos pasos son habilitar el modulo <a href="http://es.wikipedia.org/wiki/Apache_JServ_Protocol" target="_blank">ajp</a> que es el modulo que usa apache para hablar con tomcat:</p><pre class="crayon-plain-tag">sudo a2enmod proxy_ajp</pre><p>Y reiniciamos apache:</p><pre class="crayon-plain-tag">sudo service apache2 restart</pre><p>Resultado:<br />
+<a href="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png"><img class="size-full wp-image-2531 alignnone" src="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png" alt="Tomcat app running through Apache" width="614" height="463" srcset="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png 614w, http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache-300x226.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Acceder a &#8220;manager webapp&#8221; en Tomcat 7</title>
+		<link>http://ecapy.com/acceder-a-manager-webapp-en-tomcat-7/</link>
+		<comments>http://ecapy.com/acceder-a-manager-webapp-en-tomcat-7/#comments</comments>
+		<pubDate>Sun, 11 Mar 2012 21:32:57 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1393</guid>
+		<description><![CDATA[Aparentemente a la gente de tomcat se les ha olvidado actualizar la documentacion que muestra en la página index que ofrece por defecto: Por lo que si las seguís, va a ser imposible que accedas al &#8220;manager webapp&#8221;. Aprovecho para felicitar a los maestros de Tomcat, que un error así no es nada a comparación del pedazo de soft que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/acceder-a-manager-webapp-en-tomcat-7/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Aparentemente a la gente de tomcat se les ha olvidado actualizar la documentacion que muestra en la página index que ofrece por defecto:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2012/03/index_Apache_Tomcat1.png"><img class="aligncenter size-full wp-image-1395" title="index_Apache_Tomcat" src="http://ecapy.com/wp-content/uploads/2012/03/index_Apache_Tomcat1.png" alt="" width="553" height="150" srcset="http://ecapy.com/wp-content/uploads/2012/03/index_Apache_Tomcat1.png 553w, http://ecapy.com/wp-content/uploads/2012/03/index_Apache_Tomcat1-300x81.png 300w" sizes="(max-width: 553px) 100vw, 553px" /></a></p>
+<p>Por lo que si las seguís, va a ser imposible que accedas al &#8220;manager webapp&#8221;.<strong> Aprovecho para felicitar a los maestros de Tomcat, que un error así no es nada a comparación del pedazo de soft que nos dan sin pedir ni una moneda <img src="https://s.w.org/images/core/emoji/2/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></strong></p>
+<p>Vamos a solucionar este problemita:</p>
+<p>Edita el archivo<strong> /etc/tomcat7/tomcat-users.xml</strong> y agrega estas lineas<strong> dentro del tag<span style="color: #993300;"> &lt;tomcat-users&gt;&lt;/tomcat-users&gt;</span></strong>:</p><pre class="crayon-plain-tag"></pre><p>No olvides de poner el usuario y clave que quieras.<br />
+Listo, saludos.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/acceder-a-manager-webapp-en-tomcat-7/feed/</wfw:commentRss>
+		<slash:comments>25</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Solr 4.x y configurar multiples cores en Linux Ubuntu</title>
+		<link>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/</link>
+		<comments>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/#comments</comments>
+		<pubDate>Thu, 12 Jan 2012 13:42:08 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1355</guid>
+		<description><![CDATA[Aclaraciones: El proceso de instalación de Solr es valido para cualquier otra versión de Solr. Un core es un hilo nuevo dentro de la misma instancia de Solr. Esto permite que se corra una sola instancia de Solr pero con varios buscadores. Este tutorial asume que tienen instalado Java 7 y tomcat 7. Si tienen las versiones&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Aclaraciones:</p>
+<ul>
+<li>El proceso de instalación de Solr es valido para cualquier otra versión de Solr.</li>
+<li>Un core es un hilo nuevo dentro de la misma instancia de Solr. Esto permite que se corra una sola instancia de Solr pero con varios buscadores.</li>
+</ul>
+<p>Este tutorial asume que tienen instalado Java 7 y tomcat 7. Si tienen las versiones 6 le cambian el numero donde sea oportuno y funciona.</p>
+<p>Vamos a ello:</p>
+<p>Cuando tengas en tus manos el <a title="Descargalo desde la página oficial" href="http://apache.rediris.es/lucene/solr/" target="_blank">paquete se Solr</a>, descomprimelo y ponte con la consola dentro de esa carpeta.</p>
+<p>Cambia a sudo:</p><pre class="crayon-plain-tag">sudo su</pre><p><span style="color: #808080;"><span style="text-decoration: underline;">Curiosidad</span>: Aunque en el paquete que descargamos de Apache Solr <strong>haya al rededor de 2950 archivos</strong> <strong>solo nos van a hacer falta al rededor de 10</strong>:</span></p>
+<p>Lanzamos en consola lo siguiente:</p><pre class="crayon-plain-tag">cp dist/solr-*.war /var/lib/tomcat7/webapps/solr.war
+mkdir /var/lib/tomcat7/solr
+cp -R example/multicore/core0/ /var/lib/tomcat7/solr/core0
+mkdir /var/lib/tomcat7/solr/core0/data
+chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
+mkdir /var/lib/tomcat7/lib
+cp dist/solrj-lib/* /var/lib/tomcat7/lib</pre><p>Ahora edita <strong>/var/lib/tomcat7/solr/solr.xml</strong>, pega lo siguiente y guárdalo.</p><pre class="crayon-plain-tag">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ 
+&lt;solr persistent="true" sharedLib="lib"&gt;
+ &lt;cores adminPath="/admin/cores"&gt;
+ 
+  &lt;core name="core0" instanceDir="core0"&gt;
+    &lt;property name="dataDir" value="/var/lib/tomcat7/solr/core0/data"&gt;&lt;/property&gt;
+  &lt;/core&gt;
+ 
+ &lt;/cores&gt;
+&lt;/solr&gt;</pre><p>Edita <strong>/etc/tomcat7/Catalina/localhost/solr.xml</strong>, pega lo siguiente y guárdalo.</p><pre class="crayon-plain-tag">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ 
+&lt;context docBase="/var/lib/tomcat7/webapps/solr.war" debug="0" privileged="true" allowLinking="true" crossContext="true"&gt;
+    &lt;environment name="solr/home" type="java.lang.String" value="/var/lib/tomcat7/solr" override="true"&gt;&lt;/environment&gt;
+&lt;/context&gt;</pre><p>Listo, reiniciemos tomcat para ver en funcionamiento el core que hemos creado:</p><pre class="crayon-plain-tag">service tomcat7 restart</pre><p>Entramos en <a href="http://localhost:8080/solr/">http://localhost:8080/solr/</a> y lo vamos a ver.<br />
+<img class="size-full wp-image-2444 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core.png" alt="Solr recién instalado con un core" width="1036" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core.png 1036w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-300x216.png 300w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-768x553.png 768w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-1024x737.png 1024w" sizes="(max-width: 1036px) 100vw, 1036px" /></p>
+<p><img class="size-full wp-image-2445 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/primer-core.png" alt="Primer core de Solr" width="1053" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/primer-core.png 1053w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-300x213.png 300w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-768x544.png 768w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-1024x725.png 1024w" sizes="(max-width: 1053px) 100vw, 1053px" /></p>
+<h2>Añadir mas cores</h2>
+<p>Bueno ya tenemos un Solr con un core, pero tiene poco sentido montar un Solr de multicores que tenga un solo core, así que vamos a crear uno mas.</p>
+<p>Para este nuevo core (y todos los que quieras crear) hay que hacer dos cosas:<br />
+<strong>1:</strong> copiar la carpeta core0 junto a su owner para ahorrarnos de andar creando la misma estructura:</p><pre class="crayon-plain-tag">cp -Rp /var/lib/tomcat7/solr/core0 /var/lib/tomcat7/solr/producto</pre><p>NOTA: No olvides editar <strong>/var/lib/tomcat7/solr/producto/conf/schema.xml</strong> y <strong>/var/lib/tomcat7/solr/producto/conf/solrconfig.xml</strong> para ajustar sus parámetros.</p>
+<p><strong>2:</strong> actualizar <strong>/var/lib/tomcat7/solr/solr.xml</strong> agregandole un nuevo tag con lo siguiente:</p><pre class="crayon-plain-tag">&lt;core name="producto" instanceDir="producto"&gt;
+  &lt;property name="dataDir" value="/var/lib/tomcat7/solr/producto/data"&gt;&lt;/property&gt;
+&lt;/core&gt;</pre><p>Reinicia tomcat y ya tenes otro core.<br />
+<img class="size-full wp-image-2446 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/segundo-core.png" alt="Segundo core de Solr" width="1053" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/segundo-core.png 1053w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-300x213.png 300w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-768x544.png 768w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-1024x725.png 1024w" sizes="(max-width: 1053px) 100vw, 1053px" /></p>
+<p>Suerte y saludos.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Cerrar, bloquear o restringir el puerto 8080 en Apache Solr / Tomcat 6</title>
+		<link>http://ecapy.com/cerrar-bloquear-o-restringir-el-puerto-8080-en-apache-solr-tomcat-6/</link>
+		<pubDate>Tue, 23 Nov 2010 08:00:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=654</guid>
+		<description><![CDATA[Si instalaste un Apache Solr y lo estas usando por medio de Drupal 6, otro CMS o una propia implementación, seguramente no te interese que dicho servicio se pueda acceder por medio del puerto 8080 (o el puerto asignado en tu servidor para Tomcat). Bueno, un ejemplo es mucho mas claro que casos hipotéticos, así&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/cerrar-bloquear-o-restringir-el-puerto-8080-en-apache-solr-tomcat-6/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Si instalaste un Apache Solr y lo estas usando por medio de Drupal 6, otro CMS o una propia implementación, seguramente no te interese que dicho servicio se pueda acceder por medio del puerto 8080 (o el puerto asignado en tu servidor para Tomcat).</p>
+<p>Bueno, un ejemplo es mucho mas claro que casos hipotéticos, así que les planteo mi necesidad:<br />
+Tengo un Ubuntu con un Drupal configurado con el modulo &#8220;<a href="http://drupal.org/project/apachesolr" target="_blank">apachesolr</a>&#8221; que se conecta a localhost en el puerto 8080. Hasta ahí todo normal, <strong>el problema es que si a alguien se le ocurre tipear la URL de mi pagina montada en Drupal pero por el puerto 8080&#8230; va a poder ver Tomcat</strong>, y lo que es mas peligroso, Apache Solr y su administrador (Solr carece de mecanismos de seguridad porque los delega a Tomcat).</p>
+<p>Bueno en el ejemplo que comente antes tenemos una solución ideal: Capar el puerto 8080 para que <strong>solo se pueda acceder por &#8220;localhost&#8221;</strong>.</p>
+<p>Para lograr nuestro cometido solamente tenemos que editar un XML: &#8220;<strong>server.xml</strong>&#8220;:</p><pre class="crayon-plain-tag">sudo gedit /etc/tomcat6/server.xml</pre><p>Busca la linea:</p><pre class="crayon-plain-tag"></pre><p>Comentarla:</p><pre class="crayon-plain-tag"><!--
+<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+--></pre><p>Y poner por dejado de la linea anterior lo siguiente:</p><pre class="crayon-plain-tag"></pre><p>Guarda los cambios y reinicia Tomcat:</p><pre class="crayon-plain-tag">sudo service tomcat6 restart</pre><p>Gualá. Comprobemos que haya funcionado:</p>
+<p>Primero mira cual es la ip que tiene tu servidor haciéndole ping:<br />
+<strong>Usa &#8220;ifconfig&#8221; para ver la ip</strong>, que seguramente tenga la pinta &#8220;192.168.1.xxx&#8221; o &#8220;10.0.2.xx&#8221;</p>
+<p>bien, ahora suponiendo que seguis en Ubuntu (es mi ejemplo y uso Ubuntu <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> ) abri un navegador y proba a acceder a:</p><pre class="crayon-plain-tag">http://localhost:8080</pre><p>y a:</p><pre class="crayon-plain-tag">http://192.168.1.&lt;strong&gt;xxx&lt;/strong&gt;:8080 (las &lt;strong&gt;xxx &lt;/strong&gt;reemplazalas por el resto de tu IP).</pre><p><strong>Como pudiste ver, podes acceder a localhost pero no por medio de la IP</strong>, incluso si probas a acceder a esa IP desde otra maquina/ordenador/PC/ipad/ipod/android/o-lo-que-sea XD</p>
+<p>Hemos acabado.</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

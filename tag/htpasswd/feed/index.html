@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>htpasswd &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/htpasswd/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Proteger un sitio en desarrollo con htpasswd</title>
+		<link>http://ecapy.com/proteger-un-sitio-en-desarrollo-con-htpasswd/</link>
+		<pubDate>Tue, 16 Aug 2016 14:33:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[.htaccess]]></category>
+		<category><![CDATA[Apache]]></category>
+		<category><![CDATA[htpasswd]]></category>
+		<category><![CDATA[vhost]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3437</guid>
+		<description><![CDATA[Hay mucho tutorial de como hacerlo pero esta solución es la menos invasiva a mi parecer. Mi situación es la siguiente: Tengo varios site en el servidor de desarrollo quiero que todos tengan que pasar por un login para que no acceda todo Dios.  Tampoco quiero configurar el htpasswd en el .htaccess del site que estoy desarrollando&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/proteger-un-sitio-en-desarrollo-con-htpasswd/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hay mucho tutorial de como hacerlo pero esta solución es la menos invasiva a mi parecer.</p>
+<p>Mi situación es la siguiente: Tengo varios site en el servidor de desarrollo quiero que todos tengan que pasar por un login para que no acceda todo Dios.  <strong>Tampoco quiero configurar el htpasswd en el .htaccess</strong> del site que estoy desarrollando porque tengo que andar evitándolo en GIT. <strong>La solución es que el htpasswd esté configurado a nivel vhost y las claves almacenadas en un directorio </strong><b>común</b> para todas ellas.</p>
+<h2>1: Crea un directorio en el que almacenar todas las claves y créalas</h2>
+<p>Por ejemplo yo he creado un directorio en <strong>/home/deploy/htpasswd</strong> y se la he cedido a www-data con <strong>chown www-data. /home/deploy/htpasswd -R</strong></p>
+<p>Ahora que tengo un directorio donde meter las claves de los sites ya puedo crear un usuario y clave para cada site. por ejemplo:</p><pre class="crayon-plain-tag">htpasswd -c /home/deploy/htpasswd/.foo_site usuario_para_foo_site</pre><p><strong>.foo_site</strong> no es mas que el nombre del archivo que almacena la clave. se puede llamar como te de la gana.</p>
+<p><strong>usuario_para_foo_site</strong> es el nombre de usuario que voy a crear para este site. La clave te la pide cuando des enter.</p>
+<p>Los pasos anteriores los podes hacer para todos los sites que quieras tener bajo llave. Pero todavía no usando estas claves. Vamos a solucionarlo:</p>
+<h2>2: asignar claves a cada site</h2>
+<p>Ya tenemos las claves almacenadas en archivos individuales bajo <strong>/home/deploy/htpasswd. </strong>Solo nos queda ir a cada uno de los vhost y decirle que usen estos archivos:</p>
+<p>Este es un ejemplo:</p><pre class="crayon-plain-tag">&lt;VirtualHost *:80&gt;
+    DocumentRoot "/var/www/foo-site/"
+    ServerName foo-site.front.id
+    &lt;Directory "/var/www/foo-site/"&gt;
+        Options All
+        AllowOverride All
+        Allow from All
+
+        AuthUserFile /home/deploy/htpasswd/.foo_site
+        AuthName "Identificate"
+        AuthType Basic
+        Require valid-user
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</pre><p>Del vhost anterior lo importante es esto.</p><pre class="crayon-plain-tag">AuthUserFile /home/deploy/htpasswd/.foo_site
+AuthName "Identificate"
+AuthType Basic
+Require valid-user</pre><p>Y eso es todo. <strong>reinician apache</strong> y de ahora en mas se les va a pedir el usuario y clave que hayan creado en /home/deploy/htpasswd/.foo_site</p>
+<p>Resumiendo: Esta me parece una solución ideal para no andar tocando el código del sitio que estas desarrollando, por otro lado el tener todas las claves en un mismo lugar hace mas fácil mantenerlas.</p>
+<p>&nbsp;</p>
+<p>Ahora si, chau!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

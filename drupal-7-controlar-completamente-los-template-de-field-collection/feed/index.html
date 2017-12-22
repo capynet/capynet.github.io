@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Drupal 7: Controlar completamente los template de Field collection</title>
+	<atom:link href="http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Ignacio Novello</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comment-1477</link>
+		<dc:creator><![CDATA[Ignacio Novello]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2016 11:13:37 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2713#comment-1477</guid>
+		<description><![CDATA[Siendo mi campo field_galeria_imagenes que tiene un subcampo field_imagen, me anduvo así: en la estructura de directorios themes &#062; miplantilla &#062; templates &#062; field_galeria_imagenes puse los archivos:
+
+field--field-galeria_imagenes.tpl.php: field[- -]field-galeria_imagenes.tpl.php
+field[ - -]field_imagen[- -]field_galeria_imagenes.tpl.php
+field-collection-item[- -]field_galeria_imagenes.tpl.php
+
+Con los contenidos especificados en el post.
+
+Muchas gracias por la info!!!]]></description>
+		<content:encoded><![CDATA[<p>Siendo mi campo field_galeria_imagenes que tiene un subcampo field_imagen, me anduvo así: en la estructura de directorios themes &gt; miplantilla &gt; templates &gt; field_galeria_imagenes puse los archivos:</p>
+<p>field&#8211;field-galeria_imagenes.tpl.php: field[- -]field-galeria_imagenes.tpl.php<br />
+field[ &#8211; -]field_imagen[- -]field_galeria_imagenes.tpl.php<br />
+field-collection-item[- -]field_galeria_imagenes.tpl.php</p>
+<p>Con los contenidos especificados en el post.</p>
+<p>Muchas gracias por la info!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Regina</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comment-713</link>
+		<dc:creator><![CDATA[Regina]]></dc:creator>
+		<pubDate>Mon, 15 Dec 2014 13:08:48 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2713#comment-713</guid>
+		<description><![CDATA[Muchas gracias Capy! Quizás no sea la forma correcta de hacer esto pero al final en lugar de crear todos esos .tpl en  mi  node--myContentType.tpl.php hice lo siguiente
+
+&lt;pre class=&quot;decode:1 lang:php&quot; &gt;
+    field_nombre[&#039;und&#039;][0][&#039;safe_value&#039;];
+    print $item-&gt;field_precio[&#039;und&#039;][0][&#039;safe_value&#039;];
+    print $item-&gt;field_imagen[&#039;und&#039;][0][&#039;safe_value&#039;];
+&lt;/pre&gt;
+
+al tener todos los field en el mismo archivo me parece más fácil para hacerle el theming!
+Saludos]]></description>
+		<content:encoded><![CDATA[<p>Muchas gracias Capy! Quizás no sea la forma correcta de hacer esto pero al final en lugar de crear todos esos .tpl en  mi  node&#8211;myContentType.tpl.php hice lo siguiente</p>
+<p></p>
+		<div id="crayon-584436b046884344402594" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+    field_nombre['und'][0]['safe_value'];
+    print $item-&gt;field_precio['und'][0]['safe_value'];
+    print $item-&gt;field_imagen['und'][0]['safe_value'];</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584436b046884344402594-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436b046884344402594-2">2</div><div class="crayon-num" data-line="crayon-584436b046884344402594-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584436b046884344402594-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">field_nombre</span><span class="crayon-sy">[</span><span class="crayon-s">'und'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'safe_value'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436b046884344402594-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-v">$item</span><span class="crayon-o">-&gt;</span><span class="crayon-i">field_precio</span><span class="crayon-sy">[</span><span class="crayon-s">'und'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'safe_value'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436b046884344402594-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-v">$item</span><span class="crayon-o">-&gt;</span><span class="crayon-i">field_imagen</span><span class="crayon-sy">[</span><span class="crayon-s">'und'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'safe_value'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>al tener todos los field en el mismo archivo me parece más fácil para hacerle el theming!<br />
+Saludos</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comment-712</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Sun, 14 Dec 2014 23:00:57 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2713#comment-712</guid>
+		<description><![CDATA[Regina, si tienes un field collection llamado &quot;&lt;strong&gt;field_grupo_de_cosas&lt;/strong&gt;&quot; y dentro tienes dos field mas: &quot;&lt;strong&gt;field_titulo&lt;/strong&gt;&quot; y &quot;&lt;strong&gt;field_imagen&lt;/strong&gt;&quot;, los nombres de los tpl de cada uno sería:
+
+&lt;strong&gt;field--field_titulo--field_grupo_de_cosas.tpl.php&lt;/strong&gt;
+&lt;strong&gt;field--field_imagen--field_grupo_de_cosas.tpl.php&lt;/strong&gt;
+
+NOTA: son dobles guiones los que hay en los nombres, pero el puto wordpress los convierte en uno :) (field[- -]field_titulo[- -]field_grupo_de_cosas.tpl.php)
+
+El código que va dentro de cada uno de los field tomalo de &lt;strong&gt;modules/field/theme/field.tpl.php&lt;/strong&gt; que es un buen punto de partida.
+
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>Regina, si tienes un field collection llamado &#8220;<strong>field_grupo_de_cosas</strong>&#8221; y dentro tienes dos field mas: &#8220;<strong>field_titulo</strong>&#8221; y &#8220;<strong>field_imagen</strong>&#8220;, los nombres de los tpl de cada uno sería:</p>
+<p><strong>field&#8211;field_titulo&#8211;field_grupo_de_cosas.tpl.php</strong><br />
+<strong>field&#8211;field_imagen&#8211;field_grupo_de_cosas.tpl.php</strong></p>
+<p>NOTA: son dobles guiones los que hay en los nombres, pero el puto wordpress los convierte en uno 🙂 (field[- -]field_titulo[- -]field_grupo_de_cosas.tpl.php)</p>
+<p>El código que va dentro de cada uno de los field tomalo de <strong>modules/field/theme/field.tpl.php</strong> que es un buen punto de partida.</p>
+<p>Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Regina</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comment-711</link>
+		<dc:creator><![CDATA[Regina]]></dc:creator>
+		<pubDate>Sun, 14 Dec 2014 15:46:15 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2713#comment-711</guid>
+		<description><![CDATA[Y si lo que quiero es acceder a los subcampos del field_collection por separado para poder hacerle el theming?]]></description>
+		<content:encoded><![CDATA[<p>Y si lo que quiero es acceder a los subcampos del field_collection por separado para poder hacerle el theming?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comment-710</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 22 Jul 2014 15:41:22 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2713#comment-710</guid>
+		<description><![CDATA[jlbellido++ XD]]></description>
+		<content:encoded><![CDATA[<p>jlbellido++ XD</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jose Luis Bellido</title>
+		<link>http://ecapy.com/drupal-7-controlar-completamente-los-template-de-field-collection/#comment-709</link>
+		<dc:creator><![CDATA[Jose Luis Bellido]]></dc:creator>
+		<pubDate>Tue, 22 Jul 2014 15:40:30 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2713#comment-709</guid>
+		<description><![CDATA[Gracias monstruo! Estupendo! 
+Un abrazo.]]></description>
+		<content:encoded><![CDATA[<p>Gracias monstruo! Estupendo!<br />
+Un abrazo.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

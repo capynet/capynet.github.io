@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>snippet &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/snippet/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Generar propiedades de un objeto (JSON) dinámicamente.</title>
+		<link>http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/</link>
+		<comments>http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/#comments</comments>
+		<pubDate>Wed, 04 Sep 2013 13:51:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2465</guid>
+		<description><![CDATA[El caso es el siguiente: Tenemos un objeto al que queremos crearle propiedades anidadas pero nos gustaría no tener que preocuparnos de si sus parent existen. por ejemplo, si tuviera un objeto &#8220;miObjeto&#8221; y quisiera crearle una función en miObjeto.modulos.ctools.watcher, primero tendría que crear ese path. eso o podemos usar esta función: [crayon-5844375863f7a441620020/] Y listo,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El caso es el siguiente: Tenemos un objeto al que queremos crearle propiedades anidadas pero nos gustaría no tener que preocuparnos de si sus parent existen. por ejemplo, si tuviera un objeto &#8220;miObjeto&#8221; y quisiera crearle una función en miObjeto.modulos.ctools.watcher, primero tendría que crear ese path. eso o podemos usar esta función:</p><pre class="crayon-plain-tag">/**
+ * Genera propiedades de un objeto (JSON) dinamicamente.
+ * @returns objeto extendido.
+ */
+function extend(base, ns_string) {
+    var parts = ns_string.split('.'),
+        pl, i;
+    pl = parts.length;
+    for (i = 0; i &lt; pl; i++) {
+        //create a property if it doesnt exist
+        if (typeof base[parts[i]] == 'undefined') {
+            base[parts[i]] = {};
+        }
+        base = base[parts[i]];
+    }
+    return base;
+}</pre><p>Y listo, ya podemos extender nuestro objeto de forma dinámica:</p><pre class="crayon-plain-tag">var miObjeto = {};
+
+//console.log("Esto va a dar error porque 'modulos.ctools.watcher' no existe");
+//console.log(miObjeto.modulos.ctools);
+
+extend(miObjeto, 'modulos.ctools.watcher');
+extend(miObjeto, 'settings.general');
+
+miObjeto.modulos.ctools.watcher = function () {
+    console.log("Soy una función!");
+};
+
+console.log(miObjeto);</pre><p>Resultado:<br />
+<img class="size-full wp-image-2469 alignnone" src="http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas.png" alt="resultado-objeto-propiedades-dinamicas" width="843" height="111" srcset="http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas.png 843w, http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas-300x40.png 300w, http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas-768x101.png 768w" sizes="(max-width: 843px) 100vw, 843px" /><br />
+Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Obtener un árbol de términos de forma anidada</title>
+		<link>http://ecapy.com/drupal-obtener-un-arbol-de-terminos-de-forma-anidada/</link>
+		<pubDate>Sun, 30 Jun 2013 22:54:33 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2409</guid>
+		<description><![CDATA[Este problema es mas viejo que la injusticia. taxonomy_get_tree() devuelve un array de terms plano en lugar de hacerlo de forma anidada. La solución es esta pequeña función: [crayon-584437586550e619118200/] Y listo, ahora en lugar de usar taxonomy_get_tree(), usa taxonomy_get_nested_tree(): [crayon-5844375865524829657263/] Ya está, el resultado ahora está anidado tal como tengas anidados los terms. Nota: Me&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-obtener-un-arbol-de-terminos-de-forma-anidada/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Este problema es mas viejo que la injusticia. <em>taxonomy_get_tree()</em> devuelve un array de terms plano en lugar de hacerlo de forma anidada. La solución es esta pequeña función:</p><pre class="crayon-plain-tag">function taxonomy_get_nested_tree($vid_or_terms = array(), $max_depth = NULL, $parent = 0, $parents_index = array(), $depth = 0) {
+ 
+  if (!is_array($vid_or_terms)) {
+    $vid_or_terms = taxonomy_get_tree($vid_or_terms);
+  }
+ 
+  foreach ($vid_or_terms as $term) {
+ 
+    foreach ($term-&gt;parents as $term_parent) {
+      if ($term_parent == $parent) {
+        $return[$term-&gt;tid] = $term;
+      }
+      else {
+        $parents_index[$term_parent][$term-&gt;tid] = $term;
+      }
+    }
+  }
+ 
+  foreach ($return as &amp;$term) {
+    if (isset($parents_index[$term-&gt;tid]) &amp;&amp; (is_null($max_depth) || $depth &lt; $max_depth)) {
+      $term-&gt;children = taxonomy_get_nested_tree($parents_index[$term-&gt;tid], $max_depth, $term-&gt;tid, $parents_index, $depth + 1);
+    }
+  }
+ 
+  return $return;
+}</pre><p>Y listo, ahora <strong>en lugar de usar <em>taxonomy_get_tree()</em>, usa <em>taxonomy_get_nested_tree()</em></strong>:</p><pre class="crayon-plain-tag">$voc = taxonomy_vocabulary_machine_name_load('categoria');
+$tree = taxonomy_get_nested_tree($voc-&gt;vid);</pre><p>Ya está, el resultado ahora está anidado tal como tengas anidados los terms.</p>
+<p>Nota: Me he basado en <a href="https://api.drupal.org/comment/23778#comment-23778" target="_blank">ésta función</a>, que a su vez se basa en otras.</p>
+<h3>Renderizar el tree</h3>
+<p>Acá dejo tambien una función para renderizar el tree:</p><pre class="crayon-plain-tag">function taxonomy_nested_tree_render($tree, $recurring = FALSE) {
+ 
+  $items = array();
+ 
+  if (count($tree)) {
+ 
+    foreach ($tree as $term) {
+      $path = taxonomy_term_uri($term);
+      $item = array('data' =&gt; l($term-&gt;name, $path["path"]));
+ 
+      if (isset($term-&gt;children)) {
+        $item["children"] = taxonomy_nested_tree_render($term-&gt;children, TRUE);
+      }
+      $items[] = $item;
+    }
+ 
+  }
+ 
+  if ($recurring) {
+    return $items;
+  }
+ 
+  return array(
+    '#theme' =&gt; 'item_list',
+    '#items' =&gt; $items,
+    '#attributes' =&gt; array('class' =&gt; 'taxonomy-tree'),
+  );
+}</pre><p>Uso:</p><pre class="crayon-plain-tag">$voc = taxonomy_vocabulary_machine_name_load('categoria');
+$tree = taxonomy_get_nested_tree($voc-&gt;vid);
+return taxonomy_nested_tree_render($tree);</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>jQuery: detectar cuando se copia, pega o corta</title>
+		<link>http://ecapy.com/jquery-detectar-cuando-se-copia-pega-o-corta/</link>
+		<pubDate>Mon, 18 Jul 2011 19:36:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1024</guid>
+		<description><![CDATA[Señoras y señores, les juro que no he sido capaz de encontrar la documentación de estos tres eventos en la api de jQuery, pero ahí están y funcionan! Testeado en FF, Chrome, IE7 IE8 [crayon-5844375865cac773016389/]]]></description>
+				<content:encoded><![CDATA[<p>Señoras y señores, les juro que no he sido capaz de encontrar la documentación de estos tres eventos en la api de jQuery, pero ahí están y funcionan!</p>
+<p>Testeado en FF, Chrome, IE7 IE8</p><pre class="crayon-plain-tag">$(document).ready(function() {
+ 
+    $("#mi-textarea").bind('copy', function(e) {
+        alert('Copiando!');
+    });
+ 
+    $("#mi-textarea").bind('paste', function(e) {
+        alert('repartiendo!... digo, pegando!');
+    });
+ 
+    $("#mi-textarea").bind('cut', function(e) {
+        alert('Cortando!');
+    });
+ 
+});</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Reemplazar la ñ, acentos, espacios y caracteres especiales con PHP [Actualizada]</title>
+		<link>http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/</link>
+		<comments>http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/#comments</comments>
+		<pubDate>Thu, 10 Mar 2011 21:25:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Codificación de caracteres]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=884</guid>
+		<description><![CDATA[[crayon-584437586628d242253013/] Ejemplo de uso: [crayon-58443758662a3116752038/]]]></description>
+				<content:encoded><![CDATA[<p></p><pre class="crayon-plain-tag">&lt; ?php
+/**
+ * Reemplaza todos los acentos por sus equivalentes sin ellos
+ *
+ * @param $string
+ *  string la cadena a sanear
+ *
+ * @return $string
+ *  string saneada
+ */
+function sanear_string($string)
+{
+ 
+    $string = trim($string);
+ 
+    $string = str_replace(
+        array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
+        array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
+        array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
+        array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
+        array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
+        array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('ñ', 'Ñ', 'ç', 'Ç'),
+        array('n', 'N', 'c', 'C',),
+        $string
+    );
+ 
+    //Esta parte se encarga de eliminar cualquier caracter extraño
+    $string = str_replace(
+        array("\", "¨", "º", "-", "~",
+             "#", "@", "|", "!", """,
+             "·", "$", "%", "&amp;", "/",
+             "(", ")", "?", "'", "¡",
+             "¿", "[", "^", "<code>", "]",
+             "+", "}", "{", "¨", "´",
+             "&gt;", "&lt; ", ";", ",", ":",
+             ".", " "),
+        '',
+        $string
+    );
+ 
+ 
+    return $string;
+}</pre><p>Ejemplo de uso:</p><pre class="crayon-plain-tag"><!--?php 
+echo sanear_string("áàäâªÁÀÂÄdoéèëêÉÈÊËreíìïîÍÌÏÎmióòöôÓÒÖÔfaúùüûÚÙÛÜsolñÑçÇlasi\¨º-~#@|!,·$%&amp;/()?¡¿[^&lt;/code&gt;]+}{¨´&gt;&lt; ;,:. ");
+&lt;/pre&gt;
+&lt;p&gt;Lo anterior imprime:&lt;br ?-->
+[code]"aaaaaAAAAdoeeeeEEEEreiiiiIIIImiooooOOOOfauuuuUUUUsolnNcClasi"[/code]</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/feed/</wfw:commentRss>
+		<slash:comments>63</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: El tag http-equiv=&#8221;Content-type&#8221; de  sale duplicado</title>
+		<link>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/</link>
+		<comments>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/#comments</comments>
+		<pubDate>Mon, 15 Nov 2010 20:32:09 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=662</guid>
+		<description><![CDATA[Un curioso bug en Drupal y de facil solucion. Solamente tenes que poner el siguiente snippet en el template.php de tu theme o bien en algún modulo de tu propia factoría 🙂 [crayon-584437586c5be707226569/]]]></description>
+				<content:encoded><![CDATA[<p>Un curioso bug en Drupal y de facil solucion. Solamente tenes que poner el siguiente snippet en el template.php de tu theme o bien en algún modulo de tu propia factoría <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">function TU_THEME_preprocess_page(&amp;$vars) {
+    $matches = array();
+    preg_match_all('/(]*&gt;)/', $vars['head'], $matches);
+    if (count($matches) &gt;= 2) {
+        $vars['head'] = preg_replace('/]*&gt;/', '', $vars['head'], 1); // strip 1 only
+    }
+}</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-6-el-tag-http-equivcontent-type-de-sale-duplicado/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>JS: Como saber si un objeto undefined está undefined</title>
+		<link>http://ecapy.com/js-como-saber-si-un-objeto-undefined-esta-undefined/</link>
+		<comments>http://ecapy.com/js-como-saber-si-un-objeto-undefined-esta-undefined/#comments</comments>
+		<pubDate>Tue, 31 Aug 2010 14:09:55 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=579</guid>
+		<description><![CDATA[Suena a boludez: [crayon-584437586d0b3694279191/] Pero lo anterior no te va a funcionar porque al querer comparar un objeto que está indefinido, el navegador va a arrojarte un error :S La forma correcta de hacer esta comprobación entonces es: [crayon-584437586d0c6584339326/] Y ya nos evitamos que se rompa todo por culpa de un objeto indefinido&#8230; Bye.]]></description>
+				<content:encoded><![CDATA[<p>Suena a boludez:</p><pre class="crayon-plain-tag">if (objetoso == undefined) {
+    alert("objetoso no está definido.");
+}</pre><p><strong>Pero lo anterior no te va a funcionar</strong> porque al querer comparar un objeto que está indefinido, el navegador va a arrojarte un error :S</p>
+<p>La forma correcta de hacer esta comprobación entonces es:</p><pre class="crayon-plain-tag">if (typeof(objetoso) === "undefined") {
+    alert("objetoso no está definido.");
+}</pre><p>Y ya nos evitamos que se rompa todo por culpa de un objeto indefinido&#8230;</p>
+<p>Bye.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/js-como-saber-si-un-objeto-undefined-esta-undefined/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Notas rápidas de strpos() (PHP)</title>
+		<link>http://ecapy.com/notas-rapidas-de-strpos-php/</link>
+		<comments>http://ecapy.com/notas-rapidas-de-strpos-php/#comments</comments>
+		<pubDate>Mon, 21 Jun 2010 10:50:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=505</guid>
+		<description><![CDATA[Strpos() devuelve la posición del primer caracter de la palabra que estamos buscando. Ejemplos: [crayon-584437586dc6d468978892/] [crayon-584437586dc80018887838/] Nunca hay que olvidar de hacer la comparación del resultado con comparaciones estrictas (&#8220;===&#8221;, &#8220;!==&#8221;) para evitar falsos positivos o negativos.]]></description>
+				<content:encoded><![CDATA[<p>Strpos() devuelve la posición del primer caracter de la palabra que estamos buscando.</p>
+<p>Ejemplos:</p><pre class="crayon-plain-tag">// En la posición 0
+if ($posicion = strpos("hola mundo", "hola") !== FALSE) {
+  echo "Palabra encontrada en la posición $posicion";
+}</pre><p></p><pre class="crayon-plain-tag">//En la posición 9
+if ($posicion = strpos("he dicho hola mundo!", "hola") !== FALSE) {
+  echo "Palabra encontrada en la posición $posicion";
+}</pre><p><strong>Nunca hay que olvidar de hacer la comparación del resultado con comparaciones estrictas (&#8220;===&#8221;, &#8220;!==&#8221;) para evitar falsos positivos o negativos.</strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/notas-rapidas-de-strpos-php/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Snippet: Verificar si una fecha está dentro de un rango de fechas en PHP.</title>
+		<link>http://ecapy.com/verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/</link>
+		<comments>http://ecapy.com/verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/#comments</comments>
+		<pubDate>Thu, 03 Jun 2010 18:30:07 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=477</guid>
+		<description><![CDATA[La saqué de la documentación de PHP creo recordar, y a alguien le puede ser útil 😉 [crayon-584437586e6fb201493152/] Ejemplo de uso: [crayon-584437586e70f777455559/]]]></description>
+				<content:encoded><![CDATA[<p>La saqué de la documentación de PHP creo recordar, y a alguien le puede ser útil <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">&lt; ?php /** * Verifica que una fecha esté dentro del rango de fechas establecidas * @param $start_date fecha de inicio * @param $end_date fecha final * @param $evaluame fecha a comparar * @return true si esta en el rango, false si no lo está */ function check_in_range($start_date, $end_date, $evaluame) { $start_ts = strtotime($start_date); $end_ts = strtotime($end_date); $user_ts = strtotime($evaluame); return (($user_ts &gt;= $start_ts) &amp;&amp; ($user_ts &lt;= $end_ts));
+}</pre><p>Ejemplo de uso:</p><pre class="crayon-plain-tag">&lt;?php
+$start_date = '2010-06-01';
+$end_date = '2010-06-30';
+$fecha_a_evaluar = '2010-06-15';
+ 
+if (check_in_range($start_date, $end_date, $fecha_a_evaluar)) {
+    echo "estas en rango";
+} else {
+    echo "fuera de rango";
+}</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+		<item>
+		<title>Múltiples drupal_execute() en Drupal 6 es imposible&#8230; O NO :)</title>
+		<link>http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/</link>
+		<comments>http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/#comments</comments>
+		<pubDate>Wed, 02 Jun 2010 20:31:52 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=474</guid>
+		<description><![CDATA[El otro día Nicolas, un amigo y compañero de trabajo se quebró la cabeza con este tema. La cosa debía ser mas bien simple, en un bucle tenia que procesar una serie de datos, rellenar un formulario programaticamente y darle un drupal_execute() para que se creen una cantidad de nodos&#8230; Eso fue de todo menos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El otro día Nicolas, un amigo y compañero de trabajo <strong>se quebró la cabeza</strong> con este tema. La cosa debía ser mas bien simple, en un bucle tenia que procesar una serie de datos, rellenar un formulario programaticamente y darle un <a href="http://api.drupal.org/api/function/drupal_execute/6" target="_blank">drupal_execute()</a> para que se creen una cantidad de nodos&#8230;</p>
+<p><strong>Eso fue de todo menos simple</strong>. Resulta que el que programó la función <a href="http://api.drupal.org/api/function/drupal_validate_form/6" target="_blank">drupal_validate_form()</a> <strong>se olvidó que podía caber la posibilidad de que alguien quisiera llamarlo en bucle, y no se le ocurrió mejor idea que cachear la primera validación y cortar cualquier otra dentro de un mismo request.</strong></p>
+<p>La solución por la que se decantó Nicolas fue la de crear una implementación propia de ciertas funciones. Antes que digan algo, recomiendo que se den una vuelta <a href="http://drupal.org/node/260934" target="_blank">por los foros de Drupal</a> y se convensan de la imposibilidad de aplicar una solución mejor.<br />
+De hecho esta solución es bastante buena, porque no tenes mas que poner el código en tu modulo, e invocar la versión modificada de drupal_execute().</p>
+<p>La modificación se tuvo hacer mucho antes de llegar a drupal_validate_form() para poder tomar control sobre la misma, por lo que en esta modificación hubo que reemplazar funciones de:<br />
+<strong>drupal_execute() -&gt; drupal_execute_no_cache()<br />
+drupal_process_form() -&gt; drupal_process_form_no_cache()<br />
+drupal_validate_form() -&gt; drupal_validate_form_no_cache();</strong></p>
+<p>los archivos modificados son estos:</p><pre class="crayon-plain-tag">/**
+ * @see drupal_execute
+ * Unica diferencia, utiliza métodos propios (_no_cache) para evitar el cacheo de validaciones
+ */
+
+function drupal_execute_no_cache($form_id, &amp;$form_state) {
+    $args = func_get_args();
+
+    // Make sure $form_state is passed around by reference.
+    $args[1] = &amp;$form_state;
+
+    $form = call_user_func_array('drupal_retrieve_form', $args);
+    $form['#post'] = $form_state['values'];
+    drupal_prepare_form($form_id, $form, $form_state);
+    drupal_process_form_no_cache($form_id, $form, $form_state);
+
+}
+
+/**
+ * @see drupal_process_form
+ *
+ * @param $form_id
+ * @param $form
+ * @param $form_state
+ */
+function drupal_process_form_no_cache($form_id, &amp;$form, &amp;$form_state) {
+    $form_state['values'] = array();
+
+    $form = form_builder($form_id, $form, $form_state);
+    // Only process the form if it is programmed or the form_id coming
+    // from the POST data is set and matches the current form_id.
+    if ((!empty($form['#programmed'])) || (!empty($form['#post']) &amp;&amp; (isset($form['#post']['form_id']) &amp;&amp; ($form['#post']['form_id'] == $form_id)))) {
+        $form_state['process_input'] = TRUE;
+        drupal_validate_form_no_cache($form_id, $form, $form_state);
+
+        // form_clean_id() maintains a cache of element IDs it has seen,
+        // so it can prevent duplicates. We want to be sure we reset that
+        // cache when a form is processed, so scenerios that result in
+        // the form being built behind the scenes and again for the
+        // browser don't increment all the element IDs needlessly.
+        form_clean_id(NULL, TRUE);
+
+        if ((!empty($form_state['submitted'])) &amp;&amp; !form_get_errors() &amp;&amp; empty($form_state['rebuild'])) {
+            $form_state['redirect'] = NULL;
+            form_execute_handlers('submit', $form, $form_state);
+
+            // We'll clear out the cached copies of the form and its stored data
+            // here, as we've finished with them. The in-memory copies are still
+            // here, though.
+            if (variable_get('cache', CACHE_DISABLED) == CACHE_DISABLED &amp;&amp; !empty($form_state['values']['form_build_id'])) {
+                cache_clear_all('form_' . $form_state['values']['form_build_id'], 'cache_form');
+                cache_clear_all('storage_' . $form_state['values']['form_build_id'], 'cache_form');
+            }
+
+            // If batches were set in the submit handlers, we process them now,
+            // possibly ending execution. We make sure we do not react to the batch
+            // that is already being processed (if a batch operation performs a
+            // drupal_execute).
+            if ($batch =&amp; batch_get() &amp;&amp; !isset($batch['current_set'])) {
+                // The batch uses its own copies of $form and $form_state for
+                // late execution of submit handers and post-batch redirection.
+                $batch['form'] = $form;
+                $batch['form_state'] = $form_state;
+                $batch['progressive'] = !$form['#programmed'];
+                batch_process();
+                // Execution continues only for programmatic forms.
+                // For 'regular' forms, we get redirected to the batch processing
+                // page. Form redirection will be handled in _batch_finished(),
+                // after the batch is processed.
+            }
+
+            // If no submit handlers have populated the $form_state['storage']
+            // bundle, and the $form_state['rebuild'] flag has not been set,
+            // we're finished and should redirect to a new destination page
+            // if one has been set (and a fresh, unpopulated copy of the form
+            // if one hasn't). If the form was called by drupal_execute(),
+            // however, we'll skip this and let the calling function examine
+            // the resulting $form_state bundle itself.
+            if (!$form['#programmed'] &amp;&amp; empty($form_state['rebuild']) &amp;&amp; empty($form_state['storage'])) {
+                drupal_redirect_form($form, $form_state['redirect']);
+            }
+        }
+    }
+}
+
+/**
+ * @see drupal_validate_form
+ *
+ * @param $form_id
+ * @param $form
+ * @param $form_state
+ */
+function drupal_validate_form_no_cache($form_id, $form, &amp;$form_state) {
+
+    // If the session token was set by drupal_prepare_form(), ensure that it
+    // matches the current user's session.
+    if (isset($form['#token'])) {
+        if (!drupal_valid_token($form_state['values']['form_token'], $form['#token'])) {
+            // Setting this error will cause the form to fail validation.
+            form_set_error('form_token', t('Validation error, please try again. If this error persists, please contact the site administrator.'));
+        }
+    }
+
+    _form_validate($form, $form_state, $form_id);
+}</pre><p>Como dije. Copienlo a su módulo y usen drupal_execute_no_cache() en lugar de drupal_execute().</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/multiples-drupal_execute-en-drupal-6-es-imposible-o-no/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Nota rápida: sobre drupal_set_html_head(), template.php y las taxonomías.</title>
+		<link>http://ecapy.com/nota-rapida-sobre-drupal_set_html_head-template-php-y-las-taxonomias/</link>
+		<comments>http://ecapy.com/nota-rapida-sobre-drupal_set_html_head-template-php-y-las-taxonomias/#comments</comments>
+		<pubDate>Wed, 02 Jun 2010 11:35:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=472</guid>
+		<description><![CDATA[Si querés setear un header HTML en template.php no va a funcionar, mas bien tenés que ponerlo en el hook_init() si es para una taxonomía o en el hook que corresponda (hook_nodeapi() por ejemplo para los nodos).]]></description>
+				<content:encoded><![CDATA[<p>Si querés setear un header HTML en template.php no va a funcionar, mas bien tenés que ponerlo en el hook_init() si es para una taxonomía o en el hook que corresponda (hook_nodeapi() por ejemplo para los nodos).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/nota-rapida-sobre-drupal_set_html_head-template-php-y-las-taxonomias/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

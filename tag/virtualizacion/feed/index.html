@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Virtualización &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/virtualizacion/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Compartir internet por wifi de Windows 7 a Linux con un cable</title>
+		<link>http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/</link>
+		<comments>http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/#comments</comments>
+		<pubDate>Wed, 02 Nov 2011 20:20:47 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[Virtualización]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1240</guid>
+		<description><![CDATA[Tenemos lo siguiente: Un ordenador con windows 7 que esta conectado a Internet por Wifi y la conexión por cable que está enganchada al portátil: Lo que queremos lograr es que el Wifi del ordenador le comparta la conexión a Internet a la conexión por cable del mismo ordenador para poder enganchar ese cable a un portátil con Linux (Ubuntu en este caso) y que este disfrute de Internet. NOTA: si te preguntas porque alguien iba&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tenemos lo siguiente: Un ordenador con windows 7 que esta conectado a Internet por Wifi y la conexión por cable que está enganchada al portátil:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0.png"><img class="aligncenter size-full wp-image-1241" title="compartiendo-internet-conexion-wireless-0" src="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0.png" alt="" width="564" height="243" srcset="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0.png 564w, http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-0-300x129.png 300w" sizes="(max-width: 564px) 100vw, 564px" /></a></p>
+<p>Lo que queremos lograr es que el Wifi del ordenador le comparta la conexión a Internet a la conexión por cable del mismo ordenador para poder enganchar ese cable a un portátil con Linux (Ubuntu en este caso) y que este disfrute de Internet.</p>
+<p><strong style="color: #999999;">NOTA</strong><span style="color: #999999;">: si te preguntas porque alguien iba a querer hacer algo así lee esto, sino pasa al siguiente punto:</span></p>
+<p><span style="color: #999999;">Por lo general cada vez que he virtualizado sobre KVM usé un ordenador de sobremesa, y estos ordenadores siempre tuvieron conexión a la red por ethernet, pero el otro día me monte una maquina virtual con Ubuntu server 10.04 64 bits en mi portátil para poner un servidor LAMP en él con una configuración similar a la que tiene un servidor de producción.</span></p>
+<p><span style="color: #999999;">Bueno, el Ubuntu sobre KVM lo instale sin problemas, pero cuando termine de instalarlo y quise instalar un par de cositas sobre el, me saltaba diciendo que no había conexión&#8230;. Eso a priori me sonó rarisimo porque el portátil estaba conectado a Internet, pero la maquina virtual no y eso que estaba puenteado wlan0 a la maquina virtual.</span></p>
+<p><span style="color: #999999;">Después de buscar y buscar leí por ahí que KVM todavía no soporta los bridge sobre wlan, por lo que conecte el portatil por medio de cable al ordenador de sobremesa que a su ves obtiene Internet por medio de WiFi.</span></p>
+<p>Hagamos una conexión compartida de la Wifi a la de cable:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1.png"><img class="aligncenter size-full wp-image-1242" title="configurando-comparticion-de-conexion-1" src="http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1.png" alt="" width="618" height="378" srcset="http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1.png 618w, http://ecapy.com/wp-content/uploads/2011/10/configurando-comparticion-de-conexion-1-300x183.png 300w" sizes="(max-width: 618px) 100vw, 618px" /></a></p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2.png"><img class="aligncenter size-full wp-image-1244" title="compartiendo-internet-conexion-wireless-2" src="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2.png" alt="" width="377" height="474" srcset="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2.png 377w, http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-2-239x300.png 239w" sizes="(max-width: 377px) 100vw, 377px" /></a></p>
+<p>Como resultado deberías ver esto:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3.png"><img class="aligncenter size-full wp-image-1245" title="compartiendo-internet-conexion-wireless-3" src="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3.png" alt="" width="564" height="243" srcset="http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3.png 564w, http://ecapy.com/wp-content/uploads/2011/10/compartiendo-internet-conexion-wireless-3-300x129.png 300w" sizes="(max-width: 564px) 100vw, 564px" /></a></p>
+<p>Bueno, ya se está compartiendo Internet del Wifi al cable en el ordenador de sobremesa, ahora vamos a Linux y toquemos un par de cositas para poder aprovechar dicha conexión.</p>
+<p>En Linux, vamos a linkear la IP que nos proporciona la conexión por cable proveniente del ordenador de sobremesa a una IP estática en Ubuntu usando la IP entrante como gateway:</p>
+<p>Editamos el archivo interfaces:</p><pre class="crayon-plain-tag">sudo gedit /etc/network/interfaces</pre><p>Deberían ver algo así:</p><pre class="crayon-plain-tag"># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback</pre><p>Y vamos  a agregarle un par de lineas quedando el archivo asi:</p><pre class="crayon-plain-tag"># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# ac&aacute; est&aacute; la magia. Estamos linkeando la ip del ordenador de sobremesa (192.168.1.1) a una ip interna de Ubuntu
+auto eth0
+iface eth0 inet static
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address 192.10.0.1 #--&amp;gt; ip asignada en ubuntu (la que mas te guste)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; netmask 255.255.255.0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gateway 192.168.1.1 #--&amp;gt; ip entrante de la conexion por cable</pre><p>Guarda los cambios y reinicia la conexión:</p><pre class="crayon-plain-tag">sudo /etc/init.d/networking stop
+sudo /etc/init.d/networking start</pre><p>NOTA: aveces a se le va la cabeza y no levanta correctamente la conexión hasta que reinicies y no se porqué pasa eso, asi que si reiniciando la conexión sigue sin funcionarte reinicia el portátil así toma la configuración.</p>
+<p>Listo, chau <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/compartir-internet-por-wifi-de-windows-7-a-linux-con-un-cable/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>KVM/libvirt: el guest (anfitrion) no detecta la interface virbr0 [Solución]</title>
+		<link>http://ecapy.com/kvmlibvirt-el-guest-anfitrion-no-detecta-la-interface-virbr0-solucion/</link>
+		<pubDate>Thu, 16 Jun 2011 20:33:06 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Virtualización]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1093</guid>
+		<description><![CDATA[Si copiaste una maquina virtual KVM y al arrancar no tenes conexión a Internet, hablas visto depues de hacer ifconfig que no hay interface eth0. Esto pasa porque Linux cachea el mac de la tarjeta de red que tenia en la anterior maquina virtual en el archivo &#8220;70-persistent-net.rules&#8220;. La solución es borrarlo y reiniciar la maquina virtual (tranquilo que si Linux no lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/kvmlibvirt-el-guest-anfitrion-no-detecta-la-interface-virbr0-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Si copiaste una maquina virtual KVM y al arrancar no tenes conexión a Internet, hablas visto depues de hacer <strong>ifconfig que no hay interface eth0</strong>. Esto pasa porque Linux cachea el mac de la tarjeta de red que tenia en la anterior maquina virtual en el archivo &#8220;<span style="color: #993300;">70-persistent-net.rules</span>&#8220;.</p>
+<p>La solución es borrarlo y reiniciar la maquina virtual (tranquilo que si Linux no lo encuentra lo recrea).</p><pre class="crayon-plain-tag">sudo rm /etc/udev/rules.d/70-persistent-net.rules
+sudo reboot</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Convertir maquinas virtuales .raw a .qcow2</title>
+		<link>http://ecapy.com/convertir-maquinas-virtuales-raw-a-qcow2/</link>
+		<pubDate>Thu, 03 Mar 2011 09:00:07 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Virtualización]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=832</guid>
+		<description><![CDATA[Me pasó que tenia una maquina virtual que hice con Proxmox en formato .raw pero necesitaba pasar esa maquina a un CentOS que corría libvirt. Para ello necesité convertir la imagen de la maquina virtual de formato raw a .qcow2. [crayon-5844385a86c9a487101327/]]]></description>
+				<content:encoded><![CDATA[<p>Me pasó que tenia una <strong>maquina virtual que hice con <span style="color: #993300;">Proxmox</span></strong> en formato <strong>.raw</strong> pero necesitaba pasar esa maquina a un C<strong>entOS que corría <span style="color: #993300;">libvirt</span></strong>. Para ello necesité convertir la imagen de la maquina virtual de formato <strong>raw a .qcow2</strong>.</p><pre class="crayon-plain-tag">qemu-img convert -f raw vm-disk.raw -O qcow2 vm-disk.qcow2</pre><p></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

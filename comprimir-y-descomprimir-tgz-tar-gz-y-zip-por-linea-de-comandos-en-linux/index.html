@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/comprimir-y-descomprimir-tgz-tar-gz-y-zip-por-linea-de-comandos-en-linux/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:39:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Comprimir y descomprimir .gz, .tar.gz, y .zip por linea de comandos en Linux</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Comprimir y descomprimir .gz, .tar.gz, y .zip por linea de comandos en Linux RSS de los comentarios" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Recoger atributos con SimpleXML' href='../recoger-atributos-con-simplexml/index.html' />
+<link rel='next' title='Hack para CSS en webkit' href='../hack-para-css-en-webkit/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../indexedce.html?p=429' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embede466.json?url=http%3A%2F%2Fecapy.com%2Fcomprimir-y-descomprimir-tgz-tar-gz-y-zip-por-linea-de-comandos-en-linux%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed79c4?url=http%3A%2F%2Fecapy.com%2Fcomprimir-y-descomprimir-tgz-tar-gz-y-zip-por-linea-de-comandos-en-linux%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-429 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-429" class="post-429 post type-post status-publish format-standard hentry category-mix-de-cosas tag-linux tag-mix-de-cosas">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Comprimir y descomprimir .gz, .tar.gz, y .zip por linea de comandos en Linux</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2010-05-17T00:30:05+00:00">17 May,  2010</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/mix-de-cosas/index.html" rel="category tag">Mix de cosas</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/linux/index.html" rel="tag">Linux</a>, <a href="../tag/mix-de-cosas/index.html" rel="tag">Mix de cosas</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="index.html#comments">50 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Mas que un post es una nota para mi XD:</p>
+<p><strong>Archivos <span style="color: #993300;">.tar.gz</span>:</strong><br />
+<span style="text-decoration: underline;">Comprimir</span>: tar -czvf empaquetado.tar.gz /carpeta/a/empaquetar/<br />
+<span style="text-decoration: underline;">Descomprimir</span>: tar -xzvf archivo.tar.gz</p>
+<p><strong>Archivos <span style="color: #993300;">.tar</span>:</strong><br />
+<span style="text-decoration: underline;">Empaquetar</span>: tar -cvf paquete.tar /dir/a/comprimir/<br />
+<span style="text-decoration: underline;">Desempaquetar</span>: tar -xvf paquete.tar</p>
+<p><strong>Archivos <span style="color: #993300;">.gz</span>:</strong><br />
+<span style="text-decoration: underline;">Comprimir</span>: gzip -9 index.php<br />
+<span style="text-decoration: underline;">Descomprimir</span>: gzip -d index.php.gz</p>
+<p><strong>Archivos <span style="color: #993300;">.zip:</span></strong><br />
+<span style="text-decoration: underline;">Comprimir</span>: zip archivo.zip carpeta<br />
+<span style="text-decoration: underline;">Descomprimir</span>: unzip archivo.zip</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../recoger-atributos-con-simplexml/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../hack-para-css-en-webkit/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                        <div id="comments" class="comments-area comments">
+            <h3 class="comments-title">
+            50 Comments        </h3>
+
+        <ul class="comment-list">
+
+            		<li class="comment even thread-even depth-1" id="li-comment-148">
+			<div id="comment-148" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/cc2ef6e32de1cdb2b4898cc2ccb6a183?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/cc2ef6e32de1cdb2b4898cc2ccb6a183?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.gaysanonimos.com/' rel='external nofollow' class='url'>Ruben</a></span>							<span class="comment-date">11/01/2011</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>no me dejaaa jodeeeeeeeeeerrrr</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-149">
+			<div id="comment-149" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Capy</span>							<span class="comment-date">17/01/2011</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Que raro, los uso siempre. que te dice la consola?</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even depth-2" id="li-comment-156">
+			<div id="comment-156" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/91c951029360c18492c8227dfd124a74?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/91c951029360c18492c8227dfd124a74?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">luis</span>							<span class="comment-date">05/11/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>cambiale los permisos capo!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt depth-2" id="li-comment-164">
+			<div id="comment-164" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/c579757bcbd1b2829f7349856f12d7a8?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/c579757bcbd1b2829f7349856f12d7a8?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">asdf</span>							<span class="comment-date">25/11/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>aaaaay rubius&#8230;</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even depth-2" id="li-comment-166">
+			<div id="comment-166" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/026cec1023ff9cd95495d7f83f6119b9?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/026cec1023ff9cd95495d7f83f6119b9?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Diana</span>							<span class="comment-date">09/12/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Tienes que entrar a la carpeta en donde se encuentra tu archivo. Ejm root@bt: cd Desktop<br />
+Después recién descomprimes.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-150">
+			<div id="comment-150" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/7515709f226b91ac94d91c744b0b01de?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/7515709f226b91ac94d91c744b0b01de?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Ernesto</span>							<span class="comment-date">23/03/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>simple y muy util. Gracias</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-151">
+			<div id="comment-151" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/b8ff894cbb6b5fcb02e136eec045b8c2?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/b8ff894cbb6b5fcb02e136eec045b8c2?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.milaeyzaguirre.cl/' rel='external nofollow' class='url'>Camila</a></span>							<span class="comment-date">31/08/2012</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Excelente, nunca está de mas. Yo también guardo post/notas jajaja, saludos!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-152">
+			<div id="comment-152" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/f3b30f8ee9338ee3d87152343ceb0665?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/f3b30f8ee9338ee3d87152343ceb0665?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Peregring-lk</span>							<span class="comment-date">20/02/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Pues es una de las notas que más veces he consultado por Internet jaja de hecho, siempre acabo en el mismo lugar cada vez que tengo que des-untar un paquete.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="li-comment-169">
+			<div id="comment-169" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/9c633d95c7136d75b17c537865bdbe16?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/9c633d95c7136d75b17c537865bdbe16?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">JixTom</span>							<span class="comment-date">18/12/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Me ha pasado lo mismo que a ti Peregring-lk ! jaja. Post minimalista y muy útil para los que somos de memoria &#8220;corta&#8221; 😉</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-153">
+			<div id="comment-153" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d5ce4f2d0ca6858f5ee72b14b12e07a9?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d5ce4f2d0ca6858f5ee72b14b12e07a9?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">dani</span>							<span class="comment-date">04/04/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>gracias por unos comandos tan bien colocados</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-154">
+			<div id="comment-154" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/ae573b67be66fed7483a48098bfc31d6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/ae573b67be66fed7483a48098bfc31d6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Tize</span>							<span class="comment-date">26/04/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Estupendo, muchas gracias.<br />
+De mucha utilidad!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-155">
+			<div id="comment-155" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/9c0c85e3fa62d9fd4c4c2da8385dffc4?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/9c0c85e3fa62d9fd4c4c2da8385dffc4?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Criss</span>							<span class="comment-date">27/08/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>excelente muy bueno y util</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="pingback even thread-odd thread-alt depth-1" id="comment-157">
+			<p>Pingback: <a href='http://isaacsalgado.com/2015/04/05/notas-linux-comprimir-descomprimir/' rel='external nofollow' class='url'>Notas Linux &#8211; Comprimir / Descomprimir | Developer en Vías de Desarrollo</a> </p>
+		</li><!-- #comment-## -->
+		<li class="pingback odd alt thread-even depth-1" id="comment-158">
+			<p>Pingback: <a href='https://blackprotocol.wordpress.com/2015/05/22/comprimir-y-descomprimir-gz-tar-gz-y-zip-por-linea-de-comandos/' rel='external nofollow' class='url'>Comprimir y descomprimir .gz, .tar.gz, y .zip por linea de comandos | Black Protocol</a> </p>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-159">
+			<div id="comment-159" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/cb90d94b370ff8395ace48b6d0128fab?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/cb90d94b370ff8395ace48b6d0128fab?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">david</span>							<span class="comment-date">13/08/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>amigos necesito información acerca de un emulador de procesador arm e intel. Ustedes me pueden ayudar con alguna dirección al respecto lo que sucede es que estoy haciendo un experimento para mi tesis y no tengo claro como obtener estos datos experimentales. Por favor si necesitan mas información me confirman.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-160">
+			<div id="comment-160" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/352f8640a009e2d63d9d9ab749c4c80b?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/352f8640a009e2d63d9d9ab749c4c80b?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Wiliam</span>							<span class="comment-date">13/09/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Nada, solo comentarte que llevo años escribiendo &#8220;tar gz&#8221; en Google y buscando ecapy en los resultados para entrar en esta web, me resisto a memorizar los parámetros del tar gz 🙂</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-161">
+			<div id="comment-161" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">13/09/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>lol</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3" id="li-comment-163">
+			<div id="comment-163" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/7aced68dbcf0466340d8a3ce2b03978a?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/7aced68dbcf0466340d8a3ce2b03978a?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">EvaristoGZ</span>							<span class="comment-date">13/10/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Creo que pones un popup SOLO en esta página y te da pa un coche xD</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-162">
+			<div id="comment-162" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/73bfbcaedea50c156908ff61d7b98b93?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/73bfbcaedea50c156908ff61d7b98b93?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Juan</span>							<span class="comment-date">02/10/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Una vez fui capaz de des-tarear, a la primera, y sin mirar ninguna chuleta.</p>
+<p>Todas las demás veces vengo aquí 😀</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-165">
+			<div id="comment-165" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/c4d1c96aa45f9dd63682d8ca60a38480?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/c4d1c96aa45f9dd63682d8ca60a38480?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">jose</span>							<span class="comment-date">02/12/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Perdi la cuenta ya de cuantas veces mire tu web. Parece una tontería pero en mis cuatro años de universitario que llevo, los cuatro entrado a esta web.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-167">
+			<div id="comment-167" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/6752eda9aa541519e1ed66038a0f8e0d?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/6752eda9aa541519e1ed66038a0f8e0d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Daniel M</span>							<span class="comment-date">16/12/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola,</p>
+<p>¿Hay alguna forma de comprimir dos archivos a la vez? Por ejemplo quiero comprimir el archivo pepe.txt y jose.txt</p>
+<p>Un saludo!</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="li-comment-168">
+			<div id="comment-168" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/6752eda9aa541519e1ed66038a0f8e0d?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/6752eda9aa541519e1ed66038a0f8e0d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Daniel M</span>							<span class="comment-date">16/12/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Lo acabo de descubrir:</p>
+<p>tar -czvf empaquetado.tar.gz /carpeta/a/empaquetar/pepe.txt /carpeta/a/empaquetar/jose.txt </p>
+<p>Perdón&#8230;</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-822">
+			<div id="comment-822" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d5236788b1dbf938979992ea7e87ebaf?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d5236788b1dbf938979992ea7e87ebaf?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">ramon</span>							<span class="comment-date">05/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>hola porque cuando uso el comando gzip para comprimir un archivo.pdf no lo comprime y aparece<br />
+gzip: archivo.pdf is a directory &#8212; ignored ayudaa!</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-898">
+			<div id="comment-898" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">capynet</span>							<span class="comment-date">08/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Qué comando utilizas? pégalo así lo vemos.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1054">
+			<div id="comment-1054" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/75e804462520c449685a3a16c0b12c8f?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/75e804462520c449685a3a16c0b12c8f?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Mon Franco</span>							<span class="comment-date">16/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias crack 😉</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-1122">
+			<div id="comment-1122" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/4bd690fd0af966c7e143840f0c67324c?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/4bd690fd0af966c7e143840f0c67324c?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">pablo</span>							<span class="comment-date">19/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>En serio? no podrías poner que hace falta poner &#8220;-r&#8221;  después de la orden zip para comprimir una carpeta? Más que nada porque el 99% de cosas que se comprimen suelen ser directorios. Era difícil hacerlo mal eh, te felicito.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-1180">
+			<div id="comment-1180" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">capynet</span>							<span class="comment-date">20/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Si has llegado a este post será que no lo tienes tan claro como crees no?</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3" id="li-comment-1983">
+			<div id="comment-1983" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/3c08c0c1c82198ee5c76e5621b530c72?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/3c08c0c1c82198ee5c76e5621b530c72?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">alberto</span>							<span class="comment-date">01/04/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>por favor por -r como te han indicado para zip</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment even depth-4" id="li-comment-5591">
+			<div id="comment-5591" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/4242513ffd7fcaa66569f4a37f488fee?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/4242513ffd7fcaa66569f4a37f488fee?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Juan</span>							<span class="comment-date">17/08/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>El post está bien ponga &#8220;-r&#8221; o no. Si nos ponemos a explorar las opciones de cada comando se pueden hacer posts gigantes solo para cada uno de ellos. Este post pretende ser sencillito y de ayuda para esas búsquedas rápidas en internet cuando no nos acordamos cómo se descomprimía un &#8220;.gz&#8221; por ejemplo, y con la mayoría de usuarios lo consigue.<br />
+Es de agradecer que en los comentarios la gente aporte información útil, como la opción &#8220;-r&#8221; del comando &#8220;zip&#8221;, y siempre agradeciendo el trabajo al autor.<br />
+Venir a faltar como el comentario del tal &#8220;Pablo&#8221; o seguirle el juego a semejantes individuos como este tal &#8220;Alberto&#8221; está de más.<br />
+Gracias por el post Capy.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1284">
+			<div id="comment-1284" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/cec7b267165021e03b574b1d43c48803?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/cec7b267165021e03b574b1d43c48803?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">alvar0hurtad0</span>							<span class="comment-date">24/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Pero qué pasa, ¿todos pasamos por este post?</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-1289">
+			<div id="comment-1289" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">capynet</span>							<span class="comment-date">24/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Eso parece XD</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-1298">
+			<div id="comment-1298" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/71a0decf7f80e27739db131707a8d55b?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/71a0decf7f80e27739db131707a8d55b?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">harriroot</span>							<span class="comment-date">25/02/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>saludos tios y tias  muy util el blog estimado @Capynet</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1897">
+			<div id="comment-1897" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d99edc64124ea2a13e81b42ca6ddca80?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d99edc64124ea2a13e81b42ca6ddca80?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Gonzalo</span>							<span class="comment-date">28/03/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Graciass uacho! me sirvio</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-1970">
+			<div id="comment-1970" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/9afa8ecefb673c52250e26860cf302fb?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/9afa8ecefb673c52250e26860cf302fb?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Marvin</span>							<span class="comment-date">31/03/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Alguien se ha encontrodo con un archivo.log.gz</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2177">
+			<div id="comment-2177" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/7aeb21a97c7966195de60282a7210ee5?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/7aeb21a97c7966195de60282a7210ee5?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">julio</span>							<span class="comment-date">11/04/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>lol al igual que wiliam me resisto a aprenderme los parametros jaja , bueno la verdad siempre digo me los tego que memorizar pero de que se me olvida y ya lo recuerdo cuando los vuelvo a ocupar</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-3079">
+			<div id="comment-3079" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/1e5c0246d3809b5e0f3560d71023b52d?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/1e5c0246d3809b5e0f3560d71023b52d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Alejandra leiva</span>							<span class="comment-date">04/05/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Muchas Gracias! .. desde hace meses tengo esta pagina en mis favoritos de Chrome, y siempre que necesito desempaquetar un tar, lo hago tomando los comandos de aqui.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-3158">
+			<div id="comment-3158" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/34d45c0ea54a0d477e914f42320d8ce8?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/34d45c0ea54a0d477e914f42320d8ce8?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">edwin ortega</span>							<span class="comment-date">06/05/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>facil gracias</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-3646">
+			<div id="comment-3646" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/98fa9d0773c1c6f798e4beabfc978488?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/98fa9d0773c1c6f798e4beabfc978488?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://twitter.com/estoyausente' rel='external nofollow' class='url'>@estoyausente</a></span>							<span class="comment-date">26/05/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Capy tío, XD Llegas aquí hasta sin querer! Que útil eres a veces 😀</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-3675">
+			<div id="comment-3675" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/ad001a86085bea1e29a3783e42bb5e01?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/ad001a86085bea1e29a3783e42bb5e01?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.marcelopedra.com/' rel='external nofollow' class='url'>Marcelo</a></span>							<span class="comment-date">28/05/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Excelente resumen! A Favoritos!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-4185">
+			<div id="comment-4185" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/8a4f2f85a1f4340310487aea20bd8d96?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/8a4f2f85a1f4340310487aea20bd8d96?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Karl</span>							<span class="comment-date">10/06/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Buenas tardes.<br />
+estoy intentando crear un fichero que me empaquete los 4 últimos ficheros del destino del escritorio.. están ordenados por fecha.<br />
+es una prueba que estoy haciendo ya que en mi trabajo ya tendré que hacerlo con cientos de ellos.</p>
+<p>estoy intentando utilizar estos comandos sin éxito:</p>
+<p>$ ls -lrt | tail -n 4&gt;tar -czvf carlitos.tar /Users/KaRL/Desktop/<br />
+tail: illegal offset &#8212; -czvf</p>
+<p>$ ls -lrt | tail -n 4 | tar -czvf carlitos.tar /Users/KaRL/Desktop/<br />
+este ultimo me comprime todo lo que tengo en el desktop haciendo caso omiso al tail -n 4&#8230;</p>
+<p>me podeis ayudar??? </p>
+<p>muchas gracias de antemano majetes!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-4359">
+			<div id="comment-4359" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/e1c1d001fe2504d1a5858252685775aa?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/e1c1d001fe2504d1a5858252685775aa?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://ninguno/' rel='external nofollow' class='url'>christopher</a></span>							<span class="comment-date">15/06/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>necesito comprimir un fichero.txt que esta en un directorio : Manual/linux  lo tengo que hacer con zip, ya que quieren que quede con ese formato.  Cuando trato de comprimir, me comprime  las caretas mas el archivo, pero yo solo necesito comprimir el archivo que esta en Manual/linux</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-4360">
+			<div id="comment-4360" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/e1c1d001fe2504d1a5858252685775aa?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/e1c1d001fe2504d1a5858252685775aa?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://ninguno/' rel='external nofollow' class='url'>christopher</a></span>							<span class="comment-date">15/06/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>ah! y este es el código, el cual lo tengo en una shell.</p>
+<p>zip fichero.zip  Manual/linux/fichero.txt</p>
+<p>como dije el problema que tengo es que necesito solo comprime el fichero.txt , pero esta instrucción me comprime todo el directorio Manual/linux/fichero.txt</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="pingback even thread-odd thread-alt depth-1" id="comment-4899">
+			<p>Pingback: <a href='https://www.usemoslinux.net/index.php/comprimir-y-descomprimir-gz-tar-gz-y-zip-por-linea-de-comandos-en-linux/' rel='external nofollow' class='url'>Comprimir y descomprimir .gz, .tar.gz, y .zip por linea de comandos en Linux | UsemosLinux</a> </p>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-5310">
+			<div id="comment-5310" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/35de97dd2ca5ab45c415e8297715170e?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/35de97dd2ca5ab45c415e8297715170e?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Jose</span>							<span class="comment-date">07/08/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>jaja esta nota me ha servido varias veces asi que solo por eso comentare xD , GRACIAS! 🙂</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-5624">
+			<div id="comment-5624" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d2990c281b4938bb7ad3a084d66e284a?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d2990c281b4938bb7ad3a084d66e284a?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Elias lozada</span>							<span class="comment-date">18/08/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>tengo en un directorio 3 archivos.dmp los cuales quiero comprimirlos en uno solo en formato gz y utilizo este comando &#8221; gzip -9  $archivo1 $archivo2 $archivo3 &#8221; pero me lo hace por separado como lo hago para que sea en uno solo</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="li-comment-6176">
+			<div id="comment-6176" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/3694a8eb26d74c856bb7b9a59848edd6?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/3694a8eb26d74c856bb7b9a59848edd6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Roberto Yllescas</span>							<span class="comment-date">13/09/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>yo usaria :     tar zcf /ruta/nombredelarchivofinal.tgz  /rutaArchivo/archivo1 /rutaArchivo/archivo2 /rutaArchivo/archivo3 &#8230;</p>
+<p>asi incluiria todos los archivos que desee se incluyan en el tgz</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-5846">
+			<div id="comment-5846" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/aec40923102577f33cefae3699eeee72?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/aec40923102577f33cefae3699eeee72?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Grover</span>							<span class="comment-date">01/09/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias muy bueno !!!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-6192">
+			<div id="comment-6192" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/093f113f91ef5c464a0f951ea0d98888?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/093f113f91ef5c464a0f951ea0d98888?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://designjrc.com/' rel='external nofollow' class='url'>Design JRC</a></span>							<span class="comment-date">14/09/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias!!!<br />
+Me ayudo.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-6236">
+			<div id="comment-6236" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/026ec15dd7989726b9b32863aec99304?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/026ec15dd7989726b9b32863aec99304?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Federico X.M.</span>							<span class="comment-date">19/09/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola,  y para que el resultado sea el compactado pero partido en partes de 100 Mb por ejemplo?  como seria ?</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-6929">
+			<div id="comment-6929" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/47b15a593ae6452a09951182c34faee9?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/47b15a593ae6452a09951182c34faee9?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Iliana Martinez</span>							<span class="comment-date">19/10/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola amigo:<br />
+Gracias, pero tengo una pregunta, no hay una opción para que se vea el tiempo que tarda cada archivo en guardarse en el tar?<br />
+Es que lo necesito porque el respaldo de un directorio está tardando 7 horas y no se en que se está tardando tanto, puedes ayudarme??</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+        </ul><!-- .comment-list -->
+
+        
+                <p class="no-comments">:).</p>
+        
+    
+    </div>                                            
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/comprimir-y-descomprimir-tgz-tar-gz-y-zip-por-linea-de-comandos-en-linux/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:39:30 GMT -->
+</html>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linux &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/linux/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Hacer &#8220;git pull&#8221; en un servidor remoto desde tu local</title>
+		<link>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/</link>
+		<comments>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/#comments</comments>
+		<pubDate>Wed, 17 Aug 2016 14:34:32 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3442</guid>
+		<description><![CDATA[Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona: [crayon-5844367d85a5f393575581/] Pónganlo en .barchrc o .bash_aliases de tu ordenador (local) y a partir de ahi cuando lances en tu consola git_pull_on_dev_lapaginaweb te va a hacer un git pull en el servidor remoto. NOTA:&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona:</p><pre class="crayon-plain-tag">#Desplegar en el servidor de dev:
+alias git_pull_on_dev_lapaginaweb="ssh deploy@137.30.100.10 'cd /var/www/la_pagina_web &amp;&amp; git pull origin dev'"</pre><p>Pónganlo en <strong>.barchrc o .bash_aliases</strong> de tu ordenador (local) y a partir de ahi cuando lances en tu consola <strong>git_pull_on_dev_lapaginaweb</strong> te va a hacer un git pull en el servidor remoto.</p>
+<p><strong><span style="text-decoration: underline;">NOTA</span></strong>: <strong>para que funcione tenés que recargar .bashrc</strong> de nuevo. Lanza esto en la consola: <strong>source .bashrc</strong></p>
+<p><strong><span style="text-decoration: underline;">NOTA 2</span></strong>: <b>Es obvio que a tu servidor de desarrollo te conectas usando una ssh key. Si te conectas por shh usando clave no te va a servir esta solución.</b></p>
+<p><span style="text-decoration: underline;"><strong>NOTA 3</strong></span>: Antes que me dejen comentarios del estilo &#8220;para eso está jenkins&#8221;.  Ésta es una solución rápida para los que no quieren o pueden instalar un jenkins <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Solr 6.X</title>
+		<link>http://ecapy.com/instalar-solr-6-x/</link>
+		<pubDate>Fri, 01 Jul 2016 16:42:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3417</guid>
+		<description><![CDATA[Descarguemos Solr Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a http://apache.rediris.es/lucene/solr/ y descargatelo. (Que sea el .tgz). Para este post vamos a suponer que has descargado la versión 6.1.0. Extraigamos el instalador El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-6-x/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h2>Descarguemos Solr</h2>
+<p>Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a <a href="http://apache.rediris.es/lucene/solr/">http://apache.rediris.es/lucene/solr/</a> y descargatelo. (Que sea el .tgz).<br />
+Para este post vamos a suponer que has descargado la versión 6.1.0.</p>
+<h2>Extraigamos el instalador</h2>
+<p>El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo va a necesitar!</p><pre class="crayon-plain-tag">tar xzf solr-6.1.0.tgz solr-6.1.0/bin/install_solr_service.sh --strip-components=2</pre><p>El comando anterior extrae solamente <strong>install_solr_service.sh</strong> y nos deja el <strong>.tgz</strong> sin descomprimir.</p>
+<h2>Instalemos Solr</h2>
+<p>Ahora que tenemos el instalador extraído podemos lanzarlo:</p><pre class="crayon-plain-tag">sudo bash ./install_solr_service.sh solr-6.1.0.tgz</pre><p>Y presto! se va a instalar Solr en <strong>/opt/solr</strong>, te va a crear el script de manejo en <strong>/etc/init.d/solr</strong>, te va a crear el directorio donde se almacenan los indices en <strong>/var/solr/data</strong> y algunas cosas mas. Podes acceder a el en <a href="http://localhost:8983"><strong>http://localhost:8983</strong></a> Todo automático!</p>
+<p>Y eso es todo. ya podes tratar a Solr como un servicio mas:</p><pre class="crayon-plain-tag">sudo service solr status
+sudo service solr start
+sudo service solr stop
+sudo service solr restart</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Montar permanentemente una partición ext4 en Ubuntu/Debian</title>
+		<link>http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/</link>
+		<pubDate>Wed, 03 Jun 2015 12:24:36 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2898</guid>
+		<description><![CDATA[Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos: Creamos el directorio donde cargar la partición [crayon-5844367d86717871867969/] (capy es mi usuario en linux. usa el tuyo). Identificamos el uuid de la partición que nos interesa [crayon-5844367d86720890624542/] En mi caso&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-permanentemente-una-particion-ext4-en-ubuntudebian/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando creas una nueva partición con gparted (por ejemplo), esta no se va a montar automáticamente cuando inicies el SO. Pasa solucionarlo seguimos estos pasos:</p>
+<h3>Creamos el directorio donde cargar la partición</h3>
+<p></p><pre class="crayon-plain-tag">sudo mkdir /media/capy/Slave-linux
+sudo chown capy. /media/capy/Slave-linux</pre><p>(capy es mi usuario en linux. usa el tuyo).</p>
+<h3>Identificamos el uuid de la partición que nos interesa</h3>
+<p></p><pre class="crayon-plain-tag">sudo blkid
+/dev/sda1: UUID="6a710399-14eb-489f-a69a-3eeefb1c6410" TYPE="ext4" PARTUUID="00012bdd-01"
+/dev/sdb1: LABEL="Slave-linux" UUID="f7923e0a-93d7-466a-9371-59aa56da53bf" TYPE="ext4" PARTUUID="0004a843-01"</pre><p>En mi caso es &#8220;Slave-linux&#8221; cuyo UUID es <strong>f7923e0a-93d7-466a-9371-59aa56da53bf</strong>.</p>
+<h3>Añadimos la linea mágica en fstab para que la partición cargue cada vez que se inicie</h3>
+<p></p><pre class="crayon-plain-tag">sudo gedit /etc/fstab</pre><p>Y agregamos el final justo debajo de todo lo que haya, la siguiente linea (<strong>Con tu UUID y el label de tu partición</strong>):</p><pre class="crayon-plain-tag">UUID=f7923e0a-blabla-blabla-blabla-blablablabla /media/capy/Slave-linux ext4 defaults 0 1</pre><p>Y listo. Si quieres verlo funcionando reinicia o lanza este comando:</p><pre class="crayon-plain-tag">sudo mount -a</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Crear un bash alias que reciba parámetros</title>
+		<link>http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/</link>
+		<pubDate>Tue, 03 Jun 2014 11:19:09 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Consola]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2691</guid>
+		<description><![CDATA[Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto: En el archivo .bash_aliases o .bashrc de tu home: [crayon-5844367d86a6a505847915/] Listo. ya podemos usarlo en la consola: [crayon-5844367d86a72684549364/] Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-bash-alias-que-reciba-parametros/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto:</p>
+<p>En el archivo <strong>.bash_aliases</strong> o <strong>.bashrc</strong> de tu home:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    mysql -uusuario_demo -p labasededatosdedestino &lt; $1
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Listo. ya podemos usarlo en la consola:</p><pre class="crayon-plain-tag">importar_db mydb.sql</pre><p>Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de $1 para el primero $2 para el segundo, etc.</p>
+<p>&nbsp;</p>
+<p>UPDATE (27/10/2016):</p>
+<p><a href="http://stackoverflow.com/a/3465449/1413049">http://stackoverflow.com/a/3465449/1413049</a></p>
+<p>Aqui explica como pasar argumentos de forma dinámica. EJ:</p><pre class="crayon-plain-tag"># 1: creamos una función:
+importar_db_demo() {
+    echo "listado de argumentos recibidos:"
+    echo "$@"
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</pre><p>Resumiendo <strong>&#8220;$@&#8221;</strong> nos deja meter una cantidad ilimitada de argumentos lo que a su vez nos da mas flexibilidad.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Emparejar dispositivos a2dp (audio por bluetooth) en Debian 7</title>
+		<link>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/</link>
+		<comments>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/#comments</comments>
+		<pubDate>Wed, 12 Feb 2014 09:31:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Debian]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2623</guid>
+		<description><![CDATA[Espero que esto le ahorre todo el tiempo que yo he perdido 😀 Síntoma: Emparejas un dispositivo de audio vía bluetooth y parece que ha conectado, pero al cabo de un segundo se desconecta. Solución: [crayon-5844367d86d00844832257/] Y ya podes emparejar sin problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Espero que esto le ahorre todo el tiempo que yo he perdido <img src="https://s.w.org/images/core/emoji/2/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Síntoma: Emparejas un dispositivo de audio vía bluetooth y parece que ha conectado, pero al cabo de un segundo se desconecta.</p>
+<p>Solución:</p><pre class="crayon-plain-tag">sudo apt-get install pulseaudio pulseaudio-module-bluetooth bluez-audio pavucontrol bluez-firmware bluez-tools &amp;&amp; sudo service bluetooth restart &amp;&amp; sudo killall pulseaudio</pre><p>Y ya podes emparejar sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Skype en Debian 7</title>
+		<link>http://ecapy.com/instalar-skype-en-debian-7/</link>
+		<pubDate>Sat, 01 Feb 2014 13:49:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Debian]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2618</guid>
+		<description><![CDATA[Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits. Solución: [crayon-5844367d87110527704942/] Ya podés instalar el .deb sin problemas. Chau!]]></description>
+				<content:encoded><![CDATA[<p>Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits.</p>
+<p>Solución:</p><pre class="crayon-plain-tag">sudo dpkg --add-architecture i386 &amp;&amp; sudo apt-get update</pre><p>Ya podés instalar el .deb sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>PHP APC: configuración rápida</title>
+		<link>http://ecapy.com/drupal-apc-configuracion-rapida/</link>
+		<pubDate>Fri, 22 Nov 2013 09:06:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2567</guid>
+		<description><![CDATA[Aquí dejo una configuración rápida de APC. [crayon-5844367d8732c055638525/] Si están usando Debian o derivados pueden poner la configuración en /etc/php5/conf.d/20-apc.ini (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar). Para mas opciones ver http://www.php.net/manual/es/apc.configuration.php No olvides reiniciar apache: sudo service apache2 restart Chau!]]></description>
+				<content:encoded><![CDATA[<p>Aquí dejo una configuración rápida de APC.</p><pre class="crayon-plain-tag">extension=apc.so
+apc.shm_segments=1
+apc.shm_size=256M</pre><p>Si están usando Debian o derivados pueden poner la configuración en <em>/etc/php5/conf.d/20-apc.ini</em> (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar).</p>
+<p>Para mas opciones ver <a href="http://www.php.net/manual/es/apc.configuration.php" target="_blank">http://www.php.net/manual/es/apc.configuration.php</a></p>
+<p>No olvides reiniciar apache: <strong>sudo service apache2 restart</strong></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Linux: Convertir imágenes de png a jpg desde la consola</title>
+		<link>http://ecapy.com/linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/</link>
+		<comments>http://ecapy.com/linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/#comments</comments>
+		<pubDate>Mon, 13 May 2013 07:36:01 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Programas]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2192</guid>
+		<description><![CDATA[Una vez mas esto es una nota mental mas que un tutorial: Si no tenés instalado imagemagick: [crayon-5844367d8756b541522456/] Luego para convertir usamos el comando convert: [crayon-5844367d87573653049042/] Y para convertir todas las imagenes en un directorio: [crayon-5844367d87577604083663/] Chau!]]></description>
+				<content:encoded><![CDATA[<p>Una vez mas esto es una nota mental mas que un tutorial:</p>
+<p>Si no tenés instalado <strong>imagemagick</strong>:</p><pre class="crayon-plain-tag">sudo apt-get install imagemagick</pre><p>Luego para convertir usamos el comando <em>convert</em>:</p><pre class="crayon-plain-tag">convert imagen.png imagen.jpg</pre><p>Y para convertir todas las imagenes en un directorio:</p><pre class="crayon-plain-tag">convert *.png *.jpg</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Desplegar una aplicación Node.js como servicio Upstart (demonio)</title>
+		<link>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/</link>
+		<comments>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 17:42:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[deploy]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2124</guid>
+		<description><![CDATA[Cuando quise desplegar mi app, imagine que iba a ser fácil, que lanzaba el comando &#8220;node miapp.js&#8221; y punto, pero aprendí a palos que así no va la cosa. Para desplegar una aplicación web, necesitas que funcione como apache por lo menos: que puedas arrancarla, pararla, reiniciarla, ver su estado, acceder a su log, que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando quise desplegar mi app, imagine que iba a ser fácil, que lanzaba el comando &#8220;node miapp.js&#8221; y punto, pero aprendí a palos que así no va la cosa.</p>
+<p>Para desplegar una aplicación web, <strong>necesitas que funcione como apache</strong> por lo menos: que puedas <strong>arrancarla, pararla, reiniciarla, ver su estado, acceder a su log, que se reinicie si se produce un error</strong>, etc etc etc.</p>
+<p>Busque por Internet y leí un montón de artículos y foros que te dicen como montartelo: <strong>haciendo scripts en /etc/init.d</strong> y combinándolo con monit para reiniciarlo si se cae, <strong>Usando Upstart</strong>, <strong>lanzando la aplicación con &#8220;node miapp.js &amp;&#8221;</strong> (proceso en background pero es la peor solución que leí en años), y alguna que otra mas.</p>
+<p><strong>La mas razonable fue la de Upstart</strong>, aunque ninguna de las soluciones fue bastante clara o completa como para copiar, pegar y arrancar. Por eso hice este script que toma en cuenta todo lo que hace falta para montar tu app como un servicio:</p><pre class="crayon-plain-tag">description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+# A partir de aquí no debería hacer falta tocar nada #
+######################################################
+
+#Nuestro proceso espera hasta que el sistema este cargado
+start on runlevel [2345]
+#Y se detiene cuando el sistema se apague
+stop on runlevel [016]
+
+#Levanta el proceso automáticamente si se muere:
+respawn
+#limitamos el "respawn" a 99 veces con un timeout de 5s para que no intente levantar el proceso infinitamente.
+respawn limit 99 5
+
+pre-start script
+    #Necesitamos asegurarnos que el path del pid exista antes de arrancar el proceso.
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+	#Seteamos NODE_ENV para que nuestra app se ejecute en modo production, development, test, etc.
+	export NODE_ENV=$SERVER_ENV
+
+	#El siguiente comando es el que realmente arranca el proceso:
+	#Utiliza el usuario y grupo www-data (--chuid)
+	#Asigna un pid y lo crea si no existe (--make-pidfile y --pidfile)
+	#Cambia el directorio de ejecución a donde esté nuestra app de node (--chdir)
+	#Ejecuta la app (--exec)
+	#Envía cualquier output que genere nuestra app al log (&gt;&gt; $LOG_FILE 2&gt;&amp;1)
+
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</pre><p>Puede parecer un poco largo, pero si lo lees detenidamente vas a ver que es bastante concreto:</p>
+<ol>
+<li>Autor y descripción: son parte básica de un script Upstart</li>
+<li>Variables de configuración para que no tengas que meterte entre el código para ajustar el script para cada nueva app que crees.</li>
+<li>Cuerpo del script.</li>
+</ol>
+<p>Acá esta el mismo script sin comentarios:</p><pre class="crayon-plain-tag">description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+respawn limit 99 5
+
+pre-start script
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+    export NODE_ENV=$SERVER_ENV
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</pre><p></p>
+<h3>Uso:</h3>
+<p><strong>Por cada aplicación en nodejs que quieras montar tenes que crear un archivo en /etc/init/</strong>. El nombre del archivo tiene que terminar en .conf. por ejemplo <em>miapp-service.conf</em>. Una cosa importante es que el servicio que estas creando se llama como el archivo (sin el .conf), por lo que en nuestro ejemplo se va a llamar <em>miapp-service</em>.</p>
+<p>Dentro de <em>/etc/init/miapp-service.conf</em> pegas el script y personalizas todo lo que haya hasta la linea divisoria.</p>
+<p>Un par de aclaraciones:<br />
+<em>env APP=app.js</em> define el nombre del &#8220;index&#8221; de tu aplicación, y por lo general se usan o app.js o server.js. Pon el nombre de tu app sin el path hasta ella. Si tu aplicación lleva parámetros podes encerrar en comillas dobles algo asi como <em>&#8220;env APP=app.js &#8211;extrasettings ../settrings.json&#8221;</em><br />
+<em>env APP_DIR=/var/node/miapp</em> el path hasta tu aplicación<br />
+<em>env PID_NAME=miapp.pid</em> pon el nombre que quieras, pero que sea único. por ejemplo, si tu app es una pagina web pon el nombre de tu pagina &#8220;mipaginaweb_com.pid&#8221; o algo así.<br />
+<em>env USER=www-data</em> y <em>env GROUP=www-data</em> <strong>no sería muy responsable usar root para ejecutar tu aplicación </strong> salvo que esta si que necesite estar en root, pero <strong>en el caso de que sea una pagina web, usa el usuario y grupo www-data</strong> así podes unificar criterios. Es solo una sugerencia, yo para mi app uso www-data aunque podes usar el grupo y usuario que te parezca mejor.<br />
+<em>POST_START_MESSAGE_TO_LOG</em> es solo un mensaje que se envía al log de la app cuando esta arranca.<br />
+<em>NODE_BIN</em> indica donde esta ubicado node, por lo general está en <em>/usr/local/bin/node</em> aunque si no estuviera allí podes cambiar este parámetro.<br />
+<em>env SERVER_ENV=&#8221;production</em>&#8221; Posiblemente tu aplicación web utilice entornos de &#8220;<em>development</em>&#8220;, &#8220;<em>test</em>&#8221; y &#8220;<em>production</em>&#8220;. Bien, especificalo acá.</p>
+<p>El resto del script está comentado en código así que no añado nada.</p>
+<p>Cuando hayas acabado ya vas a disponer de tu servicio y tratarlo como cualquier otro:</p><pre class="crayon-plain-tag">start miapp-service
+stop miapp-service
+restart miapp-service
+status miapp-service</pre><p>Espero que les sirva.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/feed/</wfw:commentRss>
+		<slash:comments>15</slash:comments>
+		</item>
+		<item>
+		<title>Añadir tu usuario de linux al grupo www-data</title>
+		<link>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/</link>
+		<comments>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/#comments</comments>
+		<pubDate>Thu, 28 Feb 2013 23:30:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1992</guid>
+		<description><![CDATA[Cuando instalo un LAMP en algún Linux suelo añadir mi usuario (capy) al grupo www-data, cambio el directorio www al grupo www-data y le doy permisos de escritura a los usuarios del grupo para garantizarme que no vaya a tener problemas de permisos y cosas raras. Lo siguiente hay que hacerlo una sola vez: [crayon-5844367d88ece502307780/]&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Cuando instalo un LAMP en algún Linux suelo añadir mi usuario (<em>capy</em>) al grupo www-data, cambio el directorio <em>www</em> al grupo www-data y le doy permisos de escritura a los usuarios del grupo para garantizarme que no vaya a tener problemas de permisos y cosas raras.</p>
+<p>Lo siguiente hay que hacerlo una sola vez:</p><pre class="crayon-plain-tag">sudo chgrp -R www-data /var/www
+sudo chmod -R g+w /var/www
+sudo find /var/www -type d -exec chmod 2775 {} \;
+sudo find /var/www -type f -exec chmod ug+rw {} \;</pre><p>Lo anterior hace esto:</p>
+<ul>
+<li>Cambio todo lo que hay en /var/www para que le pertenezca al grupo www-data</li>
+<li>Acomodamos los permisos de /var/www para que los usuarios que pertenezcan al grupo www-data puedan escribir.</li>
+<li>A partir de ahora todos los archivos y directorios que se creen lo van a hacer con nuestro usuario y con el grupo www-data lo que nos asegura que todo el resto de los usuarios puedan seguir modificando.</li>
+</ul>
+<p>Ahora que tenemos listo el directorio /var/www, solo nos queda ir agregando a todos los usuarios que necesitemos al grupo www-data:</p><pre class="crayon-plain-tag">sudo usermod -a -G www-data capy
+sudo usermod -a -G www-data otrousuario</pre><p>Recuerda cerrar y abrir sesión con cada uno de estos usuarios para que se les habilite el nuevo grupo.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/anadir-tu-usuario-de-linux-al-grupo-www-data/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

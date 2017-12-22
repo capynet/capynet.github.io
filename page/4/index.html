@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/page/4/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:38:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy | Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</title>
+			<link rel="shortcut icon" href="../../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../../comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="home blog paged paged-4">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+
+<section id="main" class="container">
+    <div class="row">
+        <div id="content" class="site-content col-md-9" role="main">
+
+            <article id="post-2691" class="post-2691 post type-post status-publish format-standard has-post-thumbnail hentry category-linux category-tip tag-consola tag-linux">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/06/linux-header.jpg" class="img-responsive wp-post-image" alt="linux-header" srcset="http://ecapy.com/wp-content/uploads/2015/06/linux-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../crear-un-bash-alias-que-reciba-parametros/index.html" rel="bookmark">Crear un bash alias que reciba parámetros</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-06-03T13:19:09+00:00">3 Jun,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/linux/index.html" rel="category tag">Linux</a>, <a href="../../category/tip/index.html" rel="category tag">Tip</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/consola/index.html" rel="tag">Consola</a>, <a href="../../tag/linux/index.html" rel="tag">Linux</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Por ejemplo si queremos tener un alias que nos permita importar la db de un proyecto: En el archivo .bash_aliases o .bashrc de tu home: </p>
+		<div id="crayon-584437f5d63a8445565189" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+# 1: creamos una función:
+importar_db_demo() {
+    mysql -uusuario_demo -p labasededatosdedestino &lt; $1
+}
+
+# 2: Declaramos el alias
+alias importar_db=importar_db_demo</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d63a8445565189-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d63a8445565189-2">2</div><div class="crayon-num" data-line="crayon-584437f5d63a8445565189-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d63a8445565189-4">4</div><div class="crayon-num" data-line="crayon-584437f5d63a8445565189-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d63a8445565189-6">6</div><div class="crayon-num" data-line="crayon-584437f5d63a8445565189-7">7</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d63a8445565189-1"><span class="crayon-c"># 1: creamos una función:</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d63a8445565189-2"><span class="crayon-e">importar_db_demo</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584437f5d63a8445565189-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">mysql</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">uusuario_demo</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">p</span><span class="crayon-h"> </span><span class="crayon-v">labasededatosdedestino</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-cn">1</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d63a8445565189-4"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584437f5d63a8445565189-5">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d63a8445565189-6"><span class="crayon-c"># 2: Declaramos el alias</span></div><div class="crayon-line" id="crayon-584437f5d63a8445565189-7"><span class="crayon-r">alias</span><span class="crayon-h"> </span><span class="crayon-v">importar_db</span><span class="crayon-o">=</span><span class="crayon-v">importar_db_demo</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Listo. ya podemos usarlo en la consola: </p>
+		<div id="crayon-584437f5d63c1466773456" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+importar_db mydb.sql</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d63c1466773456-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d63c1466773456-1"><span class="crayon-e">importar_db </span><span class="crayon-v">mydb</span><span class="crayon-e">.sql</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Por ultimo aclarar que podes pasar la cantidad de parámetros que quieras. estos parámetros llegan a la función por medio de&nbsp;</p>
+<p><a class="btn btn-style" href="../../crear-un-bash-alias-que-reciba-parametros/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2674" class="post-2674 post type-post status-publish format-standard has-post-thumbnail hentry category-drupal">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../bof-de-context-vs-panels/index.html" rel="bookmark">BoF de Context vs panels</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-04-17T17:25:08+00:00">17 Abr,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/drupal/index.html" rel="category tag">Drupal</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>El Martes 22 a las 19hs España (GMT +1) junto a estoyausente vamos a dar una pequeña charla sobre el eterno dilema de cual usar.. Context? Panels?&#8230; pues eso. Personalmente voy a tratar de hacerlo lo mejor posible. Hablando en publico soy medio boludo a veces XD Este BoF se va a hacer por Hangouts&nbsp;</p>
+<p><a class="btn btn-style" href="../../bof-de-context-vs-panels/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2669" class="post-2669 post type-post status-publish format-standard has-post-thumbnail hentry category-js tag-javascript">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/js-header.jpg" class="img-responsive wp-post-image" alt="js-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/js-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/js-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/js-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../scroll-animado-hasta-un-elemento-de-la-pagina-con-jquery/index.html" rel="bookmark">Scroll animado hasta un elemento de la pagina con jQuery</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-04-11T19:51:51+00:00">11 Abr,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/js/index.html" rel="category tag">Javascript</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/javascript/index.html" rel="tag">JavaScript</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>&#8220;#destino&#8221; es el id del elemento al que querés llegar. podes usar un class &#8220;.destino&#8221; o algo similar SOLO si hay un solo elemento en toda la pagina que tenga ese class. </p>
+		<div id="crayon-584437f5d744e316376363" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var dest = $("#destino").offset().top;
+$("html, body").animate({scrollTop: dest});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d744e316376363-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d744e316376363-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d744e316376363-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">dest</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#destino"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">offset</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">top</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d744e316376363-2"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"html, body"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">animate</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-v">scrollTop</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">dest</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Y como siempre, Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2643" class="post-2643 post type-post status-publish format-standard has-post-thumbnail hentry category-drupal category-js tag-drupal tag-drupal-7 tag-javascript">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../drupal-7-lanzar-un-state-de-un-elemento-de-formulario-por-js-jquery/index.html" rel="bookmark">Drupal 7: Lanzar un #state de un elemento de formulario por js (jQuery)</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-03-07T15:18:42+00:00">7 Mar,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/drupal/index.html" rel="category tag">Drupal</a>, <a href="../../category/js/index.html" rel="category tag">Javascript</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/drupal/index.html" rel="tag">Drupal</a>, <a href="../../tag/drupal-7/index.html" rel="tag">Drupal 7</a>, <a href="../../tag/javascript/index.html" rel="tag">JavaScript</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p></p>
+		<div id="crayon-584437f5d78e0261916533" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+jQuery('#edit-un-radiobutton-que-lanza-el-state').click().trigger('change');</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d78e0261916533-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d78e0261916533-1"><span class="crayon-e">jQuery</span><span class="crayon-sy">(</span><span class="crayon-s">'#edit-un-radiobutton-que-lanza-el-state'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">trigger</span><span class="crayon-sy">(</span><span class="crayon-s">'change'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2636" class="post-2636 post type-post status-publish format-standard has-post-thumbnail hentry category-drupal tag-drupal tag-drupal-7">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../drupal-7-quitar-un-css-programaticamente/index.html" rel="bookmark">Drupal 7: Quitar un CSS o JS programaticamente</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-03-04T06:29:20+00:00">4 Mar,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/drupal/index.html" rel="category tag">Drupal</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/drupal/index.html" rel="tag">Drupal</a>, <a href="../../tag/drupal-7/index.html" rel="tag">Drupal 7</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../drupal-7-quitar-un-css-programaticamente/index.html#comments">3 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>El siguiente hook lo pones en el template.php de tu theme: </p>
+		<div id="crayon-584437f5d7de5171219171" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt; ? function TU_THEME_css_alter(&amp;$css) { $css = array_diff_key($css, array( // Añade todos los CSS que quieras quitar antes que se entregue la página. drupal_get_path('module', 'NOMBRE_MODULO') . '/PATH/HASTA/EL/CSS/foo.css' =&gt; FALSE,
+    drupal_get_path('theme', 'NOMBRE_THEME') . '/PATH/HASTA/EL/CSS/foo.css' =&gt; FALSE,
+  ));
+}
+
+function TU_THEME_js_alter(&amp;$js) {
+  $js = array_diff_key($js, array(
+    // Añade todos los JS que quieras quitar antes que se entregue la página.
+    drupal_get_path('module', 'user') . '/user.js' =&gt; FALSE,
+  ));
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d7de5171219171-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d7de5171219171-2">2</div><div class="crayon-num" data-line="crayon-584437f5d7de5171219171-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d7de5171219171-4">4</div><div class="crayon-num" data-line="crayon-584437f5d7de5171219171-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d7de5171219171-6">6</div><div class="crayon-num" data-line="crayon-584437f5d7de5171219171-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d7de5171219171-8">8</div><div class="crayon-num" data-line="crayon-584437f5d7de5171219171-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d7de5171219171-10">10</div><div class="crayon-num" data-line="crayon-584437f5d7de5171219171-11">11</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d7de5171219171-1"><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-sy">?</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">TU_THEME_css_alter</span><span class="crayon-sy">(</span><span class="crayon-o">&amp;</span><span class="crayon-v">$css</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">$css</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">array_diff_key</span><span class="crayon-sy">(</span><span class="crayon-v">$css</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-c">// Añade todos los CSS que quieras quitar antes que se entregue la página. drupal_get_path('module', 'NOMBRE_MODULO') . '/PATH/HASTA/EL/CSS/foo.css' =&gt; FALSE,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d7de5171219171-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_get_path</span><span class="crayon-sy">(</span><span class="crayon-s">'theme'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'NOMBRE_THEME'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-s">'/PATH/HASTA/EL/CSS/foo.css'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">FALSE</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584437f5d7de5171219171-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d7de5171219171-4"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584437f5d7de5171219171-5">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d7de5171219171-6"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">TU_THEME_js_alter</span><span class="crayon-sy">(</span><span class="crayon-o">&amp;</span><span class="crayon-v">$js</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584437f5d7de5171219171-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$js</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">array_diff_key</span><span class="crayon-sy">(</span><span class="crayon-v">$js</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d7de5171219171-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// Añade todos los JS que quieras quitar antes que se entregue la página.</span></div><div class="crayon-line" id="crayon-584437f5d7de5171219171-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_get_path</span><span class="crayon-sy">(</span><span class="crayon-s">'module'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'user'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-s">'/user.js'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">FALSE</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d7de5171219171-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584437f5d7de5171219171-11"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Está claro que esos hook tienen juego. Puedes mirar cual URL vas a renderizar, o averiguar cualquier otra cosa que te ayude a decidir que CSS&#8217;s/JS&#8217;s vas a querer quitar. Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2629" class="post-2629 post type-post status-publish format-standard has-post-thumbnail hentry category-drupal tag-drupal tag-drupal-7">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../drupal-7-habilitar-templates-para-nodos-basados-en-su-view-mode/index.html" rel="bookmark">Drupal 7: Habilitar templates para nodos basados en su view mode</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-02-21T16:27:41+00:00">21 Feb,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/drupal/index.html" rel="category tag">Drupal</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/drupal/index.html" rel="tag">Drupal</a>, <a href="../../tag/drupal-7/index.html" rel="tag">Drupal 7</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../drupal-7-habilitar-templates-para-nodos-basados-en-su-view-mode/index.html#comments">One comment</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Si tenemos un content type llamado &#8220;citas&#8221; y tenemos mas de un view mode, por ejemplo &#8220;resumida&#8221; y &#8220;detallada&#8220;. Para poder hacer templates tipo &#8220;node&#8211;cita&#8211;resumida.tpl.php&#8221; y &#8220;node&#8211;cita&#8211;detallada.tpl.php&#8221; simplemente tenemos que poner una linea en el HOOK_preprocess_node(). </p>
+		<div id="crayon-584437f5d8a6c386498142" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt; ? /** * Implements HOOK_preprocess_node(). */ function HOOK_preprocess_node(&amp;$variables, $hook) { $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']-&gt;type . '__' . $variables['view_mode'];
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d8a6c386498142-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5d8a6c386498142-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d8a6c386498142-1"><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-sy">?</span><span class="crayon-h"> </span><span class="crayon-c">/** * Implements HOOK_preprocess_node(). */</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">HOOK_preprocess_node</span><span class="crayon-sy">(</span><span class="crayon-o">&amp;</span><span class="crayon-v">$variables</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$hook</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">$variables</span><span class="crayon-sy">[</span><span class="crayon-s">'theme_hook_suggestions'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'node__'</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-v">$variables</span><span class="crayon-sy">[</span><span class="crayon-s">'node'</span><span class="crayon-sy">]</span><span class="crayon-o">-&gt;</span><span class="crayon-i">type</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-s">'__'</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-v">$variables</span><span class="crayon-sy">[</span><span class="crayon-s">'view_mode'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5d8a6c386498142-2"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2623" class="post-2623 post type-post status-publish format-standard has-post-thumbnail hentry category-linux tag-debian tag-linux">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/06/linux-header.jpg" class="img-responsive wp-post-image" alt="linux-header" srcset="http://ecapy.com/wp-content/uploads/2015/06/linux-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/index.html" rel="bookmark">Emparejar dispositivos a2dp (audio por bluetooth) en Debian 7</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-02-12T10:31:49+00:00">12 Feb,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/linux/index.html" rel="category tag">Linux</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/debian/index.html" rel="tag">Debian</a>, <a href="../../tag/linux/index.html" rel="tag">Linux</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../emparejar-dispositivos-a2dp-audio-por-bluetooth-en-debian-7/index.html#comments">2 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Espero que esto le ahorre todo el tiempo que yo he perdido 😀 Síntoma: Emparejas un dispositivo de audio vía bluetooth y parece que ha conectado, pero al cabo de un segundo se desconecta. Solución: </p>
+		<div id="crayon-584437f5d92ab192554313" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+sudo apt-get install pulseaudio pulseaudio-module-bluetooth bluez-audio pavucontrol bluez-firmware bluez-tools &amp;&amp; sudo service bluetooth restart &amp;&amp; sudo killall pulseaudio</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d92ab192554313-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d92ab192554313-1"><span class="crayon-e">sudo </span><span class="crayon-v">apt</span><span class="crayon-o">-</span><span class="crayon-r">get</span><span class="crayon-h"> </span><span class="crayon-e">install </span><span class="crayon-e">pulseaudio </span><span class="crayon-v">pulseaudio</span><span class="crayon-o">-</span><span class="crayon-v">module</span><span class="crayon-o">-</span><span class="crayon-e">bluetooth </span><span class="crayon-v">bluez</span><span class="crayon-o">-</span><span class="crayon-e">audio </span><span class="crayon-e">pavucontrol </span><span class="crayon-v">bluez</span><span class="crayon-o">-</span><span class="crayon-e">firmware </span><span class="crayon-v">bluez</span><span class="crayon-o">-</span><span class="crayon-v">tools</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-e">service </span><span class="crayon-e">bluetooth </span><span class="crayon-v">restart</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-e">killall </span><span class="crayon-v">pulseaudio</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Y ya podes emparejar sin problemas. Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2618" class="post-2618 post type-post status-publish format-standard has-post-thumbnail hentry category-linux category-tip tag-debian tag-linux">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/06/linux-header.jpg" class="img-responsive wp-post-image" alt="linux-header" srcset="http://ecapy.com/wp-content/uploads/2015/06/linux-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/06/linux-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../instalar-skype-en-debian-7/index.html" rel="bookmark">Instalar Skype en Debian 7</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-02-01T14:49:41+00:00">1 Feb,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/linux/index.html" rel="category tag">Linux</a>, <a href="../../category/tip/index.html" rel="category tag">Tip</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/debian/index.html" rel="tag">Debian</a>, <a href="../../tag/linux/index.html" rel="tag">Linux</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Problema: Skype tiene un paquete .deb multiarquitectura&#8230; pero en Debian solo podés instalarlo en 32 bits. Solución: </p>
+		<div id="crayon-584437f5d9b26376510769" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+sudo dpkg --add-architecture i386 &amp;&amp; sudo apt-get update</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5d9b26376510769-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5d9b26376510769-1"><span class="crayon-e">sudo </span><span class="crayon-v">dpkg</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">add</span><span class="crayon-o">-</span><span class="crayon-e">architecture </span><span class="crayon-v">i386</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-v">apt</span><span class="crayon-o">-</span><span class="crayon-r">get</span><span class="crayon-h"> </span><span class="crayon-v">update</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Ya podés instalar el .deb sin problemas. Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2592" class="post-2592 post type-post status-publish format-standard hentry category-css-y-maquetacion tag-ie-te-odio tag-maquetacion">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../calcular-el-porcentaje-de-transparencia-para-progiddximagetransform-microsoft-gradient/index.html" rel="bookmark">Calcular el porcentaje de transparencia para &#8220;progid:DXImageTransform.Microsoft.gradient&#8221;</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2013-12-27T02:31:58+00:00">27 Dic,  2013</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/ie-te-odio/index.html" rel="tag">IE te odio</a>, <a href="../../tag/maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>En versiones de IE &lt;= 8 es normal tener que usar: </p>
+		<div id="crayon-584437f5da024937982055" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#d8ffffff', endColorstr='#d8ffffff');</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5da024937982055-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5da024937982055-1"><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-e ">progid</span><span class="crayon-sy">:</span><span class="crayon-i ">DXImageTransform.Microsoft.gradient</span><span class="crayon-sy">(</span><span class="crayon-i ">GradientType=0,</span><span class="crayon-h"> </span><span class="crayon-e ">startColorstr</span><span class="crayon-i ">='#d8ffffff',</span><span class="crayon-h"> </span><span class="crayon-e ">endColorstr</span><span class="crayon-i ">='#d8ffffff'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> para aplicar transparencia a un background. Pero como se puede ver, no está muy claro donde poner el porcentaje de transparencia que queremos. En el ejemplo del principio el truco que estamos usando es aplican un degradado que va desde blanco a blanco,&nbsp;</p>
+<p><a class="btn btn-style" href="../../calcular-el-porcentaje-de-transparencia-para-progiddximagetransform-microsoft-gradient/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-2583" class="post-2583 post type-post status-publish format-standard has-post-thumbnail hentry category-programacion tag-optimizacion tag-performance tag-servidores tag-xampp">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/php-header.jpg" class="img-responsive wp-post-image" alt="php-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/php-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/php-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/php-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../habilitar-el-opcache-que-viene-con-php/index.html" rel="bookmark">Habilitar el opcache que viene con php ( >= 5.5 ) en xampp</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2013-12-08T03:59:18+00:00">8 Dic,  2013</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/optimizacion/index.html" rel="tag">Optimización</a>, <a href="../../tag/performance/index.html" rel="tag">Performance</a>, <a href="../../tag/servidores/index.html" rel="tag">Servidores</a>, <a href="../../tag/xampp/index.html" rel="tag">Xampp</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../habilitar-el-opcache-que-viene-con-php/index.html#comments">6 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS. Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este) </p>
+		<div id="crayon-584437f5da5a3304407494" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+[Opcache]
+; poné el path real donde esté alojado php_opcache.dll
+zend_extension = "C:xamppphpextphp_opcache.dll"
+opcache.memory_consumption = 500
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=60
+opcache.fast_shutdown=1
+opcache.enable_cli=1</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584437f5da5a3304407494-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5da5a3304407494-2">2</div><div class="crayon-num" data-line="crayon-584437f5da5a3304407494-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5da5a3304407494-4">4</div><div class="crayon-num" data-line="crayon-584437f5da5a3304407494-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5da5a3304407494-6">6</div><div class="crayon-num" data-line="crayon-584437f5da5a3304407494-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584437f5da5a3304407494-8">8</div><div class="crayon-num" data-line="crayon-584437f5da5a3304407494-9">9</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584437f5da5a3304407494-1"><span class="crayon-sy">[</span><span class="crayon-v">Opcache</span><span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5da5a3304407494-2"><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-i">pon</span>é<span class="crayon-h"> </span><span class="crayon-e">el </span><span class="crayon-e">path </span><span class="crayon-e">real </span><span class="crayon-e">donde </span><span class="crayon-i">est</span>é<span class="crayon-h"> </span><span class="crayon-e">alojado </span><span class="crayon-v">php_opcache</span><span class="crayon-sy">.</span><span class="crayon-e">dll</span></div><div class="crayon-line" id="crayon-584437f5da5a3304407494-3"><span class="crayon-v">zend_extension</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"C:xamppphpextphp_opcache.dll"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5da5a3304407494-4"><span class="crayon-v">opcache</span><span class="crayon-sy">.</span><span class="crayon-v">memory_consumption</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">500</span></div><div class="crayon-line" id="crayon-584437f5da5a3304407494-5"><span class="crayon-v">opcache</span><span class="crayon-sy">.</span><span class="crayon-v">interned_strings_buffer</span><span class="crayon-o">=</span><span class="crayon-cn">8</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5da5a3304407494-6"><span class="crayon-v">opcache</span><span class="crayon-sy">.</span><span class="crayon-v">max_accelerated_files</span><span class="crayon-o">=</span><span class="crayon-cn">4000</span></div><div class="crayon-line" id="crayon-584437f5da5a3304407494-7"><span class="crayon-v">opcache</span><span class="crayon-sy">.</span><span class="crayon-v">revalidate_freq</span><span class="crayon-o">=</span><span class="crayon-cn">60</span></div><div class="crayon-line crayon-striped-line" id="crayon-584437f5da5a3304407494-8"><span class="crayon-v">opcache</span><span class="crayon-sy">.</span><span class="crayon-v">fast_shutdown</span><span class="crayon-o">=</span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-584437f5da5a3304407494-9"><span class="crayon-v">opcache</span><span class="crayon-sy">.</span><span class="crayon-v">enable_cli</span><span class="crayon-o">=</span><span class="crayon-cn">1</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Y listo, tenemos&nbsp;</p>
+<p><a class="btn btn-style" href="../../habilitar-el-opcache-que-viene-con-php/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+            <div class="btn btn-style pull-left"><a href="../5/index.html" >&laquo; Older Posts</a></div>
+            <div class="btn btn-style pull-right"><a href="../3/index.html" >Newer Posts &raquo;</a></div>
+
+        </div> <!-- #content -->
+
+        <div id="sidebar" class="col-md-3" role="complementary">
+            
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+
+            <div class="sidebar-inner">
+                <aside class="widget-area">
+                                    </aside>
+            </div>
+
+        </div> <!-- #sidebar -->
+        
+    </div> <!-- .row -->
+</section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/page/4/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:38:44 GMT -->
+</html>

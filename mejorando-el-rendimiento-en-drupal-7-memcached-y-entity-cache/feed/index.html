@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Mejorando el rendimiento en Drupal 7: Memcached y Entity cache</title>
+	<atom:link href="http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Gonzalo Jarjury</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-659</link>
+		<dc:creator><![CDATA[Gonzalo Jarjury]]></dc:creator>
+		<pubDate>Tue, 21 Apr 2015 19:29:22 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-659</guid>
+		<description><![CDATA[Muchas Gracias ! :)]]></description>
+		<content:encoded><![CDATA[<p>Muchas Gracias ! 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-658</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 21 Apr 2015 19:24:24 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-658</guid>
+		<description><![CDATA[No hace falta con ese modulo. Es activarlo y listo.
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>No hace falta con ese modulo. Es activarlo y listo.<br />
+Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gonzalo Jarjury</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-657</link>
+		<dc:creator><![CDATA[Gonzalo Jarjury]]></dc:creator>
+		<pubDate>Mon, 06 Apr 2015 18:15:47 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-657</guid>
+		<description><![CDATA[Muchas Gracias por este tutorial :D
+
+Quisiera saber si para correr el entity-cache hay que realizar pasos adicionales  como es en el caso de memcached.
+
+Saludos !]]></description>
+		<content:encoded><![CDATA[<p>Muchas Gracias por este tutorial 😀</p>
+<p>Quisiera saber si para correr el entity-cache hay que realizar pasos adicionales  como es en el caso de memcached.</p>
+<p>Saludos !</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-656</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Mon, 19 May 2014 12:49:36 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-656</guid>
+		<description><![CDATA[Para que APC funcione no tenes que hacer nada. funciona sin mas.
+Para que Memcached funcione si que tenes que poner en settings.php (abajo de todo) esto:
+
+&lt;pre class=&quot;decode:1 lang:php &quot; &gt;
+&lt;?
+$conf[&#039;cache_backends&#039;][] = &#039;sites/all/modules/memcache/memcache.inc&#039;; // O donde sea que tengas este archivo
+$conf[&#039;cache_default_class&#039;] = &#039;MemCacheDrupal&#039;;
+&lt;/pre&gt;
+
+Para mas detalles te recomiendo el README.txt que viene con el modulo que comenta varias configuraciones extra para tunear fino fino memcache.
+
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>Para que APC funcione no tenes que hacer nada. funciona sin mas.<br />
+Para que Memcached funcione si que tenes que poner en settings.php (abajo de todo) esto:</p>
+<p></p>
+		<div id="crayon-58443791c3bd3891501568" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt;?
+$conf['cache_backends'][] = 'sites/all/modules/memcache/memcache.inc'; // O donde sea que tengas este archivo
+$conf['cache_default_class'] = 'MemCacheDrupal';</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-58443791c3bd3891501568-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443791c3bd3891501568-2">2</div><div class="crayon-num" data-line="crayon-58443791c3bd3891501568-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58443791c3bd3891501568-1"><span class="crayon-ta">&lt;?</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443791c3bd3891501568-2"><span class="crayon-v">$conf</span><span class="crayon-sy">[</span><span class="crayon-s">'cache_backends'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'sites/all/modules/memcache/memcache.inc'</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">// O donde sea que tengas este archivo</span></div><div class="crayon-line" id="crayon-58443791c3bd3891501568-3"><span class="crayon-v">$conf</span><span class="crayon-sy">[</span><span class="crayon-s">'cache_default_class'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'MemCacheDrupal'</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Para mas detalles te recomiendo el README.txt que viene con el modulo que comenta varias configuraciones extra para tunear fino fino memcache.</p>
+<p>Saludos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: The winter is coming</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-655</link>
+		<dc:creator><![CDATA[The winter is coming]]></dc:creator>
+		<pubDate>Thu, 08 May 2014 08:35:40 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-655</guid>
+		<description><![CDATA[Para configurar memcache y apc en drupal 7 no me queda claro que lineas debemos añadir al fichero setting.php. Tengo un pequeño VPS con cuatro pequeñas webs mías (nada profesional). Tengo instalado memcache y apc pero no se que lineas debo añadir a los ficheros settings.php porque unas pisan a otras creo.
+
+Un saludo y estupendo blog]]></description>
+		<content:encoded><![CDATA[<p>Para configurar memcache y apc en drupal 7 no me queda claro que lineas debemos añadir al fichero setting.php. Tengo un pequeño VPS con cuatro pequeñas webs mías (nada profesional). Tengo instalado memcache y apc pero no se que lineas debo añadir a los ficheros settings.php porque unas pisan a otras creo.</p>
+<p>Un saludo y estupendo blog</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Antonio Manco</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-654</link>
+		<dc:creator><![CDATA[Antonio Manco]]></dc:creator>
+		<pubDate>Fri, 27 Dec 2013 20:08:36 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-654</guid>
+		<description><![CDATA[Muy buen post Capy..Pero hay que dejar en claro que Drupal no es un CMS sino un FrameWork, segundo, no hay muchas opciones para &quot;usar menos RAM&quot;. Joomla es un explosivo andante, exige más al servidor que Drupal, Wordpress tiene lo suyo pero es un CMS limitado. ¿Qué te queda?. Construir tu Framework con Python. Por último, si realmente quieres tener una web de calidad, necesitas RAM, coincido en que con 4 GB de RAM puedes tener hasta 2000 conectados e incluso más, yo lo he logrado tuneando con Memcached, ENtity Cache, Varnish]]></description>
+		<content:encoded><![CDATA[<p>Muy buen post Capy..Pero hay que dejar en claro que Drupal no es un CMS sino un FrameWork, segundo, no hay muchas opciones para &#8220;usar menos RAM&#8221;. Joomla es un explosivo andante, exige más al servidor que Drupal, WordPress tiene lo suyo pero es un CMS limitado. ¿Qué te queda?. Construir tu Framework con Python. Por último, si realmente quieres tener una web de calidad, necesitas RAM, coincido en que con 4 GB de RAM puedes tener hasta 2000 conectados e incluso más, yo lo he logrado tuneando con Memcached, ENtity Cache, Varnish</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Franco</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-653</link>
+		<dc:creator><![CDATA[Franco]]></dc:creator>
+		<pubDate>Tue, 12 Nov 2013 05:01:24 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-653</guid>
+		<description><![CDATA[gracias Capy :)]]></description>
+		<content:encoded><![CDATA[<p>gracias Capy 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Alirio Durán</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-652</link>
+		<dc:creator><![CDATA[Alirio Durán]]></dc:creator>
+		<pubDate>Tue, 01 Oct 2013 23:47:56 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-652</guid>
+		<description><![CDATA[Gracias, definitivamente me equivoque al escoger a drupal como CMS, requiere de muchos recursos.... Leere sobre alternativas mas lijares.  Saludos]]></description>
+		<content:encoded><![CDATA[<p>Gracias, definitivamente me equivoque al escoger a drupal como CMS, requiere de muchos recursos&#8230;. Leere sobre alternativas mas lijares.  Saludos</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-651</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Fri, 27 Sep 2013 01:12:05 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-651</guid>
+		<description><![CDATA[No es una matemática exacta. depende de cuanto consume el SO + todas las aplicaciones que estén corriendo. Luego dependiendo del trafico que tengas, de tu base de datos en particular, etc etc etc etc.
+
+pero si queres un numero, con 4 GB deberias funcionar bien.]]></description>
+		<content:encoded><![CDATA[<p>No es una matemática exacta. depende de cuanto consume el SO + todas las aplicaciones que estén corriendo. Luego dependiendo del trafico que tengas, de tu base de datos en particular, etc etc etc etc.</p>
+<p>pero si queres un numero, con 4 GB deberias funcionar bien.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Alirio Duran</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comment-650</link>
+		<dc:creator><![CDATA[Alirio Duran]]></dc:creator>
+		<pubDate>Fri, 27 Sep 2013 00:55:07 +0000</pubDate>
+		<guid isPermaLink="false">http://ecapy.com/?p=2036#comment-650</guid>
+		<description><![CDATA[Cuanto recomiendas para poder usar tranquilamente esta web...]]></description>
+		<content:encoded><![CDATA[<p>Cuanto recomiendas para poder usar tranquilamente esta web&#8230;</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

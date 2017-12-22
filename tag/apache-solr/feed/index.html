@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Apache Solr &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/apache-solr/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Crear un core en Solr 6 (por linea de comandos)</title>
+		<link>http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/</link>
+		<pubDate>Mon, 15 Aug 2016 17:55:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3435</guid>
+		<description><![CDATA[Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto: [crayon-5844368e8e144890583515/] NOTA: cambia nombre_del_core por el nombre que le quieras dar a tu core. Lo que va a responder: [crayon-5844368e8e152366931178/] Y eso es todo básicamente. Ya tenés un core mas en Solr. No&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto:</p><pre class="crayon-plain-tag">su - solr -c "/opt/solr/bin/solr create_core -c nombre_del_core"</pre><p><strong><span style="text-decoration: underline;">NOTA</span></strong>: cambia <strong>nombre_del_core</strong> por el nombre que le quieras dar a tu core.</p>
+<p>Lo que va a responder:</p><pre class="crayon-plain-tag">Copying configuration to new core instance directory:
+/var/solr/data/nombre_del_core
+
+Creating new core 'nombre_del_core' using command:
+http://localhost:8983/solr/admin/cores?action=CREATE&amp;name=nombre_del_core&amp;instanceDir=nombre_del_core
+
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":972},
+  "core":"nombre_del_core"}</pre><p>Y eso es todo básicamente. Ya tenés un core mas en Solr. No hace falta reiniciar.</p>
+<p>Seguramente quieras tocar un poco la conf del core. Los cores se crean en /var/solr/data (<strong>/var/solr/data/nombre_del_core</strong> en nuestro ejemplo).</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar Solr 6.X</title>
+		<link>http://ecapy.com/instalar-solr-6-x/</link>
+		<pubDate>Fri, 01 Jul 2016 16:42:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3417</guid>
+		<description><![CDATA[Descarguemos Solr Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a http://apache.rediris.es/lucene/solr/ y descargatelo. (Que sea el .tgz). Para este post vamos a suponer que has descargado la versión 6.1.0. Extraigamos el instalador El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-6-x/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h2>Descarguemos Solr</h2>
+<p>Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a <a href="http://apache.rediris.es/lucene/solr/">http://apache.rediris.es/lucene/solr/</a> y descargatelo. (Que sea el .tgz).<br />
+Para este post vamos a suponer que has descargado la versión 6.1.0.</p>
+<h2>Extraigamos el instalador</h2>
+<p>El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo va a necesitar!</p><pre class="crayon-plain-tag">tar xzf solr-6.1.0.tgz solr-6.1.0/bin/install_solr_service.sh --strip-components=2</pre><p>El comando anterior extrae solamente <strong>install_solr_service.sh</strong> y nos deja el <strong>.tgz</strong> sin descomprimir.</p>
+<h2>Instalemos Solr</h2>
+<p>Ahora que tenemos el instalador extraído podemos lanzarlo:</p><pre class="crayon-plain-tag">sudo bash ./install_solr_service.sh solr-6.1.0.tgz</pre><p>Y presto! se va a instalar Solr en <strong>/opt/solr</strong>, te va a crear el script de manejo en <strong>/etc/init.d/solr</strong>, te va a crear el directorio donde se almacenan los indices en <strong>/var/solr/data</strong> y algunas cosas mas. Podes acceder a el en <a href="http://localhost:8983"><strong>http://localhost:8983</strong></a> Todo automático!</p>
+<p>Y eso es todo. ya podes tratar a Solr como un servicio mas:</p><pre class="crayon-plain-tag">sudo service solr status
+sudo service solr start
+sudo service solr stop
+sudo service solr restart</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar Solr 4.x y configurar multiples cores en Linux Ubuntu</title>
+		<link>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/</link>
+		<comments>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/#comments</comments>
+		<pubDate>Thu, 12 Jan 2012 13:42:08 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1355</guid>
+		<description><![CDATA[Aclaraciones: El proceso de instalación de Solr es valido para cualquier otra versión de Solr. Un core es un hilo nuevo dentro de la misma instancia de Solr. Esto permite que se corra una sola instancia de Solr pero con varios buscadores. Este tutorial asume que tienen instalado Java 7 y tomcat 7. Si tienen las versiones&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Aclaraciones:</p>
+<ul>
+<li>El proceso de instalación de Solr es valido para cualquier otra versión de Solr.</li>
+<li>Un core es un hilo nuevo dentro de la misma instancia de Solr. Esto permite que se corra una sola instancia de Solr pero con varios buscadores.</li>
+</ul>
+<p>Este tutorial asume que tienen instalado Java 7 y tomcat 7. Si tienen las versiones 6 le cambian el numero donde sea oportuno y funciona.</p>
+<p>Vamos a ello:</p>
+<p>Cuando tengas en tus manos el <a title="Descargalo desde la página oficial" href="http://apache.rediris.es/lucene/solr/" target="_blank">paquete se Solr</a>, descomprimelo y ponte con la consola dentro de esa carpeta.</p>
+<p>Cambia a sudo:</p><pre class="crayon-plain-tag">sudo su</pre><p><span style="color: #808080;"><span style="text-decoration: underline;">Curiosidad</span>: Aunque en el paquete que descargamos de Apache Solr <strong>haya al rededor de 2950 archivos</strong> <strong>solo nos van a hacer falta al rededor de 10</strong>:</span></p>
+<p>Lanzamos en consola lo siguiente:</p><pre class="crayon-plain-tag">cp dist/solr-*.war /var/lib/tomcat7/webapps/solr.war
+mkdir /var/lib/tomcat7/solr
+cp -R example/multicore/core0/ /var/lib/tomcat7/solr/core0
+mkdir /var/lib/tomcat7/solr/core0/data
+chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
+mkdir /var/lib/tomcat7/lib
+cp dist/solrj-lib/* /var/lib/tomcat7/lib</pre><p>Ahora edita <strong>/var/lib/tomcat7/solr/solr.xml</strong>, pega lo siguiente y guárdalo.</p><pre class="crayon-plain-tag">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ 
+&lt;solr persistent="true" sharedLib="lib"&gt;
+ &lt;cores adminPath="/admin/cores"&gt;
+ 
+  &lt;core name="core0" instanceDir="core0"&gt;
+    &lt;property name="dataDir" value="/var/lib/tomcat7/solr/core0/data"&gt;&lt;/property&gt;
+  &lt;/core&gt;
+ 
+ &lt;/cores&gt;
+&lt;/solr&gt;</pre><p>Edita <strong>/etc/tomcat7/Catalina/localhost/solr.xml</strong>, pega lo siguiente y guárdalo.</p><pre class="crayon-plain-tag">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ 
+&lt;context docBase="/var/lib/tomcat7/webapps/solr.war" debug="0" privileged="true" allowLinking="true" crossContext="true"&gt;
+    &lt;environment name="solr/home" type="java.lang.String" value="/var/lib/tomcat7/solr" override="true"&gt;&lt;/environment&gt;
+&lt;/context&gt;</pre><p>Listo, reiniciemos tomcat para ver en funcionamiento el core que hemos creado:</p><pre class="crayon-plain-tag">service tomcat7 restart</pre><p>Entramos en <a href="http://localhost:8080/solr/">http://localhost:8080/solr/</a> y lo vamos a ver.<br />
+<img class="size-full wp-image-2444 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core.png" alt="Solr recién instalado con un core" width="1036" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core.png 1036w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-300x216.png 300w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-768x553.png 768w, http://ecapy.com/wp-content/uploads/2012/01/solr-arranque-y-primer-core-1024x737.png 1024w" sizes="(max-width: 1036px) 100vw, 1036px" /></p>
+<p><img class="size-full wp-image-2445 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/primer-core.png" alt="Primer core de Solr" width="1053" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/primer-core.png 1053w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-300x213.png 300w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-768x544.png 768w, http://ecapy.com/wp-content/uploads/2012/01/primer-core-1024x725.png 1024w" sizes="(max-width: 1053px) 100vw, 1053px" /></p>
+<h2>Añadir mas cores</h2>
+<p>Bueno ya tenemos un Solr con un core, pero tiene poco sentido montar un Solr de multicores que tenga un solo core, así que vamos a crear uno mas.</p>
+<p>Para este nuevo core (y todos los que quieras crear) hay que hacer dos cosas:<br />
+<strong>1:</strong> copiar la carpeta core0 junto a su owner para ahorrarnos de andar creando la misma estructura:</p><pre class="crayon-plain-tag">cp -Rp /var/lib/tomcat7/solr/core0 /var/lib/tomcat7/solr/producto</pre><p>NOTA: No olvides editar <strong>/var/lib/tomcat7/solr/producto/conf/schema.xml</strong> y <strong>/var/lib/tomcat7/solr/producto/conf/solrconfig.xml</strong> para ajustar sus parámetros.</p>
+<p><strong>2:</strong> actualizar <strong>/var/lib/tomcat7/solr/solr.xml</strong> agregandole un nuevo tag con lo siguiente:</p><pre class="crayon-plain-tag">&lt;core name="producto" instanceDir="producto"&gt;
+  &lt;property name="dataDir" value="/var/lib/tomcat7/solr/producto/data"&gt;&lt;/property&gt;
+&lt;/core&gt;</pre><p>Reinicia tomcat y ya tenes otro core.<br />
+<img class="size-full wp-image-2446 alignnone" src="http://ecapy.com/wp-content/uploads/2012/01/segundo-core.png" alt="Segundo core de Solr" width="1053" height="746" srcset="http://ecapy.com/wp-content/uploads/2012/01/segundo-core.png 1053w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-300x213.png 300w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-768x544.png 768w, http://ecapy.com/wp-content/uploads/2012/01/segundo-core-1024x725.png 1024w" sizes="(max-width: 1053px) 100vw, 1053px" /></p>
+<p>Suerte y saludos.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Cerrar, bloquear o restringir el puerto 8080 en Apache Solr / Tomcat 6</title>
+		<link>http://ecapy.com/cerrar-bloquear-o-restringir-el-puerto-8080-en-apache-solr-tomcat-6/</link>
+		<pubDate>Tue, 23 Nov 2010 08:00:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=654</guid>
+		<description><![CDATA[Si instalaste un Apache Solr y lo estas usando por medio de Drupal 6, otro CMS o una propia implementación, seguramente no te interese que dicho servicio se pueda acceder por medio del puerto 8080 (o el puerto asignado en tu servidor para Tomcat). Bueno, un ejemplo es mucho mas claro que casos hipotéticos, así&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/cerrar-bloquear-o-restringir-el-puerto-8080-en-apache-solr-tomcat-6/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Si instalaste un Apache Solr y lo estas usando por medio de Drupal 6, otro CMS o una propia implementación, seguramente no te interese que dicho servicio se pueda acceder por medio del puerto 8080 (o el puerto asignado en tu servidor para Tomcat).</p>
+<p>Bueno, un ejemplo es mucho mas claro que casos hipotéticos, así que les planteo mi necesidad:<br />
+Tengo un Ubuntu con un Drupal configurado con el modulo &#8220;<a href="http://drupal.org/project/apachesolr" target="_blank">apachesolr</a>&#8221; que se conecta a localhost en el puerto 8080. Hasta ahí todo normal, <strong>el problema es que si a alguien se le ocurre tipear la URL de mi pagina montada en Drupal pero por el puerto 8080&#8230; va a poder ver Tomcat</strong>, y lo que es mas peligroso, Apache Solr y su administrador (Solr carece de mecanismos de seguridad porque los delega a Tomcat).</p>
+<p>Bueno en el ejemplo que comente antes tenemos una solución ideal: Capar el puerto 8080 para que <strong>solo se pueda acceder por &#8220;localhost&#8221;</strong>.</p>
+<p>Para lograr nuestro cometido solamente tenemos que editar un XML: &#8220;<strong>server.xml</strong>&#8220;:</p><pre class="crayon-plain-tag">sudo gedit /etc/tomcat6/server.xml</pre><p>Busca la linea:</p><pre class="crayon-plain-tag"></pre><p>Comentarla:</p><pre class="crayon-plain-tag"><!--
+<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+--></pre><p>Y poner por dejado de la linea anterior lo siguiente:</p><pre class="crayon-plain-tag"></pre><p>Guarda los cambios y reinicia Tomcat:</p><pre class="crayon-plain-tag">sudo service tomcat6 restart</pre><p>Gualá. Comprobemos que haya funcionado:</p>
+<p>Primero mira cual es la ip que tiene tu servidor haciéndole ping:<br />
+<strong>Usa &#8220;ifconfig&#8221; para ver la ip</strong>, que seguramente tenga la pinta &#8220;192.168.1.xxx&#8221; o &#8220;10.0.2.xx&#8221;</p>
+<p>bien, ahora suponiendo que seguis en Ubuntu (es mi ejemplo y uso Ubuntu <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> ) abri un navegador y proba a acceder a:</p><pre class="crayon-plain-tag">http://localhost:8080</pre><p>y a:</p><pre class="crayon-plain-tag">http://192.168.1.&lt;strong&gt;xxx&lt;/strong&gt;:8080 (las &lt;strong&gt;xxx &lt;/strong&gt;reemplazalas por el resto de tu IP).</pre><p><strong>Como pudiste ver, podes acceder a localhost pero no por medio de la IP</strong>, incluso si probas a acceder a esa IP desde otra maquina/ordenador/PC/ipad/ipod/android/o-lo-que-sea XD</p>
+<p>Hemos acabado.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Setear y recuperar fields de Apache Solr en Drupal (y PHP en general)</title>
+		<link>http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/</link>
+		<comments>http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/#comments</comments>
+		<pubDate>Wed, 19 May 2010 08:13:38 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=409</guid>
+		<description><![CDATA[Voy a partir de la premisa de que ya tenemos un apache solr corriendo y un drupal con el modulo configurado. Dicho lo anterior, se nos plantea la siguiente pregunta: ¿Cómo hago para tomar un dato relacionado a un nodo, se lo paso a solr para que lo indexe como un field en el documento&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Voy a partir de la premisa de que ya tenemos un apache solr corriendo y un drupal con el modulo configurado.</p>
+<p>Dicho lo anterior, se nos plantea la siguiente pregunta: <strong>¿Cómo hago para tomar un dato relacionado a un nodo, se lo paso a solr para que lo indexe como un field en el documento de solr y luego lo recupero junto a los documentos/resultados de una búsqueda?</strong></p>
+<p>Aunque parezca mentira, es mas bien fácil de hacer, pero si les pasa como a mi, seguramente gasten una horita en conseguir este dato, porque no es un tema extensamente documentado Solr + Drupal.</p>
+<p><span style="text-decoration: underline;">1) Agregar un dato X a un field de un documento:</span></p>
+<p>Para este primer paso apelamos al hook hook_apachesolr_update_index(). ¿que hace?, nos da la oportunidad de agregar o quitar información al documento que se esta por enviar a solr, y ya puestos, nos manda el nodo del cual se extrajo la información para sacar de ahi (o de cualquier otro lado) información extra. (esto nos evita tener que hacer un node_load() ).</p><pre class="crayon-plain-tag">/**
+ * Implementarion of hook_apachesolr_update_index()
+ * */
+function mimodulo_apachesolr_update_index(&amp;$documentoSolr, $node) {
+    //Por aca obtenemos informacion extra
+    $documentoSolr-&gt;addField('is_apellido_de_creador', $apellido_creador);
+    $documentoSolr-&gt;addField('is_edad_creador', $edad_creador);
+}</pre><p>Arriba no hay mucho que aclarar, básicamente por medio del método <strong>addField() seteo un par de  nuevos field (<span style="color: #ff6600;">is_apellido_creador </span>y <span style="color: #ff6600;">is_edad_creador</span>)</strong> asignandoles un valor que anteriormente habre recogido de algun lugar.</p>
+<p><strong>NOTA</strong>: Mucha atención al prefijo que usé en los nombres de los field (&#8220;<strong>is_</strong>&#8220;). No lo hice por que si, sino porque en el schema.xml los creadores del modulo de drupal han predefinido una serie de prefijos para las filas dinámicas como las que estamos creando. Dicho de otra forma, si no usamos uno de los prefijos definidos en schema.xml, los field no se van a indexar.</p>
+<p><span style="text-decoration: underline;">2) Pedir un field a Solr:</span></p>
+<p>Solr puede tener en un documento cualquier cantidad de fields almacenados en su interior, lo que no quiere decir que en cada resultado de una busqueda se vayan a incluir todos estos field&#8230; imaginarán que la performance no se basa justamente en la premisa de &#8220;<span style="color: #ff6600;">mandame todo lo que tengas que ya veré yo que es lo que me hace falta</span>&#8220;. Mas bien hay que decirle a Solr en la consulta, que es lo que necesitas recibir de un documento de la siguiente manera:</p><pre class="crayon-plain-tag">/**
+ * Implementarion of hook_apachesolr_prepare_query()
+ */
+function mimodulo_apachesolr_prepare_query(&amp;$query, &amp;$params, $caller) {
+    //concatenamos los nuevs campos a la peticion.
+    $params ["fl"] = $params ["fl"] . ", is_apellido_de_creador, is_edad_de_creador";
+}</pre><p>Como pueden ver, lo que hago aquí es sumarle a <strong>&#8220;fl&#8221;</strong> dos campos más. <strong>&#8220;fl&#8221;</strong> es justamente la clave que almacena todos los field que le vamos a pedir a Solr.</p>
+<p>Listo, ya podemos setear y recuperar fields. Solo queda que modifiques la pagina de resultados para poder imprimir cada uno de los nuevos field que recibiste, pero esa es otra historia.</p>
+<address>Concepto original extraído de:<br />
+http://www.agileapproach.com/blog-entry/filtering-apache-solr-search-results-based-drupal-user-permissions</address>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/setear-y-recuperar-fields-de-apache-solr/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Entities &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/entities/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Drupal: Creando entidades definidas en ECK programáticamente.</title>
+		<link>http://ecapy.com/drupal-creando-entidades-definidas-en-eck-programaticamente/</link>
+		<pubDate>Mon, 03 Jun 2013 18:58:40 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Entities]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2227</guid>
+		<description><![CDATA[Les presento ECK a quien no lo conozca todavía. ECK (Entity Construction Kit) a craso modo es una interfaz para crear entidades por medio de una UI. Además de permitirte crear tipos de entidad, te permite crear sus bundles, gestionar sus fields, propiedades, y para rematar también te da todas las herramientas para hacer CRUD.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-creando-entidades-definidas-en-eck-programaticamente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Les presento <strong>ECK</strong> a quien no lo conozca todavía. <a href="https://drupal.org/project/eck" target="_blank">ECK (Entity Construction Kit)</a> a craso modo es una interfaz para crear entidades por medio de una UI. Además de permitirte crear tipos de entidad, te permite crear sus bundles, gestionar sus fields, propiedades, y para rematar también te da todas las herramientas para hacer CRUD. Si quieren saber mas en profundidad sobre este modulo pueden leer su documentacion y tambien les recomiendo <a href="http://codekarate.com/daily-dose-of-drupal/drupal-7-entity-construction-kit" target="_blank">este video</a> que lo explica bastante mejor que yo.</p>
+<p><strong>Al lío</strong>. Una vez que creas tipos de entidades con ECK podés crear entidades nuevas de ese tipo usando su UI, pero también podés crearlas programáticamente:<br />
+Digamos que creaste un tipo de entidad llamada &#8220;Contact&#8221; [contact] y un bundle llamado &#8220;contact_simple&#8221;.</p>
+<p>Para crear una nueva entidad &#8220;contact_simple&#8221; haz:</p><pre class="crayon-plain-tag">&lt; ? $entity_type = "contact"; $entity = entity_create($entity_type, array('type' =&gt; "contact_simple"));
+  $wrapper = entity_metadata_wrapper($entity_type, $entity);</pre><p>Ahora que tenes la entidad ya podes tocar tanto sus propiedades como los field que tenga attachados:</p><pre class="crayon-plain-tag">&lt; ? //Propiedades $wrapper-&gt;uid = 9;
+//Fields
+$wrapper-&gt;field_full_name = "John doe";</pre><p>Cuando acabes de toquetear la entidad, guardala y listo.</p><pre class="crayon-plain-tag">&lt; ? $wrapper-&gt;save();</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Entidades en Drupal: 2) Trabajar con la entidad</title>
+		<link>http://ecapy.com/trabajar-con-la-entidad/</link>
+		<comments>http://ecapy.com/trabajar-con-la-entidad/#comments</comments>
+		<pubDate>Wed, 20 Feb 2013 09:13:33 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Entities]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1925</guid>
+		<description><![CDATA[En el capitulo anterior definimos una entidad, pero solo eso, no hacia nada. Ahora vamos a ver como interactuar con ella. Hoy vamos a conocer las 5 operaciones mas comunes que se le suelen hacer a una entidad: crear guardar cargar actualizar borrar Tenemos dos formas de hacer esto. una es usando funciones y otra&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/trabajar-con-la-entidad/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a title="Entidades en Drupal: 1) Entender y crear una entidad" href="http://ecapy.com/entender-y-crear-una-entidad/">En el capitulo anterior</a> definimos una entidad, pero solo eso, no hacia nada. Ahora vamos a ver como interactuar con ella.</p>
+<p>Hoy vamos a conocer las 5 operaciones mas comunes que se le suelen hacer a una entidad:</p>
+<ul>
+<li>crear</li>
+<li>guardar</li>
+<li>cargar</li>
+<li>actualizar</li>
+<li>borrar</li>
+</ul>
+<p>Tenemos dos formas de hacer esto. una es usando funciones y otra usando el controlador directamente. En este articulo vamos a usar el controlador.<br />
+Las funciones son solo otra forma de tratar con las entidades. y queda en el gusto de cada uno usar controlador o funciones.</p>
+<p><strong>NOTA sobre las funciones para entidades:</strong> Drupal provee <strong>entity_load()</strong>, <strong>entity_label()</strong> y <strong>entity_uri()</strong> mientras que <a href="http://drupal.org/project/entity" target="_blank">Entity API</a> agrega las que faltan: <strong>entity_save()</strong>, <strong>entity_create()</strong>, <strong>entity_delete()</strong>, <strong>entity_revision_delete()</strong>, <strong>entity_view()</strong> y <strong>entity_access()</strong> entre otras.<br />
+Este es uno de los motivos por el cual se creó Entity API. Faltaban funcionalidades a la hora de tratar con entidades.</p>
+<h4>Crear</h4>
+<p></p><pre class="crayon-plain-tag">&lt; ?php $datos = array('nombre' =&gt; "ejemplo");
+$controller = entity_get_controller('laEntidad');
+$entidad = $controller-&gt;create($datos);</pre><p>Es simple de ver. Cargamos el controlador de la entidad y creamos una.<br />
+Si cabe aclaremos un poco &#8220;<em>$controller = entity_get_controller(&#8216;laEntidad&#8217;);</em>&#8220;: Pedimos a Drupal que nos de el controlador de la entidad &#8220;laEntidad&#8221;.</p>
+<p><strong>NOTA:</strong> <a href="http://api.drupal.org/api/drupal/includes%21common.inc/function/entity_get_controller/7" target="_blank">entity_get_controller()</a> instancia el controlador de nuestra entidad y lo cachea, así que pueden pedirlo una o mil veces, que no va a impactar en la performance del request actual.</p>
+<h4>Guardar</h4>
+<p></p><pre class="crayon-plain-tag">&lt; ?php //retorna los mismos estados que drupal_write_record() $saved = entity_get_controller('laEntidad')-&gt;save($entidad);</pre><p>La única diferencia con el caso anterior es que en lugar de asignar el controlador a una variable, la hemos usado al vuelo.<br />
+<em>$entidad</em> es el objeto que creamos antes.</p>
+<h4>Cargar</h4>
+<p></p><pre class="crayon-plain-tag">&lt; ?php $entities = entity_get_controller('laEntidad')-&gt;load($ids);</pre><p><em>-&gt;load()</em> siempre nos devuelve un array<br />
+<em>$ids</em> es un array de entityID.</p>
+<h4>Actualizar</h4>
+<p>Supongamos que sabemos que el ID de nuestra entidad es el 11:</p><pre class="crayon-plain-tag">&lt; ?php $entities = entity_get_controller('laEntidad')-&gt;load(array(11));
+$entidad = $entities[11];
+$entidad-&gt;nombre = "nombre cambiado";
+entity_get_controller('laEntidad')-&gt;save($entidad);</pre><p></p>
+<h4>Borrar</h4>
+<p></p><pre class="crayon-plain-tag">&lt; ?php entity_get_controller('laEntidad')-&gt;delete(array(1, 2, 3, 4));</pre><p>Donde el array que se le pasa es un listado de los entityID que queremos borrar.<br />
+<strong>NOTA:</strong> el método -&gt;delete() no devuelve nada.</p>
+<p>Eso es todo. Para acabar queda comentar que el controlador que nos proporciona Entity API tiene mas métodos bastante útiles y que les recomiendo revisar. Estos están en el archivo &#8220;<strong>entity.controller.inc</strong>&#8221; del modulo (busquen la clase &#8220;EntityAPIController&#8221;).</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/trabajar-con-la-entidad/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Entidades en Drupal: 1) Entender y crear una entidad</title>
+		<link>http://ecapy.com/entender-y-crear-una-entidad/</link>
+		<comments>http://ecapy.com/entender-y-crear-una-entidad/#comments</comments>
+		<pubDate>Mon, 18 Feb 2013 17:40:07 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Entities]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1891</guid>
+		<description><![CDATA[Hasta ahora no había tenido que hacer entidades desde cero, por A o por B siempre voy por otros caminos, pero hoy si que me tocó hacer una y vi bastante difusas las cosas. Sabia la teoría de lo que era una entidad, un bundle y esas cosas, pero cuando me tuve que poner a&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/entender-y-crear-una-entidad/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hasta ahora no había tenido que hacer entidades desde cero, por A o por B siempre voy por otros caminos, pero hoy si que me tocó hacer una y vi bastante difusas las cosas.<br />
+Sabia la teoría de lo que era una entidad, un bundle y esas cosas, pero cuando me tuve que poner a hacer la entidad me las vi crudas un buen rato.</p>
+<p>El problema se me dio básicamente en que los tutoriales y documentación que hay por ahí se centran en mostrar todo lo que se puede hacer de una sola vez, y bueno&#8230; no soy tan listo, me perdía en el código.</p>
+<p>Pero ahora lo veo un poco mas claro y quiero explicarlo de la forma que me hubiera gustado que me lo transmitieran.</p>
+<p>Voy a explicar en dos o tres artículos lo que hace falta saber sobre la implementacion de una entidad usando <a href="http://drupal.org/project/entity" target="_blank">Entity API</a> y tratando de aclarar bien bien donde acaba una funcionalidad y comienza otra.</p>
+<p>Vamos allá.</p>
+<p>Lo primero es lo primero. Estas leyendo esto posiblemente porque querés hacer entidades y entiendo que <a href="http://drupal.org/node/1261744" target="_blank">ya hiciste los deberes</a> y conoces los conceptos básicos así que no los voy a explicar. En su lugar vamos a aprender haciendo mini módulos que implementen las distintas funcionalidades.</p>
+<h3>Creemos una entidad</h3>
+<p>Para crear una entidad <strong>solo necesitas dos cosas</strong>:</p>
+<ol>
+<li>Es schema (futura tabla en la DB) para guardar los datos mínimos y necesarios y cualquier otro dato que quieras que esté relacionado a las entidades que estas creando.</li>
+<li>Informar a Drupal que ese schema lo tiene que entender como una entidad.</li>
+</ol>
+<p><strong>TIP:</strong> Programaticamente hablando una entidad es un objeto. Eso es, nada mas que un objeto. No te preocupes de que tipo es, solo tenes que saber eso, que es un objeto.<br />
+Este objeto tiene una capa de persistencia que es el schema. De ahí que solo haga falta definir un schema e informar al sistema sobre la nueva entidad.</p>
+<p><strong>TIP2:</strong> Otra cosa que me descolocó hasta que me di cuenta de lo que acabo de comentar el el tip anterior es que: una entidad es un concepto abstracto y que las instancias (los objetos creados a partir de esa entidad) son los objetos reales y &#8220;tangibles&#8221;. Estas instancias son las que van a parar a la DB. Luego existen también los bundles pero ya nos vamos a complicar la vida con ese concepto en el próximos artículos.</p>
+<p>Volviendo al tema:</p>
+<h4>Schema:</h4>
+<p>El schema no tiene nada de especial, lo único que necesita para funcionar es el identificador único para esta entidad (Compara esto al uid de un usuario, el nid de un nodo, etc.) y un field cualquiera <sup><a href="#one">*1</a></sup>.<br />
+Entonces, si necesitáramos una entidad mega simple, nuestro schema se vería así:</p><pre class="crayon-plain-tag">&lt; ?php function entidad_simple_schema() { $schema['nombre_de_la_tabla'] = array( 'description' =&gt; 'Almacena instancias de la entidad',
+    'fields' =&gt; array(
+      'entityID' =&gt; array(
+        'type' =&gt; 'serial',
+        'not null' =&gt; TRUE,
+        'description' =&gt; 'Identidicador unico de esta entidad.',
+      ),
+      'nombre' =&gt; array(
+        'description' =&gt; 'Nombre de la instancia',
+        'type' =&gt; 'varchar',
+        'length' =&gt; 100,
+        'not null' =&gt; TRUE,
+        'default' =&gt; '',
+      ),
+    ),
+    'primary key' =&gt; array('entityID'),
+  );
+  return $schema;
+}</pre><p></p>
+<h4>Informar a Drupal:</h4>
+<p>Para terminar de crear la entidad vamos a informar a Drupal usando el <a href="http://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_entity_info/7" target="_blank">hook_entity_info()</a></p><pre class="crayon-plain-tag">&lt; ?php function entidad_simple_entity_info() { $return = array( 'laEntidad' =&gt; array(
+      'label' =&gt; t('La entidad'),
+      'controller class' =&gt; 'EntityAPIController',
+      'base table' =&gt; 'nombre_de_la_tabla',
+      'entity keys' =&gt; array('id' =&gt; 'entityID'),
+    ),
+
+  );
+  return $return;
+}</pre><p>Ese codigo que acabo de poner es la unidad mínima de información que necesita este hook para crear correctamente tu entidad.<br />
+Este array es bastante claro:</p>
+<table class="desglose-params">
+<tbody>
+<tr>
+<td>laEntidad</td>
+<td>Es el nombre de tu entidad, no tiene nada que ver con el nombre de la tabla que declaraste en el schema y puede ser el nombre que mas te guste.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>Es la versión legible del nombre de tu entidad.</td>
+</tr>
+<tr>
+<td>controller class</td>
+<td>Es el nombre de la clase que se va a hacer cargo de gestionar todo lo relacionado con tu entidad. puntualmente &#8220;EntityAPIController&#8221; es la clase que nos proporciona Entity API, y es una versión bastante mas completa que la que nos proporciona Drupal en su core (DrupalDefaultEntityController).<br />
+Es interesante este punto así que profundizo un poco mas:<br />
+Sin entrar mucho en detalle, &#8220;controller class&#8221; designa al que se va a encargar de hacer CRUD sobre tu entidad, esto es, el que se va a encargar la lógica para insertar registros en la DB, obtenerlos, actualizarlos y borrarlos.<br />
+En nuestro caso usamos la clase proporcionada por Entity API porque esta incorpora un montón de funcionalidades que SON BÁSICAS y que la clase que trae Drupal no incluye. Esto es harina de otro costal y no vamos a darle mas vueltas. solo quería que te quede claro el rol que ocupa esta clase.</td>
+</tr>
+<tr>
+<td>base table</td>
+<td>Bueno, es el schema que definimos antes, nada mas.</td>
+</tr>
+<tr>
+<td>entity keys</td>
+<td>En el schema teníamos que definir un identificador para las instancias de las entidades que se creen, pues es ese valor.</td>
+</tr>
+</tbody>
+</table>
+<p>Acá te dejo el código anterior metido en un modulo para que lo pruebes.</p>
+<p><a class="descargar" title="Descargar ejemplo" href="http://ecapy.com/wp-content/uploads/2013/02/entidad_simple.zip">Descargar ejemplo</a></p>
+<p>Aquí concluimos este articulo, el próximo vamos a hacer un modulo que haga algo con la entidad que acabamos de crear, que este modulo por si solo no hace nada.</p>
+<p>Chau!</p>
+<p id="one" class="referencia">*1: El field cualquiera es porque internamente cuando se hace un <a href="http://api.drupal.org/api/drupal/includes%21common.inc/function/drupal_write_record/7" target="_blank">drupal_write_record()</a> si no tiene aunque sea un field, descarta la operación ¬¬. En este ejemplo hice un field llamado &#8220;nombre&#8221; que nos va a venir bien.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/entender-y-crear-una-entidad/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

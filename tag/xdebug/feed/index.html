@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Xdebug &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/xdebug/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Instalar Xdebug en Ubuntu (cualquier versión)</title>
+		<link>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/</link>
+		<comments>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/#comments</comments>
+		<pubDate>Sun, 19 Sep 2010 12:15:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[Xdebug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=611</guid>
+		<description><![CDATA[Esto es mas bien un resumen de las instrucciones que nos deja el mismo creador de Xdebug en su pagina (http://xdebug.org/docs/install) mas un par de cosas que da por entendido que debemos saber 🙂 1) Lo primero es bajarse el código fuente de la ultima versión de Xdebug (la 2.1 es la ultima al día&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Esto es mas bien un resumen de las instrucciones que nos deja el mismo creador de Xdebug en su pagina (http://xdebug.org/docs/install) mas un par de cosas que da por entendido que debemos saber <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>1) Lo primero es bajarse el código fuente de la ultima versión de Xdebug (la 2.1 es la ultima al día de la fecha)</p>
+<p><a href="http://xdebug.org/files/xdebug-2.1.0.tgz">http://xdebug.org/files/xdebug-2.1.0.tgz</a></p>
+<p>2) Descompriman el archivo en una carpeta cualquiera</p>
+<p>De acá en mas solo nos queda compilar configurar y probar:</p>
+<p>3) Lancen el siguiente comando para asegurarse que tienen instaladas las librerías de desarrollo de php5 que son necesarias para poder compilar Xdebug:</p><pre class="crayon-plain-tag">apt-get install php5-dev</pre><p>4) Entren en la carpeta por medio de la consola:</p><pre class="crayon-plain-tag">cd /ruta/a/la/carpeta/donde/descomprimiste/los/archivos/fuente/de/xdebug/xdebug-2.1.0/</pre><p>5) Lanzar el comando phpize</p><pre class="crayon-plain-tag">phpize</pre><p>6) Lanzar:</p><pre class="crayon-plain-tag">./configure --enable-xdebug
+make
+sudo make install</pre><p>Al final del infierno de outputs de salen en la consola van a apreciar que se dibuja un recuadro como el que se ve en la siguiente imagen:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png"><img class="aligncenter size-full wp-image-612" title="consola make install xdebug" src="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png" alt="" width="607" height="614" srcset="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png 607w, http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug-297x300.png 297w" sizes="(max-width: 607px) 100vw, 607px" /></a></p>
+<p>Bueno, justo encima de ese recuadro pueden ver que dice algo como &#8220;<strong>Installing shared extensions: /usr/lib/php5/20090626+lfs/</strong>&#8220;. Copien esa ruta.</p>
+<p>Ya esta instalado Xdebug. Configuremos lo XD.</p>
+<p>7) Editemos <strong>php.ini</strong></p><pre class="crayon-plain-tag">sudo gedit /etc/php5/apache2/php.ini</pre><p>Y en la ultima linea del archivo pequen lo siguiente:</p><pre class="crayon-plain-tag">zend_extension=&quot;&lt;strong&gt;/usr/lib/php5/20090626+lfs/xdebug.so&lt;/strong&gt;&quot;
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000</pre><p><span style="color: #993300;">NOTA: en la linea que dice &#8220;<strong>zend_extension</strong>&#8221; reemplacen la ruta del ejemplo por la que copiaron en el paso 6</span></p>
+<p>8) Listo! todo en teoría funciona. para comprobarlo abran el IDE al que le tengan mas bronca y configurenlo!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Configurar Xdebug en Xampp 1.7.3 con PHP 5.3.1</title>
+		<link>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/</link>
+		<comments>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/#comments</comments>
+		<pubDate>Tue, 01 Jun 2010 08:43:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Xampp]]></category>
+		<category><![CDATA[Xdebug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=467</guid>
+		<description><![CDATA[Si querés configurar Xdebug en linux puede interesarte el post &#8220;Instalar Xdebug en Ubuntu (cualquier versión)&#8220; Vayan a la carpeta en la que esta instalado Xampp y entren en la carpeta de PHP. Abran php.ini y busquen: [crayon-58443762e9264388597660/] Quítenle el punto y coma del principio para descomentarlo (Habilitarlo). Ahora solo queda configurar los parámetros de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><strong><span style="color: #993300;">Si querés configurar Xdebug en linux puede interesarte el post &#8220;</span></strong><a href="http://www.ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/"><strong><span style="color: #0000ff;">Instalar Xdebug en Ubuntu (cualquier versión)</span></strong></a><strong><span style="color: #993300;">&#8220;</span></strong></p>
+<p>Vayan a la carpeta en la que esta instalado Xampp y entren en la carpeta de PHP.<br />
+Abran <strong>php.ini </strong>y busquen:</p><pre class="crayon-plain-tag">&lt;strong&gt;;&lt;/strong&gt;zend_extension = &quot;xamppphpextphp_xdebug.dll&quot;</pre><p>Quítenle el punto y coma del principio para descomentarlo (Habilitarlo).</p>
+<p>Ahora solo queda configurar los parámetros de Xdebug:<br />
+Busquen ahora &#8220;<strong><span style="color: #993300;">[XDebug]</span></strong>&#8220;. Lo que ven por debajo de esta etiqueta es su configuración, como se que es una putada tener que andar leyendo y habilitando uno a uno les dejo una configuración funcional para que la usen. (Borren todo lo que hay por debajo de la etiqueta <strong><span style="color: #993300;">[xdebug]</span></strong> antes de pegar esta nueva configuración).</p><pre class="crayon-plain-tag">&lt;strong&gt;[XDebug]&lt;/strong&gt;
+xdebug.auto_trace = 0
+xdebug.collect_includes = 1
+xdebug.collect_params = 1
+xdebug.collect_return = 1
+xdebug.collect_vars = &quot;On&quot;
+xdebug.default_enable = &quot;On&quot;
+xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
+xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
+xdebug.dump_globals = 1
+xdebug.dump_once = 1
+xdebug.dump_undefined = 0
+xdebug.extended_info = 1
+xdebug.file_link_format = &quot;&quot;
+xdebug.manual_url = &quot;http://www.php.net&quot;
+xdebug.max_nesting_level = 100
+xdebug.overload_var_dump = 1
+xdebug.profiler_append = 0
+xdebug.profiler_enable = 0
+xdebug.profiler_enable_trigger = 0
+xdebug.profiler_output_dir = &quot;xampptmp&quot;
+xdebug.profiler_output_name = &quot;xdebug_profile.%p&quot;
+xdebug.remote_autostart = 1
+xdebug.remote_enable = 1
+xdebug.remote_handler = &quot;dbgp&quot;
+xdebug.remote_host = &quot;localhost&quot;
+xdebug.remote_mode = &quot;req&quot;
+xdebug.remote_port = 9000
+xdebug.show_exception_trace = 0
+xdebug.show_local_vars = 0
+xdebug.trace_output_dir = &quot;xampptmp&quot;
+xdebug.var_display_max_children = 256
+xdebug.var_display_max_data = 512
+xdebug.var_display_max_depth = 10</pre><p>Listo, de acá en mas solo tienen que configurar su eclipse, netbeans, o lo que sea que usen.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

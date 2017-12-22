@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>express framework &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/express-framework/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Tutorial: implementar un servicio RESTful public API de modelos Mongoose en Node.js</title>
+		<link>http://ecapy.com/implementar-un-servicio-restful-public-api-de-modelos-mongoose-en-node-js/</link>
+		<pubDate>Tue, 17 Sep 2013 09:00:33 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[API]]></category>
+		<category><![CDATA[express framework]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[node.js]]></category>
+		<category><![CDATA[RESTful]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2499</guid>
+		<description><![CDATA[Hola!, He terminado de hacer un ejemplo de como implementar una API pública tipo RESTful en una APP creada con express. La idea detrás de esta app de ejemplo es la de crear automagicamente todas las URL necesarias para poder gestionar un modelo de Mongoose (aka recurso). Su uso es realmente simple. Dentro de la&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/implementar-un-servicio-restful-public-api-de-modelos-mongoose-en-node-js/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola!, He terminado de hacer un ejemplo de como implementar una API pública tipo RESTful en una APP creada con <a href="http://expressjs.com/" target="_blank">express</a>.<br />
+<strong>La idea detrás de esta app de ejemplo es la de crear automagicamente todas las URL necesarias</strong> para poder gestionar un modelo de Mongoose (aka recurso).</p>
+<p>Su uso es realmente simple. Dentro de la carpeta &#8220;models&#8221; creas un nuevo modelo/entidad, tocas un par de detalles mas, y tienes una API publica completa de ese nuevo recurso <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Ya no doy mas vueltas, acá la tienen:</p>
+<p><a href="https://github.com/capy/Simple-API-style" target="_blank"><em><strong>https://github.com/capy/Simple-API-style</strong></em></a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Node.js/express: Gestionar las URL de tu proyecto mas eficientemente.</title>
+		<link>http://ecapy.com/node-js-express-gestionar-las-url-de-tu-proyecto-mas-eficientemente/</link>
+		<pubDate>Mon, 16 Sep 2013 09:15:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[express framework]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2505</guid>
+		<description><![CDATA[Normalmente cuando haces una aplicación usando express, por comodidad tiendes a poner todas las definiciones de las url&#8217;s en la raíz del proyecto: [crayon-5844376a973d2824802408/] Pero esto a la corta se vuelve algo inmanejable. La solución es adoptar un patrón que nos permita extraer las URL a archivos en los que poder juntar las url que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/node-js-express-gestionar-las-url-de-tu-proyecto-mas-eficientemente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Normalmente cuando haces una aplicación usando <a href="http://expressjs.com/" target="_blank">express</a>, por comodidad tiendes a poner todas las definiciones de las url&#8217;s en la raíz del proyecto:</p><pre class="crayon-plain-tag">var express = require('express');
+var app = express();
+
+//...
+//Configuraciones varias
+//...
+
+app.get("/users", function (req, res) {
+    return res.render("list users");
+});
+
+app.get("/user/:uid", function (req, res) {
+    return res.render("show an user");
+});
+
+app.get("/articles", function (req, res) {
+    return res.render("list articles");
+});
+
+app.get("/article/:id", function (req, res) {
+    return res.render("show an article");
+});
+
+app.get("/article/new", function (req, res) {
+    return res.render("new article");
+});
+
+http.createServer(app).listen(app.get('port'), function () {
+    console.log("http://localhost:" + app.get('port'));
+});</pre><p>Pero esto a la corta se vuelve algo inmanejable. La solución es adoptar un patrón que nos permita extraer las URL a archivos en los que poder juntar las url que se refieran a algo en común (en este ejemplo usuarios por un lado y articles por otro.).</p>
+<h3>Manos a la obra</h3>
+<p>crea un directorio llamado routes, crea los archivos &#8220;<strong>users.js</strong>&#8221; y &#8220;<strong>articles.js</strong>&#8221; y llévate allí las urls.<br />
+En el lugar que estaban las URL (dentro de app.js o server.js, como sea que lo hayas llamado.) pon:</p><pre class="crayon-plain-tag">var routePath = __dirname + '/routes/';
+fs.readdirSync(routePath).forEach(function (file) {
+    require(routePath + file)(app);
+});</pre><p>Este snippet se va a encargar de cargar todos los archivos que haya en la carpeta routes. Si te fijas bien vas a ver que está haciendo un require pero le pasa &#8220;<em>(app)</em>&#8221; al final de este. Eso es porque dentro de nuestros archivos de rutas vamos a devolver funciones que van a ejecutarse ni bien sean cargadas.</p>
+<p>Lo ultimo que nos queda es definir la estructura que debe tener cada archivo que esté alojado en routes. Como ya no están en la raíz, vamos a encapsular estas definiciones de rutas dentro de una función, que es la que se va a encargar de hacernos llegar a app (que es la instancia de express que va a recibir nuestras rutas):</p>
+<p><em>users.js:</em></p><pre class="crayon-plain-tag">module.exports = function (app) {
+
+    app.get("/users", function (req, res) {
+        return res.render("list users");
+    });
+
+    app.get("/user/:uid", function (req, res) {
+        return res.render("show an user");
+    });
+
+};</pre><p><em>articles.js:</em></p><pre class="crayon-plain-tag">module.exports = function (app) {
+
+    app.get("/articles", function (req, res) {
+        return res.render("list articles");
+    });
+
+    app.get("/article/:id", function (req, res) {
+        return res.render("show an article");
+    });
+
+    app.get("/article/new", function (req, res) {
+        return res.render("new article");
+    });
+
+};</pre><p>Como podemos ver, en cada uno de los archivos que contienen las rutas, hemos metido las rutas dentro de <strong>module.exports = function (app){}</strong>. Esto sumado a que a cada archivo cargado se le estaba pasando la <strong>app</strong> por medio del <strong>require (require(routePath + file)(app);</strong>) todo cobra sentido.</p>
+<p>Ya hemos acabado, ya puedes crear tantos archivos .js como tu corazón y lógica dicten, que se van a cargar sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

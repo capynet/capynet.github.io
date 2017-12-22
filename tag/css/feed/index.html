@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CSS &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/css/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Chrome redimensiona mas imágenes dentro de una tabla.</title>
+		<link>http://ecapy.com/chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/</link>
+		<pubDate>Wed, 25 Mar 2015 01:11:19 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2870</guid>
+		<description><![CDATA[Me ha pasado algo curioso y solo en chrome de momento. Tengo un texto en una celda y una imagen en la otra. El problema vino cuando usé un max-width:100% para las img en general. En ese momento toda imagen que estuviera dentro de un &#60;td&#62; pasó a redimensionarse: Ok, Chrome también tiene sus cositas.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me ha pasado algo curioso y solo en chrome de momento. Tengo un texto en una celda y una imagen en la otra. El problema vino cuando usé un max-width:100% para las img en general. En ese momento toda imagen que estuviera dentro de un &lt;td&gt; pasó a redimensionarse:</p>
+<p><img class="wp-image-2871 size-full alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/broken.png" alt="broken" width="1028" height="203" srcset="http://ecapy.com/wp-content/uploads/2015/03/broken.png 1028w, http://ecapy.com/wp-content/uploads/2015/03/broken-300x59.png 300w, http://ecapy.com/wp-content/uploads/2015/03/broken-768x152.png 768w, http://ecapy.com/wp-content/uploads/2015/03/broken-1024x202.png 1024w" sizes="(max-width: 1028px) 100vw, 1028px" /></p>
+<p>Ok, Chrome también tiene sus cositas. La solución ha sido la siguiente:</p><pre class="crayon-plain-tag">/* Quiero que todas las img usen como mucho el 100% */
+img {
+    max-width: 100%;
+}
+
+/* Pero si la imagen está dentro de un td anulamos el max-width para evitar ese comportamiento raro. */
+table tr td &gt; img {
+    max-width: none;
+}</pre><p>Resultado:<br />
+<img class="wp-image-2872 size-full alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/fixed.png" alt="fixed" width="1001" height="259" srcset="http://ecapy.com/wp-content/uploads/2015/03/fixed.png 1001w, http://ecapy.com/wp-content/uploads/2015/03/fixed-300x78.png 300w, http://ecapy.com/wp-content/uploads/2015/03/fixed-768x199.png 768w" sizes="(max-width: 1001px) 100vw, 1001px" /></p>
+<p>Y todos felices. Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Front-end: Maquetar un buscador (input + botón) para que sea 100% fluido / responsive</title>
+		<link>http://ecapy.com/front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/</link>
+		<pubDate>Fri, 12 Sep 2014 19:18:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2767</guid>
+		<description><![CDATA[La idea detrás de esto fue lograr que el buscador esté siempre al 100% del espacio que tenga disponible y no tener que preocuparme de dimensionar los input para que encajen y que el botón no caiga a dos lineas cuando se queda sin espacio. Pueden ver como funciona si re dimensionan la ventana del&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La idea detrás de esto fue lograr que el buscador esté siempre al 100% del espacio que tenga disponible y no tener que preocuparme de dimensionar los input para que encajen y que el botón no caiga a dos lineas cuando se queda sin espacio.</p>
+<p>Pueden ver como funciona si re dimensionan la ventana del navegador:</p>
+<p class="codepen" data-height="550" data-theme-id="0" data-slug-hash="vJBnL" data-default-tab="result" data-user="capynet">See the Pen <a href="http://codepen.io/capynet/pen/vJBnL/">vJBnL</a> by Marcelo Tosco (<a href="http://codepen.io/capynet">@capynet</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p><script src="//codepen.io/assets/embed/ei.js" async=""></script></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Front-end: Títulos multi linea con padding por cada una de las lineas</title>
+		<link>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/</link>
+		<comments>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/#comments</comments>
+		<pubDate>Wed, 13 Aug 2014 13:51:24 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2748</guid>
+		<description><![CDATA[Así es como vemos un titulo cuando tiene aplicado un padding sin mas Y asi es como queremos que se vea No voy a explicar toda la lógica que hay detrás de esto. Vayamos a la solución. Este es el html. en div.titulo tenemos el background y en .highlight el background del texto, el padding&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h3>Así es como vemos un titulo cuando tiene aplicado un padding sin mas</h3>
+<p><a href="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png"><img class="size-full wp-image-2751 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png" alt="texto-multilinea-error" width="711" height="177" srcset="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png 711w, http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error-300x75.png 300w" sizes="(max-width: 711px) 100vw, 711px" /></a></p>
+<h3>Y asi es como queremos que se vea</h3>
+<p><a href="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png"><img class="size-full wp-image-2749 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png" alt="titulo-con-padding-en-cada-linea" width="712" height="242" srcset="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png 712w, http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea-300x102.png 300w" sizes="(max-width: 712px) 100vw, 712px" /></a></p>
+<p>No voy a explicar toda la lógica que hay detrás de esto. Vayamos a la solución.</p>
+<p>Este es el html. en <strong>div.titulo</strong> tenemos el background y en <strong>.highlight</strong> el background del texto, el padding que queremos que tenga y el hack mediante la propiedad box-shadow que es la que nos termina agregando los pedacitos de padding que nos falta entre lineas.</p>
+<div class="titulo">
+<pre class="crayon-plain-tag">&lt;div class="titulo"&gt;
+    &lt;span class="highlight"&gt;Títulos multi linea con padding por cada linea&lt;/span&gt;
+&lt;/div&gt;</pre>
+</div>
+<div class="titulo"><span class="highlight">Títulos multi linea con padding por cada linea</span></div>
+<p></p><pre class="crayon-plain-tag">.titulo {
+    padding-top: 32px;
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    font-family: arial, helvetica, sans-serif;
+    background: url('fondo.jpg') no-repeat 50% 50%;
+}
+
+.highlight {
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    /*Esto es lo importante*/
+    display: inline; /* Aseguramos que el elemento sea inline */
+    background: black; /* Color de fondo del texto */
+    line-height: 1.6em; /* Espaciado entre lineas */
+    padding: 7px 0; /* padding deseado */
+    box-shadow: 14px 0 0 black, -14px 0 0 black;
+}</pre><p><strong>Del CSS que puse solo hagan caso a las lineas que tienen &#8220;<em>/*Esto es lo importante*/</em>&#8220;. El resto es decoración.</strong></p>
+<p><strong>No comenté el box-shadow porque prefiero hacerlo aquí:</strong> La magia se da en box-shadow. Solo tienes que tocar dos parámetros. El color cámbialo de <strong>black</strong> al que hayas puesto en la propiedad background, y los valores <strong>14px y -14px</strong> ajustalos para arriba o para abajo hasta que te guste el padding lateral que hay en cada una de las lineas.</p>
+<p>Listo!</p>
+<p>Artículo original: <a href="http://css-tricks.com/multi-line-padded-text/" target="_blank">css-tricks.com</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>CSS: Centrar vertical y horizontalmente un elemento sin saber su tamaño</title>
+		<link>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/</link>
+		<comments>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/#comments</comments>
+		<pubDate>Tue, 12 Aug 2014 11:20:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2737</guid>
+		<description><![CDATA[Centrar un elemento cuando se sabe el tamaño que tiene es fácil. Pero y si el elemento que queremos centrar tiene un tamaño expresado en % o no tiene un tamaño especificado, ya no es tan fácil centrarlo. Ahora que prácticamente IE8 ya no se usa, lo podemos quitar de la ecuación y usar CSS&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Centrar un elemento cuando se sabe el tamaño que tiene es fácil. Pero y si el elemento que queremos centrar tiene un tamaño expresado en <strong>% o no tiene un tamaño especificado</strong>, ya no es tan fácil centrarlo.</p>
+<p>Ahora que prácticamente IE8 ya no se usa, lo podemos quitar de la ecuación y usar CSS un poco mas avanzado.<br />
+Dicho lo anterior, ahora que podemos usar la propiedad <em>transform: translate();</em>, ya podemos centrar vertical y horizontalmente cualquier elemento.</p><pre class="crayon-plain-tag">&lt;div class="centrado-porcentual"&gt;
+  No nos hace falta conocer el tamaño de esta caja para poder centrarla vertical y horizontalmente :)
+&lt;/div&gt;</pre><p></p><pre class="crayon-plain-tag">.centrado-porcentual {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}</pre><p>Resultado:<br />
+<a href="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png"><img class="size-full wp-image-2743 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png" alt="centrado-vert-hoz-transform" width="774" height="638" srcset="http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform.png 774w, http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform-300x247.png 300w, http://ecapy.com/wp-content/uploads/2014/08/centrado-vert-hoz-transform-768x633.png 768w" sizes="(max-width: 774px) 100vw, 774px" /></a></p>
+<p>NOTA: si el elemento que quieres centrar está dentro de otro, recuerda que el padre tiene que tener una posición relativa.</p>
+<p>Chau!</p>
+<p>Idea original: <a href="http://css-tricks.com/centering-percentage-widthheight-elements/" target="_blank">css-tricks.com</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Crea tus iconfont a medida con IcoMoon</title>
+		<link>http://ecapy.com/crea-tus-iconfont-a-medida-con-icomoon/</link>
+		<pubDate>Thu, 14 Mar 2013 11:18:24 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2085</guid>
+		<description><![CDATA[IcoMoon es genial, siempre que veo un iconfont o un pack de iconos armado con sprite tengo que sopesar si los KB que trae con sigo me va a compensar, al fin y al cabo suelo usar 5 o 10 iconos de los cientos que estos pack traen. Y acá es donde IcoMoon me enamoró.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crea-tus-iconfont-a-medida-con-icomoon/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://icomoon.io/app/" target="_blank">IcoMoon</a> es genial, <strong>siempre que veo un iconfont o un pack de iconos armado con sprite tengo que sopesar si los KB que trae con sigo me va a compensar</strong>, al fin y al cabo suelo usar 5 o 10 iconos de los cientos que estos pack traen.</p>
+<p><img class="size-full wp-image-2086 alignnone" src="http://ecapy.com/wp-content/uploads/2013/03/icomoon.png" alt="icomoon" width="954" height="695" srcset="http://ecapy.com/wp-content/uploads/2013/03/icomoon.png 954w, http://ecapy.com/wp-content/uploads/2013/03/icomoon-300x219.png 300w, http://ecapy.com/wp-content/uploads/2013/03/icomoon-768x559.png 768w" sizes="(max-width: 954px) 100vw, 954px" /></p>
+<p>Y acá es donde IcoMoon me enamoró. Podes seleccionar de entre un basto listado de iconos cuales querés y luego descargar un iconfont o iconpack que pese lo mínimo.</p>
+<p>En este blog pueden ver en el footer que puse unos iconos muy lindos, pues son una iconfont que completa (css + .eot + .ttf + .svg + .woff) son 17.8kb (aunque estrictamente hablando en realidad por browser hablamos de una media de 5KB ya que no se cargan todas las variantes de la fuente).</p>
+<p>Úsenlo que esta muy bueno!.<br />
+Chau!</p>
+<p><a href="http://icomoon.io/app/" target="_blank">Enlace a la APP</a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Crear selectores dinámicos con scss/sass</title>
+		<link>http://ecapy.com/crear-selectores-dinamicos-con-scsssass/</link>
+		<pubDate>Mon, 11 Feb 2013 20:49:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1844</guid>
+		<description><![CDATA[Esta característica me encanta. SCSS/SASS (aka SCSS) nos permite crear selectores de forma dinámica. Esto quiere decir que podemos reutilizar de una forma mucho mas eficiente y elegante nuestras estructuras CSS. Por ejemplo, imagina que con CSS maquetas un menú que tiene esta estructura: [crayon-584436bd76501626716631/] [crayon-584436bd7650a322979283/] Ok, el problema con CSS es que reutilizar código&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-selectores-dinamicos-con-scsssass/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Esta característica me encanta. <a title="SCSS/SASS" href="http://sass-lang.com/">SCSS/SASS</a> (aka SCSS) nos permite crear selectores de forma dinámica.<br />
+Esto quiere decir que podemos reutilizar de una forma mucho mas eficiente y elegante nuestras estructuras CSS.</p>
+<p>Por ejemplo, imagina que con CSS maquetas un menú que tiene esta estructura:</p><pre class="crayon-plain-tag">&lt;div class="menu-principal"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="/home"&gt;Inicio&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre><p></p><pre class="crayon-plain-tag">#menu-principal {
+    border-bottom: 5px solid #0062A0;
+}
+#menu-principal ul {
+    border-bottom: 2px solid #F5E742;
+}
+#menu-principal ul li {
+    background: none repeat scroll 0 0 #ADFF2F;
+}
+#menu-principal ul li a {
+    color: #8B0000;
+}</pre><p>Ok, el problema con CSS es que reutilizar código imposible, simplemente no existe la encapsulación en el, y de ahí que hayan nacido compiladores CSS como SCSS (SASS).</p>
+<p>En nuestro ejemplo vamos a crear una versión de nuestro CSS en SCSS para poder reutilizar las reglas CSS sin importar como se llame el contenedor (en este caso vemos que se llama &#8220;menu-principal&#8221;):</p><pre class="crayon-plain-tag">@mixin dinamico($selector) {
+  #{$selector} {
+  }
+}
+
+@include dinamico("#primary-menu");</pre><p>Lo que hice acá es un mixin (una funcion) y luego la invoqué.<br />
+El resultado será:</p><pre class="crayon-plain-tag">#primary-menu {
+}</pre><p>La ventaja es obvia, podemos crear un mixin que genere estructuras comunes de menú (verticales, horizontales) sin importar el nombre del selector, siempre que el markup sea el mismo (ideal para Drupal, WordPress y cualquier programa que tenga un output estándar para sus estructuras HTML).</p>
+<p>Hagamos el ejemplo inicial en SCSS:</p><pre class="crayon-plain-tag">@mixin menu-vertical($menu-selector) {
+  #{$menu-selector} {
+    border-bottom: 5px solid #0062A0;
+    ul {
+      border-bottom: 2px solid #f5e742;
+      li {
+        background: #adff2f;
+        a {
+          color: #8b0000;
+        }
+      }
+    }
+  }
+}
+
+@include menu-vertical("#menu-principal");</pre><p>&nbsp;</p>
+<p>Listo, una vez declarado solo hemos usado <strong>&#8216;@include menu-vertical(&#8220;#menu-principal&#8221;);&#8217;</strong> para generar todo el CSS usando <strong>&#8220;#menu-principal&#8221;</strong> como selector base, aunque nada nos impide usar <strong>&#8216;@include menu-vertical(&#8220;.otro-menu-de-otro-proyecto&#8221;);&#8217;</strong> para aprovecharlo en otros proyectos.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>IE aplica degradé sobre imagenes transparentes [solución]</title>
+		<link>http://ecapy.com/ie-aplica-degrade-sobre-imagenes-transparentes-solucion/</link>
+		<pubDate>Mon, 29 Aug 2011 21:20:27 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1176</guid>
+		<description><![CDATA[Tengo que decirlo: es alucinante los bug que tiene IE (da igual la versión, nunca terminan de solucionarlos). El ultimo con el que me di es que si usas una imagen transparente para hacer un fondo transparente, se va a ver genial en todos los navegadores menos en Internet Explorer (7 y 8, el 9 no se) Así es&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/ie-aplica-degrade-sobre-imagenes-transparentes-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tengo que decirlo: es alucinante los bug que tiene IE (da igual la versión, nunca terminan de solucionarlos).</p>
+<p>El ultimo con el que me di es que si usas una imagen transparente para hacer un fondo transparente, se va a ver genial en todos los navegadores menos en Internet Explorer (7 y 8, el 9 no se)</p>
+<p>Así es como debería verse:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png"><img class="aligncenter size-full wp-image-1177" title="como-queda-al-usar-una-imagen-de-10x10" src="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png" alt="" width="440" height="248" srcset="http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10.png 440w, http://ecapy.com/wp-content/uploads/2011/08/como-queda-al-usar-una-imagen-de-10x10-300x169.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></a></p>
+<p>Y asi es como se ve en IE:</p>
+<p><img class="aligncenter size-full wp-image-1178" title="imagen-ie-degradando-imagen-transparente" src="http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente.png" alt="" width="440" height="248" srcset="http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente.png 440w, http://ecapy.com/wp-content/uploads/2011/08/imagen-ie-degradando-imagen-transparente-300x169.png 300w" sizes="(max-width: 440px) 100vw, 440px" /></p>
+<p>Curioso&#8230; bueno googleando un poco <a href="http://www.jerrilynnreeves.com/?p=416" target="_blank">di con la respuesta</a> y es básicamente un comportamiento no deseado. Al señor no se le ocurre mejor idea que degradar un fondo transparente que se repita (<strong>background-repeat: repeat;</strong>) siempre que la imagen sea de <strong>1px</strong>X<strong>1px</strong>&#8230;. raro. Eso me va a enseñar a querer optimizar imagenes <img src="https://s.w.org/images/core/emoji/2/72x72/1f61b.png" alt="😛" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>por si no quedó claro, hay que hacer la misma imagen pero con por tamaño &#8220;prudente&#8221;: <strong>10px</strong>X<strong>10px</strong> para que IE no crea que tiene que degradar la imagen ¬¬</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Solución al box-model en ie7 usando jQuery</title>
+		<link>http://ecapy.com/solucion-al-box-model-en-ie7-usando-jquery/</link>
+		<pubDate>Wed, 15 Jun 2011 08:16:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[IE te odio]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1082</guid>
+		<description><![CDATA[Sé que hay soluciones hechas para este problema en particular, pero pesa 33k y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230; Sabido es que a ie se la sudan los estándares y cuando los incorporan por lo general lo hacen taaarde. La propiedad CSS &#8220;box-sizing&#8221; no es la excepción. Ya&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/solucion-al-box-model-en-ie7-usando-jquery/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://code.google.com/p/ie7-js/" target="_blank">Sé que hay soluciones hechas para este problema en particular</a>, <strong>pero pesa 33k</strong> y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230;</p>
+<p>Sabido es que a <strong>ie se la sudan los estándares</strong> y cuando los incorporan por lo general lo hacen taaarde.<br />
+<span style="color: #993300;"><strong>La propiedad CSS &#8220;box-sizing&#8221; no es la excepción.</strong></span></p>
+<p>Ya sabemos que el siguiente CSS va a arreglar los desfases que se dan cuando un input que esta con un width:100%; dentro de un div que tiene un ancho fijado.</p><pre class="crayon-plain-tag">.elemento {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}</pre><p>Y como comente <a title="Como evitar que los input excedan el tamaño del div que los contiene" href="http://www.ecapy.com/como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/">en el post anterior</a>, esta propiedad no está soportada en ie7.</p>
+<p>Soluciones hay de todo tipo, pero lo cierto es que teniendo jQuery en todos mis desarrollos, se me hiso más que obvia la decisión de usar un script que arregle este bug en lugar de usar cosas más raras (<a href="http://stackoverflow.com/questions/1617667/what-is-difference-between-htc-and-js-file" target="_blank">archivos .htc por ejemplo</a>).</p>
+<p>Para implementar la solución solo necesitas poner este script:</p><pre class="crayon-plain-tag">$(document).ready(function () {
+    if ($.browser.msie &amp;&amp; ($.browser.version.substr(0, 1) == 7 || $("meta[content='IE=EmulateIE7']").length &gt; 0)) {
+        $(".ie7Fix-Box-model").each(function (i, v) {
+            var el = $(v);
+
+            //calculamos
+            var pL = el.css("paddingLeft").replace("px", "") != "" ? el.css("paddingLeft").replace("px", "") : 0;
+            var pR = el.css("paddingRight").replace("px", "") != "" ? el.css("paddingRight").replace("px", "") : 0;
+            var bLW = el.css("borderLeftWidth").replace("px", "") != "" ? el.css("borderLeftWidth").replace("px", "") : 0;
+            var bRW = el.css("borderRightWidth").replace("px", "") != "" ? el.css("borderRightWidth").replace("px", "") : 0;
+            var newSize = el.width() - (parseInt(pL, 10) + parseInt(pR, 10) + parseInt(bLW, 10) + parseInt(bRW, 10));
+
+            //le aplicamos el nuevo tamaño
+            el.width(newSize);
+        });
+    }
+});</pre><p>Y ponerle la class &#8220;<span style="color: #008000;"><strong>ie7Fix-Box-model</strong></span>&#8221; a todos los input que necesites arreglar.</p>
+<p><a href="http://www.ecapy.com/wp-content/uploads/2011/06/ie7Fix-Box-model.htm">Ver ejemplo</a> (vean el codigo fuente)</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Como evitar que los input excedan el tamaño del div que los contiene</title>
+		<link>http://ecapy.com/como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/</link>
+		<comments>http://ecapy.com/como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/#comments</comments>
+		<pubDate>Wed, 15 Jun 2011 01:00:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1074</guid>
+		<description><![CDATA[Siempre trato de ser practico y dar pocas explicaciones del porque llegamos a donde llegamos, así que si quieren saber porque falla pueden leer esto. Para lograr que un input pase de esto: A esto: Al input que les está dando problemas pónganle los el siguiente selector: [crayon-584436bd76b86602254537/] Básicamente va a sumar los padding y&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Siempre trato de ser practico y dar pocas explicaciones del porque llegamos a donde llegamos, así que si quieren saber porque falla pueden leer <span style="text-decoration: underline;"><a href="http://es.wikipedia.org/wiki/Internet_Explorer_box_model_bug" target="_blank">esto</a></span>.</p>
+<p>Para lograr que un input pase de esto:<a href="http://ecapy.com/wp-content/uploads/2011/06/box-modelie7-fail.png"><img class="aligncenter size-full wp-image-1079" title="box-modelie7-fail" src="http://ecapy.com/wp-content/uploads/2011/06/box-modelie7-fail.png" alt="" width="262" height="88" /></a></p>
+<p>A esto:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2011/06/box-modelie7-ok.png"><img class="aligncenter size-full wp-image-1080" title="box-modelie7-ok" src="http://ecapy.com/wp-content/uploads/2011/06/box-modelie7-ok.png" alt="" width="262" height="88" /></a></p>
+<p>Al input que les está dando problemas pónganle los el siguiente selector:</p><pre class="crayon-plain-tag">.elemento{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}</pre><p>Básicamente va a sumar los padding y bordes que tenga aplicado el &#8220;elemento&#8221; a lo que el navegador considera un width del 100%.</p>
+<p>NOTA: <span style="color: #993300;"><strong>en ie7 no funciona para nada esta solución pero tranquilos que otro día pongo alguna solución para él.</strong></span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>CSS hack: para poder usar &#8220;display: inline-block&#8221; en IE7</title>
+		<link>http://ecapy.com/css-hack-para-poder-usar-display-inline-block-en-ie7/</link>
+		<comments>http://ecapy.com/css-hack-para-poder-usar-display-inline-block-en-ie7/#comments</comments>
+		<pubDate>Wed, 15 Jun 2011 00:08:41 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[CSS]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1067</guid>
+		<description><![CDATA[Al grano: [crayon-584436bd77035101362376/]]]></description>
+				<content:encoded><![CDATA[<p>Al grano:</p><pre class="crayon-plain-tag">.elemento {
+            vertical-align: top;
+            zoom: 1;
+            *display: inline;
+        }</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/css-hack-para-poder-usar-display-inline-block-en-ie7/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

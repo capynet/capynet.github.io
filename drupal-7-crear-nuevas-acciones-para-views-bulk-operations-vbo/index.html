@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/drupal-7-crear-nuevas-acciones-para-views-bulk-operations-vbo/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:37:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Drupal 7: Crear nuevas acciones para Views bulk operations (VBO)</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Linux: Convertir imágenes de png a jpg desde la consola' href='../linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/index.html' />
+<link rel='next' title='Crear un Entityform programáticamente' href='../crear-un-entityform-programaticamente/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index37c7.html?p=2197' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedb048.json?url=http%3A%2F%2Fecapy.com%2Fdrupal-7-crear-nuevas-acciones-para-views-bulk-operations-vbo%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed2e1f-2?url=http%3A%2F%2Fecapy.com%2Fdrupal-7-crear-nuevas-acciones-para-views-bulk-operations-vbo%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-2197 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2961 active"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-2197" class="post-2197 post type-post status-publish format-standard has-post-thumbnail hentry category-drupal tag-drupal tag-drupal-7 tag-views-bulk-operations-vbo">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Drupal 7: Crear nuevas acciones para Views bulk operations (VBO)</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2013-05-23T14:56:34+00:00">23 May,  2013</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/drupal/index.html" rel="category tag">Drupal</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/drupal/index.html" rel="tag">Drupal</a>, <a href="../tag/drupal-7/index.html" rel="tag">Drupal 7</a>, <a href="../tag/views-bulk-operations-vbo/index.html" rel="tag">Views bulk operations (VBO)</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>VBO se puede alimentar de acciones desde tres lugares distintos: De las acciones del sistema, de las acciones que uno crea con rules (<a href="http://nodeone.se/da/node/775" target="_blank">vean http://nodeone.se/da/node/775</a>) y las acciones creadas por módulos de terceros.</p>
+<p>En este caso vamos a hacer lo tercero.</p>
+<p>El caso ideal para crear una action propia es cuando necesitas flexibilidad total. En el ejemplo que voy a compartir necesitaba que la acción tuviera valores por defecto:<br />
+<img class="size-full wp-image-2210 alignnone" src="../wp-content/uploads/2013/05/vbo_admin_settings_form.png" alt="vbo custom admin settings form" width="1091" height="772" srcset="http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form.png 1091w, http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form-300x212.png 300w, http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form-768x543.png 768w, http://ecapy.com/wp-content/uploads/2013/05/vbo_admin_settings_form-1024x725.png 1024w" sizes="(max-width: 1091px) 100vw, 1091px" /><br />
+Y un formulario para que el usuario pueda escribir algo distinto antes de realizar la acción:<br />
+<img class="size-full wp-image-2211 alignnone" src="../wp-content/uploads/2013/05/vbo_user_settings_form.png" alt="vbo custom user settings form" width="763" height="352" srcset="http://ecapy.com/wp-content/uploads/2013/05/vbo_user_settings_form.png 763w, http://ecapy.com/wp-content/uploads/2013/05/vbo_user_settings_form-300x138.png 300w" sizes="(max-width: 763px) 100vw, 763px" /></p>
+<h3>Hagamoslo!</h3>
+<p>El caso de uso es el siguiente: tengo un view con VBO que tiene que poder hacer una solicitudes de información para cada uno de los nodos (productos), pero dando la oportunidad de que el usuario pregunte algo conciso.</p>
+<p>Para esto, la implementación tiene 3 actores bien diferenciados:</p>
+<ol>
+<li>La acción</li>
+<li>El formulario de configuración que exponemos a la hora de configurar la acción en VBO</li>
+<li>El formulario que le mostramos al usuario para que pueda personalizar su solicitud</li>
+</ol>
+<h4>1: La acción:</h4>
+<p>Declarar una nueva action en Drupal es fácil, solo necesitas el <a href="http://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_action_info/7" target="_blank">hook_action_info()</a> y una función que haga de action:</p>
+		<div id="crayon-5844378ba47c0158106242" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+/**
+ * Implements hook_action_info().
+ */
+function mimodulo_action_info() {
+  $info['mimodulo_send_solinfo_action'] = array(
+    'type' =&gt; 'node',
+    'label' =&gt; t('Enviar solicitudes de información'),
+    'configurable' =&gt; TRUE,
+  );
+  return $info;
+}
+ 
+function mimodulo_send_solinfo_action($node, $context = array()) {
+  _mimodulo_send_solinfo($node, $context['user_data']);
+}
+ 
+/**
+ * Envía una solicitud de informacion por email.
+ */
+function _ecentros_send_solinfo($node, $user_data) {
+//  $user_data['tu_diras'];
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-2">2</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-4">4</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-6">6</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-8">8</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-10">10</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-12">12</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-14">14</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-16">16</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-18">18</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-20">20</div><div class="crayon-num" data-line="crayon-5844378ba47c0158106242-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47c0158106242-22">22</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844378ba47c0158106242-1"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-2"><span class="crayon-c"> * Implements hook_action_info().</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-3"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-4"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_action_info</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$info</span><span class="crayon-sy">[</span><span class="crayon-s">'mimodulo_send_solinfo_action'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'type'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'node'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'label'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Enviar solicitudes de información'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'configurable'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">TRUE</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$info</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-11"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-12"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-13"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action</span><span class="crayon-sy">(</span><span class="crayon-v">$node</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$context</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">_mimodulo_send_solinfo</span><span class="crayon-sy">(</span><span class="crayon-v">$node</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$context</span><span class="crayon-sy">[</span><span class="crayon-s">'user_data'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-15"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-16"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-17"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-18"><span class="crayon-c"> * Envía una solicitud de informacion por email.</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-19"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-20"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">_ecentros_send_solinfo</span><span class="crayon-sy">(</span><span class="crayon-v">$node</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$user_data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47c0158106242-21"><span class="crayon-c">//&nbsp;&nbsp;$user_data['tu_diras'];</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47c0158106242-22"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>No voy a entrar en detalles porque pueden leer lo necesario en hook_action_info(). Solo comentar que hemos declarado una nueva acción que solo se puede usar en contenidos de tipo nodo, y que es configurable. Que sea <strong>configurable quiere decir que le vamos a proporcionar un formulario al usuario para que haga algo</strong>. En mi caso el formulario tiene un textarea para que nos diga sobre que quiere informarse.</p>
+<h4>2: El formulario para el administrador:</h4>
+<p></p>
+		<div id="crayon-5844378ba47cf782524733" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+/**
+ * Implememts HOOK_ACTION_views_bulk_operations_form
+ */
+function mimodulo_send_solinfo_action_views_bulk_operations_form($settings, $entityType, $settings_dom_id) {
+ 
+  //establecemos los valores por defecto
+  $settings += array(
+    'tu_diras' =&gt; "",
+  );
+ 
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres puedes proveer un texto por defecto para el usuario'),
+    '#default_value' =&gt; $settings['tu_diras'],
+  );
+ 
+  return $form;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-2">2</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-4">4</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-6">6</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-8">8</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-10">10</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-12">12</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-14">14</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-16">16</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47cf782524733-18">18</div><div class="crayon-num" data-line="crayon-5844378ba47cf782524733-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844378ba47cf782524733-1"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-2"><span class="crayon-c"> * Implememts HOOK_ACTION_views_bulk_operations_form</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-3"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-4"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_views_bulk_operations_form</span><span class="crayon-sy">(</span><span class="crayon-v">$settings</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$entityType</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$settings_dom_id</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-5"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//establecemos los valores por defecto</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$settings</span><span class="crayon-h"> </span><span class="crayon-o">+=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'tu_diras'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-10"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#title'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Tu dirás'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#type'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'textarea'</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#description'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Si quieres puedes proveer un texto por defecto para el usuario'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#default_value'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$settings</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-17"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47cf782524733-18"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47cf782524733-19"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>VBO nos proporciona el &#8220;<strong>HOOK_ACTION</strong>&#8220;_views_bulk_operations_form las comillas son porque no es estrictamente un hook tradicional, pero vamos, que usa el mismo patrón, solo que en lugar de usar el nombre del modulo como &#8220;HOOK&#8221;, usamos el nombre de la función de la acción. En este ejemplo el nombre de la acción es &#8220;<em>mimodulo_send_solinfo_action</em>&#8220;.</p>
+<p>El resultado de este hook lo podemos ver cuando añadimos nuestra acción a las que va a tener un view (la primer imagen de este post).</p>
+<h4>3: El formulario para el usuario:</h4>
+<p></p>
+		<div id="crayon-5844378ba47d5727654988" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+/** * Implememts HOOK_ACTION_form */
+function mimodulo_send_solinfo_action_form($context) {
+  $context['settings'] += array(
+    'tu_diras' =&gt; "",
+  );
+
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres saber algo en particular por favor indicanoslo aquí'),
+    '#default_value' =&gt; $context['settings']['tu_diras'],
+  );
+
+  return $form;
+}
+
+/**
+ * Implememts HOOK_ACTION_validate
+ */
+function mimodulo_send_solinfo_action_validate($form, $form_state) {
+  //No hace falta validar
+}
+
+/**
+ * Implememts HOOK_ACTION_submit
+ */
+function mimodulo_send_solinfo_action_submit($form, $form_state) {
+  //Devolvemos un array formateado como a nosotros mas nos guste.
+  //Este array se va a enviar a la action dentro de $context['user_data']
+  return array(
+    'user_data' =&gt; array(
+      'tu_diras' =&gt; $form_state['values']['tu_diras']
+    ),
+  );
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-2">2</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-4">4</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-6">6</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-8">8</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-10">10</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-12">12</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-14">14</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-16">16</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-18">18</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-20">20</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-22">22</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-24">24</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-26">26</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-28">28</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-30">30</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-32">32</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47d5727654988-34">34</div><div class="crayon-num" data-line="crayon-5844378ba47d5727654988-35">35</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844378ba47d5727654988-1"><span class="crayon-c">/** * Implememts HOOK_ACTION_form */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-2"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_form</span><span class="crayon-sy">(</span><span class="crayon-v">$context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$context</span><span class="crayon-sy">[</span><span class="crayon-s">'settings'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">+=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'tu_diras'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-6">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47d5727654988-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#title'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Tu dirás'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#type'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'textarea'</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#description'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Si quieres saber algo en particular por favor indicanoslo aquí'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#default_value'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$context</span><span class="crayon-sy">[</span><span class="crayon-s">'settings'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-13">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-15"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-16">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47d5727654988-17"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-18"><span class="crayon-c"> * Implememts HOOK_ACTION_validate</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-19"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-20"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_validate</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-21"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//No hace falta validar</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-22"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-23">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-24"><span class="crayon-c">/**</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-25"><span class="crayon-c"> * Implememts HOOK_ACTION_submit</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-26"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-27"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_submit</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-28"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Devolvemos un array formateado como a nosotros mas nos guste.</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-29"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Este array se va a enviar a la action dentro de $context['user_data']</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-30"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'user_data'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'tu_diras'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-33"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47d5727654988-34"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47d5727654988-35"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Como ya comenté antes, al declarar una acción, si esta lleva configuración (&#8216;configurable&#8217; =&gt; TRUE), tenemos que proporcionar un formulario. Para implementarlo es la mar de simple, <strong>solo tienes que tratarlo como un FAPI</strong> normal y tenes que tener el cuenta la forma en la que nombras el formulario <em>HOOK_ACTION_form</em>, su validacion <em>HOOK_ACTION_validate</em> y el submit <em>HOOK_ACTION_submit</em>.</p>
+<p>En la declaración del formulario podemos ver que tenemos un parámetro &#8220;<em>$context</em>&#8220;. Bueno este parámetro contiene entre otras cosas, la configuración que hemos proporcionado en el momento que añadimos la action al view. Y la estamos usando para establecerle al usuario un valor por defecto.</p>
+<p>Y ya está, tenemos una action que funciona.</p>
+<h3>Ah y acá está todo junto</h3>
+<p></p>
+		<div id="crayon-5844378ba47dc335833250" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+/** * Implements hook_action_info(). */
+function mimodulo_action_info() {
+  $info['mimodulo_send_solinfo_action'] = array(
+    'type' =&gt; 'node',
+    'label' =&gt; t('Enviar solicitudes de información'),
+    'configurable' =&gt; TRUE,
+  );
+  return $info;
+}
+
+function mimodulo_send_solinfo_action($node, $context = array()) {
+  _mimodulo_send_solinfo($node, $context['user_data']);
+}
+
+/**
+ * Envía una solicitud de informacion por email.
+ */
+function _ecentros_send_solinfo($node, $user_data) {
+//  $user_data['tu_diras'];
+}
+
+/**
+ * Implememts HOOK_ACTION_form
+ */
+function mimodulo_send_solinfo_action_form($context) {
+
+  $context['settings'] += array(
+    'tu_diras' =&gt; "",
+  );
+
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres saber algo en particular por favor indicanoslo aquí'),
+    '#default_value' =&gt; $context['settings']['tu_diras'],
+  );
+
+  return $form;
+}
+
+/**
+ * Implememts HOOK_ACTION_validate
+ */
+function mimodulo_send_solinfo_action_validate($form, $form_state) {
+  //No hace falta validar
+}
+
+/**
+ * Implememts HOOK_ACTION_submit
+ */
+function mimodulo_send_solinfo_action_submit($form, $form_state) {
+  //Devolvemos un array formateado como a nosotros mas nos guste.
+  //Este array se va a enviar a la action dentro de $context['user_data']
+  return array(
+    'user_data' =&gt; array(
+      'tu_diras' =&gt; $form_state['values']['tu_diras']
+    ),
+  );
+}
+
+/**
+ * Implememts HOOK_ACTION_views_bulk_operations_form
+ */
+function mimodulo_send_solinfo_action_views_bulk_operations_form($settings, $entityType, $settings_dom_id) {
+
+  //establecemos los valores por defecto
+  $settings += array(
+    'tu_diras' =&gt; "",
+  );
+
+  $form['tu_diras'] = array(
+    '#title' =&gt; t('Tu dirás'),
+    '#type' =&gt; 'textarea',
+    '#description' =&gt; t('Si quieres puedes proveer un texto por defecto para el usuario'),
+    '#default_value' =&gt; $settings['tu_diras'],
+  );
+
+  return $form;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-2">2</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-4">4</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-6">6</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-8">8</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-10">10</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-12">12</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-14">14</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-16">16</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-18">18</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-20">20</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-22">22</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-24">24</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-26">26</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-28">28</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-30">30</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-32">32</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-34">34</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-36">36</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-38">38</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-40">40</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-42">42</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-44">44</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-46">46</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-48">48</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-50">50</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-52">52</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-53">53</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-54">54</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-55">55</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-56">56</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-57">57</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-58">58</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-59">59</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-60">60</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-61">61</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-62">62</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-63">63</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-64">64</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-65">65</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-66">66</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-67">67</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-68">68</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-69">69</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-70">70</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-71">71</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-72">72</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-73">73</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-74">74</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-75">75</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-76">76</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-77">77</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844378ba47dc335833250-78">78</div><div class="crayon-num" data-line="crayon-5844378ba47dc335833250-79">79</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844378ba47dc335833250-1"><span class="crayon-c">/** * Implements hook_action_info(). */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-2"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_action_info</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$info</span><span class="crayon-sy">[</span><span class="crayon-s">'mimodulo_send_solinfo_action'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'type'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'node'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'label'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Enviar solicitudes de información'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'configurable'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">TRUE</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$info</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-9"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-10">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47dc335833250-11"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action</span><span class="crayon-sy">(</span><span class="crayon-v">$node</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$context</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">_mimodulo_send_solinfo</span><span class="crayon-sy">(</span><span class="crayon-v">$node</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$context</span><span class="crayon-sy">[</span><span class="crayon-s">'user_data'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-13"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-14">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47dc335833250-15"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-16"><span class="crayon-c"> * Envía una solicitud de informacion por email.</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-17"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-18"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">_ecentros_send_solinfo</span><span class="crayon-sy">(</span><span class="crayon-v">$node</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$user_data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-19"><span class="crayon-c">//&nbsp;&nbsp;$user_data['tu_diras'];</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-20"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-21">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-22"><span class="crayon-c">/**</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-23"><span class="crayon-c"> * Implememts HOOK_ACTION_form</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-24"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-25"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_form</span><span class="crayon-sy">(</span><span class="crayon-v">$context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-26">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47dc335833250-27"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$context</span><span class="crayon-sy">[</span><span class="crayon-s">'settings'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">+=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'tu_diras'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-29"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-30">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47dc335833250-31"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#title'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Tu dirás'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-33"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#type'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'textarea'</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-34"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#description'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Si quieres saber algo en particular por favor indicanoslo aquí'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-35"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#default_value'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$context</span><span class="crayon-sy">[</span><span class="crayon-s">'settings'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-36"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-37">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-38"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-39"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-40">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47dc335833250-41"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-42"><span class="crayon-c"> * Implememts HOOK_ACTION_validate</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-43"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-44"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_validate</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-45"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//No hace falta validar</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-46"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-47">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-48"><span class="crayon-c">/**</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-49"><span class="crayon-c"> * Implememts HOOK_ACTION_submit</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-50"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-51"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_submit</span><span class="crayon-sy">(</span><span class="crayon-v">$form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-52"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Devolvemos un array formateado como a nosotros mas nos guste.</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-53"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Este array se va a enviar a la action dentro de $context['user_data']</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-54"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-55"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'user_data'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-56"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'tu_diras'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$form_state</span><span class="crayon-sy">[</span><span class="crayon-s">'values'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-57"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-58"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-59"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-60">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47dc335833250-61"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-62"><span class="crayon-c"> * Implememts HOOK_ACTION_views_bulk_operations_form</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-63"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-64"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_send_solinfo_action_views_bulk_operations_form</span><span class="crayon-sy">(</span><span class="crayon-v">$settings</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$entityType</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$settings_dom_id</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-65">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-66"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//establecemos los valores por defecto</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-67"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$settings</span><span class="crayon-h"> </span><span class="crayon-o">+=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-68"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'tu_diras'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-69"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-70">&nbsp;</div><div class="crayon-line" id="crayon-5844378ba47dc335833250-71"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$form</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-72"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#title'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Tu dirás'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-73"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#type'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'textarea'</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-74"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#description'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Si quieres puedes proveer un texto por defecto para el usuario'</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-75"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'#default_value'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$settings</span><span class="crayon-sy">[</span><span class="crayon-s">'tu_diras'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-76"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-77">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5844378ba47dc335833250-78"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$form</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844378ba47dc335833250-79"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../linux-convertir-imagenes-de-png-a-jpg-desde-la-consola/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../crear-un-entityform-programaticamente/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                                                                    
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/drupal-7-crear-nuevas-acciones-para-views-bulk-operations-vbo/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:37:19 GMT -->
+</html>

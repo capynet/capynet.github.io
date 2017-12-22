@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Mix de cosas &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/category/mix-de-cosas/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Hola ¿como estás?</title>
+		<link>http://ecapy.com/hola-como-estas/</link>
+		<comments>http://ecapy.com/hola-como-estas/#comments</comments>
+		<pubDate>Thu, 12 May 2016 23:58:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Pensálo]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3411</guid>
+		<description><![CDATA[Hace ya tiempo que no escribo con la regularidad de años anteriores, y no es que no tenga ganas, o que ya no tenga nada que compartir. Es simplemente que según creo yo, la vida misma en la época en la que vivimos no nos deja tiempo para disfrutar tanto de la vida como me gustaría.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hola-como-estas/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hace ya tiempo que no escribo con la regularidad de años anteriores, y no es que no tenga ganas, o que ya no tenga nada que compartir. Es simplemente que según creo yo, la vida misma en la época en la que vivimos no nos deja tiempo para disfrutar tanto de la vida como me gustaría.</p>
+<p>Si, una de las cosas que le da disfrute a mi vida es poder compartir conocimiento. Hablar de lo que me da la gana, y ese es uno de los motivos por los que comencé este blog.</p>
+<p>Hoy en día la verdad es que todo ha cambiado tanto en mi vida que a duras penas puedo dedicar tiempo a aprobar los comentarios que hacen aquí pero ya de responderlos ni hablar. Rara vez lo hago.</p>
+<p>Me gusta el siglo en el que he nacido, creo que mi vocación (la informática) es para lo que estoy hecho, pero este mundo, el del siglo 21 cansa y mas si te dedicas a la informática.</p>
+<p>En los últimos 19 años (es lo que llevo metido en esto) he aprendido un millón de cosas y muchas veces no por gusto. Antes podia dedicarle el tiempo al lenguaje de turno o a la tecnología novedosa, pero ya no.</p>
+<p>Ya no porque hay tantísimas cosas que no puedo, nadie puede. Durante mucho tiempo dije que soy un full stack, ese que sabe hacer de todo, pero ya no se si quiero seguir sabiendo tanto de tantas cosas, es agotador.</p>
+<p>Quiero poder aprender algo y que me sirva por años, no por meses. Quiero no tener que tragar libros y libros técnicos al año, quiero ser uno mas como todo el mundo que no es informático, que llega, hace su trabajo y se va, pero no puedo, no soy así.</p>
+<p>Pero algo tengo que hacer, porque el ritmo que llevo hace años no es sostenible en el tiempo.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hola-como-estas/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Solr 5.x</title>
+		<link>http://ecapy.com/instalar-solr-5-x/</link>
+		<pubDate>Wed, 17 Feb 2016 21:09:46 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3383</guid>
+		<description><![CDATA[Ha pasado algo de tiempo y Solr ya nos pone mas fácil hacer una instalación limpia y sin tanto dolor de cabeza como antes. Nuestro punto de partida a ser asumir que tienes java instalado en tu servidor. Descarguemos Solr Lo primero es descargarte el último Solr que encuentres. Para ello ve a http://apache.rediris.es/lucene/solr/ y descargate el solr-5.[loquesea].tgz Extraigamos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-5-x/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Ha pasado algo de tiempo y Solr ya nos pone mas fácil hacer una instalación limpia y sin tanto dolor de cabeza <a href="http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/">como antes</a>.</p>
+<p>Nuestro punto de partida a ser asumir que tienes java instalado en tu servidor.</p>
+<h2>Descarguemos Solr</h2>
+<p>Lo primero es descargarte el último Solr que encuentres. Para ello ve a <a href="http://apache.rediris.es/lucene/solr/">http://apache.rediris.es/lucene/solr/</a> y descargate el <strong>solr-5.<em>[loquesea]</em>.tgz</strong></p>
+<h2>Extraigamos el instalador</h2>
+<p>SI! Solr ya tiene instalador y se agradece enormemente. Se acabó el tener que desplegar el apache como un war en tomcat con toda la morralla que trae. Ahora simplemente vamos a extraer el instalador lanzando el siguiente comando:</p><pre class="crayon-plain-tag">tar xzf solr-5.[loquesea].tgz solr-5.[loquesea]/bin/install_solr_service.sh --strip-components=2</pre><p>El comando anterior extrae solamente <strong>install_solr_service.sh</strong> y nos deja el <strong>.tgz</strong> sin descomprimir.</p>
+<h2>Instalemos Solr</h2>
+<p>Ahora que tenemos el instalador extraído podemos lanzarlo:</p><pre class="crayon-plain-tag">sudo bash ./install_solr_service.sh solr-5.[loquesea].tgz</pre><p>Y presto! se va a instalar Solr en <strong>/opt/solr</strong>, te va a crear el script de manejo en <strong>/etc/init.d/solr</strong>, te va a crear el directorio donde se almacenan los indices en <strong>/var/solr/data</strong> y algunas cosas mas. Todo automático!</p>
+<p>Y eso es todo. ya podes tratar a Solr como si de un servicio mas se tratara:</p><pre class="crayon-plain-tag">sudo service solr status
+sudo service solr start
+sudo service solr stop
+sudo service solr restart</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Mysql: crear un usuario y asignarle una db por linea de comandos</title>
+		<link>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/</link>
+		<comments>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/#comments</comments>
+		<pubDate>Fri, 28 Aug 2015 13:01:25 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2944</guid>
+		<description><![CDATA[Te conectas a mysql con mysql -uroot -p y: [crayon-58443698491f5942750904/] &#160;]]></description>
+				<content:encoded><![CDATA[<p>Te conectas a mysql con <strong>mysql -uroot -p</strong> y:</p><pre class="crayon-plain-tag">CREATE USER 'miusuario'@'localhost' IDENTIFIED BY 'miclave';
+GRANT ALL PRIVILEGES ON laDB.* TO 'miusuario'@'localhost';
+FLUSH PRIVILEGES;</pre><p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Opiniones de los compradores, la nueva forma de comprar</title>
+		<link>http://ecapy.com/opiniones-de-los-compradores-la-nueva-forma-de-comprar/</link>
+		<pubDate>Mon, 20 Jul 2015 10:16:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2925</guid>
+		<description><![CDATA[Hasta hace un par de años, cuando cuando compraba por Internet mas que nada me fijaba en el precio, buscaba un par de reviews de blogs y si me parecía buen producto lo compraba. Pero ya hace un tiempo que me di cuenta de la importancia capital que tienen los comentarios de usuarios que compraron&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/opiniones-de-los-compradores-la-nueva-forma-de-comprar/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hasta hace un par de años, cuando cuando compraba por Internet mas que nada me fijaba en el precio, buscaba un par de reviews de blogs y si me parecía buen producto lo compraba.</p>
+<p>Pero ya hace un tiempo que me di cuenta de la importancia capital que tienen los comentarios de usuarios que compraron un producto. </p>
+<p>El &#8220;problema&#8221; que le veía a los reviews es que se enfocaban totalmente a las especificaciones o facilidad de uso del producto analizado, pero estas pruebas siempre se hacen con una persona, una limitada cantidad de tiempo y sin informar sobre lo que rodea al proceso de compra como por ejemplo el envío, servicio de atención al cliente, etc.<br />
+En cierta medida estas ultimas cosas no es posible meterlas en un review por el mero hecho de que el servicio técnico en un review es extremadamente raro que lo vayan a llamar para meterlo en un review. </p>
+<p>Hasta que un dia que estaba buscando un disco duro SSD en Amazon, di con dos que se parecían muchísimo y valían lo mismo. Asi que busque reviews por internet y&#8230; empataban. &#8220;<em>Ok, me compro cualquiera de los dos</em>&#8221; dije, <strong>pero antes de hacerlo ya que tenia las dos paginas abiertas decidí hacer scroll hacia abajo y llegue a las opiniones de usuarios</strong>. </p>
+<h3>Y AHÍ CAMBIÓ TODO</h3>
+<p>En un disco comentaban que en la vida real escribia mucho mas despacio los datos de lo que decían, que el vendedor que comercializaba el disco a través de amazon tardaba hasta dos semanas en entregarlo, que el disco les había fallado al cabo de un año, etc. Y en el otro disco las opiniones eran bastante distintas.</p>
+<p>Lo curioso de lo anterior es que los review de ambos discos los daban como igual de buenos&#8230;</p>
+<p>Entonces ya a partir de ese día las recomendaciones de los compradores han pasado a ser un requisito indispensable para mi a la hora de comprar cosas por internet. </p>
+<p>Para quien todavía no esté convencido de mi argumento anterior, tal vez deberían saber que el 90% de las compras de electrónica y electrodomésticos las hago por internet y en estos últimos dos años he dejado totalmente de lado las malas sorpresas que me solía encontrar cuando lo que había comprado no era lo que yo creía. </p>
+<p>Mi ultimo caso de compra fue este <a href="http://www.pccomponentes.com/asus_rt_ac87u_gigabit_router_dual_band_wireless.html" target="_blank">http://www.pccomponentes.com/asus_rt_ac87u_gigabit_router_dual_band_wireless.html</a> en el que los comentarios de los usuarios fueron decisivos para mi. (necesitaba saber a ciencia cierta cuan bueno era el router y si era realmente verdad que me iba a ir de lujo con fibra óptica de Movistar). Vean la parte de comentarios de los usuarios, entre los cuales yo ya he dejado el mio con la esperanza de que el próximo que lo compre pueda servirse de mi humilde experiencia.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Sigo acá!</title>
+		<link>http://ecapy.com/sigo-aca/</link>
+		<pubDate>Wed, 10 Dec 2014 17:55:39 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2851</guid>
+		<description><![CDATA[Solo es que estoy ocupado (mucho mucho mucho), pero apenas tenga un hueco meto algún post que ya tengo ganas!]]></description>
+				<content:encoded><![CDATA[<p>Solo es que estoy ocupado (mucho mucho mucho), pero apenas tenga un hueco meto algún post que ya tengo ganas!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Setear variables de configuración de tomcat en Ubuntu/Debian</title>
+		<link>http://ecapy.com/setear-variables-de-configuracion-de-tomcat-en-ubuntudebian/</link>
+		<pubDate>Thu, 04 Sep 2014 23:03:56 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2763</guid>
+		<description><![CDATA[Esto es casi una nota mental 🙂 [crayon-5844369849671275002060/]]]></description>
+				<content:encoded><![CDATA[<p>Esto es casi una nota mental <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">sudo nano /etc/default/tomcat7</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>¿Drupal?</title>
+		<link>http://ecapy.com/drupal-para-mi/</link>
+		<comments>http://ecapy.com/drupal-para-mi/#comments</comments>
+		<pubDate>Sun, 09 Jun 2013 23:39:55 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Pensálo]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2240</guid>
+		<description><![CDATA[Hola. A los pocos que siguen mi blog saben de sobra que casi desde sus comienzos me he dedicado a escribir sobre Drupal. Dije casi porque también suelo perder la cabeza por cosas que están buenas y quiero compartir, pero al final termino volviendo a Drupal y ya asi casi llevo 3 años y 1/2.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-para-mi/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola. A los pocos que siguen mi blog saben de sobra que casi desde sus comienzos me he dedicado a escribir sobre Drupal. Dije casi porque también suelo perder la cabeza por cosas que están buenas y quiero compartir, pero al final termino volviendo a Drupal y ya asi casi llevo 3 años y 1/2.</p>
+<p>Me recuerdo a mi mismo en mis comienzos compartiendo cosas que eran el dia a dia para mi, y eran cosas muy basicas como <a title="Copié drupal a mi localhost y solo funciona la pagina principal." href="http://ecapy.com/copie-drupal-a-mi-localhost-y-solo-funciona-la-pagina-principal/" target="_blank">&#8220;Copié drupal a mi localhost y solo funciona la pagina principal.&#8221;</a>, <a title="Invocar un block programaticamente en Drupal 6" href="http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/" target="_blank">&#8220;Invocar un block programaticamente en Drupal 6&#8221;</a>, <a title="Agregar usuarios programaticamente en Drupal 6" href="http://ecapy.com/agregar-usuarios-programaticamernte-en-drupal-6/" target="_blank">&#8220;Agregar usuarios programaticamente en Drupal 6&#8221;</a>, y otras yerbas.</p>
+<p>Y me gustaba mucho tener la sensación de que alguien se iba a beneficiar de mi experiencia. A su vez yo mismo he aprendido kilos de <a title="http://www.cocinandocondrupal.net/" href="http://www.cocinandocondrupal.net/">http://www.cocinandocondrupal.net/</a>, <a title="http://cuencodigital.com/" href="http://cuencodigital.com/" target="_blank">http://cuencodigital.com/</a>, <a title="http://carlos.rinconsanchez.com/" href="http://carlos.rinconsanchez.com/" target="_blank">Blog de Carlos Rincón</a>, <a title="http://cambrico.net/" href="http://cambrico.net/" target="_blank">http://cambrico.net/</a>, <a title="http://ericlondon.com/" href="http://ericlondon.com/" target="_blank">http://ericlondon.com/</a> por mencionar a algunos.</p>
+<p>Pero avancé, y mis articulos se volvieron para usuarios tal vez no tan noveles en el mundo de Drupal. Imagino que es normal al fin y al cabo&#8230;</p>
+<p>Y me pregunto ¿Sigue haciendo falta que escribamos sobre temas &#8220;básicos&#8221;?. Yo creo que no, Creo que estuvimos aportando nuestro granito de arena en el momento en el que hizo falta, cuando Drupal estaba entrando en el mundo hispanohablante con fuerza y necesitaba ser promulgado. Hoy Drupal es comunidad y hay muchos lugares desde donde aprender.</p>
+<p>Hoy estoy contento y nostálgico a la vez. Contento porque Drupal para mi se ha convertido en trabajo, amigos, y comunidad entre otras cosas, y nostálgico porque miro hacia atrás y no puedo evitar ver cómo las cosas han cambiado. Creo que podría decir que es la sensación que tengo cuando me recuerdo siendo un niño.</p>
+<p>En fin, si alguien está leyendo esto espero que no piense que estoy mal de la cabeza. Es solo que me ha dado por hacer memoria de como comencé con Drupal y me vino todo esto a la mente.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-para-mi/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Nuevo dominio: ecapy.com</title>
+		<link>http://ecapy.com/nuevo-dominio-ecapy-com/</link>
+		<pubDate>Mon, 04 Feb 2013 04:54:01 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1830</guid>
+		<description><![CDATA[Lo tengo que reconocer, el &#8220;&#8211;&#8221; en e-capy.com fue una mala idea. Tanto así que estoy estrenando el día de hoy a las 5.45am ecapy.com!!! Los que me tengan en RSS por favor suscribanse a esta nueva URL. Fue duro, como pueden ver también hice un diseño nuevo, cambie el resaltador de sintaxis de código&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/nuevo-dominio-ecapy-com/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Lo tengo que reconocer, el &#8220;<strong>&#8211;</strong>&#8221; en <strong>e-capy.com</strong> fue una mala idea. Tanto así que estoy estrenando el día de hoy a las 5.45am ecapy.com!!!</p>
+<p>Los que me tengan en RSS por favor suscribanse a esta nueva URL.</p>
+<p>Fue duro, como pueden ver también hice un diseño nuevo, cambie el resaltador de sintaxis de código y repasé todo el contenido del blog&#8230; hasta me hice un plugin para wordpress&#8230; (La ironía aquí es que soy &#8220;Drupalero&#8221;), pero ya en el próximo post comentaré tecnicismos. </p>
+<p>Faltan aún un par de cosas, pero creo que como está ahora mismo ya podía ver la luz.</p>
+<p>Chau!</p>
+<p>pd: Quien detecte algún tipo de error en el site por favor díganmelo, que no solo cambie de dominio sino que también de servidor y no lo tengo muy testado.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hacer proxy con Apache para aplicaciones node.js</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/</link>
+		<comments>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comments</comments>
+		<pubDate>Thu, 24 Jan 2013 14:56:48 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[node.js]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1672</guid>
+		<description><![CDATA[Tenemos una app desarrollada en nodejs que corre en el puerto 4000 de nuestro servidor y queremos exponerla por el puerto 80 para que la gente pueda usarla. El problema obvio es que por lo general tenemos corriendo un apache, nginx o cualquier otro servidor http. La solución es usar los módulos de proxy que incluyen cada uno de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tenemos una app desarrollada en nodejs que<strong> corre en el puerto 4000</strong> de nuestro servidor<strong> y queremos exponerla por el puerto 80</strong> para que la gente pueda usarla. El problema obvio es que por lo general tenemos corriendo un apache, nginx o cualquier otro servidor http.</p>
+<p>La solución es usar los módulos de proxy que incluyen cada uno de estos servidores web. Hoy puntualmente lo vamos a hacer con Apache.</p>
+<p>Habilitamos los modulos <strong>proxy</strong> y <strong>proxy_http</strong> para permitir el reenvío de peticiones HTTP y HTTPS:<br />
+[console]<br />
+sudo a2enmod proxy<br />
+sudo a2enmod proxy_http<br />
+[/console]</p>
+<p>Luego nos queda crear un vhost:<br />
+[console]sudo nano /etc/apache2/sites-available/mipaginaweb.com[/console]</p>
+<p>Y ponerle lo siguiente:</p>
+<p>[apacheconf]</p>
+<p>ServerName mipaginaweb.com<br />
+ServerAlias www.mipaginaweb.com</p>
+<p>ProxyRequests off</p>
+<p>Order deny,allow<br />
+Allow from all</p>
+<p>&lt;location &#8220;/&#8221;&gt;<br />
+ProxyPass http://localhost:4000/ retry=0<br />
+ProxyPassReverse http://localhost:4000/</p>
+<p>[/apacheconf]</p>
+<p>Habilitamos nuestro nuevo vhost:<br />
+[console]sudo a2ensite mipaginaweb.com[/console]</p>
+<p>Hemos terminado. reiniciamos apache y a correr!<br />
+[console]sudo service apache2 restart[/console]</p>
+<p><span style="color: #993300;" data-mce-mark="1"><strong>Bonus</strong></span>: si estas en un entorno de desarrollo y quieres acceder a <em>mipaginaweb.com</em>, edita tu archivo hosts (<strong>sudo nano /etc/hosts</strong>) y añade tu nuevo dominio:</p>
+<p>[console]<br />
+127.0.0.1 localhost<br />
+127.0.0.1 mipaginaweb.com www.mipaginaweb.com<br />
+[/console]</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Ping: sigo acá</title>
+		<link>http://ecapy.com/ping-sigo-aca-2/</link>
+		<pubDate>Sun, 02 Dec 2012 18:20:28 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1647</guid>
+		<description><![CDATA[Hola, este raro-post es para hacer &#8220;ping&#8221; y decir que acá sigo, que no abandoné el blog, sino que he tenido unos meses increíblemente movidos. Ya me hice un poco a la nueva situación, por lo que espero poder ir retomando el blog y postear el millón y medio de cosas que tengo apiladas&#8230; Bueno ya saben, sigo por acá. Hasta&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/ping-sigo-aca-2/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola, este raro-post es para hacer &#8220;ping&#8221; y decir que acá sigo, que no abandoné el blog, sino que he tenido unos meses increíblemente movidos. Ya me hice un poco a la nueva situación, por lo que espero poder ir retomando el blog y postear el millón y medio de cosas que tengo apiladas&#8230;</p>
+<p>Bueno ya saben, sigo por acá. Hasta pronto.</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

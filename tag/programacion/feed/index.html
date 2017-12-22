@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Programación &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/programacion/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Drupal: Migrate</title>
+		<link>http://ecapy.com/drupal-migrate/</link>
+		<comments>http://ecapy.com/drupal-migrate/#comments</comments>
+		<pubDate>Wed, 12 Jun 2013 18:06:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[Migraciones]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2265</guid>
+		<description><![CDATA[Migrate es genial, a resumidas cuentas te permite importar información desde varias fuentes. Así de simple. En este post voy tocar dos cosas muy por encima. Qué puede importar y como implementar Migrate (este modulo no importa nada por si mismo) Primero lo primero: ¿Desde donde te deja importar información? SQL (Cualquier DB que Drupal&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-migrate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="https://drupal.org/project/migrate" target="_blank">Migrate</a> es genial, a resumidas cuentas te permite importar información desde varias fuentes. Así de simple.<br />
+En este post voy tocar dos cosas muy por encima. Qué puede importar y como implementar Migrate (este modulo no importa nada por si mismo)</p>
+<p>Primero lo primero:</p>
+<h3>¿Desde donde te deja importar información?</h3>
+<ul>
+<li><a title="Drupal: Importar y sincronizar desde una DB con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-una-db-con-migrate/">SQL</a> (Cualquier DB que Drupal sea capaz de leer)</li>
+<li><a title="Drupal: Importar y sincronizar desde un XML local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-xml-local-o-remoto-con-migrate/">XML</a></li>
+<li>List</li>
+<li><a title="Drupal: Importar y sincronizar desde un CSV con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-csv-con-migrate/">CSV</a></li>
+<li><a title="Drupal: Importar y sincronizar desde un JSON local o remoto con Migrate" href="http://ecapy.com/drupal-importar-y-sincronizar-desde-un-json-local-o-remoto-con-migrate/">JSON</a></li>
+<li>MSSQL (Microsoft SQL Server)</li>
+<li>Oracle</li>
+<li>Multi items</li>
+</ul>
+<p>Y esas son las fuentes que provee Migrate, pero <a href="https://drupal.org/node/1152164" target="_blank">cualquier módulo puede añadir nuevas fuentes</a> sin mayor problema. pueden ver en detalle cada una de las clases que implementa los sources en <a href="https://drupal.org/node/1006986" target="_blank">https://drupal.org/node/1006986</a></p>
+<h3>¿Que puede crear con la información que importa?</h3>
+<ul>
+<li>Nodos</li>
+<li>Comentarios</li>
+<li>Archivos</li>
+<li>Menus</li>
+<li>Items de menu</li>
+<li>Roles</li>
+<li>Tablas en la DB</li>
+<li>Terminos</li>
+<li>Usuarios</li>
+</ul>
+<p>Y una vez mas esas son las fuentes que provee Migrate, pero cualquier módulo puede añadir nuevos destinos. por ejemplo algun modulo puede proveer la implementación para crear profiles de Profile2. La información en detalle de cada una de las clases que implementan estos &#8220;destinos&#8221; la pueden ver en <a href="https://drupal.org/node/1006988" target="_blank">https://drupal.org/node/1006988</a></p>
+<p>Ok ahora vamos a implementar Migrate en un módulo. Para hacerlo no puede ser más fácil. <strong>Solo necesitas 2 cosas</strong>: un hook y extender de una clase<br />
+Nuestro módulo de ejemplo se llama &#8220;<em>migrate_posts</em>&#8221; que va a copiar todos los posts que hay en mi blog (WordPress) usando como fuente la DB (El source es SQL en este caso)</p>
+<p>La onda en la siguiente:<br />
+Primero tenemos que crear un archivo <em>migrate_posts.module</em> y dentro de él definir el <em>hook_migrate_api()</em> que es el que le da la información necesaria a Migrate sobre nuestra implementación:</p><pre class="crayon-plain-tag">/** * Implements hook_migrate_api(). */
+function migrate_posts_migrate_api() {
+  $api = array(
+    'api' =&gt; 2,
+    'groups' =&gt; array(
+      'wordpress' =&gt; array(
+        'title' =&gt; t('Importación de posts desde WordPress'),
+      ),
+    ),
+    'migrations' =&gt; array(
+      'WPFromDB' =&gt; array(
+        'class_name' =&gt; 'WPMigrationFromDB',
+        'group_name' =&gt; 'wordpress',
+      ),
+    ),
+  );
+  return $api;
+}</pre><p>El HOOK necesita 3 cosas:<br />
+<strong>Que le digas que API vas a usar</strong> (Siempre es la 2 salvo que cuando leas este artículo hayan sacado la versión 3.x del módulo). <strong>Que le indiques un grupo</strong> y por ultimo <strong>que le indiques cual es tu migrator</strong></p>
+<p>Desglosemos esto:<br />
+Un grupo es simplemente un &#8220;tag&#8221; donde vas a agrupar todos los migrators que vos créas conveniente. Por ejemplo, si quisieras crear un importador de posts y otro importador a parte para los comentarios, entonces meterías los dos migrators dentro del grupo de &#8220;wordpress&#8221;.<br />
+En &#8220;migrations&#8221; definimos el nombre máquina de nuestro importador (WPFromDB), el nombre de la clase que va a realizar la acción (WPMigrationFromDB) y el grupo al que pertenece.</p>
+<p>Lo último que queda por aclarar es que &#8220;migrate_posts<em>.migrate.inc</em>&#8221; es la convención que usa Migrate, por lo que no hace falta hacer un require/include en tu .module</p>
+<p>Ya hemos terminado con el primer paso, vamos al segundo. La clase de importacion.<br />
+Creamos un archivo .inc que es el que va a contener la clase. por ejemplo &#8220;posts-migrator-from-db.inc&#8221; y en el .info de tu modulo lo agregas (files[] = posts-migrator-from-db.inc)<br />
+Y dentro de él ponemos la clase:</p><pre class="crayon-plain-tag">class WPMigrationFromDB extends Migration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+
+    // #############################################
+    // Definición del source (desde donde vamos a obtener la información)
+    Database::addConnectionInfo('temporal', 'MI_DB', array(
+      'driver' =&gt; 'mysql',
+      'database' =&gt; 'MI_DB',
+      'username' =&gt; 'USUARIO',
+      'password' =&gt; 'CONTRASEÑA',
+      'host' =&gt; 'localhost',
+    ));
+
+    $query = Database::getConnection('MI_DB', 'temporal')
+      -&gt;select('wp_posts', 'posts')
+      -&gt;fields('posts', array(
+        'id',
+        'post_date',
+        'post_modified',
+        'post_title',
+        'post_content',
+      ))
+      -&gt;condition("post_type", "post", "=")
+      -&gt;condition("post_status", "publish", "=");
+
+    $this-&gt;source = new MigrateSourceSQL($query);
+
+    // #############################################
+    // Definición del destino (lo que se va a crear con los datos conseguidos)
+    $this-&gt;destination = new MigrateDestinationNode('page');
+
+    // #############################################
+    // Indicamos cual es el identificador UNICO de cada elemento que se consiga desde la fuente
+    $this-&gt;map = new MigrateSQLMap($this-&gt;machineName,
+      array(
+        'id' =&gt; array(
+          'type' =&gt; 'int',
+          'unsigned' =&gt; TRUE,
+          'not null' =&gt; TRUE,
+        )
+      ),
+      MigrateDestinationNode::getKeySchema()
+    );
+
+    // #############################################
+    // Mapeo de los valores del origen y destino
+    $this-&gt;addFieldMapping('uid')-&gt;defaultValue(1);
+    $this-&gt;addFieldMapping('created', 'post_date');
+    $this-&gt;addFieldMapping('changed', 'post_modified');
+    $this-&gt;addFieldMapping('title', 'post_title');
+    $this-&gt;addFieldMapping('body', 'post_content');
+  }
+}</pre><p>No voy a profundizar en la implementación de la clase porque este post es solo para demostrar lo fácil que es implementar Migrate. Ya vendrán post hablando de las clases.</p>
+<p>Y básicamente te eso es todo lo que necesitas para implementar Migrate.</p>
+<p>Bueno, ahora usamos drush<br />
+Limpiamos el cache para que Drupal lea el .info de nuestro módulo y sepa que &#8220;posts-migrator-from-db.inc&#8221; existe</p><pre class="crayon-plain-tag">drush cc all</pre><p>Registramos nuestro migrator:</p><pre class="crayon-plain-tag">drush migrate-register</pre><p>Revisamos que el migrator se haya registrado:</p><pre class="crayon-plain-tag">drush migrate-status</pre><p>Que debería devolver:</p><pre class="crayon-plain-tag">Group: wordpress Total Imported Unprocessed Status Last imported
+WPFromDB 169 0 169 Idle 2013-06-12 17:59:17</pre><p>Y si todo está ok, podemos importar nuestros posts:</p><pre class="crayon-plain-tag">drush migrate-import WPFromDB</pre><p>Y para deshacer la importación:</p><pre class="crayon-plain-tag">drush migrate-rollback WPFromDB</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-migrate/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Crear selectores dinámicos con scss/sass</title>
+		<link>http://ecapy.com/crear-selectores-dinamicos-con-scsssass/</link>
+		<pubDate>Mon, 11 Feb 2013 20:49:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1844</guid>
+		<description><![CDATA[Esta característica me encanta. SCSS/SASS (aka SCSS) nos permite crear selectores de forma dinámica. Esto quiere decir que podemos reutilizar de una forma mucho mas eficiente y elegante nuestras estructuras CSS. Por ejemplo, imagina que con CSS maquetas un menú que tiene esta estructura: [crayon-584436cb60680789629736/] [crayon-584436cb60693670772446/] Ok, el problema con CSS es que reutilizar código&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-selectores-dinamicos-con-scsssass/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Esta característica me encanta. <a title="SCSS/SASS" href="http://sass-lang.com/">SCSS/SASS</a> (aka SCSS) nos permite crear selectores de forma dinámica.<br />
+Esto quiere decir que podemos reutilizar de una forma mucho mas eficiente y elegante nuestras estructuras CSS.</p>
+<p>Por ejemplo, imagina que con CSS maquetas un menú que tiene esta estructura:</p><pre class="crayon-plain-tag">&lt;div class="menu-principal"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="/home"&gt;Inicio&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre><p></p><pre class="crayon-plain-tag">#menu-principal {
+    border-bottom: 5px solid #0062A0;
+}
+#menu-principal ul {
+    border-bottom: 2px solid #F5E742;
+}
+#menu-principal ul li {
+    background: none repeat scroll 0 0 #ADFF2F;
+}
+#menu-principal ul li a {
+    color: #8B0000;
+}</pre><p>Ok, el problema con CSS es que reutilizar código imposible, simplemente no existe la encapsulación en el, y de ahí que hayan nacido compiladores CSS como SCSS (SASS).</p>
+<p>En nuestro ejemplo vamos a crear una versión de nuestro CSS en SCSS para poder reutilizar las reglas CSS sin importar como se llame el contenedor (en este caso vemos que se llama &#8220;menu-principal&#8221;):</p><pre class="crayon-plain-tag">@mixin dinamico($selector) {
+  #{$selector} {
+  }
+}
+
+@include dinamico("#primary-menu");</pre><p>Lo que hice acá es un mixin (una funcion) y luego la invoqué.<br />
+El resultado será:</p><pre class="crayon-plain-tag">#primary-menu {
+}</pre><p>La ventaja es obvia, podemos crear un mixin que genere estructuras comunes de menú (verticales, horizontales) sin importar el nombre del selector, siempre que el markup sea el mismo (ideal para Drupal, WordPress y cualquier programa que tenga un output estándar para sus estructuras HTML).</p>
+<p>Hagamos el ejemplo inicial en SCSS:</p><pre class="crayon-plain-tag">@mixin menu-vertical($menu-selector) {
+  #{$menu-selector} {
+    border-bottom: 5px solid #0062A0;
+    ul {
+      border-bottom: 2px solid #f5e742;
+      li {
+        background: #adff2f;
+        a {
+          color: #8b0000;
+        }
+      }
+    }
+  }
+}
+
+@include menu-vertical("#menu-principal");</pre><p>&nbsp;</p>
+<p>Listo, una vez declarado solo hemos usado <strong>&#8216;@include menu-vertical(&#8220;#menu-principal&#8221;);&#8217;</strong> para generar todo el CSS usando <strong>&#8220;#menu-principal&#8221;</strong> como selector base, aunque nada nos impide usar <strong>&#8216;@include menu-vertical(&#8220;.otro-menu-de-otro-proyecto&#8221;);&#8217;</strong> para aprovecharlo en otros proyectos.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Montar un servidor de git</title>
+		<link>http://ecapy.com/montar-un-servidor-de-git/</link>
+		<comments>http://ecapy.com/montar-un-servidor-de-git/#comments</comments>
+		<pubDate>Sun, 29 May 2011 12:30:45 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Trabajo]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1045</guid>
+		<description><![CDATA[La configuración que vamos a usar para configurar el servidor de git es de las mas básicas y no repara en la configuración de usuarios -cualquier usuario con acceso SSH nos sirve-. Mas bien esta configuración es para montar un servidor que podamos usar en nuestra casa o en un grupo de usuarios de confianza. SERVIDOR: Primero lo primero, instalar git y la&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-un-servidor-de-git/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La configuración que vamos a usar para configurar el servidor de git es de las mas básicas y no repara en la configuración de usuarios -cualquier usuario con acceso SSH nos sirve-. Mas bien esta configuración es para montar un servidor que podamos usar en nuestra casa o en un grupo de usuarios de confianza.</p>
+<p><span style="text-decoration: underline; color: #993300;"><strong>SERVIDOR:</strong></span></p>
+<p>Primero lo primero, instalar git y la gui de git (es opcional la gui, pero si estas usando una distro con interfaz gráfica te va a venir bien tenerla).</p><pre class="crayon-plain-tag">&lt;span style=&quot;font-family: 'Segoe UI', Calibri, 'Myriad Pro', Myriad, 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: normal;&quot;&gt;&lt;a style=&quot;color: #0071bb; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;&quot; href=&quot;http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/&quot;&gt;s&lt;/a&gt;udo apt-get install git-core git-gui&lt;/span&gt;</pre><p>Bien, ahora que tenemos git instalado, necesitamos decidir donde vamos a almacenar todos los repositorios que creemos. En mi caso me hice una carpeta llamada git en mi home:</p><pre class="crayon-plain-tag">cd /home/capy
+mkdir git</pre><p>Listo, de momento terminamos con el servidor. Vamos al cliente:</p>
+<p><strong><span style="text-decoration: underline;"><span style="color: #993300;">CLIENTE:</span></span></strong></p>
+<p>Mi cliente es un Windows, pero los pasos de la configuración son igualmente validos sobre cualquier linux o mac.</p>
+<p>primero te vas a crear una carpeta donde vas a tener tu proyecto., o si ya la tenes partimos de ahí. En mi caso es una pagina web y voy a crear en mi windows la carpeta &#8220;<strong>ecapy.com</strong>&#8221;</p>
+<p>Cuando tengas la carpeta creada o localizada entramos, hacemos clic derecho y seleccionamos del menú contextual &#8220;Git Bash&#8221;. Con la consola ya abierta vamos a tirar el siguiente comando para indicarle a git que cree un repositorio con estos archivos (los de tu proyecto):</p><pre class="crayon-plain-tag">git init &amp;amp;&amp;amp; git add * &amp;amp;&amp;amp; git commit -m &quot;Primer commit&quot;</pre><p>Ya tenemos un repositorio de git en nuestro cliente y vamos a copiarlo al servidor en dos pasos.</p>
+<p><strong>Paso 1:</strong> le decimos a git que haga una copia limpia de nuestro repositorio:</p><pre class="crayon-plain-tag">git clone --bare ecapy.com ecapy.com.git</pre><p>lo anterior habrá creado una carpeta nueva llamada &#8220;<strong>ecapy.com.git</strong>&#8221; en nuestro repositorio local.</p>
+<p><strong>Paso 2:</strong> copiemos nuestro repositorio al servidor:</p><pre class="crayon-plain-tag">scp -r ecapy.com.git capy@192.168.1.38:/home/capy/git/</pre><p>Hemos terminado con esta parte. Ya podemos borrar la carpeta &#8220;<strong>ecapy.com.git</strong>&#8220;.</p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; color: #993300;"><strong>SERVIDOR:</strong></span></p>
+<p>Vamos al servidor que tenemos que configurar un par de cosas mas.</p>
+<p>Entramos en la carpeta que copiamos hace un instante y aplicamos un poco de configuración:</p><pre class="crayon-plain-tag">cd /home/capy/git/ecapy.com
+git config core.sharedrepository 1 &amp;amp;&amp;amp; git config receive.denyNonFastforwards true &amp;amp;&amp;amp; find objects -type d -exec chmod 02770 {} ;</pre><p>Volvamos al cliente:</p>
+<h4 style="text-align: left;"><span style="text-decoration: underline;"><strong>Ya tenes un repositorio remoto que funciona correctamente. ya podes clonarte de el.</strong></span></h4>
+<p>&nbsp;</p>
+<p><span style="color: #993300;"><strong>NOTA 1:</strong></span> la carpeta que usaste en el cliente para crear el repositorio en el servidor no tiene configurado cual es su origin, por lo que deberías lanzar por consola:</p><pre class="crayon-plain-tag">git remote add origin capy@192.168.1.38:/home/capy/git/ecapy.com.git</pre><p><strong>O simplemente borra esa carpeta y clonate una nueva que ya tiene configurado el origin:</strong></p><pre class="crayon-plain-tag">git clone capy@192.168.1.38:/home/capy/git/ecapy.com.git</pre><p>&nbsp;</p>
+<p><span style="color: #993300;"><strong>NOTA 2:</strong></span> Muchísimo cuidado con lo siguiente: después de seguir estas instrucciones vas a ver que estas trabajando en la rama principal de tu repositorio&#8230; crea urgente una rama y cámbiate a ella.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/montar-un-servidor-de-git/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Que frase! y que cierta!</title>
+		<link>http://ecapy.com/que-frase-y-que-cierta/</link>
+		<pubDate>Sun, 06 Mar 2011 14:04:20 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Pensálo]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=856</guid>
+		<description><![CDATA[&#8220;La mayoría de los programadores no programa porque espera el sueldo o la adulación del público, si no porque es divertido programar&#8221; &#8211; Linus Torvalds]]></description>
+				<content:encoded><![CDATA[<p>&#8220;La mayoría de los programadores no programa porque espera el sueldo o la adulación del público, si no porque es divertido programar&#8221;<br />
+&#8211; Linus Torvalds</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Como ver las variables disponibles en una plantilla .tpl.php (PHPTemplate)</title>
+		<link>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/</link>
+		<comments>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/#comments</comments>
+		<pubDate>Mon, 30 Aug 2010 23:11:43 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[PHPTemplate]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=575</guid>
+		<description><![CDATA[Otro de esos TIP que nos vienen sorprendente mente bien :). Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo()&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Otro de esos TIP que nos vienen sorprendente mente bien :).</p>
+<p>Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo() seguro que ahi está, pero hasta que no lo haces no podes saber siquiera que existe.</p>
+<p>Bueno basta de intro, vamos a un ejemplo rapido y claro:</p>
+<p>Si pones esta función en la plantilla que querés investigar, vas a poder ver un array (<strong>$variablesDisponibles</strong> para este ejemplo) de los nombres de todas las variables de las que dispone (y de sus contenidos también):</p><pre class="crayon-plain-tag">$variablesDisponibles = get_defined_vars();</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: Módulos y templates con acentos, &#8220;¿&#8221; y &#8220;ñ&#8221; mal codificados [solución]</title>
+		<link>http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/</link>
+		<comments>http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/#comments</comments>
+		<pubDate>Sun, 08 Aug 2010 10:52:07 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Codificación de caracteres]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=547</guid>
+		<description><![CDATA[Un problema con el que me suelo dar de tanto en tanto son las codificaciones de caracteres. En especial la de acentos, la ñ y el signo de pregunta de apertura (¿). El problema mas común que me encontré en mis primeros tiempos como desarrollador de módulos de Drupal fue que de tanto en tanto&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Un problema con el que me suelo dar de tanto en tanto son las codificaciones de caracteres. En especial la de acentos, la ñ y el signo de pregunta de apertura (¿).</p>
+<p>El problema mas común que me encontré en mis primeros tiempos como desarrollador de módulos de Drupal fue que de tanto en tanto abría un modulo, y este tenia los caracteres especiales hechos pedazos, mal codificados.</p>
+<p>Probé con todo tipo de yerbas raras. Desde usar funciones de todo tipo de encoding de PHP hasta cambiar la collation de la DB&#8230;</p>
+<p>Pero <strong>la solución estaba tan al alcance de la mano que me llegue a sentir un autentico boludo cuando me cayeron las fichas</strong>: ¡La codificación de los archivos!. Si señor/a, no me había fijado en la codificación de los archivos (*.module, *.php, *.install, *.inc, etc).</p>
+<p>Lo único que hay que hacer para que todo funcione como la seda son unas pocas cosas:</p>
+<p><strong>Que el archivo esté codificado en <span style="color: #993300;">UTF-8</span>. </strong>Podés saber que codificación tiene abriéndolo con Notepad++ y yendo al menú “Formato” como se ve en la imagen:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_verificar_codificacion.png"><img class="aligncenter size-full wp-image-548" title="Notepad++ Verificar la codificación de un archivo" src="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_verificar_codificacion.png" alt="" width="280" height="289" /></a></p>
+<p>Y si ven que no está seteado en “UTF-8 sin BOM” o “UTF-8”, pueden convertirlo a cualquiera de estos formatos en el mismo menú:<br />
+(<strong>Para nosotros usar “UTF-8 sin BOM” o “UTF-8” nos es indistinto</strong> <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> )</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_convertir_codificacion.png"><img class="aligncenter size-full wp-image-549" title="Notepad++ Convertir la codificación de un archivo" src="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_convertir_codificacion.png" alt="" width="269" height="283" /></a></p>
+<p>En el caso de los IDE deben saber que Netbeans y Zend Studio de serie vienen configurados para crear y tratar a los archivos bajo UTF-8, mientras que<strong> Eclipse NO</strong>.</p>
+<p>Entonces, si usas Eclipse solo tenes que tocar un detalle en la configuración general para despreocuparte de este asunto:<br />
+Vayan al menú “Window -&gt; preferences” y en el menú de preferencias deben ir a “General -&gt; Workspace”. Cambien la codificación que haya puesta por la de UTF-8 como se ve en la imagen.</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/08/configuracion_cofificacion_caracteres_eclipse.png"><img class="aligncenter size-full wp-image-550" title="Cambiar la codificación por defecto de Eclipse" src="http://ecapy.com/wp-content/uploads/2010/08/configuracion_cofificacion_caracteres_eclipse.png" alt="" width="214" height="85" /></a><br />
+Otra cosa mas. <strong>Si trabajan con GIT sepan que tampoco codifica los archivos en UTF-8, </strong>y se soluciona yendo a sus opciones y cambiándolo.</p>
+<p><span style="color: #993300;"><strong>Con lo anterior podes olvidarte de tener problemas de codificación De hecho podes dejar de usar entidades HTML y demases, y solo con usar t(“áéíóúñ”) que no vas a tener mas problemas.</strong></span></p>
+<p>Lo ultimo que quiero comentar es que si trabajan con mas gente sobre estos módulos, asegurate que todos tengan bien configurado su IDE o editor para evitar que los codifique mal (con solo abrir un archivo UTF-8 con un editor que no esté en ese formato es muy posible que al editarle una letra y guardarlo lo haga pedazos!).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Cambié los permisos de un directorio y Git me muestra &#8220;old mode 100644 new mode 100755&#8221;</title>
+		<link>http://ecapy.com/cambie-los-permisos-de-un-directorio-y-git-me-muestra-old-mode-100644-new-mode-100755/</link>
+		<pubDate>Mon, 05 Jul 2010 08:14:10 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Linux]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=519</guid>
+		<description><![CDATA[Me pasó que me cloné de un repo y como no tenía los permisos adecuados fui con sudo y le metí un 777 a todo el repositorio. Que boludo que fui. Por no leer un poco antes de hacer esa perrada, me di con que a la hora de comitear todos los archivos presentaban cambios,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/cambie-los-permisos-de-un-directorio-y-git-me-muestra-old-mode-100644-new-mode-100755/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me pasó que me cloné de un repo y como no tenía los permisos adecuados fui con sudo y le metí un 777 a todo el repositorio. Que boludo que fui. Por no leer un poco antes de hacer esa perrada, me di con que a la hora de comitear todos los archivos presentaban cambios, puntualmente todos decían:</p><pre class="crayon-plain-tag">old mode 100644
+new mode 100755</pre><p>Solucionando el problema:<br />
+primero reviertan la situación cambiándole nuevamente los permisos a todos los archivos con:</p><pre class="crayon-plain-tag">sudo chmod 644 -R ./mi-proyecto/</pre><p>En el paso anterior estoy asumiendo que los permisos originales eran 644 para todos lo archivos del proyecto.</p>
+<p>Lo segundo es hacer las cosas bien. Para ello basta con cambiar el owner y grupo al directorio:</p><pre class="crayon-plain-tag">sudo chown nobody:nogroup mi-proyecto</pre><p>y listo. Ahora cualquier usuario tiene privilegios sobre este proyecto por lo que no hace falta cambiarle permisos <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>El botón de Facebook connect Internet Explorer no aparece (Solución)</title>
+		<link>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/</link>
+		<comments>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/#comments</comments>
+		<pubDate>Tue, 22 Jun 2010 14:05:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[bug]]></category>
+		<category><![CDATA[IE te odio]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=508</guid>
+		<description><![CDATA[Justamente ese fue el problema que tuve hoy. Integré Facebook Connect en una pagina que tengo hecha en Drupal y no había forma de hacer que el botoncito de login se vea en Internet Explorer 7 u 8&#8230; Después de un kilo y medio de I+D descubro que resulta ser que es porque IE no&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Justamente ese fue el problema que tuve hoy. Integré Facebook Connect en una pagina que tengo hecha en Drupal y no había forma de hacer que el botoncito de login se vea en Internet Explorer 7 u 8&#8230;</p>
+<p>Después de un kilo y medio de I+D descubro que resulta ser que es porque <strong>IE no sabe que hacer con los tag &lt;fb&gt;</strong>, y dicho problema se soluciona de la forma mas tonta del mundo:<br />
+Metiendo el siguiente trozo de código en la etiqueta &lt;html&gt;:</p><pre class="crayon-plain-tag">xmlns:fb=&quot;http://www.facebook.com/2008/fbml&quot;</pre><p>Y como nota quiero aclarar que no hace falta reemplazar el atributo existente ya que pueden coexistir ambos:</p><pre class="crayon-plain-tag">&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &lt;strong&gt;xmlns:fb=&quot;http://www.facebook.com/2008/fbml&quot;&lt;/strong&gt; xml:lang=&quot;es_ES&quot; lang=&quot;es_ES&quot;&amp;gt;</pre><p><strong>Y listo. el fukin botoncito ya aparece en IE 7 y 8 (en el 6 ni me gasté en probarlo).</strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/el-boton-de-facebook-connect-internet-explorer-no-aparece-solucion/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Notas rápidas de strpos() (PHP)</title>
+		<link>http://ecapy.com/notas-rapidas-de-strpos-php/</link>
+		<comments>http://ecapy.com/notas-rapidas-de-strpos-php/#comments</comments>
+		<pubDate>Mon, 21 Jun 2010 10:50:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=505</guid>
+		<description><![CDATA[Strpos() devuelve la posición del primer caracter de la palabra que estamos buscando. Ejemplos: [crayon-584436cb63536422953215/] [crayon-584436cb63549836724419/] Nunca hay que olvidar de hacer la comparación del resultado con comparaciones estrictas (&#8220;===&#8221;, &#8220;!==&#8221;) para evitar falsos positivos o negativos.]]></description>
+				<content:encoded><![CDATA[<p>Strpos() devuelve la posición del primer caracter de la palabra que estamos buscando.</p>
+<p>Ejemplos:</p><pre class="crayon-plain-tag">// En la posición 0
+if ($posicion = strpos("hola mundo", "hola") !== FALSE) {
+  echo "Palabra encontrada en la posición $posicion";
+}</pre><p></p><pre class="crayon-plain-tag">//En la posición 9
+if ($posicion = strpos("he dicho hola mundo!", "hola") !== FALSE) {
+  echo "Palabra encontrada en la posición $posicion";
+}</pre><p><strong>Nunca hay que olvidar de hacer la comparación del resultado con comparaciones estrictas (&#8220;===&#8221;, &#8220;!==&#8221;) para evitar falsos positivos o negativos.</strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/notas-rapidas-de-strpos-php/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Snippet: Verificar si una fecha está dentro de un rango de fechas en PHP.</title>
+		<link>http://ecapy.com/verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/</link>
+		<comments>http://ecapy.com/verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/#comments</comments>
+		<pubDate>Thu, 03 Jun 2010 18:30:07 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=477</guid>
+		<description><![CDATA[La saqué de la documentación de PHP creo recordar, y a alguien le puede ser útil 😉 [crayon-584436cb63fa3453975082/] Ejemplo de uso: [crayon-584436cb63fb6953949208/]]]></description>
+				<content:encoded><![CDATA[<p>La saqué de la documentación de PHP creo recordar, y a alguien le puede ser útil <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">&lt; ?php /** * Verifica que una fecha esté dentro del rango de fechas establecidas * @param $start_date fecha de inicio * @param $end_date fecha final * @param $evaluame fecha a comparar * @return true si esta en el rango, false si no lo está */ function check_in_range($start_date, $end_date, $evaluame) { $start_ts = strtotime($start_date); $end_ts = strtotime($end_date); $user_ts = strtotime($evaluame); return (($user_ts &gt;= $start_ts) &amp;&amp; ($user_ts &lt;= $end_ts));
+}</pre><p>Ejemplo de uso:</p><pre class="crayon-plain-tag">&lt;?php
+$start_date = '2010-06-01';
+$end_date = '2010-06-30';
+$fecha_a_evaluar = '2010-06-15';
+ 
+if (check_in_range($start_date, $end_date, $fecha_a_evaluar)) {
+    echo "estas en rango";
+} else {
+    echo "fuera de rango";
+}</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/verificar-si-una-fecha-esta-dentro-de-un-rango-en-php/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+	</channel>
+</rss>

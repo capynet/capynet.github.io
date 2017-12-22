@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:31:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Desplegar una aplicación Node.js como servicio Upstart (demonio)</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Desplegar una aplicación Node.js como servicio Upstart (demonio) RSS de los comentarios" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Preprocesar variables de templates en express framework (nodejs)' href='../preprocesar-variables-de-templates-en-express-framework-nodejs/index.html' />
+<link rel='next' title='Closures: mod_fcgid: stderr: PHP Fatal error:  Using $this when not in object context in' href='../closures-mod_fcgid-stderr-php-fatal-error-using-this-when-not-in-object-context-in/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index9924.html?p=2124' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedc22a.json?url=http%3A%2F%2Fecapy.com%2Fdesplegar-una-aplicacion-node-js-como-servicio-demonio%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed9370?url=http%3A%2F%2Fecapy.com%2Fdesplegar-una-aplicacion-node-js-como-servicio-demonio%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-2124 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-2124" class="post-2124 post type-post status-publish format-standard has-post-thumbnail hentry category-linux category-programacion tag-deploy tag-linux tag-node-js">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../wp-content/uploads/2014/09/node-header.jpg" class="img-responsive wp-post-image" alt="node-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/node-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/node-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/node-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Desplegar una aplicación Node.js como servicio Upstart (demonio)</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2013-04-24T19:42:13+00:00">24 Abr,  2013</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/linux/index.html" rel="category tag">Linux</a>, <a href="../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/deploy/index.html" rel="tag">deploy</a>, <a href="../tag/linux/index.html" rel="tag">Linux</a>, <a href="../tag/node-js/index.html" rel="tag">node.js</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="index.html#comments">15 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Cuando quise desplegar mi app, imagine que iba a ser fácil, que lanzaba el comando &#8220;node miapp.js&#8221; y punto, pero aprendí a palos que así no va la cosa.</p>
+<p>Para desplegar una aplicación web, <strong>necesitas que funcione como apache</strong> por lo menos: que puedas <strong>arrancarla, pararla, reiniciarla, ver su estado, acceder a su log, que se reinicie si se produce un error</strong>, etc etc etc.</p>
+<p>Busque por Internet y leí un montón de artículos y foros que te dicen como montartelo: <strong>haciendo scripts en /etc/init.d</strong> y combinándolo con monit para reiniciarlo si se cae, <strong>Usando Upstart</strong>, <strong>lanzando la aplicación con &#8220;node miapp.js &amp;&#8221;</strong> (proceso en background pero es la peor solución que leí en años), y alguna que otra mas.</p>
+<p><strong>La mas razonable fue la de Upstart</strong>, aunque ninguna de las soluciones fue bastante clara o completa como para copiar, pegar y arrancar. Por eso hice este script que toma en cuenta todo lo que hace falta para montar tu app como un servicio:</p>
+		<div id="crayon-58443680cca51217343830" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+# A partir de aquí no debería hacer falta tocar nada #
+######################################################
+
+#Nuestro proceso espera hasta que el sistema este cargado
+start on runlevel [2345]
+#Y se detiene cuando el sistema se apague
+stop on runlevel [016]
+
+#Levanta el proceso automáticamente si se muere:
+respawn
+#limitamos el "respawn" a 99 veces con un timeout de 5s para que no intente levantar el proceso infinitamente.
+respawn limit 99 5
+
+pre-start script
+    #Necesitamos asegurarnos que el path del pid exista antes de arrancar el proceso.
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+	#Seteamos NODE_ENV para que nuestra app se ejecute en modo production, development, test, etc.
+	export NODE_ENV=$SERVER_ENV
+
+	#El siguiente comando es el que realmente arranca el proceso:
+	#Utiliza el usuario y grupo www-data (--chuid)
+	#Asigna un pid y lo crea si no existe (--make-pidfile y --pidfile)
+	#Cambia el directorio de ejecución a donde esté nuestra app de node (--chdir)
+	#Ejecuta la app (--exec)
+	#Envía cualquier output que genere nuestra app al log (&gt;&gt; $LOG_FILE 2&gt;&amp;1)
+
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-58443680cca51217343830-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-2">2</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-4">4</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-6">6</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-8">8</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-10">10</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-12">12</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-14">14</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-16">16</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-18">18</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-20">20</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-22">22</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-24">24</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-26">26</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-28">28</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-30">30</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-32">32</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-34">34</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-36">36</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-38">38</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-40">40</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-42">42</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-44">44</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-46">46</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-48">48</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-50">50</div><div class="crayon-num" data-line="crayon-58443680cca51217343830-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca51217343830-52">52</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58443680cca51217343830-1"><span class="crayon-i">description</span><span class="crayon-h"> </span><span class="crayon-s">"Demonio para mi aplicación en Node.js"</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-2"><span class="crayon-i">author</span><span class="crayon-h"> </span><span class="crayon-s">"Capy - http://ecapy.com"</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-4"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">LOG_FILE</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">log</span><span class="crayon-o">/</span><span class="crayon-v">node</span><span class="crayon-o">/</span><span class="crayon-v">miapp</span><span class="crayon-e">.log</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-5"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">APP_DIR</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">node</span><span class="crayon-o">/</span><span class="crayon-e">miapp</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-6"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">APP</span><span class="crayon-o">=</span><span class="crayon-v">app</span><span class="crayon-e">.js</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-7"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">PID_NAME</span><span class="crayon-o">=</span><span class="crayon-v">miapp</span><span class="crayon-e">.pid</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-8"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">USER</span><span class="crayon-o">=</span><span class="crayon-v">www</span><span class="crayon-o">-</span><span class="crayon-e">data</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-9"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">GROUP</span><span class="crayon-o">=</span><span class="crayon-v">www</span><span class="crayon-o">-</span><span class="crayon-e">data</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-10"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">POST_START_MESSAGE_TO_LOG</span><span class="crayon-o">=</span><span class="crayon-s">"miapp ha sido iniciada."</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-11"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">NODE_BIN</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">local</span><span class="crayon-o">/</span><span class="crayon-v">bin</span><span class="crayon-o">/</span><span class="crayon-e">node</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-12"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">PID_PATH</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">opt</span><span class="crayon-o">/</span><span class="crayon-v">node</span><span class="crayon-o">/</span><span class="crayon-e">run</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-13"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">SERVER_ENV</span><span class="crayon-o">=</span><span class="crayon-s">"production"</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-14">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca51217343830-15"><span class="crayon-c">######################################################</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-16"><span class="crayon-c"># A partir de aquí no debería hacer falta tocar nada #</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-17"><span class="crayon-c">######################################################</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-18">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca51217343830-19"><span class="crayon-c">#Nuestro proceso espera hasta que el sistema este cargado</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-20"><span class="crayon-e">start </span><span class="crayon-e">on </span><span class="crayon-i">runlevel</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">2345</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-21"><span class="crayon-c">#Y se detiene cuando el sistema se apague</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-22"><span class="crayon-e">stop </span><span class="crayon-e">on </span><span class="crayon-i">runlevel</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">016</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-23">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-24"><span class="crayon-c">#Levanta el proceso automáticamente si se muere:</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-25"><span class="crayon-v">respawn</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-26"><span class="crayon-c">#limitamos el "respawn" a 99 veces con un timeout de 5s para que no intente levantar el proceso infinitamente.</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-27"><span class="crayon-e">respawn </span><span class="crayon-i">limit</span><span class="crayon-h"> </span><span class="crayon-cn">99</span><span class="crayon-h"> </span><span class="crayon-cn">5</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-28">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca51217343830-29"><span class="crayon-v">pre</span><span class="crayon-o">-</span><span class="crayon-e">start </span><span class="crayon-v">script</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">#Necesitamos asegurarnos que el path del pid exista antes de arrancar el proceso.</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">mkdir</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">p</span><span class="crayon-h"> </span><span class="crayon-v">$PID_PATH</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">mkdir</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">p</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">log</span><span class="crayon-o">/</span><span class="crayon-e">node</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-33"><span class="crayon-st">end</span><span class="crayon-h"> </span><span class="crayon-e">script</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-34">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca51217343830-35"><span class="crayon-v">script</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-36"><span class="crayon-h">	</span><span class="crayon-c">#Seteamos NODE_ENV para que nuestra app se ejecute en modo production, development, test, etc.</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-37"><span class="crayon-h">	</span><span class="crayon-e">export </span><span class="crayon-v">NODE_ENV</span><span class="crayon-o">=</span><span class="crayon-v">$SERVER_ENV</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-38">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca51217343830-39"><span class="crayon-h">	</span><span class="crayon-c">#El siguiente comando es el que realmente arranca el proceso:</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-40"><span class="crayon-h">	</span><span class="crayon-c">#Utiliza el usuario y grupo www-data (--chuid)</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-41"><span class="crayon-h">	</span><span class="crayon-c">#Asigna un pid y lo crea si no existe (--make-pidfile y --pidfile)</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-42"><span class="crayon-h">	</span><span class="crayon-c">#Cambia el directorio de ejecución a donde esté nuestra app de node (--chdir)</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-43"><span class="crayon-h">	</span><span class="crayon-c">#Ejecuta la app (--exec)</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-44"><span class="crayon-h">	</span><span class="crayon-c">#Envía cualquier output que genere nuestra app al log (&gt;&gt; $LOG_FILE 2&gt;&amp;1)</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-45">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-46"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">exec </span><span class="crayon-v">start</span><span class="crayon-o">-</span><span class="crayon-v">stop</span><span class="crayon-o">-</span><span class="crayon-v">daemon</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">start</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">chuid</span><span class="crayon-h"> </span><span class="crayon-v">$USER</span><span class="crayon-o">:</span><span class="crayon-v">$GROUP</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-r">make</span><span class="crayon-o">-</span><span class="crayon-v">pidfile</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">pidfile</span><span class="crayon-h"> </span><span class="crayon-v">$PID_PATH</span><span class="crayon-o">/</span><span class="crayon-v">$PID_NAME</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">chdir</span><span class="crayon-h"> </span><span class="crayon-v">$APP_DIR</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">exec</span><span class="crayon-h"> </span><span class="crayon-v">$NODE_BIN</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">$APP</span><span class="crayon-h"> </span><span class="crayon-o">&gt;&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$LOG_FILE</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-o">&gt;</span><span class="crayon-o">&amp;</span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-47">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-48"><span class="crayon-st">end</span><span class="crayon-h"> </span><span class="crayon-e">script</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-49"><span class="crayon-e"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-50"><span class="crayon-v">post</span><span class="crayon-o">-</span><span class="crayon-e">start </span><span class="crayon-e">script</span></div><div class="crayon-line" id="crayon-58443680cca51217343830-51"><span class="crayon-e">	</span><span class="crayon-r">echo</span><span class="crayon-h"> </span><span class="crayon-v">$POST_START_MESSAGE_TO_LOG</span><span class="crayon-h"> </span><span class="crayon-o">&gt;&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$LOG_FILE</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca51217343830-52"><span class="crayon-st">end</span><span class="crayon-h"> </span><span class="crayon-v">script</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Puede parecer un poco largo, pero si lo lees detenidamente vas a ver que es bastante concreto:</p>
+<ol>
+<li>Autor y descripción: son parte básica de un script Upstart</li>
+<li>Variables de configuración para que no tengas que meterte entre el código para ajustar el script para cada nueva app que crees.</li>
+<li>Cuerpo del script.</li>
+</ol>
+<p>Acá esta el mismo script sin comentarios:</p>
+		<div id="crayon-58443680cca6f430279579" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+description "Demonio para mi aplicación en Node.js"
+author "Capy - http://ecapy.com"
+
+env LOG_FILE=/var/log/node/miapp.log
+env APP_DIR=/var/node/miapp
+env APP=app.js
+env PID_NAME=miapp.pid
+env USER=www-data
+env GROUP=www-data
+env POST_START_MESSAGE_TO_LOG="miapp ha sido iniciada."
+env NODE_BIN=/usr/local/bin/node
+env PID_PATH=/var/opt/node/run
+env SERVER_ENV="production"
+
+######################################################
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+respawn limit 99 5
+
+pre-start script
+    mkdir -p $PID_PATH
+    mkdir -p /var/log/node
+end script
+
+script
+    export NODE_ENV=$SERVER_ENV
+    exec start-stop-daemon --start --chuid $USER:$GROUP --make-pidfile --pidfile $PID_PATH/$PID_NAME --chdir $APP_DIR --exec $NODE_BIN -- $APP &gt;&gt; $LOG_FILE 2&gt;&amp;1
+end script
+ 
+post-start script
+	echo $POST_START_MESSAGE_TO_LOG &gt;&gt; $LOG_FILE
+end script</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-58443680cca6f430279579-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-2">2</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-4">4</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-6">6</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-8">8</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-10">10</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-12">12</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-14">14</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-16">16</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-18">18</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-20">20</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-22">22</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-24">24</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-26">26</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-28">28</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-30">30</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-32">32</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca6f430279579-34">34</div><div class="crayon-num" data-line="crayon-58443680cca6f430279579-35">35</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58443680cca6f430279579-1"><span class="crayon-i">description</span><span class="crayon-h"> </span><span class="crayon-s">"Demonio para mi aplicación en Node.js"</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-2"><span class="crayon-i">author</span><span class="crayon-h"> </span><span class="crayon-s">"Capy - http://ecapy.com"</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-4"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">LOG_FILE</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">log</span><span class="crayon-o">/</span><span class="crayon-v">node</span><span class="crayon-o">/</span><span class="crayon-v">miapp</span><span class="crayon-e">.log</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-5"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">APP_DIR</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">node</span><span class="crayon-o">/</span><span class="crayon-e">miapp</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-6"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">APP</span><span class="crayon-o">=</span><span class="crayon-v">app</span><span class="crayon-e">.js</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-7"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">PID_NAME</span><span class="crayon-o">=</span><span class="crayon-v">miapp</span><span class="crayon-e">.pid</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-8"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">USER</span><span class="crayon-o">=</span><span class="crayon-v">www</span><span class="crayon-o">-</span><span class="crayon-e">data</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-9"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">GROUP</span><span class="crayon-o">=</span><span class="crayon-v">www</span><span class="crayon-o">-</span><span class="crayon-e">data</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-10"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">POST_START_MESSAGE_TO_LOG</span><span class="crayon-o">=</span><span class="crayon-s">"miapp ha sido iniciada."</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-11"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">NODE_BIN</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">local</span><span class="crayon-o">/</span><span class="crayon-v">bin</span><span class="crayon-o">/</span><span class="crayon-e">node</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-12"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">PID_PATH</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">opt</span><span class="crayon-o">/</span><span class="crayon-v">node</span><span class="crayon-o">/</span><span class="crayon-e">run</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-13"><span class="crayon-r">env</span><span class="crayon-h"> </span><span class="crayon-v">SERVER_ENV</span><span class="crayon-o">=</span><span class="crayon-s">"production"</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-14">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca6f430279579-15"><span class="crayon-c">######################################################</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-16">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca6f430279579-17"><span class="crayon-e">start </span><span class="crayon-e">on </span><span class="crayon-i">runlevel</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">2345</span><span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-18"><span class="crayon-e">stop </span><span class="crayon-e">on </span><span class="crayon-i">runlevel</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">016</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-19">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-20"><span class="crayon-e">respawn</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-21"><span class="crayon-e">respawn </span><span class="crayon-i">limit</span><span class="crayon-h"> </span><span class="crayon-cn">99</span><span class="crayon-h"> </span><span class="crayon-cn">5</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-22">&nbsp;</div><div class="crayon-line" id="crayon-58443680cca6f430279579-23"><span class="crayon-v">pre</span><span class="crayon-o">-</span><span class="crayon-e">start </span><span class="crayon-e">script</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-24"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">mkdir</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">p</span><span class="crayon-h"> </span><span class="crayon-v">$PID_PATH</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">mkdir</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">p</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">log</span><span class="crayon-o">/</span><span class="crayon-e">node</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-26"><span class="crayon-st">end</span><span class="crayon-h"> </span><span class="crayon-e">script</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-27">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-28"><span class="crayon-e">script</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-29"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">export </span><span class="crayon-v">NODE_ENV</span><span class="crayon-o">=</span><span class="crayon-v">$SERVER_ENV</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">exec </span><span class="crayon-v">start</span><span class="crayon-o">-</span><span class="crayon-v">stop</span><span class="crayon-o">-</span><span class="crayon-v">daemon</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">start</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">chuid</span><span class="crayon-h"> </span><span class="crayon-v">$USER</span><span class="crayon-o">:</span><span class="crayon-v">$GROUP</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-r">make</span><span class="crayon-o">-</span><span class="crayon-v">pidfile</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">pidfile</span><span class="crayon-h"> </span><span class="crayon-v">$PID_PATH</span><span class="crayon-o">/</span><span class="crayon-v">$PID_NAME</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">chdir</span><span class="crayon-h"> </span><span class="crayon-v">$APP_DIR</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">exec</span><span class="crayon-h"> </span><span class="crayon-v">$NODE_BIN</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">$APP</span><span class="crayon-h"> </span><span class="crayon-o">&gt;&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$LOG_FILE</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-o">&gt;</span><span class="crayon-o">&amp;</span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-31"><span class="crayon-st">end</span><span class="crayon-h"> </span><span class="crayon-e">script</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-32"><span class="crayon-e"> </span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-33"><span class="crayon-v">post</span><span class="crayon-o">-</span><span class="crayon-e">start </span><span class="crayon-e">script</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca6f430279579-34"><span class="crayon-e">	</span><span class="crayon-r">echo</span><span class="crayon-h"> </span><span class="crayon-v">$POST_START_MESSAGE_TO_LOG</span><span class="crayon-h"> </span><span class="crayon-o">&gt;&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$LOG_FILE</span></div><div class="crayon-line" id="crayon-58443680cca6f430279579-35"><span class="crayon-st">end</span><span class="crayon-h"> </span><span class="crayon-v">script</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<h3>Uso:</h3>
+<p><strong>Por cada aplicación en nodejs que quieras montar tenes que crear un archivo en /etc/init/</strong>. El nombre del archivo tiene que terminar en .conf. por ejemplo <em>miapp-service.conf</em>. Una cosa importante es que el servicio que estas creando se llama como el archivo (sin el .conf), por lo que en nuestro ejemplo se va a llamar <em>miapp-service</em>.</p>
+<p>Dentro de <em>/etc/init/miapp-service.conf</em> pegas el script y personalizas todo lo que haya hasta la linea divisoria.</p>
+<p>Un par de aclaraciones:<br />
+<em>env APP=app.js</em> define el nombre del &#8220;index&#8221; de tu aplicación, y por lo general se usan o app.js o server.js. Pon el nombre de tu app sin el path hasta ella. Si tu aplicación lleva parámetros podes encerrar en comillas dobles algo asi como <em>&#8220;env APP=app.js &#8211;extrasettings ../settrings.json&#8221;</em><br />
+<em>env APP_DIR=/var/node/miapp</em> el path hasta tu aplicación<br />
+<em>env PID_NAME=miapp.pid</em> pon el nombre que quieras, pero que sea único. por ejemplo, si tu app es una pagina web pon el nombre de tu pagina &#8220;mipaginaweb_com.pid&#8221; o algo así.<br />
+<em>env USER=www-data</em> y <em>env GROUP=www-data</em> <strong>no sería muy responsable usar root para ejecutar tu aplicación </strong> salvo que esta si que necesite estar en root, pero <strong>en el caso de que sea una pagina web, usa el usuario y grupo www-data</strong> así podes unificar criterios. Es solo una sugerencia, yo para mi app uso www-data aunque podes usar el grupo y usuario que te parezca mejor.<br />
+<em>POST_START_MESSAGE_TO_LOG</em> es solo un mensaje que se envía al log de la app cuando esta arranca.<br />
+<em>NODE_BIN</em> indica donde esta ubicado node, por lo general está en <em>/usr/local/bin/node</em> aunque si no estuviera allí podes cambiar este parámetro.<br />
+<em>env SERVER_ENV=&#8221;production</em>&#8221; Posiblemente tu aplicación web utilice entornos de &#8220;<em>development</em>&#8220;, &#8220;<em>test</em>&#8221; y &#8220;<em>production</em>&#8220;. Bien, especificalo acá.</p>
+<p>El resto del script está comentado en código así que no añado nada.</p>
+<p>Cuando hayas acabado ya vas a disponer de tu servicio y tratarlo como cualquier otro:</p>
+		<div id="crayon-58443680cca7f902499775" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+start miapp-service
+stop miapp-service
+restart miapp-service
+status miapp-service</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-58443680cca7f902499775-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca7f902499775-2">2</div><div class="crayon-num" data-line="crayon-58443680cca7f902499775-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-58443680cca7f902499775-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58443680cca7f902499775-1"><span class="crayon-e">start </span><span class="crayon-v">miapp</span><span class="crayon-o">-</span><span class="crayon-e">service</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca7f902499775-2"><span class="crayon-e">stop </span><span class="crayon-v">miapp</span><span class="crayon-o">-</span><span class="crayon-e">service</span></div><div class="crayon-line" id="crayon-58443680cca7f902499775-3"><span class="crayon-e">restart </span><span class="crayon-v">miapp</span><span class="crayon-o">-</span><span class="crayon-e">service</span></div><div class="crayon-line crayon-striped-line" id="crayon-58443680cca7f902499775-4"><span class="crayon-e">status </span><span class="crayon-v">miapp</span><span class="crayon-o">-</span><span class="crayon-v">service</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Espero que les sirva.</p>
+<p>Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../preprocesar-variables-de-templates-en-express-framework-nodejs/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../closures-mod_fcgid-stderr-php-fatal-error-using-this-when-not-in-object-context-in/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                        <div id="comments" class="comments-area comments">
+            <h3 class="comments-title">
+            15 Comments        </h3>
+
+        <ul class="comment-list">
+
+            		<li class="comment even thread-even depth-1" id="li-comment-662">
+			<div id="comment-662" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/e9162a44ca409317d032c2f61039c882?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/e9162a44ca409317d032c2f61039c882?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.ebarrero.com/' rel='external nofollow' class='url'>Eugenio</a></span>							<span class="comment-date">13/07/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>El artículo es perfecto: útil y pedagógico.  Felicidades!. Y me ha funcionado a la segunda 🙂</p>
+<p>En mi instalación Ubuntu 12.04.2  he tenido que cambiar el <code>env NODE_BIN=/usr/local/bin/node</code> por <code>env NODE_BIN=/usr/bin/node</code></p>
+<p>Saludos<br />
+.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-663">
+			<div id="comment-663" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/a67b2c5b639adc4f59330817f62139d9?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/a67b2c5b639adc4f59330817f62139d9?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://jesusisraelperalesmartinez.no-ip.biz/' rel='external nofollow' class='url'>Jesus israel perales martinez</a></span>							<span class="comment-date">14/08/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>siempre dejaba tirada mi aplicacion , lo que hacia era correrla en una tty (node app) y le daba por que no tenia tiempo de buscar pense que encontraria un comando por no leer bien el node -h o el manual pero parece ser que aun no hay una funcionalidad asi en el node propio , no es algo que me moleste pero en los tutoriales que vi nunca mencionaban nada de esto siendo que es algo muy importante, gracias por el script</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-664">
+			<div id="comment-664" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/8c7cedd4fc732b1f3a1330c15a23e59b?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/8c7cedd4fc732b1f3a1330c15a23e59b?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Daniel Espinosa</span>							<span class="comment-date">07/09/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p><strong>Muchas gracias</strong><br />
+Estuve mucho tiempo buscando esto , en ubuntu corrió de maravilla (Y)</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-665">
+			<div id="comment-665" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/9fa2e5df40aba92507f5a2ea7b3c3d63?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/9fa2e5df40aba92507f5a2ea7b3c3d63?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://yeisoneng.appspot.com/' rel='external nofollow' class='url'>Yeison Cardona</a></span>							<span class="comment-date">15/11/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Realmente útil, mejor explicado imposible!!<br />
+Muchas gracias 😉</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-666">
+			<div id="comment-666" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/54eacf5ac8bcc4b1dfb2b5d7ed271b55?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/54eacf5ac8bcc4b1dfb2b5d7ed271b55?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Alejonext</span>							<span class="comment-date">12/04/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>tengo una pregunta!!! cuando se tiene  un &#8220;prestart&#8221;, desde la aplicación como se ejecuta?</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-667">
+			<div id="comment-667" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">16/04/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Ni idea 🙁</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-668">
+			<div id="comment-668" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/739556558832ad99681607b1c232de17?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/739556558832ad99681607b1c232de17?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://na/' rel='external nofollow' class='url'>Cesar</a></span>							<span class="comment-date">16/04/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>No me funciona en un debian 6 me sale unrecognized service</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-669">
+			<div id="comment-669" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d793bc205c30ce27df9815f9e10f2d4d?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d793bc205c30ce27df9815f9e10f2d4d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.ingenieroperales.com/' rel='external nofollow' class='url'>Jesus Perales</a></span>							<span class="comment-date">19/04/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Creo que este script deberia de estar en github,igual lo buscare quiza ya lo tienes 😀</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="pingback even thread-odd thread-alt depth-1" id="comment-670">
+			<p>Pingback: <a href='../desplegar-una-aplicacion-node-js-como-servicio-systemd-demonio/index.html' rel='external nofollow' class='url'>Desplegar una aplicación Node.js como servicio systemd (demonio) | Capy</a> </p>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-671">
+			<div id="comment-671" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/09311e312f61c1e56f84f041d0eddab3?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/09311e312f61c1e56f84f041d0eddab3?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">david</span>							<span class="comment-date">08/09/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Bueníiiiiiisiiiiimo!!! Gracias!!!!!!!!</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-672">
+			<div id="comment-672" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/7a57ffa06b38921b9bf122d2f313c7db?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/7a57ffa06b38921b9bf122d2f313c7db?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Jairo</span>							<span class="comment-date">05/10/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias por el script,</p>
+<p>estoy tratando de usarlo en Ubuntu 14.04 para levantar una aplicación generada con express-generator, sin embargo la aplicación no esta iniciando, cuando abro el archivo .pid veo que el proceso esta cambiando constantemente, alguien le pasa lo mismo? o tiene alguna idea de como solucionarlo? </p>
+<p>env LOG_FILE=/var/log/node/QA-CMMS.log<br />
+env APP_DIR=/var/node/QA-CMMS<br />
+env APP=app.js<br />
+env PID_NAME=qa-cmms-co.pid<br />
+env USER=www-data<br />
+env GROUP=www-data<br />
+env POST_START_MESSAGE_TO_LOG=&#8221;qa-cmms ha sido iniciada.&#8221;<br />
+env NODE_BIN=/usr/bin/node<br />
+env PID_PATH=/var/opt/node/run<br />
+env SERVER_ENV=&#8221;production&#8221;</p>
+<p>esta es la  configuración del script que tengo para mi aplicación</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="li-comment-673">
+			<div id="comment-673" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/7a57ffa06b38921b9bf122d2f313c7db?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/7a57ffa06b38921b9bf122d2f313c7db?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Jairo</span>							<span class="comment-date">06/10/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Se soluciono solo con reiniciar el servidor</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-674">
+			<div id="comment-674" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/78bef76c320c54d4f24e08619d05461d?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/78bef76c320c54d4f24e08619d05461d?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://notengo/' rel='external nofollow' class='url'>hector</a></span>							<span class="comment-date">27/10/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Excelente entrega, hace unos meses había probado este script pero corriéndolo desde el usuario root pero ahora intento de nuevo con un usuario distinto y haciendo las debidas modificaciones y NO me funciona pudes ayudarme?</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4932">
+			<div id="comment-4932" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/971b77ff1fa9b89dc4458559f801a28b?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/971b77ff1fa9b89dc4458559f801a28b?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Jaider</span>							<span class="comment-date">13/07/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola,</p>
+<p>Muy util el script, en ubuntu funciono de manera correcta, mas sin embargo en Centos si no lo he podido hacer funcionar, siempre sale el error de &#8220;exec: start-stop-daemon: not found&#8221;, no se si tienes una solución al respecto. Gracias.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-7156">
+			<div id="comment-7156" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/f9f5857dd57dfa07eacfa41999b68b62?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/f9f5857dd57dfa07eacfa41999b68b62?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Juan García</span>							<span class="comment-date">28/10/2016</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Muchas gracias por tu aporte, yo ya tenia un script muy simple usando upstart pero era muy simple comparado con este y no funcionaba bien, al principio pensé que con tu script se estaba iniciando 2 veces, pero luego me di cuenta que el comando que inicia el servicio manda todo al archivo de log, lo que paso es que también mi aplicación escribe todo en el archivo de log y por eso salia 2 veces todo, pero aparentemente funciona bien, el script que tenia antes era algo como esto:</p>
+<p>start on runlevel [2345]<br />
+stop on runlevel [!2345]<br />
+respawn<br />
+respawn limit 10 5<br />
+setuid administrador<br />
+chdir /var/www/myapp<br />
+env MYAPP_PORT=3002<br />
+exec npm start</p>
+<p>Y tenia el inconveniente que pasados varios días, me metía a revisar y se estaba ejecutando en paralelo varias veces la aplicación, llegue a notar que corría hasta 7 veces simultáneamente la aplicación, ya les comento como me va con este nuevo script.</p>
+<p>Saludos.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+        </ul><!-- .comment-list -->
+
+        
+                <p class="no-comments">:).</p>
+        
+    
+    </div>                                            
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-demonio/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:31:17 GMT -->
+</html>

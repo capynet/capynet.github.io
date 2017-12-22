@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:31:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Mejorando el rendimiento en Drupal 7: Memcached y Entity cache</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Mejorando el rendimiento en Drupal 7: Memcached y Entity cache RSS de los comentarios" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Un mal día para este Drupal' href='../un-mal-dia-para-este-drupal/index.html' />
+<link rel='next' title='req.flash() en express 3' href='../req-flash-en-express-3/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index5f0e.html?p=2036' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed7fa6.json?url=http%3A%2F%2Fecapy.com%2Fmejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed80d5?url=http%3A%2F%2Fecapy.com%2Fmejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-2036 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2961 active"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-2036" class="post-2036 post type-post status-publish format-standard hentry category-drupal tag-drupal tag-mysql tag-optimizacion tag-performance tag-servidores">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Mejorando el rendimiento en Drupal 7: Memcached y Entity cache</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2013-03-07T11:51:34+00:00">7 Mar,  2013</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/drupal/index.html" rel="category tag">Drupal</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../tag/drupal/index.html" rel="tag">Drupal</a>, <a href="../tag/mysql/index.html" rel="tag">Mysql</a>, <a href="../tag/optimizacion/index.html" rel="tag">Optimización</a>, <a href="../tag/performance/index.html" rel="tag">Performance</a>, <a href="../tag/servidores/index.html" rel="tag">Servidores</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="index.html#comments">16 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7.</p>
+<p>Memcached para los que no lo conozcan, es un <a href="http://es.wikipedia.org/wiki/Memcached" target="_blank">data cache basado en RAM</a>.</p>
+<p>Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para cachear utiliza la base de datos como almacén para dicho cache, y esto es costoso. Cada vez que guarda algo en cache o lo pide, estamos haciendo una query a la DB, y aunque toda tu DB este cacheada (mysql tiene su propio cache) Drupal siempre va a tener un importante overhead solo por tener que pedir a la DB este cache.</p>
+<p>Técnicamente hablando el tema es así: Estés o no logueado, Drupal usa <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_get/7" target="_blank">cache_get()</a> y <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_set/7" target="_blank">cache_set()</a>. Luego, estas funciones delegan la tarea de cacheo a la clase que se encargue en ese momento de almacenar y devolver los datos cacheados. Una instalación estándar trae una clase llamada &#8220;<a href="http://api.drupal.org/api/drupal/includes!cache.inc/class/DrupalDatabaseCache/7" target="_blank">DrupalDatabaseCache</a>&#8221; que usa como backend storage la propia DB de Drupal. El módulo <a href="http://drupal.org/project/memcache" target="_blank">Memcache API</a> simplemente proporciona su propia clase (MemCacheDrupal) que hace lo mismo pero mandando el cache a Memcache.</p>
+<p>Memcache se presenta como una muy buena solución a este escollo ya que fue diseñado para ser usado como cache, ofreciendo un overhead mínimo y una velocidad de respuesta muy superior.</p>
+<p>Bueno, vamos al lío.</p>
+<h4>Maquina de pruebas:</h4>
+<ul>
+<li>Hardware:
+<ul>
+<li>core2duo e7400@3.5GHZ</li>
+<li>8gb de ram DDR3@1333MHZ</li>
+<li>Disco SSD OCZ Vertex 2 de 60gb</li>
+</ul>
+</li>
+<li>Software:
+<ul>
+<li>Ubuntu 12.10 de 64 bits</li>
+<li>PHP 5.4.6</li>
+<li>MySQL 5.5.29</li>
+<li>Apache 2.2.22</li>
+<li>APC 3.1.13</li>
+<li>memcached 1.4.14</li>
+<li><a href="http://pecl.php.net/package/memcached" target="_blank">Cliente PHP de Memcache: memcached 2.0.1</a></li>
+<li><a href="http://drupal.org/project/memcache" target="_blank">Modulo Memcache API and Integration 7.x-1.0</a></li>
+<li><a href="http://drupal.org/project/entitycache" target="_blank">Modulo Entity cache</a></li>
+</ul>
+</li>
+</ul>
+<p>Para hacer las pruebas he usado la instalación de Drupal &#8220;<a title="Un mal día para este Drupal" href="../un-mal-dia-para-este-drupal/index.html" target="_blank">Un mal día para este Drupal</a>&#8220;.<br />
+<strong>Las pruebas las hice sobre usuarios anónimos, logueados y el propio admin</strong> que es el que mas suele sufrir en terminos de performance porque ejecuta código extra por los privilegios que conlleva.</p>
+<h3>Usuarios anónimos:</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 199.42 ms.</li>
+<li>Page execution time was 4791.87 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1226 queries in 71.77 ms.</li>
+<li>Page execution time was 3892.39 ms.</li>
+<li>PHP peak=57 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 398 queries in 39.88 ms.</li>
+<li>Page execution time was 3450.76 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 167.15 ms.</li>
+<li>Page execution time was 4037.62 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1186 queries in 66 ms.</li>
+<li>Page execution time was 3927.52 ms.</li>
+<li>PHP peak=57.75 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 377 queries in 30.31 ms.</li>
+<li>Page execution time was 3534.07 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios logueados</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2324 queries in 162.27 ms.</li>
+<li>Page execution time was 4033.2 ms.</li>
+<li>PHP peak=58.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 73.47 ms.</li>
+<li>Page execution time was 4028.68 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 396 queries in 26.19 ms.</li>
+<li>Page execution time was 3530.29 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2262 queries in 182.59 ms.</li>
+<li>Page execution time was 4286.79 ms.</li>
+<li>PHP peak=58 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 56.45 ms.</li>
+<li>Page execution time was 3716.37 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 379 queries in 27.97 ms.</li>
+<li>Page execution time was 4072.24 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios con rol &#8220;administrator&#8221;</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3106 queries in 231.33 ms.</li>
+<li>Page execution time was 5588.66 ms.</li>
+<li>PHP peak=66.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1812 queries in 89.79 ms.</li>
+<li>Page execution time was 4701.39 ms.</li>
+<li>PHP peak=64.5 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 68.43 ms.</li>
+<li>Page execution time was 4563.24 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3104 queries in 219.49 ms.</li>
+<li>Page execution time was 5510.96 ms.</li>
+<li>PHP peak=67 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1816 queries in 107.06 ms.</li>
+<li>Page execution time was 4931.99 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 71.71 ms.</li>
+<li>Page execution time was 4641.69 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h3>Resumiendo:</h3>
+<p><img class="size-full wp-image-2062 alignnone" src="../wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png" alt="Gráfica comparativa de Memcache y Entity cache en Drupal" width="874" height="591" srcset="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png 874w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-300x203.png 300w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-768x519.png 768w" sizes="(max-width: 874px) 100vw, 874px" /></p>
+<p>Como podemos ver, <strong>cuando usamos Memcache, las queries a la db bajan un nada despreciable 50%</strong>. Estas query que ya no están, son &#8220;cache&#8221; que pasan a ser gestionadas por Memcache, quien como ya comentamos, es mucho mas eficiente a la hora de servir contenidos cacheados (insisto que está diseñado para ello, ergo es muy difícil que mysql lo haga mejor).</p>
+<p>Pero para mas inri, <strong>al activar Entity cache, automágicamente las query a la DB bajan un 60% mas</strong> sobre lo que ya había conseguido Memcache. Esto es gracias a que este modulo implementa una capa de cache a todas las entidades del core de Drupal mas todas las entidades creadas por terceros que implementen la api en entity cache para dejarse cachear.</p>
+<h4>Conclusiones:</h4>
+<ul>
+<li>Entre Memcache y entity cache <strong>hemos logrado una reducción media del 85%</strong> de accesos a la DB (awesomeeeee!).</li>
+<li>El beneficio mas evidente en el uso de Memcache y entity cache juntos es el de una reducción drástica en las<br />
+consultas que se hacen a la DB, lo que viene especialmente bien ya que cuando una pagina en Drupal comienza a<br />
+recibir muchas visitas, la db es lo primero que sufre.</li>
+<li>Luego de estas pruebas podemos concluir que si usar Memcache es una buena idea, combinarlo con entity cache es<br />
+una excelente idea.</li>
+<li>Memcache y entity cache funcionan tanto en usuarios logueados como anónimos.</li>
+<li>Es evidente que mientras mas cosas cacheemos en Drupal, mejor va a funcionar esta solución. En especial me<br />
+refiero a <a href="http://drupal.org/project/views" target="_blank">views</a>, y <a href="http://drupal.org/project/panels" target="_blank">panels</a>. Usen el cache que estos módulos tienen, para que Memcache pueda gestionarlos. <strong>En una<br />
+prueba rapida que hice conseguí rebajar aun mas la cantidad de queries a solo 95 contra las 377 que ya<br />
+lográbamos usando Memcache y entity cache</strong>.</li>
+</ul>
+<p>Happy performance!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../un-mal-dia-para-este-drupal/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../req-flash-en-express-3/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                        <div id="comments" class="comments-area comments">
+            <h3 class="comments-title">
+            16 Comments        </h3>
+
+        <ul class="comment-list">
+
+            		<li class="comment even thread-even depth-1" id="li-comment-644">
+			<div id="comment-644" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/e76cd100a1863d99841325983203c227?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/e76cd100a1863d99841325983203c227?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Jorge</span>							<span class="comment-date">08/06/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>¿Qué usaste para hacer el benchmark ?</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-645">
+			<div id="comment-645" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">08/06/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Apache benchmark</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-646">
+			<div id="comment-646" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/239b754f2ce6af778eb4c7b476f68055?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/239b754f2ce6af778eb4c7b476f68055?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://libreycolectiva.org/' rel='external nofollow' class='url'>alberto</a></span>							<span class="comment-date">03/07/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Hola,<br />
+para servidores compartidos que recomendacion tenes? porque la ram es considerablemente baja. En este momento el php.ini esta en 64mb haciendo milagros, y estoy tratando q la suban a 128, que tampoco es wow.<br />
+Recien arrancamos la web y sin contenido, en admin ya se cuelga bastante<br />
+alguna recomendación?<br />
+gracias.<br />
+Alberto</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-647">
+			<div id="comment-647" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">03/07/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Con 64mb o 128 no haces nada hoy en día, apenas tengas a dos o tres personas conectadas al mismo tiempo la página se va a morir. Al ser compartido no hay mucho que puedas hacer, pero si por algún milagro de dejaran, activa APC que va a reducir el uso de RAM.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-648">
+			<div id="comment-648" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/6a0ed93329198c55f9667412ed60b1d8?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/6a0ed93329198c55f9667412ed60b1d8?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.veraznoticias.com/' rel='external nofollow' class='url'>Alirio Duran</a></span>							<span class="comment-date">26/09/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Amigo tengo un servidor VPS con 768 de ram y php.ini en 128 con drupal 7.22, el problema es que cuando activo la pagina se consume toda la memoria ram y colapsa el servidor.</p>
+<p>He activado la cache de views, y de drupal en si, desactive módulos no necesarios y des intalados los que nunca se han utiliados.</p>
+<p>Que mas me recomiendas hacer..</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-649">
+			<div id="comment-649" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">26/09/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>mmm no hay mucho que puedas hacer, simple y llanamente necesitas mas RAM.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment even depth-3" id="li-comment-650">
+			<div id="comment-650" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/6a0ed93329198c55f9667412ed60b1d8?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/6a0ed93329198c55f9667412ed60b1d8?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.veraznoticias.com/' rel='external nofollow' class='url'>Alirio Duran</a></span>							<span class="comment-date">27/09/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Cuanto recomiendas para poder usar tranquilamente esta web&#8230;</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-capynet bypostauthor odd alt depth-2" id="li-comment-651">
+			<div id="comment-651" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">27/09/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>No es una matemática exacta. depende de cuanto consume el SO + todas las aplicaciones que estén corriendo. Luego dependiendo del trafico que tengas, de tu base de datos en particular, etc etc etc etc.</p>
+<p>pero si queres un numero, con 4 GB deberias funcionar bien.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment even depth-3" id="li-comment-652">
+			<div id="comment-652" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/6a0ed93329198c55f9667412ed60b1d8?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/6a0ed93329198c55f9667412ed60b1d8?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='http://www.veraznoticias.com/' rel='external nofollow' class='url'>Alirio Durán</a></span>							<span class="comment-date">02/10/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Gracias, definitivamente me equivoque al escoger a drupal como CMS, requiere de muchos recursos&#8230;. Leere sobre alternativas mas lijares.  Saludos</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-653">
+			<div id="comment-653" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/40a620a46c34d1ce3fda330c3ef568c3?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/40a620a46c34d1ce3fda330c3ef568c3?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Franco</span>							<span class="comment-date">12/11/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>gracias Capy 🙂</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-654">
+			<div id="comment-654" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://2.gravatar.com/avatar/befa9c47f2be021caea69319cdae0298?s=80&amp;d=identicon&amp;r=g' srcset='http://2.gravatar.com/avatar/befa9c47f2be021caea69319cdae0298?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Antonio Manco</span>							<span class="comment-date">27/12/2013</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Muy buen post Capy..Pero hay que dejar en claro que Drupal no es un CMS sino un FrameWork, segundo, no hay muchas opciones para &#8220;usar menos RAM&#8221;. Joomla es un explosivo andante, exige más al servidor que Drupal, WordPress tiene lo suyo pero es un CMS limitado. ¿Qué te queda?. Construir tu Framework con Python. Por último, si realmente quieres tener una web de calidad, necesitas RAM, coincido en que con 4 GB de RAM puedes tener hasta 2000 conectados e incluso más, yo lo he logrado tuneando con Memcached, ENtity Cache, Varnish</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-655">
+			<div id="comment-655" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/0992defbe0036c4dc80c43c2f1ec2589?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/0992defbe0036c4dc80c43c2f1ec2589?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">The winter is coming</span>							<span class="comment-date">08/05/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Para configurar memcache y apc en drupal 7 no me queda claro que lineas debemos añadir al fichero setting.php. Tengo un pequeño VPS con cuatro pequeñas webs mías (nada profesional). Tengo instalado memcache y apc pero no se que lineas debo añadir a los ficheros settings.php porque unas pisan a otras creo.</p>
+<p>Un saludo y estupendo blog</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-656">
+			<div id="comment-656" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">19/05/2014</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Para que APC funcione no tenes que hacer nada. funciona sin mas.<br />
+Para que Memcached funcione si que tenes que poner en settings.php (abajo de todo) esto:</p>
+<p></p>
+		<div id="crayon-584436855a59c518515688" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt;?
+$conf['cache_backends'][] = 'sites/all/modules/memcache/memcache.inc'; // O donde sea que tengas este archivo
+$conf['cache_default_class'] = 'MemCacheDrupal';</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584436855a59c518515688-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436855a59c518515688-2">2</div><div class="crayon-num" data-line="crayon-584436855a59c518515688-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584436855a59c518515688-1"><span class="crayon-ta">&lt;?</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436855a59c518515688-2"><span class="crayon-v">$conf</span><span class="crayon-sy">[</span><span class="crayon-s">'cache_backends'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'sites/all/modules/memcache/memcache.inc'</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">// O donde sea que tengas este archivo</span></div><div class="crayon-line" id="crayon-584436855a59c518515688-3"><span class="crayon-v">$conf</span><span class="crayon-sy">[</span><span class="crayon-s">'cache_default_class'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'MemCacheDrupal'</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Para mas detalles te recomiendo el README.txt que viene con el modulo que comenta varias configuraciones extra para tunear fino fino memcache.</p>
+<p>Saludos.</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-657">
+			<div id="comment-657" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/9d0d59bcf5c3c66685139fd074e2c7d1?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/9d0d59bcf5c3c66685139fd074e2c7d1?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Gonzalo Jarjury</span>							<span class="comment-date">06/04/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Muchas Gracias por este tutorial 😀</p>
+<p>Quisiera saber si para correr el entity-cache hay que realizar pasos adicionales  como es en el caso de memcached.</p>
+<p>Saludos !</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-capynet bypostauthor even depth-2" id="li-comment-658">
+			<div id="comment-658" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=80&amp;d=identicon&amp;r=g' srcset='http://1.gravatar.com/avatar/d6c12e6d5158c740bf4e9dcddbf667f6?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author"><a href='../index.html' rel='external nofollow' class='url'>Capy</a></span>							<span class="comment-date">21/04/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>No hace falta con ese modulo. Es activarlo y listo.<br />
+Saludos.</p>
+						</div>
+					</div>
+				
+			</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3" id="li-comment-659">
+			<div id="comment-659" class="comment-body media">
+				
+					<div class="comment-avartar pull-left">
+						<img alt='' src='http://0.gravatar.com/avatar/9d0d59bcf5c3c66685139fd074e2c7d1?s=80&amp;d=identicon&amp;r=g' srcset='http://0.gravatar.com/avatar/9d0d59bcf5c3c66685139fd074e2c7d1?s=160&amp;d=identicon&amp;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' />					</div>
+					<div class="comment-context media-body">
+						<div class="comment-head">
+							<span class="comment-author">Gonzalo Jarjury</span>							<span class="comment-date">21/04/2015</span>
+
+														<span class="comment-reply">
+															</span>
+						</div>
+
+						
+						<div class="comment-content">
+							<p>Muchas Gracias ! 🙂</p>
+						</div>
+					</div>
+				
+			</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        </ul><!-- .comment-list -->
+
+        
+                <p class="no-comments">:).</p>
+        
+    
+    </div>                                            
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:31:29 GMT -->
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/page/24/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 16:29:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy | Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</title>
+			<link rel="shortcut icon" href="../../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../../comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="home blog paged paged-24">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+
+<section id="main" class="container">
+    <div class="row">
+        <div id="content" class="site-content col-md-9" role="main">
+
+            <article id="post-86" class="post-86 post type-post status-publish format-standard has-post-thumbnail hentry category-php category-programacion tag-drupal-6">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../drupal_set_message-no-funciona-en-drupal-6/index.html" rel="bookmark">drupal_set_message no funciona en Drupal 6</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2009-05-17T15:31:14+00:00">17 May,  2009</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/php/index.html" rel="category tag">PHP</a>, <a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/drupal-6/index.html" rel="tag">Drupal 6</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>La solución es fácil, pero da quebraderos de cabeza hasta que te das cuenta. Como se comenta en los foros de drupal, resulta que por algún motivo que desconocido, el usuario &#8220;Anonymous&#8221; se borra de la tabla &#8220;users&#8221;. Y como los mensajes se guardan temporalmente en el array $_SESSION bajo el usuario en cuestion&#8230;. saquen&nbsp;</p>
+<p><a class="btn btn-style" href="../../drupal_set_message-no-funciona-en-drupal-6/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-77" class="post-77 post type-post status-publish format-standard has-post-thumbnail hentry category-php category-programacion tag-drupal-6">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../crear-enlaces-de-menu-drupal-6-programacion/index.html" rel="bookmark">Crear enlaces de menú en Drupal 6 con programación.</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2009-04-26T21:05:09+00:00">26 Abr,  2009</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/php/index.html" rel="category tag">PHP</a>, <a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/drupal-6/index.html" rel="tag">Drupal 6</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../crear-enlaces-de-menu-drupal-6-programacion/index.html#comments">4 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Esta es la manera de crear un link en un menú por medio de código. </p>
+		<div id="crayon-584444555935c695023032" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$link = array(
+    'link_title' =&gt; 'titulo aquí',
+    'menu_name' =&gt; 'aqui va el nombre del menu de destino (ojo, el nombre es el matchine-readable)',
+    'options' =&gt; array('attributes' =&gt; array('title' =&gt; 'titulo aquí')),
+    'module' =&gt; 'menu', //es el nombre del modulo que ha creado este enlace
+    'expanded' =&gt; TRUE,
+    'hidden' =&gt; TRUE, //si se crea estando habilitado o no
+    'link_path' =&gt; '', //ruta a la que apunta
+);
+menu_link_save($link);</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584444555935c695023032-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555935c695023032-2">2</div><div class="crayon-num" data-line="crayon-584444555935c695023032-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555935c695023032-4">4</div><div class="crayon-num" data-line="crayon-584444555935c695023032-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555935c695023032-6">6</div><div class="crayon-num" data-line="crayon-584444555935c695023032-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555935c695023032-8">8</div><div class="crayon-num" data-line="crayon-584444555935c695023032-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555935c695023032-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584444555935c695023032-1"><span class="crayon-v">$link</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555935c695023032-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'link_title'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'titulo aquí'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555935c695023032-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'menu_name'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'aqui va el nombre del menu de destino (ojo, el nombre es el matchine-readable)'</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555935c695023032-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'options'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-s">'attributes'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-s">'title'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'titulo aquí'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555935c695023032-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'module'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">'menu'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//es el nombre del modulo que ha creado este enlace</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555935c695023032-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'expanded'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">TRUE</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555935c695023032-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'hidden'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-t">TRUE</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//si se crea estando habilitado o no</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555935c695023032-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'link_path'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-s">''</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//ruta a la que apunta</span></div><div class="crayon-line" id="crayon-584444555935c695023032-9"><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555935c695023032-10"><span class="crayon-e">menu_link_save</span><span class="crayon-sy">(</span><span class="crayon-v">$link</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Útil especialmente si vamos a crear nuevos contenidos con programación NOTA: si al ejecutar este snippet, el enlace no se ha creado, verifiquen que el path apunta a algo que exista. suele ser ese el problema</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-71" class="post-71 post type-post status-publish format-standard hentry category-php category-programacion tag-php tag-programacion tag-snippet">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/index.html" rel="bookmark">Reemplazar la ñ, acentos y espacios en PHP</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2009-04-26T20:53:49+00:00">26 Abr,  2009</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/php/index.html" rel="category tag">PHP</a>, <a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/php/index.html" rel="tag">PHP</a>, <a href="../../tag/programacion/index.html" rel="tag">Programación</a>, <a href="../../tag/snippet/index.html" rel="tag">snippet</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../reemplazar-acentos-espacios-o-cualquier-caracter-especial-en-php/index.html#comments">16 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>[Actualizado] Hoy que tengo un poco de tiempo actualicé el snippet con mas caracteres y reemplace la función ereg_replace() porque en la versión de PHP 5.3 ya queda totalmente deprecada. Pequeña función para reemplazar acentos, ñ y espacios. </p>
+		<div id="crayon-584444555989b981228256" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+function limpiar_caracteres_especiales($s) {
+	$s = ereg_replace("[áàâãª]","a",$s);
+	$s = ereg_replace("[ÁÀÂÃ]","A",$s);
+	$s = ereg_replace("[éèê]","e",$s);
+	$s = ereg_replace("[ÉÈÊ]","E",$s);
+	$s = ereg_replace("[íìî]","i",$s);
+	$s = ereg_replace("[ÍÌÎ]","I",$s);
+	$s = ereg_replace("[óòôõº]","o",$s);
+	$s = ereg_replace("[ÓÒÔÕ]","O",$s);
+	$s = ereg_replace("[úùû]","u",$s);
+	$s = ereg_replace("[ÚÙÛ]","U",$s);
+	$s = str_replace(" ","-",$s);
+	$s = str_replace("ñ","n",$s);
+	$s = str_replace("Ñ","N",$s);
+	//para ampliar los caracteres a reemplazar agregar lineas de este tipo:
+	//$s = str_replace("caracter-que-queremos-cambiar","caracter-por-el-cual-lo-vamos-a-cambiar",$s);
+	return $s;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584444555989b981228256-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-2">2</div><div class="crayon-num" data-line="crayon-584444555989b981228256-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-4">4</div><div class="crayon-num" data-line="crayon-584444555989b981228256-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-6">6</div><div class="crayon-num" data-line="crayon-584444555989b981228256-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-8">8</div><div class="crayon-num" data-line="crayon-584444555989b981228256-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-10">10</div><div class="crayon-num" data-line="crayon-584444555989b981228256-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-12">12</div><div class="crayon-num" data-line="crayon-584444555989b981228256-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-14">14</div><div class="crayon-num" data-line="crayon-584444555989b981228256-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-16">16</div><div class="crayon-num" data-line="crayon-584444555989b981228256-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555989b981228256-18">18</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584444555989b981228256-1"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">limpiar_caracteres_especiales</span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-2"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[áàâãª]"</span><span class="crayon-sy">,</span><span class="crayon-s">"a"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555989b981228256-3"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[ÁÀÂÃ]"</span><span class="crayon-sy">,</span><span class="crayon-s">"A"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-4"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[éèê]"</span><span class="crayon-sy">,</span><span class="crayon-s">"e"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555989b981228256-5"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[ÉÈÊ]"</span><span class="crayon-sy">,</span><span class="crayon-s">"E"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-6"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[íìî]"</span><span class="crayon-sy">,</span><span class="crayon-s">"i"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555989b981228256-7"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[ÍÌÎ]"</span><span class="crayon-sy">,</span><span class="crayon-s">"I"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-8"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[óòôõº]"</span><span class="crayon-sy">,</span><span class="crayon-s">"o"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555989b981228256-9"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[ÓÒÔÕ]"</span><span class="crayon-sy">,</span><span class="crayon-s">"O"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-10"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[úùû]"</span><span class="crayon-sy">,</span><span class="crayon-s">"u"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555989b981228256-11"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">ereg_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"[ÚÙÛ]"</span><span class="crayon-sy">,</span><span class="crayon-s">"U"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-12"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">str_replace</span><span class="crayon-sy">(</span><span class="crayon-s">" "</span><span class="crayon-sy">,</span><span class="crayon-s">"-"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555989b981228256-13"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">str_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"ñ"</span><span class="crayon-sy">,</span><span class="crayon-s">"n"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-14"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">str_replace</span><span class="crayon-sy">(</span><span class="crayon-s">"Ñ"</span><span class="crayon-sy">,</span><span class="crayon-s">"N"</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555989b981228256-15"><span class="crayon-h">	</span><span class="crayon-c">//para ampliar los caracteres a reemplazar agregar lineas de este tipo:</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-16"><span class="crayon-h">	</span><span class="crayon-c">//$s = str_replace("caracter-que-queremos-cambiar","caracter-por-el-cual-lo-vamos-a-cambiar",$s);</span></div><div class="crayon-line" id="crayon-584444555989b981228256-17"><span class="crayon-h">	</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-v">s</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555989b981228256-18"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Especialmente util para nombres de archivos y URL&#8217;s.</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-67" class="post-67 post type-post status-publish format-standard has-post-thumbnail hentry category-php tag-css tag-drupal-6">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2015/07/drupal-header.jpg" class="img-responsive wp-post-image" alt="drupal-header" srcset="http://ecapy.com/wp-content/uploads/2015/07/drupal-header.jpg 850w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2015/07/drupal-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../como-cargar-css-en-una-pagina-o-nodo-en-drupal-6/index.html" rel="bookmark">Como cargar CSS a una determinada pagina ó nodo en drupal 6.X</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2009-04-26T20:07:57+00:00">26 Abr,  2009</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/php/index.html" rel="category tag">PHP</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/css/index.html" rel="tag">CSS</a>, <a href="../../tag/drupal-6/index.html" rel="tag">Drupal 6</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Si tenes una función que devuelve algo a una vista (a.k.a &#8220;Pagina&#8221;) o a un nodo, en dicha funcion solo tenés que agregar &#8220;drupal_add_css&#8221; como se ve a continuación: </p>
+		<div id="crayon-584444555abcd602820974" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+function devolver_datos_a_mi_pagina() {
+    drupal_add_css(drupal_get_path('module', 'nombre-de-mi-modulo') . '/css/estilos-de-mi-modulo.css');
+    $data = _get_datos_de_mi_db();
+    return $data;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584444555abcd602820974-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555abcd602820974-2">2</div><div class="crayon-num" data-line="crayon-584444555abcd602820974-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555abcd602820974-4">4</div><div class="crayon-num" data-line="crayon-584444555abcd602820974-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584444555abcd602820974-1"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">devolver_datos_a_mi_pagina</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555abcd602820974-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">drupal_add_css</span><span class="crayon-sy">(</span><span class="crayon-e">drupal_get_path</span><span class="crayon-sy">(</span><span class="crayon-s">'module'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'nombre-de-mi-modulo'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-s">'/css/estilos-de-mi-modulo.css'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555abcd602820974-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$data</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">_get_datos_de_mi_db</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555abcd602820974-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$data</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555abcd602820974-5"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> solo me queda aclarar de esta función que /css/ es la carpeta que he creado dentro de mi modulo</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-52" class="post-52 post type-post status-publish format-standard hentry category-php category-programacion tag-debug tag-eclipse tag-php">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../debug-php-con-xdebug-y-eclipse-en-windows-easyway/index.html" rel="bookmark">Debug PHP con Xdebug y Eclipse 3.x en Windows de la manera fácil</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2009-04-26T19:51:01+00:00">26 Abr,  2009</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/php/index.html" rel="category tag">PHP</a>, <a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/debug/index.html" rel="tag">debug</a>, <a href="../../tag/eclipse/index.html" rel="tag">Eclipse</a>, <a href="../../tag/php/index.html" rel="tag">PHP</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Esta es la forma rápida y sin complicaciones 🙂 Descargamos Xampp para windows y lo instalamos normalmente. Descargamos eclipse para Windows &#8220;All-In-One PDT 2.0 (Windows 32-bit)&#8220;, que no es mas que eclipse con el Plugin de desarrollo de PHP, y lo descomprimimos donde queramos Bien, resulta que Xampp ya tiene de serie Xdebug y está&nbsp;</p>
+<p><a class="btn btn-style" href="../../debug-php-con-xdebug-y-eclipse-en-windows-easyway/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post--><article id="post-38" class="post-38 post type-post status-publish format-standard hentry category-php category-programacion tag-gd2 tag-php tag-programacion">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../combinar-imagenes-png-transparentes-con-php-gd2/index.html" rel="bookmark">Combinar varias imágenes PNG transparentes con PHP GD2</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2009-02-21T02:45:03+00:00">21 Feb,  2009</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/php/index.html" rel="category tag">PHP</a>, <a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../../tag/gd2/index.html" rel="tag">GD2</a>, <a href="../../tag/php/index.html" rel="tag">PHP</a>, <a href="../../tag/programacion/index.html" rel="tag">Programación</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../combinar-imagenes-png-transparentes-con-php-gd2/index.html#comments">9 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Me toca hacer un script que tome 3 imágenes y las combine mediante PHP  y la librería GD para ir creando imágenes personalizadas para cada producto en un proyecto de mi trabajo. La gracia de esto viene a ser que hay una imagen sólida y las 2 que se apilan son PNG transparentes. </p>
+		<div id="crayon-584444555b2a2522147656" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt; ?php
+/**
+Debemos usar imagecopyresampled() en lugar de imagecopy() ya
+que las imagenes transparentes van a rellenar su canal
+alpha con negro...
+ */
+
+//tomamos la imagen "base"
+$tapa_caratula = imagecreatefrompng("tapa_caratula.png");
+
+// Creamos las dos imágenes a utilizar
+$caratula_base = imagecreatefrompng("caratula_base.png");
+$icono = imagecreatefrompng("icono.png");
+
+// Copiamos una de las imágenes sobre la otra.
+// imagecopyresampled( "img_origen", "imagen_que_nueva", pos x imagen_que_nueva, pos y imagen_que_nueva, pos_x_img_origen, pos_y_img_origen, largo_para_imagen_nueva, ancho_para_imagen_nueva, largo_para_imagen_origen, largo_para_imagen_origen);
+imagecopyresampled(
+  $tapa_caratula,
+  $caratula_base,
+  0, 0, 0, 0,
+  imagesx($caratula_base),
+  imagesy($caratula_base),
+  imagesx($caratula_base),
+  imagesy($caratula_base)
+);
+
+imagecopyresampled(
+  $tapa_caratula,
+  $icono,
+  (imagesx($caratula_base) / 2) - (imagesx($icono) / 2) + 10,
+  80, 0, 0,
+  imagesx($icono),
+  imagesy($icono),
+  imagesx($icono),
+  imagesy($icono)
+);
+
+// Damos salida a la imagen final a un archivo
+imagepng($tapa_caratula, "salida.png");
+
+// Destruimos las imágenes
+imagedestroy($tapa_caratula);
+imagedestroy($caratula_base);
+imagedestroy($icono);</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584444555b2a2522147656-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-2">2</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-4">4</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-6">6</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-8">8</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-10">10</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-12">12</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-14">14</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-16">16</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-18">18</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-20">20</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-22">22</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-24">24</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-26">26</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-28">28</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-30">30</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-32">32</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-34">34</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-36">36</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-38">38</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-40">40</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-42">42</div><div class="crayon-num" data-line="crayon-584444555b2a2522147656-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-584444555b2a2522147656-44">44</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584444555b2a2522147656-1"><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-sy">?</span><span class="crayon-i">php</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-2"><span class="crayon-c">/**</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-3"><span class="crayon-c">Debemos usar imagecopyresampled() en lugar de imagecopy() ya</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-4"><span class="crayon-c">que las imagenes transparentes van a rellenar su canal</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-5"><span class="crayon-c">alpha con negro...</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-6"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-7">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-8"><span class="crayon-c">//tomamos la imagen "base"</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-9"><span class="crayon-v">$tapa_caratula</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">imagecreatefrompng</span><span class="crayon-sy">(</span><span class="crayon-s">"tapa_caratula.png"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-10">&nbsp;</div><div class="crayon-line" id="crayon-584444555b2a2522147656-11"><span class="crayon-c">// Creamos las dos imágenes a utilizar</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-12"><span class="crayon-v">$caratula_base</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">imagecreatefrompng</span><span class="crayon-sy">(</span><span class="crayon-s">"caratula_base.png"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-13"><span class="crayon-v">$icono</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">imagecreatefrompng</span><span class="crayon-sy">(</span><span class="crayon-s">"icono.png"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-14">&nbsp;</div><div class="crayon-line" id="crayon-584444555b2a2522147656-15"><span class="crayon-c">// Copiamos una de las imágenes sobre la otra.</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-16"><span class="crayon-c">// imagecopyresampled( "img_origen", "imagen_que_nueva", pos x imagen_que_nueva, pos y imagen_que_nueva, pos_x_img_origen, pos_y_img_origen, largo_para_imagen_nueva, ancho_para_imagen_nueva, largo_para_imagen_origen, largo_para_imagen_origen);</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-17"><span class="crayon-e">imagecopyresampled</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-18"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$tapa_caratula</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-19"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$caratula_base</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-21"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesx</span><span class="crayon-sy">(</span><span class="crayon-v">$caratula_base</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-22"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesy</span><span class="crayon-sy">(</span><span class="crayon-v">$caratula_base</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-23"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesx</span><span class="crayon-sy">(</span><span class="crayon-v">$caratula_base</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-24"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesy</span><span class="crayon-sy">(</span><span class="crayon-v">$caratula_base</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-25"><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-26">&nbsp;</div><div class="crayon-line" id="crayon-584444555b2a2522147656-27"><span class="crayon-e">imagecopyresampled</span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-28"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$tapa_caratula</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-29"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$icono</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-30"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">(</span><span class="crayon-e">imagesx</span><span class="crayon-sy">(</span><span class="crayon-v">$caratula_base</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-e">imagesx</span><span class="crayon-sy">(</span><span class="crayon-v">$icono</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-31"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-cn">80</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-32"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesx</span><span class="crayon-sy">(</span><span class="crayon-v">$icono</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-33"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesy</span><span class="crayon-sy">(</span><span class="crayon-v">$icono</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-34"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesx</span><span class="crayon-sy">(</span><span class="crayon-v">$icono</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-35"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">imagesy</span><span class="crayon-sy">(</span><span class="crayon-v">$icono</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-36"><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-37">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-38"><span class="crayon-c">// Damos salida a la imagen final a un archivo</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-39"><span class="crayon-e">imagepng</span><span class="crayon-sy">(</span><span class="crayon-v">$tapa_caratula</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"salida.png"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-40">&nbsp;</div><div class="crayon-line" id="crayon-584444555b2a2522147656-41"><span class="crayon-c">// Destruimos las imágenes</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-42"><span class="crayon-e">imagedestroy</span><span class="crayon-sy">(</span><span class="crayon-v">$tapa_caratula</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584444555b2a2522147656-43"><span class="crayon-e">imagedestroy</span><span class="crayon-sy">(</span><span class="crayon-v">$caratula_base</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584444555b2a2522147656-44"><span class="crayon-e">imagedestroy</span><span class="crayon-sy">(</span><span class="crayon-v">$icono</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Descargar&nbsp;</p>
+<p><a class="btn btn-style" href="../../combinar-imagenes-png-transparentes-con-php-gd2/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+            <div class="btn btn-style pull-left"></div>
+            <div class="btn btn-style pull-right"><a href="../23/index.html" >Newer Posts &raquo;</a></div>
+
+        </div> <!-- #content -->
+
+        <div id="sidebar" class="col-md-3" role="complementary">
+            
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+
+            <div class="sidebar-inner">
+                <aside class="widget-area">
+                                    </aside>
+            </div>
+
+        </div> <!-- #sidebar -->
+        
+    </div> <!-- .row -->
+</section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/page/24/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 16:29:10 GMT -->
+</html>

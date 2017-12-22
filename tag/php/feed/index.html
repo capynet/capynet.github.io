@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>PHP &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/php/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Debuguear REST con Postman + xdebug + PhpStorm</title>
+		<link>http://ecapy.com/debuguear-rest-con-postman-xdebug-phpstorm/</link>
+		<pubDate>Tue, 08 Sep 2015 08:20:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[debug]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2956</guid>
+		<description><![CDATA[Postman es un excelente cliente para probar todos los servicios que tu API (o la de otro) tienen. Si estas usando PhpStorm con xdebug y necesitas usarlo con postman, la cosa no puede ser mas simple: Asegurate que xdebug está bien configurado. Por lo general podés encontrara bajo [crayon-584436e97b9ca589265260/] Aunque dependiendo de la distribucion de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/debuguear-rest-con-postman-xdebug-phpstorm/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop" target="_blank">Postman</a> es un excelente cliente para probar todos los servicios que tu API (o la de otro) tienen.</p>
+<p>Si estas usando PhpStorm con xdebug y necesitas usarlo con postman, la cosa no puede ser mas simple:</p>
+<h3>Asegurate que xdebug está bien configurado.</h3>
+<p>Por lo general podés encontrara bajo</p><pre class="crayon-plain-tag">/etc/php5/apache2/conf.d/20-xdebug.ini</pre><p>Aunque dependiendo de la distribucion de linux que uses, puede que tengas que goglear un poco para saber donde está el archivo de configuración de xdebug en tu sistema.</p>
+<p>Cuando lo encuentres solo asegúrate que estas opciones están y configuradas de la siguiente manera:</p><pre class="crayon-plain-tag">xdebug.idekey = PHPSTORM
+xdebug.remote_autostart=1</pre><p>Si no están definidas podes agregarlas sin miedo.</p>
+<h3>Prueba</h3>
+<p>Reinicia apache y probemos. En phpstorm Dale a este botón:</p>
+<p><img class="size-full wp-image-2957" src="http://ecapy.com/wp-content/uploads/2015/09/debug-listener-phpstorm.png" alt="debug-listener-phpstorm" width="26" height="22" /></p>
+<p>Y en postman pon &#8220;<strong>?XDEBUG_SESSION_START=PHPSTORM</strong>&#8221;</p>
+<p><img class="alignnone wp-image-2962 size-full" src="http://ecapy.com/wp-content/uploads/2015/09/postman-url.png" alt="postman-url" width="692" height="159" srcset="http://ecapy.com/wp-content/uploads/2015/09/postman-url.png 692w, http://ecapy.com/wp-content/uploads/2015/09/postman-url-300x69.png 300w" sizes="(max-width: 692px) 100vw, 692px" /></p>
+<p>Y listo, pones un breakpoint en phpstorm y vas a ver como para.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Detectar el navegador y toda su información desde PHP o Javascript</title>
+		<link>http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/</link>
+		<pubDate>Mon, 22 Sep 2014 10:15:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Back-end]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2805</guid>
+		<description><![CDATA[Hola, les hago una intro bien corta y pasamos al código. Browscap es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos. PHP tiene soporte nativo para hacer uso de esta DB, pero debido a un par de limitaciones&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola, les hago una intro bien corta y pasamos al código.</p>
+<p><a href="http://browscap.org/">Browscap</a> es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos.</p>
+<p>PHP <a href="http://php.net/manual/es/function.get-browser.php" target="_blank">tiene soporte nativo</a> para hacer uso de esta DB, pero debido a un par de limitaciones que PHP aun no ha solventado en su API, <a href="https://github.com/browscap/browscap-php" target="_blank">en GitHub un usuario creó una soluciona basada también en la DB de Browscap</a> pero mucho mas robusta y fácil de usar.</p>
+<p>Bien, llegados a este punto sabemos que lo que necesitamos usar es Browscap junto a la librería que se creó para explotarla.</p>
+<p>Para mas información, toda la documentación completa de php-browscap la pueden encontrar <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a>. Yo me centro en una implementación mucho mas simple porque realmente creo que de los 40 datos que entrega sobre el navegados, con apenas 7 tenemos el 99% de los casos cubiertos.</p>
+<p><a href="http://ecapy.com/Archivos/browser/index.php" target="_blank"><strong>Acá tienen un ejemplo</strong></a> funcionando para que vean lo rápido y certero que es a la hora de conseguir la info del browser (pruébenlo con mas de uno)</p>
+<p>Ok, pongamos algo de código que sino todo esto es muy aburrido:<br />
+Vamos a aprovechar esta librería bajo dos situaciones. en PHP y en JS</p>
+<h3>En PHP</h3>
+<p>Descarguen la librería php-browscap via Composer o a mano. Pueden saber mas sobre como descargarla <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a><br />
+Ahora que la tenemos creamos un archivo index.php para usarla.</p><pre class="crayon-plain-tag">require 'vendor/autoload.php';
+use phpbrowscapBrowscap;
+
+$bc = new Browscap('cache');
+/** @var stdClass $current_browser */
+$current_browser = $bc-&gt;getBrowser();</pre><p>Fácil, no?. Ok ya tenemos un stdClass en $current_browser con toda la información disponible del browser que llame a index.php</p>
+<h4>Aplicaciones?</h4>
+<p>Puedes por ejemplo tomar decisiones del tipo</p><pre class="crayon-plain-tag">$curr_br = $current_browser-&gt;Browser;
+$CoolBrowsers = $curr_br == 'Chrome' || $curr_br == 'Firefox';
+
+if ($CoolBrowsers) {
+  add_asset('css', 'just-for-cool-browsers.css');
+  $output = renderAdvancedLayout();
+}
+else {
+  add_asset('css', 'just-for-bad-bad-browsers.css');
+  $output = renderBasicLayout();
+}</pre><p>También puedes detectar si están accediendo desde un móvil o una tablet, incluso saber si es Android, IOS, la version del SO, etc. Con toda esta información a resumidas cuentas puedes entregar un contenido muy preciso.</p>
+<h4>Beneficios</h4>
+<p>Estas entregando contenidos a medida, ergo necesitas entregar menos HTML, CSS, Js y las imágenes mas adecuadas al navegador. Esto finalmente se traduce en menos procesamiento del lado del servidor, lo que se entrega pesa menos KB y el navegador tarda menos en leer y renderizar todos los recursos (en especial JS).</p>
+<h3>En JS</h3>
+<p>Por ultimo me gustaría compartir un tip para poder aprovechar la detección de browsers en JS:<br />
+A ver, con js podemos detectar el browser usando un poco de expresiones regulares, pero llegar al detalle y la precisión a la que llega browscap es virtualmente imposible. Dicho esto, comentar que se puede entregar toda la información del browser detectado desde php simplemente haciendo esto:</p><pre class="crayon-plain-tag">&lt;script type="application/javascript"&gt;
+    var browser = &lt;?= json_encode($current_browser = $bc-&gt;getBrowser()); ?&gt;;
+    alert(browser.Browser);
+    alert(browser.Version);
+&lt;/script&gt;</pre><p>&nbsp;</p>
+<p>Hasta la próxima!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>PHP APC: configuración rápida</title>
+		<link>http://ecapy.com/drupal-apc-configuracion-rapida/</link>
+		<pubDate>Fri, 22 Nov 2013 09:06:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2567</guid>
+		<description><![CDATA[Aquí dejo una configuración rápida de APC. [crayon-584436e97ce16114464118/] Si están usando Debian o derivados pueden poner la configuración en /etc/php5/conf.d/20-apc.ini (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar). Para mas opciones ver http://www.php.net/manual/es/apc.configuration.php No olvides reiniciar apache: sudo service apache2 restart Chau!]]></description>
+				<content:encoded><![CDATA[<p>Aquí dejo una configuración rápida de APC.</p><pre class="crayon-plain-tag">extension=apc.so
+apc.shm_segments=1
+apc.shm_size=256M</pre><p>Si están usando Debian o derivados pueden poner la configuración en <em>/etc/php5/conf.d/20-apc.ini</em> (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar).</p>
+<p>Para mas opciones ver <a href="http://www.php.net/manual/es/apc.configuration.php" target="_blank">http://www.php.net/manual/es/apc.configuration.php</a></p>
+<p>No olvides reiniciar apache: <strong>sudo service apache2 restart</strong></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Closures: mod_fcgid: stderr: PHP Fatal error:  Using $this when not in object context in</title>
+		<link>http://ecapy.com/closures-mod_fcgid-stderr-php-fatal-error-using-this-when-not-in-object-context-in/</link>
+		<pubDate>Tue, 30 Apr 2013 23:27:01 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2181</guid>
+		<description><![CDATA[Las closures son algo genial, y grandes frameworks como symfony las aprovechan para hacer magia prácticamente, pero son relativamente nuevas en el mundo de PHP, y hay veces que dan problemas. Por ejemplo, el titulo de este post se genera cuando tenes un closure dentro e una clase (está dentro de un método de la&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/closures-mod_fcgid-stderr-php-fatal-error-using-this-when-not-in-object-context-in/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Las <a href="http://php.net/manual/es/functions.anonymous.php" target="_blank">closures</a> son algo genial, y grandes frameworks como <a href="http://symfony.com/" target="_blank">symfony</a> las aprovechan para hacer magia prácticamente, pero son relativamente nuevas en el mundo de PHP, y hay veces que dan problemas.</p>
+<p>Por ejemplo, el titulo de este post se genera cuando tenes un closure dentro e una clase (está dentro de un método de la clase). <strong>cuando querés acceder a $this desde dentro del closure te va a lanzar el error</strong>. Un ejemplo:</p><pre class="crayon-plain-tag">&lt; ?php protected function buscarProcesa(&amp;$text) { preg_replace_callback("/algo/s", function ($matches) { $this-&gt;procesarMatches($matches);
+  }, $text);
+}</pre><p>En este ejemplo estamos queriendo usar el método <em>$this-&gt;procesarMatches()</em> desde dentro del closure, y va a fallar por dos motivos el primero es que los closures no pueden acceder a las variables que se encuentren fuera de si mismas, así que <strong>$this al estar fuera, es inaccesible</strong>. Pero tiene solución, usando <em>use ($this)</em> se puede pasar a $this dentro del closure:</p><pre class="crayon-plain-tag">&lt; ?php protected function buscarProcesa(&amp;$text) { preg_replace_callback("/algo/s", function ($matches) use ($this) { $this-&gt;procesarMatches($matches);
+  }, $text);
+}</pre><p>Ahora bien, usando <em>use ($algunavariable, $otravariable)</em> las podemos meter dentro del closure, y mientras que no sea $this, todo va a funcionar bien, pero el caso es que necesitamos $this, y en el momento que hagamos <em>function ($matches) use ($this)</em> vamos a recibir el error que les comento.</p>
+<p>¿Por qué?, bueno es una limitación que ha quedado de cuando implementaron closures en PHP. Algún día lo solucionaran, pero mientras tanto la solución es esta:</p><pre class="crayon-plain-tag">&lt; ?php protected function buscarProcesa(&amp;$text) { $self = $this; preg_replace_callback("/algo/s", function ($matches) use ($self){ $self-&gt;procesarMatches($matches);
+  }, $text);
+}</pre><p>Si miran bien lo que hicimos es <strong>asignar $this a $self y enviamos $self al closure</strong>&#8230; y así funciona todo sin problemas.</p>
+<p>Una nota final: Cualquier método/variable que llames dentro del closure tiene que ser necesariamente publica, sino falla.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Como forzar la descarga de un archivo con PHP</title>
+		<link>http://ecapy.com/como-forzar-la-descarga-de-un-archivo-con-php/</link>
+		<comments>http://ecapy.com/como-forzar-la-descarga-de-un-archivo-con-php/#comments</comments>
+		<pubDate>Sat, 16 Jul 2011 18:48:47 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1038</guid>
+		<description><![CDATA[Cada tanto necesitamos cosas así 🙂 [crayon-584436e97d967987120313/] [crayon-584436e97d979632035581/] Si queres que el archivo se descargue con el nombre original. [crayon-584436e97d982668482931/]]]></description>
+				<content:encoded><![CDATA[<p>Cada tanto necesitamos cosas así <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag"><!--?php 
+/**
+ * Downloader
+ *
+ * @param $archivo
+ *  path al archivo
+ * @param $downloadfilename
+ *  (null|string) el nombre que queres usar para el archivo que se va a descargar.
+ *  (si no lo especificas usa el nombre actual del archivo)
+ *
+ * @return file stream
+ */
+function download_file($archivo, $downloadfilename = null) {
+ 
+    if (file_exists($archivo)) {
+        $downloadfilename = $downloadfilename !== null ? $downloadfilename : basename($archivo);
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename=' . $downloadfilename);
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($archivo));
+ 
+        ob_clean();
+        flush();
+        readfile($archivo);
+        exit;
+    }
+ 
+}
+&lt;/pre&gt;
+&lt;p&gt;Uso:&lt;br ?-->
+Si queres que el archivo se descargue con un nombre distinto al original.</pre><p></p><pre class="crayon-plain-tag">&lt;?php
+download_file("archivos/archivoReal.zip", "archivoEnmascarado.zip");</pre><p>Si queres que el archivo se descargue con el nombre original.</p><pre class="crayon-plain-tag">&lt;?php
+download_file("archivos/archivoReal.zip");</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/como-forzar-la-descarga-de-un-archivo-con-php/feed/</wfw:commentRss>
+		<slash:comments>24</slash:comments>
+		</item>
+		<item>
+		<title>Reemplazar la ñ, acentos, espacios y caracteres especiales con PHP [Actualizada]</title>
+		<link>http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/</link>
+		<comments>http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/#comments</comments>
+		<pubDate>Thu, 10 Mar 2011 21:25:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Codificación de caracteres]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=884</guid>
+		<description><![CDATA[[crayon-584436e97f785238047079/] Ejemplo de uso: [crayon-584436e97f799236270373/]]]></description>
+				<content:encoded><![CDATA[<p></p><pre class="crayon-plain-tag">&lt; ?php
+/**
+ * Reemplaza todos los acentos por sus equivalentes sin ellos
+ *
+ * @param $string
+ *  string la cadena a sanear
+ *
+ * @return $string
+ *  string saneada
+ */
+function sanear_string($string)
+{
+ 
+    $string = trim($string);
+ 
+    $string = str_replace(
+        array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
+        array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
+        array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
+        array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
+        array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
+        array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
+        $string
+    );
+ 
+    $string = str_replace(
+        array('ñ', 'Ñ', 'ç', 'Ç'),
+        array('n', 'N', 'c', 'C',),
+        $string
+    );
+ 
+    //Esta parte se encarga de eliminar cualquier caracter extraño
+    $string = str_replace(
+        array("\", "¨", "º", "-", "~",
+             "#", "@", "|", "!", """,
+             "·", "$", "%", "&amp;", "/",
+             "(", ")", "?", "'", "¡",
+             "¿", "[", "^", "<code>", "]",
+             "+", "}", "{", "¨", "´",
+             "&gt;", "&lt; ", ";", ",", ":",
+             ".", " "),
+        '',
+        $string
+    );
+ 
+ 
+    return $string;
+}</pre><p>Ejemplo de uso:</p><pre class="crayon-plain-tag"><!--?php 
+echo sanear_string("áàäâªÁÀÂÄdoéèëêÉÈÊËreíìïîÍÌÏÎmióòöôÓÒÖÔfaúùüûÚÙÛÜsolñÑçÇlasi\¨º-~#@|!,·$%&amp;/()?¡¿[^&lt;/code&gt;]+}{¨´&gt;&lt; ;,:. ");
+&lt;/pre&gt;
+&lt;p&gt;Lo anterior imprime:&lt;br ?-->
+[code]"aaaaaAAAAdoeeeeEEEEreiiiiIIIImiooooOOOOfauuuuUUUUsolnNcClasi"[/code]</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/reemplazar-la-n-acentos-espacios-y-caracteres-especiales-con-php-actualizada/feed/</wfw:commentRss>
+		<slash:comments>63</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Xdebug en Ubuntu (cualquier versión)</title>
+		<link>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/</link>
+		<comments>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/#comments</comments>
+		<pubDate>Sun, 19 Sep 2010 12:15:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[Xdebug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=611</guid>
+		<description><![CDATA[Esto es mas bien un resumen de las instrucciones que nos deja el mismo creador de Xdebug en su pagina (http://xdebug.org/docs/install) mas un par de cosas que da por entendido que debemos saber 🙂 1) Lo primero es bajarse el código fuente de la ultima versión de Xdebug (la 2.1 es la ultima al día&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Esto es mas bien un resumen de las instrucciones que nos deja el mismo creador de Xdebug en su pagina (http://xdebug.org/docs/install) mas un par de cosas que da por entendido que debemos saber <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>1) Lo primero es bajarse el código fuente de la ultima versión de Xdebug (la 2.1 es la ultima al día de la fecha)</p>
+<p><a href="http://xdebug.org/files/xdebug-2.1.0.tgz">http://xdebug.org/files/xdebug-2.1.0.tgz</a></p>
+<p>2) Descompriman el archivo en una carpeta cualquiera</p>
+<p>De acá en mas solo nos queda compilar configurar y probar:</p>
+<p>3) Lancen el siguiente comando para asegurarse que tienen instaladas las librerías de desarrollo de php5 que son necesarias para poder compilar Xdebug:</p><pre class="crayon-plain-tag">apt-get install php5-dev</pre><p>4) Entren en la carpeta por medio de la consola:</p><pre class="crayon-plain-tag">cd /ruta/a/la/carpeta/donde/descomprimiste/los/archivos/fuente/de/xdebug/xdebug-2.1.0/</pre><p>5) Lanzar el comando phpize</p><pre class="crayon-plain-tag">phpize</pre><p>6) Lanzar:</p><pre class="crayon-plain-tag">./configure --enable-xdebug
+make
+sudo make install</pre><p>Al final del infierno de outputs de salen en la consola van a apreciar que se dibuja un recuadro como el que se ve en la siguiente imagen:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png"><img class="aligncenter size-full wp-image-612" title="consola make install xdebug" src="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png" alt="" width="607" height="614" srcset="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png 607w, http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug-297x300.png 297w" sizes="(max-width: 607px) 100vw, 607px" /></a></p>
+<p>Bueno, justo encima de ese recuadro pueden ver que dice algo como &#8220;<strong>Installing shared extensions: /usr/lib/php5/20090626+lfs/</strong>&#8220;. Copien esa ruta.</p>
+<p>Ya esta instalado Xdebug. Configuremos lo XD.</p>
+<p>7) Editemos <strong>php.ini</strong></p><pre class="crayon-plain-tag">sudo gedit /etc/php5/apache2/php.ini</pre><p>Y en la ultima linea del archivo pequen lo siguiente:</p><pre class="crayon-plain-tag">zend_extension=&quot;&lt;strong&gt;/usr/lib/php5/20090626+lfs/xdebug.so&lt;/strong&gt;&quot;
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000</pre><p><span style="color: #993300;">NOTA: en la linea que dice &#8220;<strong>zend_extension</strong>&#8221; reemplacen la ruta del ejemplo por la que copiaron en el paso 6</span></p>
+<p>8) Listo! todo en teoría funciona. para comprobarlo abran el IDE al que le tengan mas bronca y configurenlo!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Como ver las variables disponibles en una plantilla .tpl.php (PHPTemplate)</title>
+		<link>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/</link>
+		<comments>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/#comments</comments>
+		<pubDate>Mon, 30 Aug 2010 23:11:43 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[PHPTemplate]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=575</guid>
+		<description><![CDATA[Otro de esos TIP que nos vienen sorprendente mente bien :). Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo()&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Otro de esos TIP que nos vienen sorprendente mente bien :).</p>
+<p>Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo() seguro que ahi está, pero hasta que no lo haces no podes saber siquiera que existe.</p>
+<p>Bueno basta de intro, vamos a un ejemplo rapido y claro:</p>
+<p>Si pones esta función en la plantilla que querés investigar, vas a poder ver un array (<strong>$variablesDisponibles</strong> para este ejemplo) de los nombres de todas las variables de las que dispone (y de sus contenidos también):</p><pre class="crayon-plain-tag">$variablesDisponibles = get_defined_vars();</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: Módulos y templates con acentos, &#8220;¿&#8221; y &#8220;ñ&#8221; mal codificados [solución]</title>
+		<link>http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/</link>
+		<comments>http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/#comments</comments>
+		<pubDate>Sun, 08 Aug 2010 10:52:07 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Codificación de caracteres]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=547</guid>
+		<description><![CDATA[Un problema con el que me suelo dar de tanto en tanto son las codificaciones de caracteres. En especial la de acentos, la ñ y el signo de pregunta de apertura (¿). El problema mas común que me encontré en mis primeros tiempos como desarrollador de módulos de Drupal fue que de tanto en tanto&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Un problema con el que me suelo dar de tanto en tanto son las codificaciones de caracteres. En especial la de acentos, la ñ y el signo de pregunta de apertura (¿).</p>
+<p>El problema mas común que me encontré en mis primeros tiempos como desarrollador de módulos de Drupal fue que de tanto en tanto abría un modulo, y este tenia los caracteres especiales hechos pedazos, mal codificados.</p>
+<p>Probé con todo tipo de yerbas raras. Desde usar funciones de todo tipo de encoding de PHP hasta cambiar la collation de la DB&#8230;</p>
+<p>Pero <strong>la solución estaba tan al alcance de la mano que me llegue a sentir un autentico boludo cuando me cayeron las fichas</strong>: ¡La codificación de los archivos!. Si señor/a, no me había fijado en la codificación de los archivos (*.module, *.php, *.install, *.inc, etc).</p>
+<p>Lo único que hay que hacer para que todo funcione como la seda son unas pocas cosas:</p>
+<p><strong>Que el archivo esté codificado en <span style="color: #993300;">UTF-8</span>. </strong>Podés saber que codificación tiene abriéndolo con Notepad++ y yendo al menú “Formato” como se ve en la imagen:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_verificar_codificacion.png"><img class="aligncenter size-full wp-image-548" title="Notepad++ Verificar la codificación de un archivo" src="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_verificar_codificacion.png" alt="" width="280" height="289" /></a></p>
+<p>Y si ven que no está seteado en “UTF-8 sin BOM” o “UTF-8”, pueden convertirlo a cualquiera de estos formatos en el mismo menú:<br />
+(<strong>Para nosotros usar “UTF-8 sin BOM” o “UTF-8” nos es indistinto</strong> <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> )</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_convertir_codificacion.png"><img class="aligncenter size-full wp-image-549" title="Notepad++ Convertir la codificación de un archivo" src="http://ecapy.com/wp-content/uploads/2010/08/notepad_plus_plus_convertir_codificacion.png" alt="" width="269" height="283" /></a></p>
+<p>En el caso de los IDE deben saber que Netbeans y Zend Studio de serie vienen configurados para crear y tratar a los archivos bajo UTF-8, mientras que<strong> Eclipse NO</strong>.</p>
+<p>Entonces, si usas Eclipse solo tenes que tocar un detalle en la configuración general para despreocuparte de este asunto:<br />
+Vayan al menú “Window -&gt; preferences” y en el menú de preferencias deben ir a “General -&gt; Workspace”. Cambien la codificación que haya puesta por la de UTF-8 como se ve en la imagen.</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/08/configuracion_cofificacion_caracteres_eclipse.png"><img class="aligncenter size-full wp-image-550" title="Cambiar la codificación por defecto de Eclipse" src="http://ecapy.com/wp-content/uploads/2010/08/configuracion_cofificacion_caracteres_eclipse.png" alt="" width="214" height="85" /></a><br />
+Otra cosa mas. <strong>Si trabajan con GIT sepan que tampoco codifica los archivos en UTF-8, </strong>y se soluciona yendo a sus opciones y cambiándolo.</p>
+<p><span style="color: #993300;"><strong>Con lo anterior podes olvidarte de tener problemas de codificación De hecho podes dejar de usar entidades HTML y demases, y solo con usar t(“áéíóúñ”) que no vas a tener mas problemas.</strong></span></p>
+<p>Lo ultimo que quiero comentar es que si trabajan con mas gente sobre estos módulos, asegurate que todos tengan bien configurado su IDE o editor para evitar que los codifique mal (con solo abrir un archivo UTF-8 con un editor que no esté en ese formato es muy posible que al editarle una letra y guardarlo lo haga pedazos!).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/solucion-modulos-y-templates-con-acentos-y-caracteres-mal-codificados/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: Mostrar los errores de PHP en lugar de la pantalla blanca (o blank page)</title>
+		<link>http://ecapy.com/drupal-6-mostrar-los-errores-de-php-en-lugar-de-la-pantalla-blanca-o-blank-page/</link>
+		<comments>http://ecapy.com/drupal-6-mostrar-los-errores-de-php-en-lugar-de-la-pantalla-blanca-o-blank-page/#comments</comments>
+		<pubDate>Tue, 03 Aug 2010 11:29:23 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=531</guid>
+		<description><![CDATA[Suele hacer falta poder ver los errores de PHP en Drupal de vez en cuando. Abrí el archivo index.php de Drupal y poné lo siguiente justo por encima de &#8220;require_once &#8216;./includes/bootstrap.inc&#8217;;&#8220;: [crayon-584436e985f7b593831467/]]]></description>
+				<content:encoded><![CDATA[<p>Suele hacer falta poder ver los errores de PHP en Drupal de vez en cuando.</p>
+<p>Abrí el archivo <strong>index.php</strong> de Drupal y poné lo siguiente justo por encima de &#8220;<strong>require_once &#8216;./includes/bootstrap.inc&#8217;;</strong>&#8220;:</p><pre class="crayon-plain-tag">&lt;?php
+//Reportar errores PHP
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+//Fin reportar errores PHP</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-6-mostrar-los-errores-de-php-en-lugar-de-la-pantalla-blanca-o-blank-page/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

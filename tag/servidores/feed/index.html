@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Servidores &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/servidores/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Hacer &#8220;git pull&#8221; en un servidor remoto desde tu local</title>
+		<link>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/</link>
+		<comments>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/#comments</comments>
+		<pubDate>Wed, 17 Aug 2016 14:34:32 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3442</guid>
+		<description><![CDATA[Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona: [crayon-584436839cfa1631409424/] Pónganlo en .barchrc o .bash_aliases de tu ordenador (local) y a partir de ahi cuando lances en tu consola git_pull_on_dev_lapaginaweb te va a hacer un git pull en el servidor remoto. NOTA:&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona:</p><pre class="crayon-plain-tag">#Desplegar en el servidor de dev:
+alias git_pull_on_dev_lapaginaweb="ssh deploy@137.30.100.10 'cd /var/www/la_pagina_web &amp;&amp; git pull origin dev'"</pre><p>Pónganlo en <strong>.barchrc o .bash_aliases</strong> de tu ordenador (local) y a partir de ahi cuando lances en tu consola <strong>git_pull_on_dev_lapaginaweb</strong> te va a hacer un git pull en el servidor remoto.</p>
+<p><strong><span style="text-decoration: underline;">NOTA</span></strong>: <strong>para que funcione tenés que recargar .bashrc</strong> de nuevo. Lanza esto en la consola: <strong>source .bashrc</strong></p>
+<p><strong><span style="text-decoration: underline;">NOTA 2</span></strong>: <b>Es obvio que a tu servidor de desarrollo te conectas usando una ssh key. Si te conectas por shh usando clave no te va a servir esta solución.</b></p>
+<p><span style="text-decoration: underline;"><strong>NOTA 3</strong></span>: Antes que me dejen comentarios del estilo &#8220;para eso está jenkins&#8221;.  Ésta es una solución rápida para los que no quieren o pueden instalar un jenkins <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Setear variables de configuración de tomcat en Ubuntu/Debian</title>
+		<link>http://ecapy.com/setear-variables-de-configuracion-de-tomcat-en-ubuntudebian/</link>
+		<pubDate>Thu, 04 Sep 2014 23:03:56 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2763</guid>
+		<description><![CDATA[Esto es casi una nota mental 🙂 [crayon-584436839dfe8211105193/]]]></description>
+				<content:encoded><![CDATA[<p>Esto es casi una nota mental <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><pre class="crayon-plain-tag">sudo nano /etc/default/tomcat7</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Habilitar el opcache que viene con php ( &gt;= 5.5 ) en xampp</title>
+		<link>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/</link>
+		<comments>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/#comments</comments>
+		<pubDate>Sun, 08 Dec 2013 02:59:18 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Xampp]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2583</guid>
+		<description><![CDATA[Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS. Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este) [crayon-584436839e8a6807236682/] Y listo, tenemos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/habilitar-el-opcache-que-viene-con-php/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Ya en el futuro de va a demostrar si este nuevo opcache es mejor que los ya conocidos, pero de momento es el ÚNICO que funciona razonablemente bien en WINDOWS.</p>
+<p>Edita tu &#8220;php.ini&#8221; y pega esto al final del archivo (si tenes configurado xdebug, al opcache ponelo por encima de este)</p><pre class="crayon-plain-tag">[Opcache]
+; poné el path real donde esté alojado php_opcache.dll
+zend_extension = "C:xamppphpextphp_opcache.dll"
+opcache.memory_consumption = 500
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=60
+opcache.fast_shutdown=1
+opcache.enable_cli=1</pre><p>Y listo, tenemos un motivo menos de sufrimiento a la hora de programar en este SO.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/habilitar-el-opcache-que-viene-con-php/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>PHP APC: configuración rápida</title>
+		<link>http://ecapy.com/drupal-apc-configuracion-rapida/</link>
+		<pubDate>Fri, 22 Nov 2013 09:06:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2567</guid>
+		<description><![CDATA[Aquí dejo una configuración rápida de APC. [crayon-58443683a07d4047040581/] Si están usando Debian o derivados pueden poner la configuración en /etc/php5/conf.d/20-apc.ini (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar). Para mas opciones ver http://www.php.net/manual/es/apc.configuration.php No olvides reiniciar apache: sudo service apache2 restart Chau!]]></description>
+				<content:encoded><![CDATA[<p>Aquí dejo una configuración rápida de APC.</p><pre class="crayon-plain-tag">extension=apc.so
+apc.shm_segments=1
+apc.shm_size=256M</pre><p>Si están usando Debian o derivados pueden poner la configuración en <em>/etc/php5/conf.d/20-apc.ini</em> (la parte del nombre &#8220;20-&#8221; puede variar, verifiquenlo antes de editar).</p>
+<p>Para mas opciones ver <a href="http://www.php.net/manual/es/apc.configuration.php" target="_blank">http://www.php.net/manual/es/apc.configuration.php</a></p>
+<p>No olvides reiniciar apache: <strong>sudo service apache2 restart</strong></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hacer proxy con Apache para aplicaciones Tomcat 7</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/</link>
+		<comments>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/#comments</comments>
+		<pubDate>Wed, 18 Sep 2013 08:00:45 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[proxy]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Tomcat]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2527</guid>
+		<description><![CDATA[La idea es simple, las aplicaciones Tomcat corren por lo general en el puerto 8080, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto 80. Vamos a ello. Crea un nuevo virtualhost: [crayon-58443683a17fa956492725/] En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com. Los últimos dos pasos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La idea es simple, <strong>las aplicaciones Tomcat corren por lo general en el puerto <em>8080</em>, y seria mas elegante si pudiéramos servir esta app desde apache por el puerto <em>80</em></strong>. Vamos a ello.</p>
+<p>Crea un nuevo virtualhost:</p><pre class="crayon-plain-tag">ServerName youtrack.ecapy.com
+
+ProxyPreserveHost On
+ProxyRequests Off
+
+Order deny,allow
+Allow from all
+
+ProxyPass /youtrack ajp://localhost:8080/youtrack
+ProxyPassReverse /youtrack ajp://localhost:8080/youtrack
+
+RewriteEngine On
+RewriteRule ^/$ "http://youtrack.ecapy.com/youtrack" [L]
+
+ErrorLog /var/log/apache2/yt-error.log
+CustomLog /var/log/apache2/yt-access.log common</pre><p>En este ejemplo, lo he configurado para que youtrack sea accedido mediante youtrack.ecapy.com.</p>
+<p>Los últimos dos pasos son habilitar el modulo <a href="http://es.wikipedia.org/wiki/Apache_JServ_Protocol" target="_blank">ajp</a> que es el modulo que usa apache para hablar con tomcat:</p><pre class="crayon-plain-tag">sudo a2enmod proxy_ajp</pre><p>Y reiniciamos apache:</p><pre class="crayon-plain-tag">sudo service apache2 restart</pre><p>Resultado:<br />
+<a href="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png"><img class="size-full wp-image-2531 alignnone" src="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png" alt="Tomcat app running through Apache" width="614" height="463" srcset="http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache.png 614w, http://ecapy.com/wp-content/uploads/2013/09/tomcat-app-running-through-apache-300x226.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-tomcat-7/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Actualizar solo un paquete en Linux</title>
+		<link>http://ecapy.com/actualizar-solo-un-paquete-en-linux/</link>
+		<pubDate>Thu, 29 Aug 2013 16:38:23 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2433</guid>
+		<description><![CDATA[Si querés actualizar por linea de comandos solo un paquete. En lugar de sudo sudo apt-get upgrade, podes usar este comando: [crayon-58443683a1c1e028147503/] Obviamente que tenes que saber como se llama el paquete ;). Chau!]]></description>
+				<content:encoded><![CDATA[<p>Si querés actualizar por linea de comandos solo un paquete. En lugar de sudo <em>sudo apt-get upgrade</em>, podes usar este comando:</p><pre class="crayon-plain-tag">sudo apt-get install --only-upgrade oracle-jdk7-installer</pre><p>Obviamente que tenes que saber como se llama el paquete ;).</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Mejorando el rendimiento en Drupal 7: Memcached y Entity cache</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/</link>
+		<comments>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comments</comments>
+		<pubDate>Thu, 07 Mar 2013 10:51:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2036</guid>
+		<description><![CDATA[En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7. Memcached para los que no lo conozcan, es un data cache basado en RAM. Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7.</p>
+<p>Memcached para los que no lo conozcan, es un <a href="http://es.wikipedia.org/wiki/Memcached" target="_blank">data cache basado en RAM</a>.</p>
+<p>Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para cachear utiliza la base de datos como almacén para dicho cache, y esto es costoso. Cada vez que guarda algo en cache o lo pide, estamos haciendo una query a la DB, y aunque toda tu DB este cacheada (mysql tiene su propio cache) Drupal siempre va a tener un importante overhead solo por tener que pedir a la DB este cache.</p>
+<p>Técnicamente hablando el tema es así: Estés o no logueado, Drupal usa <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_get/7" target="_blank">cache_get()</a> y <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_set/7" target="_blank">cache_set()</a>. Luego, estas funciones delegan la tarea de cacheo a la clase que se encargue en ese momento de almacenar y devolver los datos cacheados. Una instalación estándar trae una clase llamada &#8220;<a href="http://api.drupal.org/api/drupal/includes!cache.inc/class/DrupalDatabaseCache/7" target="_blank">DrupalDatabaseCache</a>&#8221; que usa como backend storage la propia DB de Drupal. El módulo <a href="http://drupal.org/project/memcache" target="_blank">Memcache API</a> simplemente proporciona su propia clase (MemCacheDrupal) que hace lo mismo pero mandando el cache a Memcache.</p>
+<p>Memcache se presenta como una muy buena solución a este escollo ya que fue diseñado para ser usado como cache, ofreciendo un overhead mínimo y una velocidad de respuesta muy superior.</p>
+<p>Bueno, vamos al lío.</p>
+<h4>Maquina de pruebas:</h4>
+<ul>
+<li>Hardware:
+<ul>
+<li>core2duo e7400@3.5GHZ</li>
+<li>8gb de ram DDR3@1333MHZ</li>
+<li>Disco SSD OCZ Vertex 2 de 60gb</li>
+</ul>
+</li>
+<li>Software:
+<ul>
+<li>Ubuntu 12.10 de 64 bits</li>
+<li>PHP 5.4.6</li>
+<li>MySQL 5.5.29</li>
+<li>Apache 2.2.22</li>
+<li>APC 3.1.13</li>
+<li>memcached 1.4.14</li>
+<li><a href="http://pecl.php.net/package/memcached" target="_blank">Cliente PHP de Memcache: memcached 2.0.1</a></li>
+<li><a href="http://drupal.org/project/memcache" target="_blank">Modulo Memcache API and Integration 7.x-1.0</a></li>
+<li><a href="http://drupal.org/project/entitycache" target="_blank">Modulo Entity cache</a></li>
+</ul>
+</li>
+</ul>
+<p>Para hacer las pruebas he usado la instalación de Drupal &#8220;<a title="Un mal día para este Drupal" href="http://ecapy.com/un-mal-dia-para-este-drupal/" target="_blank">Un mal día para este Drupal</a>&#8220;.<br />
+<strong>Las pruebas las hice sobre usuarios anónimos, logueados y el propio admin</strong> que es el que mas suele sufrir en terminos de performance porque ejecuta código extra por los privilegios que conlleva.</p>
+<h3>Usuarios anónimos:</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 199.42 ms.</li>
+<li>Page execution time was 4791.87 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1226 queries in 71.77 ms.</li>
+<li>Page execution time was 3892.39 ms.</li>
+<li>PHP peak=57 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 398 queries in 39.88 ms.</li>
+<li>Page execution time was 3450.76 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 167.15 ms.</li>
+<li>Page execution time was 4037.62 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1186 queries in 66 ms.</li>
+<li>Page execution time was 3927.52 ms.</li>
+<li>PHP peak=57.75 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 377 queries in 30.31 ms.</li>
+<li>Page execution time was 3534.07 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios logueados</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2324 queries in 162.27 ms.</li>
+<li>Page execution time was 4033.2 ms.</li>
+<li>PHP peak=58.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 73.47 ms.</li>
+<li>Page execution time was 4028.68 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 396 queries in 26.19 ms.</li>
+<li>Page execution time was 3530.29 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2262 queries in 182.59 ms.</li>
+<li>Page execution time was 4286.79 ms.</li>
+<li>PHP peak=58 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 56.45 ms.</li>
+<li>Page execution time was 3716.37 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 379 queries in 27.97 ms.</li>
+<li>Page execution time was 4072.24 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios con rol &#8220;administrator&#8221;</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3106 queries in 231.33 ms.</li>
+<li>Page execution time was 5588.66 ms.</li>
+<li>PHP peak=66.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1812 queries in 89.79 ms.</li>
+<li>Page execution time was 4701.39 ms.</li>
+<li>PHP peak=64.5 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 68.43 ms.</li>
+<li>Page execution time was 4563.24 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3104 queries in 219.49 ms.</li>
+<li>Page execution time was 5510.96 ms.</li>
+<li>PHP peak=67 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1816 queries in 107.06 ms.</li>
+<li>Page execution time was 4931.99 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 71.71 ms.</li>
+<li>Page execution time was 4641.69 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h3>Resumiendo:</h3>
+<p><img class="size-full wp-image-2062 alignnone" src="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png" alt="Gráfica comparativa de Memcache y Entity cache en Drupal" width="874" height="591" srcset="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png 874w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-300x203.png 300w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-768x519.png 768w" sizes="(max-width: 874px) 100vw, 874px" /></p>
+<p>Como podemos ver, <strong>cuando usamos Memcache, las queries a la db bajan un nada despreciable 50%</strong>. Estas query que ya no están, son &#8220;cache&#8221; que pasan a ser gestionadas por Memcache, quien como ya comentamos, es mucho mas eficiente a la hora de servir contenidos cacheados (insisto que está diseñado para ello, ergo es muy difícil que mysql lo haga mejor).</p>
+<p>Pero para mas inri, <strong>al activar Entity cache, automágicamente las query a la DB bajan un 60% mas</strong> sobre lo que ya había conseguido Memcache. Esto es gracias a que este modulo implementa una capa de cache a todas las entidades del core de Drupal mas todas las entidades creadas por terceros que implementen la api en entity cache para dejarse cachear.</p>
+<h4>Conclusiones:</h4>
+<ul>
+<li>Entre Memcache y entity cache <strong>hemos logrado una reducción media del 85%</strong> de accesos a la DB (awesomeeeee!).</li>
+<li>El beneficio mas evidente en el uso de Memcache y entity cache juntos es el de una reducción drástica en las<br />
+consultas que se hacen a la DB, lo que viene especialmente bien ya que cuando una pagina en Drupal comienza a<br />
+recibir muchas visitas, la db es lo primero que sufre.</li>
+<li>Luego de estas pruebas podemos concluir que si usar Memcache es una buena idea, combinarlo con entity cache es<br />
+una excelente idea.</li>
+<li>Memcache y entity cache funcionan tanto en usuarios logueados como anónimos.</li>
+<li>Es evidente que mientras mas cosas cacheemos en Drupal, mejor va a funcionar esta solución. En especial me<br />
+refiero a <a href="http://drupal.org/project/views" target="_blank">views</a>, y <a href="http://drupal.org/project/panels" target="_blank">panels</a>. Usen el cache que estos módulos tienen, para que Memcache pueda gestionarlos. <strong>En una<br />
+prueba rapida que hice conseguí rebajar aun mas la cantidad de queries a solo 95 contra las 377 que ya<br />
+lográbamos usando Memcache y entity cache</strong>.</li>
+</ul>
+<p>Happy performance!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Hacer proxy con Apache para aplicaciones node.js</title>
+		<link>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/</link>
+		<comments>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/#comments</comments>
+		<pubDate>Thu, 24 Jan 2013 14:56:48 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[node.js]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=1672</guid>
+		<description><![CDATA[Tenemos una app desarrollada en nodejs que corre en el puerto 4000 de nuestro servidor y queremos exponerla por el puerto 80 para que la gente pueda usarla. El problema obvio es que por lo general tenemos corriendo un apache, nginx o cualquier otro servidor http. La solución es usar los módulos de proxy que incluyen cada uno de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tenemos una app desarrollada en nodejs que<strong> corre en el puerto 4000</strong> de nuestro servidor<strong> y queremos exponerla por el puerto 80</strong> para que la gente pueda usarla. El problema obvio es que por lo general tenemos corriendo un apache, nginx o cualquier otro servidor http.</p>
+<p>La solución es usar los módulos de proxy que incluyen cada uno de estos servidores web. Hoy puntualmente lo vamos a hacer con Apache.</p>
+<p>Habilitamos los modulos <strong>proxy</strong> y <strong>proxy_http</strong> para permitir el reenvío de peticiones HTTP y HTTPS:<br />
+[console]<br />
+sudo a2enmod proxy<br />
+sudo a2enmod proxy_http<br />
+[/console]</p>
+<p>Luego nos queda crear un vhost:<br />
+[console]sudo nano /etc/apache2/sites-available/mipaginaweb.com[/console]</p>
+<p>Y ponerle lo siguiente:</p>
+<p>[apacheconf]</p>
+<p>ServerName mipaginaweb.com<br />
+ServerAlias www.mipaginaweb.com</p>
+<p>ProxyRequests off</p>
+<p>Order deny,allow<br />
+Allow from all</p>
+<p>&lt;location &#8220;/&#8221;&gt;<br />
+ProxyPass http://localhost:4000/ retry=0<br />
+ProxyPassReverse http://localhost:4000/</p>
+<p>[/apacheconf]</p>
+<p>Habilitamos nuestro nuevo vhost:<br />
+[console]sudo a2ensite mipaginaweb.com[/console]</p>
+<p>Hemos terminado. reiniciamos apache y a correr!<br />
+[console]sudo service apache2 restart[/console]</p>
+<p><span style="color: #993300;" data-mce-mark="1"><strong>Bonus</strong></span>: si estas en un entorno de desarrollo y quieres acceder a <em>mipaginaweb.com</em>, edita tu archivo hosts (<strong>sudo nano /etc/hosts</strong>) y añade tu nuevo dominio:</p>
+<p>[console]<br />
+127.0.0.1 localhost<br />
+127.0.0.1 mipaginaweb.com www.mipaginaweb.com<br />
+[/console]</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-proxy-con-apache-para-aplicaciones-node-js/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Habilitar .bashrc al iniciar sesión</title>
+		<link>http://ecapy.com/habilitar-bashrc-al-iniciar-sesion/</link>
+		<pubDate>Mon, 07 May 2012 19:39:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Servidores]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1420</guid>
+		<description><![CDATA[Problema: querés usar .bashrc para poner un alias por ejemplo, pero .bashrc no existe. Solución: te vas a la home de tu usuario y tipeas lo siguiente: [crayon-58443683a5f08235807357/] Y dentro del archivo pongamos un alias por ejemplo: [crayon-58443683a5f10925639165/] Guardamos los cambios y pasamos a lo siguiete que es: [crayon-58443683a5f15752653517/] Pegamos esta condición para que .bashrc se cargue&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/habilitar-bashrc-al-iniciar-sesion/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><span style="color: #993300;">Problema</span>: querés usar <strong>.bashrc</strong> para poner un alias por ejemplo, pero <strong>.bashrc</strong> no existe.</p>
+<p><span style="color: #008000;">Solución</span>: te vas a la home de tu usuario y tipeas lo siguiente:</p><pre class="crayon-plain-tag">cd&nbsp;~
+nano .bashrc</pre><p>Y dentro del archivo pongamos un alias por ejemplo:</p><pre class="crayon-plain-tag">alias ll='ls -l'</pre><p>Guardamos los cambios y pasamos a lo siguiete que es:</p><pre class="crayon-plain-tag">nano .bash_profile</pre><p>Pegamos esta condición<strong> para que .bashrc se cargue al iniciar sesión.</strong></p><pre class="crayon-plain-tag">if [ -f ~/.bashrc ]; then
+. ~/.bashrc
+fi</pre><p>All done, ya podes reiniciar la sesión que vas a ver que el alias &#8220;<strong>ll</strong>&#8221; funciona sin problemas. <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Benchmark Drupal 7 + APC + Memcached + Varnish sobre usuarios anónimos</title>
+		<link>http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/</link>
+		<comments>http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/#comments</comments>
+		<pubDate>Thu, 05 Jan 2012 01:59:16 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1311</guid>
+		<description><![CDATA[Vamos a hacer algunos testeos para ver lo que podemos llegar a ganar en performance al implementar una serie de tecnologías sobre Drupal 7. Las pruebas las realizare sobre una instalación LAMP estándar de Ubuntu (Linux Mint en realidad): mysql 5.1.58 (Con su configuración por defecto) php 5.3.6 (Con su configuración por defecto) El software para mejorar la performance que usé y las versiones de cada uno&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Vamos a hacer algunos testeos para ver lo que podemos llegar a ganar en performance al implementar una serie de tecnologías sobre Drupal 7.</p>
+<p>Las pruebas las realizare sobre una instalación LAMP estándar de Ubuntu (Linux Mint en realidad):</p>
+<ul>
+<li>mysql 5.1.58 (Con su configuración por defecto)</li>
+<li>php 5.3.6 (Con su configuración por defecto)</li>
+</ul>
+<p>El software para mejorar la performance que usé y las versiones de cada uno son:</p>
+<ul>
+<li>APC-3.1.9</li>
+<li>memcached 1.4.7</li>
+<li>Varnish 3.0.4</li>
+</ul>
+<p>Esta prueba es solo para que nos demos una idea de lo que podría llegar a implicar el aplicar estas tecnologías en nuestro sitio de Drupal 7, por lo que he dejado fuera cualquier explicación técnica.</p>
+<p>Las pruebas las hice en un core2Duo @ 2.2ghz de 2 núcleos en un Linux Mint de 64bits y 8gb de ram.</p>
+<p>La idea es ir agregando tecnologías e ir viendo el teórico beneficio que esta aporta aplicadas a la practica.</p>
+<p>Lo primero es lo primero. vamos a hacer un bench de Drupal 7.10 en sobre nuestro LAMP sin haber tocado su configuración inicial.</p>
+<p>Utilice Apache benchmark (ab) para todos los testeos variando la concurrencia y cantidad de request para aprovechar al máximo los recursos de los que disponía en cada testeo que hice.</p>
+<h5>Primera ronda. Estableciendo un punto de referencia.</h5>
+<p><strong><span style="text-decoration: underline;">Test 1: Drupal 7 sin cache de ningún tipo.</span></strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second:<strong> 5.71</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>45.35</strong> [Kbytes/sec] received</span></h6>
+<p><span style="text-decoration: underline;"><strong>Test 2: </strong>Drupal 7<strong> marcandole las opciones &#8220;Aggregate and compress CSS files.&#8221; y &#8220;Aggregate JavaScript files.&#8221; en &#8220;admin/config/development/performance&#8221;</strong></span></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <strong>6.38</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>46.27</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">Podemos apreciar que no hay cambios. nada que comentar.</span></p>
+<p><strong style="text-decoration: underline;">Test 3: </strong><span style="text-decoration: underline;">La configuración del testeo anterior +</span><strong style="text-decoration: underline;"> &#8220;Cache blocks&#8221; en &#8220;admin/config/development/performance&#8221;</strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second:<strong> 5.18</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>37.54</strong> [Kbytes/sec] received</span></h6>
+<p>Pasados los tes primeros test ya no quedan dudas que el cuello de botella de los procesadores son los limitantes. Apenas si pudimos conseguir que varíe el resultado.</p>
+<p style="text-align: center;">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>Hasta acá fue lo aburrido, porque en realidad lo anterior no tiene ninguna magia, pero nos da una buena idea de desde que base estamos partiendo. Nuestro objetivo es subir grotescamente la media de request por segundo partiendo de los aproximadamente 6 que hemos conseguido hasta ahora.</p>
+<p><strong style="text-decoration: underline;">Test 4: </strong><span style="text-decoration: underline;">La configuración del test anterior +</span><strong style="text-decoration: underline;"> &#8220;Cache pages for anonymous users&#8221; (El cache normal de Drupal).</strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <strong>127.22</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>921.83</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">Bueno bueno bueno, esto ya es otra cosa. El cache de Drupal por si solo incrementa los request de una forma brutal, pero no nos quedamos ahí ni en broma, vamos a por mas RPS (request por segundo)</span></p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<h5>Segunda ronda. tecnologías y configuraciones foráneas:</h5>
+<p><strong style="text-decoration: underline;">Test 5:</strong><span style="text-decoration: underline;"> La configuración del test anterior +</span><strong style="text-decoration: underline;"> APC.</strong></p>
+<p>Este es uno de los cambios mas recomendados siempre que queramos obtener un incremento de performance (y mejor aprovechamiento de la ram disponible) sin tener que tocar ni una sola linea de código de nuestro Drupal.</p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <strong>440.43</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>3191.39</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;"><strong>Boom</strong>! performance X4!. Vamos por buen camino. Agreguemos mas de esas cosas que recomiendan los que saben&#8230;</span></p>
+<p><strong style="text-decoration: underline;">Test 6: </strong><span style="text-decoration: underline;">La configuración del test anterior +</span><strong style="text-decoration: underline;"> Memcached</strong></p>
+<p>Para esta prueba instalé el modulo memcache (http://drupal.org/project/memcache) en su versión 7.x-1.0-rc2 y lo configuré en su forma mas básica según las instrucciones de su configuración.</p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second:<strong> 397.38</strong> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate:<strong> 2734.53</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">No hemos visto mejora alguna pero no porque Memcache no sirva, al contrario, en futuros bench les voy a mostrar como si que ayuda, pero bajo este entorno poco sirve ya que es una capa intermedia con la DB y estamos usando el cache de Drupal que apenas si la toca&#8230; en fin, en el próximo bench les muestro, paciencia.</span></p>
+<p>Hasta ahora hemos conseguido mejorar los iniciales 6 RPS del principio por fabulosos 400 RPS de media, pero aun nos queda un paso mas para mejorar los request para usuarios anónimos, y ese es Varnish</p>
+<p><strong style="text-decoration: underline;">Test 7: </strong><span style="text-decoration: underline;">La configuración del test anterior +</span><strong style="text-decoration: underline;"> Varnish</strong></p>
+<h6><span style="text-decoration: underline;"><span style="color: #008000; text-decoration: underline;">Resultados:</span></span><br />
+<span style="color: #008000;"> Requests per second: <span style="color: #ff0000;"><strong>6166.57</strong></span> [#/sec] (mean)</span><br />
+<span style="color: #008000;"> Transfer rate: <strong>45075.00</strong> [Kbytes/sec] received</span></h6>
+<p><span style="color: #808080;">Acaso hay algo que añadir?</span></p>
+<h5>Conclusiones:</h5>
+<p>Hemos visto como Drupal 7 sin ningún tipo de cache activo es una muy mala idea a la hora de ponerlo en producción.<br />
+El cache que trae de serie no es opcional, sino que es mandatorio. No activar como mínimo esta capa de cache en Drupal derivaría automáticamente en un uso elevadisimo de los recursos disponibles, esto acompañado de tiempos de entrega mucho mas largos y por consiguiente la insatisfacción de nuestros clientes.<br />
+APC es una excelente adición a nuestro servidor en general ya que agiliza el procesamiento de cualquier pagina escrita en PHP y particularmente en Drupal es un beneficio directo tanto para usuarios anónimos como para usuarios logueados. Recomiendo su uso sin dudarlo aunque hay que hacerlo con cabeza, documentación y alguien que sepa lo que hace si no quieren volver inestable vuestro sistema.</p>
+<p>Memcache es una herramienta que no puede faltar en un buen servidor y es harto eficiente para usuarios no logueados en el terreno de Drupal, pero en una instalación en la que casi todos los visitantes sean anónimos, apenas van a sentir la mejora.</p>
+<p>Por ultimo y el mas importante, Varnish, que demostró el salto ABISMAL que puede llegar a proporcionar en velocidad cuando lo ponemos a trabajar con una instalación de Drupal. Sin duda pues, esta es la herramienta mas potente de las que hemos utilizado en este bench, pero a su vez, la mas complicada de configurar.</p>
+<p>Resumiendo la mejor combinación para usuarios anónimos:<br />
+<strong>Cache de Drupal</strong> = performance decente / Configuración&#8230; bueno no lleva configuracion XD. (ganancia de <span style="color: #ff0000;"><strong>21x</strong></span> con con respecto a los 6 de media iniciales)<br />
+<strong>Cache de Drupal + APC</strong> = Muy buena performance / Configuración media. (ganancia de <span style="color: #ff0000;"><strong>73x</strong></span> con con respecto a los 6 de media iniciales)<br />
+<strong>Cache de Drupal + APC + Varnish</strong> = Bruta performance / Configuración avanzada. (ganancia de <span style="color: #ff0000;"><strong>1027x</strong></span> con con respecto a los 6 de media iniciales)</p>
+<p>Disclaimer:<br />
+No son ni de lejos las mejores versiones ni servidores los que he usado, pero procuré enfocarme en estos debido a que son los mas extendidos/populares en nuestro creciente mundo llamado Drupal.</p>
+<p>Saludos.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/benchmark-drupal-7-apc-memcached-varnish-sobre-usuarios-anonimos/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

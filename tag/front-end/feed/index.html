@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Front-end &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/front-end/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Chrome redimensiona mas imágenes dentro de una tabla.</title>
+		<link>http://ecapy.com/chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/</link>
+		<pubDate>Wed, 25 Mar 2015 01:11:19 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2870</guid>
+		<description><![CDATA[Me ha pasado algo curioso y solo en chrome de momento. Tengo un texto en una celda y una imagen en la otra. El problema vino cuando usé un max-width:100% para las img en general. En ese momento toda imagen que estuviera dentro de un &#60;td&#62; pasó a redimensionarse: Ok, Chrome también tiene sus cositas.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me ha pasado algo curioso y solo en chrome de momento. Tengo un texto en una celda y una imagen en la otra. El problema vino cuando usé un max-width:100% para las img en general. En ese momento toda imagen que estuviera dentro de un &lt;td&gt; pasó a redimensionarse:</p>
+<p><img class="wp-image-2871 size-full alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/broken.png" alt="broken" width="1028" height="203" srcset="http://ecapy.com/wp-content/uploads/2015/03/broken.png 1028w, http://ecapy.com/wp-content/uploads/2015/03/broken-300x59.png 300w, http://ecapy.com/wp-content/uploads/2015/03/broken-768x152.png 768w, http://ecapy.com/wp-content/uploads/2015/03/broken-1024x202.png 1024w" sizes="(max-width: 1028px) 100vw, 1028px" /></p>
+<p>Ok, Chrome también tiene sus cositas. La solución ha sido la siguiente:</p><pre class="crayon-plain-tag">/* Quiero que todas las img usen como mucho el 100% */
+img {
+    max-width: 100%;
+}
+
+/* Pero si la imagen está dentro de un td anulamos el max-width para evitar ese comportamiento raro. */
+table tr td &gt; img {
+    max-width: none;
+}</pre><p>Resultado:<br />
+<img class="wp-image-2872 size-full alignnone" src="http://ecapy.com/wp-content/uploads/2015/03/fixed.png" alt="fixed" width="1001" height="259" srcset="http://ecapy.com/wp-content/uploads/2015/03/fixed.png 1001w, http://ecapy.com/wp-content/uploads/2015/03/fixed-300x78.png 300w, http://ecapy.com/wp-content/uploads/2015/03/fixed-768x199.png 768w" sizes="(max-width: 1001px) 100vw, 1001px" /></p>
+<p>Y todos felices. Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Boilerplate (esqueleto) de plugin jQuery de la casa y en español ;)</title>
+		<link>http://ecapy.com/boilerplate-esqueleto-de-plugin-jquery-de-la-casa-y-en-espanol/</link>
+		<pubDate>Tue, 23 Sep 2014 10:34:15 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2833</guid>
+		<description><![CDATA[Hola!. Me complace anunciar que pongo a disposición de todo el que quiera hacer plugins de jQuery, el boilerplate que he estado usando en los últimos años. Es otro boilerplate como los demas, con la diferencia que al estar usandolo todo el tiempo lo fui puliendo poco a poco. Pero mucho mas importante: está en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/boilerplate-esqueleto-de-plugin-jquery-de-la-casa-y-en-espanol/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola!. Me complace anunciar que pongo a disposición de todo el que quiera hacer plugins de jQuery, el boilerplate que he estado usando en los últimos años.</p>
+<p>Es otro boilerplate como los demas, con la diferencia que al estar usandolo todo el tiempo lo fui puliendo poco a poco. Pero mucho mas importante: está en español XD</p>
+<p>Pase pasen y vean <em><strong><a href="https://github.com/capynet/jQueryPluginBoilerplate" target="_blank">https://github.com/capynet/jQueryPluginBoilerplate</a></strong></em></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Detectar el navegador y toda su información desde PHP o Javascript</title>
+		<link>http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/</link>
+		<pubDate>Mon, 22 Sep 2014 10:15:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Back-end]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2805</guid>
+		<description><![CDATA[Hola, les hago una intro bien corta y pasamos al código. Browscap es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos. PHP tiene soporte nativo para hacer uso de esta DB, pero debido a un par de limitaciones&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola, les hago una intro bien corta y pasamos al código.</p>
+<p><a href="http://browscap.org/">Browscap</a> es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos.</p>
+<p>PHP <a href="http://php.net/manual/es/function.get-browser.php" target="_blank">tiene soporte nativo</a> para hacer uso de esta DB, pero debido a un par de limitaciones que PHP aun no ha solventado en su API, <a href="https://github.com/browscap/browscap-php" target="_blank">en GitHub un usuario creó una soluciona basada también en la DB de Browscap</a> pero mucho mas robusta y fácil de usar.</p>
+<p>Bien, llegados a este punto sabemos que lo que necesitamos usar es Browscap junto a la librería que se creó para explotarla.</p>
+<p>Para mas información, toda la documentación completa de php-browscap la pueden encontrar <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a>. Yo me centro en una implementación mucho mas simple porque realmente creo que de los 40 datos que entrega sobre el navegados, con apenas 7 tenemos el 99% de los casos cubiertos.</p>
+<p><a href="http://ecapy.com/Archivos/browser/index.php" target="_blank"><strong>Acá tienen un ejemplo</strong></a> funcionando para que vean lo rápido y certero que es a la hora de conseguir la info del browser (pruébenlo con mas de uno)</p>
+<p>Ok, pongamos algo de código que sino todo esto es muy aburrido:<br />
+Vamos a aprovechar esta librería bajo dos situaciones. en PHP y en JS</p>
+<h3>En PHP</h3>
+<p>Descarguen la librería php-browscap via Composer o a mano. Pueden saber mas sobre como descargarla <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a><br />
+Ahora que la tenemos creamos un archivo index.php para usarla.</p><pre class="crayon-plain-tag">require 'vendor/autoload.php';
+use phpbrowscapBrowscap;
+
+$bc = new Browscap('cache');
+/** @var stdClass $current_browser */
+$current_browser = $bc-&gt;getBrowser();</pre><p>Fácil, no?. Ok ya tenemos un stdClass en $current_browser con toda la información disponible del browser que llame a index.php</p>
+<h4>Aplicaciones?</h4>
+<p>Puedes por ejemplo tomar decisiones del tipo</p><pre class="crayon-plain-tag">$curr_br = $current_browser-&gt;Browser;
+$CoolBrowsers = $curr_br == 'Chrome' || $curr_br == 'Firefox';
+
+if ($CoolBrowsers) {
+  add_asset('css', 'just-for-cool-browsers.css');
+  $output = renderAdvancedLayout();
+}
+else {
+  add_asset('css', 'just-for-bad-bad-browsers.css');
+  $output = renderBasicLayout();
+}</pre><p>También puedes detectar si están accediendo desde un móvil o una tablet, incluso saber si es Android, IOS, la version del SO, etc. Con toda esta información a resumidas cuentas puedes entregar un contenido muy preciso.</p>
+<h4>Beneficios</h4>
+<p>Estas entregando contenidos a medida, ergo necesitas entregar menos HTML, CSS, Js y las imágenes mas adecuadas al navegador. Esto finalmente se traduce en menos procesamiento del lado del servidor, lo que se entrega pesa menos KB y el navegador tarda menos en leer y renderizar todos los recursos (en especial JS).</p>
+<h3>En JS</h3>
+<p>Por ultimo me gustaría compartir un tip para poder aprovechar la detección de browsers en JS:<br />
+A ver, con js podemos detectar el browser usando un poco de expresiones regulares, pero llegar al detalle y la precisión a la que llega browscap es virtualmente imposible. Dicho esto, comentar que se puede entregar toda la información del browser detectado desde php simplemente haciendo esto:</p><pre class="crayon-plain-tag">&lt;script type="application/javascript"&gt;
+    var browser = &lt;?= json_encode($current_browser = $bc-&gt;getBrowser()); ?&gt;;
+    alert(browser.Browser);
+    alert(browser.Version);
+&lt;/script&gt;</pre><p>&nbsp;</p>
+<p>Hasta la próxima!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Front-end: Maquetar un buscador (input + botón) para que sea 100% fluido / responsive</title>
+		<link>http://ecapy.com/front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/</link>
+		<pubDate>Fri, 12 Sep 2014 19:18:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2767</guid>
+		<description><![CDATA[La idea detrás de esto fue lograr que el buscador esté siempre al 100% del espacio que tenga disponible y no tener que preocuparme de dimensionar los input para que encajen y que el botón no caiga a dos lineas cuando se queda sin espacio. Pueden ver como funciona si re dimensionan la ventana del&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La idea detrás de esto fue lograr que el buscador esté siempre al 100% del espacio que tenga disponible y no tener que preocuparme de dimensionar los input para que encajen y que el botón no caiga a dos lineas cuando se queda sin espacio.</p>
+<p>Pueden ver como funciona si re dimensionan la ventana del navegador:</p>
+<p class="codepen" data-height="550" data-theme-id="0" data-slug-hash="vJBnL" data-default-tab="result" data-user="capynet">See the Pen <a href="http://codepen.io/capynet/pen/vJBnL/">vJBnL</a> by Marcelo Tosco (<a href="http://codepen.io/capynet">@capynet</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p><script src="//codepen.io/assets/embed/ei.js" async=""></script></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Front-end: Títulos multi linea con padding por cada una de las lineas</title>
+		<link>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/</link>
+		<comments>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/#comments</comments>
+		<pubDate>Wed, 13 Aug 2014 13:51:24 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[CSS y Maquetación]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[Maquetación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2748</guid>
+		<description><![CDATA[Así es como vemos un titulo cuando tiene aplicado un padding sin mas Y asi es como queremos que se vea No voy a explicar toda la lógica que hay detrás de esto. Vayamos a la solución. Este es el html. en div.titulo tenemos el background y en .highlight el background del texto, el padding&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h3>Así es como vemos un titulo cuando tiene aplicado un padding sin mas</h3>
+<p><a href="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png"><img class="size-full wp-image-2751 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png" alt="texto-multilinea-error" width="711" height="177" srcset="http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error.png 711w, http://ecapy.com/wp-content/uploads/2014/08/texto-multilinea-error-300x75.png 300w" sizes="(max-width: 711px) 100vw, 711px" /></a></p>
+<h3>Y asi es como queremos que se vea</h3>
+<p><a href="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png"><img class="size-full wp-image-2749 alignnone" src="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png" alt="titulo-con-padding-en-cada-linea" width="712" height="242" srcset="http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea.png 712w, http://ecapy.com/wp-content/uploads/2014/08/titulo-con-padding-en-cada-linea-300x102.png 300w" sizes="(max-width: 712px) 100vw, 712px" /></a></p>
+<p>No voy a explicar toda la lógica que hay detrás de esto. Vayamos a la solución.</p>
+<p>Este es el html. en <strong>div.titulo</strong> tenemos el background y en <strong>.highlight</strong> el background del texto, el padding que queremos que tenga y el hack mediante la propiedad box-shadow que es la que nos termina agregando los pedacitos de padding que nos falta entre lineas.</p>
+<div class="titulo">
+<pre class="crayon-plain-tag">&lt;div class="titulo"&gt;
+    &lt;span class="highlight"&gt;Títulos multi linea con padding por cada linea&lt;/span&gt;
+&lt;/div&gt;</pre>
+</div>
+<div class="titulo"><span class="highlight">Títulos multi linea con padding por cada linea</span></div>
+<p></p><pre class="crayon-plain-tag">.titulo {
+    padding-top: 32px;
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    font-family: arial, helvetica, sans-serif;
+    background: url('fondo.jpg') no-repeat 50% 50%;
+}
+
+.highlight {
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    /*Esto es lo importante*/
+    display: inline; /* Aseguramos que el elemento sea inline */
+    background: black; /* Color de fondo del texto */
+    line-height: 1.6em; /* Espaciado entre lineas */
+    padding: 7px 0; /* padding deseado */
+    box-shadow: 14px 0 0 black, -14px 0 0 black;
+}</pre><p><strong>Del CSS que puse solo hagan caso a las lineas que tienen &#8220;<em>/*Esto es lo importante*/</em>&#8220;. El resto es decoración.</strong></p>
+<p><strong>No comenté el box-shadow porque prefiero hacerlo aquí:</strong> La magia se da en box-shadow. Solo tienes que tocar dos parámetros. El color cámbialo de <strong>black</strong> al que hayas puesto en la propiedad background, y los valores <strong>14px y -14px</strong> ajustalos para arriba o para abajo hasta que te guste el padding lateral que hay en cada una de las lineas.</p>
+<p>Listo!</p>
+<p>Artículo original: <a href="http://css-tricks.com/multi-line-padded-text/" target="_blank">css-tricks.com</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

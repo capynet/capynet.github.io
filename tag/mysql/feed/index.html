@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Mysql &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/mysql/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Mysql: crear un usuario y asignarle una db por linea de comandos</title>
+		<link>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/</link>
+		<comments>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/#comments</comments>
+		<pubDate>Fri, 28 Aug 2015 13:01:25 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2944</guid>
+		<description><![CDATA[Te conectas a mysql con mysql -uroot -p y: [crayon-584437926f4ad485970860/] &#160;]]></description>
+				<content:encoded><![CDATA[<p>Te conectas a mysql con <strong>mysql -uroot -p</strong> y:</p><pre class="crayon-plain-tag">CREATE USER 'miusuario'@'localhost' IDENTIFIED BY 'miclave';
+GRANT ALL PRIVILEGES ON laDB.* TO 'miusuario'@'localhost';
+FLUSH PRIVILEGES;</pre><p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-crear-un-usuario-y-asignarle-una-db-por-linea-de-comandos/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Mejorando el rendimiento en Drupal 7: Memcached y Entity cache</title>
+		<link>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/</link>
+		<comments>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/#comments</comments>
+		<pubDate>Thu, 07 Mar 2013 10:51:34 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Optimización]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2036</guid>
+		<description><![CDATA[En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7. Memcached para los que no lo conozcan, es un data cache basado en RAM. Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>En este post vamos a enfocarnos sobre Memcached tratando de mostrar las ventajas a la hora de utilizarlo en Drupal 7.</p>
+<p>Memcached para los que no lo conozcan, es un <a href="http://es.wikipedia.org/wiki/Memcached" target="_blank">data cache basado en RAM</a>.</p>
+<p>Usar Memcached en Drupal tiene un beneficio altísimo tanto para usuarios logueados como para anónimos. ¿Por que?, fácil, Drupal para cachear utiliza la base de datos como almacén para dicho cache, y esto es costoso. Cada vez que guarda algo en cache o lo pide, estamos haciendo una query a la DB, y aunque toda tu DB este cacheada (mysql tiene su propio cache) Drupal siempre va a tener un importante overhead solo por tener que pedir a la DB este cache.</p>
+<p>Técnicamente hablando el tema es así: Estés o no logueado, Drupal usa <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_get/7" target="_blank">cache_get()</a> y <a href="http://api.drupal.org/api/drupal/includes%21cache.inc/function/cache_set/7" target="_blank">cache_set()</a>. Luego, estas funciones delegan la tarea de cacheo a la clase que se encargue en ese momento de almacenar y devolver los datos cacheados. Una instalación estándar trae una clase llamada &#8220;<a href="http://api.drupal.org/api/drupal/includes!cache.inc/class/DrupalDatabaseCache/7" target="_blank">DrupalDatabaseCache</a>&#8221; que usa como backend storage la propia DB de Drupal. El módulo <a href="http://drupal.org/project/memcache" target="_blank">Memcache API</a> simplemente proporciona su propia clase (MemCacheDrupal) que hace lo mismo pero mandando el cache a Memcache.</p>
+<p>Memcache se presenta como una muy buena solución a este escollo ya que fue diseñado para ser usado como cache, ofreciendo un overhead mínimo y una velocidad de respuesta muy superior.</p>
+<p>Bueno, vamos al lío.</p>
+<h4>Maquina de pruebas:</h4>
+<ul>
+<li>Hardware:
+<ul>
+<li>core2duo e7400@3.5GHZ</li>
+<li>8gb de ram DDR3@1333MHZ</li>
+<li>Disco SSD OCZ Vertex 2 de 60gb</li>
+</ul>
+</li>
+<li>Software:
+<ul>
+<li>Ubuntu 12.10 de 64 bits</li>
+<li>PHP 5.4.6</li>
+<li>MySQL 5.5.29</li>
+<li>Apache 2.2.22</li>
+<li>APC 3.1.13</li>
+<li>memcached 1.4.14</li>
+<li><a href="http://pecl.php.net/package/memcached" target="_blank">Cliente PHP de Memcache: memcached 2.0.1</a></li>
+<li><a href="http://drupal.org/project/memcache" target="_blank">Modulo Memcache API and Integration 7.x-1.0</a></li>
+<li><a href="http://drupal.org/project/entitycache" target="_blank">Modulo Entity cache</a></li>
+</ul>
+</li>
+</ul>
+<p>Para hacer las pruebas he usado la instalación de Drupal &#8220;<a title="Un mal día para este Drupal" href="http://ecapy.com/un-mal-dia-para-este-drupal/" target="_blank">Un mal día para este Drupal</a>&#8220;.<br />
+<strong>Las pruebas las hice sobre usuarios anónimos, logueados y el propio admin</strong> que es el que mas suele sufrir en terminos de performance porque ejecuta código extra por los privilegios que conlleva.</p>
+<h3>Usuarios anónimos:</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 199.42 ms.</li>
+<li>Page execution time was 4791.87 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1226 queries in 71.77 ms.</li>
+<li>Page execution time was 3892.39 ms.</li>
+<li>PHP peak=57 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 398 queries in 39.88 ms.</li>
+<li>Page execution time was 3450.76 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2312 queries in 167.15 ms.</li>
+<li>Page execution time was 4037.62 ms.</li>
+<li>PHP peak=59.25 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1186 queries in 66 ms.</li>
+<li>Page execution time was 3927.52 ms.</li>
+<li>PHP peak=57.75 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 377 queries in 30.31 ms.</li>
+<li>Page execution time was 3534.07 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios logueados</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2324 queries in 162.27 ms.</li>
+<li>Page execution time was 4033.2 ms.</li>
+<li>PHP peak=58.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 73.47 ms.</li>
+<li>Page execution time was 4028.68 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 396 queries in 26.19 ms.</li>
+<li>Page execution time was 3530.29 ms.</li>
+<li>PHP peak=56 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 2262 queries in 182.59 ms.</li>
+<li>Page execution time was 4286.79 ms.</li>
+<li>PHP peak=58 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1237 queries in 56.45 ms.</li>
+<li>Page execution time was 3716.37 ms.</li>
+<li>PHP peak=56.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 379 queries in 27.97 ms.</li>
+<li>Page execution time was 4072.24 ms.</li>
+<li>PHP peak=55.25 MB.</li>
+</ul>
+<h3>Usuarios con rol &#8220;administrator&#8221;</h3>
+<h5>Pruebas con el cache de Drupal desactivado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3106 queries in 231.33 ms.</li>
+<li>Page execution time was 5588.66 ms.</li>
+<li>PHP peak=66.75 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1812 queries in 89.79 ms.</li>
+<li>Page execution time was 4701.39 ms.</li>
+<li>PHP peak=64.5 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 68.43 ms.</li>
+<li>Page execution time was 4563.24 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h5>Ahora con el cache de Drupal y bloques activado:</h5>
+<p>Sin Memcache</p>
+<ul>
+<li>Executed 3104 queries in 219.49 ms.</li>
+<li>Page execution time was 5510.96 ms.</li>
+<li>PHP peak=67 MB.</li>
+</ul>
+<p>Con Memcache</p>
+<ul>
+<li>Executed 1816 queries in 107.06 ms.</li>
+<li>Page execution time was 4931.99 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<p>Con Memcache y entity cache:</p>
+<ul>
+<li>Executed 1133 queries in 71.71 ms.</li>
+<li>Page execution time was 4641.69 ms.</li>
+<li>PHP peak=64.25 MB.</li>
+</ul>
+<h3>Resumiendo:</h3>
+<p><img class="size-full wp-image-2062 alignnone" src="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png" alt="Gráfica comparativa de Memcache y Entity cache en Drupal" width="874" height="591" srcset="http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal.png 874w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-300x203.png 300w, http://ecapy.com/wp-content/uploads/2013/03/comparacion-memcache-entity-cache-en-drupal-768x519.png 768w" sizes="(max-width: 874px) 100vw, 874px" /></p>
+<p>Como podemos ver, <strong>cuando usamos Memcache, las queries a la db bajan un nada despreciable 50%</strong>. Estas query que ya no están, son &#8220;cache&#8221; que pasan a ser gestionadas por Memcache, quien como ya comentamos, es mucho mas eficiente a la hora de servir contenidos cacheados (insisto que está diseñado para ello, ergo es muy difícil que mysql lo haga mejor).</p>
+<p>Pero para mas inri, <strong>al activar Entity cache, automágicamente las query a la DB bajan un 60% mas</strong> sobre lo que ya había conseguido Memcache. Esto es gracias a que este modulo implementa una capa de cache a todas las entidades del core de Drupal mas todas las entidades creadas por terceros que implementen la api en entity cache para dejarse cachear.</p>
+<h4>Conclusiones:</h4>
+<ul>
+<li>Entre Memcache y entity cache <strong>hemos logrado una reducción media del 85%</strong> de accesos a la DB (awesomeeeee!).</li>
+<li>El beneficio mas evidente en el uso de Memcache y entity cache juntos es el de una reducción drástica en las<br />
+consultas que se hacen a la DB, lo que viene especialmente bien ya que cuando una pagina en Drupal comienza a<br />
+recibir muchas visitas, la db es lo primero que sufre.</li>
+<li>Luego de estas pruebas podemos concluir que si usar Memcache es una buena idea, combinarlo con entity cache es<br />
+una excelente idea.</li>
+<li>Memcache y entity cache funcionan tanto en usuarios logueados como anónimos.</li>
+<li>Es evidente que mientras mas cosas cacheemos en Drupal, mejor va a funcionar esta solución. En especial me<br />
+refiero a <a href="http://drupal.org/project/views" target="_blank">views</a>, y <a href="http://drupal.org/project/panels" target="_blank">panels</a>. Usen el cache que estos módulos tienen, para que Memcache pueda gestionarlos. <strong>En una<br />
+prueba rapida que hice conseguí rebajar aun mas la cantidad de queries a solo 95 contra las 377 que ya<br />
+lográbamos usando Memcache y entity cache</strong>.</li>
+</ul>
+<p>Happy performance!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mejorando-el-rendimiento-en-drupal-7-memcached-y-entity-cache/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Cómo recuperar la clave root en MySQL [Solución]. A veces pasa :D</title>
+		<link>http://ecapy.com/como-recuperar-la-clave-root-en-mysql-solucion-a-veces-pasa-d/</link>
+		<comments>http://ecapy.com/como-recuperar-la-clave-root-en-mysql-solucion-a-veces-pasa-d/#comments</comments>
+		<pubDate>Wed, 06 Jun 2012 22:18:20 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1545</guid>
+		<description><![CDATA[Paramos el servidor: [console]sudo service mysql stop[/console] Arrancamos “mysqld_safe”: [crayon-58443792723f9927300172/] Dejamos esa consola con “mysqld_safe” corriendo. Abramos otra consola y hagamos lo siguiente: [crayon-584437927240b281450846/] Una vez adentro de mysql tiramos los siguientes comandos: [crayon-5844379272415767758593/] Ahora que hemos vuelto a la consola de linux, paramos mysql: [crayon-584437927241e772782707/] El anterior comando va a terminar el proceso “mysqld_safe”&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/como-recuperar-la-clave-root-en-mysql-solucion-a-veces-pasa-d/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Paramos el servidor:</p>
+<p>[console]sudo service mysql stop[/console]</p>
+<p>Arrancamos “mysqld_safe”:</p><pre class="crayon-plain-tag">sudo mysqld_safe --skip-grant-tables</pre><p>Dejamos esa consola con “mysqld_safe” corriendo. Abramos otra consola y hagamos lo siguiente:</p><pre class="crayon-plain-tag">sudo mysql -u root</pre><p>Una vez adentro de mysql tiramos los siguientes comandos:</p><pre class="crayon-plain-tag">use mysql;
+update user set password=PASSWORD("NUEVACLAVE") where User='root';
+flush privileges;
+quit</pre><p>Ahora que hemos vuelto a la consola de linux, paramos mysql:</p><pre class="crayon-plain-tag">sudo service mysql stop</pre><p>El anterior comando va a terminar el proceso “mysqld_safe” que habíamos arrancado en la primer consola, por lo que podemos cerrarla.<br />
+Listo, arrancamos mysql normalmente y ya podemos usar la nueva clave.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/como-recuperar-la-clave-root-en-mysql-solucion-a-veces-pasa-d/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>Mysql Tip: Probar consultas evitando el cache</title>
+		<link>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/</link>
+		<comments>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/#comments</comments>
+		<pubDate>Thu, 10 Nov 2011 23:14:53 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Performance]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1286</guid>
+		<description><![CDATA[SQL_NO_CACHE es especialmente útil para cuando estas analizando una query lenta que se está cacheando y te impide ver el tiempo que consume en realidad. [crayon-5844379273c24495591857/]]]></description>
+				<content:encoded><![CDATA[<p><strong>SQL_NO_CACHE</strong> es especialmente útil para cuando estas analizando una query lenta que se está cacheando y te impide ver el tiempo que consume en realidad.</p><pre class="crayon-plain-tag">SELECT SQL_NO_CACHE id, name FROM customer;</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Resetear/recuperar la contraseña del usuario &#8220;admin&#8221; con phpMyAdmin</title>
+		<link>http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/</link>
+		<comments>http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/#comments</comments>
+		<pubDate>Mon, 22 Nov 2010 08:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=729</guid>
+		<description><![CDATA[NOTA: esta solución es útil para cualquier sistema que almacene las claves de usuarios en MYSQL por medio de MD5 o SHA1. Hecha la aclaración, comento el caso concreto de Drupal que nos va a servir de idea para el resto: Si no te acordás la clave de &#8220;admin&#8221; en Drupal y tenes acceso a&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><strong><span style="text-decoration: underline;"><span style="color: #993300;">NOTA: esta solución es útil para cualquier sistema que almacene las claves de usuarios en MYSQL por medio de MD5 o SHA1.</span></span></strong></p>
+<p>Hecha la aclaración, comento el caso concreto de Drupal que nos va a servir de idea para el resto:</p>
+<p><strong>Si no te acordás la clave de &#8220;admin&#8221;</strong> <strong>en Drupal y tenes acceso a phpMyAdmin,</strong> lo único que tenes que hacer es abrir la base de datos, localizar al usuario &#8220;<strong>admin</strong>&#8221; dentro de la tabla &#8220;<strong>users</strong>&#8221; <strong>y editarlo. </strong>Una vez que lo tengas abierto tenes que <strong>poner la clave nueva en el campo &#8220;pass&#8221;. </strong>Por ultimo solo queda decirle a phpMyAdmin <strong>que esa clave la guarde en MD5 </strong>(ver imagen).</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin.png"><img class="aligncenter size-full wp-image-730" title="Recuperar clave con phpMyAdmin" src="http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin.png" alt="" width="611" height="488" srcset="http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin.png 611w, http://ecapy.com/wp-content/uploads/2010/11/recuperer_clave_phpmyadmin-300x240.png 300w" sizes="(max-width: 611px) 100vw, 611px" /></a></p>
+<p>Listo. Guarda los cambios y accede a tu usuario &#8220;admin&#8221; como de costumbre.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/resetearrecuperar-la-contrasena-del-usuario-admin-con-phpmyadmin/feed/</wfw:commentRss>
+		<slash:comments>17</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: devel generate y &#8220;Access denied&#8221;</title>
+		<link>http://ecapy.com/drupal-6-devel-generate-y-access-denied/</link>
+		<pubDate>Sat, 11 Sep 2010 17:02:50 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=599</guid>
+		<description><![CDATA[Estas son las cosas que mas me gustan de drupal: Resolver sus &#8220;misterios&#8221;. Resulta que estoy haciendo cientos de miles de nodos (no es broma o_O) con el modulo Devel generate para hacer unas pruebas, y cuando los creo de a 10.000 no hay problema, se tarda un huevo en hacerlos pero el batch que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-6-devel-generate-y-access-denied/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Estas son las cosas que mas me gustan de drupal: <strong>Resolver sus &#8220;misterios&#8221;</strong>.</p>
+<p>Resulta que <strong>estoy haciendo cientos de miles de nodos</strong> (no es broma o_O) con el modulo <strong>Devel generate</strong> para hacer unas pruebas, y cuando los creo de a 10.000 no hay problema, se tarda un huevo en hacerlos pero el batch que lanza este modulo no falla.</p>
+<p>Pero la historia cambia cuando quiero dejar haciendo la friolera de 500.000 (quinientos mil) XD.</p>
+<p>Bueno Marcelo deja de dar vueltas y decime que carajo pasa que no me anda bien devel generate!: ok, te cuento que resulta que Devel generate tanto como cualquier otro modulo que haga uso de batch, almacena dicho batch en la tabla correspondiente en una sola fila, osea que si son 10 ciclos de batch almacena los diez en una sola fila asi como si son 500.000. El problema se hace evidente en este punto: Me estoy excediendo en el limite que mysql tiene previsto para el envió de packets de datos.</p>
+<p><strong>Mysql por defecto viene configurado para recibir por fila 1MB.</strong> y esta es la parte donde les muestro esa imagen que vale mas que mil palabras <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61.png"><img class="aligncenter size-full wp-image-606" title="Tabla batch drupal 6" src="http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61.png" alt="" width="559" height="27" srcset="http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61.png 559w, http://ecapy.com/wp-content/uploads/2010/09/tabla_batch_drupal61-300x14.png 300w" sizes="(max-width: 559px) 100vw, 559px" /></a></p>
+<p>35.2 MB de batch&#8230;</p>
+<p><strong>La solució</strong>n: aumentar el limite que tiene mysql claro <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><span style="color: #993300;"><strong>NOTA: ni en broma hagan esto en un servidor de producción salvo que sean un DBA o por lo menos tengan una clara idea de las consecuencias que implica hacer algo asi.</strong></span></p>
+<p>Para aumentar el limite simplemente tenes que seguir estos pasos: <a href="http://www.ecapy.com/drupal-6-xampp-windows-xp-y-mysql-server-has-gone-away/"><strong>Drupal 6 XAMPP Windows XP y “MySQL Server has gone away”</strong></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Tip: Restaurar un dump creado por mysql rapidamente</title>
+		<link>http://ecapy.com/tip-restaurar-un-dump-creado-por-mysql-rapidamente/</link>
+		<pubDate>Wed, 07 Jul 2010 07:35:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=521</guid>
+		<description><![CDATA[[crayon-584437927401b012812197/] -uUSUARIO: nombre del usuario mysql con privilegios sobre la BD -pCLAVE: clave del usuario &#60;: indicamos que vamos a lanzar el siguiente SQL sobre la BD /home/capy/Descargas/dump.sql: Ruta hasta donde tenemos guardado el dump. ACTUALIZACION: hacer y restaurar DB con gzip [crayon-5844379274024086423324/] [crayon-5844379274029869170582/]]]></description>
+				<content:encoded><![CDATA[<p></p><pre class="crayon-plain-tag">mysql -uUSUARIO -pCLAVE capy_db &amp;lt; /home/capy/Descargas/dump.sql</pre><p><strong>-uUSUARIO</strong>: nombre del usuario mysql con privilegios sobre la BD<br />
+<strong>-pCLAVE</strong>: clave del usuario<br />
+<strong>&lt;</strong>: indicamos que vamos a lanzar el siguiente SQL sobre la BD<br />
+<strong>/home/capy/Descargas/dump.sql</strong>: Ruta hasta donde tenemos guardado el dump.</p>
+<h2>ACTUALIZACION: <span style="color: #993300;">hacer y restaurar DB con gzip</span></h2>
+<p></p><pre class="crayon-plain-tag">mysqldump -uUSUARIO -pCLAVE BASE_DE_DATOS | gzip -9 &amp;gt; archivo_de_salida.sql.gz</pre><p></p><pre class="crayon-plain-tag">gunzip &amp;lt; archivo_de_salida.sql.gz | mysql -uUSUARIO -pCLAVE BASE_DE_DATOS</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Problemas de codificación con MySQL y PHP</title>
+		<link>http://ecapy.com/problemas-de-codificacion-con-mysql-y-php/</link>
+		<pubDate>Mon, 08 Mar 2010 14:01:39 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=306</guid>
+		<description><![CDATA[No había tenido un problema asi nunca, pero en uno de los últimos proyectos se dio. Al recuperar unos registros de la base de datos ya me estaban llegando mal codificados. Así como Ã¡Ã³Ã±. Buscando y buscando por todos lados encontré una serie de soluciones, y la combinación resultante para solucionar este problemita fue: Cambiar&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/problemas-de-codificacion-con-mysql-y-php/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>No había tenido un problema asi nunca, pero en uno de los últimos proyectos se dio.</p>
+<p>Al recuperar unos registros de la base de datos ya me estaban llegando mal codificados. Así como <strong>Ã¡Ã³Ã±.</strong></p>
+<p>Buscando y buscando por todos lados encontré una serie de soluciones, y la combinación resultante para solucionar este problemita fue:</p>
+<ul>
+<li>Cambiar la codificación del documento PHP a UTF-8</li>
+<li>En Mysql revisar que las tablas tengan la codificación <strong><code>utf8_spanish_ci</code></strong></li>
+<li>Antes de <strong>&lt;head&gt;&lt;/head&gt;</strong> poner <strong>&lt;meta http-equiv=&#8221;Content-type&#8221; content=&#8221;text/html; charset=utf-8&#8243; /&gt;</strong></li>
+<li>Todo lo anterior es preventivo. Pero lo que realmente me dio el resultado correcto en las consultas fue poner lo siguiente entes de lanzar la consulta (en la linea que esta justo encima del mysql_db_query()):<br />
+<strong>mysql_query(&#8220;SET NAMES &#8216;utf8&#8242;&#8221;);</strong></li>
+</ul>
+<p>Y listo, ya me salían bien los caratéres especiales.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>phpMyAdmin me dice que &#8220;Allowed memory size of xxxxx&#8221;&#8230; en Ubuntu (LAMP)</title>
+		<link>http://ecapy.com/phpmyadmin-me-dice-que-allowed-memory-size-of-xxxxx-en-ubuntu-lamp/</link>
+		<pubDate>Wed, 20 Jan 2010 17:51:36 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=258</guid>
+		<description><![CDATA[Obviamente estamos queriendo usar mas memoria de la que tenemos asignada para procesar la consulta que deseamos o cuando importamos dumps. La solución es mas bien simple: Para agregar mas memoria vamos a php.ini con el comando: [crayon-58443792742bd542628174/] Buscamos &#8220;memory_limit&#8221; para cambiarle el limite de 16m que es lo que viene por defecto a 32M&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/phpmyadmin-me-dice-que-allowed-memory-size-of-xxxxx-en-ubuntu-lamp/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Obviamente estamos queriendo usar mas memoria de la que tenemos asignada para procesar la consulta que deseamos o cuando importamos dumps.</p>
+<p>La solución es mas bien simple:</p>
+<p>Para agregar mas memoria vamos a php.ini con el comando<strong>:</strong></p><pre class="crayon-plain-tag">&lt;strong&gt;sudo gedit /etc/php5/apache2/php.ini&lt;/strong&gt;</pre><p>Buscamos &#8220;<strong>memory_limit</strong>&#8221; para cambiarle el limite de <strong>16m</strong> que es lo que viene por defecto a <strong>32M </strong>o <strong>64M o lo que necesitemos.</strong></p>
+<p>Guardamos y reiniciamos Apache con el comando:</p><pre class="crayon-plain-tag">&lt;strong&gt;sudo /etc/init.d/apache2 restart&lt;/strong&gt;</pre><p></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 6, $_SESSION y el usuario Anonymous</title>
+		<link>http://ecapy.com/drupal-6-session-y-anonymou/</link>
+		<comments>http://ecapy.com/drupal-6-session-y-anonymou/#comments</comments>
+		<pubDate>Fri, 10 Jul 2009 20:32:47 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.capy.es/?p=126</guid>
+		<description><![CDATA[Pocas veces me encuentro con un problema tan boludo y con una solución tan sencilla. El problema: digamos que por algún motivo tenemos que guardar información en una variable de sesision: [crayon-5844379274526594845716/] Bien,  el problema se dió cuando no lograba que el usuario &#8220;Anonymous&#8221; guardara esta variable al cambiar de página, aunque estuviera dentro del&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/drupal-6-session-y-anonymou/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Pocas veces me encuentro con un problema tan boludo y con una solución tan sencilla.</p>
+<p>El problema: digamos que por algún motivo tenemos que guardar información en una variable de sesision:</p><pre class="crayon-plain-tag">$_SESSION['referencia'] = "algunareferencia";</pre><p>Bien,  el problema se dió cuando no lograba que el usuario &#8220;Anonymous&#8221; guardara esta variable al cambiar de página, aunque estuviera dentro del mismo sitio.</p>
+<p>La solución:<br />
+Resulta que por algún motivo, drupal <strong>cambió el id</strong> que tiene dicho usuario de &#8220;<strong>0</strong>&#8221; a otro numero cualquiera, y eso básicamente decanta en que drupal al querer almacenar los datos de la sesision en la tabla sessions, no machea su id ya que busca la session con id 0&#8230;</p>
+<p>En fin, la solución es simplemente editar en la tabla &#8220;<strong>users</strong>&#8221; al usuario <strong>Anonymous </strong>y cambiar su ID a 0 (si no existe el usuario solo bastaría con crear un nuevo registro con los datos en blanco, pero con ID 0).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-6-session-y-anonymou/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

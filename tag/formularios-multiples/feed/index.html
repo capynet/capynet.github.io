@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Formularios multiples &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/formularios-multiples/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Crear múltiples instancias de un mismo formulario en Drupal 6</title>
+		<link>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/</link>
+		<comments>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/#comments</comments>
+		<pubDate>Sun, 08 Aug 2010 15:44:12 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[FAPI]]></category>
+		<category><![CDATA[Formularios multiples]]></category>
+		<category><![CDATA[hook_forms()]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=534</guid>
+		<description><![CDATA[El problema mas común a la hora de querer hacer que un formulario se repita mas de una vez en una misma pagina, es que cada uno de los formularios que se vayan creando van a ser solamente una fiel copia del anterior. Dicho de otra forma, estamos usando un solo formulario pero copiandolo en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/multiples-instancias-formulario-en-drupal-6/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms.png"><img class="size-full wp-image-543 alignleft" title="FAPI hook_forms() en drupal" src="http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms.png" alt="" width="402" height="286" srcset="http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms.png 502w, http://ecapy.com/wp-content/uploads/2010/08/fapi_hook_forms-300x214.png 300w" sizes="(max-width: 402px) 100vw, 402px" /></a></p>
+<p>El problema mas común a la hora de querer hacer que un formulario se repita mas de una vez en una misma pagina, es que cada uno de los formularios que se vayan creando van a ser solamente una fiel copia del anterior. Dicho de otra forma, estamos usando un solo formulario pero copiandolo en varios lados de la pagina.</p>
+<p>Tuve este problema hace ya mas de un año pero no me olvido lo <strong>JODIDA-MENTE DIFÍCIL</strong> que me fue encontrar una solución, hasta que me di con <a href="http://www.computerminds.co.uk/drupal-6-multiple-instances-same-form-one-page"><strong>esta pagina</strong></a>. Cuestión, que me salvó la vida (exagerado yo?). Por supuesto que les recomiendo que lean el articulo original, pero mas les recomiendo que lean mi interpretación de los hechos que esta mas buena :).</p>
+<p>Para este ejemplo primero vamos a crear una url donde poder poner nuestras múltiples instancias:</p><pre class="crayon-plain-tag">&lt; ?php /** * Implementation of hook_menu() * * Solo esta implementada una URL para poder hacer este ejemplo. */ function form_multi_instancias_menu() { $items['form-multiples-instancias'] = array( 'title' =&gt; t('Formulario multi instanciado'),
+        'page callback' =&gt; 'form_multiples_instancias',
+        'type' =&gt; MENU_NORMAL_ITEM,
+        'access callback' =&gt; TRUE,
+    );
+    return $items;
+}</pre><p>Y la respectiva función:</p><pre class="crayon-plain-tag">&lt; ?php
+/**
+ * En este callback de la url queremos crear varias instancias
+ * del mismo formulario.
+ */
+function form_multiples_instancias() {
+    $salida = 'Si le hechas una mirada al codigo fuente vas a poder ver que el "form_id" de cada formulario es distinto, asi como el "form_build_id".';
+ 
+    //en este ejemplo simplemente usamos un contador para crear los
+    //formularios, pero podriamos estar procesando nodos tranquilamente.
+    for ($i = 0; $i &lt; 5; $i++) {
+        /*
+          * Noten que estoy armando dinamicamente el
+          * drupal_get_form(). Lo siguiente equivaldria a hacer:
+          * $salida .= drupal_get_form ( "form_ejemplo_0" , 0);
+          * $salida .= drupal_get_form ( "form_ejemplo_1" , 1);
+          * $salida .= drupal_get_form ( "form_ejemplo_2" , 2);
+          * etc...
+          */
+        $salida .= drupal_get_form("form_ejemplo_" . $i, $i);
+    }
+ 
+    return $salida;
+}</pre><p>Si van leyendo los comentarios del código se va a ir entendiendo. Definamos el formulario que queremos instanciar:</p><pre class="crayon-plain-tag">&lt;?php //Este es un FAPI comun de toda la vida function form_ejemplo($form_state, $i) { $form['un_campo_de_texto'] = array( '#type' =&gt; 'textfield',
+        '#title' =&gt; t('Un campo de texto de ejemplo'),
+        '#default_value' =&gt; $i,
+    );
+    $form['submit'] = array(
+        '#type' =&gt; 'submit',
+        '#value' =&gt; "enviame",
+    );
+ 
+    $form['#validate'] = array("form_ejemplo_validate");
+    $form['#submit'] = array("form_ejemplo_submit");
+    return $form;
+}
+ 
+function form_ejemplo_validate($form_state, $form) {
+    drupal_set_message("He validado.");
+}
+ 
+function form_ejemplo_submit($form_state, $form) {
+    drupal_set_message(
+        t('Y el formulario enviado fue el Nº @form_number.',
+            array(
+                '@form_number' =&gt; $form_state ["un_campo_de_texto"] ["#value"])
+        )
+    );
+}</pre><p>Bueno bueno bueno&#8230; hasta acá, si ejecutas el script lo que pasaría es que te saldrían tantos warning como formularios se invoquen. Y eso es debido a que no tenemos ningún formulario definido que se llame <strong>form_ejemplo_0</strong>, ni <strong>form_ejemplo_1</strong>, etc.</p>
+<p>¿Soluciones?: Crear de la función <strong>form_ejemplo_0()</strong> <strong>para delante</strong> jajaja. No enserio, la solución es implementar el <strong>hook_forms()</strong>, que básicamente va a entender que se esta invocando un formulario inexistente <strong>y va a redireccionarlo a la definición ÚNICA </strong>que tenemos: <strong>form_ejemplo()</strong>.</p><pre class="crayon-plain-tag">&lt; ?php /** * Acá es donde se va a hacer la magia: * Resulta que por cada formulario que se invoca, el * hook_forms() es capaz de actuar como si de un hook_form_alter() * se tratara pero lo hace antes que se termine de armar * el array FAPI mas basico que crea Drupal. * O sea que intercede antes de que se le genere a cada * formulario sus #form_build_id, lo que nos permite * sobreescribir ciertos aspectos como ser la funcion * que alimentará el futuro formulario. */ function form_multi_instancias_forms($form_id, $args) { $forms = array(); //para no cambiarle el callback a todos los formularios //que se creen hacemos un pequeño if. caso contrario //tendriamos un problema GORDO. if (strpos($form_id, 'form_ejemplo_') === 0) { //hemos dado con una de las variantes del formulario que //estamos instanciando, solamente tenemos que apuntar //su callback al formulario que hemos definido. $forms[$form_id] = array('callback' =&gt; 'form_ejemplo');
+    }
+ 
+    return $forms;
+}</pre><p>Bueno. ya está. este código así, funciona. Les dejo un mini-modulo con lo anterior para que lo vean funcionar. Instalenlo y miren en la URL &#8220;<span style="color: #993300;">/form-multiples-instancias</span>&#8221;</p>
+<p><a href="http://www.ecapy.com/Archivos/form_multi_instancias.rar">DESCARGAR</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/multiples-instancias-formulario-en-drupal-6/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

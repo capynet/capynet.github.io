@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/tag/css/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:29:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   CSS</title>
+			<link rel="shortcut icon" href="../../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; CSS RSS de la etiqueta" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="archive tag tag-css tag-20">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+<section id="main" class="container">
+    <div class="row">
+        <div id="content" class="site-content col-md-9" role="main">
+
+            
+                                    <article id="post-2870" class="post-2870 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion tag-css tag-front-end tag-maquetacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/index.html" rel="bookmark">Chrome redimensiona mas imágenes dentro de una tabla.</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2015-03-25T02:11:19+00:00">25 Mar,  2015</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a>, <a href="../front-end/index.html" rel="tag">Front-end</a>, <a href="../maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Me ha pasado algo curioso y solo en chrome de momento. Tengo un texto en una celda y una imagen en la otra. El problema vino cuando usé un max-width:100% para las img en general. En ese momento toda imagen que estuviera dentro de un &lt;td&gt; pasó a redimensionarse: Ok, Chrome también tiene sus cositas.&nbsp;</p>
+<p><a class="btn btn-style" href="../../chrome-redimensiona-mas-imagenes-dentro-de-una-tabla/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-2767" class="post-2767 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion tag-css tag-front-end tag-maquetacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/index.html" rel="bookmark">Front-end: Maquetar un buscador (input + botón) para que sea 100% fluido / responsive</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-09-12T21:18:03+00:00">12 Sep,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a>, <a href="../front-end/index.html" rel="tag">Front-end</a>, <a href="../maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>La idea detrás de esto fue lograr que el buscador esté siempre al 100% del espacio que tenga disponible y no tener que preocuparme de dimensionar los input para que encajen y que el botón no caiga a dos lineas cuando se queda sin espacio. Pueden ver como funciona si re dimensionan la ventana del&nbsp;</p>
+<p><a class="btn btn-style" href="../../front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-2748" class="post-2748 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion tag-css tag-front-end tag-maquetacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/index.html" rel="bookmark">Front-end: Títulos multi linea con padding por cada una de las lineas</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-08-13T15:51:24+00:00">13 Ago,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a>, <a href="../front-end/index.html" rel="tag">Front-end</a>, <a href="../maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/index.html#comments">One comment</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Así es como vemos un titulo cuando tiene aplicado un padding sin mas Y asi es como queremos que se vea No voy a explicar toda la lógica que hay detrás de esto. Vayamos a la solución. Este es el html. en div.titulo tenemos el background y en .highlight el background del texto, el padding&nbsp;</p>
+<p><a class="btn btn-style" href="../../front-end-titulos-multi-linea-con-padding-por-cada-una-de-las-lineas/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-2737" class="post-2737 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion tag-css tag-ie-te-odio tag-maquetacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/index.html" rel="bookmark">CSS: Centrar vertical y horizontalmente un elemento sin saber su tamaño</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-08-12T13:20:34+00:00">12 Ago,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a>, <a href="../ie-te-odio/index.html" rel="tag">IE te odio</a>, <a href="../maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/index.html#comments">12 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Centrar un elemento cuando se sabe el tamaño que tiene es fácil. Pero y si el elemento que queremos centrar tiene un tamaño expresado en % o no tiene un tamaño especificado, ya no es tan fácil centrarlo. Ahora que prácticamente IE8 ya no se usa, lo podemos quitar de la ecuación y usar CSS&nbsp;</p>
+<p><a class="btn btn-style" href="../../css-centrar-vertical-y-horizontalmente-un-elemento-sin-saber-su-tamano/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-2085" class="post-2085 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion tag-css tag-maquetacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../crea-tus-iconfont-a-medida-con-icomoon/index.html" rel="bookmark">Crea tus iconfont a medida con IcoMoon</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2013-03-14T12:18:24+00:00">14 Mar,  2013</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a>, <a href="../maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>IcoMoon es genial, siempre que veo un iconfont o un pack de iconos armado con sprite tengo que sopesar si los KB que trae con sigo me va a compensar, al fin y al cabo suelo usar 5 o 10 iconos de los cientos que estos pack traen. Y acá es donde IcoMoon me enamoró.&nbsp;</p>
+<p><a class="btn btn-style" href="../../crea-tus-iconfont-a-medida-con-icomoon/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1844" class="post-1844 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion tag-css tag-programacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../crear-selectores-dinamicos-con-scsssass/index.html" rel="bookmark">Crear selectores dinámicos con scss/sass</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2013-02-11T21:49:11+00:00">11 Feb,  2013</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a>, <a href="../programacion/index.html" rel="tag">Programación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Esta característica me encanta. SCSS/SASS (aka SCSS) nos permite crear selectores de forma dinámica. Esto quiere decir que podemos reutilizar de una forma mucho mas eficiente y elegante nuestras estructuras CSS. Por ejemplo, imagina que con CSS maquetas un menú que tiene esta estructura: </p>
+		<div id="crayon-5844361fe201c370725711" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt;div class="menu-principal"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="/home"&gt;Inicio&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844361fe201c370725711-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe201c370725711-2">2</div><div class="crayon-num" data-line="crayon-5844361fe201c370725711-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe201c370725711-4">4</div><div class="crayon-num" data-line="crayon-5844361fe201c370725711-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe201c370725711-6">6</div><div class="crayon-num" data-line="crayon-5844361fe201c370725711-7">7</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844361fe201c370725711-1"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"menu-principal"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe201c370725711-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;ul&gt;</span></div><div class="crayon-line" id="crayon-5844361fe201c370725711-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe201c370725711-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"/home"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Inicio</span><span class="crayon-r ">&lt;/a&gt;</span></div><div class="crayon-line" id="crayon-5844361fe201c370725711-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe201c370725711-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/ul&gt;</span></div><div class="crayon-line" id="crayon-5844361fe201c370725711-7"><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> </p>
+		<div id="crayon-5844361fe2026151877403" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+#menu-principal {
+    border-bottom: 5px solid #0062A0;
+}
+#menu-principal ul {
+    border-bottom: 2px solid #F5E742;
+}
+#menu-principal ul li {
+    background: none repeat scroll 0 0 #ADFF2F;
+}
+#menu-principal ul li a {
+    color: #8B0000;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844361fe2026151877403-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2026151877403-2">2</div><div class="crayon-num" data-line="crayon-5844361fe2026151877403-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2026151877403-4">4</div><div class="crayon-num" data-line="crayon-5844361fe2026151877403-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2026151877403-6">6</div><div class="crayon-num" data-line="crayon-5844361fe2026151877403-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2026151877403-8">8</div><div class="crayon-num" data-line="crayon-5844361fe2026151877403-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2026151877403-10">10</div><div class="crayon-num" data-line="crayon-5844361fe2026151877403-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2026151877403-12">12</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844361fe2026151877403-1"><span class="crayon-k ">#menu-principal </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2026151877403-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">border-bottom</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">5px</span><span class="crayon-h"> </span><span class="crayon-i ">solid</span><span class="crayon-h"> </span><span class="crayon-i ">#0062A0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844361fe2026151877403-3"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2026151877403-4"><span class="crayon-k ">#menu-principal ul </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844361fe2026151877403-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">border-bottom</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">2px</span><span class="crayon-h"> </span><span class="crayon-i ">solid</span><span class="crayon-h"> </span><span class="crayon-i ">#F5E742</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2026151877403-6"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844361fe2026151877403-7"><span class="crayon-k ">#menu-principal ul li </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2026151877403-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">none</span><span class="crayon-h"> </span><span class="crayon-i ">repeat</span><span class="crayon-h"> </span><span class="crayon-i ">scroll</span><span class="crayon-h"> </span><span class="crayon-i ">0</span><span class="crayon-h"> </span><span class="crayon-i ">0</span><span class="crayon-h"> </span><span class="crayon-i ">#ADFF2F</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844361fe2026151877403-9"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2026151877403-10"><span class="crayon-k ">#menu-principal ul li a </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844361fe2026151877403-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#8B0000</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2026151877403-12"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Ok, el problema con CSS es que reutilizar código&nbsp;</p>
+<p><a class="btn btn-style" href="../../crear-selectores-dinamicos-con-scsssass/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1176" class="post-1176 post type-post status-publish format-standard hentry category-css-y-maquetacion tag-bug tag-css tag-ie-te-odio tag-maquetacion">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../ie-aplica-degrade-sobre-imagenes-transparentes-solucion/index.html" rel="bookmark">IE aplica degradé sobre imagenes transparentes [solución]</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-08-29T23:20:27+00:00">29 Ago,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../bug/index.html" rel="tag">bug</a>, <a href="index.html" rel="tag">CSS</a>, <a href="../ie-te-odio/index.html" rel="tag">IE te odio</a>, <a href="../maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Tengo que decirlo: es alucinante los bug que tiene IE (da igual la versión, nunca terminan de solucionarlos). El ultimo con el que me di es que si usas una imagen transparente para hacer un fondo transparente, se va a ver genial en todos los navegadores menos en Internet Explorer (7 y 8, el 9 no se) Así es&nbsp;</p>
+<p><a class="btn btn-style" href="../../ie-aplica-degrade-sobre-imagenes-transparentes-solucion/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1082" class="post-1082 post type-post status-publish format-standard hentry category-css-y-maquetacion category-js category-programacion tag-bug tag-css tag-ie-te-odio tag-javascript tag-maquetacion">
+    <header class="entry-header">
+
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../solucion-al-box-model-en-ie7-usando-jquery/index.html" rel="bookmark">Solución al box-model en ie7 usando jQuery</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-06-15T10:16:41+00:00">15 Jun,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a>, <a href="../../category/js/index.html" rel="category tag">Javascript</a>, <a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="../bug/index.html" rel="tag">bug</a>, <a href="index.html" rel="tag">CSS</a>, <a href="../ie-te-odio/index.html" rel="tag">IE te odio</a>, <a href="../javascript/index.html" rel="tag">JavaScript</a>, <a href="../maquetacion/index.html" rel="tag">Maquetación</a><br /> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Sé que hay soluciones hechas para este problema en particular, pero pesa 33k y solo necesitamos unas líneas como van a ver para lograr lo mismo&#8230; Sabido es que a ie se la sudan los estándares y cuando los incorporan por lo general lo hacen taaarde. La propiedad CSS &#8220;box-sizing&#8221; no es la excepción. Ya&nbsp;</p>
+<p><a class="btn btn-style" href="../../solucion-al-box-model-en-ie7-usando-jquery/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1074" class="post-1074 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion tag-css">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/index.html" rel="bookmark">Como evitar que los input excedan el tamaño del div que los contiene</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-06-15T03:00:42+00:00">15 Jun,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/index.html#comments">2 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Siempre trato de ser practico y dar pocas explicaciones del porque llegamos a donde llegamos, así que si quieren saber porque falla pueden leer esto. Para lograr que un input pase de esto: A esto: Al input que les está dando problemas pónganle los el siguiente selector: </p>
+		<div id="crayon-5844361fe26fe323168268" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+.elemento{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844361fe26fe323168268-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe26fe323168268-2">2</div><div class="crayon-num" data-line="crayon-5844361fe26fe323168268-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe26fe323168268-4">4</div><div class="crayon-num" data-line="crayon-5844361fe26fe323168268-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844361fe26fe323168268-1"><span class="crayon-k ">.elemento</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe26fe323168268-2"><span class="crayon-h">	</span><span class="crayon-e ">-moz-box-sizing</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">border-box</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844361fe26fe323168268-3"><span class="crayon-h">	</span><span class="crayon-e ">-webkit-box-sizing</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">border-box</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe26fe323168268-4"><span class="crayon-h">	</span><span class="crayon-e ">box-sizing</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">border-box</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844361fe26fe323168268-5"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p> Básicamente va a sumar los padding y&nbsp;</p>
+<p><a class="btn btn-style" href="../../como-evitar-que-los-input-excedan-el-tamano-del-div-que-los-contiene/index.html">Seguir leyendo&#8230;</a></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                                    <article id="post-1067" class="post-1067 post type-post status-publish format-standard has-post-thumbnail hentry category-css-y-maquetacion category-programacion tag-css">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../../wp-content/uploads/2014/09/css-header.jpg" class="img-responsive wp-post-image" alt="css-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/css-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/css-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/css-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="../../css-hack-para-poder-usar-display-inline-block-en-ie7/index.html" rel="bookmark">CSS hack: para poder usar &#8220;display: inline-block&#8221; en IE7</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2011-06-15T02:08:41+00:00">15 Jun,  2011</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../../category/css-y-maquetacion/index.html" rel="category tag">CSS y Maquetación</a>, <a href="../../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i><a href="index.html" rel="tag">CSS</a><br /> </li>
+                
+                 
+                                    <li class="comments-link">
+                        <i class="fa fa-comments-o"></i> <a href="../../css-hack-para-poder-usar-display-inline-block-en-ie7/index.html#comments">3 comments</a>                    </li>
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>Al grano: </p>
+		<div id="crayon-5844361fe2b5d651731176" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+.elemento {
+            vertical-align: top;
+            zoom: 1;
+            *display: inline;
+        }</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844361fe2b5d651731176-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2b5d651731176-2">2</div><div class="crayon-num" data-line="crayon-5844361fe2b5d651731176-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844361fe2b5d651731176-4">4</div><div class="crayon-num" data-line="crayon-5844361fe2b5d651731176-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844361fe2b5d651731176-1"><span class="crayon-k ">.elemento </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2b5d651731176-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">vertical-align</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">top</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844361fe2b5d651731176-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">zoom</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">1</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844361fe2b5d651731176-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i ">*display</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">inline</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844361fe2b5d651731176-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->                
+                <div class="btn btn-style pull-left"><a href="page/2/index.html" >&laquo; Older Posts</a></div>
+                <div class="btn btn-style pull-right"></div>
+
+            
+        </div> <!-- #content -->
+
+        <div id="sidebar" class="col-md-3" role="complementary">
+            <div class="sidebar-inner">
+                <aside class="widget-area">
+                                    </aside>
+            </div>
+        </div> <!-- #sidebar -->
+
+    </div> <!-- .row -->
+</section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/tag/css/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:29:22 GMT -->
+</html>

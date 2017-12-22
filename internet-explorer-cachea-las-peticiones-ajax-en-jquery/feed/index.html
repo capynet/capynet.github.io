@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Internet Explorer cachea las peticiones Ajax en jQuery</title>
+	<atom:link href="http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Matias</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-68</link>
+		<dc:creator><![CDATA[Matias]]></dc:creator>
+		<pubDate>Wed, 25 Mar 2015 19:00:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-68</guid>
+		<description><![CDATA[&lt;b&gt; Sos un grande, me solucionaste la vida &lt;/b&gt;]]></description>
+		<content:encoded><![CDATA[<p><b> Sos un grande, me solucionaste la vida </b></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Neolanis Suarez</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-67</link>
+		<dc:creator><![CDATA[Neolanis Suarez]]></dc:creator>
+		<pubDate>Sat, 18 Oct 2014 23:25:12 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-67</guid>
+		<description><![CDATA[Amigo hice lo que recomiendas y no me funciona en IE9 
+este es el codigo
+
+$.ajaxSetup({ cache: false });
+
+&lt;!-- Contador y actualizacio de las impresiones Ajax, Javascript y algo de php//--&gt;
+
+
+$(function(){
+ var claveB =&quot;&quot;;
+    $.ajax({
+        type: &quot;POST&quot;,
+        url: &quot;Imprime.php&quot;,
+       data:{id: claveB}, // Adjuntar los campos del formulario enviado seria asi:  data: $(&quot;#formulario&quot;).serialize(),
+        success: function(data)
+        {
+            $(&quot;#div-imprime&quot;).html(data); // Mostrar la respuestas del script PHP.
+        }
+    });
+ 
+    return false; // Evitar ejecutar el submit del formulario.
+});
+ 
+No se porque no me funciona...]]></description>
+		<content:encoded><![CDATA[<p>Amigo hice lo que recomiendas y no me funciona en IE9<br />
+este es el codigo</p>
+<p>$.ajaxSetup({ cache: false });</p>
+<p><!-- Contador y actualizacio de las impresiones Ajax, Javascript y algo de php//--></p>
+<p>$(function(){<br />
+ var claveB =&#8221;&#8221;;<br />
+    $.ajax({<br />
+        type: &#8220;POST&#8221;,<br />
+        url: &#8220;Imprime.php&#8221;,<br />
+       data:{id: claveB}, // Adjuntar los campos del formulario enviado seria asi:  data: $(&#8220;#formulario&#8221;).serialize(),<br />
+        success: function(data)<br />
+        {<br />
+            $(&#8220;#div-imprime&#8221;).html(data); // Mostrar la respuestas del script PHP.<br />
+        }<br />
+    });</p>
+<p>    return false; // Evitar ejecutar el submit del formulario.<br />
+});</p>
+<p>No se porque no me funciona&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: fernando</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-66</link>
+		<dc:creator><![CDATA[fernando]]></dc:creator>
+		<pubDate>Fri, 23 May 2014 20:37:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-66</guid>
+		<description><![CDATA[Gracias. se soluciono mi problema con solo poner esa linea de codigo principio.Muchas gracias.]]></description>
+		<content:encoded><![CDATA[<p>Gracias. se soluciono mi problema con solo poner esa linea de codigo principio.Muchas gracias.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maria</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-63</link>
+		<dc:creator><![CDATA[Maria]]></dc:creator>
+		<pubDate>Tue, 07 May 2013 14:41:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-63</guid>
+		<description><![CDATA[Me acabo de dar cuenta de que el problema está en codigos.php. El evento lo reconoce pero no carga bien los datos. 
+
+&lt;pre class=&quot;decode:1 lang:php &quot; &gt;
+&lt; ?php
+$c = mysql_query(&quot;SELECT * FROM acciones WHERE expacc=&quot; . $_GET[&#039;numexp&#039;], $conexion);
+echo &quot;Elige un código&quot;;
+while ($row = mysql_fetch_assoc($c)) {
+  echo $row[&#039;codacc&#039;];
+}
+mysql_free_result($row);
+mysql_close($conexion);
+echo &#039;2&#039;;
+?&gt;
+&lt;/pre&gt;
+
+Si cargo el valor con algo fijo funciona, si depende del select y while no lo hace en ie.]]></description>
+		<content:encoded><![CDATA[<p>Me acabo de dar cuenta de que el problema está en codigos.php. El evento lo reconoce pero no carga bien los datos. </p>
+<p></p>
+		<div id="crayon-584438db9d5eb637996264" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+&lt; ?php
+$c = mysql_query("SELECT * FROM acciones WHERE expacc=" . $_GET['numexp'], $conexion);
+echo "Elige un código";
+while ($row = mysql_fetch_assoc($c)) {
+  echo $row['codacc'];
+}
+mysql_free_result($row);
+mysql_close($conexion);
+echo '2';
+?&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db9d5eb637996264-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d5eb637996264-2">2</div><div class="crayon-num" data-line="crayon-584438db9d5eb637996264-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d5eb637996264-4">4</div><div class="crayon-num" data-line="crayon-584438db9d5eb637996264-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d5eb637996264-6">6</div><div class="crayon-num" data-line="crayon-584438db9d5eb637996264-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d5eb637996264-8">8</div><div class="crayon-num" data-line="crayon-584438db9d5eb637996264-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d5eb637996264-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db9d5eb637996264-1"><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-sy">?</span><span class="crayon-i">php</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d5eb637996264-2"><span class="crayon-v">$c</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">mysql_query</span><span class="crayon-sy">(</span><span class="crayon-s">"SELECT * FROM acciones WHERE expacc="</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-v">$_GET</span><span class="crayon-sy">[</span><span class="crayon-s">'numexp'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$conexion</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db9d5eb637996264-3"><span class="crayon-k ">echo</span><span class="crayon-h"> </span><span class="crayon-s">"Elige un código"</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d5eb637996264-4"><span class="crayon-st">while</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">$row</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">mysql_fetch_assoc</span><span class="crayon-sy">(</span><span class="crayon-v">$c</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db9d5eb637996264-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">echo</span><span class="crayon-h"> </span><span class="crayon-v">$row</span><span class="crayon-sy">[</span><span class="crayon-s">'codacc'</span><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d5eb637996264-6"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438db9d5eb637996264-7"><span class="crayon-e">mysql_free_result</span><span class="crayon-sy">(</span><span class="crayon-v">$row</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d5eb637996264-8"><span class="crayon-e">mysql_close</span><span class="crayon-sy">(</span><span class="crayon-v">$conexion</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db9d5eb637996264-9"><span class="crayon-k ">echo</span><span class="crayon-h"> </span><span class="crayon-s">'2'</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d5eb637996264-10"><span class="crayon-ta">?&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Si cargo el valor con algo fijo funciona, si depende del select y while no lo hace en ie.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-65</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 07 May 2013 14:33:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-65</guid>
+		<description><![CDATA[Me alegro mucho por ti :)]]></description>
+		<content:encoded><![CDATA[<p>Me alegro mucho por ti 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maria</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-62</link>
+		<dc:creator><![CDATA[Maria]]></dc:creator>
+		<pubDate>Tue, 07 May 2013 14:12:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-62</guid>
+		<description><![CDATA[No hay manera, 
+&lt;pre class=&quot;decode:1 lang:javascript &quot; &gt;
+$(document).ready(function() {
+
+    var n = $(&quot;#numexp&quot;);
+
+/*      if ($.browser.msie) {
+        n.click(function() {
+		
+        $(&#039;#codacc&#039;).html(&#039;Cargando&#039;);
+			var numExp= $(this).val();
+			var toLoad= &#039;/codigos.php?numexp=&#039;+ numExp ;
+			$.post(toLoad,function (responseText){
+			$(&#039;#codacc&#039;).html(responseText);
+        });
+    });
+			}
+	else {  */
+        n.change(function() {
+		
+        $(&#039;#codacc&#039;).html(&#039;Cargando&#039;);
+			var numExp= $(this).val();
+			var toLoad= &#039;/codigos.php?numexp=&#039;+ numExp ;
+			$.post(toLoad,function (responseText){
+			$(&#039;#codacc&#039;).html(responseText);
+        });
+    });
+/* } */
+});
+&lt;/pre&gt;
+
+El código que he probado sería éste. Fíjate que la parte de reconocer ie está entre comentarios. Si se los quito no funciona la del change, reconoce el click pero no se cargan los datos. Se queda como una lista grande pero vacía.]]></description>
+		<content:encoded><![CDATA[<p>No hay manera,</p>
+		<div id="crayon-584438db9d71d809723257" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+$(document).ready(function() {
+
+    var n = $("#numexp");
+
+/*      if ($.browser.msie) {
+        n.click(function() {
+		
+        $('#codacc').html('Cargando');
+			var numExp= $(this).val();
+			var toLoad= '/codigos.php?numexp='+ numExp ;
+			$.post(toLoad,function (responseText){
+			$('#codacc').html(responseText);
+        });
+    });
+			}
+	else {  */
+        n.change(function() {
+		
+        $('#codacc').html('Cargando');
+			var numExp= $(this).val();
+			var toLoad= '/codigos.php?numexp='+ numExp ;
+			$.post(toLoad,function (responseText){
+			$('#codacc').html(responseText);
+        });
+    });
+/* } */
+});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db9d71d809723257-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-2">2</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-4">4</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-6">6</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-8">8</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-10">10</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-12">12</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-14">14</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-16">16</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-18">18</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-20">20</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-22">22</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-24">24</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438db9d71d809723257-26">26</div><div class="crayon-num" data-line="crayon-584438db9d71d809723257-27">27</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db9d71d809723257-1"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-2">&nbsp;</div><div class="crayon-line" id="crayon-584438db9d71d809723257-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">n</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#numexp"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-4">&nbsp;</div><div class="crayon-line" id="crayon-584438db9d71d809723257-5"><span class="crayon-c">/*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($.browser.msie) {</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-6"><span class="crayon-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n.click(function() {</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-7"><span class="crayon-c">		</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-8"><span class="crayon-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#codacc').html('Cargando');</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-9"><span class="crayon-c">			var numExp= $(this).val();</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-10"><span class="crayon-c">			var toLoad= '/codigos.php?numexp='+ numExp ;</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-11"><span class="crayon-c">			$.post(toLoad,function (responseText){</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-12"><span class="crayon-c">			$('#codacc').html(responseText);</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-13"><span class="crayon-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-14"><span class="crayon-c">&nbsp;&nbsp;&nbsp;&nbsp;});</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-15"><span class="crayon-c">			}</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-16"><span class="crayon-c">	else {&nbsp;&nbsp;*/</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">n</span><span class="crayon-sy">.</span><span class="crayon-e">change</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-18"><span class="crayon-h">		</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">'#codacc'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-s">'Cargando'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-20"><span class="crayon-h">			</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">numExp</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">this</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">val</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-21"><span class="crayon-h">			</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-e ">toLoad</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'/codigos.php?numexp='</span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-i">numExp</span><span class="crayon-h"> </span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-22"><span class="crayon-h">			</span><span class="crayon-sy">$</span><span class="crayon-sy">.</span><span class="crayon-e">post</span><span class="crayon-sy">(</span><span class="crayon-v">toLoad</span><span class="crayon-sy">,</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">responseText</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-23"><span class="crayon-h">			</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">'#codacc'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">responseText</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438db9d71d809723257-26"><span class="crayon-c">/* } */</span></div><div class="crayon-line" id="crayon-584438db9d71d809723257-27"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>El código que he probado sería éste. Fíjate que la parte de reconocer ie está entre comentarios. Si se los quito no funciona la del change, reconoce el click pero no se cargan los datos. Se queda como una lista grande pero vacía.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maria</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-64</link>
+		<dc:creator><![CDATA[Maria]]></dc:creator>
+		<pubDate>Tue, 07 May 2013 12:44:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-64</guid>
+		<description><![CDATA[Por fiiiiiinnnn, el problema estaba en las dos últimas líneas
+mysql_free_result($row);
+mysql_close($conexion);
+
+Las he quitado y ya funciona sin problema en todos sitios.
+Muchas gracias por todo y perdona las molestias.]]></description>
+		<content:encoded><![CDATA[<p>Por fiiiiiinnnn, el problema estaba en las dos últimas líneas<br />
+mysql_free_result($row);<br />
+mysql_close($conexion);</p>
+<p>Las he quitado y ya funciona sin problema en todos sitios.<br />
+Muchas gracias por todo y perdona las molestias.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-58</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 07 May 2013 11:35:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-58</guid>
+		<description><![CDATA[Maria perdón, ayer estaba liado. El codigo se ve bien, lo unico que puede ser un poco peligroso es &quot;toLoad&quot; porque por ejemplo:
+
+Si tenemos esto: 
+&lt;pre class=&quot;decode:1 lang:javascript &quot; &gt;var toLoad = &#039;codigos.php?numexp=&#039; + numExp;&lt;/pre&gt;
+y estamos en www.tupagina.com, el script entiende que tiene que ir a  www.tupagina.com/codigos.php?numex....
+Pero si estamos en 
+www.tupagina.com/alguna/seccion la cosa cambia porque va a querer acceder a www.tupagina.com/alguna/seccion/codigos.php?numex....
+La solucion es poner un &quot;/&quot; delante:
+&lt;pre class=&quot;decode:1 lang:javascript &quot; &gt;var toLoad = &#039;/codigos.php?numexp=&#039; + numExp;&lt;/pre&gt;
+
+Al margen de eso no veo problema con este script. te funciona en firefox y chrome?
+
+ah y $.ajaxSetup({ cache: false }); va fuera de las funciones. Es un configurador global.]]></description>
+		<content:encoded><![CDATA[<p>Maria perdón, ayer estaba liado. El codigo se ve bien, lo unico que puede ser un poco peligroso es &#8220;toLoad&#8221; porque por ejemplo:</p>
+<p>Si tenemos esto:</p>
+		<div id="crayon-584438db9dbf1544071310" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var toLoad = 'codigos.php?numexp=' + numExp;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db9dbf1544071310-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db9dbf1544071310-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-e ">toLoad</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'codigos.php?numexp='</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">numExp</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>y estamos en <a href="http://www.tupagina.com" rel="nofollow">http://www.tupagina.com</a>, el script entiende que tiene que ir a  <a href="http://www.tupagina.com/codigos.php?numex..." rel="nofollow">http://www.tupagina.com/codigos.php?numex&#8230;</a>.<br />
+Pero si estamos en<br />
+<a href="http://www.tupagina.com/alguna/seccion" rel="nofollow">http://www.tupagina.com/alguna/seccion</a> la cosa cambia porque va a querer acceder a <a href="http://www.tupagina.com/alguna/seccion/codigos.php?numex..." rel="nofollow">http://www.tupagina.com/alguna/seccion/codigos.php?numex&#8230;</a>.<br />
+La solucion es poner un &#8220;/&#8221; delante:</p>
+		<div id="crayon-584438db9dbfa739773036" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+var toLoad = '/codigos.php?numexp=' + numExp;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438db9dbfa739773036-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438db9dbfa739773036-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-e ">toLoad</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'/codigos.php?numexp='</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">numExp</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+<p>Al margen de eso no veo problema con este script. te funciona en firefox y chrome?</p>
+<p>ah y $.ajaxSetup({ cache: false }); va fuera de las funciones. Es un configurador global.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maria</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-61</link>
+		<dc:creator><![CDATA[Maria]]></dc:creator>
+		<pubDate>Tue, 07 May 2013 09:59:24 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-61</guid>
+		<description><![CDATA[Voy a hacer pruebas y te comento]]></description>
+		<content:encoded><![CDATA[<p>Voy a hacer pruebas y te comento</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/internet-explorer-cachea-las-peticiones-ajax-en-jquery/#comment-60</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Tue, 07 May 2013 09:55:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=250#comment-60</guid>
+		<description><![CDATA[y no será algo como esto? http://ecapy.com/no-funciona-jquery-change-en-internet-explorer/]]></description>
+		<content:encoded><![CDATA[<p>y no será algo como esto? <a href="http://ecapy.com/no-funciona-jquery-change-en-internet-explorer/" rel="nofollow">http://ecapy.com/no-funciona-jquery-change-en-internet-explorer/</a></p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

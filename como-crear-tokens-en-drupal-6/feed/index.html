@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Como crear tokens en Drupal 6</title>
+	<atom:link href="http://ecapy.com/como-crear-tokens-en-drupal-6/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/como-crear-tokens-en-drupal-6/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/como-crear-tokens-en-drupal-6/#comment-70</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Sun, 05 Jun 2011 15:38:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=272#comment-70</guid>
+		<description><![CDATA[Hola Adiazq, quedaria asi mas o menos:
+
+&lt;pre class=&quot;decode:1 lang:php &quot; &gt;
+/**
+ * Implementation of hook_token_values().
+ */
+function mimodulo_token_values($type, $object = NULL, $options = array()) {
+ 
+    if ($type == &#039;user&#039;) {
+        if (!empty($object-&gt;roles)) {
+            $account = $object;
+        }
+        else {
+            global $user;
+            $account = user_load(array(&#039;uid&#039; =&gt; $user-&gt;uid));
+        }
+ 
+        //Acá deberías tomar las decisiones adecuadas para saber si queres un string con todos los roles que tiene o bien si queres uno puntual.
+        $tokens[&#039;user-role-ids&#039;] = implode(&#039;,&#039;, array_keys($account-&gt;roles));
+ 
+        return $tokens;
+    }
+}
+ 
+/**
+ * Implementation of hook_token_list().
+ */
+function mimodulo_token_list($type = &#039;all&#039;) {
+    //si queres que el token este disponible en todos lados usa: if ($type == &#039;user&#039; &#124;&#124; $type == &#039;all&#039;) {
+ 
+    //solo se entrega para los que implementan tokens de usuarios:
+    if ($type == &#039;user&#039;) {
+        $tokens[&#039;user&#039;][&#039;user-role-ids&#039;] = t(&#039;Lista separada por coma de los roles que tiene asignados el usuario&#039;);
+        return $tokens;
+    }
+}
+&lt;/pre&gt;]]></description>
+		<content:encoded><![CDATA[<p>Hola Adiazq, quedaria asi mas o menos:</p>
+<p></p>
+		<div id="crayon-5844443a283fc946920358" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+/**
+ * Implementation of hook_token_values().
+ */
+function mimodulo_token_values($type, $object = NULL, $options = array()) {
+ 
+    if ($type == 'user') {
+        if (!empty($object-&gt;roles)) {
+            $account = $object;
+        }
+        else {
+            global $user;
+            $account = user_load(array('uid' =&gt; $user-&gt;uid));
+        }
+ 
+        //Acá deberías tomar las decisiones adecuadas para saber si queres un string con todos los roles que tiene o bien si queres uno puntual.
+        $tokens['user-role-ids'] = implode(',', array_keys($account-&gt;roles));
+ 
+        return $tokens;
+    }
+}
+ 
+/**
+ * Implementation of hook_token_list().
+ */
+function mimodulo_token_list($type = 'all') {
+    //si queres que el token este disponible en todos lados usa: if ($type == 'user' || $type == 'all') {
+ 
+    //solo se entrega para los que implementan tokens de usuarios:
+    if ($type == 'user') {
+        $tokens['user']['user-role-ids'] = t('Lista separada por coma de los roles que tiene asignados el usuario');
+        return $tokens;
+    }
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-5844443a283fc946920358-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-2">2</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-4">4</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-6">6</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-8">8</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-10">10</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-12">12</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-14">14</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-16">16</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-18">18</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-20">20</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-22">22</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-24">24</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-26">26</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-28">28</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-30">30</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5844443a283fc946920358-32">32</div><div class="crayon-num" data-line="crayon-5844443a283fc946920358-33">33</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5844443a283fc946920358-1"><span class="crayon-c">/**</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-2"><span class="crayon-c"> * Implementation of hook_token_values().</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-3"><span class="crayon-c"> */</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-4"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_token_values</span><span class="crayon-sy">(</span><span class="crayon-v">$type</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$object</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">NULL</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$options</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-5"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">$type</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-s">'user'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-k ">empty</span><span class="crayon-sy">(</span><span class="crayon-v">$object</span><span class="crayon-o">-&gt;</span><span class="crayon-i">roles</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$account</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">$object</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">global</span><span class="crayon-h"> </span><span class="crayon-v">$user</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$account</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">user_load</span><span class="crayon-sy">(</span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-s">'uid'</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">$user</span><span class="crayon-o">-&gt;</span><span class="crayon-i">uid</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-14"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//Acá deberías tomar las decisiones adecuadas para saber si queres un string con todos los roles que tiene o bien si queres uno puntual.</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$tokens</span><span class="crayon-sy">[</span><span class="crayon-s">'user-role-ids'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">implode</span><span class="crayon-sy">(</span><span class="crayon-s">','</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">array_keys</span><span class="crayon-sy">(</span><span class="crayon-v">$account</span><span class="crayon-o">-&gt;</span><span class="crayon-i">roles</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-17"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$tokens</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-20"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-21"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-22"><span class="crayon-c">/**</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-23"><span class="crayon-c"> * Implementation of hook_token_list().</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-24"><span class="crayon-c"> */</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-25"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">mimodulo_token_list</span><span class="crayon-sy">(</span><span class="crayon-v">$type</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'all'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//si queres que el token este disponible en todos lados usa: if ($type == 'user' || $type == 'all') {</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-27"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//solo se entrega para los que implementan tokens de usuarios:</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">$type</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-s">'user'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">$tokens</span><span class="crayon-sy">[</span><span class="crayon-s">'user'</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-s">'user-role-ids'</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">t</span><span class="crayon-sy">(</span><span class="crayon-s">'Lista separada por coma de los roles que tiene asignados el usuario'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-v">$tokens</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5844443a283fc946920358-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5844443a283fc946920358-33"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Adiazq</title>
+		<link>http://ecapy.com/como-crear-tokens-en-drupal-6/#comment-69</link>
+		<dc:creator><![CDATA[Adiazq]]></dc:creator>
+		<pubDate>Sun, 05 Jun 2011 05:08:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=272#comment-69</guid>
+		<description><![CDATA[Amigo buen dia, y si yo quiero especificamente saber el rol del usuario logueado como quedaria la funcion? he tratado pero no consigo impolementarla.
+
+Saluod]]></description>
+		<content:encoded><![CDATA[<p>Amigo buen dia, y si yo quiero especificamente saber el rol del usuario logueado como quedaria la funcion? he tratado pero no consigo impolementarla.</p>
+<p>Saluod</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

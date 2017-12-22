@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Programas &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/category/programas/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Instalar Solr 6.X</title>
+		<link>http://ecapy.com/instalar-solr-6-x/</link>
+		<pubDate>Fri, 01 Jul 2016 16:42:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3417</guid>
+		<description><![CDATA[Descarguemos Solr Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a http://apache.rediris.es/lucene/solr/ y descargatelo. (Que sea el .tgz). Para este post vamos a suponer que has descargado la versión 6.1.0. Extraigamos el instalador El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-6-x/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h2>Descarguemos Solr</h2>
+<p>Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a <a href="http://apache.rediris.es/lucene/solr/">http://apache.rediris.es/lucene/solr/</a> y descargatelo. (Que sea el .tgz).<br />
+Para este post vamos a suponer que has descargado la versión 6.1.0.</p>
+<h2>Extraigamos el instalador</h2>
+<p>El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo va a necesitar!</p><pre class="crayon-plain-tag">tar xzf solr-6.1.0.tgz solr-6.1.0/bin/install_solr_service.sh --strip-components=2</pre><p>El comando anterior extrae solamente <strong>install_solr_service.sh</strong> y nos deja el <strong>.tgz</strong> sin descomprimir.</p>
+<h2>Instalemos Solr</h2>
+<p>Ahora que tenemos el instalador extraído podemos lanzarlo:</p><pre class="crayon-plain-tag">sudo bash ./install_solr_service.sh solr-6.1.0.tgz</pre><p>Y presto! se va a instalar Solr en <strong>/opt/solr</strong>, te va a crear el script de manejo en <strong>/etc/init.d/solr</strong>, te va a crear el directorio donde se almacenan los indices en <strong>/var/solr/data</strong> y algunas cosas mas. Podes acceder a el en <a href="http://localhost:8983"><strong>http://localhost:8983</strong></a> Todo automático!</p>
+<p>Y eso es todo. ya podes tratar a Solr como un servicio mas:</p><pre class="crayon-plain-tag">sudo service solr status
+sudo service solr start
+sudo service solr stop
+sudo service solr restart</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Debug de proyectos Node.js en PhpStorm (video)</title>
+		<link>http://ecapy.com/debug-de-proyectos-node-js-en-phpstorm/</link>
+		<pubDate>Wed, 04 Sep 2013 17:55:55 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2472</guid>
+		<description><![CDATA[]]></description>
+				<content:encoded><![CDATA[]]></content:encoded>
+			</item>
+		<item>
+		<title>Linux: Configurar SciTE de forma permanente</title>
+		<link>http://ecapy.com/configurar-scite-de-forma-permanente/</link>
+		<comments>http://ecapy.com/configurar-scite-de-forma-permanente/#comments</comments>
+		<pubDate>Fri, 28 Jun 2013 12:26:59 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2393</guid>
+		<description><![CDATA[SciTE es el editor de texto que mas se acerca a Notepad++, y como no soy purista reconozco que en Windows hay cosas que están mucho mas buenas que en Linux. Un buen ejemplo es Notepad++. Bueno la cuestión con este editor es que si lo abrís y configuras cositas como &#8220;Mostrar números de línea&#8221;&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/configurar-scite-de-forma-permanente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><img class="size-full wp-image-2404 alignnone" src="http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings.png" alt="scite-user-settings" width="443" height="449" srcset="http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings.png 443w, http://ecapy.com/wp-content/uploads/2013/06/scite-user-settings-296x300.png 296w" sizes="(max-width: 443px) 100vw, 443px" /></p>
+<p><a href="http://www.scintilla.org/SciTE.html" target="_blank">SciTE</a> es el editor de texto que mas se acerca a <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a>, y como no soy purista reconozco que en Windows hay cosas que están mucho mas buenas que en Linux. Un buen ejemplo es Notepad++.</p>
+<p>Bueno la cuestión con este editor es que si lo abrís y configuras cositas como &#8220;<em>Mostrar números de línea</em>&#8221; o &#8220;<em>Codificar en UTF8</em>&#8220;, <strong>cuando cerrás la aplicación tus personalizaciones se pierden ¬¬</strong>.</p>
+<p>La solución es abrir el archivo de configuración que SciTE nos da para almacenar nuestras preferencias (ver imagen) y pegar lo siguiente:</p><pre class="crayon-plain-tag">###############################
+# Configuración personalizada #
+###############################
+
+# Posicion
+position.left=400
+position.top=100
+# Alto y ancho
+position.width=1000
+position.height=500
+
+# Mostrar numeros de linea
+line.margin.visible=1
+# "4+" indica que por defecto reserva 4 espacios pero se expande si le hace falta mas espacio.
+line.margin.width=4+
+
+# Codificación UTF8 por defecto
+code.page=65001
+
+# Mostramos el toolbar
+toolbar.visible=1
+
+# Mostramos el statusbar
+statusbar.visible=1
+
+# Establecemos la fuente monoespaciada a nuestro gusto
+font.monospace=font:!Bitstream Vera Sans Mono,size:10
+
+# La fuente monoespaciada
+font.base=$(font.monospace)
+font.small=$(font.monospace)
+font.comment=$(font.monospace)
+font.text=$(font.monospace)
+font.text.comment=$(font.monospace)
+font.embedded.base=$(font.monospace)
+font.embedded.comment=$(font.monospace)
+font.vbs=$(font.monospace)</pre><p>La configuración está comentada así que van a poder seleccionar lo que les interesa, y lo que no, lo borran.</p>
+<p>Listo, guardalo y disfruta de este gran editor.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/configurar-scite-de-forma-permanente/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>Montar un servidor de git</title>
+		<link>http://ecapy.com/montar-un-servidor-de-git/</link>
+		<comments>http://ecapy.com/montar-un-servidor-de-git/#comments</comments>
+		<pubDate>Sun, 29 May 2011 12:30:45 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Trabajo]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1045</guid>
+		<description><![CDATA[La configuración que vamos a usar para configurar el servidor de git es de las mas básicas y no repara en la configuración de usuarios -cualquier usuario con acceso SSH nos sirve-. Mas bien esta configuración es para montar un servidor que podamos usar en nuestra casa o en un grupo de usuarios de confianza. SERVIDOR: Primero lo primero, instalar git y la&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-un-servidor-de-git/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>La configuración que vamos a usar para configurar el servidor de git es de las mas básicas y no repara en la configuración de usuarios -cualquier usuario con acceso SSH nos sirve-. Mas bien esta configuración es para montar un servidor que podamos usar en nuestra casa o en un grupo de usuarios de confianza.</p>
+<p><span style="text-decoration: underline; color: #993300;"><strong>SERVIDOR:</strong></span></p>
+<p>Primero lo primero, instalar git y la gui de git (es opcional la gui, pero si estas usando una distro con interfaz gráfica te va a venir bien tenerla).</p><pre class="crayon-plain-tag">&lt;span style=&quot;font-family: 'Segoe UI', Calibri, 'Myriad Pro', Myriad, 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: normal;&quot;&gt;&lt;a style=&quot;color: #0071bb; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;&quot; href=&quot;http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/&quot;&gt;s&lt;/a&gt;udo apt-get install git-core git-gui&lt;/span&gt;</pre><p>Bien, ahora que tenemos git instalado, necesitamos decidir donde vamos a almacenar todos los repositorios que creemos. En mi caso me hice una carpeta llamada git en mi home:</p><pre class="crayon-plain-tag">cd /home/capy
+mkdir git</pre><p>Listo, de momento terminamos con el servidor. Vamos al cliente:</p>
+<p><strong><span style="text-decoration: underline;"><span style="color: #993300;">CLIENTE:</span></span></strong></p>
+<p>Mi cliente es un Windows, pero los pasos de la configuración son igualmente validos sobre cualquier linux o mac.</p>
+<p>primero te vas a crear una carpeta donde vas a tener tu proyecto., o si ya la tenes partimos de ahí. En mi caso es una pagina web y voy a crear en mi windows la carpeta &#8220;<strong>ecapy.com</strong>&#8221;</p>
+<p>Cuando tengas la carpeta creada o localizada entramos, hacemos clic derecho y seleccionamos del menú contextual &#8220;Git Bash&#8221;. Con la consola ya abierta vamos a tirar el siguiente comando para indicarle a git que cree un repositorio con estos archivos (los de tu proyecto):</p><pre class="crayon-plain-tag">git init &amp;amp;&amp;amp; git add * &amp;amp;&amp;amp; git commit -m &quot;Primer commit&quot;</pre><p>Ya tenemos un repositorio de git en nuestro cliente y vamos a copiarlo al servidor en dos pasos.</p>
+<p><strong>Paso 1:</strong> le decimos a git que haga una copia limpia de nuestro repositorio:</p><pre class="crayon-plain-tag">git clone --bare ecapy.com ecapy.com.git</pre><p>lo anterior habrá creado una carpeta nueva llamada &#8220;<strong>ecapy.com.git</strong>&#8221; en nuestro repositorio local.</p>
+<p><strong>Paso 2:</strong> copiemos nuestro repositorio al servidor:</p><pre class="crayon-plain-tag">scp -r ecapy.com.git capy@192.168.1.38:/home/capy/git/</pre><p>Hemos terminado con esta parte. Ya podemos borrar la carpeta &#8220;<strong>ecapy.com.git</strong>&#8220;.</p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; color: #993300;"><strong>SERVIDOR:</strong></span></p>
+<p>Vamos al servidor que tenemos que configurar un par de cosas mas.</p>
+<p>Entramos en la carpeta que copiamos hace un instante y aplicamos un poco de configuración:</p><pre class="crayon-plain-tag">cd /home/capy/git/ecapy.com
+git config core.sharedrepository 1 &amp;amp;&amp;amp; git config receive.denyNonFastforwards true &amp;amp;&amp;amp; find objects -type d -exec chmod 02770 {} ;</pre><p>Volvamos al cliente:</p>
+<h4 style="text-align: left;"><span style="text-decoration: underline;"><strong>Ya tenes un repositorio remoto que funciona correctamente. ya podes clonarte de el.</strong></span></h4>
+<p>&nbsp;</p>
+<p><span style="color: #993300;"><strong>NOTA 1:</strong></span> la carpeta que usaste en el cliente para crear el repositorio en el servidor no tiene configurado cual es su origin, por lo que deberías lanzar por consola:</p><pre class="crayon-plain-tag">git remote add origin capy@192.168.1.38:/home/capy/git/ecapy.com.git</pre><p><strong>O simplemente borra esa carpeta y clonate una nueva que ya tiene configurado el origin:</strong></p><pre class="crayon-plain-tag">git clone capy@192.168.1.38:/home/capy/git/ecapy.com.git</pre><p>&nbsp;</p>
+<p><span style="color: #993300;"><strong>NOTA 2:</strong></span> Muchísimo cuidado con lo siguiente: después de seguir estas instrucciones vas a ver que estas trabajando en la rama principal de tu repositorio&#8230; crea urgente una rama y cámbiate a ella.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/montar-un-servidor-de-git/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Cambiar el tamaño de un disco virtual en VirtualBox</title>
+		<link>http://ecapy.com/cambiar-el-tamano-de-un-disco-virtual-en-virtualbox/</link>
+		<pubDate>Fri, 04 Jun 2010 12:56:19 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Mix de cosas]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=489</guid>
+		<description><![CDATA[Ciertamente muy útil. http://www.ht-solutions.pe/walther/blogs/?p=221]]></description>
+				<content:encoded><![CDATA[<p>Ciertamente muy útil.<br />
+<a href="http://www.ht-solutions.pe/walther/blogs/?p=221" target="_blank">http://www.ht-solutions.pe/walther/blogs/?p=221</a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Montar una carpeta compartida en un linux instalado en Virtual Box</title>
+		<link>http://ecapy.com/montar-una-carpeta-compartida-en-un-linux-instalado-en-virtual-box/</link>
+		<pubDate>Tue, 18 May 2010 23:32:16 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Linux]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=432</guid>
+		<description><![CDATA[Antes que nada, hay que tener instaladas las Guest Additions: [crayon-584436912b03a714096974/] Ahora tenemos que agregar la carpeta que deseamos usar en linux por medio de Virtual Box: por ultimo montar la carpeta dentro de una carpeta de linux: [crayon-584436912b043040549284/] carpeta_origen: va a ser el nombre que elegimos para compartir la carpeta externa en virtualbox. una_carpeta_cualquiera:&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/montar-una-carpeta-compartida-en-un-linux-instalado-en-virtual-box/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Antes que nada, hay que tener instaladas las Guest Additions:</p><pre class="crayon-plain-tag">cd /media/cdrom0
+sudo sh ./VBoxLinuxAdditions.run</pre><p>Ahora tenemos que agregar la carpeta que deseamos usar en linux por medio de Virtual Box:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access.png"><img class="aligncenter size-full wp-image-433" title="Agregar carpeta a Virtual Box" src="http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access.png" alt="Agregar carpeta a Virtual Box" width="480" height="383" srcset="http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access.png 480w, http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access-300x239.png 300w" sizes="(max-width: 480px) 100vw, 480px" /><br />
+</a><a href="http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access_1.png"><img class="aligncenter size-full wp-image-434" title="Seleccionar carpeta a Virtual Box" src="http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access_1.png" alt="Seleccionar carpeta a Virtual Box" width="478" height="352" srcset="http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access_1.png 478w, http://ecapy.com/wp-content/uploads/2010/05/vbox_shared_folder_access_1-300x221.png 300w" sizes="(max-width: 478px) 100vw, 478px" /></a></p>
+<p>por ultimo montar la carpeta dentro de una carpeta de linux:</p><pre class="crayon-plain-tag">mount -t vboxsf &lt;strong&gt;carpeta_origen&lt;/strong&gt; /home/capy/&lt;strong&gt;una_carpeta_cualquiera&lt;/strong&gt;</pre><p><strong><span style="color: #ff6600;">carpeta_origen</span>: </strong>va a ser el nombre que elegimos para compartir la carpeta externa en virtualbox.<br />
+<strong><span style="color: #ff6600;">una_carpeta_cualquiera</span>: </strong>como su nombre lo dice no es mas que una carpeta creada en cualquier lugar con el único propósito de holdear los contenidos de la primer carpeta.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Balancear el uso de los CPU en Windows</title>
+		<link>http://ecapy.com/balancear-el-uso-de-los-cpu-en-windows/</link>
+		<pubDate>Tue, 05 Jan 2010 01:20:53 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=185</guid>
+		<description><![CDATA[Curioso tip que me dio un compañero de trabajo hoy cuando me vio sufriendo frente al ordenador porque estaba recodificando unos videos mientras hacia otras cosas. El tema es que como todos sabemos, la codificación de videos se come todos los recursos, y poco se puede hacer mientras esperamos a que termine, o por lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/balancear-el-uso-de-los-cpu-en-windows/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Curioso tip que me dio un compañero de trabajo hoy cuando me vio sufriendo frente al ordenador porque estaba recodificando unos videos mientras hacia otras cosas.</p>
+<p>El tema es que como todos sabemos, la codificación de videos se come todos los recursos, y poco se puede hacer mientras esperamos a que termine, o por lo menos eso pensaba hasta que viene mi compañero y me dice <strong>&#8220;deshabilita un procesador o dos para que haga el procesado con uno solo y te queden los otros para seguir haciendo cosas&#8221;</strong> (tengo un triple núcleo en el trabajo). En fin, parece que hay una hermosa opción en el <strong>Administrador de tareas de Windows llamada &#8220;Establecer Afinidad&#8221;</strong> que no hace ni mas ni menos que dejarte decidir cuantos cores querés que se usen para determinado proceso. ¡Una maravilla!.</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_1.png"><img class="aligncenter size-full wp-image-195" title="balanceo_cpu_1" src="http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_1.png" alt="" width="399" height="450" srcset="http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_1.png 399w, http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_1-266x300.png 266w" sizes="(max-width: 399px) 100vw, 399px" /></a></p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_2.png"><img class="aligncenter size-full wp-image-194" title="balanceo_cpu_2" src="http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_2.png" alt="" width="354" height="287" srcset="http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_2.png 354w, http://ecapy.com/wp-content/uploads/2010/01/balanceo_cpu_2-300x243.png 300w" sizes="(max-width: 354px) 100vw, 354px" /></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Alternativa gratuita y liviana a Photoshop</title>
+		<link>http://ecapy.com/alternativa-gratuita-y-liviana-a-photoshop/</link>
+		<comments>http://ecapy.com/alternativa-gratuita-y-liviana-a-photoshop/#comments</comments>
+		<pubDate>Tue, 05 Jan 2010 00:45:43 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programas]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=178</guid>
+		<description><![CDATA[Muchas veces, por no decir casi siempre, quiero recortar una imagen, cambiarle el tamaño, redimensionarla, cambiarle el tamaño, o hacer tareas más bien &#8220;básicas&#8221; sobre alguna imagen. Photoshop es sin duda mi herramienta favorita a la hora de hacer virguerías con imágenes, pero es pesado y a veces no me viene a cuenta abrirlo para&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/alternativa-gratuita-y-liviana-a-photoshop/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://ecapy.com/wp-content/uploads/2010/01/pdn35_kirkland_thumb.jpg"><img class="size-full wp-image-179 alignright" title="paint_net_1" src="http://ecapy.com/wp-content/uploads/2010/01/pdn35_kirkland_thumb.jpg" alt="" width="450" height="299" srcset="http://ecapy.com/wp-content/uploads/2010/01/pdn35_kirkland_thumb.jpg 450w, http://ecapy.com/wp-content/uploads/2010/01/pdn35_kirkland_thumb-300x199.jpg 300w" sizes="(max-width: 450px) 100vw, 450px" /></a>Muchas veces, por no decir casi siempre, quiero recortar una imagen, cambiarle el tamaño, redimensionarla, cambiarle el tamaño, o hacer tareas más bien &#8220;básicas&#8221; sobre alguna imagen. Photoshop es sin duda mi herramienta favorita a la hora de hacer virguerías con imágenes, pero es pesado y a veces no me viene a cuenta abrirlo para tocar dos cosas y cerrarlo (no da para dejarlo abierto las 8hs que estoy en frente del ordenador por si las dudas).</p>
+<p>El tema es que para estas tareas me encontré hace un tiempo con <a href="http://www.getpaint.net" target="_blank">Paint.NET</a>, y tengo que decir que es tremendamente útil para casi todas las cositas que una persona de conocimientos y necesidades medias puede necesitar.</p>
+<ul>
+<li><strong>Pesa 5mb</strong></li>
+<li><strong>Su interfase es limpia y      con lo necesario son llegar a quedarse corta.</strong></li>
+<li><strong>Su filosofía de uso es prácticamente      la misma que Photoshop en cuanto a herramientas, capas y forma de trabajo      en general.</strong></li>
+<li><strong>Es un proyecto en constante      movimiento (el creador se pasa el día actualizándolo pero para mejorarlo      mas que para parchearlo).</strong></li>
+<li><strong>Muchos filtros de serie      bastante buenos.</strong></li>
+<li><strong>Es gratis.</strong></li>
+</ul>
+<p>Es tremendamente rápido, ligero, y va a lo que va, sin pretender ser el nuevo Photoshop aunque no tenga mucho que envidiarle.</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/01/pdn30_camaroB.jpg"><img class="alignleft size-full wp-image-180" title="paint_net_2" src="http://ecapy.com/wp-content/uploads/2010/01/pdn30_camaroB.jpg" alt="" width="407" height="301" srcset="http://ecapy.com/wp-content/uploads/2010/01/pdn30_camaroB.jpg 1183w, http://ecapy.com/wp-content/uploads/2010/01/pdn30_camaroB-300x222.jpg 300w, http://ecapy.com/wp-content/uploads/2010/01/pdn30_camaroB-768x568.jpg 768w, http://ecapy.com/wp-content/uploads/2010/01/pdn30_camaroB-1024x757.jpg 1024w" sizes="(max-width: 407px) 100vw, 407px" /></a>Ya se que podría decir &#8220;oigan usen Gimp que es GPL es bueno es tal y cual&#8221;, pero la verdad es que Gimp nunca termino de agradarme debido a que tiene una forma de manejo bastante distinta a Photoshop y similares. No digo que no sea bueno, hay muchísima gente que lo usa y lo ama, pero yo simplemente no me siento a gusto con el.</p>
+<p>Volviendo y resumiendo, <a href="http://www.getpaint.net" target="_blank">Paint.NET</a> es sin duda una herramienta muy útil para todo Maquetador o diseñador o quien sea que tenga que hacer cositas medio avanzadas pero sin tener que instalar un pedazo de bicho de un par de gigas para lograrlo.</p>
+<p>Descargar: <a href="http://www.dotpdn.com/files/Paint.NET.3.5.2.Install.zip">Paint.net</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/alternativa-gratuita-y-liviana-a-photoshop/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

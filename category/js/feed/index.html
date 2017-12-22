@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Javascript &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/category/js/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Javascript: Eliminar un item de un array por su nombre</title>
+		<link>http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/</link>
+		<comments>http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/#comments</comments>
+		<pubDate>Tue, 18 Nov 2014 16:34:32 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2843</guid>
+		<description><![CDATA[Pongan esto en su codigo: [crayon-584436411b467020111775/] Y ya podemos eliminar elementos del array: [crayon-584436411b475453034700/] Chau!]]></description>
+				<content:encoded><![CDATA[<p>Pongan esto en su codigo:</p><pre class="crayon-plain-tag">Array.prototype.removeItem = function (a) {
+ for (var i = 0; i &lt; this.length; i++) {
+  if (this[i] == a) {
+   for (var i2 = i; i2 &lt; this.length - 1; i2++) {
+    this[i2] = this[i2 + 1];
+   }
+   this.length = this.length - 1;
+   return;
+  }
+ }
+};</pre><p>Y ya podemos eliminar elementos del array:</p><pre class="crayon-plain-tag">var frutas = ['manzana', 'banana', 'pera'];
+frutas.removeItem('banana');
+console.log(frutas); // Entrega [&lsquo;manzana&rsquo;, &lsquo;pera&rsquo;]</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/javascript-eliminar-un-item-de-un-array-por-su-nombre/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Boilerplate (esqueleto) de plugin jQuery de la casa y en español ;)</title>
+		<link>http://ecapy.com/boilerplate-esqueleto-de-plugin-jquery-de-la-casa-y-en-espanol/</link>
+		<pubDate>Tue, 23 Sep 2014 10:34:15 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2833</guid>
+		<description><![CDATA[Hola!. Me complace anunciar que pongo a disposición de todo el que quiera hacer plugins de jQuery, el boilerplate que he estado usando en los últimos años. Es otro boilerplate como los demas, con la diferencia que al estar usandolo todo el tiempo lo fui puliendo poco a poco. Pero mucho mas importante: está en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/boilerplate-esqueleto-de-plugin-jquery-de-la-casa-y-en-espanol/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola!. Me complace anunciar que pongo a disposición de todo el que quiera hacer plugins de jQuery, el boilerplate que he estado usando en los últimos años.</p>
+<p>Es otro boilerplate como los demas, con la diferencia que al estar usandolo todo el tiempo lo fui puliendo poco a poco. Pero mucho mas importante: está en español XD</p>
+<p>Pase pasen y vean <em><strong><a href="https://github.com/capynet/jQueryPluginBoilerplate" target="_blank">https://github.com/capynet/jQueryPluginBoilerplate</a></strong></em></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Detectar el navegador y toda su información desde PHP o Javascript</title>
+		<link>http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/</link>
+		<pubDate>Mon, 22 Sep 2014 10:15:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Back-end]]></category>
+		<category><![CDATA[Front-end]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2805</guid>
+		<description><![CDATA[Hola, les hago una intro bien corta y pasamos al código. Browscap es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos. PHP tiene soporte nativo para hacer uso de esta DB, pero debido a un par de limitaciones&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola, les hago una intro bien corta y pasamos al código.</p>
+<p><a href="http://browscap.org/">Browscap</a> es un proyecto que recoge la información de todos los navegadores web en una base de datos que distribuye de forma gratuita y en varios formatos.</p>
+<p>PHP <a href="http://php.net/manual/es/function.get-browser.php" target="_blank">tiene soporte nativo</a> para hacer uso de esta DB, pero debido a un par de limitaciones que PHP aun no ha solventado en su API, <a href="https://github.com/browscap/browscap-php" target="_blank">en GitHub un usuario creó una soluciona basada también en la DB de Browscap</a> pero mucho mas robusta y fácil de usar.</p>
+<p>Bien, llegados a este punto sabemos que lo que necesitamos usar es Browscap junto a la librería que se creó para explotarla.</p>
+<p>Para mas información, toda la documentación completa de php-browscap la pueden encontrar <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a>. Yo me centro en una implementación mucho mas simple porque realmente creo que de los 40 datos que entrega sobre el navegados, con apenas 7 tenemos el 99% de los casos cubiertos.</p>
+<p><a href="http://ecapy.com/Archivos/browser/index.php" target="_blank"><strong>Acá tienen un ejemplo</strong></a> funcionando para que vean lo rápido y certero que es a la hora de conseguir la info del browser (pruébenlo con mas de uno)</p>
+<p>Ok, pongamos algo de código que sino todo esto es muy aburrido:<br />
+Vamos a aprovechar esta librería bajo dos situaciones. en PHP y en JS</p>
+<h3>En PHP</h3>
+<p>Descarguen la librería php-browscap via Composer o a mano. Pueden saber mas sobre como descargarla <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank"><strong>aquí</strong></a><br />
+Ahora que la tenemos creamos un archivo index.php para usarla.</p><pre class="crayon-plain-tag">require 'vendor/autoload.php';
+use phpbrowscapBrowscap;
+
+$bc = new Browscap('cache');
+/** @var stdClass $current_browser */
+$current_browser = $bc-&gt;getBrowser();</pre><p>Fácil, no?. Ok ya tenemos un stdClass en $current_browser con toda la información disponible del browser que llame a index.php</p>
+<h4>Aplicaciones?</h4>
+<p>Puedes por ejemplo tomar decisiones del tipo</p><pre class="crayon-plain-tag">$curr_br = $current_browser-&gt;Browser;
+$CoolBrowsers = $curr_br == 'Chrome' || $curr_br == 'Firefox';
+
+if ($CoolBrowsers) {
+  add_asset('css', 'just-for-cool-browsers.css');
+  $output = renderAdvancedLayout();
+}
+else {
+  add_asset('css', 'just-for-bad-bad-browsers.css');
+  $output = renderBasicLayout();
+}</pre><p>También puedes detectar si están accediendo desde un móvil o una tablet, incluso saber si es Android, IOS, la version del SO, etc. Con toda esta información a resumidas cuentas puedes entregar un contenido muy preciso.</p>
+<h4>Beneficios</h4>
+<p>Estas entregando contenidos a medida, ergo necesitas entregar menos HTML, CSS, Js y las imágenes mas adecuadas al navegador. Esto finalmente se traduce en menos procesamiento del lado del servidor, lo que se entrega pesa menos KB y el navegador tarda menos en leer y renderizar todos los recursos (en especial JS).</p>
+<h3>En JS</h3>
+<p>Por ultimo me gustaría compartir un tip para poder aprovechar la detección de browsers en JS:<br />
+A ver, con js podemos detectar el browser usando un poco de expresiones regulares, pero llegar al detalle y la precisión a la que llega browscap es virtualmente imposible. Dicho esto, comentar que se puede entregar toda la información del browser detectado desde php simplemente haciendo esto:</p><pre class="crayon-plain-tag">&lt;script type="application/javascript"&gt;
+    var browser = &lt;?= json_encode($current_browser = $bc-&gt;getBrowser()); ?&gt;;
+    alert(browser.Browser);
+    alert(browser.Version);
+&lt;/script&gt;</pre><p>&nbsp;</p>
+<p>Hasta la próxima!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Scroll animado hasta un elemento de la pagina con jQuery</title>
+		<link>http://ecapy.com/scroll-animado-hasta-un-elemento-de-la-pagina-con-jquery/</link>
+		<pubDate>Fri, 11 Apr 2014 17:51:51 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2669</guid>
+		<description><![CDATA[&#8220;#destino&#8221; es el id del elemento al que querés llegar. podes usar un class &#8220;.destino&#8221; o algo similar SOLO si hay un solo elemento en toda la pagina que tenga ese class. [crayon-584436411c290200152469/] Y como siempre, Chau!]]></description>
+				<content:encoded><![CDATA[<p>&#8220;<strong>#destino</strong>&#8221; es el id del elemento al que querés llegar. podes usar un class &#8220;<em>.destino</em>&#8221; o algo similar SOLO si hay un solo elemento en toda la pagina que tenga ese class.</p><pre class="crayon-plain-tag">var dest = $("#destino").offset().top;
+$("html, body").animate({scrollTop: dest});</pre><p>Y como siempre, Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Drupal 7: Lanzar un #state de un elemento de formulario por js (jQuery)</title>
+		<link>http://ecapy.com/drupal-7-lanzar-un-state-de-un-elemento-de-formulario-por-js-jquery/</link>
+		<pubDate>Fri, 07 Mar 2014 14:18:42 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+		<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2643</guid>
+		<description><![CDATA[[crayon-584436411c492925692414/] Chau!]]></description>
+				<content:encoded><![CDATA[<p></p><pre class="crayon-plain-tag">jQuery('#edit-un-radiobutton-que-lanza-el-state').click().trigger('change');</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Tutorial: implementar un servicio RESTful public API de modelos Mongoose en Node.js</title>
+		<link>http://ecapy.com/implementar-un-servicio-restful-public-api-de-modelos-mongoose-en-node-js/</link>
+		<pubDate>Tue, 17 Sep 2013 09:00:33 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[API]]></category>
+		<category><![CDATA[express framework]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[node.js]]></category>
+		<category><![CDATA[RESTful]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2499</guid>
+		<description><![CDATA[Hola!, He terminado de hacer un ejemplo de como implementar una API pública tipo RESTful en una APP creada con express. La idea detrás de esta app de ejemplo es la de crear automagicamente todas las URL necesarias para poder gestionar un modelo de Mongoose (aka recurso). Su uso es realmente simple. Dentro de la&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/implementar-un-servicio-restful-public-api-de-modelos-mongoose-en-node-js/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hola!, He terminado de hacer un ejemplo de como implementar una API pública tipo RESTful en una APP creada con <a href="http://expressjs.com/" target="_blank">express</a>.<br />
+<strong>La idea detrás de esta app de ejemplo es la de crear automagicamente todas las URL necesarias</strong> para poder gestionar un modelo de Mongoose (aka recurso).</p>
+<p>Su uso es realmente simple. Dentro de la carpeta &#8220;models&#8221; creas un nuevo modelo/entidad, tocas un par de detalles mas, y tienes una API publica completa de ese nuevo recurso <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Ya no doy mas vueltas, acá la tienen:</p>
+<p><a href="https://github.com/capy/Simple-API-style" target="_blank"><em><strong>https://github.com/capy/Simple-API-style</strong></em></a></p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Node.js/express: Gestionar las URL de tu proyecto mas eficientemente.</title>
+		<link>http://ecapy.com/node-js-express-gestionar-las-url-de-tu-proyecto-mas-eficientemente/</link>
+		<pubDate>Mon, 16 Sep 2013 09:15:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[express framework]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2505</guid>
+		<description><![CDATA[Normalmente cuando haces una aplicación usando express, por comodidad tiendes a poner todas las definiciones de las url&#8217;s en la raíz del proyecto: [crayon-584436411c768184325943/] Pero esto a la corta se vuelve algo inmanejable. La solución es adoptar un patrón que nos permita extraer las URL a archivos en los que poder juntar las url que&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/node-js-express-gestionar-las-url-de-tu-proyecto-mas-eficientemente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Normalmente cuando haces una aplicación usando <a href="http://expressjs.com/" target="_blank">express</a>, por comodidad tiendes a poner todas las definiciones de las url&#8217;s en la raíz del proyecto:</p><pre class="crayon-plain-tag">var express = require('express');
+var app = express();
+
+//...
+//Configuraciones varias
+//...
+
+app.get("/users", function (req, res) {
+    return res.render("list users");
+});
+
+app.get("/user/:uid", function (req, res) {
+    return res.render("show an user");
+});
+
+app.get("/articles", function (req, res) {
+    return res.render("list articles");
+});
+
+app.get("/article/:id", function (req, res) {
+    return res.render("show an article");
+});
+
+app.get("/article/new", function (req, res) {
+    return res.render("new article");
+});
+
+http.createServer(app).listen(app.get('port'), function () {
+    console.log("http://localhost:" + app.get('port'));
+});</pre><p>Pero esto a la corta se vuelve algo inmanejable. La solución es adoptar un patrón que nos permita extraer las URL a archivos en los que poder juntar las url que se refieran a algo en común (en este ejemplo usuarios por un lado y articles por otro.).</p>
+<h3>Manos a la obra</h3>
+<p>crea un directorio llamado routes, crea los archivos &#8220;<strong>users.js</strong>&#8221; y &#8220;<strong>articles.js</strong>&#8221; y llévate allí las urls.<br />
+En el lugar que estaban las URL (dentro de app.js o server.js, como sea que lo hayas llamado.) pon:</p><pre class="crayon-plain-tag">var routePath = __dirname + '/routes/';
+fs.readdirSync(routePath).forEach(function (file) {
+    require(routePath + file)(app);
+});</pre><p>Este snippet se va a encargar de cargar todos los archivos que haya en la carpeta routes. Si te fijas bien vas a ver que está haciendo un require pero le pasa &#8220;<em>(app)</em>&#8221; al final de este. Eso es porque dentro de nuestros archivos de rutas vamos a devolver funciones que van a ejecutarse ni bien sean cargadas.</p>
+<p>Lo ultimo que nos queda es definir la estructura que debe tener cada archivo que esté alojado en routes. Como ya no están en la raíz, vamos a encapsular estas definiciones de rutas dentro de una función, que es la que se va a encargar de hacernos llegar a app (que es la instancia de express que va a recibir nuestras rutas):</p>
+<p><em>users.js:</em></p><pre class="crayon-plain-tag">module.exports = function (app) {
+
+    app.get("/users", function (req, res) {
+        return res.render("list users");
+    });
+
+    app.get("/user/:uid", function (req, res) {
+        return res.render("show an user");
+    });
+
+};</pre><p><em>articles.js:</em></p><pre class="crayon-plain-tag">module.exports = function (app) {
+
+    app.get("/articles", function (req, res) {
+        return res.render("list articles");
+    });
+
+    app.get("/article/:id", function (req, res) {
+        return res.render("show an article");
+    });
+
+    app.get("/article/new", function (req, res) {
+        return res.render("new article");
+    });
+
+};</pre><p>Como podemos ver, en cada uno de los archivos que contienen las rutas, hemos metido las rutas dentro de <strong>module.exports = function (app){}</strong>. Esto sumado a que a cada archivo cargado se le estaba pasando la <strong>app</strong> por medio del <strong>require (require(routePath + file)(app);</strong>) todo cobra sentido.</p>
+<p>Ya hemos acabado, ya puedes crear tantos archivos .js como tu corazón y lógica dicten, que se van a cargar sin problemas.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Debug de proyectos Node.js en PhpStorm (video)</title>
+		<link>http://ecapy.com/debug-de-proyectos-node-js-en-phpstorm/</link>
+		<pubDate>Wed, 04 Sep 2013 17:55:55 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[IDE y editores]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2472</guid>
+		<description><![CDATA[]]></description>
+				<content:encoded><![CDATA[]]></content:encoded>
+			</item>
+		<item>
+		<title>Generar propiedades de un objeto (JSON) dinámicamente.</title>
+		<link>http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/</link>
+		<comments>http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/#comments</comments>
+		<pubDate>Wed, 04 Sep 2013 13:51:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[snippet]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2465</guid>
+		<description><![CDATA[El caso es el siguiente: Tenemos un objeto al que queremos crearle propiedades anidadas pero nos gustaría no tener que preocuparnos de si sus parent existen. por ejemplo, si tuviera un objeto &#8220;miObjeto&#8221; y quisiera crearle una función en miObjeto.modulos.ctools.watcher, primero tendría que crear ese path. eso o podemos usar esta función: [crayon-584436411cae3085458546/] Y listo,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>El caso es el siguiente: Tenemos un objeto al que queremos crearle propiedades anidadas pero nos gustaría no tener que preocuparnos de si sus parent existen. por ejemplo, si tuviera un objeto &#8220;miObjeto&#8221; y quisiera crearle una función en miObjeto.modulos.ctools.watcher, primero tendría que crear ese path. eso o podemos usar esta función:</p><pre class="crayon-plain-tag">/**
+ * Genera propiedades de un objeto (JSON) dinamicamente.
+ * @returns objeto extendido.
+ */
+function extend(base, ns_string) {
+    var parts = ns_string.split('.'),
+        pl, i;
+    pl = parts.length;
+    for (i = 0; i &lt; pl; i++) {
+        //create a property if it doesnt exist
+        if (typeof base[parts[i]] == 'undefined') {
+            base[parts[i]] = {};
+        }
+        base = base[parts[i]];
+    }
+    return base;
+}</pre><p>Y listo, ya podemos extender nuestro objeto de forma dinámica:</p><pre class="crayon-plain-tag">var miObjeto = {};
+
+//console.log("Esto va a dar error porque 'modulos.ctools.watcher' no existe");
+//console.log(miObjeto.modulos.ctools);
+
+extend(miObjeto, 'modulos.ctools.watcher');
+extend(miObjeto, 'settings.general');
+
+miObjeto.modulos.ctools.watcher = function () {
+    console.log("Soy una función!");
+};
+
+console.log(miObjeto);</pre><p>Resultado:<br />
+<img class="size-full wp-image-2469 alignnone" src="http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas.png" alt="resultado-objeto-propiedades-dinamicas" width="843" height="111" srcset="http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas.png 843w, http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas-300x40.png 300w, http://ecapy.com/wp-content/uploads/2013/09/resultado-objeto-propiedades-dinamicas-768x101.png 768w" sizes="(max-width: 843px) 100vw, 843px" /><br />
+Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/generar-propiedades-de-un-objeto-json-dinamicamente/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Preprocesar variables de templates en express framework (nodejs)</title>
+		<link>http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/</link>
+		<comments>http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/#comments</comments>
+		<pubDate>Wed, 20 Mar 2013 11:00:13 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[node.js]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2097</guid>
+		<description><![CDATA[Bien, el caso de uso es el siguiente: tenemos varios templates en los que queremos mostrar mensajes al usuario si los hubiera. Lo normal seria hacer algo así a la hora de renderizar un template: Para la página principal: [crayon-584436411cf53712468886/] Para la página del usuario: [crayon-584436411cf5c413962512/] Bien, la idea se aprecia, constantemente tenemos que trabajarnos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Bien, el caso de uso es el siguiente: tenemos varios templates en los que queremos mostrar mensajes al usuario si los hubiera.<br />
+Lo normal seria hacer algo así a la hora de renderizar un template:</p>
+<p>Para la página principal:</p><pre class="crayon-plain-tag">app.get('index', function (req, res) {
+    var messages = req.flash();
+    var render_options = {
+        titulo: "Página principal"
+    };
+
+    if (messages.error || messages.info || messages.success) {
+        if (messages.error) messages.hasError = messages.error.length &gt; 0;
+        if (messages.info) messages.hasInfo = messages.info.length &gt; 0;
+        if (messages.success) messages.hasSuccess = messages.success.length &gt; 0;
+        render_options.messages = messages;
+    }
+
+    res.render('index', render_options);
+});</pre><p>Para la página del usuario:</p><pre class="crayon-plain-tag">app.get('user', function (req, res) {
+    var messages = req.flash();
+    var render_options = {
+        titulo: "Perfil de " + req.session.user.name
+    };
+
+    if (messages.error || messages.info || messages.success) {
+        if (messages.error) messages.hasError = messages.error.length &gt; 0;
+        if (messages.info) messages.hasInfo = messages.info.length &gt; 0;
+        if (messages.success) messages.hasSuccess = messages.success.length &gt; 0;
+        render_options.messages = messages;
+    }
+
+    res.render('index', render_options);
+});</pre><p>Bien, la idea se aprecia, <strong>constantemente tenemos que trabajarnos la variable &#8220;messages&#8221;</strong> y si hay mensajes la incluimos en las opciones de renderizado del template.</p>
+<p><strong>¿El inconveniente?</strong> el código se repite, lo que lo hace poco mantenible y ensucia. Solo por dar un ejemplo, podés ver que estamos preparando errores del tipo &#8220;<em>error</em>&#8220;, &#8220;<em>info</em>&#8221; y &#8220;<em>success</em>&#8220;, y si quisieras agregar un nuevo tipo de error llamado &#8220;<em>warning</em>&#8220;, te las verías p&#8230; negras. Bueno se entiende el inconveniente.</p>
+<h3>Solución: Encapsular en un preprocesador</h3>
+<p><a href="http://expressjs.com/" target="_blank">Express</a> nos da la posibilidad de preparar variables que van a parar al template haciendo uso de <em>app.use()</em> y <em>res.locals</em>.</p>
+<p>NOTA importante: <strong>da igual el sistema de templates que uses</strong>: <a href="http://jade-lang.com/" target="_blank">Jade</a>, <a href="http://twitter.github.com/hogan.js/" target="_blank">Hogan.js</a>, <a href="https://github.com/janl/mustache.js" target="_blank">Mustache</a>, <a href="http://handlebarsjs.com/" target="_blank">Handlebars</a>, etc. <a href="http://expressjs.com/" target="_blank">Express</a> es agnóstico en este sentido a la hora de preparar variables. Un puntazo.</p>
+<p>Bueno, como decía, podemos agregar un <em>app.use()</em> en <em>app.configure(function () {});</em> (suele estar en app.js, la base de tu aplicación).<br />
+Acá está el ejemplo. Hemos quitado la lógica de tratamiento de mensajes y la hemos colocado en este middleware (si, es uno de esos famosos):</p><pre class="crayon-plain-tag">app.use(function (req, res, next) {
+    var messages = req.flash();
+
+    if (messages.error || messages.info || messages.success) {
+        if (messages.error) messages.hasError = messages.error.length &gt; 0;
+        if (messages.info) messages.hasInfo = messages.info.length &gt; 0;
+        if (messages.success) messages.hasSuccess = messages.success.length &gt; 0;
+        res.locals.messages = messages;
+    }
+
+    next();
+});</pre><p>Lo mas notable del código anterior es que hemos asignado el resultado a <em>res.locals.messages</em>. res.locals, va a &#8220;mergearse&#8221; con las variables que uses en <em>res.render()</em> antes de llamar al template.<br />
+NOTA: <em>next();</em> es necesario para que el flow de ejecución siga adelante.</p>
+<p>Hecho lo anterior, les presento las versiones simplificadas de los ejemplos que di al principio:</p><pre class="crayon-plain-tag">app.get('index', function (req, res) {
+    var render_options = {
+        titulo: "Página principal"
+    };
+    res.render('index', render_options);
+});</pre><p></p><pre class="crayon-plain-tag">app.get('user', function (req, res) {
+    var render_options = {
+        titulo: "Perfil de " + req.session.user.name
+    };
+    res.render('index', render_options);
+});</pre><p>Mucho mejor ¿no?</p>
+<p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/preprocesar-variables-de-templates-en-express-framework-nodejs/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

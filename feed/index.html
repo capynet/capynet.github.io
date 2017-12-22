@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Capy</title>
+	<atom:link href="http://ecapy.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Esto no es un adiós, es un nuevo camino</title>
+		<link>http://ecapy.com/esto-no-es-un-adios-es-un-nuevo-camino/</link>
+		<comments>http://ecapy.com/esto-no-es-un-adios-es-un-nuevo-camino/#comments</comments>
+		<pubDate>Tue, 29 Nov 2016 00:38:25 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Sin categoría]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3514</guid>
+		<description><![CDATA[Como ya se imaginan me despido de ustedes por este que fue mucho tiempo un lugar importante para mi. Pero no me voy del todo 😀 en realidad cambio de &#8220;casa&#8221;. Los años pasaron y la vida profesional me ha ido llevando por caminos que ni yo imaginaba. Hoy en día tengo una empresa de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/esto-no-es-un-adios-es-un-nuevo-camino/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Como ya se imaginan me despido de ustedes por este que fue mucho tiempo un lugar importante para mi.</p>
+<p>Pero no me voy del todo <img src="https://s.w.org/images/core/emoji/2/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /> en realidad cambio de &#8220;casa&#8221;.</p>
+<p>Los años pasaron y la vida profesional me ha ido llevando por caminos que ni yo imaginaba. Hoy en día tengo una empresa de desarrollos web llamada <a href="http://front.id">Front.id</a> (!)</p>
+<p>Y es por ello que voy a avanzar y dedicar todos mis esfuerzos en hacerla crecer e intentar llevarla a un lugar que me haga sentir orgulloso algún día.</p>
+<p>Voy a escribir como siempre lo hice sobre tecnologías web y lo que me caiga en las manos y me divierta pero a partir de ahora va a ser en <a href="http://front.id/blog">http://front.id/blog</a></p>
+<p>Y poco mas que decir. Allí nos vemos!</p>
+<p>PD: esta web la voy a dejar online unos años así que no se apuren <img src="https://s.w.org/images/core/emoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/esto-no-es-un-adios-es-un-nuevo-camino/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Drupal: Hacer una búsqueda con Search API programaticamente</title>
+		<link>http://ecapy.com/drupal-hacer-una-busqueda-con-search-api-programaticamente/</link>
+		<pubDate>Mon, 03 Oct 2016 11:05:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3458</guid>
+		<description><![CDATA[Esto lo hice en Drupal 7. No se en D8 como se hace pero calculo que será bastante similar. Ah y no importa si detrás hay una búsqueda por DB o por Solr. [crayon-584435bdbf281730731292/] Y ya solo queda iterar los resultados que están almacenados en $results[&#8216;results&#8217;].]]></description>
+				<content:encoded><![CDATA[<p>Esto lo hice en Drupal 7. No se en D8 como se hace pero calculo que será bastante similar. Ah y no importa si detrás hay una búsqueda por DB o por Solr.</p><pre class="crayon-plain-tag">$index = search_api_index_load("machine_name_de_mi_indice");
+$q = new SearchApiQuery($index);
+
+// Podemos añadir filtros como si de facetas se tratara
+$q-&gt;condition("field_type", "article", "=");
+
+// También podemos emular la búsqueda de una cadena
+$q-&gt;fields($index-&gt;getFulltextFields());
+$q-&gt;keys("foo");
+
+// Incluso limitar la cantidad de resultados
+$q-&gt;range(0, 5); // offset y limite.
+
+$results = $index-&gt;server()-&gt;search($q);</pre><p>Y ya solo queda iterar los resultados que están almacenados en <strong>$results[&#8216;results&#8217;]</strong>.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hacer &#8220;git pull&#8221; en un servidor remoto desde tu local</title>
+		<link>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/</link>
+		<comments>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/#comments</comments>
+		<pubDate>Wed, 17 Aug 2016 14:34:32 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[Servidores]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3442</guid>
+		<description><![CDATA[Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona: [crayon-584435bdc20b1093674246/] Pónganlo en .barchrc o .bash_aliases de tu ordenador (local) y a partir de ahi cuando lances en tu consola git_pull_on_dev_lapaginaweb te va a hacer un git pull en el servidor remoto. NOTA:&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me cansa tener que conectarme todo el tiempo al servidor de desarrollo para desplegar los cambios así que me hice un bash alias que lo soluciona:</p><pre class="crayon-plain-tag">#Desplegar en el servidor de dev:
+alias git_pull_on_dev_lapaginaweb="ssh deploy@137.30.100.10 'cd /var/www/la_pagina_web &amp;&amp; git pull origin dev'"</pre><p>Pónganlo en <strong>.barchrc o .bash_aliases</strong> de tu ordenador (local) y a partir de ahi cuando lances en tu consola <strong>git_pull_on_dev_lapaginaweb</strong> te va a hacer un git pull en el servidor remoto.</p>
+<p><strong><span style="text-decoration: underline;">NOTA</span></strong>: <strong>para que funcione tenés que recargar .bashrc</strong> de nuevo. Lanza esto en la consola: <strong>source .bashrc</strong></p>
+<p><strong><span style="text-decoration: underline;">NOTA 2</span></strong>: <b>Es obvio que a tu servidor de desarrollo te conectas usando una ssh key. Si te conectas por shh usando clave no te va a servir esta solución.</b></p>
+<p><span style="text-decoration: underline;"><strong>NOTA 3</strong></span>: Antes que me dejen comentarios del estilo &#8220;para eso está jenkins&#8221;.  Ésta es una solución rápida para los que no quieren o pueden instalar un jenkins <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hacer-git-pull-en-un-servidor-remoto-desde-tu-local/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Proteger un sitio en desarrollo con htpasswd</title>
+		<link>http://ecapy.com/proteger-un-sitio-en-desarrollo-con-htpasswd/</link>
+		<pubDate>Tue, 16 Aug 2016 14:33:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[.htaccess]]></category>
+		<category><![CDATA[Apache]]></category>
+		<category><![CDATA[htpasswd]]></category>
+		<category><![CDATA[vhost]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3437</guid>
+		<description><![CDATA[Hay mucho tutorial de como hacerlo pero esta solución es la menos invasiva a mi parecer. Mi situación es la siguiente: Tengo varios site en el servidor de desarrollo quiero que todos tengan que pasar por un login para que no acceda todo Dios.  Tampoco quiero configurar el htpasswd en el .htaccess del site que estoy desarrollando&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/proteger-un-sitio-en-desarrollo-con-htpasswd/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hay mucho tutorial de como hacerlo pero esta solución es la menos invasiva a mi parecer.</p>
+<p>Mi situación es la siguiente: Tengo varios site en el servidor de desarrollo quiero que todos tengan que pasar por un login para que no acceda todo Dios.  <strong>Tampoco quiero configurar el htpasswd en el .htaccess</strong> del site que estoy desarrollando porque tengo que andar evitándolo en GIT. <strong>La solución es que el htpasswd esté configurado a nivel vhost y las claves almacenadas en un directorio </strong><b>común</b> para todas ellas.</p>
+<h2>1: Crea un directorio en el que almacenar todas las claves y créalas</h2>
+<p>Por ejemplo yo he creado un directorio en <strong>/home/deploy/htpasswd</strong> y se la he cedido a www-data con <strong>chown www-data. /home/deploy/htpasswd -R</strong></p>
+<p>Ahora que tengo un directorio donde meter las claves de los sites ya puedo crear un usuario y clave para cada site. por ejemplo:</p><pre class="crayon-plain-tag">htpasswd -c /home/deploy/htpasswd/.foo_site usuario_para_foo_site</pre><p><strong>.foo_site</strong> no es mas que el nombre del archivo que almacena la clave. se puede llamar como te de la gana.</p>
+<p><strong>usuario_para_foo_site</strong> es el nombre de usuario que voy a crear para este site. La clave te la pide cuando des enter.</p>
+<p>Los pasos anteriores los podes hacer para todos los sites que quieras tener bajo llave. Pero todavía no usando estas claves. Vamos a solucionarlo:</p>
+<h2>2: asignar claves a cada site</h2>
+<p>Ya tenemos las claves almacenadas en archivos individuales bajo <strong>/home/deploy/htpasswd. </strong>Solo nos queda ir a cada uno de los vhost y decirle que usen estos archivos:</p>
+<p>Este es un ejemplo:</p><pre class="crayon-plain-tag">&lt;VirtualHost *:80&gt;
+    DocumentRoot "/var/www/foo-site/"
+    ServerName foo-site.front.id
+    &lt;Directory "/var/www/foo-site/"&gt;
+        Options All
+        AllowOverride All
+        Allow from All
+
+        AuthUserFile /home/deploy/htpasswd/.foo_site
+        AuthName "Identificate"
+        AuthType Basic
+        Require valid-user
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</pre><p>Del vhost anterior lo importante es esto.</p><pre class="crayon-plain-tag">AuthUserFile /home/deploy/htpasswd/.foo_site
+AuthName "Identificate"
+AuthType Basic
+Require valid-user</pre><p>Y eso es todo. <strong>reinician apache</strong> y de ahora en mas se les va a pedir el usuario y clave que hayan creado en /home/deploy/htpasswd/.foo_site</p>
+<p>Resumiendo: Esta me parece una solución ideal para no andar tocando el código del sitio que estas desarrollando, por otro lado el tener todas las claves en un mismo lugar hace mas fácil mantenerlas.</p>
+<p>&nbsp;</p>
+<p>Ahora si, chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Crear un core en Solr 6 (por linea de comandos)</title>
+		<link>http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/</link>
+		<pubDate>Mon, 15 Aug 2016 17:55:22 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3435</guid>
+		<description><![CDATA[Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto: [crayon-584435bdc3bde413412694/] NOTA: cambia nombre_del_core por el nombre que le quieras dar a tu core. Lo que va a responder: [crayon-584435bdc3bf2245565505/] Y eso es todo básicamente. Ya tenés un core mas en Solr. No&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/crear-un-core-en-solr-6-por-linea-de-comandos/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Es increíble lo mal documentado que está esto. Para ir al grano si quieres crear un core nuevo lanza en linea de comandos esto:</p><pre class="crayon-plain-tag">su - solr -c "/opt/solr/bin/solr create_core -c nombre_del_core"</pre><p><strong><span style="text-decoration: underline;">NOTA</span></strong>: cambia <strong>nombre_del_core</strong> por el nombre que le quieras dar a tu core.</p>
+<p>Lo que va a responder:</p><pre class="crayon-plain-tag">Copying configuration to new core instance directory:
+/var/solr/data/nombre_del_core
+
+Creating new core 'nombre_del_core' using command:
+http://localhost:8983/solr/admin/cores?action=CREATE&amp;name=nombre_del_core&amp;instanceDir=nombre_del_core
+
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":972},
+  "core":"nombre_del_core"}</pre><p>Y eso es todo básicamente. Ya tenés un core mas en Solr. No hace falta reiniciar.</p>
+<p>Seguramente quieras tocar un poco la conf del core. Los cores se crean en /var/solr/data (<strong>/var/solr/data/nombre_del_core</strong> en nuestro ejemplo).</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar Solr 6.X</title>
+		<link>http://ecapy.com/instalar-solr-6-x/</link>
+		<pubDate>Fri, 01 Jul 2016 16:42:03 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Programas]]></category>
+		<category><![CDATA[Apache Solr]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3417</guid>
+		<description><![CDATA[Descarguemos Solr Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a http://apache.rediris.es/lucene/solr/ y descargatelo. (Que sea el .tgz). Para este post vamos a suponer que has descargado la versión 6.1.0. Extraigamos el instalador El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-6-x/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<h2>Descarguemos Solr</h2>
+<p>Lo primero es descargarte el último Solr 6.x que encuentres. Para ello ve a <a href="http://apache.rediris.es/lucene/solr/">http://apache.rediris.es/lucene/solr/</a> y descargatelo. (Que sea el .tgz).<br />
+Para este post vamos a suponer que has descargado la versión 6.1.0.</p>
+<h2>Extraigamos el instalador</h2>
+<p>El siguiente comando extrae el instalador sin descomprimir el tgz entero. Pero no borres el .tgz que el instalador lo va a necesitar!</p><pre class="crayon-plain-tag">tar xzf solr-6.1.0.tgz solr-6.1.0/bin/install_solr_service.sh --strip-components=2</pre><p>El comando anterior extrae solamente <strong>install_solr_service.sh</strong> y nos deja el <strong>.tgz</strong> sin descomprimir.</p>
+<h2>Instalemos Solr</h2>
+<p>Ahora que tenemos el instalador extraído podemos lanzarlo:</p><pre class="crayon-plain-tag">sudo bash ./install_solr_service.sh solr-6.1.0.tgz</pre><p>Y presto! se va a instalar Solr en <strong>/opt/solr</strong>, te va a crear el script de manejo en <strong>/etc/init.d/solr</strong>, te va a crear el directorio donde se almacenan los indices en <strong>/var/solr/data</strong> y algunas cosas mas. Podes acceder a el en <a href="http://localhost:8983"><strong>http://localhost:8983</strong></a> Todo automático!</p>
+<p>Y eso es todo. ya podes tratar a Solr como un servicio mas:</p><pre class="crayon-plain-tag">sudo service solr status
+sudo service solr start
+sudo service solr stop
+sudo service solr restart</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hola ¿como estás?</title>
+		<link>http://ecapy.com/hola-como-estas/</link>
+		<comments>http://ecapy.com/hola-como-estas/#comments</comments>
+		<pubDate>Thu, 12 May 2016 23:58:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+		<category><![CDATA[Pensálo]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3411</guid>
+		<description><![CDATA[Hace ya tiempo que no escribo con la regularidad de años anteriores, y no es que no tenga ganas, o que ya no tenga nada que compartir. Es simplemente que según creo yo, la vida misma en la época en la que vivimos no nos deja tiempo para disfrutar tanto de la vida como me gustaría.&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/hola-como-estas/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Hace ya tiempo que no escribo con la regularidad de años anteriores, y no es que no tenga ganas, o que ya no tenga nada que compartir. Es simplemente que según creo yo, la vida misma en la época en la que vivimos no nos deja tiempo para disfrutar tanto de la vida como me gustaría.</p>
+<p>Si, una de las cosas que le da disfrute a mi vida es poder compartir conocimiento. Hablar de lo que me da la gana, y ese es uno de los motivos por los que comencé este blog.</p>
+<p>Hoy en día la verdad es que todo ha cambiado tanto en mi vida que a duras penas puedo dedicar tiempo a aprobar los comentarios que hacen aquí pero ya de responderlos ni hablar. Rara vez lo hago.</p>
+<p>Me gusta el siglo en el que he nacido, creo que mi vocación (la informática) es para lo que estoy hecho, pero este mundo, el del siglo 21 cansa y mas si te dedicas a la informática.</p>
+<p>En los últimos 19 años (es lo que llevo metido en esto) he aprendido un millón de cosas y muchas veces no por gusto. Antes podia dedicarle el tiempo al lenguaje de turno o a la tecnología novedosa, pero ya no.</p>
+<p>Ya no porque hay tantísimas cosas que no puedo, nadie puede. Durante mucho tiempo dije que soy un full stack, ese que sabe hacer de todo, pero ya no se si quiero seguir sabiendo tanto de tantas cosas, es agotador.</p>
+<p>Quiero poder aprender algo y que me sirva por años, no por meses. Quiero no tener que tragar libros y libros técnicos al año, quiero ser uno mas como todo el mundo que no es informático, que llega, hace su trabajo y se va, pero no puedo, no soy así.</p>
+<p>Pero algo tengo que hacer, porque el ritmo que llevo hace años no es sostenible en el tiempo.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/hola-como-estas/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 7: Ejecutar el hook_init() en un theme</title>
+		<link>http://ecapy.com/drupal-7-ejecutar-el-hook_init-en-un-theme/</link>
+		<pubDate>Thu, 18 Feb 2016 18:23:19 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Drupal]]></category>
+		<category><![CDATA[Drupal 7]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3386</guid>
+		<description><![CDATA[Si pones el siguiente código en algún modulo custom que tengas por ahí, vas a dar la capacidad a tu theme de ejecutar un hook_init(). [crayon-584435bdc5204744138645/] Ya solo te queda poner en tu template.php un hook_init(). Saludos!]]></description>
+				<content:encoded><![CDATA[<p>Si pones el siguiente código en algún modulo custom que tengas por ahí, vas a dar la capacidad a tu theme de ejecutar un hook_init().</p><pre class="crayon-plain-tag">function MIMODULO_init() {
+
+  // Como los themes no tienen hook_init()
+  // hacemos una implementación propria para que lo tengan.
+  foreach (list_themes() as $k_theme =&gt; $conf) {
+    $hook_init = $k_theme . '_init';
+    $theme_path = drupal_get_path('theme', $k_theme);
+    $template_file = $theme_path . '/template.php';
+
+    if (file_exists($template_file)) {
+      include_once $template_file;
+
+      if ($conf-&gt;status == '1' &amp;&amp; function_exists($hook_init)) {
+        $hook_init();
+      }
+
+    }
+
+
+  }
+
+}</pre><p>Ya solo te queda poner en tu <strong>template.php</strong> un <strong>hook_init()</strong>.</p>
+<p>Saludos!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar Solr 5.x</title>
+		<link>http://ecapy.com/instalar-solr-5-x/</link>
+		<pubDate>Wed, 17 Feb 2016 21:09:46 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Mix de cosas]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=3383</guid>
+		<description><![CDATA[Ha pasado algo de tiempo y Solr ya nos pone mas fácil hacer una instalación limpia y sin tanto dolor de cabeza como antes. Nuestro punto de partida a ser asumir que tienes java instalado en tu servidor. Descarguemos Solr Lo primero es descargarte el último Solr que encuentres. Para ello ve a http://apache.rediris.es/lucene/solr/ y descargate el solr-5.[loquesea].tgz Extraigamos&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-solr-5-x/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Ha pasado algo de tiempo y Solr ya nos pone mas fácil hacer una instalación limpia y sin tanto dolor de cabeza <a href="http://ecapy.com/instalar-solr-y-configurar-multiples-cores-en-linux-ubuntu/">como antes</a>.</p>
+<p>Nuestro punto de partida a ser asumir que tienes java instalado en tu servidor.</p>
+<h2>Descarguemos Solr</h2>
+<p>Lo primero es descargarte el último Solr que encuentres. Para ello ve a <a href="http://apache.rediris.es/lucene/solr/">http://apache.rediris.es/lucene/solr/</a> y descargate el <strong>solr-5.<em>[loquesea]</em>.tgz</strong></p>
+<h2>Extraigamos el instalador</h2>
+<p>SI! Solr ya tiene instalador y se agradece enormemente. Se acabó el tener que desplegar el apache como un war en tomcat con toda la morralla que trae. Ahora simplemente vamos a extraer el instalador lanzando el siguiente comando:</p><pre class="crayon-plain-tag">tar xzf solr-5.[loquesea].tgz solr-5.[loquesea]/bin/install_solr_service.sh --strip-components=2</pre><p>El comando anterior extrae solamente <strong>install_solr_service.sh</strong> y nos deja el <strong>.tgz</strong> sin descomprimir.</p>
+<h2>Instalemos Solr</h2>
+<p>Ahora que tenemos el instalador extraído podemos lanzarlo:</p><pre class="crayon-plain-tag">sudo bash ./install_solr_service.sh solr-5.[loquesea].tgz</pre><p>Y presto! se va a instalar Solr en <strong>/opt/solr</strong>, te va a crear el script de manejo en <strong>/etc/init.d/solr</strong>, te va a crear el directorio donde se almacenan los indices en <strong>/var/solr/data</strong> y algunas cosas mas. Todo automático!</p>
+<p>Y eso es todo. ya podes tratar a Solr como si de un servicio mas se tratara:</p><pre class="crayon-plain-tag">sudo service solr status
+sudo service solr start
+sudo service solr stop
+sudo service solr restart</pre><p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Que PhpStorm funcione en Linux y Mac (que pare en los breakpoint)</title>
+		<link>http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/</link>
+		<comments>http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/#comments</comments>
+		<pubDate>Tue, 02 Feb 2016 00:54:05 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2887</guid>
+		<description><![CDATA[Tip para cuando PhpStorm no reconoce xdebug. Si tienes instalado xdebug pero phpstorm no está parando en los breakpoint, seguramente te estén faltando un par de lineas en tu php.ini (o los archivos que se incluyen en el como xdebug.ini): [crayon-584435bdc6a91459234076/] La primer linea que marca la ruta en la que se encuentra xdebug no es la importante,&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Tip para cuando PhpStorm no reconoce xdebug.</p>
+<p>Si tienes instalado xdebug pero phpstorm no está parando en los breakpoint, seguramente te estén faltando un par de lineas en tu php.ini (o los archivos que se incluyen en el como <strong>xdebug.ini</strong>):</p><pre class="crayon-plain-tag">zend_extension=/usr/lib/php/extensions/no-debug-non-zts-20121212/xdebug.so
+xdebug.remote_autostart = 1
+xdebug.remote_enable = 1</pre><p>La primer linea que marca la ruta en la que se encuentra xdebug no es la importante, las que si lo son, son las ultimas dos que son las que hacen que nos funcionen los brekpoint.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/phpstorm-no-funcionan-los-brekpoints/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

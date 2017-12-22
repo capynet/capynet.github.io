@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<!-- Mirrored from ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-systemd-demonio/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Capy |   Desplegar una aplicación Node.js como servicio systemd (demonio)</title>
+			<link rel="shortcut icon" href="../wp-content/uploads/2016/01/1454276298_globe-01.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="#">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="../xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://ecapy.com/wp-content/themes/prolog/js/html5.js"></script>
+	<![endif]-->
+
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Capy &raquo; RSS de los comentarios" href="../comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/ecapy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-theme-sublime-text-css'  href='../wp-content/plugins/crayon-syntax-highlighter/themes/sublime-text/sublime-text2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='../wp-content/plugins/crayon-syntax-highlighter/fonts/monaco2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='thm-style-css'  href='../wp-content/themes/prolog/style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../wp-content/themes/prolog/css/font-awesome.min1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='quick-style-css'  href='../wp-content/themes/prolog/quick-style1c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themeum-preset-css'  href='../wp-content/themes/prolog/css/presets/preset31c9b.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%7CRoboto+Slab%3A100%2C300%2C400%2C700&amp;ver=1454375832' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Front-end: Maquetar un buscador (input + botón) para que sea 100% fluido / responsive' href='../front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/index.html' />
+<link rel='next' title='Detectar el navegador y toda su información desde PHP o Javascript' href='../detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index5649.html?p=2774' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedf502.json?url=http%3A%2F%2Fecapy.com%2Fdesplegar-una-aplicacion-node-js-como-servicio-systemd-demonio%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embeda7cb?url=http%3A%2F%2Fecapy.com%2Fdesplegar-una-aplicacion-node-js-como-servicio-systemd-demonio%2F&amp;format=xml" />
+<style type="text/css" title="dynamic-css" class="options-output">body, p{font-family:Open Sans;font-weight:normal;font-style:normal;color:#1a1a1a;font-size:16px;}h1, h2, h3, h4, h5, h6{font-family:Roboto Slab;font-weight:400;font-style:normal;color:#1a1a1a;}#navigation .navbar-nav > li > a, .navbar-main .dropdown-menu > li > a{font-family:Open Sans;font-weight:normal;font-style:normal;color:#777777;font-size:16px;}</style></head>
+
+<body class="single single-post postid-2774 single-format-standard">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header header" role="banner">
+			<div class="container">
+				<div id="navigation" class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-3">
+        					<div class="navbar-header">
+        						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        							<span class="icon-bar"></span>
+        						</button>
+        	                    <a class="navbar-brand" href="../index.html">
+        	                    	<h1 class="logo-wrapper">
+        		                    	Capy        		                    </h1>
+        		                </a>
+        					</div>
+                        </div>
+
+                        <div id="main-menu" class="col-sm-9">
+                            <div class="hidden-xs">
+                                <ul id="menu-principal" class="nav navbar-nav navbar-main"><li id="menu-item-2961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="fa fa-drupal"></span>&nbsp;Drupal</a></li>
+<li id="menu-item-2959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li id="menu-item-2958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li id="menu-item-2960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/#main-menu-->
+
+                        <div id="mobile-menu" class="visible-xs">
+                            <div class="collapse navbar-collapse">
+                                <ul id="menu-principal-1" class="nav navbar-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2961"><a title="Drupal" href="../category/drupal/index.html"><span class="glyphicon drupal"></span>&nbsp;Drupal</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2959"><a title="CSS y Maquetación" href="../category/css-y-maquetacion/index.html">CSS y Maquetación</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2958"><a title="PHP" href="../category/php/index.html">PHP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2960"><a title="Javascript" href="../category/js/index.html">Javascript</a></li>
+</ul>                            </div>
+                        </div><!--/.#mobile-menu-->
+
+                    </div><!--/.row--> 
+				</div><!--/.container--> 
+			</div>
+		</header><!--/#header-->
+
+
+    <section id="main" class="container">
+        <div class="row">
+            <div id="content" class="site-content col-md-9" role="main">
+
+                
+                    
+                        <article id="post-2774" class="post-2774 post type-post status-publish format-standard has-post-thumbnail hentry category-programacion">
+    <header class="entry-header">
+
+            <div class="entry-thumbnail">
+            <img width="850" height="253" src="../wp-content/uploads/2014/09/node-header.jpg" class="img-responsive wp-post-image" alt="node-header" srcset="http://ecapy.com/wp-content/uploads/2014/09/node-header.jpg 850w, http://ecapy.com/wp-content/uploads/2014/09/node-header-300x89.jpg 300w, http://ecapy.com/wp-content/uploads/2014/09/node-header-768x229.jpg 768w" sizes="(max-width: 850px) 100vw, 850px" />        </div>
+    
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+        <div class="pull-left">
+            <h4 class="post-format">
+                <i class="fa fa-thumb-tack"></i>
+            </h4>
+
+        </div>
+    
+
+    <div class="media-body">
+        <h2 class="entry-title">
+            <a href="index.html" rel="bookmark">Desplegar una aplicación Node.js como servicio systemd (demonio)</a>
+                    </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            <ul>
+                                <li class="author"> <i class="fa fa-user"></i> <a href="../author/capynet/index.html" title="Entradas de capynet" rel="author">capynet</a></li> 
+                
+                                <li class="publish-date"><i class="fa fa-calendar"></i><time class="entry-date" datetime="2014-09-15T10:30:04+00:00">15 Sep,  2014</time></li>  
+                
+                                <li class="category"><i class="fa fa-folder-open-o"></i><a href="../category/programacion/index.html" rel="category tag">Programación</a></li>
+                                
+                                <li class="tag"><i class="fa fa-tags"></i> </li>
+                
+                 
+                                
+                                    <li class="edit-link">
+                                             </li>
+                            </ul>
+        </div> <!--/.entry-meta -->
+
+        <div class="entry-summary">
+            <p>En el mundo linux hay dos gestores de demonios que se suelen usar en casi todas las distribuciones. <strong>Upstart</strong> o <strong>systemd</strong>.</p>
+<p>Si lo que quieres es crear un demonio para Ubuntu o cualquier otro SO que use Upstart, <a title="Desplegar una aplicación Node.js como servicio Upstart (demonio)" href="../desplegar-una-aplicacion-node-js-como-servicio-demonio/index.html"> tienes que leer este articulo</a>, y si lo que quieres es crear el demonio para Debian u otros que usen systemd, sigue leyendo este post.</p>
+<p>Vamos al lio. Para nuestro demonio vamos a necesitar 3 cosas: <strong><a href="https://github.com/nodejitsu/forever" target="_blank">forever</a></strong>, <strong>un script para crear el servicio</strong> y un <strong>script para avisar a monit para que mire nuestro servicio</strong> y lo reinicie si se cae.</p>
+<h3>El script del servicio</h3>
+<p>Como me gusta ponértelo fácil, voy a obviar la explicación y simplemente les digo que copies el siguiente código y lo pegues dentro de un archivo que se llame como el servicio que quieres crear dentro de <strong>/etc/init.d/my-service</strong> (por ejemplo).</p>
+<p>Dentro de este archivo solo tienes que tocar dos o tres cosas al principio del archivo en la zona de configuración. Es fácil, <strong>básicamente es poner el nombre del servicio (en mi ejemplo es &#8220;my-service&#8221;), el directorio donde está alojado, y el nombre del archivo principal de la aplicación.</strong><br />
+Hay algunas cositas mas que se pueden configurar, pero en general con esto basta.</p>
+		<div id="crayon-584436a98f264635037848" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+#!/bin/bash
+# This service requires you have forever app installed in your system.
+
+
+### CONFIG ZONE
+# This is the service name. It cant have any special char or space.
+serviceName="my-service"
+
+# Where is located your app
+appFilePath="/var/node/my-service-node-app"
+
+# Whats the name of your main app file.
+appIndex="app.js"
+
+enviroment=production
+### END CONFIG ZONE
+
+
+###### DO NOT EDIT BELOW THIS LINE ######
+# Source function library.
+. /lib/lsb/init-functions
+
+pidFile="/var/run/$serviceName.pid"
+logFile="/var/run/$serviceName.log"
+
+command="node"
+nodeApp="$appFilePath/$appIndex"
+foreverApp="forever"
+
+start() {
+	echo "Starting $serviceName"
+	PATH=/usr/local/bin:$PATH
+	export NODE_ENV=$enviroment
+	$foreverApp start --pidFile $pidFile -l $logFile -a -d -c "$command" $nodeApp
+	RETVAL=$?
+}
+
+restart() {
+	echo -n "Restarting $serviceName"
+	$foreverApp restart $nodeApp
+	RETVAL=$?
+}
+
+stop() {
+	echo -n "Shutting down $serviceName"
+	$foreverApp stop $nodeApp
+	RETVAL=$?
+}
+
+status() {
+   echo -n "Status $serviceName"
+   $foreverApp list
+   RETVAL=$?
+}
+
+case "$1" in
+   start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+   status)
+        status
+       ;;
+   restart)
+   	restart
+        ;;
+	*)
+       echo "Usage:  {start|stop|status|restart}"
+       exit 1
+        ;;
+esac
+exit $RETVAL</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584436a98f264635037848-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-2">2</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-4">4</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-6">6</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-8">8</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-10">10</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-12">12</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-14">14</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-16">16</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-18">18</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-20">20</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-22">22</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-24">24</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-26">26</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-28">28</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-30">30</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-32">32</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-34">34</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-36">36</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-38">38</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-40">40</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-42">42</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-44">44</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-46">46</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-48">48</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-50">50</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-52">52</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-53">53</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-54">54</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-55">55</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-56">56</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-57">57</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-58">58</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-59">59</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-60">60</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-61">61</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-62">62</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-63">63</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-64">64</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-65">65</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-66">66</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-67">67</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-68">68</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-69">69</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-70">70</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-71">71</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-72">72</div><div class="crayon-num" data-line="crayon-584436a98f264635037848-73">73</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f264635037848-74">74</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584436a98f264635037848-1"><span class="crayon-p">#!/bin/bash</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-2"><span class="crayon-c"># This service requires you have forever app installed in your system.</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-4">&nbsp;</div><div class="crayon-line" id="crayon-584436a98f264635037848-5"><span class="crayon-c">### CONFIG ZONE</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-6"><span class="crayon-c"># This is the service name. It cant have any special char or space.</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-7"><span class="crayon-v">serviceName</span><span class="crayon-o">=</span><span class="crayon-s">"my-service"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-8">&nbsp;</div><div class="crayon-line" id="crayon-584436a98f264635037848-9"><span class="crayon-c"># Where is located your app</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-10"><span class="crayon-v">appFilePath</span><span class="crayon-o">=</span><span class="crayon-s">"/var/node/my-service-node-app"</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-11">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-12"><span class="crayon-c"># Whats the name of your main app file.</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-13"><span class="crayon-v">appIndex</span><span class="crayon-o">=</span><span class="crayon-s">"app.js"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-14">&nbsp;</div><div class="crayon-line" id="crayon-584436a98f264635037848-15"><span class="crayon-v">enviroment</span><span class="crayon-o">=</span><span class="crayon-v">production</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-16"><span class="crayon-c">### END CONFIG ZONE</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-17">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-18">&nbsp;</div><div class="crayon-line" id="crayon-584436a98f264635037848-19"><span class="crayon-c">###### DO NOT EDIT BELOW THIS LINE ######</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-20"><span class="crayon-c"># Source function library.</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-21"><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">lib</span><span class="crayon-o">/</span><span class="crayon-v">lsb</span><span class="crayon-o">/</span><span class="crayon-v">init</span><span class="crayon-o">-</span><span class="crayon-e">functions</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-22">&nbsp;</div><div class="crayon-line" id="crayon-584436a98f264635037848-23"><span class="crayon-v">pidFile</span><span class="crayon-o">=</span><span class="crayon-s">"/var/run/$serviceName.pid"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-24"><span class="crayon-v">logFile</span><span class="crayon-o">=</span><span class="crayon-s">"/var/run/$serviceName.log"</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-25">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-26"><span class="crayon-r">command</span><span class="crayon-o">=</span><span class="crayon-s">"node"</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-27"><span class="crayon-v">nodeApp</span><span class="crayon-o">=</span><span class="crayon-s">"$appFilePath/$appIndex"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-28"><span class="crayon-v">foreverApp</span><span class="crayon-o">=</span><span class="crayon-s">"forever"</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-29">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-30"><span class="crayon-e">start</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-31"><span class="crayon-h">	</span><span class="crayon-r">echo</span><span class="crayon-h"> </span><span class="crayon-s">"Starting $serviceName"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-32"><span class="crayon-h">	</span><span class="crayon-v">PATH</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">local</span><span class="crayon-o">/</span><span class="crayon-v">bin</span><span class="crayon-o">:</span><span class="crayon-v">$PATH</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-33"><span class="crayon-h">	</span><span class="crayon-e">export </span><span class="crayon-v">NODE_ENV</span><span class="crayon-o">=</span><span class="crayon-v">$enviroment</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-34"><span class="crayon-h">	</span><span class="crayon-v">$foreverApp</span><span class="crayon-h"> </span><span class="crayon-v">start</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-i">pidFile</span><span class="crayon-h"> </span><span class="crayon-v">$pidFile</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">l</span><span class="crayon-h"> </span><span class="crayon-v">$logFile</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">d</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">c</span><span class="crayon-h"> </span><span class="crayon-s">"$command"</span><span class="crayon-h"> </span><span class="crayon-v">$nodeApp</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-35"><span class="crayon-h">	</span><span class="crayon-v">RETVAL</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">?</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-36"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-37">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-38"><span class="crayon-e">restart</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-39"><span class="crayon-h">	</span><span class="crayon-r">echo</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">n</span><span class="crayon-h"> </span><span class="crayon-s">"Restarting $serviceName"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-40"><span class="crayon-h">	</span><span class="crayon-v">$foreverApp</span><span class="crayon-h"> </span><span class="crayon-i">restart</span><span class="crayon-h"> </span><span class="crayon-v">$nodeApp</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-41"><span class="crayon-h">	</span><span class="crayon-v">RETVAL</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">?</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-42"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-43">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-44"><span class="crayon-e">stop</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-45"><span class="crayon-h">	</span><span class="crayon-r">echo</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">n</span><span class="crayon-h"> </span><span class="crayon-s">"Shutting down $serviceName"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-46"><span class="crayon-h">	</span><span class="crayon-v">$foreverApp</span><span class="crayon-h"> </span><span class="crayon-i">stop</span><span class="crayon-h"> </span><span class="crayon-v">$nodeApp</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-47"><span class="crayon-h">	</span><span class="crayon-v">RETVAL</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">?</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-48"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-49">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-50"><span class="crayon-e">status</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-51"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-r">echo</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">n</span><span class="crayon-h"> </span><span class="crayon-s">"Status $serviceName"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-52"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">$foreverApp</span><span class="crayon-h"> </span><span class="crayon-e">list</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-53"><span class="crayon-e">&nbsp;&nbsp; </span><span class="crayon-v">RETVAL</span><span class="crayon-o">=</span><span class="crayon-sy">$</span><span class="crayon-sy">?</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-54"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-55">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-56"><span class="crayon-st">case</span><span class="crayon-h"> </span><span class="crayon-s">"$1"</span><span class="crayon-h"> </span><span class="crayon-st">in</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-57"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">start</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-58"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">start</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-59"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">;</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-60"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">stop</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-61"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">stop</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-62"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">;</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-63"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">status</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-64"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">status</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-65"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">;</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-66"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">restart</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-67"><span class="crayon-h">&nbsp;&nbsp; 	</span><span class="crayon-i">restart</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-68"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">;</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-69"><span class="crayon-h">	</span><span class="crayon-o">*</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-70"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r">echo</span><span class="crayon-h"> </span><span class="crayon-s">"Usage:&nbsp;&nbsp;{start|stop|status|restart}"</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-71"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r">exit</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-72"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">;</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-584436a98f264635037848-73"><span class="crayon-st">esac</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f264635037848-74"><span class="crayon-r">exit</span><span class="crayon-h"> </span><span class="crayon-v">$RETVAL</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Tambien dejo el gist para que cualquier mejora que quieras añadir lo hagas por esta via.<br />
+<a href="https://gist.github.com/capynet/2de13de81ef8a71f2b2f" target="_blank">https://gist.github.com/capynet/2de13de81ef8a71f2b2f</a></p>
+<p>Ya tenemos servicio! ¿Y como lo usamos?. Pues como cualquier servicio:</p>
+		<div id="crayon-584436a98f272408599251" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+sudo service my-service start
+sudo service my-service stop
+sudo service my-service restart
+sudo service my-service status</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584436a98f272408599251-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f272408599251-2">2</div><div class="crayon-num" data-line="crayon-584436a98f272408599251-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f272408599251-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584436a98f272408599251-1"><span class="crayon-e">sudo </span><span class="crayon-e">service </span><span class="crayon-v">my</span><span class="crayon-o">-</span><span class="crayon-e">service </span><span class="crayon-e">start</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f272408599251-2"><span class="crayon-e">sudo </span><span class="crayon-e">service </span><span class="crayon-v">my</span><span class="crayon-o">-</span><span class="crayon-e">service </span><span class="crayon-e">stop</span></div><div class="crayon-line" id="crayon-584436a98f272408599251-3"><span class="crayon-e">sudo </span><span class="crayon-e">service </span><span class="crayon-v">my</span><span class="crayon-o">-</span><span class="crayon-e">service </span><span class="crayon-e">restart</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f272408599251-4"><span class="crayon-e">sudo </span><span class="crayon-e">service </span><span class="crayon-v">my</span><span class="crayon-o">-</span><span class="crayon-e">service </span><span class="crayon-v">status</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>Esto debería alcanzar, pero no. Este demonio no sabe volver a arrancarse si la aplicación de nodejs se para. Esa parte la vamos a solucionar usando monit.</p>
+<h3>Configurar monit</h3>
+<p>El rol de monit es el de &#8220;mirar&#8221; todo el tiempo al demonio que creamos anteriormente, y arrancarlo si este se muere.</p>
+<p>En Debian y la mayoría de distros, a los archivos de configuración que tenemos que crear (uno por demonio) los pondremos en &#8220;<strong>/etc/monit/monitrc.d/</strong>&#8220;.<br />
+Yo por lo general creo un archivo con el formato <em>monit-[MI-SERVICIO].conf</em>.</p>
+<p>Dentro de este archivo <strong>SIEMRPE</strong> vamos a usar el siguiente formato, así que simplemente cópialo, pon el nombre del demonio y el puerto, guarda los cambios, reinicia monit y listo.</p>
+		<div id="crayon-584436a98f277326478951" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+check process my-service with pidfile "/var/run/my-service.pid"
+start program = "/etc/init.d/my-service start"
+stop program = "/etc/init.d/my-service stop"
+if failed
+port [THE NODEJS PORT HERE] protocol HTTP
+request / with timeout 10 seconds
+then restart</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584436a98f277326478951-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f277326478951-2">2</div><div class="crayon-num" data-line="crayon-584436a98f277326478951-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f277326478951-4">4</div><div class="crayon-num" data-line="crayon-584436a98f277326478951-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-584436a98f277326478951-6">6</div><div class="crayon-num" data-line="crayon-584436a98f277326478951-7">7</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584436a98f277326478951-1"><span class="crayon-e">check </span><span class="crayon-e">process </span><span class="crayon-v">my</span><span class="crayon-o">-</span><span class="crayon-e">service </span><span class="crayon-e">with </span><span class="crayon-i">pidfile</span><span class="crayon-h"> </span><span class="crayon-s">"/var/run/my-service.pid"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f277326478951-2"><span class="crayon-e">start </span><span class="crayon-v">program</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"/etc/init.d/my-service start"</span></div><div class="crayon-line" id="crayon-584436a98f277326478951-3"><span class="crayon-e">stop </span><span class="crayon-v">program</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"/etc/init.d/my-service stop"</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f277326478951-4"><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-e">failed</span></div><div class="crayon-line" id="crayon-584436a98f277326478951-5"><span class="crayon-i">port</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-e">THE </span><span class="crayon-e">NODEJS </span><span class="crayon-e">PORT </span><span class="crayon-v">HERE</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-e">protocol </span><span class="crayon-e">HTTP</span></div><div class="crayon-line crayon-striped-line" id="crayon-584436a98f277326478951-6"><span class="crayon-v">request</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-h"> </span><span class="crayon-e">with </span><span class="crayon-i">timeout</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-h"> </span><span class="crayon-e">seconds</span></div><div class="crayon-line" id="crayon-584436a98f277326478951-7"><span class="crayon-st">then</span><span class="crayon-h"> </span><span class="crayon-v">restart</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>De nuevo, aquí está el gist para que contribuyas si quieres.<br />
+<a href="https://gist.github.com/capynet/c7aa09a996fe909a0960" target="_blank">https://gist.github.com/capynet/c7aa09a996fe909a0960</a></p>
+<p>NOTA: En algunas instalaciones de monit, hay que tocar su archivo de configuración general para que incluya los archvos de monitorización que añadamos. El archivo es <strong>/etc/monit/monitrc</strong> y tienes que editarlo como sudo y añadir al final &#8220;<strong>include/etc/monit/monitrc.d/*</strong>&#8221; si no lo tuviera ya puesto.</p>
+<p>Bueno si a estas alturas todavía no tienes instalado forever, instalalo con <strong>sudo npm install forever -g</strong></p>
+<p>Hemos acabado, ya puedes arrancar monit o reiniciarlo si ya estaba corriendo. Monit va a usar el script que creamos para el para ver si el servicio está corriendo, si no es así, el solito se encarga de levantarlo y mantenerlo en funcionamiento inclusive después de reiniciar el servidor.</p>
+<p>Chau!</p>
+        </div> <!-- //.entry-summary -->
+            </div>
+ 
+
+    </div>
+
+</article> <!--/#post-->
+                                                     <div class="clearfix post-navigation">
+                                <span class="btn-style previous-post pull-left"><a href="../front-end-maquetar-un-buscador-input-boton-para-que-sea-100-fluido-responsive/index.html" rel="prev"><i class="fa fa-long-arrow-left"></i> previous article</a></span>                                 <span class="btn-style next-post pull-right"><a href="../detectar-el-navegador-y-toda-su-informacion-desde-php-o-javascript/index.html" rel="next">next article <i class="fa fa-long-arrow-right"></i></a></span>                            </div> <!-- .post-navigation -->
+                                            
+                                                                    
+                    
+                        
+            </div> <!-- #content -->
+
+            <div id="sidebar" class="col-md-3" role="complementary">
+                
+
+	<div class="my-profile clearfix">
+		<div class="profile-bg">
+						<img class="img-responsive" src="../wp-content/uploads/2016/01/14567-brick-wall-and-wood-floor-1920x1200-abstract-wallpaper.jpg">
+			
+						<div class="profile-img">
+				<img class="img-responsive" src="../wp-content/uploads/2016/01/IMG-20150521-WA0007-1.jpg">
+			</div>
+					</div>
+
+		<div class="profile-desc">
+							<h2>Capy (Marcelo Tosco)</h2>
+										<span>Desarrollador web</span>
+									<p>Hola!. en mi blog casi siempre escribo sobre informática, pero no te extrañes si algún día aparece un post que no tenga nada que ver a lo que estés acostumbrado ;)</p>
+					</div>
+
+		
+<div class="social-share">
+	
+	<ul>
+		
+			
+			<li><a class="twitter" href="http://twitter.com/capynet" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+									<li><a class="linkedin" href="https://es.linkedin.com/in/capynet" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											 
+		
+	</ul>
+	
+</div>
+
+
+
+
+	</div>
+
+                <div class="sidebar-inner">
+                    <aside class="widget-area">
+                                            </aside>
+                </div>
+            </div> <!-- #sidebar -->
+
+        </div> <!-- .row -->
+    </section> <!-- .container -->
+
+
+        <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row">
+                                            <div class="col-sm-6">
+                          <a href="http://asociaciondrupal.es/" target="_blank"><img class="alignnone size-full wp-image-3123" src="../wp-content/uploads/2016/01/miembro-aed_150x75.jpg" alt="miembro-aed_150x75" width="150" height="75" /></a>                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-238596-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel='stylesheet' id='crayon-css'  href='../wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min2f6a.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/imagesloaded.min55a0.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/masonry.mind617.js?ver=3.3.2'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/bootstrap.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.prettyPhoto1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/jquery.countdown.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-content/themes/prolog/js/main1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/ecapy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min2f6a.js?ver=_2.7.2_beta'></script>
+</body>
+
+<!-- Mirrored from ecapy.com/desplegar-una-aplicacion-node-js-como-servicio-systemd-demonio/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2016 15:33:49 GMT -->
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: Invocar un block programaticamente en Drupal 6</title>
+	<atom:link href="http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/#comment-145</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Thu, 12 Aug 2010 07:50:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=403#comment-145</guid>
+		<description><![CDATA[Ese error se suele dar cuando hiciste una modificación de un formulario en el código y tenes una versión vieja cacheada en el navegador.
+
+La solución es que borres el cache del navegador que uses y que entres nuevamente en la pagina (ojo, dije entrar nuevamente, no apretar F5).]]></description>
+		<content:encoded><![CDATA[<p>Ese error se suele dar cuando hiciste una modificación de un formulario en el código y tenes una versión vieja cacheada en el navegador.</p>
+<p>La solución es que borres el cache del navegador que uses y que entres nuevamente en la pagina (ojo, dije entrar nuevamente, no apretar F5).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Roberto</title>
+		<link>http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/#comment-144</link>
+		<dc:creator><![CDATA[Roberto]]></dc:creator>
+		<pubDate>Tue, 10 Aug 2010 23:49:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=403#comment-144</guid>
+		<description><![CDATA[hey gracias.
+ hey gracias por la solucion. pero tengo un problema que quiza no este relacionado con el este tema pero igual si me podes ayuda te lo agradeceria aqui va jje.
+
+mira tengo un problema y no c como solucionarlo estoy ocupando el modulo front page  he estado trabajando con el sin ningun problema pero hoy me aparece un error que dice &quot;Error de validación; por favor inténtelo de nuevo. Si este error persiste, por favor póngase en contacto con el administrador del sitio.&quot;
+
+y no me actualiza las modificacion que he hecho  drupal 6 no c que es]]></description>
+		<content:encoded><![CDATA[<p>hey gracias.<br />
+ hey gracias por la solucion. pero tengo un problema que quiza no este relacionado con el este tema pero igual si me podes ayuda te lo agradeceria aqui va jje.</p>
+<p>mira tengo un problema y no c como solucionarlo estoy ocupando el modulo front page  he estado trabajando con el sin ningun problema pero hoy me aparece un error que dice &#8220;Error de validación; por favor inténtelo de nuevo. Si este error persiste, por favor póngase en contacto con el administrador del sitio.&#8221;</p>
+<p>y no me actualiza las modificacion que he hecho  drupal 6 no c que es</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/#comment-143</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Mon, 02 Aug 2010 22:18:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=403#comment-143</guid>
+		<description><![CDATA[Puff... eso tiene su historia... lo mas simple y efectivo para este problema es que implementes un hook_form_alter como el siguiente:
+
+&lt;pre&gt;
+function personalizaciones_form_alter(&#038;$form, &#038;$form_state, $form_id) {
+	if ($form_id == &quot;user_login_block&quot;) {
+		$form [&quot;links&quot;] [&quot;#value&quot;] = &quot;ul li&quot; . l ( &quot;Request new password&quot;, &quot;/user/password&quot; ) . &quot;/li /ul&quot;;
+	}
+}
+&lt;/pre&gt;
+NOTA: Wordpress tiene hambre de código y se come trozos de el. podrás notar que dice &quot;ul li&quot; y &quot;li ul&quot;. Bueno ponele los símbolos mayor y menos donde corresponde para que funcione.]]></description>
+		<content:encoded><![CDATA[<p>Puff&#8230; eso tiene su historia&#8230; lo mas simple y efectivo para este problema es que implementes un hook_form_alter como el siguiente:</p>
+<p></p>
+		<div id="crayon-584438992de52436208891" class="crayon-syntax crayon-theme-sublime-text crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover disable-anim" style=" margin-top: 12px; margin-bottom: 12px; ">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; ">
+function personalizaciones_form_alter(&amp;$form, &amp;$form_state, $form_id) {
+	if ($form_id == "user_login_block") {
+		$form ["links"] ["#value"] = "ul li" . l ( "Request new password", "/user/password" ) . "/li /ul";
+	}
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style=""><div class="crayon-num" data-line="crayon-584438992de52436208891-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438992de52436208891-2">2</div><div class="crayon-num" data-line="crayon-584438992de52436208891-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-584438992de52436208891-4">4</div><div class="crayon-num" data-line="crayon-584438992de52436208891-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style=" -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-584438992de52436208891-1"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">personalizaciones_form_alter</span><span class="crayon-sy">(</span><span class="crayon-o">&amp;</span><span class="crayon-sy">$</span><span class="crayon-v">form</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-o">&amp;</span><span class="crayon-sy">$</span><span class="crayon-v">form_state</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-v">form_id</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438992de52436208891-2"><span class="crayon-h">	</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-v">form_id</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-s">"user_login_block"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-584438992de52436208891-3"><span class="crayon-h">		</span><span class="crayon-sy">$</span><span class="crayon-i">form</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">"links"</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">"#value"</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"ul li"</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-e">l</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-s">"Request new password"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"/user/password"</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-h"> </span><span class="crayon-s">"/li /ul"</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-584438992de52436208891-4"><span class="crayon-h">	</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-584438992de52436208891-5"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div><p>NOTA: WordPress tiene hambre de código y se come trozos de el. podrás notar que dice &#8220;ul li&#8221; y &#8220;li ul&#8221;. Bueno ponele los símbolos mayor y menos donde corresponde para que funcione.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Roberto</title>
+		<link>http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/#comment-142</link>
+		<dc:creator><![CDATA[Roberto]]></dc:creator>
+		<pubDate>Sat, 31 Jul 2010 00:26:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=403#comment-142</guid>
+		<description><![CDATA[hey tengo una duda a mi me funciono tu codigo pero mi pregunta es si puedo editar mi modulo invocado en mi caso es el de user lo que quiero hacer es quitarle donde dice &quot; crear nueva cuenta&quot; y solo dejar las cajas de texto???]]></description>
+		<content:encoded><![CDATA[<p>hey tengo una duda a mi me funciono tu codigo pero mi pregunta es si puedo editar mi modulo invocado en mi caso es el de user lo que quiero hacer es quitarle donde dice &#8221; crear nueva cuenta&#8221; y solo dejar las cajas de texto???</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Capy</title>
+		<link>http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/#comment-141</link>
+		<dc:creator><![CDATA[Capy]]></dc:creator>
+		<pubDate>Wed, 26 May 2010 11:36:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=403#comment-141</guid>
+		<description><![CDATA[Hola Jorge. si, es el nombre de un modulo. Este modulo puede ser parte del core o un modulo de terceros. y si, da igual cual sea.
+Por cierto, tenes que saber bien bien cual es el delta del bloque que querés invocar.]]></description>
+		<content:encoded><![CDATA[<p>Hola Jorge. si, es el nombre de un modulo. Este modulo puede ser parte del core o un modulo de terceros. y si, da igual cual sea.<br />
+Por cierto, tenes que saber bien bien cual es el delta del bloque que querés invocar.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: jorge</title>
+		<link>http://ecapy.com/invocar-un-block-programaticamente-en-drupal-6/#comment-140</link>
+		<dc:creator><![CDATA[jorge]]></dc:creator>
+		<pubDate>Sun, 23 May 2010 23:55:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=403#comment-140</guid>
+		<description><![CDATA[Hola, estoy probando tu codigo, pero no me funciona, el algun_modulo es el nombre de un módulo del core de drupal por ejemplo? pero da igual cual sea?
+
+Espero puedas ayudarme
+
+Saludos.]]></description>
+		<content:encoded><![CDATA[<p>Hola, estoy probando tu codigo, pero no me funciona, el algun_modulo es el nombre de un módulo del core de drupal por ejemplo? pero da igual cual sea?</p>
+<p>Espero puedas ayudarme</p>
+<p>Saludos.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

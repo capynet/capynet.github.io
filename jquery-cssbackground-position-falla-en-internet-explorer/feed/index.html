@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentarios en: jQuery: .css(&#8220;background-position&#8221;) falla en Internet Explorer</title>
+	<atom:link href="http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Sun, 04 Dec 2016 15:21:46 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Por: Eduardo</title>
+		<link>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/#comment-284</link>
+		<dc:creator><![CDATA[Eduardo]]></dc:creator>
+		<pubDate>Fri, 07 Jun 2013 16:32:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=873#comment-284</guid>
+		<description><![CDATA[Existe una forma mas fácil de poder burlar este error de nuestro antagonista IE y es la siguiente: el primer argumento del metodo css() debe ser solamente &#039;background&#039; y el segundo, la posicion en top - left - right - bottom, según corresponda. Ejemplo: $(this).css(&#039;background-position&#039;,&#039;top left&#039;);]]></description>
+		<content:encoded><![CDATA[<p>Existe una forma mas fácil de poder burlar este error de nuestro antagonista IE y es la siguiente: el primer argumento del metodo css() debe ser solamente &#8216;background&#8217; y el segundo, la posicion en top &#8211; left &#8211; right &#8211; bottom, según corresponda. Ejemplo: $(this).css(&#8216;background-position&#8217;,&#8217;top left&#8217;);</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gabriel Agudelo</title>
+		<link>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/#comment-283</link>
+		<dc:creator><![CDATA[Gabriel Agudelo]]></dc:creator>
+		<pubDate>Wed, 03 Oct 2012 16:33:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=873#comment-283</guid>
+		<description><![CDATA[En IE se debe dividir la posición obtenida por 8 es decir:
+
+$.browser.msie ? [xPosition = parseInt($(&quot;#muestras&quot;).css(bgp + &quot;-x&quot;).split(&quot; &quot;)[0]) / 8, yPosition = parseInt($(&quot;#muestras&quot;).css(bgp + &quot;-y&quot;).split(&quot; &quot;)[0]) / 8] : 
+            [xPosition = parseInt($(&quot;#muestras&quot;).css(bgp).split(&quot; &quot;)[0]), yPosition = parseInt($(&quot;#muestras&quot;).css(bgp).split(&quot; &quot;)[1])];
+
+Espero les sirva!]]></description>
+		<content:encoded><![CDATA[<p>En IE se debe dividir la posición obtenida por 8 es decir:</p>
+<p>$.browser.msie ? [xPosition = parseInt($(&#8220;#muestras&#8221;).css(bgp + &#8220;-x&#8221;).split(&#8221; &#8220;)[0]) / 8, yPosition = parseInt($(&#8220;#muestras&#8221;).css(bgp + &#8220;-y&#8221;).split(&#8221; &#8220;)[0]) / 8] :<br />
+            [xPosition = parseInt($(&#8220;#muestras&#8221;).css(bgp).split(&#8221; &#8220;)[0]), yPosition = parseInt($(&#8220;#muestras&#8221;).css(bgp).split(&#8221; &#8220;)[1])];</p>
+<p>Espero les sirva!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: miguel valero</title>
+		<link>http://ecapy.com/jquery-cssbackground-position-falla-en-internet-explorer/#comment-282</link>
+		<dc:creator><![CDATA[miguel valero]]></dc:creator>
+		<pubDate>Sun, 03 Apr 2011 20:46:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ecapy.com/?p=873#comment-282</guid>
+		<description><![CDATA[He visto que desde IE9 este problema sigue, en fin porque será que este navegador siempre da problemas, ah si será porque no respeta los éstándares. Bueno en todo caso muchas gracias por tu aporte, es de utilidad. Saludos!]]></description>
+		<content:encoded><![CDATA[<p>He visto que desde IE9 este problema sigue, en fin porque será que este navegador siempre da problemas, ah si será porque no respeta los éstándares. Bueno en todo caso muchas gracias por tu aporte, es de utilidad. Saludos!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

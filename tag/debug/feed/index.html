@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>debug &#8211; Capy</title>
+	<atom:link href="http://ecapy.com/tag/debug/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ecapy.com</link>
+	<description>Drupal, Ubuntu, Performance, Node.js, jQuery, SASS, CSS</description>
+	<lastBuildDate>Tue, 29 Nov 2016 00:38:25 +0000</lastBuildDate>
+	<language>es-ES</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+	<item>
+		<title>Debuguear REST con Postman + xdebug + PhpStorm</title>
+		<link>http://ecapy.com/debuguear-rest-con-postman-xdebug-phpstorm/</link>
+		<pubDate>Tue, 08 Sep 2015 08:20:02 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[debug]]></category>
+
+		<guid isPermaLink="false">http://ecapy.com/?p=2956</guid>
+		<description><![CDATA[Postman es un excelente cliente para probar todos los servicios que tu API (o la de otro) tienen. Si estas usando PhpStorm con xdebug y necesitas usarlo con postman, la cosa no puede ser mas simple: Asegurate que xdebug está bien configurado. Por lo general podés encontrara bajo [crayon-584436da3841b206024357/] Aunque dependiendo de la distribucion de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/debuguear-rest-con-postman-xdebug-phpstorm/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop" target="_blank">Postman</a> es un excelente cliente para probar todos los servicios que tu API (o la de otro) tienen.</p>
+<p>Si estas usando PhpStorm con xdebug y necesitas usarlo con postman, la cosa no puede ser mas simple:</p>
+<h3>Asegurate que xdebug está bien configurado.</h3>
+<p>Por lo general podés encontrara bajo</p><pre class="crayon-plain-tag">/etc/php5/apache2/conf.d/20-xdebug.ini</pre><p>Aunque dependiendo de la distribucion de linux que uses, puede que tengas que goglear un poco para saber donde está el archivo de configuración de xdebug en tu sistema.</p>
+<p>Cuando lo encuentres solo asegúrate que estas opciones están y configuradas de la siguiente manera:</p><pre class="crayon-plain-tag">xdebug.idekey = PHPSTORM
+xdebug.remote_autostart=1</pre><p>Si no están definidas podes agregarlas sin miedo.</p>
+<h3>Prueba</h3>
+<p>Reinicia apache y probemos. En phpstorm Dale a este botón:</p>
+<p><img class="size-full wp-image-2957" src="http://ecapy.com/wp-content/uploads/2015/09/debug-listener-phpstorm.png" alt="debug-listener-phpstorm" width="26" height="22" /></p>
+<p>Y en postman pon &#8220;<strong>?XDEBUG_SESSION_START=PHPSTORM</strong>&#8221;</p>
+<p><img class="alignnone wp-image-2962 size-full" src="http://ecapy.com/wp-content/uploads/2015/09/postman-url.png" alt="postman-url" width="692" height="159" srcset="http://ecapy.com/wp-content/uploads/2015/09/postman-url.png 692w, http://ecapy.com/wp-content/uploads/2015/09/postman-url-300x69.png 300w" sizes="(max-width: 692px) 100vw, 692px" /></p>
+<p>Y listo, pones un breakpoint en phpstorm y vas a ver como para.</p>
+<p>Chau!</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Mysql Tip: Probar consultas evitando el cache</title>
+		<link>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/</link>
+		<comments>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/#comments</comments>
+		<pubDate>Thu, 10 Nov 2011 23:14:53 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Tip]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[Mysql]]></category>
+		<category><![CDATA[Performance]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=1286</guid>
+		<description><![CDATA[SQL_NO_CACHE es especialmente útil para cuando estas analizando una query lenta que se está cacheando y te impide ver el tiempo que consume en realidad. [crayon-584436da395fc961911183/]]]></description>
+				<content:encoded><![CDATA[<p><strong>SQL_NO_CACHE</strong> es especialmente útil para cuando estas analizando una query lenta que se está cacheando y te impide ver el tiempo que consume en realidad.</p><pre class="crayon-plain-tag">SELECT SQL_NO_CACHE id, name FROM customer;</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/mysql-tip-probar-consultas-evitando-el-cache/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Instalar Xdebug en Ubuntu (cualquier versión)</title>
+		<link>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/</link>
+		<comments>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/#comments</comments>
+		<pubDate>Sun, 19 Sep 2010 12:15:54 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[Xdebug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=611</guid>
+		<description><![CDATA[Esto es mas bien un resumen de las instrucciones que nos deja el mismo creador de Xdebug en su pagina (http://xdebug.org/docs/install) mas un par de cosas que da por entendido que debemos saber 🙂 1) Lo primero es bajarse el código fuente de la ultima versión de Xdebug (la 2.1 es la ultima al día&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Esto es mas bien un resumen de las instrucciones que nos deja el mismo creador de Xdebug en su pagina (http://xdebug.org/docs/install) mas un par de cosas que da por entendido que debemos saber <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>1) Lo primero es bajarse el código fuente de la ultima versión de Xdebug (la 2.1 es la ultima al día de la fecha)</p>
+<p><a href="http://xdebug.org/files/xdebug-2.1.0.tgz">http://xdebug.org/files/xdebug-2.1.0.tgz</a></p>
+<p>2) Descompriman el archivo en una carpeta cualquiera</p>
+<p>De acá en mas solo nos queda compilar configurar y probar:</p>
+<p>3) Lancen el siguiente comando para asegurarse que tienen instaladas las librerías de desarrollo de php5 que son necesarias para poder compilar Xdebug:</p><pre class="crayon-plain-tag">apt-get install php5-dev</pre><p>4) Entren en la carpeta por medio de la consola:</p><pre class="crayon-plain-tag">cd /ruta/a/la/carpeta/donde/descomprimiste/los/archivos/fuente/de/xdebug/xdebug-2.1.0/</pre><p>5) Lanzar el comando phpize</p><pre class="crayon-plain-tag">phpize</pre><p>6) Lanzar:</p><pre class="crayon-plain-tag">./configure --enable-xdebug
+make
+sudo make install</pre><p>Al final del infierno de outputs de salen en la consola van a apreciar que se dibuja un recuadro como el que se ve en la siguiente imagen:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png"><img class="aligncenter size-full wp-image-612" title="consola make install xdebug" src="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png" alt="" width="607" height="614" srcset="http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug.png 607w, http://ecapy.com/wp-content/uploads/2010/09/consola_make_install_xdebug-297x300.png 297w" sizes="(max-width: 607px) 100vw, 607px" /></a></p>
+<p>Bueno, justo encima de ese recuadro pueden ver que dice algo como &#8220;<strong>Installing shared extensions: /usr/lib/php5/20090626+lfs/</strong>&#8220;. Copien esa ruta.</p>
+<p>Ya esta instalado Xdebug. Configuremos lo XD.</p>
+<p>7) Editemos <strong>php.ini</strong></p><pre class="crayon-plain-tag">sudo gedit /etc/php5/apache2/php.ini</pre><p>Y en la ultima linea del archivo pequen lo siguiente:</p><pre class="crayon-plain-tag">zend_extension=&quot;&lt;strong&gt;/usr/lib/php5/20090626+lfs/xdebug.so&lt;/strong&gt;&quot;
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000</pre><p><span style="color: #993300;">NOTA: en la linea que dice &#8220;<strong>zend_extension</strong>&#8221; reemplacen la ruta del ejemplo por la que copiaron en el paso 6</span></p>
+<p>8) Listo! todo en teoría funciona. para comprobarlo abran el IDE al que le tengan mas bronca y configurenlo!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Como ver las variables disponibles en una plantilla .tpl.php (PHPTemplate)</title>
+		<link>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/</link>
+		<comments>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/#comments</comments>
+		<pubDate>Mon, 30 Aug 2010 23:11:43 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[Tip]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[PHPTemplate]]></category>
+		<category><![CDATA[Programación]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=575</guid>
+		<description><![CDATA[Otro de esos TIP que nos vienen sorprendente mente bien :). Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo()&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Otro de esos TIP que nos vienen sorprendente mente bien :).</p>
+<p>Si estas haciendo debug sobre una plantilla y necesitas saber cuales son las variables de las que dispones sobre la misma, te habras dado con el problema de que no se pueden ver. Osea, las variables existen, y si las mandas a imprimir con un echo() seguro que ahi está, pero hasta que no lo haces no podes saber siquiera que existe.</p>
+<p>Bueno basta de intro, vamos a un ejemplo rapido y claro:</p>
+<p>Si pones esta función en la plantilla que querés investigar, vas a poder ver un array (<strong>$variablesDisponibles</strong> para este ejemplo) de los nombres de todas las variables de las que dispone (y de sus contenidos también):</p><pre class="crayon-plain-tag">$variablesDisponibles = get_defined_vars();</pre><p>Chau!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/como-ver-las-variables-disponibles-en-una-plantilla-tpl-php-phptemplate/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Drupal 6: Mostrar los errores de PHP en lugar de la pantalla blanca (o blank page)</title>
+		<link>http://ecapy.com/drupal-6-mostrar-los-errores-de-php-en-lugar-de-la-pantalla-blanca-o-blank-page/</link>
+		<comments>http://ecapy.com/drupal-6-mostrar-los-errores-de-php-en-lugar-de-la-pantalla-blanca-o-blank-page/#comments</comments>
+		<pubDate>Tue, 03 Aug 2010 11:29:23 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=531</guid>
+		<description><![CDATA[Suele hacer falta poder ver los errores de PHP en Drupal de vez en cuando. Abrí el archivo index.php de Drupal y poné lo siguiente justo por encima de &#8220;require_once &#8216;./includes/bootstrap.inc&#8217;;&#8220;: [crayon-584436da3b5e8982176474/]]]></description>
+				<content:encoded><![CDATA[<p>Suele hacer falta poder ver los errores de PHP en Drupal de vez en cuando.</p>
+<p>Abrí el archivo <strong>index.php</strong> de Drupal y poné lo siguiente justo por encima de &#8220;<strong>require_once &#8216;./includes/bootstrap.inc&#8217;;</strong>&#8220;:</p><pre class="crayon-plain-tag">&lt;?php
+//Reportar errores PHP
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+//Fin reportar errores PHP</pre><p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/drupal-6-mostrar-los-errores-de-php-en-lugar-de-la-pantalla-blanca-o-blank-page/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Configurar Xdebug en Xampp 1.7.3 con PHP 5.3.1</title>
+		<link>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/</link>
+		<comments>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/#comments</comments>
+		<pubDate>Tue, 01 Jun 2010 08:43:49 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[debug]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Xampp]]></category>
+		<category><![CDATA[Xdebug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=467</guid>
+		<description><![CDATA[Si querés configurar Xdebug en linux puede interesarte el post &#8220;Instalar Xdebug en Ubuntu (cualquier versión)&#8220; Vayan a la carpeta en la que esta instalado Xampp y entren en la carpeta de PHP. Abran php.ini y busquen: [crayon-584436da3c243871594317/] Quítenle el punto y coma del principio para descomentarlo (Habilitarlo). Ahora solo queda configurar los parámetros de&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><strong><span style="color: #993300;">Si querés configurar Xdebug en linux puede interesarte el post &#8220;</span></strong><a href="http://www.ecapy.com/instalar-xdebug-en-ubuntu-cualquier-version/"><strong><span style="color: #0000ff;">Instalar Xdebug en Ubuntu (cualquier versión)</span></strong></a><strong><span style="color: #993300;">&#8220;</span></strong></p>
+<p>Vayan a la carpeta en la que esta instalado Xampp y entren en la carpeta de PHP.<br />
+Abran <strong>php.ini </strong>y busquen:</p><pre class="crayon-plain-tag">&lt;strong&gt;;&lt;/strong&gt;zend_extension = &quot;xamppphpextphp_xdebug.dll&quot;</pre><p>Quítenle el punto y coma del principio para descomentarlo (Habilitarlo).</p>
+<p>Ahora solo queda configurar los parámetros de Xdebug:<br />
+Busquen ahora &#8220;<strong><span style="color: #993300;">[XDebug]</span></strong>&#8220;. Lo que ven por debajo de esta etiqueta es su configuración, como se que es una putada tener que andar leyendo y habilitando uno a uno les dejo una configuración funcional para que la usen. (Borren todo lo que hay por debajo de la etiqueta <strong><span style="color: #993300;">[xdebug]</span></strong> antes de pegar esta nueva configuración).</p><pre class="crayon-plain-tag">&lt;strong&gt;[XDebug]&lt;/strong&gt;
+xdebug.auto_trace = 0
+xdebug.collect_includes = 1
+xdebug.collect_params = 1
+xdebug.collect_return = 1
+xdebug.collect_vars = &quot;On&quot;
+xdebug.default_enable = &quot;On&quot;
+xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
+xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
+xdebug.dump_globals = 1
+xdebug.dump_once = 1
+xdebug.dump_undefined = 0
+xdebug.extended_info = 1
+xdebug.file_link_format = &quot;&quot;
+xdebug.manual_url = &quot;http://www.php.net&quot;
+xdebug.max_nesting_level = 100
+xdebug.overload_var_dump = 1
+xdebug.profiler_append = 0
+xdebug.profiler_enable = 0
+xdebug.profiler_enable_trigger = 0
+xdebug.profiler_output_dir = &quot;xampptmp&quot;
+xdebug.profiler_output_name = &quot;xdebug_profile.%p&quot;
+xdebug.remote_autostart = 1
+xdebug.remote_enable = 1
+xdebug.remote_handler = &quot;dbgp&quot;
+xdebug.remote_host = &quot;localhost&quot;
+xdebug.remote_mode = &quot;req&quot;
+xdebug.remote_port = 9000
+xdebug.show_exception_trace = 0
+xdebug.show_local_vars = 0
+xdebug.trace_output_dir = &quot;xampptmp&quot;
+xdebug.var_display_max_children = 256
+xdebug.var_display_max_data = 512
+xdebug.var_display_max_depth = 10</pre><p>Listo, de acá en mas solo tienen que configurar su eclipse, netbeans, o lo que sea que usen.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/configurar-xdebug-en-xampp-1-7-3-con-php-5-3-1/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Debug remoto con Eclipse PDT y Xdebug</title>
+		<link>http://ecapy.com/debug-remoto-con-eclipse-pdt-y-xdebug/</link>
+		<pubDate>Mon, 05 Apr 2010 00:02:39 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=369</guid>
+		<description><![CDATA[Mas de uno pensara que es una boludez y un riesgo de seguridad hacer esto (¡y tiene razón dependiendo de donde hagas esto!), pero piensen por un segundo que trabajan en una empresa en la que los servidores de desarrollo son justamente eso, servidores de desarrollo, y son para probar los cambios  que hiciste en&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/debug-remoto-con-eclipse-pdt-y-xdebug/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Mas de uno pensara que es una boludez y un riesgo de seguridad hacer esto (¡y tiene razón dependiendo de donde hagas esto!), pero piensen por un segundo que trabajan en una empresa en la que los servidores de desarrollo son justamente eso, servidores de desarrollo, y son para probar los cambios  que hiciste en tu propio ordenador.</p>
+<p>Bien, sumále que trabajas en Windows y necesitas hacer debug para una característica que solo funciona correctamente en Linux. A que ahora tiene un poco más de sentido hacer esto <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Bueno basta de intro, vamos a lo que vamos.</p>
+<p>El entorno que usé es el siguiente:<br />
+Un ordenador con <span style="color: #ff6600;"><strong>Windows XP</strong></span> que vamos a usar para hacer debug (A.K.A. “<strong>el cliente</strong>”).<br />
+Un servidor con <span style="color: #ff6600;"><strong>Ubuntu 9.10 Edición Server o Desktop</strong></span> (A.K.A. “<strong>el servidor</strong>”).</p>
+<p>NOTA: puede que no te haga falta específicamente estas versiones, pero son las que use para este tutorial.</p>
+<ul>
+<li>Primero instalen en el cliente Eclipse y xampp. Prueben que funcione correctamente.</li>
+</ul>
+<p>En el servidor compartan la carpeta en la que tienen instalada la página Web que pretenden debuggear (la carpeta de la página, NO “www”):</p>
+<p><a href="http://www.ecapy.com/wp-content/uploads/2010/04/Pantallazo-Compartición-de-carpetas.png"><img class="aligncenter size-full wp-image-376" title="Pantallazo-Compartición de carpetas" src="http://www.ecapy.com/wp-content/uploads/2010/04/Pantallazo-Compartición-de-carpetas.png" alt="" width="481" height="328" /></a></p>
+<p>De nuevo en Windows, conéctense a un dispositivo de red (click derecho sobre “Mi PC”  que ahí lo pueden ver). Puede seguramente les pida que se autentiquen con un usuario que tenga los privilegios adecuados sobre la carpeta que tiene el proyecto en el servidor:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/04/conectar_unidad_de_red.png"><img class="aligncenter size-full wp-image-371" title="conectar_unidad_de_red" src="http://ecapy.com/wp-content/uploads/2010/04/conectar_unidad_de_red.png" alt="" width="238" height="259" /></a></p>
+<p><strong>NOTA: Puede ser que cuando quieras guardar los cambios que hayas hecho sobre los archivos desde eclipse te de un error de permisos al escribir contra el servidor. La solución es cambiar los permisos de proyecto a 777 (<span style="color: #ff6600;">chmod –R 777 carpeta_proyecto</span>).</strong></p>
+<p>Ya podemos acceder al proyecto en el servidor remoto, por lo que vamos al Eclipse y creamos un proyecto de PHP como siempre, seleccionamos la unidad que se le haya asignado a la conexión del dispositivo de red y damos a finalizar.</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/04/crear_proyecto_php_eclipse.png"><img class="aligncenter size-full wp-image-373" title="crear_proyecto_php_eclipse" src="http://ecapy.com/wp-content/uploads/2010/04/crear_proyecto_php_eclipse.png" alt="" width="372" height="374" srcset="http://ecapy.com/wp-content/uploads/2010/04/crear_proyecto_php_eclipse.png 372w, http://ecapy.com/wp-content/uploads/2010/04/crear_proyecto_php_eclipse-150x150.png 150w, http://ecapy.com/wp-content/uploads/2010/04/crear_proyecto_php_eclipse-298x300.png 298w" sizes="(max-width: 372px) 100vw, 372px" /></a><a href="http://ecapy.com/wp-content/uploads/2010/04/setup_proyecto_php_eclipse.png"><img class="aligncenter size-full wp-image-370" title="setup_proyecto_php_eclipse" src="http://ecapy.com/wp-content/uploads/2010/04/setup_proyecto_php_eclipse.png" alt="" width="500" height="699" srcset="http://ecapy.com/wp-content/uploads/2010/04/setup_proyecto_php_eclipse.png 500w, http://ecapy.com/wp-content/uploads/2010/04/setup_proyecto_php_eclipse-215x300.png 215w" sizes="(max-width: 500px) 100vw, 500px" /></a></p>
+<p>OK, ya podemos trabajar con Eclipse sobre los archivos remotos, y eso es bueno (o no) pero el objetivo de este tutorial es el de poder debuggear, así que sigamos.</p>
+<p>Ahora del lado del servidor hacemos lo siguiente:<br />
+<strong>Instalamos en el servidor un Xdebug.</strong><br />
+Cuando esté instalado vamos a cambiar un parámetro de la configuración. Editemos el archivo de configuración de Xdebug:</p><pre class="crayon-plain-tag">sudo gedit /etc/php5/apache2/conf.d/xdebug.ini</pre><p>Busquen<strong> xdebug.remote_host y pongan por valor la IP del cliente</strong>.<br />
+Reinicien:</p><pre class="crayon-plain-tag">sudo /etc/init.d/apache2 restart</pre><p>OK. Ya tenemos el servidor que escucha al cliente por el puerto 9000, y en Eclipse tenemos montado un proyecto PHP que toma los archivos de la unidad de red conectada al servidor… Hagamos el debug!</p>
+<p>Vamos a las preferencias de Eclipse creamos un nuevo PHP Server como podemos ver en la imagen, completando el nombre que queramos y la IP del servidor:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/04/nuevo_php_server_eclipse.png"><img class="aligncenter size-full wp-image-375" title="nuevo_php_server_eclipse" src="http://ecapy.com/wp-content/uploads/2010/04/nuevo_php_server_eclipse.png" alt="" width="628" height="622" srcset="http://ecapy.com/wp-content/uploads/2010/04/nuevo_php_server_eclipse.png 628w, http://ecapy.com/wp-content/uploads/2010/04/nuevo_php_server_eclipse-150x150.png 150w, http://ecapy.com/wp-content/uploads/2010/04/nuevo_php_server_eclipse-300x297.png 300w" sizes="(max-width: 628px) 100vw, 628px" /></a></p>
+<p>Vamos terminando ya. Solo nos queda configurar el debug de nuestro proyecto. Vamos a “<strong>debug configurations…</strong>” y creamos un nuevo perfil de “<strong>PHP Web Page</strong>”:</p>
+<p><a href="http://ecapy.com/wp-content/uploads/2010/04/ir_a_conf_debug.png"><img class="aligncenter size-full wp-image-374" title="ir_a_conf_debug" src="http://ecapy.com/wp-content/uploads/2010/04/ir_a_conf_debug.png" alt="" width="177" height="119" /></a><a href="http://ecapy.com/wp-content/uploads/2010/04/conf_debug.png"><img class="aligncenter size-full wp-image-372" title="conf_debug" src="http://ecapy.com/wp-content/uploads/2010/04/conf_debug.png" alt="" width="606" height="467" srcset="http://ecapy.com/wp-content/uploads/2010/04/conf_debug.png 606w, http://ecapy.com/wp-content/uploads/2010/04/conf_debug-300x231.png 300w" sizes="(max-width: 606px) 100vw, 606px" /></a></p>
+<p>En esta imagen podemos ver como<strong> he seleccionado el servidor que acabo de crear “<span style="color: #ff6600;">Servidor Remoto</span>”</strong> y desmarque el “<strong>Auto generate</strong>” para poder poner <strong>el path real hasta el archivo index.php de mi proyecto sobre el servidor</strong>.</p>
+<p>Listo amigo. Poné un breakpoint y happy debug!.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Pantalla blanca al hacer /logout en Drupal</title>
+		<link>http://ecapy.com/pantalla-blanca-al-hacer-logout-en-drupal/</link>
+		<pubDate>Sat, 20 Mar 2010 03:18:11 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[Drupal 6]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=352</guid>
+		<description><![CDATA[La respuesta es bastante tonta. Resulta que si tenés Devel Themer activado, va a fallarte el logout. Para mas detalle pueden consultar este hilo de los foros de drupal que explican además como solucionarlo permanentemente si esto les molesta demasiado. Personalmente prefiero mantener desactivado todo el tiempo Devel themer hasta que me haga falta, ya&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/pantalla-blanca-al-hacer-logout-en-drupal/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p><!-- @page { margin: 2cm } P { margin-bottom: 0.21cm } -->La respuesta es bastante tonta. Resulta que <strong>si tenés Devel Themer activado, va a fallarte el logout.</strong></p>
+<p>Para mas detalle pueden consultar <a href="http://drupal.org/node/461212">este hilo</a> de los foros de drupal que explican además como solucionarlo permanentemente si esto les molesta demasiado.</p>
+<p>Personalmente prefiero mantener desactivado todo el tiempo Devel themer hasta que me haga falta, ya que para el desarrollo los tiempos de renderizado de la pagina se van al carajo si está activado.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Instalar XDebug en Windows 7 y XAMPP</title>
+		<link>http://ecapy.com/instalar-xdebug-en-windows-7-y-xampp/</link>
+		<comments>http://ecapy.com/instalar-xdebug-en-windows-7-y-xampp/#comments</comments>
+		<pubDate>Wed, 24 Feb 2010 22:53:25 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programación]]></category>
+		<category><![CDATA[debug]]></category>
+
+		<guid isPermaLink="false">http://www.ecapy.com/?p=301</guid>
+		<description><![CDATA[Windows 7 es claramente el paso mas firme que ha dado Microsoft en sus ultimos 9 años con lo que respecta a su principal S.O. Y soy de los que  saben cuando han de aceptar que algo que odias ha mejorado. Ciertamente me gusta este Windows. Básicamente vuela y es todo lo que XP no&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-xdebug-en-windows-7-y-xampp/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Windows 7 es claramente el paso mas firme que ha dado Microsoft en sus ultimos 9 años con lo que respecta a su principal S.O. Y soy de los que  saben cuando han de aceptar que algo que odias ha mejorado.</p>
+<p>Ciertamente me gusta este Windows. Básicamente vuela y es todo lo que XP no puede ser por ser tan viejo.</p>
+<p>Lo único que me impedía cambiar definitivamente era que no podía debugear con Xdebug, y no es poco decir cuando trabajas con el.</p>
+<p>Peeeeeeeero, gracias a <a href="http://www.ihostnz.com/user/1">Diembo</a> que dejó <a href="http://www.ihostnz.com/howto-install-xampp-windows-7-xdebug-netbeans">un post</a> mas que concreto pero letalmente eficaz en <a href="http://www.ihostnz.com">ihostnz</a>, hoy puedo decir que Windows 7 pasa a ser mi sistema operativo principal por el resto de&#8230; bueno hasta que haya algo mejor.</p>
+<p>A lo nuestro. Según nuestro amigo los pasos a seguir son:</p>
+<ol>
+<li><span style="color: #993366;">Download XAMPP 1.7.2 from <a href="http://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.7.2/xampp-win32-1.7.2.exe/download">sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.7.2/xampp-win32-1.7.2.exe/download</a></span></li>
+<li><span style="color: #993366;">Install</span></li>
+<li><span style="color: #993366;">Download php_xdebug-2.0.5-5.3-vc6.dll from <a href="http://xdebug.org/download.php">xdebug.org/download.php</a></span></li>
+<li><span style="color: #993366;">Place it in C:xamppphpext</span></li>
+<li><span style="color: #993366;">Edit C:xamppphpphp.ini add:zend_extension = &#8220;C:xamppphpextphp_xdebug-2.0.5-5.3-vc6.dll&#8221;[xdebug]<br />
+xdebug.remote_enable=on<br />
+xdebug.remote_host=127.0.0.1<br />
+xdebug.remote_port=9000<br />
+xdebug.remote_handler=&#8221;dbgp&#8221;</span></li>
+<li><span style="color: #993366;">Enjoy!</span></li>
+</ol>
+<p>Que traducido por medio de algoritmos muy complejos nos da algo como esto:</p>
+<ol>
+<li><strong><a href="http://www.apachefriends.org/download.php?xampp-win32-1.7.4-VC6-installer.exe" target="_blank">Descargar la ultima versión de XAMPP</a></strong></li>
+<li><strong>Instalarlo</strong></li>
+<li><strong><a href="http://xdebug.org/files/php_xdebug-2.1.1-5.3-vc6.dll">Descargar PHP 5.3 VC6 TS (32 bit)</a></strong></li>
+<li><strong>Poner el archivo descargado (php_xdebug-2.1.1-5.3-vc6.dll) en C:xamppphpext o donde este instalado tu Xampp.</strong></li>
+<li><strong>Editar C:xamppphpphp.ini y añadir al final de todo: </strong><br />
+<pre class="crayon-plain-tag">&lt;strong&gt;zend_extension = &quot;C:xamppphpextphp_xdebug-2.1.1-5.3-vc6.dll&quot; 
+
+[xdebug] 
+xdebug.remote_enable=on 
+xdebug.remote_host=127.0.0.1 
+xdebug.remote_port=9000 
+xdebug.remote_handler=&quot;dbgp&quot; &lt;/strong&gt;</pre><br />
+<strong>Ojo, no toquen nada mas, a pesar de que van a ver que en php.ini hay configuraciones de xdebug, no hay que tocarlas. </strong></li>
+<li>Disfrutar!</li>
+</ol>
+<p>Es tan simple que da miedo, y lo peor de todo es que desde que tengo W7 nunca lo había podido hacer funcionar.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-xdebug-en-windows-7-y-xampp/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Instalar LAMP, Eclipse Xdebug y que funcione.</title>
+		<link>http://ecapy.com/instalar-lamp-eclipse-xdebug-y-que-funcione/</link>
+		<comments>http://ecapy.com/instalar-lamp-eclipse-xdebug-y-que-funcione/#comments</comments>
+		<pubDate>Sat, 06 Jun 2009 22:01:21 +0000</pubDate>
+		<dc:creator><![CDATA[capynet]]></dc:creator>
+				<category><![CDATA[Programación]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://www.capy.es/?p=108</guid>
+		<description><![CDATA[Me encanta Linux. no solo por lo que es, sino además por la filosofía que representa. Pero hay que reconocerlo. HAY COSAS QUE NO SON FÁCILES DE HACER CON RESPECTO A WINDOW$ O Mac OSX. Digo esto porque para instalar un entorno de desarrollo para PHP en windows solo tenés que instalar xampp, des comentar&#160;<br /><br /><a class="btn btn-style" href="http://ecapy.com/instalar-lamp-eclipse-xdebug-y-que-funcione/">Seguir leyendo...</a>]]></description>
+				<content:encoded><![CDATA[<p>Me encanta Linux. no solo por lo que es, sino además por la filosofía que representa. Pero hay que reconocerlo. HAY COSAS QUE NO SON FÁCILES DE HACER CON RESPECTO A WINDOW$ O Mac OSX. Digo esto porque para instalar un entorno de desarrollo para PHP en windows solo tenés que instalar xampp, des comentar las lineas que habilitan Xdebug en php.ini, descargar Eclipse-pdt y descomprimirlo donde quieras.<br />
+hecho lo anterior ya tenés a disposición un entorno totalmente funcional, y lo que es mejor, en 5 minutos y sin quemarte la cabeza.</p>
+<p>La cosa cambia en linux. estoy escribiendo esto porque me hace falta documentar para mi el como hacer lo que acabo de hacer y porque creo que esto es algo que le puede servirle a alguien mas.</p>
+<p>Resumiendo rápidamente los pasos son estos:<br />
+Descargar la ultima versión de PDT (la versión de eclipse completa, no el plugin solo) (enlace)<br />
+NOTA: se puede descargar una versión base de eclipse desde repositorios pero es un dolor de cabeza agregarle el plugin de PDT.<br />
+Instalar LAMP desde los repositorios, abriendo Synaptic y yendo al menú &#8220;editar&#8221;-&gt;&#8221;Marcar paquetes por tarea&#8230;&#8221;<br />
+instalar Xdebug desde los repositorios también.</p>
+<p>Instalado y descargado todo vamos a configurar.</p>
+<p>Descompriman y copien lo a /opt/ y cambien los permisos:</p>
+<p></p><pre class="crayon-plain-tag">sudo chmod -R 755 /opt/eclipse/</pre><p></p>
+<p>Eclipse ya funciona, ahora configuremos Xdebug.<br />
+Abrimos php.ini y agregamos al final del archivo lo siguiente</p>
+<p></p><pre class="crayon-plain-tag">zend_extension=/usr/lib/php5/20051025/xdebug.so
+
+[debug]
+; Remote settings
+xdebug.remote_autostart=off
+xdebug.remote_enable=on
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+
+; General
+xdebug.auto_trace=off
+xdebug.collect_includes=on
+xdebug.collect_params=off
+xdebug.collect_return=off
+xdebug.default_enable=on
+xdebug.extended_info=1
+xdebug.manual_url=http://www.php.net
+xdebug.show_local_vars=0
+xdebug.show_mem_delta=0
+xdebug.max_nesting_level=100
+;xdebug.idekey=
+
+; Trace options
+xdebug.trace_format=0
+xdebug.trace_output_dir=/tmp
+xdebug.trace_options=0
+xdebug.trace_output_name=crc32
+
+; Profiling
+xdebug.profiler_append=0
+xdebug.profiler_enable=0
+xdebug.profiler_enable_trigger=0
+xdebug.profiler_output_dir=/tmp
+xdebug.profiler_output_name=crc32</pre><p></p>
+<p>Una sola cosa a tener en cuenta en este punto es que la primera linea del código anterior hace referencia a una carpeta que puede cambiar de nombre con cada versión de Xdebug, por lo que no estaría de mas que miren que la carpeta no haya cambiado de nombre, y si es así, lo ajustan.</p>
+<p>Un detalle mas es que la carpeta /var/www no tiene permisos de escritura, y ya que es un entorno de desarrollo (esa es la idea) le vamos a dar todos los permisos.</p>
+<p>Ahora ya funciona todo.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ecapy.com/instalar-lamp-eclipse-xdebug-y-que-funcione/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>
